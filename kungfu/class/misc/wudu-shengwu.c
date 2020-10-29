@@ -157,11 +157,11 @@ varargs void die(object killer)
 {
         object *obs, *obn, env;
         object me, ob;
-        mapping drops, rewards;
-        string *ks;
-        string line, key;
-        int exp, pot;
-        int i, n, times, value, rand;
+        mapping /*drops,*/ rewards;
+//      string *ks;
+//      string line,key;
+//      int exp,pot;
+//      int i,n,times,value,rand;
         string fbname, owner;
         mapping fuben_data;
         int fuben_level, percent;

@@ -189,7 +189,7 @@ string query_skill_name(int level)
 
 mapping query_action(object me, object weapon)
 {
-        mapping a_action;
+//      mapping a_action;
         int level, tmp;
 /* d_e=dodge_effect p_e=parry_effect f_e=force_effect m_e=damage_effect */
         int d_e1 = -60;
@@ -198,7 +198,7 @@ mapping query_action(object me, object weapon)
         int p_e2 = 10;
         int f_e1 = 520;
         int f_e2 = 640;
-        int i, seq, ttl = sizeof(action);
+        int /*i,*/ seq, ttl = sizeof(action);
 
         level = (int)me->query_skill("dragon-strike", 1);
         if( query_temp("xlz/hanglong", me) )
@@ -232,7 +232,7 @@ mapping query_action(object me, object weapon)
 
 int practice_skill(object me)
 {
-        int cost;
+//      int cost;
 
         if( query_temp("weapon", me) || query_temp("secondary_weapon", me) )
                 return notify_fail("练降龙十八掌必须空手。\n");

@@ -21,7 +21,7 @@ LONG );
         ]));
         set("item_desc", ([
                 "door" : "厚厚的木门紧关着，有些年岁了。\n" ,
-        ]));        
+        ]));
         set("no_clean_up", 0);
         set("coor/x", -15250);
 	set("coor/y", -1850);
@@ -55,12 +55,12 @@ void letter(object me)
         if( !query_temp("want_leave", me) )
                 return;
 
-        tell_object(me, WHT "  ┏━━━━━━┓\n"
+        tell_object(me, WHT "  ┏------------┓\n"
                             "  ┃观旁树林内有┃\n"
                             "  ┃本派密道能够┃\n"
                             "  ┃直通(" HIY "back" NOR + WHT ")峨┃\n"
                             "  ┃嵋华藏庵大殿┃\n"
-                            "  ┗━━━━━━┛\n" NOR);
+                            "  ┗------------┛\n" NOR);
 }
 
 int do_back()
@@ -89,7 +89,7 @@ int do_knock(string arg)
 {
         object me;
         me = this_player();
-        if (!arg||arg=="") 
+        if (!arg||arg=="")
                 return notify_fail("你要敲什么？\n");
           if (arg != "door")
                 return notify_fail("你要敲什么？\n");
@@ -103,15 +103,15 @@ int do_knock(string arg)
                         return 1;
                 }
                 if( good_bunch(me) || (query("bunch/bunch_name", me) != "修罗门" && query("shen", me)>0) )
-                { 
-                                command("say 哪里来的邪魔歪道，找打么？\n"); 
-                        return 1; 
-                } 
+                {
+                                command("say 哪里来的邪魔歪道，找打么？\n");
+                        return 1;
+                }
                 message_vision("木门吱呀一声开了，从里面探出个头来，看了$N两眼说道：“既然是本门的兄弟，就进来吧！”，
 说完一把把$N拉了进去。\n",me);
-                me->move(__DIR__"xlm_cdfb"); 
-                return 1; 
+                me->move(__DIR__"xlm_cdfb");
+                return 1;
         }
-        
+
         return 1;
 }

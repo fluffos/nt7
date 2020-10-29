@@ -38,8 +38,8 @@ void init()
 
 int do_break(string arg)
 {
-        int n;
-        object weapon, me = this_player();
+//      int n;
+        object /*weapon,*/ me = this_player();
 
         if (arg != "liang")
                 return 0;

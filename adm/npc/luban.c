@@ -465,7 +465,7 @@ void greeting(object me)
 // 认证学习
 int recognize_apprentice(object me)
 {
-        if( query_temp("mark/鲁班", me) && 
+        if( query_temp("mark/鲁班", me) &&
             !query_temp("learnd_from/鲁班", me) )
         {
                 message_vision("鲁班对$N说：好，你既然有心学，我就"
@@ -493,7 +493,7 @@ int accept_object(object me, object ob)
                 return 1;
         }
 
-        if( query("money_id", ob) && query_temp("ask_for_key", me) && 
+        if( query("money_id", ob) && query_temp("ask_for_key", me) &&
             mapp(query("private_room", me)) )
         {
                 room=get_object(query("private_room/entry", me));
@@ -611,7 +611,7 @@ int accept_object(object me, object ob)
                         return 0;
                 }
 
-                if( (query("max_room", build) && 
+                if( (query("max_room", build) &&
                     query("max_room", build) <= build->query_room_count()) ||
                     build->query_room_count() >= 8 )
                 {
@@ -628,7 +628,7 @@ int accept_object(object me, object ob)
         }
 
         // 看看是否填写了表单
-        if( (query("money_id", ob) || ob->id("fee free card")) && 
+        if( (query("money_id", ob) || ob->id("fee free card")) &&
             mapp(query("form/"+query("id", me))) )
         {
                 int value;
@@ -877,7 +877,7 @@ private int ask_paper()
                 return 1;
         }
 
-        if( mapp(query("private_room", me)) || 
+        if( mapp(query("private_room", me)) ||
             query("form/"+query("id", me)) )
         {
                 message_vision("鲁班翻出一张纸，递给$N道：自个儿玩去吧。\n", me);
@@ -1043,7 +1043,7 @@ private int ask_modify()
         object me;
 
         me = this_player();
-        if( !submit_form(query("id", me)) && 
+        if( !submit_form(query("id", me)) &&
             query_temp("contract/luban/questing", me) != "quest_desc" )
         {
                 message_vision("鲁班摇摇头，对$N说：你只有描述时或是提"
@@ -1734,7 +1734,7 @@ private void show_desc(mixed player, string room_name)
                 {
                         // 查找用户输入的描述信息
                         desc = descsp[names[i]];
-                        write(YEL "───────────────────────────────────────\n" NOR);
+                        write(YEL "------------------------------------------------------------------------------\n" NOR);
                         write(YEL+"关于"+query("short", ob)+"("+names[i]+")"+YEL+"的描述：\n"+NOR);
                         if (! desc)
                         {
@@ -1762,7 +1762,7 @@ private void show_desc(mixed player, string room_name)
                 return ;
         }
 
-        write(YEL "───────────────────────────────────────\n" NOR);
+        write(YEL "------------------------------------------------------------------------------\n" NOR);
         write("描述就是上面列出的这些内容。\n");
 
         if (! value)
@@ -2534,7 +2534,7 @@ private void show_old()
                         if (! count)
                         {
                                 write(HIC "以下是玩家提交了很久的表单：\n" + NOR);
-                                write(YEL "────────────────────────────────────────\n" NOR);
+                                write(YEL "--------------------------------------------------------------------------------\n" NOR);
                                 show_brief_title();
                         }
                         count++;
@@ -2543,7 +2543,7 @@ private void show_old()
         }
         if (count)
         {
-                write(YEL "────────────────────────────────────────\n" NOR);
+                write(YEL "--------------------------------------------------------------------------------\n" NOR);
                 write("共有" + ((string) count) + "张比较陈旧的表单。\n");
         } else
                 write("目前没有陈旧的表单。\n");
@@ -2570,7 +2570,7 @@ private void show_brief_list(string info, string msg)
                         if (! count)
                         {
                                 write(msg + "\n");
-                                write(YEL "────────────────────────────────────────\n" NOR);
+                                write(YEL "--------------------------------------------------------------------------------\n" NOR);
                                 show_brief_title();
                         }
                         count++;
@@ -2579,7 +2579,7 @@ private void show_brief_list(string info, string msg)
         }
         if (count)
         {
-                write(YEL "────────────────────────────────────────\n" NOR);
+                write(YEL "--------------------------------------------------------------------------------\n" NOR);
                 write("共有" + ((string) count) + "张表单。\n");
         } else
                 write("目前没有任何符合要求的表单。\n");
@@ -2820,7 +2820,7 @@ private void create_room(object me)
                         rm(to_player(player_id, filesp[names[k]]));
                 return;
         }
-        
+
         message("vision", "\n须臾，鲁班和众弟子已然归来。\n"
                           "鲁班喜道：呵呵，房屋建好了，一切"
                           "顺利，恭喜恭喜！\n", environment());
@@ -2962,7 +2962,7 @@ private string sort_desc(mixed me, string desc)
                 return 0;
 
         if (stringp(me)) player_id = me; else
-        if( objectp(me))player_id=query("id", me);else 
+        if( objectp(me))player_id=query("id", me);else
                          return 0;
         if (mapp(query("form/" + player_id)))
         {

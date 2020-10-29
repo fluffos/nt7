@@ -60,7 +60,7 @@ string LookP ="";
 string *NowPlayerId = ({ "","","","" });
 string LastDumpId="";
 string LastDump="";
- 
+
 mapping P1Data = ([
 "Show":"color","Id":"","Name":"","Mj":"","Out":"","OutGang":"","OutPeng":"",
 "OutFlower":"","Auto":"","AutoTin":"","AutoGang":"","AutoPeng":"","Dump":""
@@ -192,7 +192,7 @@ int do_da(string str,object me)
         string ponid;
         mapping who;
         object met;
- 
+
         if (!me) me=this_player();
         if( check_id(query("id", me),"player") != "");
         else
@@ -345,7 +345,7 @@ int do_eat(string str)
         string num1,num2;
         object me=this_player();
         mapping who;
- 
+
         if (!str || sscanf(str,"%s %s",num1,num2)!=2) return 0;
         if( check_id(query("id", me),"player") != "");
         else
@@ -428,7 +428,7 @@ int do_gang(string str,object me)
 {
         int i;
         mapping who;
- 
+
         if (!me) me=this_player();
         if( check_id(query("id", me),"player") != "");
         else
@@ -455,7 +455,7 @@ int do_gang(string str,object me)
                 return 1;
         }
         if (!str) str=LastDump;
- 
+
         if( query("id", me) == P1Data["Id"])who=P1Data;
         else if( query("id", me) == P2Data["Id"])who=P2Data;
         else if( query("id", me) == P3Data["Id"])who=P3Data;
@@ -536,7 +536,7 @@ varargs int do_win(string str,object me)
         string Mj="";
         mapping who;
         object met;
- 
+
         if (!me) me=this_player();
         if( check_id(query("id", me),"player") != "");
         else
@@ -781,7 +781,7 @@ int do_check_win(string str)
         int t,k,W,T,S,Sp;
         string tempW="",tempT="",tempS="",tempB="";
         string Special="1w9w1s9s1t9teasowenojofaba";
- 
+
         K=0;
         if (size > 33)
         {
@@ -973,7 +973,7 @@ int check_hu(string strW)
                                                         i=-2;
                                                 }
         }
- 
+
         if (sizeof(strW) > 5)
         {
                 for (i=0;i<sizeof(strW);i+=2)
@@ -1005,7 +1005,7 @@ int do_touch(string str,object me)
 {
         int i,check;
         mapping who;
- 
+
         if (!me) me=this_player();
         if( check_id(query("id", me),"player") != "");
         else
@@ -1091,7 +1091,7 @@ int do_peng(string str,object me)
 {
         int i;
         mapping who;
- 
+
         if (!me) me=this_player();
         if( check_id(query("id", me),"player") != "");
         else
@@ -1219,7 +1219,7 @@ int wash_mj(int amount)
         P1Data["AutoGang"]="";
         P1Data["AutoPeng"]="";
         P1Data["Dump"]="";
- 
+
         P2Data["Mj"]="";
         P2Data["OutGang"]="";
         P2Data["Out"]="";
@@ -1230,7 +1230,7 @@ int wash_mj(int amount)
         P2Data["AutoGang"]="";
         P2Data["AutoPeng"]="";
         P2Data["Dump"]="";
- 
+
         P3Data["Mj"]="";
         P3Data["OutGang"]="";
         P3Data["Out"]="";
@@ -1252,7 +1252,7 @@ int wash_mj(int amount)
         P4Data["AutoGang"]="";
         P4Data["AutoPeng"]="";
         P4Data["Dump"]="";
- 
+
         end=END;
         NO_HU=START;
         NO_GANG=START;
@@ -1288,7 +1288,7 @@ int wash_mj(int amount)
                         } else i--;
                 }
         }
- 
+
 //        for (i=0;i<sizeof(X);i++) printf("%s=%d ",X[i],MjE_Data[X[i]]);
         command("say 嗯，好啦，可以开始了。来吧！");
         if (Count) countstr="[连庄"+chinese_number(Count)+"]";
@@ -1336,7 +1336,7 @@ int do_setmj(string str)
         string numstr;
         mapping who;
         object me=this_player();
- 
+
         if( query("id", me) == P1Data["Id"])who=P1Data;
         else if( query("id", me) == P2Data["Id"])who=P2Data;
         else if( query("id", me) == P3Data["Id"])who=P3Data;
@@ -1430,7 +1430,7 @@ int do_setmj(string str)
                                                 who["Show"]="";
                                                 return notify_fail("你取消显示设定。\n");
                                         }
- 
+
                                         if (numstr=="代码"||numstr=="3")
                                         {
                                                 numstr="代码";
@@ -1487,7 +1487,7 @@ int do_check_eat(string num1,string num2,string LastDump)
         A=do_check_num(num1,2);
         B=do_check_num(num2,2);
         C=do_check_num(LastDump,2);
- 
+
         if (A > 9 || B > 9 || C > 9) return 0;
         if ((A+B)%2!=0)
         {
@@ -1531,11 +1531,11 @@ string show_mj(string str,int flag)
                         Mj1="┌";
                         for (a=0;a<(size/2)-1;a++)
                         {
-                                if (a%2==0) Mj1+="─";
+                                if (a%2==0) Mj1+="--��";
                                 else Mj1+="┬";
                         }
                         Mj1+="┐\n│";
- 
+
                         for (a=0;a<size-1;a++)
                         {
                                 if (flag==5 || flag==6)
@@ -1585,7 +1585,7 @@ string show_mj(string str,int flag)
                                 if (a%2!=0)
                                 {
                                         if (flag==0 || flag==5) Mj1+=str[a-1..a];
-                                        else Mj1+="─";
+                                        else Mj1+="--��";
                                 }
                                 else Mj1+="┴";
                         }
@@ -1713,7 +1713,7 @@ int delete_last_dump(string whoId)
 mixed do_check_num(string str,int flag)
 {
         int number;
- 
+
         if (!str) return MjC[0];
         sscanf(str,"%d%s",number,str);
         if (number == 0)
@@ -1753,7 +1753,7 @@ void check_flower(mapping who)
 {
         string newstr = "",str=who["Mj"],temp,temp1;
         int i = strlen(str),j;
- 
+
         while(i--)
         {
                 i--;
@@ -1781,7 +1781,7 @@ void check_flower(mapping who)
 int do_check_Mj(string datastr,string str)
 {
         int size=strlen(datastr),check=0;
- 
+
         while(size--)
         {
                 size--;
@@ -1794,7 +1794,7 @@ string do_delete_Mj(string datastr,string str,int amount)//把某牌去掉
 {
         int size=strlen(datastr),check;
         string temp="";
- 
+
         while(size--)
         {
                 size--;
@@ -1815,7 +1815,7 @@ string do_delete_Mj(string datastr,string str,int amount)//把某牌去掉
 string sort_data(string str)
 {
         int i = strlen(str),a,b,c,d;
- 
+
         string newstr="",temp="";
         for (a=-1;a<i;a++)
         {
@@ -1842,7 +1842,7 @@ int do_look(string arg)
         object me=this_player();
         string Mj="",p1o="",p2o="",p3o="",p4o="";
         mapping who;
- 
+
         if (query_verb()==".") arg="mj";
         if (query_verb()=="..") arg="chicken";
         if (query_verb()==".1") arg="1p";
@@ -1997,22 +1997,22 @@ int to_say_play()
         write(@HELP
 
   指  令        例          子              说    明
-┌──────────────────────────┐
-│sit   ────────────────── 坐下入局 │
+�--------------------------------------------------------------------------------------��────────────┐
+│sit -----------------------------------------------------------───────── 坐下入局 │
 │look  l mj或.看自己牌,l 1p或.1看玩家1的牌           │
 │      l all或..看全部,l end看流局l dump。  看牌     │
-│mo    ────────────────── 摸牌     │
+│mo  -----------------------------------------------------------───────── 摸牌     │
 │da            da <代码>。                  打牌     │
 │chi           chi <代码1> <代码2>。        吃牌     │
-│peng  ────────────────── 碰牌     │
+│peng-----------------------------------------------------------───────── 碰牌     │
 │gang          gang 或 gang <代码>(暗杠用)  杠牌     │
-│hu    ────────────────── 胡牌     │
+│hu  -----------------------------------------------------------───────── 胡牌     │
 │setmj         请看桌面(look table)         设定参数 │
-│start ────────────────── 牌局开始 │
+│star-----------------------------------------------------------───────── 牌局开始 │
 │restart       restart 或 restart mj        重新开始 │
 │top   top aip,top -p,top -w,top -h,top -d           │
 │      top -l看全部,-lw,-lh,-ld。           查资料   │
-└──────────────────────────┘
+�--------------------------------------------------------------------------------------��────────────┘
 
 HELP);
                   return 1;
@@ -2021,10 +2021,10 @@ HELP);
 int to_say_rule()
 {
 write(@HELP
- 
+
 　　每胡就有底台５，在加上所得的台就是总台，要是自摸就＊３，相
 当於五一的算法。放枪就由总战绩那扣掉所失的台数。胡者则加上去。
- 
+
 HELP);
                   return 1;
 }
@@ -2035,7 +2035,7 @@ int show_top(string str)
         string *temp=({"","","","","",""});
         string show="";
         mixed *MjData;
- 
+
         if( !str)str=query("id", this_player());
         else if (str=="-lp"||str=="-pl"||str=="-l") str="all1";
         else if (str=="-lw"||str=="-wl") str="all2";
@@ -2121,7 +2121,7 @@ int set_mjdata(object me,int *winner)
         int i,check;
         string str="";
         mixed *MjData;
- 
+
         if (!me||!winner) return 0;
         if (file_size(MJ_DATA)==-1);
         else
@@ -2162,7 +2162,7 @@ int *get_mjdata(string Id)
         int i,check,*winner=({0,0,0,0});
         string str="";
         mixed *MjData;
- 
+
         if (!Id) return 0;
         if (file_size(MJ_DATA)==-1) return 0;
         MjData=explode(read_file(MJ_DATA),",");
@@ -2285,7 +2285,7 @@ int get_tc(mapping who)
                         &&  do_check_Mj(tempB,"so") > 1
                         &&  do_check_Mj(tempB,"we") > 1
                         &&  do_check_Mj(tempB,"no") > 1) Tc+="@F";
- 
+
         for (i=0;i<sizeof(str);i+=2)
         {
                 if (str[i..i+1]=="xx") continue;

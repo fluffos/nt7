@@ -42,10 +42,10 @@ void init()
 int do_gamble(string arg)
 {
         int a,b,c;
-        int wager, skill, lpoint, tpoint;
+        int wager, skill, lpoint/*, tpoint*/;
         string wtype1, wtype2, wtype0, status;
         object mtype, me;
-        mapping lrn;
+//      mapping lrn;
 
         int min, max;
         min = 500;

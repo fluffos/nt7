@@ -29,46 +29,46 @@ int reset_game(int all);
 mixed se_text = ({
         ({"","","","",""}),
         ({
-                "┌───┐",
+                "┌------┐",
                 "│      │",
                 "│  ●  │",
                 "│      │",
-                "└───┘",
+                "└------┘",
         }),
         ({
-                "┌───┐",
+                "┌------┐",
                 "│  ●  │",
                 "│      │",
                 "│  ●  │",
-                "└───┘",
+                "└------┘",
         }),
         ({
-                "┌───┐",
+                "┌------┐",
                 "│●　　│",
                 "│　●　│",
                 "│　　●│",
-                "└───┘",
+                "└------┘",
         }),
         ({
-                "┌───┐",
+                "┌------┐",
                 "│●　●│",
                 "│　　　│",
                 "│●　●│",
-                "└───┘",
+                "└------┘",
         }),
         ({
-                "┌───┐",
+                "┌------┐",
                 "│●　●│",
                 "│　●　│",
                 "│●　●│",
-                "└───┘",
+                "└------┘",
         }),
         ({
-                "┌───┐",
+                "┌------┐",
                 "│●　●│",
                 "│●　●│",
                 "│●　●│",
-                "└───┘",
+                "└------┘",
         })
 });
 
@@ -205,12 +205,12 @@ void toss(object ob)
 
         if(!ob)
                 return;
-        if(s = player[query("id",ob)]) 
+        if(s = player[query("id",ob)])
         {
                 for(i=0;i<sizeof(s);i++)
                         s[i] = random(6)+1;
         }
-        player[query("id",ob)] = sort_array(s,1); 
+        player[query("id",ob)] = sort_array(s,1);
 }
 
 int auto_order()
@@ -287,7 +287,7 @@ string extra_long()
         string r;
         mixed *idx;
         int i;
-        
+
         if(sizeof(player)>0)
         {
                 idx = keys(player);
@@ -361,15 +361,15 @@ int do_toss(string arg)
                 return notify_fail("游戏还没有开始了。\n");
         if(has_guess)
                 return notify_fail("已经开始猜骰子了。\n");
-        if(player_toss[query("id",me)]>=MAX_TOSS) 
+        if(player_toss[query("id",me)]>=MAX_TOSS)
                 return notify_fail(sprintf("你已经摇过%d次了。\n",MAX_TOSS));
 
         toss(me);
-        player_toss[query("id",me)]++; 
+        player_toss[query("id",me)]++;
         msg(me,0,"$N拿起骰子在手中摇了两摇。\n");
         view_se(me,0);
 
-        if(idx = visitor[query("id",me)]) 
+        if(idx = visitor[query("id",me)])
         {
                 for(i=0;i<sizeof(idx);i++)
                 {
@@ -377,7 +377,7 @@ int do_toss(string arg)
                         if(v)
                                 view_se(me,v);
                 }
-        }        
+        }
         return 1;
 }
 
@@ -398,7 +398,7 @@ int do_reset(string arg)
                                 return notify_fail("你都不玩啊！\n");
                 }
         }
-                
+
         reset_game(1);
         msg(this_player(),0,"$N重置了游戏。\n");
         return 1;
@@ -431,7 +431,7 @@ int do_view(string arg)
         object ob;
 
         me = this_player();
-        
+
         if(!is_playing(me))
         {
                 if(arg&&(ob = get_player(arg)))
@@ -443,7 +443,7 @@ int do_view(string arg)
         }
         else
                 ob = me;
-        
+
         view_se(ob,me);
         return 1;
 }
@@ -458,7 +458,7 @@ int do_join(string arg)
         if(is_playing(me))
                 return notify_fail("你已经参加了。\n");
 
-        player[query("id",me)]=allocate(se_num); 
+        player[query("id",me)]=allocate(se_num);
         toss(me);
         msg(me,0,"$N加入游戏了。\n");
         return 1;
@@ -468,7 +468,7 @@ int do_next(string arg)
 {
         object ob;
         object me;
-        
+
         me = this_player();
         if(!is_playing(me))
                 return notify_fail("你都不玩啊！\n");
@@ -479,7 +479,7 @@ int do_next(string arg)
                 return notify_fail("现在是谁猜啊？\n");
 
         ob = get_cur_player();
-        
+
         if(ob==0)
         {
                 msg(0,0,"有玩家缺场了，请重新开始游戏(start)。\n");
@@ -500,7 +500,7 @@ int do_guess(string arg)
         object ob;
         object me;
         string nextone;
-        
+
         me = this_player();
         if(!is_playing(me))
                 return notify_fail("你都不玩啊！\n");
@@ -575,7 +575,7 @@ int show_all_se(object who)
         if(!ob||!who)return 0;
 
         has_guess = 0;
-        
+
         idx = keys(player);
         c = 0;
         m = "";
@@ -637,7 +637,7 @@ int do_dahua(string arg)
 {
         object ob;
         object me;
-        
+
         me = this_player();
 
         if(!arg)
@@ -651,7 +651,7 @@ int do_dahua(string arg)
 
         if(!has_guess||!last_player)
                 return notify_fail("还没有开始猜骰子了。\n");
-        
+
         ob = get_player(last_player);
         if(ob==me)
                 return notify_fail("自己不相信自己。\n");
@@ -676,7 +676,7 @@ int do_finish(string arg)
         if(has_guess)
                 return notify_fail("已经开始猜骰子了。\n");
 
-        player_deal[query("id",me)] = 1; 
+        player_deal[query("id",me)] = 1;
         msg(me,0,"$N准备好了。\n");
         if(sizeof(player_deal)==sizeof(player))
         {
@@ -694,7 +694,7 @@ int do_finish(string arg)
                 else
                         msg(0,0,"缺少了"+cur_player+"，不能进行游戏，请重新开始(start)\n");
         }
-        
+
         return 1;
 }
 
@@ -713,10 +713,10 @@ int do_showc(string arg)
         string* idx;
         int i;
 
-        if(!counter) return 0; 
+        if(!counter) return 0;
 
         idx = keys(player);
-        
+
         r = "计数表(Scoreboard)\n－－－－－－－－－－－－－－－－－\nID　　　　　　　　分数\n－－－－－－－－－－－－－－－－－\n";
         for(i=0;i<sizeof(idx);i++)
         {
@@ -745,7 +745,7 @@ int do_visitor(string arg)
                 del = 0;
                 key = arg;
         }
-                
+
         me = this_player();
         if(is_playing(me))
         {

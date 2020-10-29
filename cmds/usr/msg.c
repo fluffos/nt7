@@ -137,7 +137,7 @@ int main(object me, string arg)
         if( size ) {
                 string *str;
 
-                str = ({ (target?target->query_idname():"")+"共有 "+(size/3)+" 笔旧讯息纪录：\n─────────────────────────────────────\n" });
+                str = ({ (target?target->query_idname():"")+"共有 "+(size/3)+" 笔旧讯息纪录：\n--------------------------------------------------------------------------\n" });
 
                 if( arg && !target ) {
                         for(i=0;i<size;i+=3)
@@ -154,7 +154,7 @@ int main(object me, string arg)
                                 //str += ({ HIW+TIME_D->replace_ctime(atoi(data[i]))+NOR"-"+data[i+2] });
                 }
 
-                str += ({ "────────────────────────────目前时刻 "HIW+ctime(time())[11..15]+NOR"──\n" });
+                str += ({ "--------------------------------------------------------目前时刻 "HIW+ctime(time())[11..15]+NOR"----\n" });
                 me->start_more(implode(str, ""));
                 set("msg/time", time(), me);
                 me->save();

@@ -40,7 +40,7 @@ int recognize_apprentice(object ob)
 
 int accept_object(object who, object ob)
 {
-        object me = this_player();
+//      object me = this_player();
         if( !query_temp("mark/李", who) )
         set_temp("mark/李", 0, who);
         if( query("money_id", ob) && ob->value() >= 10000 )

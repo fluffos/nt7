@@ -76,7 +76,7 @@ void attempt_apprentice(object ob)
 		command("say 阿弥陀佛，善哉！善哉！");
 		message_vision("$N双手合十，恭恭敬敬地跪了下来。\n",ob);
 		name = ob->query("name");
-		new_name = "了" + name[2..3];
+		new_name = "了" + name[1..1];
 		command("say 你这么刻苦用功，贫僧就收下你吧。从今以后你的法名叫做"+new_name+"。");
 		ob->set("name", new_name);
 		ob->set("shen", 0);

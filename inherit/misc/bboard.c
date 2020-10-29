@@ -459,7 +459,7 @@ int do_followup(string arg)
 
 int do_read(string arg)
 {
-        int num, rep, last_read_time, i, last, arc, private_board;
+        int num/*, rep*/, last_read_time/*, i, last*/, arc, private_board;
         mapping *notes, fam;
         string myid, msg, file;
         string family;

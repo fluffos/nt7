@@ -38,7 +38,7 @@ int accept_fight(object me)
 
 void init()
 {
-        object ob, me, money;
+        object ob/*, me, money*/;
 
         ::init();
         ob = this_player();

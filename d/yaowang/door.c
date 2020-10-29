@@ -19,7 +19,7 @@ LONG
         "south" : __DIR__"tiandi2",
 ]));
         set("item_desc", ([
-                "bei" :  HIW"\n     ┏━━┓\n"+
+                "bei" :  HIW"\n     ┏----┓\n"+
                    HIW"     ┃ "HIB"药"HIW" ┃\n"+
                    HIW"     ┃ "HIB"王"HIW" ┃\n"+
                    HIW"     ┃ "HIB"谷"HIW" ┃\n"+
@@ -32,7 +32,7 @@ LONG
                    HIW"     ┃ "HIR"杀"HIW" ┃\n"+
                    HIW"     ┃ "HIR"无"HIW" ┃\n"+
                    HIW"     ┃ "HIR"赦"HIW" ┃\n"+
-                   HIW"     ┗━━┛\n"NOR,
+                   HIW"     ┗----┛\n"NOR,
         ]));
         set("outdoors", "yaowang");
 
@@ -41,7 +41,7 @@ LONG
 }
 int valid_leave(object me, string dir)
 {
-        if( dir=="north" 
+        if( dir=="north"
          && query("party/party_name", me) != "药王谷" )
                 return notify_fail(WHT"请看石碑！\n"NOR);
         return ::valid_leave(me, dir);

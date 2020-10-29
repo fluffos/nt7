@@ -51,8 +51,8 @@ void local_input(string str)
 
 int check_time()
 {
-      mixed* times = localtime(time());
-      int hours = times[2];
+//    mixed* times = localtime(time());
+//    int hours = times[2];
       int fd, ret;
 
       if(1)

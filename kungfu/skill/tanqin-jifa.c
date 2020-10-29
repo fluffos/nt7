@@ -15,7 +15,7 @@ int valid_learn(object me)
 int play(object me, object ob, string arg)
 {
         int lvl;
-        int i;
+//      int i;
         string m_name;
 
         if (! arg)

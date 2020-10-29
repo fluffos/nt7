@@ -45,7 +45,7 @@ public int request_work(object who, object ob, string name)
 
         if (! file_size(WORK_DIR + name + ".c"))
                 return 0;
-                
+
         return (WORK_DIR + name + ".c")->request_work(who, ob);
 }
 
@@ -56,7 +56,7 @@ public string assign_work(object who, string name)
 
         if (! file_size(WORK_DIR + name + ".c"))
                 return 0;
-                
+
         return (WORK_DIR + name + ".c")->assign_work(who);
 }
 
@@ -67,7 +67,7 @@ public int query_work(object who, string name)
 
         if (! file_size(WORK_DIR + name + ".c"))
                 return 0;
-                
+
         return (WORK_DIR + name + ".c")->query_work(who);
 }
 
@@ -78,7 +78,7 @@ public int start_work(object who, string name)
 
         if (! file_size(WORK_DIR + name + ".c"))
                 return 0;
-                
+
         return (WORK_DIR + name + ".c")->start_work(who);
 }
 
@@ -110,13 +110,13 @@ public string query_all_work()
                 return "目前系统中没有任何工作。\n";
 
         info = HIC "目前系统中有 " HIW + sizeof(wlist) + HIC " 项工作：\n" NOR
-               HIW "─工作──奖励───人数──最低经验──最高经验─\n" NOR;
+               HIW "--工作----奖励------人数----最低经验----最高经验--\n" NOR;
         foreach(work in wlist)
         {
                 winfo = (WORK_DIR + work + ".c")->query_info();
                 info += sprintf(WHT "%-10s" CYN " %-10d %-10d %-10d %-10d\n" NOR,
                                 winfo[0], winfo[1], winfo[2], winfo[3], winfo[4]);
         }
-        info += HIW "─────────────────────────" NOR;
+        info += HIW "--------------------------------------------------" NOR;
         return info;
 }

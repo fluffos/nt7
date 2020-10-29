@@ -30,7 +30,7 @@ int valid_enable(string usage) { return usage == "force"; }
 
 int valid_learn(object me)
 {
-        int i, nb, nf, nh, ns, ts;
+        int /*i,*/ nb, nf, nh/*, ns, ts*/;
         nb = (int)me->query_skill("yunlong-xinfa", 1);
         nf = (int)me->query_skill("force", 1);
         nh = (int)me->query_skill("yunlong-shengong", 1);

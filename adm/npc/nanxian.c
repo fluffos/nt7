@@ -191,7 +191,7 @@ mixed accept_ask(object who, string topic)
                         "taxue",
                         "diwang",
                 });
-                int n;
+//              int n;
                 string mapsk;
                 string sepk;
 

@@ -450,7 +450,7 @@ void do_presk(string fam, int nlv, string bhand,string shand,string sparry,strin
 
 void setlv(int tlv, int nt1, int nt2)
 {
-        int rnd, elv, idxn, ntmp, nsk, rndtmp;
+        int rnd, elv, idxn, ntmp, nsk/*, rndtmp*/;
         float fudmg;
         
         if (tlv >= 950)
@@ -1025,8 +1025,8 @@ void cz_fang(object me)
 
 void init()
 {
-        int i;
-        object ob, me = this_object();
+//      int i;
+        object /*ob,*/ me = this_object();
         if (playerp(this_player()) && !query("env/invisible", this_player())) {
                         set("enemy_player", this_player(), me);
                         me->stop_busy();
@@ -1086,12 +1086,12 @@ void die(object killer)
         object *t;              // 杀死我的人的队伍列表
         object tob, wiz;
         string diemsg;
-        int i;
-                object *inv;
+//      int i;
+//              object *inv;
 
-                object gift_ob;
-                string s_gift, *key_s_gift;
-                int gift_point;
+//              object gift_ob;
+//              string s_gift,*key_s_gift;
+//              int gift_point;
 
         // 定义奖励物品列表
                 mixed oblist;
@@ -1230,7 +1230,7 @@ void die(object killer)
 
 void create()
 {
-        object ob; 
+//      object ob; 
         set_name(HIC + "灵感塔" + HIR + "囚徒" + NOR, ({ "qiu tu", "boss" }));
         //set("nickname", NOR + "某某派高手" + NOR);
         set("age", 1);
@@ -1256,5 +1256,4 @@ void create()
         setup();
         
 }
-
 

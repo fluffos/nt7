@@ -97,7 +97,7 @@ void create()
 
 void init()
 {
-        object me, ob;
+        object me/*, ob*/;
 
         ::init();
         if (! interactive(me = this_player()))
@@ -170,4 +170,3 @@ mixed hit_ob(object me, object ob, int damage_bouns)
         return HIB "$N" HIB "“哈”的一声吐出一口寒气，登时令$n"
                HIB "全身几乎冻僵。\n" NOR;
 }
-

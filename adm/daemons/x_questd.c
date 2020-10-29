@@ -6,7 +6,7 @@
 public int query_quest(object me, object ob)
 {
     mapping temp, quest = ([]);
-    string arg, msg, str, place, where, question, answer;
+    string arg, msg, str/*, place, where*/, question, answer;
     object npc;
     object maze_target;
     object maze_object;

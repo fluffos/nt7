@@ -120,7 +120,7 @@ int do_volunteer()
         object me = this_player();
         object *ob;
         object *obs;
-        int i;
+//      int i;
 
         if( query_temp("in_guard", me) )
                 return notify_fail("知客道长对你说：你专心守好山门，别想打两份工。\n");
@@ -333,9 +333,9 @@ void die()
 
 int accept_object(object who, object ob)
 {
-        object obn, wage;
-        int i, j;
-        string *wanted;
+        object obn/*, wage*/;
+//      int i,j;
+//      string *wanted;
         if( query("money_id", ob) && ob->value() >= 100*query("age", who) )
         {
                 if( (query("family/family_name", who)) == "武当派" )

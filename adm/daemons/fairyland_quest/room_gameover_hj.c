@@ -147,9 +147,9 @@ int do_mewiz(string arg)
 }
 
 void reset()
-{ 
-    ::reset(); 
-    set("no_clean_up", 1); 
+{
+    ::reset();
+    set("no_clean_up", 1);
 }
 
 int valid_leave(object me, string dir)
@@ -220,15 +220,15 @@ string get_TOP_pic()
     string c1 = HIB, c2 = HIY, c3 = HIC, c4 = HIG;
 
     return sprintf(c1+"
- ┏━━━━┳━━━━━━━━━━┳━━━━━━┓
+ ┏--------┳--------------------┳------------┓
  ┃"+c2+"最高总分"+c1+"┃"+c2+"%|20s"+c1+"┃"+c2+"%|12d"+c1+"┃
- ┣━━━━╋━━━━━━━━━━╋━━━━━━┫
+ ┣--------╋--------------------╋------------┫
  ┃"+c3+"最高得分"+c1+"┃"+c3+"%|20s"+c1+"┃"+c3+"%|12d"+c1+"┃
- ┣━━━━╋━━━━━━━━━━╋━━━━━━┫
+ ┣--------╋--------------------╋------------┫
  ┃"+c4+"最高效率"+c1+"┃"+c4+"%|20s"+c1+"┃"+c4+"%6|d /小时"+c1+"┃
- ┣━━━━┻━━┳━━━━┳━━┻━┳━━━━┫
+ ┣--------┻----┳--------┳----┻--┳--------┫
  ┃"HIW"总人次%|8d"+c1+"┃"HIC"胜%|6d"+c1+"┃"HIM"败%|6d"+c1+"┃"HIY"宝%|6d"+c1+"┃
- ┗━━━━━━━┻━━━━┻━━━━┻━━━━┛\n"NOR, 
+ ┗--------------┻--------┻--------┻--------┛\n"NOR,
 
     HighName1+"("+HighId1+")", HighScore1,
     HighName2+"("+HighId2+")", HighScore2,
@@ -422,7 +422,7 @@ void score_sp_tools_go( object me, int score, int hj_obj_amount )
                     // 这个标记是为了防止以 “宝物的累积 -> 一次性带出” 的方法来冲击高分记录的 :)
                     // 虽然现在这样也行，不过这可亏很多了，呵呵。
                     // 更详细的信息可以看 _qxd_.c 的 3 号主文件
-                    if( query("this_time_mark", temp) != 
+                    if( query("this_time_mark", temp) !=
                         query_temp("this_time_mark", me) )
                     {
                         temp_score = 500;

@@ -39,7 +39,7 @@ int restore()
 
 int save()
 {
-        int res;
+//      int res;
 
         // this object (/inherit/room/buildroom) doesn't need to save
         if (base_name(this_object()) + ".c" == __FILE__)
@@ -184,7 +184,7 @@ string query_room_name(string room_name)
 {
         mapping proom;
         string *idk;
-        int i, k;
+        int i/*, k*/;
 
         proom = query("private_room");
         if (! proom || ! sizeof(proom))

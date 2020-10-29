@@ -8,7 +8,7 @@ inherit F_CLEAN_UP;
 int main(object me, string arg)
 {
         string force;
-        int result;
+//      int result;
         function f; 
         int r;
         

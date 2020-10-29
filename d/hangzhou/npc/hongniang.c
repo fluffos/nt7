@@ -47,8 +47,8 @@ void init()
 
 int do_marry(string arg)
 {
-        object marry_card1,marry_card2, obj, me;
-        object *list,ob;
+        object /*marry_card1,marry_card2,*/ obj, me;
+        object *list/*,ob*/;
         int i, have_marry;
         me = this_player();
         list = all_inventory(me);
@@ -131,10 +131,10 @@ int do_marry(string arg)
 int do_unmarry(string arg)
 {
         object me = this_player();
-        object ob, couple_ob;
-        int i, have_marry;
-        string target, tmpstr1, tmpstr2,str1,str2;
-        string cardname;
+        object /*ob,*/ couple_ob;
+//      int i,have_marry;
+        string /*target,*/ tmpstr1, tmpstr2,str1,str2;
+//      string cardname;
 
         if( !arg ) return notify_fail("红娘笑道: 你要和谁离婚？\n");
         if( !environment() || base_name(environment()) != query("startroom") )

@@ -18,9 +18,9 @@ int main(object me, string arg)
 
         if( !arg || arg == "" ) {
                 msg  = HIC "经脉名冲穴状态\n" NOR;
-                msg += HIC "≡" HIY "───────────────────────" HIC "≡\n" NOR;
+                msg += HIC "≡" HIY "----------------------------------------------" HIC "≡\n" NOR;
                 msg += HIC "\t\t小周天经脉\n" NOR;
-                msg += HIC "≡" HIY "───────────────────────" HIC "≡\n" NOR;
+                msg += HIC "≡" HIY "----------------------------------------------" HIC "≡\n" NOR;
                 msg+=HIG"阴跷脉\t\t\t\t\t"+((query("jingmai/finish", me) || query("jingmai/阴跷脉/chongxue_ok", me))?HIM"已打通":HIR"未打通")+"\n"NOR;
                 msg+=HIG"阳跷脉\t\t\t\t\t"+((query("jingmai/finish", me) || query("jingmai/阳跷脉/chongxue_ok", me))?HIM"已打通":HIR"未打通")+"\n"NOR;
                 msg+=HIG"阴维脉\t\t\t\t\t"+((query("jingmai/finish", me) || query("jingmai/阴维脉/chongxue_ok", me))?HIM"已打通":HIR"未打通")+"\n"NOR;
@@ -30,9 +30,9 @@ int main(object me, string arg)
                 msg+=HIG"任外脉\t\t\t\t\t"+((query("jingmai/finish", me) || query("jingmai/任外脉/chongxue_ok", me))?HIM"已打通":HIR"未打通")+"\n"NOR;
                 msg+=HIG"督外脉\t\t\t\t\t"+((query("jingmai/finish", me) || query("jingmai/督外脉/chongxue_ok", me))?HIM"已打通":HIR"未打通")+"\n"NOR;
                 msg+=HIG"经外奇脉\t\t\t\t"+((query("jingmai/finish", me) || query("jingmai/经外奇脉/chongxue_ok", me))?HIM"已打通":HIR"未打通")+"\n"NOR;
-                msg += HIC "≡" HIY "───────────────────────" HIC "≡\n" NOR;
+                msg += HIC "≡" HIY "----------------------------------------------" HIC "≡\n" NOR;
                 msg += HIY "\t\t大周天经脉\n" NOR;
-                msg += HIC "≡" HIY "───────────────────────" HIC "≡\n" NOR;
+                msg += HIC "≡" HIY "----------------------------------------------" HIC "≡\n" NOR;
                 msg+=HIG"手太阴脉\t\t\t\t"+((query("jingmai/finish", me) || query("jingmai/手太阴脉/chongxue_ok", me))?HIM"已打通":HIR"未打通")+"\n"NOR;
                 msg+=HIG"手太阳脉\t\t\t\t"+((query("jingmai/finish", me) || query("jingmai/手太阳脉/chongxue_ok", me))?HIM"已打通":HIR"未打通")+"\n"NOR;
                 msg+=HIG"足太阴脉\t\t\t\t"+((query("jingmai/finish", me) || query("jingmai/足太阴脉/chongxue_ok", me))?HIM"已打通":HIR"未打通")+"\n"NOR;
@@ -45,7 +45,7 @@ int main(object me, string arg)
                 msg+=HIG"足阳明脉\t\t\t\t"+((query("jingmai/finish", me) || query("jingmai/足阳明脉/chongxue_ok", me))?HIM"已打通":HIR"未打通")+"\n"NOR;
                 msg+=HIG"手厥阴脉\t\t\t\t"+((query("jingmai/finish", me) || query("jingmai/手厥阴脉/chongxue_ok", me))?HIM"已打通":HIR"未打通")+"\n"NOR;
                 msg+=HIG"足厥阴脉\t\t\t\t"+((query("jingmai/finish", me) || query("jingmai/足厥阴脉/chongxue_ok", me))?HIM"已打通":HIR"未打通")+"\n"NOR;
-                msg += HIC "≡" HIY "───────────────────────" HIC "≡\n" NOR;
+                msg += HIC "≡" HIY "----------------------------------------------" HIC "≡\n" NOR;
                 write(msg);
                 help(me);
 

@@ -93,9 +93,9 @@ void create_identity (mixed master, mixed where)
 
 int init_identity (object me, object master, object where)
 {
-        mapping skill_status;
-        string *skillnames;
-        int i;
+//      mapping skill_status;
+//      string *skillnames;
+//      int i;
 
         me->move(where, 1);
         set("where",base_name(where));
@@ -131,7 +131,7 @@ int do_clone(object me, object ob)
         object *inv, newob,weapon;
         mapping hp_status, skill_status, map_status, prepare_status;
         string *sname, *mname, *pname;
-        int i, weapon_cnt, armor_cnt, temp;
+        int i/*, weapon_cnt, armor_cnt*/, temp;
         string skill1,skill2;
 
         seteuid( geteuid(me) );
@@ -480,7 +480,7 @@ void master_announce (object me, object who, object ob)
 int convert_identity (object me, object ob)
 {
         object who;
-        string err;
+//      string err;
 
         who = UPDATE_D->global_find_player(query("current_player", me)); 
         if( objectp(who) )
@@ -519,7 +519,7 @@ int convert_identity (object me, object ob)
 string query_save_file()
 {
         string str = query("save_file");
-        int i;
+//      int i;
 
         if (str) return str;
         str = DATA_DIR+"zhangmen/"+query("current_master");

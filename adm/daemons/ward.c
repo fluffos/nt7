@@ -200,7 +200,7 @@ int do_inquiry(object me, string arg)
 
         str = (arg == "meng" ? "蒙古" : "大宋") + "目前国力及军力状况";
         str += "\n\n";
-        str += HIC "≡" HIY "──────────────────────────" HIC "≡\n" NOR;
+        str += HIC "≡" HIY "----------------------------------------------------" HIC "≡\n" NOR;
 
         str += sprintf(WHT "粮草：%-10d担\t\t    饷银：%-10d两\n" NOR, info[0], info[1]);
         str += sprintf(WHT "兵甲：%-10d件\t\t    战马：%-10d匹\n" NOR, info[2], info[3]);
@@ -228,7 +228,7 @@ int do_inquiry(object me, string arg)
         str += "\n\n";
         str += "战争已经进行时间 " + query_continue_time() + " \n";
         str += HIB "已阵亡将领" + chinese_number(info[8] - sizeof(total)) + "名\n" NOR;
-        str += HIC "≡" HIY "──────────────────────────" HIC "≡\n" NOR;
+        str += HIC "≡" HIY "----------------------------------------------------" HIC "≡\n" NOR;
         write(str);
         return 1;
 }
@@ -255,7 +255,7 @@ int query_economy(object me)
         else
                 return meng_info->economy;
 }
-        
+
 int query_horses(object me)
 {
         string party;
@@ -267,7 +267,7 @@ int query_horses(object me)
         else
                 return meng_info->horses;
 }
-      
+
 int query_weapons(object me)
 {
         string party;
@@ -279,7 +279,7 @@ int query_weapons(object me)
         else
                 return meng_info->weapons;
 }
-  
+
 int query_stones(object me)
 {
         string party;
@@ -750,10 +750,10 @@ void auto_check()
                                 continue;
                         }
                         // 检查率领的军队(压粮没有带兵的除外)
-                        if( !query_temp("warquest/escort", total[i]) && 
-                            !query_temp("warquest/guard", total[i]) && 
-                            query_temp("warquest/train", total[i]) && 
-                            query("combat_exp", total[i])<20000000 && 
+                        if( !query_temp("warquest/escort", total[i]) &&
+                            !query_temp("warquest/guard", total[i]) &&
+                            query_temp("warquest/train", total[i]) &&
+                            query("combat_exp", total[i])<20000000 &&
                             member_array(room, ward_place) == -1) {
                                 if( query("qi", total[i])<query("max_qi", total[i]) )
                                 // total[i]->query_temp("warquest/group") < 1)
@@ -785,7 +785,7 @@ void check_assignment()
                 return;
 
         total = song_info->generals;
-        total=filter_array(total,(:objectp($1) && query_temp("warquest/guard", $1) && 
+        total=filter_array(total,(:objectp($1) && query_temp("warquest/guard", $1) &&
                                        (sscanf(base_name(environment($1)), "/d/xiangyang/%*s") ||
                                         sscanf(base_name(environment($1)), "/d/wuguan/%*s")) :));
 
@@ -875,7 +875,7 @@ void auto_fight()
                                 }
                         }
 
-                        if( mapp(query("exits", env)) && sizeof(query("exits", env)) && 
+                        if( mapp(query("exits", env)) && sizeof(query("exits", env)) &&
                             !query_temp("warquest/attack", ob) )
                         {
                                 exits=query("exits", env);
@@ -966,9 +966,9 @@ void auto_fight()
 
                         env = environment(ob);
                         // 必须有队伍才能攻击
-                        if( !query_temp("warquest/attack", ob) && 
-                              query_temp("warquest/group", ob)>0 && 
-                            (query_temp("warquest/train", ob) == "cavalry" || 
+                        if( !query_temp("warquest/attack", ob) &&
+                              query_temp("warquest/group", ob)>0 &&
+                            (query_temp("warquest/train", ob) == "cavalry" ||
                               query_temp("warquest/train", ob) == "archer") )
                         {
                                 if( mapp(query("exits", env)) && sizeof(query("exits", env)) )
@@ -1023,8 +1023,8 @@ void auto_fight()
                                         }
                                 }
                         } else
-                        if( !query_temp("warquest/attack", ob) && 
-                              query_temp("warquest/group", ob)>0 && 
+                        if( !query_temp("warquest/attack", ob) &&
+                              query_temp("warquest/group", ob)>0 &&
                               query_temp("warquest/train", ob) == "infantry" )
                         {
                                 obs = all_inventory(env);
@@ -1215,7 +1215,7 @@ varargs void do_attack(object me, object target, string zhen, string craft,
                                 continue;
                         }
 
-                        if( query("qi", target)<0 || 
+                        if( query("qi", target)<0 ||
                             environment(me) != environment(target))
                                 break;
                         /*
@@ -1249,7 +1249,7 @@ varargs void do_attack(object me, object target, string zhen, string craft,
         {
                 if (! objectp(target)) break;
 
-                if( query_temp("warquest/train", me) == "cavalry" || 
+                if( query_temp("warquest/train", me) == "cavalry" ||
                     query_temp("warquest/train", me) == "infantry" )
                 {
                         /*
@@ -1359,7 +1359,7 @@ void auto_move()
                         room = environment(ob);
 
                         // 兵法辅助攻击-陷阱
-                        if( query("craft/trap", room) && 
+                        if( query("craft/trap", room) &&
                             query("craft/trap", room) != "meng" && random(10) )
                         {
                                 // 损失一营部队
@@ -1406,8 +1406,8 @@ void auto_move()
                         }
 
                         if (! living(ob) || ob->is_fighting() ||
-                            query_temp("warquest/attack", ob) || 
-                            query_temp("warquest/break", ob) || 
+                            query_temp("warquest/attack", ob) ||
+                            query_temp("warquest/break", ob) ||
                                 ob->is_busy()) continue;
 
                         if (! undefinedp(move_way[file]))
@@ -1801,9 +1801,9 @@ void auto_train()
 int check_out(object me)
 {
         object ob;
-        mapping my;
+//      mapping my;
         string msg;
-        string room;
+//      string room;
 
         tell_object(me, HIR "\n你乘着混乱，逃回元帅大营，又饥有渴，已到半昏迷状态！\n" NOR);
         if (ob = me->query_last_damage_from())
@@ -1828,7 +1828,7 @@ int check_out(object me)
 // overide function of quit
 int check_quit(object me)
 {
-           message("channel:rumor", MAG "【军情】大宋：" + MAG + me->name(1) + "在战场上临阵脱逃。\n", users());  
+           message("channel:rumor", MAG "【军情】大宋：" + MAG + me->name(1) + "在战场上临阵脱逃。\n", users());
         restore_status(me);
 
         if (arrayp(song_info->generals) && sizeof(song_info->generals))
@@ -1871,9 +1871,9 @@ void fail_kingwar()
         if (objectp(song_info->marshal))
         {
                 restore_status(song_info->marshal);
-                song_info->marshal->move("/d/city/guangchang"); 
-                message("vision", "只见" + song_info->marshal->name() + "走了过来。\n", 
-                        environment(song_info->marshal), ({ song_info->marshal })); 
+                song_info->marshal->move("/d/city/guangchang");
+                message("vision", "只见" + song_info->marshal->name() + "走了过来。\n",
+                        environment(song_info->marshal), ({ song_info->marshal }));
                 song_info->marshal->apply_condition("junquest_fail", 50);
         }
 
@@ -1886,9 +1886,9 @@ void fail_kingwar()
                         if (! objectp(total[i]))
                                 continue;
                         restore_status(total[i]);
-                        total[i]->move("/d/city/guangchang"); 
-                        message("vision", "只见" + total[i]->name() + "走了过来。\n", 
-                                environment(total[i]), ({ total[i] })); 
+                        total[i]->move("/d/city/guangchang");
+                        message("vision", "只见" + total[i]->name() + "走了过来。\n",
+                                environment(total[i]), ({ total[i] }));
                 }
         }
         restore_kingwar();
@@ -1897,8 +1897,8 @@ void fail_kingwar()
 
 void win_kingwar()
 {
-        object *total;
-        int i;
+//      object *total;
+//      int i;
 
         remove_enemy();
         message_ward(CHINESE_D->chinese_date((time() - 14*365*24*60*60)) +
@@ -2126,11 +2126,11 @@ void restore_kingwar()
 
 void give_bouns()
 {
-        int reward, rew, pot, exp, mar, jungong, i, j;
+        int reward/*, rew*/, pot, exp, mar, jungong, i/*, j*/;
         string prompt;
-        object me;
-        object *total, ob;
-        int war_times;
+//      object me;
+        object *total/*, ob*/;
+//      int war_times;
 
         total = song_info->generals;
         if (! objectp(song_info->marshal))
@@ -2369,7 +2369,7 @@ string do_assign(object me, string arg)
 
         if( query("id", ob) == "jianjun" )
                 return "你不可以命令大宋监军去做别的事情！\n";
-        
+
         if( query("eff_qi", ob) < query("max_qi", ob) )
                 return "你还是等对方养好伤再派遣任务吧。\n";
 
@@ -2384,8 +2384,8 @@ string do_assign(object me, string arg)
                 for (i=sizeof(inv)-1; i>=0; i--)
                 if( query_temp("warquest/group", inv[i])>0 )
                 {
-                        if( query_temp("warquest/purchase", inv[i]) || 
-                            query_temp("warquest/guard", inv[i]) || 
+                        if( query_temp("warquest/purchase", inv[i]) ||
+                            query_temp("warquest/guard", inv[i]) ||
                             (userp(inv[i]) && inv[i] != me))
                                 continue;
 

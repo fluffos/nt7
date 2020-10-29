@@ -181,14 +181,14 @@ string module_stats(object ob, object owner)
                         mod_files = query_temp("modfiles_" + mark_level+"_"+modname, owner);
                         mod_names = query_temp("modnames_" + mark_level+"_"+modname, owner);
                 }
-                
+
                 if( !pointerp(mod_files) ) mod_files = ({ });
                 if( !pointerp(mod_names) ) mod_names = ({ });
-                
+
                 msg = sprintf(HIW"  %s(%d/%d"NOR")\n",
                                modname,
                                query_temp("modamount_"+mark_level+"_"+modname, owner), num);
-                msg+= sprintf(NOR "┏━━━━━━━━━━┓\n");
+                msg+= sprintf(NOR "┏--------------------┓\n");
 
                 eq_files = query_temp("modfiles_" + mark_level+"_"+modname, owner);
                 if( !pointerp(eq_files) )
@@ -217,14 +217,14 @@ string module_stats(object ob, object owner)
                         msg += str;
                 }
 
-                msg += sprintf(NOR "┗━━━━━━━━━━┛\n");
+                msg += sprintf(NOR "┗--------------------┛\n");
                 bas = mod_stats->bas;
                 if( query_temp("modamount_"+mark_level+"_"+modname, owner) >= bas )
                         eq_str = HIR;
                 else
                         eq_str = HIK;
                 //msg += sprintf(HIG"  装备效果"NOR")\n");
-                msg += sprintf(NOR "%s┏━━━━━━━━━━┓"NOR"\n", eq_str);
+                msg += sprintf(NOR "%s┏--------------------┓"NOR"\n", eq_str);
 
                 str = sprintf("%d件:", bas);
                 msg += sprintf(NOR "%s┃"NOR"%-20s%s┃"NOR"\n", eq_str, str, eq_str);
@@ -283,7 +283,7 @@ string module_stats(object ob, object owner)
                                                        eq_str, str, eq_str);
                         }
                 }
-                msg += sprintf(NOR "%s┗━━━━━━━━━━┛"NOR"\n", eq_str);
+                msg += sprintf(NOR "%s┗--------------------┛"NOR"\n", eq_str);
         }
         return msg;
 }
@@ -947,7 +947,7 @@ void unequip_module(object ob, object owner)
                 if( !classp(tmp_stats = copy(query_temp("modequip_"+mark_level+"_"+modname+"_stats", owner))) ||
                     !query_temp("modequip_"+mark_level+"_"+modname+"_name", owner) )
                         error("套装属性出现混乱，请立刻提交bug给admin。\n");
-                
+
                 mod_stats->mod_name = modname;  // 自造套装名称不是一样
                 if( ob->is_item_make() )
                 {
@@ -1028,7 +1028,7 @@ void unequip_module(object ob, object owner)
                 if( !classp(tmp_stats = copy(query_temp("modequip_"+mark_level+"_"+modname+"_stats", owner))) ||
                     !query_temp("modequip_"+mark_level+"_"+modname+"_name", owner) )
                         error("套装属性出现混乱，请立刻提交bug给admin。\n");
-                
+
                 mod_stats->mod_name = modname;  // 自造套装名称不是一样
                 if( ob->is_item_make() )
                 {

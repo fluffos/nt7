@@ -198,8 +198,8 @@ void alloc_task(string arg, int i)
 
         foreach (inv in invs)
                 if (((inv->is_character() && ! userp(inv) &&
-                    query("race", inv) != "野兽" && 
-                    !query_temp("quest_ob", inv) && 
+                    query("race", inv) != "野兽" &&
+                    !query_temp("quest_ob", inv) &&
                     ! inv->is_stay_in_room() &&
                     ! inv->is_vendor() &&
                     ! inv->is_master()) || inv->is_container()) &&
@@ -487,34 +487,34 @@ string display_locate(int dist, string alti, string dire, string city)
                         msg[2] = " " + color + (random(4) == 0 ? symbol[14] : symbol[random(3) + 3]) + NOR + "   ";
                         break;
         }
-        
+
         if( random(3) )
         {
                 switch(random(9))
                 {
                 case 5:
                 case 4:
-                output = HIW "所在区域：" + city + "\n━━━━━━━━\n\n\n" NOR + alti + "\n" + TEXT2_D->display(dire, 12, "@@", "__") + "\n\n" NOR + n_color + "距离指数：" +
-                        sprintf(NOR + color + "%'━'" + (48-dist) + "s" + NOR + n_color + "%'━'" + dist + "s%d\n" NOR, "", "", dist);
+                output = HIW "所在区域：" + city + "\n----------------\n\n\n" NOR + alti + "\n" + TEXT2_D->display(dire, 12, "@@", "__") + "\n\n" NOR + n_color + "距离指数：" +
+                        sprintf(NOR + color + "%'--'" + (48-dist) + "s" + NOR + n_color + "%'--'" + dist + "s%d\n" NOR, "", "", dist);
                         break;
                 case 3:
                 case 2:
-                output = HIW "所在区域：" + city + "\n━━━━━━━━\n\n\n" NOR + alti + "\n" + TEXT2_D->display(dire, 14, "@@", "__") + "\n\n" NOR + n_color + "距离指数：" +
-                        sprintf(NOR + color + "%'━'" + (48-dist) + "s" + NOR + n_color + "%'━'" + dist + "s%d\n" NOR, "", "", dist);
+                output = HIW "所在区域：" + city + "\n----------------\n\n\n" NOR + alti + "\n" + TEXT2_D->display(dire, 14, "@@", "__") + "\n\n" NOR + n_color + "距离指数：" +
+                        sprintf(NOR + color + "%'--'" + (48-dist) + "s" + NOR + n_color + "%'--'" + dist + "s%d\n" NOR, "", "", dist);
                         break;
                 case 1:
                 case 0:
-                output = HIW "所在区域：" + city + "\n━━━━━━━━\n\n\n" NOR + alti + "\n" + TEXT2_D->display(dire, 16, "@@", "__") + "\n\n" NOR + n_color + "距离指数：" +
-                        sprintf(NOR + color + "%'━'" + (48-dist) + "s" + NOR + n_color + "%'━'" + dist + "s%d\n" NOR, "", "", dist);
+                output = HIW "所在区域：" + city + "\n----------------\n\n\n" NOR + alti + "\n" + TEXT2_D->display(dire, 16, "@@", "__") + "\n\n" NOR + n_color + "距离指数：" +
+                        sprintf(NOR + color + "%'--'" + (48-dist) + "s" + NOR + n_color + "%'--'" + dist + "s%d\n" NOR, "", "", dist);
                         break;
                 default:
-                output = HIW "所在区域：" + city + "\n━━━━━━━━\n\n\n" NOR + alti + "\n" + TEXT2_D->display(dire, 12, "", "__") + "\n\n" NOR + n_color + "距离指数：" +
-                        sprintf(NOR + color + "%'━'" + (48-dist) + "s" + NOR + n_color + "%'━'" + dist + "s%d\n" NOR, "", "", dist);
+                output = HIW "所在区域：" + city + "\n----------------\n\n\n" NOR + alti + "\n" + TEXT2_D->display(dire, 12, "", "__") + "\n\n" NOR + n_color + "距离指数：" +
+                        sprintf(NOR + color + "%'--'" + (48-dist) + "s" + NOR + n_color + "%'--'" + dist + "s%d\n" NOR, "", "", dist);
                         break;
                 }
                 return output;
         }
-        
+
         i = random(4) + 2;
         // 下面是干扰因素
         /**********************************************************/
@@ -523,14 +523,14 @@ string display_locate(int dist, string alti, string dire, string city)
         msg[2] = filter_symb(fill_f, 1) + sprintf("%" + i + "s", " ") + msg[2] + "   " + filter_symb(fill_b, 1);
         if (alti == "高处") msg[0] += " " + colors[random(sizeof(colors))] + alti + NOR;
         if (alti == "低处") msg[2] += " " + colors[random(sizeof(colors))] + alti + NOR;
-        output = HIW "所在区域：" + city + "\n━━━━━━━━\n\n\n" NOR + msg[0] + "\n" + msg[1] + "\n" + msg[2] + "\n" NOR + n_color + "距离指数：" +
+        output = HIW "所在区域：" + city + "\n----------------\n\n\n" NOR + msg[0] + "\n" + msg[1] + "\n" + msg[2] + "\n" NOR + n_color + "距离指数：" +
                 //sprintf(color + "%'□'" + dist + "s" + n_color + "%'■'" + (48-dist) + "s%d\n" NOR, "", "", dist);
-                sprintf(NOR + color + "%'━'" + (48-dist) + "s" + NOR + n_color + "%'━'" + dist + "s%d\n" NOR, "", "", dist);
-        //output = HIW "━━━━━━━━\n\n" NOR + msg[0] + "\n" + msg[1] + "\n" + msg[2] + "\n" NOR + n_color + "距离指数：" +
-                //sprintf(color + "%'━'" + dist + "s" + n_color + "%'━'" + (48-dist) + "s\n" NOR, "", "");
+                sprintf(NOR + color + "%'--'" + (48-dist) + "s" + NOR + n_color + "%'--'" + dist + "s%d\n" NOR, "", "", dist);
+        //output = HIW "----------------\n\n" NOR + msg[0] + "\n" + msg[1] + "\n" + msg[2] + "\n" NOR + n_color + "距离指数：" +
+                //sprintf(color + "%'--'" + dist + "s" + n_color + "%'--'" + (48-dist) + "s\n" NOR, "", "");
         return output;
-        
-        
+
+
         /**********************************************************
         msg[0] = sprintf("%" + i + "s", " ") + msg[0];
         msg[1] = sprintf("%" + i + "s", " ") + msg[1];
@@ -617,8 +617,8 @@ int accept_object(object who, object me, object obj)
         if (type != "draw" && type != "find" && type != "sell")
                 return 0;
         if (type == "draw") {
-                if( query("id", obj) != "paper" || !query("draw/info", obj) || 
-                    (objectp(query("draw/info", obj)) && filter_color((query("draw/info", obj))->short()) != query("task/draw", me)) || 
+                if( query("id", obj) != "paper" || !query("draw/info", obj) ||
+                    (objectp(query("draw/info", obj)) && filter_color((query("draw/info", obj))->short()) != query("task/draw", me)) ||
                     query("draw/content", obj) == "上面乱七八糟的看不出画的是什么。\n"){
                         message_vision(CYN"$N"CYN"皱了皱眉道：我要的是"+query("task/draw", me)+
                         "的风景图，你这是什么东西？\n",
@@ -831,8 +831,8 @@ int task_reward(object me, object who, object ob)
         else if (task_count == 40)  gift = ob2_list[random(sizeof(ob2_list))];
         else if (task_count == 20)  gift = ob1_list[random(sizeof(ob1_list))];
 
-#ifdef DB_SAVE 
-        if (MEMBER_D->is_valid_member(query("id", who))) 
+#ifdef DB_SAVE
+        if (MEMBER_D->is_valid_member(query("id", who)))
         {
                 // clear task count
                 if( query("task/count", me) >= 2000 )
@@ -840,12 +840,12 @@ int task_reward(object me, object who, object ob)
         }
         else
 #endif
-        {          
+        {
                 // clear task count
                 if( query("task/count", me) >= 1000 )
                         set("task/count", 0, me);
         }
-        
+
         if (stringp(gift)) {
                 gift_ob = new(gift);
                 gift_ob->move(me, 1);

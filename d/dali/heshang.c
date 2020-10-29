@@ -24,7 +24,7 @@ LONG);
 }
 int valid_leave(object me, string dir)
 {
-        int c_exp,c_skill;
+//      int c_exp,c_skill;
         if (me->query_dex()<25)
         {
                 tell_object(me,"你往藤桥下看了一眼，忽然怕了。\n");

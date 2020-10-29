@@ -49,68 +49,68 @@ string get_deng_pic( int deng )
     switch( deng )
     {
         case 0: return NOR+co1+"
-                    ┏━━━━┓
+                    ┏--------┓
                     ┃"NOR+co3+"●●●  "NOR+co1+"┃
                     ┃"NOR+co3+"●  ●  "NOR+co1+"┃
                     ┃"NOR+co3+"    ●  "NOR+co1+"┃
                     ┃"NOR+co3+"      ●"NOR+co1+"┃
-                    ┗━━━━┛\n\n"NOR;
+                    ┗--------┛\n\n"NOR;
 
         case 1: return NOR+co1+"
-                    ┏━━━━┓
+                    ┏--------┓
                     ┃"NOR+co3+"●●●  "NOR+co1+"┃
                     ┃"NOR+co2+"●  "NOR+co3+"●  "NOR+co1+"┃
                     ┃"NOR+co3+"    ●  "NOR+co1+"┃
                     ┃"NOR+co3+"      ●"NOR+co1+"┃
-                    ┗━━━━┛\n\n"NOR;
+                    ┗--------┛\n\n"NOR;
 
         case 2: return NOR+co1+"
-                    ┏━━━━┓
+                    ┏--------┓
                     ┃"NOR+co2+"●"NOR+co3+"●●  "NOR+co1+"┃
                     ┃"NOR+co2+"●  "NOR+co3+"●  "NOR+co1+"┃
                     ┃"NOR+co3+"    ●  "NOR+co1+"┃
                     ┃"NOR+co3+"      ●"NOR+co1+"┃
-                    ┗━━━━┛\n\n"NOR;
+                    ┗--------┛\n\n"NOR;
 
         case 3: return NOR+co1+"
-                    ┏━━━━┓
+                    ┏--------┓
                     ┃"NOR+co2+"●●"NOR+co3+"●  "NOR+co1+"┃
                     ┃"NOR+co2+"●  "NOR+co3+"●  "NOR+co1+"┃
                     ┃"NOR+co3+"    ●  "NOR+co1+"┃
                     ┃"NOR+co3+"      ●"NOR+co1+"┃
-                    ┗━━━━┛\n\n"NOR;
+                    ┗--------┛\n\n"NOR;
 
         case 4: return NOR+co1+"
-                    ┏━━━━┓
+                    ┏--------┓
                     ┃"NOR+co2+"●●●  "NOR+co1+"┃
                     ┃"NOR+co2+"●  "NOR+co3+"●  "NOR+co1+"┃
                     ┃"NOR+co3+"    ●  "NOR+co1+"┃
                     ┃"NOR+co3+"      ●"NOR+co1+"┃
-                    ┗━━━━┛\n\n"NOR;
+                    ┗--------┛\n\n"NOR;
 
         case 5: return NOR+co1+"
-                    ┏━━━━┓
+                    ┏--------┓
                     ┃"NOR+co2+"●●●  "NOR+co1+"┃
                     ┃"NOR+co2+"●  ●  "NOR+co1+"┃
                     ┃"NOR+co3+"    ●  "NOR+co1+"┃
                     ┃"NOR+co3+"      ●"NOR+co1+"┃
-                    ┗━━━━┛\n\n"NOR;
+                    ┗--------┛\n\n"NOR;
 
         case 6: return NOR+co1+"
-                    ┏━━━━┓
+                    ┏--------┓
                     ┃"NOR+co2+"●●●  "NOR+co1+"┃
                     ┃"NOR+co2+"●  ●  "NOR+co1+"┃
                     ┃"NOR+co2+"    ●  "NOR+co1+"┃
                     ┃"NOR+co3+"      ●"NOR+co1+"┃
-                    ┗━━━━┛\n\n"NOR;
+                    ┗--------┛\n\n"NOR;
 
         case 7: return NOR+co1+"
-                    ┏━━━━┓
+                    ┏--------┓
                     ┃"NOR+co2+"●●●  "NOR+co1+"┃
                     ┃"NOR+co2+"●  ●  "NOR+co1+"┃
                     ┃"NOR+co2+"    ●  "NOR+co1+"┃
                     ┃"NOR+co2+"      ●"NOR+co1+"┃
-                    ┗━━━━┛\n\n"NOR;
+                    ┗--------┛\n\n"NOR;
     }
 
     return "你的七星灯里还有八个灯亮着！！！！！！！真是太厉害了！！！\n";

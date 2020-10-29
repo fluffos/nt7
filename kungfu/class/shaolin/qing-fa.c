@@ -112,7 +112,7 @@ int do_kneel()
                 "$n伸出手掌，在$N头顶轻轻地摩挲了几下，将$N的头发尽数剃去。\n\n",
                 me, this_object() );
         name=query("name", me);
-        new_name = prename[random(sizeof(prename))] + name[0..1];
+        new_name = prename[random(sizeof(prename))] + name[0..0];
         command("say 从今以后你的法名叫做" + new_name + "。");
         command("smile");
         delete_temp("pending/join_bonze", me);
@@ -142,7 +142,7 @@ void attempt_apprentice(object ob)
                 command ("say 阿弥陀佛！这位公公，你还是回去伺候皇上吧。");
                 return;
         }
-        
+
         if( query("class", ob) != "bonze" )
         {
                 command ("say 阿弥陀佛！贫僧就收下你做『俗家弟子』了。");

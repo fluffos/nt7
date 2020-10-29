@@ -164,7 +164,7 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
 
 mixed hit_ob(object me, object victim, int damage)
 {
-        string msg;
+//      string msg;
         int ap, dp, zhencost;
         string result;
         object weapon;

@@ -131,7 +131,7 @@ int yc_perform(object me, string martial, string skill, string arg)//by redl 201
         int taoism_skill_lv;
         mixed *all_file, *allfile2 = ({});
         object target, *enemies;
-        int busy, pn;
+        int /*busy,*/ pn;
 
                 if (random(4)) return 0;
                 if (query_temp("yc_perform/time", me) > time()) return 0;
@@ -236,7 +236,7 @@ protected int do_perform(object me, string arg)
 {
         object weapon;
         string martial, skill, argt;
-        int result;
+//      int result;
 
         if (sscanf(arg, "%s.%s", martial, arg) != 2)
         {
@@ -306,5 +306,4 @@ perform sword.chan
 HELP );
         return 1;
 }
-
 

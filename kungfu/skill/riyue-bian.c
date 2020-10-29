@@ -119,7 +119,7 @@ mapping query_action(object me, object weapon)
 mixed hit_ob(object me, object victim, int damage_bonus)
 {
         mixed result;
-        int level;
+//      int level;
         object weapon;
         string *msg;
         weapon=query_temp("weapon", me);

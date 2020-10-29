@@ -485,10 +485,10 @@ varargs mixed report_status(object ob, int effective)
 {
         int eff_ratio = 100;
         int ratio = 100;
-        int k_stat, g_stat, s_stat;
+        int k_stat, g_stat/*, s_stat*/;
         int d_type = 1;
         int e_type = 1;
-        string *msg = ({RED,HIR,HIY,HIG,HIG});
+        // string *msg = ({RED,HIR,HIY,HIG,HIG});
         string str;
 
         if( !ob || !query("max_qi", ob) || !query("max_jing", ob) ) return;
@@ -1292,16 +1292,16 @@ varargs mixed inflict_damage(object me, object victim, string attack_skill, int 
 {
         string martial_skill;
         string damage_info;
-        object *eqs;
+        // object *eqs;
         object ob;
         mixed result = ([]);
         int armor, wounded;
-        int factor;
+        // int factor;
         int avoid;
         int has_weapon;
         int hjs;
-        int i, n;
-        mapping my = copy(me->query_entire_dbase());
+        // int i, n;
+        // mapping my = copy(me->query_entire_dbase());
         mapping your = copy(victim->query_entire_dbase());
 
         hjs = me->query_skill("huajia-su", 1);
@@ -1703,21 +1703,21 @@ varargs int do_attack(object me, object victim, object weapon, int attack_type)
         mapping my_temp, your_temp;
         mapping fight;
         mapping prepare, action;
-        mapping shield;
+        // mapping shield;
         string limb, *limbs;
-        string attack_skill, martial_skill, force_skill, defense_skill;
+        string attack_skill, martial_skill/*, force_skill*/, defense_skill;
         string parry_msg;
         mixed  res, foo;
 
         int has_weapon;
         int delta;
         int ap, dp, pp;
-        int damage, damage_bonus;
-        int armor;
+        int damage/*, damage_bonus*/;
+        // int armor;
         int wounded;
         int array_flag;
         int attack;
-        int avoid;
+        // int avoid;
         int att_back;
         int n;
 
@@ -1728,7 +1728,7 @@ varargs int do_attack(object me, object victim, object weapon, int attack_type)
 
         string result;
         string damage_info;
-        string *att, *def;
+        string *att/*, *def*/;
         int hjs;
 
         if( !me || !victim ) return 1;
@@ -2251,12 +2251,12 @@ varargs int do_attack(object me, object victim, object weapon, int attack_type)
                         tell_object(me, SETDISPLAY(21,49)+DELLINE);
                         tell_object(me, SETDISPLAY(22,49)+DELLINE);
                         tell_object(me, SETDISPLAY(23,49)+DELLINE);
-                        tell_object(me, SETDISPLAY(21,50)+HIY"┏━━━━━━━━━━━━━┓");
+                        tell_object(me, SETDISPLAY(21,50)+HIY"┏--------------------------┓");
                         tell_object(me, SETDISPLAY(22,50)+HIY"┃");
                         tell_object(me, SETDISPLAY(22,52)+HIG"精："HIR+query("jing",me)+"/"+query("eff_jing",me));
                         tell_object(me, SETDISPLAY(22,65)+HIG"气："HIR+query("qi",me)+"/"+query("eff_qi",me));
                         tell_object(me, SETDISPLAY(22,78)+HIY"┃");
-                        tell_object(me, SETDISPLAY(23,50)+HIY"┗━━━━━━━━━━━━━┛"NOR);
+                        tell_object(me, SETDISPLAY(23,50)+HIY"┗--------------------------┛"NOR);
                         tell_object(me, REST);
                 }
                 */
@@ -2322,7 +2322,7 @@ varargs int do_attack(object me, object victim, object weapon, int attack_type)
                                 message_combatd(query_temp("buff/berserk_attack_msg", victim),victim,me);
                                 do_attack(victim, me, your["weapon"], TYPE_QUICK);
                         } else
-                                return;
+                                return 1;
                 }
                 //return;         // Here we return, fixed n hits is good enough.
         }
@@ -2334,7 +2334,7 @@ varargs int do_attack(object me, object victim, object weapon, int attack_type)
         if( att_back || (attack_type == TYPE_REGULAR &&
             damage < 1 &&
             your_temp["guarding"]) ) {
-                your_temp["guarding"];
+                your_temp["guarding"] = 0;
                 if( random(my["dex"]) < 10 ) {
                         message_combatd("$N一击不中，露出了破绽！\n",
                                         me, 0, "");
@@ -2378,7 +2378,7 @@ varargs string do_damage(object me, object target, mixed type,
         int armor;
         int wound;
         int jiali;
-        int bonus;
+        // int bonus;
         mixed foo;
         string msg;
         string skill;
@@ -2392,7 +2392,7 @@ varargs string do_damage(object me, object target, mixed type,
         mapping shield;
         string attack_skill;
         int avoid;
-        int def_exp, att_exp;
+        // int def_exp, att_exp;
         int hjs;
         int i, n;
         string s_type, s_msg;
@@ -3107,13 +3107,13 @@ int auto_perform(object me, object target, string skill)
 //
 void fight(object me, object victim)
 {
-        object ob;
-        string skill_name;
-        object weapon, weapon2;
+        // object ob;
+        // string skill_name;
+        object weapon;
         string attack_skill;
         int double_attack;
         mapping prepare;
-        string result;
+        // string result;
         mapping my_temp;
         int i, auto_pf, pf_flag;
         string pf_skill, pf_skill1, pf_skill2;
@@ -3342,7 +3342,7 @@ void start_aggressive(object me, object obj)
 
 int player_escape(object killer, object ob)
 {
-        object iob;
+        // object iob;
         string msg;
 
         if( !objectp(ob) ) return 0;
@@ -3477,8 +3477,8 @@ int player_escape(object killer, object ob)
 // This should be moved to another daemon in the future.
 void announce(object ob, string event)
 {
-        object *target;
-        int i;
+        // object *target;
+        // int i;
 
         switch( event ) {
         case "dead":
@@ -3636,12 +3636,12 @@ void killer_reward(object killer, object victim)
         string msg = "莫名其妙地死了";
         string follow_msg = 0;
         object weapon, *weapons;
-        mapping actions, quest, bonus;
+        mapping actions/*, quest, bonus*/;
         int shen_delta,exp_damage;
         mixed exp_lost;
         mapping ks, vs, kcombat;
         int flag, no_loss = 0;
-        int exp, pot, score;
+        // int exp, pot, score;
         int kill_bonus;
 
         if( !objectp(victim) )

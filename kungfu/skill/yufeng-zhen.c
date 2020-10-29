@@ -26,7 +26,7 @@ int valid_learn(object me)
 
 int practice_skill(object me)
 {
-        object weapon;
+//      object weapon;
 
         if( query("qi", me)<60 )
                 return notify_fail("你的体力太低了。\n");

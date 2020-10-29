@@ -6,8 +6,8 @@ void init()
 int do_cai(string arg)
 {
         object me=this_player();
-        object ob;
-        object ob1;
+//      object ob;
+//      object ob1;
         if( query_temp("caiyao", me)<1 )
                 return notify_fail("别在这浪费时间了，快走吧。\n");
 

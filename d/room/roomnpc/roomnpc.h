@@ -143,7 +143,7 @@ int do_vip(string arg)
 {
         string *vip;
         object ob,me;
-        int num;
+//      int num;
         
         ob = this_object();
         me = this_player();

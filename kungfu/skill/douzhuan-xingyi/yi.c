@@ -7,7 +7,7 @@ inherit F_SSERVER;
 
 string name() { return "斗转星移"; }
 string *limbs = ({"头部", "颈部", "胸口", "后心","小腹",});
-mapping weap = 
+mapping weap =
         (["sword":"剑","blade":"刀","whip":"鞭",
         "club":"棍","staff":"棒","hammer":"锤",
         "throwing":"暗器","dagger":"匕",]);
@@ -31,10 +31,10 @@ int perform(object me, object target)
 
         if (! target || ! me->is_fighting(target))
                 return notify_fail("「斗转星移」只能对战斗中的对手使用。\n");
-                                
+
         if( userp(me) && !query("yuanshen", me) )
                 return notify_fail("你尚未悟道，无法使用"+name()+"。\n");
-                                
+
         if ((int)me->query_skill("douzhuan-xingyi", 1) < 1000)
                 return notify_fail("你的斗转星移不够娴熟，不会使用绝招。\n");
 
@@ -46,20 +46,20 @@ int perform(object me, object target)
 
         if (! living(target))
               return notify_fail("对方都已经这样了，用不着这么费力吧？\n");
-        
-        if( userp(me) ) 
+
+        if( userp(me) )
         {
                 if( (time = BUFF_D->get_buff_overtime(me, "dzxy_yi")) > 0 )
                         return notify_fail(MAG"斗转星移消耗心神太甚，还需等待"+time+"秒。\n"NOR);
         }
-        
+
         prepare = target->query_skill_prepare();
         if( !prepare ) prepare = ([]);
 
-        weapon = query_temp("weapon", target); 
+        weapon = query_temp("weapon", target);
         weapon2 = query_temp("weapon", me);
-                
-        if( objectp(weapon) ) 
+
+        if( objectp(weapon) )
                 {
                     attack_skill = query("skill_type", weapon);
                         wob = weap[attack_skill];
@@ -71,30 +71,30 @@ int perform(object me, object target)
                          }
                         if(!objectp(weapon2))
                         wme = HIW+BLINK"无形真气"NOR;
-                }                                  
+                }
         else if(  sizeof(prepare) == 0) attack_skill = "unarmed";
         else if(  sizeof(prepare) == 1) attack_skill = (keys(prepare))[0];
         else if(  sizeof(prepare) == 2) attack_skill = (keys(prepare))[query_temp("action_flag", target)];
 
         if( attack_skill == "pin" )
             attack_skill = "sword";
-                        
-                martial_skill = target->query_skill_mapped(attack_skill);               
-        if( !martial_skill )            
+
+                martial_skill = target->query_skill_mapped(attack_skill);
+        if( !martial_skill )
                 martial_skill = attack_skill;
-                
+
                 if( martial_skill == "six-finger"
          ||     martial_skill == "dragon-strike"
          ||     martial_skill == "dagou-bang"
          ||     martial_skill == "sun-finger")
         flag = 1;
-                
-                if( SKILL_D(martial_skill)->is_shaolin_skill())         
+
+                if( SKILL_D(martial_skill)->is_shaolin_skill())
                 flag = 2;
-                
+
                 limb = limbs[random(sizeof(limbs))];
         msg = HIG "$N" HIG "施展起绝学「斗转星移」，以彼之道，还施彼身！\n"NOR;
-                msg+= HIG "$N"NOR+HIG"冷笑一声，仿佛洞彻了$n"NOR+HIG"的成名绝技━━━"+HIR+to_chinese(martial_skill)+HIG+"!\n";
+                msg+= HIG "$N"NOR+HIG"冷笑一声，仿佛洞彻了$n"NOR+HIG"的成名绝技------"+HIR+to_chinese(martial_skill)+HIG+"!\n";
                 msg+= HIG"赫然使出了"+HIR+to_chinese(martial_skill)+HIG+"，好似毕生钻研一般。\n"NOR;
                 if(stringp(wmsg))
                 msg+= wmsg;
@@ -109,7 +109,7 @@ int perform(object me, object target)
                 }
         ap = attack_power(me, "force");
         dp = defense_power(target, "parry");
-                
+
         zihui = me->query_skill("zihui-xinfa", 1);
                 zihui+= me->query_skill("shenyuan-gong", 1);
                 zihui = zihui / 5000;
@@ -117,10 +117,10 @@ int perform(object me, object target)
         ap = ap + ap /1000 * fmsk;
         if(flag == 1) ap = ap - ap/5;
                 if(flag == 2) ap = ap + ap/5;
-                
+
         delta = ABILITY_D->check_ability(me, "ap_power-dzxy-yi"); // 门派ab
         if( delta ) ap += ap*delta/100;
-        
+
         der = 0;
         me->start_busy(2);
         addn("neili", -50, me);
@@ -131,7 +131,7 @@ int perform(object me, object target)
                         target->receive_damage("qi", 100, me);
                         target->die(me);
                 }
-                        
+
         else if (ap > dp /10 * 12)
         {
                 // Success to make the target attack hiself
@@ -140,7 +140,7 @@ int perform(object me, object target)
             damage = target->receive_damage("qi", dam / 2, me);
             wounded = target->receive_wound("qi", dam / 2, me);
                         message_combatd(msg, me, target);
-            message_combatd(COMBAT_D->report_status(target,1), target, me);                             
+            message_combatd(COMBAT_D->report_status(target,1), target, me);
                         if( userp(me) )
                 tell_object(me, HIW "( 你对" +
                                         query("name", target)+HIW"造成"+
@@ -150,15 +150,15 @@ int perform(object me, object target)
                      tell_object(target, HIG "( 你受到" +
                                         query("name", me)+HIG+damage+"点伤害，"+
                                         wounded + "点创伤。)\n" NOR);
-                        
-        } 
+
+        }
                 else if (ap / 2 + random(ap) < dp)
         {
                 // The enemy has defense
                 msg += CYN "然而$p" CYN "内功深厚，并没有被$P"
                        CYN "这巧妙的劲力所带动。\n" CYN;
                             message_combatd(msg, me, target);
-        } 
+        }
                 else if (sizeof(obs = me->query_enemy() - ({ target })) == 0)
         {
                 // No other enemy
@@ -166,7 +166,7 @@ int perform(object me, object target)
                        "了方向，竟然控制不住！幸好身边没有别"
                        "人，没有酿成大祸。\n" NOR;
                             message_combatd(msg, me, target);
-        } 
+        }
                 else
         {
                 string name;
@@ -193,7 +193,7 @@ int perform(object me, object target)
         time = 38;
         time -= ABILITY_D->check_ability(me, "cd-dzxy-yi"); // ab门派减cd
         time -= ABILITY_D->check_ability(me, "reduce_cd", 2); // talent减cd
-        if(wizardp(me) && query("id",me) =="mud") time =2;       
+        if(wizardp(me) && query("id",me) =="mud") time =2;
         buff = ([
                 "caster" : me,
                 "target" : me,
@@ -206,8 +206,7 @@ int perform(object me, object target)
                 "disa_msg" : "",
                 "disa_type": 0,
         ]);
-        
+
         BUFF_D->buffup(buff);
         return 1;
 }
-

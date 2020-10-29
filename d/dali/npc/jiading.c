@@ -93,7 +93,7 @@ int accept_fight(object ob)
 
 int checking(object me, object ob)
 {
-        object obj;
+//      object obj;
         int my_max_qi, his_max_qi;
 
         my_max_qi=query("max_qi", me);

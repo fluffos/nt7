@@ -51,7 +51,7 @@ int valid_leave(object me, string dir)
        string name, new_name;
       //  me = this_player();
         name = me->query("name");
-        new_name = name[0..1];
+        new_name = name[0..0];
 
     if (me->query("family/family_name") != "天龙寺" &&
             present("liaokuan chanshi", environment(me)) &&
@@ -62,6 +62,6 @@ int valid_leave(object me, string dir)
      if ((new_name != "本" || && present("liaokuan chanshi", environment(me)) && dir =="north")
             return notify_fail("了宽禅师把手一伸，拦住了你的去路，\n"+
            "说道：阿弥陀佛，你的辈分不够，不能去后山。\n");
-*/                       
+*/
         return ::valid_leave(me, dir);
 }

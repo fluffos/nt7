@@ -72,9 +72,9 @@ int do_gsks( string arg )
     clcl = NOR + WHT;
     pic = "◆";
     msg = clcl +
-          "╭───────┬─┬─────┬─────┬─────────╮\n" +
+          "╭--------------┬--┬----------┬----------┬------------------╮\n" +
           "│    技   能   │LV│ 运用(yun)│ 绝技(pfm)│    效     果     │\n" +
-          "├───────┼─┼─────┼─────┼─────────┤\n";
+          "├--------------┼--┼----------┼----------┼------------------┤\n";
 
 
     for( i=0;i<sizeof(list);i++ )
@@ -126,7 +126,7 @@ int do_gsks( string arg )
         if( strlen(lv_pic) > 18 ) lv_pic = lv_pic[0..17];
 
         msg += sprintf( clcl+"│%s%s(%s)"+clcl+"│%2d"+clcl+"│%-10s"+clcl+"│%-10s"+clcl+"│"+cl+"%-18s"+clcl+"│\n"+clcl,
-            cl, all_skills[list[i]],list[i], 
+            cl, all_skills[list[i]],list[i],
             all_damages[list[i]],t1, t2, lv_pic );
         // 技能数量 +1
         amount ++;
@@ -142,14 +142,14 @@ int do_gsks( string arg )
             continue;
         // 不加入颜色设置
         msg += sprintf( clcl+"│%s(%s)"+clcl+"│%2d"+clcl+"│%-10s"+clcl+"│%-10s"+clcl+"│"+cl+"%-18s"+clcl+"│\n"+clcl,
-            all_skills[key[i]], key[i], 
+            all_skills[key[i]], key[i],
             all_damages[key[i]], "   ----   ","   ----   ","");
             amount ++;
     }
     // 没有通过检测的技能
     if( !amount )
         return errs("你并未学得任何 幻境 内的技能。\n");
-    msg += clcl+ "╰───────┴─┴─────┴─────┴─────────╯\n"NOR;
+    msg += clcl+ "╰--------------┴--┴----------┴----------┴------------------╯\n"NOR;
     write( "  以下是你学得的幻境内技能(共"+chinese_number(amount)+"项)：\n" + msg + "  如需要放弃某项技能，请使用指令：<gsks -d 技能名>  例如：gsks -d heal\n  请注意，输入指令将直接放弃该技能，并无法恢复！\n");
     return 1;
 }
@@ -437,7 +437,7 @@ int do_hjtime()
 
     write(sprintf( "你进入游戏的时间是 %s ，现在的时间是 %s ，\n游戏时间%s 。\n",
         !enter_time ? "未知" : ctime_format( enter_time ),  ctime_format(),
-        !enter_time ? "未知" : sprintf( "共 %d 小时 %d 分 %d 秒", 
+        !enter_time ? "未知" : sprintf( "共 %d 小时 %d 分 %d 秒",
             ( time() - enter_time ) / 3600,
             ( ( time() - enter_time ) % 3600 ) / 60,
             ( ( time() - enter_time ) % 3600 ) % 60 ) ) );
@@ -452,7 +452,7 @@ int do_halt()
 
     if( !me_ok(me) )
         return errs( "什么？\n");
-    if( (!query_temp("hj_healing", me) && !query_temp("hj_fighting", me)) || 
+    if( (!query_temp("hj_healing", me) && !query_temp("hj_fighting", me)) ||
         !query_temp("hj_need_waiting", me) )
     {
         delete_temp("hj_need_waiting", me);
@@ -497,7 +497,7 @@ int do_gyun( string arg )
     int HpNeed = 50, hpneed, del_time;
     // HpNeed 可能浮动增加 20%
     mapping sks_sks = ([
-        "xk": ({ "翔空", "风之国度", "hfzj", "呼风之技" }), 
+        "xk": ({ "翔空", "风之国度", "hfzj", "呼风之技" }),
         "cm": ({ "聪敏", "雨之国度", "hyzj", "唤雨之技" }),
         "ll": ({ "力量", "雷之国度", "llzj", "落雷之技" }),
         "gm": ({ "光芒", "电之国度", "ydzj", "引电之技" }),
@@ -527,7 +527,7 @@ int do_gyun( string arg )
 "HIB"    守护(sh)   >>>>>>   %s
 "HIR"    热情(rq)   >>>>>>   %s
 "HIY"    寻石(xs)   >>>>>>   %s
-"NOR+WHT"=====================================\n"NOR, 
+"NOR+WHT"=====================================\n"NOR,
     query_temp("hj_special/xk", me)?"运用中":"--",
     query_temp("hj_special/cm", me)?"运用中":"--",
     query_temp("hj_special/ll", me)?"运用中":"--",

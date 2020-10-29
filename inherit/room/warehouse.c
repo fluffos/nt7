@@ -634,9 +634,9 @@ nomask void random_change(int sum)
 nomask void random_recover()
 {
         string *cs;
-        string current_cs;
-        int max,i,n,flag;
-        class ware *items;
+//      string current_cs;
+        int max,i/*,n*/,flag;
+        // class ware *items;
 
 /*
         if(!previous_object()

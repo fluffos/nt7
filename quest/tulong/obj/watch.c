@@ -76,17 +76,17 @@ string do_long()
         birth = localtime(birthday);
         if( (local[4]>birth[4]) || ((local[4]==birth[4])&&(local[3]>=birth[3])) )
                 y = local[5];
-        else y = local[5] - 1; 
+        else y = local[5] - 1;
         gt = CHINESE_D->chinese_number(y/1000) + CHINESE_D->chinese_number((y/100)%10)
                 + CHINESE_D->chinese_number((y/10)%10) + CHINESE_D->chinese_number(y%10)
                 + "年" + CHINESE_D->chinese_number(birth[4]+1) + "月"
                 + CHINESE_D->chinese_number(birth[3]) + "日";
 
         printf("这是一块精致的电子表，表上显示现在的时间是：\n\n");
-        printf(HIY"\t\t"HBBLU"┏━━━━━━━┓\n"NOR);
+        printf(HIY"\t\t"HBBLU"┏--------------┓\n"NOR);
         printf(HIY"\t\t"HBBLU"┃  "HIR"%s"YEL"  ┃\n"NOR, ld);
         printf(HIY"\t\t"HBBLU"┃  "HIR"%s"YEL"  ┃\n"NOR, lt);
-        printf(HIY"\t\t"HBBLU"┗━━━━━━━┛\n"NOR);
+        printf(HIY"\t\t"HBBLU"┗--------------┛\n"NOR);
         printf("\n表的背后刻着一行小字：\n\n");
         printf(HIY"\t赠%s：\n\n"NOR, name);
         printf(HIR"\t\t祝天天快乐!\n\n"NOR);

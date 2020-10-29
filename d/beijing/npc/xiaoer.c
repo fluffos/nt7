@@ -26,7 +26,7 @@ void create()
 void init()
 {        
         object ob; 
-        mapping myfam; 
+//      mapping myfam; 
 
         ob = this_player();
 
@@ -54,4 +54,3 @@ void greeting(object ob)
                         break;
         }
 }
-

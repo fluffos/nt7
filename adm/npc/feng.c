@@ -496,7 +496,7 @@ int stop_auction()
                         }
 
                         msg += HIC "等待拍卖的店铺列表： \n" NOR;
-                        msg += HIC "≡" HIY "──────────────" HIC "≡\n" NOR;
+                        msg += HIC "≡" HIY "----------------------------" HIC "≡\n" NOR;
                         shop_key = keys(begin_shop);
 
                         for (i = 0; i < sizeof(shop_key); i++)
@@ -504,7 +504,7 @@ int stop_auction()
                                                shop_key[i],
                                                begin_shop[shop_key[i]]);
 
-                        msg += HIC "≡" HIY "──────────────" HIC "≡\n" NOR;
+                        msg += HIC "≡" HIY "----------------------------" HIC "≡\n" NOR;
                         msg += HIC "总共有" HIY + chinese_number(sizeof(shop_key)) + HIC
                                "家店铺可以拍卖。\n\n";
 

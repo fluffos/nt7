@@ -103,8 +103,8 @@ mapping query_action(object me, object weapon)
 
 int practice_skill(object me)
 {
-        object* ob;
-        int i,skill,damage;
+//      object* ob;
+        int /*i,*/skill/*,damage*/;
 
         skill = me->query_skill("wusheng-zhao",1);
         if( query("qi", me)<40 )

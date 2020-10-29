@@ -34,9 +34,9 @@ void create()
 int do_du(string arg)
 {
         object me = this_player();
-        object where = environment(me);
-        object ob;
-        mapping skill;
+//      object where = environment(me);
+//      object ob;
+//      mapping skill;
         int pxlevel; 
 
         if (!(arg=="shenghuo ling" || arg == "shenghuo" || arg == "ling" ))

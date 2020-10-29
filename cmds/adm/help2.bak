@@ -75,13 +75,13 @@ int main(object me, string arg)
 {
         int i;
         string file, *search;
-        
+
                if( !arg ) {
                 set_temp("help", 1, me);
                 m_display();
                 write(YEL"你现在的打算："NOR);
                 input_to((:confirm_main_choice:),this_player());
-                return 1; 
+                return 1;
         }
                   seteuid(getuid());
         if( stringp(file = me->find_command(arg)) ) {
@@ -122,12 +122,12 @@ void view_main()
      else if( select== "leaveword") name= "其它留言板";
      else if( select== "culture" ) name="墨缘";
      else if( select== "other" ) name="其它";
-     else if( select== "xyz" ) name="系统设定区";     
-     write(HIY"分类选单"HIW"                     【"+MUDLIB_NAME+"】                  "HIY"选单["+select+"]\n"NOR);     
+     else if( select== "xyz" ) name="系统设定区";
+     write(HIY"分类选单"HIW"                     【"+MUDLIB_NAME+"】                  "HIY"选单["+select+"]\n"NOR);
      write("目前选择：[ "+name+" ]\n");
      write(HIR"□——————————————┤ 公告版 ├——————————————□\n"NOR);
      auto_load();
-     write(HIR"□——————————————————————————————————□\n"NOR);  
+     write(HIR"□——————————————————————————————————□\n"NOR);
      write("\n");
 }
 void view_main_1()
@@ -139,9 +139,9 @@ void view_main_1()
      for(i=0; i<sizeof(usr); i++)
        {
           ppl_cnt++;
-       }    
-     write(YEL"_.-*```*-.__.-*```*-.__.-*```*-.__.-*```*-.__.-*```*-.__.-*```*-.__.-*\n"NOR);       
-     write(HIY"TIME:["HIC""+ctime(time())+""HIY"]    ONLINE/PLAYER:["HIC""+ppl_cnt+""HIY"]    USER:["HIC""+wizhood(this_player())+""HIY"]\n"NOR,); 
+       }
+     write(YEL"_.-*```*-.__.-*```*-.__.-*```*-.__.-*```*-.__.-*```*-.__.-*```*-.__.-*\n"NOR);
+     write(HIY"TIME:["HIC""+ctime(time())+""HIY"]    ONLINE/PLAYER:["HIC""+ppl_cnt+""HIY"]    USER:["HIC""+wizhood(this_player())+""HIY"]\n"NOR,);
 }
 void view_main_k()
 {
@@ -157,9 +157,9 @@ void view_main_k()
      else if( select== "user") name = "个人设定区";
      else if( select== "board") name = "重要布告栏";
      else if( select== "post") name = "江湖寄语";
-     write(HIY"分类选单"HIW"                     【"+MUD_NAME+"】                  "HIY"选单["+select+"]\n"NOR);     
+     write(HIY"分类选单"HIW"                     【"+MUD_NAME+"】                  "HIY"选单["+select+"]\n"NOR);
      write("目前选择：[ "+name+" ]\n");
-     write(HIR"□——————————————┤ 公告版 ├——————————————□\n"NOR);    
+     write(HIR"□——————————————┤ 公告版 ├——————————————□\n"NOR);
 }
 void m_display()
  {
@@ -172,9 +172,9 @@ void m_display()
      write("                        "HIY"(C)"NOR"ulture  〖   墨  缘   〗\n");
      write("                        "HIY"(B)"NOR"board 　〖 重要布告栏 〗\n");
      write("                        "HIY"(L)"NOR"eaveword〖 其它留言板 〗\n");
-     write("                             "HIY"(O)"NOR"ther    〖    其 它   〗\n");        
-     write("                        "HIY"(X)"NOR"yz      〖 系统设定区 〗\n"); 
-     write("                        "HIY"(P)"NOR"BBS     〖  江湖寄语  〗\n");           
+     write("                             "HIY"(O)"NOR"ther    〖    其 它   〗\n");
+     write("                        "HIY"(X)"NOR"yz      〖 系统设定区 〗\n");
+     write("                        "HIY"(P)"NOR"BBS     〖  江湖寄语  〗\n");
      write("                        "HIY"(G)"NOR"oodbye　 再别【帮助】，轻轻的我走了\n");
      view_main_1();
 }
@@ -184,8 +184,8 @@ void auto_load()
     if(random(10) > 5)
     wizlist();
     else if( random(20) >  10)
-    message(); 
-    else 
+    message();
+    else
     message1();
 }
 int message1()
@@ -263,33 +263,33 @@ int wizlist()
 }
 
 private void confirm_main_choice(string arg)
-{        
+{
         delete_temp("memer", this_player());
          switch(arg[0]){
                  case 'p':
                         set_temp("select", "post", this_player());
                         set_temp("memer", "post/page", this_player());
-                         display();                     
-                     return ; 
+                         display();
+                     return ;
                      break;
                      case 'd':
                      set_temp("select", "depart", this_player());
-                     display();                    
+                     display();
                      return;
                      break;
                      case 'i':
                      set_temp("select", "intro", this_player());
-                     display();                    
+                     display();
                      return;
                      break;
                      case 'm':
                      set_temp("select", "map", this_player());
-                     display();                    
+                     display();
                      return;
                      break;
                      case 'o':
                      set_temp("select", "other", this_player());
-                     display();  
+                     display();
                      return;
                      break;
                      case 'b':
@@ -300,7 +300,7 @@ private void confirm_main_choice(string arg)
                      case 'c':
                      set_temp("select", "culture", this_player());
                      display();
-                     return;  
+                     return;
                      break;
                      case 'x':
                      set_temp("select", "xyz", this_player());
@@ -317,24 +317,24 @@ private void confirm_main_choice(string arg)
                      u_display();
                      write(YEL"\r请输入您的选择:"NOR);
                      input_to((:confirm_u_choice:),this_player());
-                     return;             
+                     return;
                      break;
                     case 'g':
                      delete_temp("select", this_player());
                      delete_temp("help", this_player());
                      return;
-        }        
+        }
         m_display();
         write(YEL"请输入您的选择:"NOR);
-        input_to((:confirm_main_choice:),this_player());                  
+        input_to((:confirm_main_choice:),this_player());
           return;
 }
 /*留言板程序*/
 void view1()
 {
-        write(HIC"  (P)"NOR"发表 "HIC"(D)"NOR"删除 "HIC"(U)"NOR"上翻 "HIC"(O)"NOR"下翻" 
+        write(HIC"  (P)"NOR"发表 "HIC"(D)"NOR"删除 "HIC"(U)"NOR"上翻 "HIC"(O)"NOR"下翻"
         HIC" (B)"NOR"返回 "HIC"(E)"NOR"进入 "HIC"(K)"NOR"上移 "HIC"(J)"NOR"下移\n");
-        write(HIR"□——————————————————————————————————□\n"NOR);  
+        write(HIR"□——————————————————————————————————□\n"NOR);
         return;
 }
 string view_msg(int flag,object ob)
@@ -344,8 +344,8 @@ string view_msg(int flag,object ob)
         mapping*notes=query("notes", ob);
         string file;
         int i,k,b,f;
-        file="";        
-        k=sizeof(notes)-1;                
+        file="";
+        k=sizeof(notes)-1;
         if(!sizeof(notes)) return "没有任何留言。\n";
         if(flag<0) flag=k;
         if(flag>k) flag=0;
@@ -354,14 +354,14 @@ string view_msg(int flag,object ob)
         if(b<0) {f=f-b;b=0;}
         if(f>k) {b=b-f+k;f=k;}
         if(b<0) b=0;
-        if(f>k) f=k;        
-        f++;                
+        if(f>k) f=k;
+        f++;
         for(i=b;i<f;i++)
         file += sprintf("%s["NOR+HIW +BRED"%3d"NOR"%s]  %-30s %12s (%s)(%s)\n"NOR,
                         (i==flag)?BRED +HIW:"",
                         i+1, (i==flag)?BRED +HIW:"",notes[i]["title"], notes[i]["author"],
                         notes[i]["authorid"],ctime(notes[i]["time"])[0..15] );
-        return file;                
+        return file;
 }
 
 private void confirm_p_choice(string arg,object ob)
@@ -370,12 +370,12 @@ private void confirm_p_choice(string arg,object ob)
         int k=atoi(arg);
         int p,num;
         stringmemer=query_temp("memer", me);
-        mapping *notes;                             
-        if(k>0) 
+        mapping *notes;
+        if(k>0)
         {
                 set(memer, k-1, me);
                      display(ob);
-             }             
+             }
              switch(arg)
              {
                      case "p":
@@ -384,8 +384,8 @@ private void confirm_p_choice(string arg,object ob)
                      break;
                      case "b":
                      main(this_player(),0);
-                     return;                     
-                     case "j":                     
+                     return;
+                     case "j":
                      set(memer,query(memer,  me)+1, me);
                      display(ob);
                      return;
@@ -404,12 +404,12 @@ private void confirm_p_choice(string arg,object ob)
                      set(memer,query(memer,  me)+15, me);
                      display(ob);
                      return;
-                     break;                     
+                     break;
                      case "d":
                      do_discard(ob);
-                     display(ob);             
+                     display(ob);
                      return;
-                     break;                      
+                     break;
                      break;
                      case "e":
                      num=query(memer, this_player());
@@ -419,13 +419,13 @@ private void confirm_p_choice(string arg,object ob)
                         write("留言板上目前没有任何留言。\n");
                         display(ob);
                         return;
-                }        
+                }
                 if(  num+1 > sizeof(notes) )
                 {
                         write("没有这张留言。\n");
                         display(ob);
                         return;
-                }                        
+                }
                 printf("["BBLU"%3d"NOR"] %-30s %s(%s)(%s)\n",
                 num + 1, notes[num]["title"], notes[num]["author"], notes[num]["authorid"],
                 ctime(notes[num]["time"])[0..9]);
@@ -433,13 +433,13 @@ private void confirm_p_choice(string arg,object ob)
                      return;
                      break;
              }
-             display(ob);             
-             return; 
+             display(ob);
+             return;
 }
 int edi(function callback)
 {
         write(HIC"    书写结束用'.'，取消输入用 '^q'，使用内建列编辑器用 '^e'。\n"NOR);
-        write(HIG"┌──—————————————————————————————┐\n│"NOR);
+        write(HIG"┌----—————————————————————————————┐\n│"NOR);
         input_to("input_lines", "", callback);
         return 1;
 }
@@ -447,7 +447,7 @@ int edi(function callback)
 void input_lines(string line, string text, function callback)
 {
         if( line=="." ) {
-                write(HIG"└──—————————————————————————————┘\n"NOR);
+                write(HIG"└----—————————————————————————————┘\n"NOR);
                 (*callback)(text);
                 return;
         } else if( line=="^q" ) {
@@ -458,7 +458,7 @@ void input_lines(string line, string text, function callback)
                 line=replace_string(line,";",";\n");
                 text += line + "\n";
         }
-        write(HIG"│"NOR);        
+        write(HIG"│"NOR);
         input_to("input_lines", text, callback);
 }
 void done_post(mapping note,object ob,string text)
@@ -467,22 +467,22 @@ void done_post(mapping note,object ob,string text)
         if(strlen(text)<20)
         {
                 write(HIC"本文被认为是灌水文章，不予发表。\n"NOR);
-                display(ob);        
+                display(ob);
                 return;
-        }        
+        }
         text=replace_string(text,";","\n");
         note["msg"] = text;
         notes=query("notes", ob);
         if( !pointerp(notes) || !sizeof(notes) )
                 notes = ({ note });
         else
-                notes += ({ note });        
+                notes += ({ note });
         set("notes", notes, ob);
         write("留言完毕。\n");
         ob->save();
-        display(ob);        
+        display(ob);
         return;
-}        
+}
 int do_post(string arg,object ob)
 {
         mapping note;
@@ -494,25 +494,25 @@ int do_post(string arg,object ob)
         }
         if(arg=="q"||arg=="Q")
         {
-                display(ob);                
+                display(ob);
                 return 1;
-        }        
+        }
         note = allocate_mapping(5);
         note["title"] = arg;
         note["author"] = this_player()->name(1);
         note["authorid"]=query("id", this_player());
         note["time"] = time();
-        edi((: done_post,note,ob:));                
+        edi((: done_post,note,ob:));
              return 1;
 }
 void do_discard(object ob)
 {
-        mapping note,*notes;        
+        mapping note,*notes;
         int num;
         stringmemer=query_temp("memer", this_player());
         num=query(memer, this_player())+1;
         notes=query("notes", ob);
-        
+
         if( !arrayp(notes) ||!sizeof(notes)||num < 1 || num > sizeof(notes))
         {
                 write("没有这张留言。\n");
@@ -524,7 +524,7 @@ void do_discard(object ob)
         {
                 write("这个留言不是你写的。\n");
                 return;
-        }        
+        }
         if(num == 0)
                 notes = notes[num+1..sizeof(notes)-1];
         else
@@ -535,14 +535,14 @@ void do_discard(object ob)
         return;
 }
 varargs void view2(int line,string *text,object ob,int i)
-{        
+{
         int w=line;
         if(i) w=w+17;
-        write( "├—————————————————————————————————————┥\n"NOR);  
+        write( "├—————————————————————————————————————┥\n"NOR);
              printf("│ 总行数:"HIR+"%5d "NOR+"所在行数:"HIR+"%5d "+HIC"(T"NOR"x"HIC")"NOR"翻到x行 "HIC"(U)"NOR"向上 "
              HIC"(D)"NOR"向下 "HIC"(R)"NOR"回文 "HIC"(B)"NOR"返回  │\n",sizeof(text),w);
-             write( "└—————————————————————————————————————┘\n"NOR);  
-             write(YEL"您的选择："NOR);             
+             write( "└—————————————————————————————————————┘\n"NOR);
+             write(YEL"您的选择："NOR);
              input_to((:do_more:),text,line,ob);
              return;
 }
@@ -561,27 +561,27 @@ void do_more(string cmd,string *text,int line,object ob)
                         line=j;
                         cmd="u";
                 }
-        }                        
+        }
         else if(j=atoi(cmd))
         {
                 line=j;
                 cmd="u";
         }
         switch(cmd) {
-        case "d":       
+        case "d":
                 if(line+17>=sizeof(text)) line=sizeof(text)-17;
-                if(line<0) line=0;         
-                if(line<sizeof(text)) 
-                {                        
+                if(line<0) line=0;
+                if(line<sizeof(text))
+                {
                         write("┌—————————————————————————————————————┐\n");
                                for(i=line + 17; line<sizeof(text) && line<i; line++)
                            write("│"+text[line] + "\n");
-                               if( line>=sizeof(text) ) 
-                           write("├—————————————— 全  文  完 —————————————————┥\n");                         
+                               if( line>=sizeof(text) )
+                           write("├—————————————— 全  文  完 —————————————————┥\n");
                 }
-                view2(line,text,ob);                                                    
+                view2(line,text,ob);
                 return;
-                break; 
+                break;
         case "u":
                 if(line>=sizeof(text)) line=sizeof(text);
                        line = line - 17;
@@ -589,13 +589,13 @@ void do_more(string cmd,string *text,int line,object ob)
                        write("┌—————————————————————————————————————┐\n");
                        for(i=line + 17;line<sizeof(text)&&line < i;line++)
                        write("│"+text[line]+"\n");
-                       if( line>=sizeof(text) ) 
-                write("├—————————————— 全  文  完 —————————————————┥\n");                         
-                       view2(line-17,text,ob,1);                       
+                       if( line>=sizeof(text) )
+                write("├—————————————— 全  文  完 —————————————————┥\n");
+                       view2(line-17,text,ob,1);
                        return;
                        break;
-        case "b":                
-                       return display(ob);                       
+        case "b":
+                       return display(ob);
                        break;
         case "r":
                 if(t=="post")
@@ -603,10 +603,10 @@ void do_more(string cmd,string *text,int line,object ob)
                         num=query(memer, this_player());
                         notes=query("notes", ob);
                         do_post("[回文]"+notes[num]["title"],ob);
-                }                
-                return;                       
-        }        
-        view2(line,text,ob);       
+                }
+                return;
+        }
+        view2(line,text,ob);
         return;
 }
 int register()
@@ -675,26 +675,26 @@ private void g(string arg, string register)
            write(HIW"\n\n\n\n\n\n以上资料是否正确(Y/N)？(Q)取消注册 [N]:"NOR);
            input_to((:y:),this_player());
 }
-private void y(string arg, string register) 
+private void y(string arg, string register)
 {
            string table;
            if(arg=="") {
                    delete_temp("register", this_player());
                    register();
                    return ;
-           }        
+           }
         switch(arg[0]){
            case 'n':
                    delete_temp("register", this_player());
                    register();
                    return ;
                    break;
-           case 'y': 
+           case 'y':
                    set("register", 1, this_player());
                    table=query_temp("register", this_player());
                    delete_temp("register", this_player());
                    write_file(REGISTER+query("id", this_player()),table,1);
-                   write("◇设置一切正确。\n"); 
+                   write("◇设置一切正确。\n");
                    input_to("confirm_u_choice",this_player());
                    return;
                    break;
@@ -736,7 +736,7 @@ int cloak()
                    write(YEL"\r请输入您的选择:"NOR);
                    input_to((:confirm_u_choice:),this_player());
                    return 1;
-           } 
+           }
            if( query("env/invisibility", me) )
            {
                     write("我要重现江湖...\n");
@@ -763,7 +763,7 @@ private void confirm_u_choice(string arg)
                      u_display();
                      write(YEL "\r请重新输入您的选择:"NOR);
                      input_to((:confirm_u_choice:),this_player());
-                     return ; 
+                     return ;
              }
          switch(arg[0]){
             case 'r':
@@ -820,21 +820,21 @@ void get_old_pass(string pass, object ob)
         old_pass=query("password", ob);
         if( crypt(pass, old_pass)!=old_pass ) {
                 lock();
-                return ; 
+                return ;
         }
         u_display();
         write(YEL"\r请输入您的选择:"NOR);
         input_to((:confirm_u_choice:),this_player());
         return ;
-} 
+}
 string find_file()
 {
          stringstr=query_temp("select", this_player());
-         str=DIR+str+".h";         
+         str=DIR+str+".h";
          return str;
 }
 void getname1(string arg)
-{        
+{
         int k;
         if(!arg||arg=="")
         {
@@ -846,7 +846,7 @@ void getname1(string arg)
         {
                 display();
                 return;
-        }                
+        }
         k=strlen(arg);
         if(k<2||k>16)
         {
@@ -867,7 +867,7 @@ void getname2(string str,string arg)
         {
                 display();
                 return;
-        }        
+        }
         if(file_size(str)<0)
         {
                 write(HIY"没有这个档案！\n"NOR);
@@ -875,14 +875,14 @@ void getname2(string str,string arg)
                 input_to("getname2",arg);
                 return;
         }
-        if(!file) file="";        
+        if(!file) file="";
         file+=arg+"==@=="+str+"\n";
         text=explode(file,"\n");
         file="";
         while(sizeof(text))
         {
-                msg=text[0];        
-                text-=({msg});                
+                msg=text[0];
+                text-=({msg});
                 w=explode(msg,"==@==");
                 t=replace_string(find_file(),".h","");
                 t=t+"/"+w[1]+".h";
@@ -914,7 +914,7 @@ void view7(string arg)
         {
                 view7(0);
                 return;
-        }        
+        }
         text=explode(file,"\n");
         if(k>sizeof(text))
         {
@@ -925,9 +925,9 @@ void view7(string arg)
         write(YEL"您要修改(1)名称或者(2)链接？"NOR);
         input_to("view8",text[k],k);
         return;
-}        
+}
 void view8(string arg,string str,int k)
-{                
+{
         string *w=explode(str,"==@==");
         switch(arg) {
                 case "1":
@@ -974,21 +974,21 @@ void view3()
         string file,*text,str=find_file(),*w,msg,*t;
         int i,j;
         file=read_file(str);
-        if(!file) 
+        if(!file)
         {
                 write("资料采集中......\n");
                 return;
-        }        
+        }
         text=explode(file,"\n");
-        if(!j=sizeof(text)) 
+        if(!j=sizeof(text))
         {
                 write("资料采集中......\n");
                 return;
-        }        
+        }
         t=({});
         file="";
         i=0;
-        while(sizeof(text))        
+        while(sizeof(text))
         {
                 w=explode(text[0],"==@==");
                 file+=sprintf(HIC" ("BBLU +HIG"%2d"NOR +HIC")"HIW"【%|16s】"NOR,i+1,w[0]);
@@ -997,7 +997,7 @@ void view3()
                 i++;
         }
         file+="\n";
-        write(file);                
+        write(file);
         return;
 }
 void view4()
@@ -1005,25 +1005,25 @@ void view4()
         string file,*w,*text,str=find_file();
         int i,j,k,v;
         file=read_file(str);
-        if(!file) 
+        if(!file)
         {
                 write("资料采集中......\n");
                 return;
-        }        
+        }
         text=explode(file,"\n");
-        if(!j=sizeof(text)) 
+        if(!j=sizeof(text))
         {
                 write("资料采集中......\n");
                 return;
-        }        
-        for(file="",i=0;i<j;i++)        
+        }
+        for(file="",i=0;i<j;i++)
         {
                 w=explode(text[i],"==@==");
                 file+=sprintf(HIC" (%2d)"HIW"【%|16s】%s"NOR,i+1,w[0],w[1]);
                 if(i%2==1) file+="\n";
         }
         file+="\n";
-        write(file);                
+        write(file);
         return;
 }
 void view5(string arg)
@@ -1058,9 +1058,9 @@ void view5(string arg)
                 return;
         }
         k--;
-        w=explode(text[k],"==@==");        
+        w=explode(text[k],"==@==");
         file=read_file(w[1]);
-        if(file) {                
+        if(file) {
                 start_help(file,this_object());
                 return;
         }
@@ -1071,25 +1071,25 @@ void view5(string arg)
                 write(HIG"请输入你要查看的内容:"NOR);
                 input_to("view5");
                 return;
-        }        
+        }
         set_temp("select", t, this_player());
         display();
-        return;        
+        return;
 }
 void delfile(string arg)
 {
         int k=atoi(arg),v;
-        string *text,*w,str=find_file(),file=read_file(str),t;                
+        string *text,*w,str=find_file(),file=read_file(str),t;
         if(arg=="q"||arg=="Q")
         {
                 display();
                 return;
-        }        
+        }
         if(k<1)
         {
                 write(HIC"你要删除第几号链接:"NOR);
                 input_to("delfile");
-                return;        
+                return;
         }
         text=explode(file,"\n");
         if(v=sizeof(text)<k)
@@ -1097,11 +1097,11 @@ void delfile(string arg)
                 write(HIG"没有这个链接!\n");
                 write(HIC"你要删除第几号链接:"NOR);
                 input_to("delfile");
-                return;        
-        }        
+                return;
+        }
         --k;
         w=explode(text[k],"==@==");
-        text-=({text[k]});        
+        text-=({text[k]});
         file=implode(text,"\n");
         write_file(str,file,1);
         t=replace_string(find_file(),".h","");
@@ -1112,7 +1112,7 @@ void delfile(string arg)
         write("OK!\n");
         display();
         return;
-}                        
+}
 varargs void display(object ob)
 {
         int i;
@@ -1126,14 +1126,14 @@ varargs void display(object ob)
                 view1();
                 write(view_msg(i,ob));
                 view_main_1();
-                write(YEL "\r请输入您的选择:"NOR);        
+                write(YEL "\r请输入您的选择:"NOR);
                      input_to((:confirm_p_choice:),ob);
                      return;
-        }        
+        }
         if(t=="leaveword")
         {
                 view6();
-                write(YEL "\r请输入您的选择:"NOR);        
+                write(YEL "\r请输入您的选择:"NOR);
                      input_to((:confirm_l_choice:),this_player());
                 return;
         }
@@ -1145,17 +1145,17 @@ varargs void display(object ob)
         write(BRED +HIC"  (A)"NOR+BRED"加入 "HIC+BRED"(C)"NOR+BRED"修改 "HIC+BRED"(D)"NOR
         +BRED"删除 "HIC+BRED"(S)"NOR+BRED"查看 "HIC+BRED"(M)"NOR+BRED"新建"NOR);
         write("\n");
-        write(YEL "\r请输入您的选择:"NOR);        
-        input_to((:confirm_choice:),this_player());        
-}        
+        write(YEL "\r请输入您的选择:"NOR);
+        input_to((:confirm_choice:),this_player());
+}
 private void confirm_choice(string arg)
 {
-        object me=this_player();        
+        object me=this_player();
         stringt=query_temp("select", me);
         string *text;
         int k=atoi(arg);
-        int p;                     
-        if(k>0) 
+        int p;
+        if(k>0)
         {
                 view5(arg);
                 return;
@@ -1173,7 +1173,7 @@ private void confirm_choice(string arg)
                      t=implode(text,"/");
                      set_temp("select", t, me);
                      display();
-                     return;                     
+                     return;
                      break;
                      case "c":
                      view7(0);
@@ -1187,7 +1187,7 @@ private void confirm_choice(string arg)
                 }
                 write(HIC"请输入链接名称："NOR);
                 input_to("getname1");
-                return;        
+                return;
                 break;
                 case "d":
                 if(wiz_level(me)<wiz_level(WIZLEVEL))
@@ -1197,8 +1197,8 @@ private void confirm_choice(string arg)
                 }
                 write(HIC"你要删除第几号链接:"NOR"(“Q”取消)");
                 input_to("delfile");
-                return;        
-                break;                
+                return;
+                break;
                 case "s":
                 view_main();
                 view4();
@@ -1208,8 +1208,8 @@ private void confirm_choice(string arg)
                 write(BRED +HIC"  (A)"NOR+BRED"加入 "HIC+BRED"(C)"NOR+BRED"修改 "HIC+BRED"(D)"NOR
                 +BRED"删除 "HIC+BRED"(S)"NOR+BRED"查看 "HIC+BRED"(M)"NOR+BRED"新建"NOR);
                 write("\n");
-                write(YEL "\r请输入您的选择:"NOR);        
-                input_to((:confirm_choice:),me);        
+                write(YEL "\r请输入您的选择:"NOR);
+                input_to((:confirm_choice:),me);
                 return;
                 break;
                 case "m":
@@ -1235,12 +1235,12 @@ void view6()
         if(file_size(BOARDCENTER)>-1)
         {
                 str=read_file(BOARDCENTER);
-                write(str);                
+                write(str);
         }
-        else {        
-                file=get_dir(BOARD+"*.c");        
+        else {
+                file=get_dir(BOARD+"*.c");
                 for(i=0;i<sizeof(file);i++)
-                {                        
+                {
                         if(!ob=find_object(BOARD+file[i]))
                         ob=load_object(BOARD+file[i]);
                         if( !ob || !query("board_id", ob) )
@@ -1255,26 +1255,26 @@ void view6()
                         if(strlen(name)>16)
                         name=name[0..15];
                         destruct(ob);
-                        msg=sprintf(" 『"HIC +BBLU+"%2d"NOR+"』"+HIW+"【%|16s】"NOR,i+1,name);                
+                        msg=sprintf(" 『"HIC +BBLU+"%2d"NOR+"』"+HIW+"【%|16s】"NOR,i+1,name);
                         str+=msg;
                         write(msg);
                         ++j;
-                        if(j==3) 
+                        if(j==3)
                         {
                                 j=0;
                                 write("\n");
                                 str+="\n";
-                        }        
+                        }
                 }  if(j==3) {
                         write("\n");
                         str+="\n";
-                }                
-                str+=sprintf(" 『"HIC +BBLU+"%2s"NOR+"』"+HIW+"【%|16s】\n"NOR,"B","返回主菜单");                
-                printf(" 『"HIC +BBLU+"%2s"NOR+"』"+HIW+"【%|16s】\n"NOR,"B","返回主菜单");        
+                }
+                str+=sprintf(" 『"HIC +BBLU+"%2s"NOR+"』"+HIW+"【%|16s】\n"NOR,"B","返回主菜单");
+                printf(" 『"HIC +BBLU+"%2s"NOR+"』"+HIW+"【%|16s】\n"NOR,"B","返回主菜单");
                 write_file(BOARDCENTER,str,1);
-        }                
-        view_main_1();        
-        input_to((:confirm_k_choice:),this_player());        
+        }
+        view_main_1();
+        input_to((:confirm_k_choice:),this_player());
         return;
 }
 private void confirm_k_choice(string arg)
@@ -1282,15 +1282,15 @@ private void confirm_k_choice(string arg)
         int k=atoi(arg);
         string *file=get_dir(BOARD+"*.c"),dir;
         object ob;
-        if(arg=="b")        
+        if(arg=="b")
         {
                 main(this_player(),0);
-                     return;  
+                     return;
              }
              else if(!k)
              {
                      write(HIC"请输入您的选择:"NOR);
-                     input_to((:confirm_k_choice:),this_player());        
+                     input_to((:confirm_k_choice:),this_player());
                 return;
         }
         --k;
@@ -1300,7 +1300,7 @@ private void confirm_k_choice(string arg)
         if( !ob || !query("board_id", ob) )
         {
                 write(HIC"没有这个留言板!\n请输入您的选择:"NOR);
-                     input_to((:confirm_k_choice:),this_player());                
+                     input_to((:confirm_k_choice:),this_player());
                 return;
         }
         ob->restore();
@@ -1309,7 +1309,7 @@ private void confirm_k_choice(string arg)
         return;
 }
 void getname3(string arg)
-{        
+{
         int k;
         stringdir,t=query_temp("select", this_player()),
         *text,msg,*w,file=read_file(find_file());
@@ -1324,7 +1324,7 @@ void getname3(string arg)
         {
                 display();
                 return;
-        }                
+        }
         k=strlen(arg);
         if(k<2||k>16)
         {
@@ -1339,8 +1339,8 @@ void getname3(string arg)
         {
                 t="subdir"+k;
                 msg=dir+"/"+t+".h";
-                if(file&&strsrch(file,t)<0)                
-                rm(msg);                
+                if(file&&strsrch(file,t)<0)
+                rm(msg);
                 if(file_size(msg)>-1)
                 continue;
                 break;
@@ -1351,8 +1351,8 @@ void getname3(string arg)
         write_file(msg,"",1);
         while(sizeof(text))
         {
-                msg=text[0];        
-                text-=({msg});                
+                msg=text[0];
+                text-=({msg});
                 w=explode(msg,"==@==");
                 t=replace_string(find_file(),".h","");
                 t=t+"/"+w[1]+".h";

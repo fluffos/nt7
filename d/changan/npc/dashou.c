@@ -34,7 +34,7 @@ void init()
 
 int do_killing(string arg)
 {
-        object player, victim, weapon;
+        object player, victim/*, weapon*/;
         string name;
 
         player = this_player();

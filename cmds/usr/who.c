@@ -8,7 +8,7 @@
 inherit F_CLEAN_UP;
 
 //#define PREFIX(ob)    (ob->is_chatter() ? HIC "~" : interactive(ob) ? (query_idle(ob) > 120 ? HIG "*" NOR : " ") : stringp(query("doing", ob)) ? HIY "@" NOR : HIR "#" NOR)
-#define PREFIX(ob)    (ob->is_chatter() ? HIC "~" : interactive(ob) ? (query_idle(ob) > 120 ? HIG "*" NOR : " ") : stringp(query("doing", ob)) ? HIY " " NOR : HIR "#" NOR) 
+#define PREFIX(ob)    (ob->is_chatter() ? HIC "~" : interactive(ob) ? (query_idle(ob) > 120 ? HIG "*" NOR : " ") : stringp(query("doing", ob)) ? HIY " " NOR : HIR "#" NOR)
 
 int sort_user(object,object);
 int sort_user_by_name(object, object, int d);
@@ -60,7 +60,7 @@ mixed main(object me, string arg, int remote)
         int opt_reborn;
         int cur_time;
         int opt_employ;
-        
+
         object vob;
         string who_name;
         string who_id;
@@ -70,12 +70,12 @@ mixed main(object me, string arg, int remote)
         opt_chatter = 1;
         opt_player = 1;
         who_name = 0;
-        
-        cur_time = time(); 
+
+        cur_time = time();
         if( !wizardp(me) && cur_time-query_temp("last_who", me)<5 )
         {
-              return notify_fail("系统气喘嘘地叹道：慢慢来 ....\n"); 
-        } 
+              return notify_fail("系统气喘嘘地叹道：慢慢来 ....\n");
+        }
         set_temp("last_who", cur_time, me);
 
 
@@ -113,7 +113,7 @@ mixed main(object me, string arg, int remote)
                                 case "-l": opt_long = 1;        break;
                                 case "-w": opt_wiz = 1;         break;
                                 case "-p": opt_party = 1;       break;
-                                case "-fam": 
+                                case "-fam":
                                            if( !query("family/family_name", me) )
                                                 return notify_fail(me->name(1) + "现在还没有加入任何一个门派。\n");
                                            opt_family = me->query_family();    break;
@@ -122,7 +122,7 @@ mixed main(object me, string arg, int remote)
                                 case "-c": opt_chatter = 1; opt_player = 0;     break;
                                 case "-r": opt_player = 1; opt_chatter = 0;     break;
                                 case "-u": opt_master = 1;      break;
-                                case "-i": 
+                                case "-i":
                                 case "-s": opt_sort = 1;        break;
                                 case "-S": opt_sort = -1;       break;
                                 case "-z": opt_reborn = 1;       break;
@@ -145,14 +145,14 @@ mixed main(object me, string arg, int remote)
                                                 opt_family = party[option[i][1..<1]];
                                                 break;
                                         }
-                                                
+
                                         if (i > 0 && option[i - 1] == "is")
                                         {
                                                 who_name = option[i];
                                                 i--;
                                                 break;
                                         }
-                                                
+
                                         if (! me) break;
                                         if (environment(me))
                                                 ob1 = present(option[i], environment(me));
@@ -192,7 +192,7 @@ mixed main(object me, string arg, int remote)
         {
                 if( !query("bunch/bunch_name", me) )
                         return notify_fail("你现在还没有加入任何一个帮派。\n");
-                ob=filter_array(ob,(:query("bunch/bunch_name", $1) == 
+                ob=filter_array(ob,(:query("bunch/bunch_name", $1) ==
                         query("bunch/bunch_name", $2):),me);
         }
 
@@ -202,7 +202,7 @@ mixed main(object me, string arg, int remote)
                 /*
                 if( !query("family/family_name", me) )
                         return notify_fail("你现在还没有加入任何一个门派。\n");
-                ob = filter_array(ob,(:query("family/family_name", $1) == 
+                ob = filter_array(ob,(:query("family/family_name", $1) ==
                         query("family/family_name", $2):),me);
                 */
         }
@@ -302,30 +302,30 @@ mixed main(object me, string arg, int remote)
                 return 1;
         }
 
-        str += NOR"\n"HIC"≡" + HIY"────────────────────────────────────────────"HIC"≡\n"NOR;
+        str += NOR"\n"HIC"≡" + HIY"---------------------------------------------------------------------------------"HIC"≡\n"NOR;
 
-        if (opt_employ)     
+        if (opt_employ)
         {
                 object *virep_ob = ({ });
 //              mapping db;
                 object cob, eob;
                 string *virlist;
-                
+
                 for (i = 0; i < sizeof(ob); i++)
                 {
                         cob = ob[i];
-                        
+
                         if (query("viremploy/job", cob))
                         {
                                 virep_ob += ({ cob });
                         }
-                        continue;       
+                        continue;
                 }
                 list = ({ });
                 list = virep_ob;
                 ppl_cnt = 0;
-               
-                str += NOR + HIC "≡" + HIY " 新手导师 " + HIC + "≡\n" NOR; 
+
+                str += NOR + HIC "≡" + HIY " 新手导师 " + HIC + "≡\n" NOR;
                 ppl_cnt++;
                 i = sizeof(list);
                 while (i--)
@@ -340,10 +340,10 @@ mixed main(object me, string arg, int remote)
                                 list[i]->short(1));
                          }
                 }
-                
+
                 if ((query("viremploy/job", me) == "新手导师" || wizardp(me)) && sizeof(virlist = DB_D->query_data("virlist/teacher")))
                 {
-                        str += NOR + HIC "\n≡"  + HIM "游戏中所有在职导师" + HIC + "≡\n" NOR; 
+                        str += NOR + HIC "\n≡"  + HIM "游戏中所有在职导师" + HIC + "≡\n" NOR;
                         for (i = 0; i < sizeof(virlist);i ++)
                         {
                                 if (find_player(virlist[i]))
@@ -353,15 +353,15 @@ mixed main(object me, string arg, int remote)
                                 else
                                 {
                                         eob = UPDATE_D->global_find_player(virlist[i]);
-                                        if( !objectp(eob) ) continue; 
+                                        if( !objectp(eob) ) continue;
                                         str += HIY + eob->name() + HIY + "(" + virlist[i] + ") --离线时间：" + NOR;
                                         str += HIY + sprintf("%d", (time() - query("last_on", eob)) / 86400) + "天\n" NOR;
                                         UPDATE_D->global_destruct_player(eob, 1);
-                                        
+
                                 }
                         }
                 }
-                
+
                 /*
                 ppl_cnt++;
                 str += NOR "\n" HIC "≡" + HIY " 游戏宣传 " + HIC + "≡\n\n" NOR;
@@ -370,7 +370,7 @@ mixed main(object me, string arg, int remote)
                 while (i--)
                 {
                         if (query("viremploy/job", list[i]) == "游戏宣传")
-                        {                        
+                        {
                                 ppl_cnt++;
                                 str = sprintf("%s%12s%s%s\n",
                                         str,
@@ -380,14 +380,14 @@ mixed main(object me, string arg, int remote)
                         }
                 }
                 */
-                
-        } 
+
+        }
         else
         {
-        
+
         if (opt_sort)
                 list = sort_array(ob, (: sort_user_by_name :), opt_sort);
-                
+
         else
         {
                 // Why I sort the array use too many variable ?
@@ -407,7 +407,7 @@ mixed main(object me, string arg, int remote)
                 string fam_name;
                 object cob;
                 mixed val;
-                
+
                 for (i = 0; i < sizeof(ob); i++)
                 {
                         cob = ob[i];
@@ -438,7 +438,7 @@ mixed main(object me, string arg, int remote)
                                                       $(generation)[$2] :));
                 list = wiz_ob + list + normal_ob;
         }
-        
+
         list = sort_array(list, (: sort_user :));
         ppl_cnt = 0;
         if (opt_long)
@@ -466,21 +466,21 @@ mixed main(object me, string arg, int remote)
                         who_id = query("id", list[i]);
                         if (! stringp(who_id))
                                 who_id = "#" + geteuid(list[i]);
-                                
+
                         if (!wiz_level(list[i]) && fname != query("family/family_name", list[i])) {
                                 fname = query("family/family_name", list[i]);
                                 if (count % 5) str += "\n";
                                 str += sprintf(HIY "%-13s" NOR, (fname?fname:"普通百姓") + "：");
                                 count = 1;
-                        } 
+                        }
 
                         if (!new_cnt && wiz_level(list[i]) == 1) {
                                 if (count % 5) str += "\n";
                                 str += sprintf(HIY "%-13s" NOR, "新手导师：");
                                 new_cnt = 1;
                                 count = 1;
-                        } 
-                        
+                        }
+
                         if (!wiz_cnt && wiz_level(list[i]) > 1) {
                                 if (count % 5) str += "\n";
                                 str += sprintf(HIY "%-13s" NOR, "管理人员：");
@@ -490,7 +490,7 @@ mixed main(object me, string arg, int remote)
                         if (!(count%5)) {
                                 count++;
                                 str += "             ";
-                        }                       
+                        }
                         name = query("name", list[i]) + "("+capitalize(who_id)+")";
                         str += sprintf("%s%s%-20s%s",
                                 PREFIX(list[i]),
@@ -499,15 +499,15 @@ mixed main(object me, string arg, int remote)
                                 ++count % 5 ? "" : "\n"
                         );
 
-                        ppl_cnt++;       
-                              
+                        ppl_cnt++;
+
                         /*
                         name = sprintf("%s%s%-10s(%-12s",
                                         PREFIX(list[i]),
                                         wizardp(list[i])?HIY:query("gender", list[i]) == "女性"?HIM:NOR+WHT,
                                         list[i]->name(1),
                                         capitalize(who_id)+")");
-                                        
+
                         str = sprintf("%s%s%s", str, name,
                                       ppl_cnt%3==2?"\n": HIY"│");
                         ppl_cnt++;
@@ -518,7 +518,7 @@ mixed main(object me, string arg, int remote)
         }
         }
 
-        str += HIC"≡"+HIY"────────────────────────────────────────────"HIC"≡\n"NOR;
+        str += HIC"≡"+HIY"---------------------------------------------------------------------------------"HIC"≡\n"NOR;
         str = sprintf("%s共有 %s 位使用者连线中，系统负担：%s\n "
                       HIG "*" NOR " 表示发呆中，" HIC "~" NOR " 表示聊天中，"
                       HIR "#" NOR " 表示断线中，"HIY"@" NOR" 表示离线修炼中。\n",
@@ -535,7 +535,7 @@ int sort_user_by_name(object ob1, object ob2, int d)
         if (wizardp(ob1) && ! wizardp(ob2)) return -1;
         if (wizardp(ob2) && ! wizardp(ob1)) return 1;
         if (wizardp(ob1) && wizardp(ob2))
-                return (int)SECURITY_D->get_wiz_level(ob2) 
+                return (int)SECURITY_D->get_wiz_level(ob2)
                         - (int)SECURITY_D->get_wiz_level(ob1);
 
         return strcmp(query("id", ob2),query("id", ob1))*d;
@@ -548,7 +548,7 @@ int sort_user(object ob1, object ob2)
 
         if (wizardp(ob1) && ! wizardp(ob2)) return -1;
         if (wizardp(ob2) && ! wizardp(ob1)) return 1;
-        
+
         if( l1 != l2 ) return l2 - l1;
 
         //reset_eval_cost();
@@ -574,7 +574,7 @@ int help()
 {
         string *p;
         int i,j;
-        
+
         write("
 指令格式 : who [-h] [-l] [-w] [-p] [-c] [-fam] [-f] [-m] [-s] [-S] [-z] [<ID>] [-n] [is <中文名字>]
 

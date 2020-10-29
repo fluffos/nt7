@@ -18,7 +18,7 @@ int main(object me, string arg)
         string id;
 
         desc = NOR + LOCAL_MUD_NAME() + "目前的巫师有：\n";
-        desc += HIW "─────────────────────────────────\n" NOR;
+        desc += HIW "------------------------------------------------------------------\n" NOR;
         list = SECURITY_D->query_wizlist();
         r = ([ ]);
 
@@ -51,7 +51,7 @@ int main(object me, string arg)
                 desc += get_title(list[i]) + r[list[i]] + "\n";
         }
 
-        desc += HIW "─────────────────────────────────\n" NOR;
+        desc += HIW "------------------------------------------------------------------\n" NOR;
         write(desc);
 
         return 1;
@@ -82,4 +82,3 @@ HELP
      );
      return 1;
 }
-

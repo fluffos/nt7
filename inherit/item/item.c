@@ -40,7 +40,7 @@ void set_name(string name, string *id)
 string short()
 {
         string colorname;
-        string modname, str;
+        string /*modname,*/ str;
         string status = "";
 
         if( query("quality_level") )

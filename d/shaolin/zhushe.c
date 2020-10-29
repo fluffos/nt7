@@ -40,7 +40,7 @@ void init()
 
 int do_move(string arg)
 {
-        string dir;
+//      string dir;
         object me,ob;
 
         if( !arg || arg=="" || !query_temp("available") ) return 0;

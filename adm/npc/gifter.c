@@ -58,12 +58,12 @@ int get_reward()
 {
         object me;
         string ret;
-    
+
         me = this_player();
         ret = FESTIVAL_D->get_reward(me);
         tell_object(me, ret);
         return 1;
-}      
+}
 
 mixed ask_gift()
 {
@@ -270,8 +270,8 @@ mixed ask_gift4()
 
                 tell_object(me,
 HIW"\n"+
-"     ┏━━━━━━━━ "HIR"春节快乐"HIW" ━━━━━━━━┓\n"+
-"     ┃  ┌──── Happy  New  Year ────┐  ┃\n"+
+"     ┏---------------- "HIR"春节快乐"HIW" ----------------┓\n"+
+"     ┃  ┌-------- Happy  New  Year --------┐  ┃\n"+
 "     ┃  │                                  │  ┃\n"+
 "     ┃  │                                  │  ┃\n");
                 if( strlen(query("name", me)) == 2)tell_object(me,
@@ -303,8 +303,8 @@ HIW"     ┃  │      愿您和您的家人在新的一年    │  ┃\n"+
 "     ┃  │               "GRN"/\\\\/\\"HIW"              │  ┃\n"+
 "     ┃  │                                  │  ┃\n"+
 "     ┃  │                  "RED"泥潭巫师组恭贺"HIW"  │  ┃\n"+
-HIW"     ┃  └─────────────────┘  ┃\n"+
-"     ┗━━━━━━━━━━━━━━━━━━━━━┛\n"+
+HIW"     ┃  └----------------------------------┘  ┃\n"+
+"     ┗------------------------------------------┛\n"+
 "\n" NOR);
 
         return 1;

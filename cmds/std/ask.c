@@ -20,7 +20,7 @@ int main(object me, string arg)
         string dest, topic;
         mixed msg;
         object ob;
-        mapping inquiry;
+//      mapping inquiry;
         object env;
         mixed info;
 

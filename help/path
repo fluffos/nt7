@@ -1,6 +1,6 @@
-───────────────────────────────────
-$BBLU$$HIW$                           【各个BOSS路径】                             $NOR$  
-───────────────────────────────────
+----------------------------------------------------------------------
+$BBLU$$HIW$                           【各个BOSS路径】                             $NOR$
+----------------------------------------------------------------------
 
 注：走之前接个宗师任务，以下路径都是接了后走过去的。
 
@@ -126,7 +126,7 @@ $BBLU$$HIW$                           【各个BOSS路径】                    
        give ding green flower
 
 
-太监辟辟邪剑法: 
+太监辟辟邪剑法:
 1去洛阳找到莆田少林寺高手渡元禅师(duyuan chanshi)，问他
 关于辟邪剑谱的事，他会杀你，干掉他，身上就有本袈裟。
 
@@ -147,7 +147,7 @@ move jia sha)
 尝试在王重阳祖师面前行礼（ketou）,如果自身条件达到，将会几率
 性的得到纯阳神通功秘诀(shentong mijue)，按照秘诀要求参悟，即
 可领悟先天功的无上心法--纯阳神通功。
-     
+
 圆月弯刀解密:
 圆月弯刀学习解密：每年7月15日月夜 到达圆月山庄背后山沟，看到
 洪水后。跳入山沟会立刻昏迷，醒来如果看见被冲入山谷中一个很深
@@ -168,7 +168,7 @@ move jia sha)
 灵蛇岛:首先rideto hangzhou;#wa 3000;s;s;s;#2 sw;#3 w;sw;s;s;ed;enter zhou
        ask yin 冰火岛;decide下船后先到王盘山n;get stone;#5 break boat;s;n;s
        kill 所有人;s;s;ne;ne;ne;se;l chuan;enter chuan就到了
-       
+
 
 冰火岛:先参考wenxuan 2010 3 因为里面有些路径不具体,且有的地方有改动所以我在这里补充路径
        首先rideto hangzhou;#wa 3000;s;s;s;#2 sw;#3 w;sw;s;s;ed;enter zhou
@@ -188,7 +188,7 @@ move jia sha)
 
 百花错拳,庄子舞,战神心经:rideto hangzhou;#wa 3000;s;s;s;#2 sw;#3 w;sw;s;s;wu;enter
                          kill all;u;一直找到陈家洛.xue chen baihua-cuoquan 来激发
-                         接着可以xue chen zhuangzi-wu 
+                         接着可以xue chen zhuangzi-wu
                                  xue chen zhanshen-xinjing
 
 九阴真经:屠龙刀拿法：rideto hangzhou;#wa 3000;s;s;s;#2 sw;#3 w;sw;s;s;ed;enter zhou;ask yin 冰火岛;decide
@@ -218,7 +218,7 @@ ne;cross;give dugu canben
 
 
 taskNPC路径
-                
+
 任我行位置:rideto beijing;#wa 2000;w;w;n;n;w;w;w;w;w;w;sw;w;w;e;s;e;n;e;w;w;w;sw;w;n;n
 
 霍青桐位置:rideto mingjiao;#wa 2000;e;n;n;s;s;e;e;e;e;e;se;e
@@ -437,7 +437,7 @@ taskNPC路径
 
 扬州中央-襄阳中央:#8 s;w;#7 n
 
-襄阳中央--扬州中央:#7 s;e;#8 n                                         
+襄阳中央--扬州中央:#7 s;e;#8 n
 
 扬州中央--成都广场:#8 s;w;nw;#wa 1000;w;sw;w;#2 sw;w;s;w;sw;#5 w
 
@@ -474,4 +474,3 @@ taskNPC路径
 扬州中央--大理中心广场:n;e;e;goto xiangyang;到达后;goto dali;e;n;e;n
 
 大理中心广场--扬州中央:s;w;s;w;goto xiangyang;达到后;goto yangzhou;w;w;s;
-

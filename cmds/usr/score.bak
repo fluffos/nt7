@@ -54,7 +54,7 @@ int main(object me, string arg)
         if (wizardp(me) || ob == me) can_score = 1;
         else if( ob->is_pet() && query("owner", ob) == query("id", me) )
                 can_score = 1;
-        else if( stringp(startroom=query("startroom", ob)) && 
+        else if( stringp(startroom=query("startroom", ob)) &&
                  objectp(the_room = load_object(startroom)) &&
                  query("room_owner_id", the_room) == query("id", me) )
                 can_score = 1;
@@ -70,12 +70,12 @@ int main(object me, string arg)
         line=sprintf("【"+MUD_NAME+"】个人档案\n\n",query("language", ob),);
         line += sprintf( BOLD "  %s" NOR "%s\n", RANK_D->query_rank(ob), ob->short(1) );
         ob->update_age();
-        
-        line += sprintf( YEL "┏━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━┓\n" NOR );
+
+        line += sprintf( YEL "┏------------------------------------┳--------------------------┓\n" NOR );
         line += sprintf( YEL "┃" HIY "【年龄】" NOR "%-24s  " YEL "  ┃" NOR ,
                 chinese_number(query("age", ob))+"岁"+
                 chinese_number((query("mud_age", ob)-(query("age", ob)-14)*86400)/7200+1)+"个月");
-                
+
         if( objectp(weapon=query_temp("weapon", ob)) )
         {
                 skill_type=query("skill_type", weapon);
@@ -88,7 +88,7 @@ int main(object me, string arg)
                 prepare = me->query_skill_prepare();
                 if (!prepare) prepare = ([]);
                 sk = keys(prepare);
-        
+
                 if ( sizeof(sk) == 0 ) skill_type = "unarmed"; else
                                        skill_type = sk[0];
                 attack_points = COMBAT_D->skill_power(ob, skill_type, SKILL_USAGE_ATTACK);
@@ -108,7 +108,7 @@ int main(object me, string arg)
 
         line += sprintf( YEL "┃" HIY "【性别】" NOR "%-26.8s" YEL "  ┃" NOR ,
                     query("gender", ob)+query("race", ob));
-                                        
+
         line += sprintf( HIW "【战斗防御力】" NOR " %10d" YEL " ┃\n" NOR ,
                 (dodge_points + (weapon? parry_points: (parry_points/10)))/100 + 1);
 
@@ -125,19 +125,19 @@ int main(object me, string arg)
        line += sprintf( HIW "【战斗保护力】" NOR " %10d" YEL " ┃\n" NOR ,
                 query_temp("apply/armor", ob));
 
-        line += sprintf( YEL "┃                          ┏━━━━┻━━━━━━━━━━━━━┫\n" NOR,);      
+        line += sprintf( YEL "┃                          ┏--------┻--------------------------┫\n" NOR,);
       if( mapp(my["family"]) )
   {
         if( my["family"]["family_name"] )
          line += sprintf( YEL "┃" HIG "【门派】" NOR "%-18.8s" YEL "┃" NOR,
                                 my["family"]["family_name"] );
-        else  
+        else
          line += sprintf( YEL "┃" HIG "【门派】" NOR "普通百姓          " YEL "┃" NOR );
   }
-  else  
+  else
          line += sprintf( YEL "┃" HIG "【门派】" NOR "普通百姓          " YEL "┃" NOR );
 
-        line += sprintf( HIY "【膂力】" HIW "%3d|%3d   " HIY "【悟性】" HIW "%3d|%3d" NOR+YEL "   ┃\n" NOR , 
+        line += sprintf( HIY "【膂力】" HIW "%3d|%3d   " HIY "【悟性】" HIW "%3d|%3d" NOR+YEL "   ┃\n" NOR ,
                 ob->query_str(),
                 query("str", ob),
                 ob->query_int(),
@@ -151,9 +151,9 @@ int main(object me, string arg)
         else
                 line += sprintf( YEL "┃" HIG "【师承】" NOR "你还没有拜师      " YEL "┃" NOR );
      }
-     else  
+     else
         line += sprintf( YEL "┃" HIG "【师承】" NOR "你还没有拜师      " YEL "┃" NOR );
-        line += sprintf( HIY "【根骨】" HIW "%3d|%3d   " HIY "【身法】" HIW "%3d|%3d" NOR+YEL "   ┃\n" NOR ,            
+        line += sprintf( HIY "【根骨】" HIW "%3d|%3d   " HIY "【身法】" HIW "%3d|%3d" NOR+YEL "   ┃\n" NOR ,
                 ob->query_con(),
                 query("con", ob),
                 ob->query_dex(),
@@ -186,15 +186,15 @@ int main(object me, string arg)
                 line += sprintf(YEL "┃" HIW "【婚姻】" NOR "%-18.8s" , "结婚" + chinese_number(my["couple"]["married"]) + "次");
                 line+=sprintf(YEL"┃"HIY"【阅历】"NORHIW"%-9d"NORHIY"【威望】"NORHIW"%-9d"NORYEL"┃\n"NOR,query("score", ob)?query("score", ob):0,query("weiwang", ob)?query("weiwang", ob):0);
                 if (my["couple"]["have_couple"])
-                        line += sprintf(YEL "┃" HIW "【%s】" NOR "%-18.8s" YEL "┗━━━━━━━━━━━━━━━━━━┫\n" NOR , my["couple"]["couple_gender"],my["couple"]["couple_name"]);
+                        line += sprintf(YEL "┃" HIW "【%s】" NOR "%-18.8s" YEL "┗------------------------------------┫\n" NOR , my["couple"]["couple_gender"],my["couple"]["couple_name"]);
                 else
-                        line += sprintf(YEL "┃" HIW "【伴侣】" NOR "%-18.8s" YEL "┗━━━━━━━━━━━━━━━━━━┫\n" NOR , "没有");
+                        line += sprintf(YEL "┃" HIW "【伴侣】" NOR "%-18.8s" YEL "┗------------------------------------┫\n" NOR , "没有");
         }
         else
-        { 
+        {
                 line += sprintf( YEL "┃" HIW "【婚姻】" NOR "单身              " );
                 line+=sprintf(YEL"┃"HIY"【阅历】"NORHIW"%-9d"NORHIY"【威望】"NORHIW"%-9d"NORYEL"┃\n"NOR,query("score", ob)?query("score", ob):0,query("weiwang", ob)?query("weiwang", ob):0);
-                line += sprintf( YEL "┃" HIW "【伴侣】" NOR "没有              " YEL "┗━━━━━━━━━━━━━━━━━━┫\n" NOR );
+                line += sprintf( YEL "┃" HIW "【伴侣】" NOR "没有              " YEL "┗------------------------------------┫\n" NOR );
         }
 
         if (my["gender"] == "无性")
@@ -243,7 +243,7 @@ int main(object me, string arg)
                 msg+="、天魔解体"+chinese_number(query("tianmo_jieti/times", ob))+"次";
 
         if (msg != "")
-        {       
+        {
                 msg += "。";
                 line += sprintf( YEL "┃" NOR HIC "%-64s" NOR YEL "┃\n" NOR, msg );
                 line += sprintf( YEL "┃                                                                ┃\n" NOR );
@@ -262,7 +262,7 @@ int main(object me, string arg)
 
         if( my["max_qi"] >= my["eff_qi"])
                 line += sprintf( YEL "┃" HIC" 气  "NOR"：%-24s   ", tribar_graph(my["qi"], my["eff_qi"], my["max_qi"], status_color(my["qi"], my["max_qi"])) + tribar_graph3(qis));
-        else    
+        else
                 line += sprintf( YEL "┃" HIC" 气  "NOR"：%-24s   ", tribar_graph2(my["qi"], my["max_qi"], my["max_qi"], status_color(my["qi"], my["max_qi"])) + tribar_graph3(qis));
 
         if( my["max_neili"] > 0 )
@@ -274,32 +274,32 @@ int main(object me, string arg)
                 line += sprintf( YEL "┃" HIC" 食物"NOR"：%-24s   ", tribar_graph(my["food"], ob->max_food_capacity(), ob->max_food_capacity(), YEL));
         else
                 line += sprintf( YEL "┃" HIC" 食物"NOR"："YEL   "%-24s"+ NOR+YEL+"┃\n"NOR, blank_string );
-        
+
         if( ob->max_water_capacity() > 0 )
                 line += sprintf( HIC "饮水"NOR"：%-24s"+ NOR+YEL+"┃\n"NOR , tribar_graph(my["water"], ob->max_water_capacity(), ob->max_water_capacity(), CYN));
         else
                 line += sprintf( HIC "饮水"NOR CYN"：%-24s"+ NOR+YEL+"┃\n"NOR, blank_string );
 
-*/          
-        line += sprintf( YEL "┣━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┫\n" NOR );        
+*/
+        line += sprintf( YEL "┣--------------------┳--------------------┳--------------------┫\n" NOR );
 
-        line += sprintf( YEL "┃" HIB "【杀人】" NOR HIR"%10d位"NOR, 
+        line += sprintf( YEL "┃" HIB "【杀人】" NOR HIR"%10d位"NOR,
                 (int)mci["MKS"] + (int)mci["PKS"]);
-        line += sprintf( YEL "┃" HIB "【PK】" NOR HIR"%12d位"NOR, 
+        line += sprintf( YEL "┃" HIB "【PK】" NOR HIR"%12d位"NOR,
                 (int)mci["PKS"]);
-        line += sprintf( YEL "┃" HIB "【主动pk】" NOR HIR"%8d位"NOR, 
+        line += sprintf( YEL "┃" HIB "【主动pk】" NOR HIR"%8d位"NOR,
                 (int)mci["WPK"]);
         line += YEL "┃\n" NOR;
 
-        line += sprintf( YEL "┃" HIB "【打晕玩家】" NOR HIR"%6d位"NOR, 
+        line += sprintf( YEL "┃" HIB "【打晕玩家】" NOR HIR"%6d位"NOR,
                 (int)mci["DPS"]);
-        line += sprintf( YEL "┃" HIB "【正派人士】" NOR HIR"%6d位"NOR, 
+        line += sprintf( YEL "┃" HIB "【正派人士】" NOR HIR"%6d位"NOR,
                 (int)mci["DPS_GOOD"]);
-        line += sprintf( YEL "┃" HIB "【邪派人士】" NOR HIR"%6d位"NOR, 
+        line += sprintf( YEL "┃" HIB "【邪派人士】" NOR HIR"%6d位"NOR,
                 (int)mci["DPS_BAD"]);
         line += YEL "┃\n" NOR;
 
-        line += sprintf( YEL "┣━━━━━━━━━━┻━━━━━━━━━━┻━━━━━━━━━━┫\n" NOR );
+        line += sprintf( YEL "┣--------------------┻--------------------┻--------------------┫\n" NOR );
 
         line += sprintf( YEL "┃" NOR HIB " 你目前的杀气是：%s%-47d"NOR YEL "┃\n" NOR,
                          (query("pk_score", ob)>2000)?HIR:(query("pk_score", ob)>1000)?HIM:HIW,
@@ -319,7 +319,7 @@ int main(object me, string arg)
                                         mci["last_die"]);
         if (msg != "")
                 line += sprintf( YEL "┃" NOR "%" + sprintf("%d",(64 + color_len(msg))) + "-s" NOR YEL "┃\n" NOR, msg );
-        line += YEL "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛\n" NOR;
+        line += YEL "┗----------------------------------------------------------------┛\n" NOR;
 
          write(line);
          return 1;

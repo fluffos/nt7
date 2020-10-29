@@ -9,7 +9,7 @@ int main(object me, string str)
                 return notify_fail("你现在正忙。\n");
 
         if( !wizardp(me) && (time()-query_temp("last_tasks", me)<5) )
-                return notify_fail("系统气喘嘘地叹道：慢慢来 ....\n");  
+                return notify_fail("系统气喘嘘地叹道：慢慢来 ....\n");
 
         if( query("jing", me)<2 )
                 return notify_fail("你现在精神状态不佳，还是等会再查吧。\n");
@@ -22,10 +22,10 @@ int main(object me, string str)
                 return 1;
         }
 
-    output = HIR"★ "HIW"泥潭"HIR" ★"HIG" TASK任务 使命榜\n" NOR; 
-    output += ""HIW"────────────────────────────────────────\n"NOR"";   
-        output += TASK_D->task_list();   
-    output += ""HIW"────────────────────────────────────────\n\n"NOR"";   
+    output = HIR"★ "HIW"泥潭"HIR" ★"HIG" TASK任务 使命榜\n" NOR;
+    output += ""HIW"--------------------------------------------------------------------------------\n"NOR"";
+        output += TASK_D->task_list();
+    output += ""HIW"--------------------------------------------------------------------------------\n\n"NOR"";
 
         me->start_more(output);
         set_temp("last_tasks", time(), me);

@@ -116,7 +116,7 @@ void check_daughter(object me)
 
 void cry_daughter(object me, object xiangxiang, object who, object yupei)
 {
-        object book;
+//      object book;
         message_vision("$N见了$n一愣，然后老泪纵横地将$n拉过去。\n",
                        me, xiangxiang); 
         destruct(xiangxiang);

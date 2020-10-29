@@ -30,22 +30,22 @@ int main(object me, string arg)
         int i;
         int cur_time;
         // 防止 flood add by ken@NT
-        cur_time = time(); 
+        cur_time = time();
         if( cur_time-query_temp("last_who", me)<1){
-              return notify_fail("系统气喘嘘地叹道：慢慢来 ....\n"); 
-        } 
+              return notify_fail("系统气喘嘘地叹道：慢慢来 ....\n");
+        }
         set_temp("last_who", cur_time, me);
 
         if (! arg || arg == "family")
         {
                 fame = FAMILY_D->query_family_fame();
                 last = FAMILY_D->query_all_last_family_fame();
-        
+
                 fam = keys(fame) - ({ 0 });
                 fam = sort_array(fam, (: sort_family :), fame);
-        
+
                 msg = WHT "目前江湖上所有名门大派的声望状况\n" NOR
-                      HIY "────────────────\n" NOR;
+                      HIY "--------------------------------\n" NOR;
                 for (i = 0; i < sizeof(fam); i++)
                 {
                         delta = fame[fam[i]] - last[fam[i]];
@@ -55,24 +55,24 @@ int main(object me, string arg)
                                        (delta < 0) ? HIR : WHT,
                                        delta, NOR);
                 }
-        
-                msg += HIY "────────────────\n" NOR
+
+                msg += HIY "--------------------------------\n" NOR
                        WHT "一共是" + chinese_number(i) + "个门派。\n" NOR;
         } else
         if (arg == "league")
         {
                 fame = LEAGUE_D->query_league_fame();
                 last = LEAGUE_D->query_all_last_league_fame();
-        
+
                 fam = keys(fame) - ({ 0 });
                 if (sizeof(fam) < 1)
                         return notify_fail("目前江湖上没有什么"
                                            "有名的结义同盟。\n");
 
                 fam = sort_array(fam, (: sort_league :), fame);
-        
+
                 msg = WHT "目前江湖上著名结义同盟的声望状况\n" NOR
-                      HIY "────────────────\n" NOR;
+                      HIY "--------------------------------\n" NOR;
                 for (i = 0; i < sizeof(fam) && i < 30; i++)
                 {
                         delta = fame[fam[i]] - last[fam[i]];
@@ -82,8 +82,8 @@ int main(object me, string arg)
                                        (delta < 0) ? HIR : WHT,
                                        delta, NOR);
                 }
-        
-                msg += HIY "────────────────\n" NOR
+
+                msg += HIY "--------------------------------\n" NOR
                        WHT "列出了" + chinese_number(i) + "个结义同盟。\n" NOR;
         } else
         if (arg == "bunch")
@@ -99,7 +99,7 @@ int main(object me, string arg)
                 fam = sort_array(fam, (: sort_bunch :), fame);
 
                 msg = WHT "目前江湖上著名玩家帮派的声望状况\n" NOR
-                      HIY "────────────────\n" NOR;
+                      HIY "--------------------------------\n" NOR;
                 for (i = 0; i < sizeof(fam) && i < 30; i++)
                 {
                         delta = fame[fam[i]] - last[fam[i]];
@@ -110,7 +110,7 @@ int main(object me, string arg)
                                        delta, NOR);
                 }
 
-                msg += HIY "────────────────\n" NOR
+                msg += HIY "--------------------------------\n" NOR
                        WHT "列出了" + chinese_number(i) + "个帮派。\n" NOR;
         } else
                 return notify_fail("你要看什么排行榜？\n");
@@ -129,4 +129,3 @@ int help(object me)
 HELP );
         return 1;
 }
-

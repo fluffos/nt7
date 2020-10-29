@@ -40,7 +40,7 @@ int main(object me)
         cpu = CPU_D->get_current_cpu_cost();
 
         write(NOR + WHT "\n\t\t         .__________ 系 统 资 讯 __________.\n");
-        write(NOR + WHT "\t\t ─────────────────────────\n");
+        write(NOR + WHT "\t\t --------------------------------------------------\n");
         write(NOR + WHT "\t\t 游戏的识别名称：  " + MUD_NAME + "\n");
         write(NOR + WHT "\t\t 界面系统的版本：  " + __VERSION__ + "\n");
         write(NOR + WHT "\t\t 系统函数库版本：  " + MUDLIB_VERSION_NUMBER + "\n");
@@ -124,4 +124,3 @@ HELP
         );
          return 1;
 }
-

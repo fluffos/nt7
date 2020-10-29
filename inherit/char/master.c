@@ -34,7 +34,7 @@ int prevent_learn(object me, string skill)
 void attempt_detach(object me)
 {
         string *fams;
-        string *sk;
+        // string *sk;
 
         if( !me->is_apprentice_of(this_object()) ) {
                  command("say 边去，找你师傅。");

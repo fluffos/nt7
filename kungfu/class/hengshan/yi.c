@@ -133,7 +133,7 @@ void attempt_apprentice(object ob)
         command("say 希望你能努力行善，济度众生，以光大我恒山派。");
         command("recruit "+query("id", ob));
         name=query("name", ob);
-        new_name = "仪" + name[2..3];
+        new_name = "仪" + name[1..1];
         command("say 从今以后你的法名叫做" + new_name + "。");
         set("name", new_name, ob);
 }

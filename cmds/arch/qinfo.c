@@ -54,7 +54,7 @@ int main(object me, string arg)
         }
 
         str = WHT "任务名称              执行时间    状  态    任务对象对应的系统OBJECT\n" NOR
-              HIW "──────────────────────────────────\n" NOR;
+              HIW "--------------------------------------------------------------------\n" NOR;
         foreach (qob in obs)
         {
                 str += sprintf("%-22s%-12s%-10s%s\n",
@@ -63,7 +63,7 @@ int main(object me, string arg)
                                qob->query_status(),
                                file_name(qob));
         }
-        str += HIW "──────────────────────────────────\n" NOR
+        str += HIW "--------------------------------------------------------------------\n" NOR
                WHT "系统目前共有 " CYN + sizeof(obs) + WHT " 个任务。\n" NOR;
 
         me->start_more(str);

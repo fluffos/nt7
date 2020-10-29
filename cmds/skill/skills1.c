@@ -174,8 +174,8 @@ int main(object me, string arg)
         if (ob == me || wizardp(me) ||
             ob->is_apprentice_of(me) ||
             me->is_apprentice_of(ob) ||
-            query("couple/couple_id", me) == query("id", ob) || 
-            query("couple/child_id", me) == query("id", ob) || 
+            query("couple/couple_id", me) == query("id", ob) ||
+            query("couple/child_id", me) == query("id", ob) ||
             /*me->is_brother(ob) ||*/ ob->is_owner(me))
                 valid_check = 1;
         else
@@ -184,7 +184,7 @@ int main(object me, string arg)
                 if( stringp(fname) && fname == query("league/league_name", ob) )
                         valid_check = 1;
                 else
-                if( !playerp(ob) && stringp(fname=query("bunch/bunch_name", me)) && 
+                if( !playerp(ob) && stringp(fname=query("bunch/bunch_name", me)) &&
                     fname == query("bunch/bunch_name", ob) )
                         valid_check = 1;
                 else
@@ -319,7 +319,7 @@ int main(object me, string arg)
         lrn = ob->query_learned();
         if (! mapp(lrn)) lrn = ([]);
         str += "\n\n";
-        str += HIC "≡" HIY "───────────────────────────────" HIC "≡\n" NOR;
+        str += HIC "≡" HIY "--------------------------------------------------------------" HIC "≡\n" NOR;
 
         for (i = 0; i < sizeof(sname); i++)
         {
@@ -327,14 +327,12 @@ int main(object me, string arg)
                 skillname = to_chinese(sname[i]);
                 switch (strlen(skillname))
                 {
-                case 6:
-                        skillname = sprintf("%c%c %c%c %c%c", skillname[0], skillname[1],
-                                             skillname[2], skillname[3],
-                                             skillname[4], skillname[5]);
+                case 3:
+                        skillname = sprintf("%c %c %c", skillname[0], skillname[1],
+                                             skillname[2]);
                         break;
-                case 4:
-                        skillname = sprintf("%c%c    %c%c", skillname[0], skillname[1],
-                                             skillname[2], skillname[3]);
+                case 2:
+                        skillname = sprintf("%c    %c", skillname[0], skillname[1]);
                         break;
                 }
 
@@ -355,13 +353,13 @@ int main(object me, string arg)
                 str += sprintf("%s%s%s%-40s" NOR WHT " - %-10s" NOR WHT "%4d/%3d%%\n" NOR,
                         skcolor,
                         (lrn[sname[i]] >= (skl[sname[i]]+1) * (skl[sname[i]]+1)) ? HIM : "",
-                        (member_array(sname[i], mapped)==-1? "  ": "□"),
+                        (member_array(sname[i], mapped)==-1? "  ": "□ "),
                         skillname + " (" + sname[i] + ")",
                         filter_color(skill_level(SKILL_D(sname[i])->type(), lvl)),
                         lvl, percent);
         }
 
-        str += HIC "≡" HIY "───────────────────────────────" HIC "≡\n" NOR;
+        str += HIC "≡" HIY "--------------------------------------------------------------" HIC "≡\n" NOR;
         str = column_string(str, SKILLS_D->skillmix_stats(ob), 70);
         me->start_more(str);
         return 1;

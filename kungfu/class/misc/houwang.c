@@ -44,8 +44,8 @@ void rape()
 
 int level_up()
 {
-        int tmp, lv, ef;
-        object *obs;
+        int /*tmp,*/ lv, ef;
+//      object *obs;
         object me = this_object();
         string oldname = query("name", me);
 
@@ -559,10 +559,10 @@ mixed hit_ob(object me, object ob, int damage_bouns)
 
 void die(object killer)
 {
-        string prop, name;
-        mapping data;
-        object *obs, ob, where;
-                object *enemies, *enemies2, enemy, enemy2;
+//      string prop,name;
+//      mapping data;
+        object *obs, ob/*, where*/;
+                object *enemies/*, *enemies2*/, enemy/*, enemy2*/;
                 int num;
 
         if( random(100)>=(70 - query("level")) && 
@@ -648,4 +648,3 @@ void unconcious()
         }
      die(ob);
 }
-

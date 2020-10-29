@@ -22,7 +22,7 @@ mixed give_letter();
 
 void create()
 {
-        object ob;
+//      object ob;
         set_name("商剑鸣", ({"shang jianming", "shang", "jianming"}));
         set("gender", "男性");
         set("title", "商家堡堡主");
@@ -621,7 +621,7 @@ mixed ask_dao()
 
 mixed give_letter()
 {
-        object letter, me;
+        object /*letter,*/ me;
 
 
         me = this_player();

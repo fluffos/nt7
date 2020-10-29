@@ -118,7 +118,7 @@ int recognize_apprentice(object ob, string skill)
 
 int accept_object(object who, object ob)
 {
-        object me = this_player();
+//      object me = this_player();
 
         if( query_temp("mark/厨娘", who)<1 )
                 set_temp("mark/厨娘", 0, who);

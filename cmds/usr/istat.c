@@ -45,10 +45,10 @@ int main(object me, string arg)
 
                 } else
                         return notify_fail("只有巫师能察看别人的状态。\n");
-                
+
                         sp = HIM + (ob == me ? "你" : ob->name(1)) + "目前的经脉附加属性效果一览\n" NOR;
-                        //sp += HIC "≡" HIY "────────────────────────────────────" HIC "≡\n" NOR;
-                        sp += HIC "≡" HIY "──────────────--==天赋加成==--──────────────" HIC "≡\n\n" NOR;
+                        //sp += HIC "≡" HIY "------------------------------------------------------------------------" HIC "≡\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------==天赋加成==------------------------------" HIC "≡\n\n" NOR;
 
                         sp += sprintf(HIC "【臂力附加】" HIG " %9d / %-9d"
                                       HIC "【悟性附加】" HIG " %9d / %d\n"
@@ -58,8 +58,8 @@ int main(object me, string arg)
                                       ob->query_jingmai_buff("int"),2000,
                                       ob->query_jingmai_buff("con"),2000,
                                       ob->query_jingmai_buff("dex"),2000);
-                        sp += HIC "≡" HIY "────────────────────────────────────" HIC "≡\n" NOR;
-                        sp += HIC "≡" HIY "──────────────--==上限加成==--──────────────" HIC "≡\n\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------------------------------------------------" HIC "≡\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------==上限加成==------------------------------" HIC "≡\n\n" NOR;
                         sp += sprintf(HIC "【潜能上限】" HIM " %9d / %-9d"
                                       HIC "【体会上限】" HIM " %9d / %d\n"
                                       HIC "【内力上限】" HIM " %9d / %-9d"
@@ -71,9 +71,9 @@ int main(object me, string arg)
                                       ob->query_jingmai_buff("max_neili"),2000000,
                                       ob->query_jingmai_buff("max_jingli"),1000000,
                                       ob->query_jingmai_buff("max_qi"),2000000,
-                                      ob->query_jingmai_buff("max_jing"),1000000);        
-                        sp += HIC "≡" HIY "────────────────────────────────────" HIC "≡\n" NOR;
-                        sp += HIC "≡" HIY "──────────────--==练功加成==--──────────────" HIC "≡\n\n" NOR;
+                                      ob->query_jingmai_buff("max_jing"),1000000);
+                        sp += HIC "≡" HIY "------------------------------------------------------------------------" HIC "≡\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------==练功加成==------------------------------" HIC "≡\n\n" NOR;
                         sp += sprintf(HIC "【研究次数】" HIY " %9d / %-9d"
                                       HIC "【研究效果】" HIY " %9s / %s\n"
                                       HIC "【练习次数】" HIY " %9d / %-9d"
@@ -90,8 +90,8 @@ int main(object me, string arg)
                                       ob->query_jingmai_buff("learn_effect")+"%","2000%",
                                       ob->query_jingmai_buff("derive_times"),2000,
                                       ob->query_jingmai_buff("derive_effect")+"%","2000%");
-                        sp += HIC "≡" HIY "────────────────────────────────────" HIC "≡\n" NOR;
-                        sp += HIC "≡" HIY "──────────────--==五行加成==--──────────────" HIC "≡\n\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------------------------------------------------" HIC "≡\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------==五行加成==------------------------------" HIC "≡\n\n" NOR;
                         sp += sprintf(RED "【毒 伤 害】" RED " %9s / %-9s"
                                       RED "【抗    毒】" RED " %9s / %s\n"
                                       RED "【魔 伤 害】" RED " %9s / %-9s"
@@ -113,14 +113,14 @@ int main(object me, string arg)
                                       ob->query_jingmai_buff("add_water")+"%","100%",ob->query_jingmai_buff("reduce_water")+"%","100%",
                                       ob->query_jingmai_buff("add_fire")+"%","100%",ob->query_jingmai_buff("reduce_fire")+"%","100%",
                                       ob->query_jingmai_buff("add_earth")+"%","100%",ob->query_jingmai_buff("reduce_earth")+"%","100%");
-                        sp += HIC "≡" HIY "────────────────────────────────────" HIC "≡\n" NOR;
-                        sp += HIC "≡" HIY "──────────────--==状态恢复==--──────────────" HIC "≡\n\n" NOR;              
+                        sp += HIC "≡" HIY "------------------------------------------------------------------------" HIC "≡\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------==状态恢复==------------------------------" HIC "≡\n\n" NOR;
                         sp += sprintf(HIB "【偷取内力】" HIB " %9s / %-9s"
                                       HIB "【偷取生命】" HIB " %9s / %s\n\n",
                                       ob->query_jingmai_buff("leech_neili")+"%","90%",
                                       ob->query_jingmai_buff("leech_qi")+"%","90%");
-                        sp += HIC "≡" HIY "────────────────────────────────────" HIC "≡\n" NOR;
-                        sp += HIC "≡" HIY "──────────────--==战斗加成==--──────────────" HIC "≡\n\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------------------------------------------------" HIC "≡\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------==战斗加成==------------------------------" HIC "≡\n\n" NOR;
                         sp += sprintf(WHT "【攻击等级】" HIW " %9d / %-9d" NOR
                                       WHT "【防御等级】" HIW " %9d / %d\n" NOR
                                       WHT "【躲闪等级】" HIW " %9d / %-9d" NOR
@@ -156,13 +156,13 @@ int main(object me, string arg)
                                       ob->query_jingmai_buff("avoid_parry")+"%","90%",
                                       ob->query_jingmai_buff("avoid_dodge")+"%","90%",
                                       ob->query_jingmai_buff("avoid_attack")+"%","90%",
-                                      ob->query_jingmai_buff("avoid_force")+"%","90%");                      
-                        sp += HIC "≡" HIY "────────────────────────────────────" HIC "≡\n" NOR;
-                        sp += HIC "≡" HIY "──────────────--==高级属性==--──────────────" HIC "≡\n\n" NOR;        
+                                      ob->query_jingmai_buff("avoid_force")+"%","90%");
+                        sp += HIC "≡" HIY "------------------------------------------------------------------------" HIC "≡\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------==高级属性==------------------------------" HIC "≡\n\n" NOR;
                         sp += sprintf(HIW "【化解忙乱】" HIM " %9d / %-9d"
                                       HIW "【寻 宝 率】" HIM " %9s / %s\n"
                                       HIW "【双倍伤害】" CYN " %9s / %-9s"
-                                      HIW "【伤转内力】" CYN " %9s / %s\n"  
+                                      HIW "【伤转内力】" CYN " %9s / %s\n"
                                       HIW "【致    盲】" CYN " %9s / %-9s"
                                       HIW "【忽视致盲】" CYN " %9s / %s\n"
                                       HIW "【穿透破甲】" CYN " %9s / %-9s"
@@ -177,9 +177,9 @@ int main(object me, string arg)
                                       ob->query_jingmai_buff("through_armor")+"%","90%",
                                       ob->query_jingmai_buff("avoid_poison")+"%","100%",
                                       ob->query_jingmai_buff("full_self")+"%","90%");
-                      
-                        sp += HIC "≡" HIY "────────────────────────────────────" HIC "≡\n" NOR;
-                        sp += HIC "≡" HIY "──────────────--==终极属性==--──────────────" HIC "≡\n\n" NOR;         
+
+                        sp += HIC "≡" HIY "------------------------------------------------------------------------" HIC "≡\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------==终极属性==------------------------------" HIC "≡\n\n" NOR;
                         sp += sprintf(HIY "【冰    冻】" HIM " %9s / %-9s"
                                       HIY "【忽视冰冻】" HIM " %9s / %s\n"
                                       /*
@@ -195,7 +195,7 @@ int main(object me, string arg)
                                       HIY "【追加伤害】" HIM " %9s / %-9s"
                                       HIY "【化解伤害】" HIM " %9s / %s\n"
                                       HIY "【伤害反噬】" HIM " %9s / %-9s"
-                                      HIY "【浴血重生】" HIM " %9s / %s\n"                      
+                                      HIY "【浴血重生】" HIM " %9s / %s\n"
                                       HIY "【致命一击】" HIM " %9s / %-9s"
                                       HIY "【提升技能】" HIM " %9d / %d\n\n",
                                       ob->query_jingmai_buff("add_freeze")+"%","90%",ob->query_jingmai_buff("avoid_freeze")+"%","90%",
@@ -210,8 +210,8 @@ int main(object me, string arg)
                                       ob->query_jingmai_buff("counter_damage")+"%","90%",ob->query_jingmai_buff("avoid_die")+"%","90%",
                                       ob->query_jingmai_buff("fatal_blow")+"%","90%",ob->query_jingmai_buff("add_skill"),1200);
 
-                        //sp += HIC "≡" HIY "────────────────────────────────────" HIC "≡\n" NOR;
-                        sp += HIC "≡" HIY "──────────────--==王者归来==--──────────────" HIC "≡\n\n" NOR;
+                        //sp += HIC "≡" HIY "------------------------------------------------------------------------" HIC "≡\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------==王者归来==------------------------------" HIC "≡\n\n" NOR;
                         sp += sprintf(HIG + (ob == me ? "你" : ob->name()) + HIG "在%s里已经历练了 " NOR + HIC "%s\n" NOR,
                                       LOCAL_MUD_NAME(), time_period(query("online_time", ob)));
 
@@ -260,10 +260,10 @@ int main(object me, string arg)
 
                 } else
                         return notify_fail("只有巫师能察看别人的状态。\n");
-                
+
                         sp = HIM + (ob == me ? "你" : ob->name(1)) + "目前的元神附加属性效果一览\n" NOR;
-                        //sp += HIC "≡" HIY "────────────────────────────────────" HIC "≡\n" NOR;
-                        sp += HIC "≡" HIY "──────────────--==天赋加成==--──────────────" HIC "≡\n\n" NOR;
+                        //sp += HIC "≡" HIY "------------------------------------------------------------------------" HIC "≡\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------==天赋加成==------------------------------" HIC "≡\n\n" NOR;
 
                         sp += sprintf(HIC "【臂力附加】" HIG " %9d / %-9d"
                                       HIC "【悟性附加】" HIG " %9d / %d\n"
@@ -273,8 +273,8 @@ int main(object me, string arg)
                                       ob->query_yuanshen_buff("int"),2000,
                                       ob->query_yuanshen_buff("con"),2000,
                                       ob->query_yuanshen_buff("dex"),2000);
-                        sp += HIC "≡" HIY "────────────────────────────────────" HIC "≡\n" NOR;
-                        sp += HIC "≡" HIY "──────────────--==上限加成==--──────────────" HIC "≡\n\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------------------------------------------------" HIC "≡\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------==上限加成==------------------------------" HIC "≡\n\n" NOR;
                         sp += sprintf(HIC "【潜能上限】" HIM " %9d / %-9d"
                                       HIC "【体会上限】" HIM " %9d / %d\n"
                                       HIC "【内力上限】" HIM " %9d / %-9d"
@@ -286,9 +286,9 @@ int main(object me, string arg)
                                       ob->query_yuanshen_buff("max_neili"),2000000,
                                       ob->query_yuanshen_buff("max_jingli"),1000000,
                                       ob->query_yuanshen_buff("max_qi"),2000000,
-                                      ob->query_yuanshen_buff("max_jing"),1000000);        
-                        sp += HIC "≡" HIY "────────────────────────────────────" HIC "≡\n" NOR;
-                        sp += HIC "≡" HIY "──────────────--==练功加成==--──────────────" HIC "≡\n\n" NOR;
+                                      ob->query_yuanshen_buff("max_jing"),1000000);
+                        sp += HIC "≡" HIY "------------------------------------------------------------------------" HIC "≡\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------==练功加成==------------------------------" HIC "≡\n\n" NOR;
                         sp += sprintf(HIC "【研究次数】" HIY " %9d / %-9d"
                                       HIC "【研究效果】" HIY " %9s / %s\n"
                                       HIC "【练习次数】" HIY " %9d / %-9d"
@@ -305,8 +305,8 @@ int main(object me, string arg)
                                       ob->query_yuanshen_buff("learn_effect")+"%","2000%",
                                       ob->query_yuanshen_buff("derive_times"),2000,
                                       ob->query_yuanshen_buff("derive_effect")+"%","2000%");
-                        sp += HIC "≡" HIY "────────────────────────────────────" HIC "≡\n" NOR;
-                        sp += HIC "≡" HIY "──────────────--==五行加成==--──────────────" HIC "≡\n\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------------------------------------------------" HIC "≡\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------==五行加成==------------------------------" HIC "≡\n\n" NOR;
                         sp += sprintf(RED "【毒 伤 害】" RED " %9s / %-9s"
                                       RED "【抗    毒】" RED " %9s / %s\n"
                                       RED "【魔 伤 害】" RED " %9s / %-9s"
@@ -328,14 +328,14 @@ int main(object me, string arg)
                                       ob->query_yuanshen_buff("add_water")+"%","100%",ob->query_yuanshen_buff("reduce_water")+"%","100%",
                                       ob->query_yuanshen_buff("add_fire")+"%","100%",ob->query_yuanshen_buff("reduce_fire")+"%","100%",
                                       ob->query_yuanshen_buff("add_earth")+"%","100%",ob->query_yuanshen_buff("reduce_earth")+"%","100%");
-                        sp += HIC "≡" HIY "────────────────────────────────────" HIC "≡\n" NOR;
-                        sp += HIC "≡" HIY "──────────────--==状态恢复==--──────────────" HIC "≡\n\n" NOR;              
+                        sp += HIC "≡" HIY "------------------------------------------------------------------------" HIC "≡\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------==状态恢复==------------------------------" HIC "≡\n\n" NOR;
                         sp += sprintf(HIB "【偷取内力】" HIB " %9s / %-9s"
                                       HIB "【偷取生命】" HIB " %9s / %s\n\n",
                                       ob->query_yuanshen_buff("leech_neili")+"%","90%",
                                       ob->query_yuanshen_buff("leech_qi")+"%","90%");
-                        sp += HIC "≡" HIY "────────────────────────────────────" HIC "≡\n" NOR;
-                        sp += HIC "≡" HIY "──────────────--==战斗加成==--──────────────" HIC "≡\n\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------------------------------------------------" HIC "≡\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------==战斗加成==------------------------------" HIC "≡\n\n" NOR;
                         sp += sprintf(WHT "【攻击等级】" HIW " %9d / %-9d" NOR
                                       WHT "【防御等级】" HIW " %9d / %d\n" NOR
                                       WHT "【躲闪等级】" HIW " %9d / %-9d" NOR
@@ -371,13 +371,13 @@ int main(object me, string arg)
                                       ob->query_yuanshen_buff("avoid_parry")+"%","90%",
                                       ob->query_yuanshen_buff("avoid_dodge")+"%","90%",
                                       ob->query_yuanshen_buff("avoid_attack")+"%","90%",
-                                      ob->query_yuanshen_buff("avoid_force")+"%","90%");                      
-                        sp += HIC "≡" HIY "────────────────────────────────────" HIC "≡\n" NOR;
-                        sp += HIC "≡" HIY "──────────────--==高级属性==--──────────────" HIC "≡\n\n" NOR;        
+                                      ob->query_yuanshen_buff("avoid_force")+"%","90%");
+                        sp += HIC "≡" HIY "------------------------------------------------------------------------" HIC "≡\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------==高级属性==------------------------------" HIC "≡\n\n" NOR;
                         sp += sprintf(HIW "【化解忙乱】" HIM " %9d / %-9d"
                                       HIW "【寻 宝 率】" HIM " %9s / %s\n"
                                       HIW "【双倍伤害】" CYN " %9s / %-9s"
-                                      HIW "【伤转内力】" CYN " %9s / %s\n"  
+                                      HIW "【伤转内力】" CYN " %9s / %s\n"
                                       HIW "【致    盲】" CYN " %9s / %-9s"
                                       HIW "【忽视致盲】" CYN " %9s / %s\n"
                                       HIW "【穿透破甲】" CYN " %9s / %-9s"
@@ -392,9 +392,9 @@ int main(object me, string arg)
                                       ob->query_yuanshen_buff("through_armor")+"%","90%",
                                       ob->query_yuanshen_buff("avoid_poison")+"%","100%",
                                       ob->query_yuanshen_buff("full_self")+"%","90%");
-                      
-                        sp += HIC "≡" HIY "────────────────────────────────────" HIC "≡\n" NOR;
-                        sp += HIC "≡" HIY "──────────────--==终极属性==--──────────────" HIC "≡\n\n" NOR;         
+
+                        sp += HIC "≡" HIY "------------------------------------------------------------------------" HIC "≡\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------==终极属性==------------------------------" HIC "≡\n\n" NOR;
                         sp += sprintf(HIY "【冰    冻】" HIM " %9s / %-9s"
                                       HIY "【忽视冰冻】" HIM " %9s / %s\n"
                                       /*
@@ -410,7 +410,7 @@ int main(object me, string arg)
                                       HIY "【追加伤害】" HIM " %9s / %-9s"
                                       HIY "【化解伤害】" HIM " %9s / %s\n"
                                       HIY "【伤害反噬】" HIM " %9s / %-9s"
-                                      HIY "【浴血重生】" HIM " %9s / %s\n"                      
+                                      HIY "【浴血重生】" HIM " %9s / %s\n"
                                       HIY "【致命一击】" HIM " %9s / %-9s"
                                       HIY "【提升技能】" HIM " %9d / %d\n\n",
                                       ob->query_yuanshen_buff("add_freeze")+"%","90%",ob->query_yuanshen_buff("avoid_freeze")+"%","90%",
@@ -425,8 +425,8 @@ int main(object me, string arg)
                                       ob->query_yuanshen_buff("counter_damage")+"%","90%",ob->query_yuanshen_buff("avoid_die")+"%","90%",
                                       ob->query_yuanshen_buff("fatal_blow")+"%","90%",ob->query_yuanshen_buff("add_skill"),1200);
 
-                        //sp += HIC "≡" HIY "────────────────────────────────────" HIC "≡\n" NOR;
-                        sp += HIC "≡" HIY "──────────────--==王者归来==--──────────────" HIC "≡\n\n" NOR;
+                        //sp += HIC "≡" HIY "------------------------------------------------------------------------" HIC "≡\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------==王者归来==------------------------------" HIC "≡\n\n" NOR;
                         sp += sprintf(HIG + (ob == me ? "你" : ob->name()) + HIG "在%s里已经历练了 " NOR + HIC "%s\n" NOR,
                                       LOCAL_MUD_NAME(), time_period(query("online_time", ob)));
 
@@ -475,10 +475,10 @@ int main(object me, string arg)
 
                 } else
                         return notify_fail("只有巫师能察看别人的状态。\n");
-                
+
                         sp = HIM + (ob == me ? "你" : ob->name(1)) + "目前的技能组合附加属性效果一览\n" NOR;
-                        //sp += HIC "≡" HIY "────────────────────────────────────" HIC "≡\n" NOR;
-                        sp += HIC "≡" HIY "──────────────--==天赋加成==--──────────────" HIC "≡\n\n" NOR;
+                        //sp += HIC "≡" HIY "------------------------------------------------------------------------" HIC "≡\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------==天赋加成==------------------------------" HIC "≡\n\n" NOR;
 
                         sp += sprintf(HIC "【臂力附加】" HIG " %9d / %-9d"
                                       HIC "【悟性附加】" HIG " %9d / %d\n"
@@ -488,8 +488,8 @@ int main(object me, string arg)
                                       ob->query_skillmix_buff("int"),2000,
                                       ob->query_skillmix_buff("con"),2000,
                                       ob->query_skillmix_buff("dex"),2000);
-                        sp += HIC "≡" HIY "────────────────────────────────────" HIC "≡\n" NOR;
-                        sp += HIC "≡" HIY "──────────────--==上限加成==--──────────────" HIC "≡\n\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------------------------------------------------" HIC "≡\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------==上限加成==------------------------------" HIC "≡\n\n" NOR;
                         sp += sprintf(HIC "【潜能上限】" HIM " %9d / %-9d"
                                       HIC "【体会上限】" HIM " %9d / %d\n"
                                       HIC "【内力上限】" HIM " %9d / %-9d"
@@ -501,9 +501,9 @@ int main(object me, string arg)
                                       ob->query_skillmix_buff("max_neili"),2000000,
                                       ob->query_skillmix_buff("max_jingli"),1000000,
                                       ob->query_skillmix_buff("max_qi"),2000000,
-                                      ob->query_skillmix_buff("max_jing"),1000000);        
-                        sp += HIC "≡" HIY "────────────────────────────────────" HIC "≡\n" NOR;
-                        sp += HIC "≡" HIY "──────────────--==练功加成==--──────────────" HIC "≡\n\n" NOR;
+                                      ob->query_skillmix_buff("max_jing"),1000000);
+                        sp += HIC "≡" HIY "------------------------------------------------------------------------" HIC "≡\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------==练功加成==------------------------------" HIC "≡\n\n" NOR;
                         sp += sprintf(HIC "【研究次数】" HIY " %9d / %-9d"
                                       HIC "【研究效果】" HIY " %9s / %s\n"
                                       HIC "【练习次数】" HIY " %9d / %-9d"
@@ -520,8 +520,8 @@ int main(object me, string arg)
                                       ob->query_skillmix_buff("learn_effect")+"%","2000%",
                                       ob->query_skillmix_buff("derive_times"),2000,
                                       ob->query_skillmix_buff("derive_effect")+"%","2000%");
-                        sp += HIC "≡" HIY "────────────────────────────────────" HIC "≡\n" NOR;
-                        sp += HIC "≡" HIY "──────────────--==五行加成==--──────────────" HIC "≡\n\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------------------------------------------------" HIC "≡\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------==五行加成==------------------------------" HIC "≡\n\n" NOR;
                         sp += sprintf(RED "【毒 伤 害】" RED " %9s / %-9s"
                                       RED "【抗    毒】" RED " %9s / %s\n"
                                       RED "【魔 伤 害】" RED " %9s / %-9s"
@@ -543,14 +543,14 @@ int main(object me, string arg)
                                       ob->query_skillmix_buff("add_water")+"%","100%",ob->query_skillmix_buff("reduce_water")+"%","100%",
                                       ob->query_skillmix_buff("add_fire")+"%","100%",ob->query_skillmix_buff("reduce_fire")+"%","100%",
                                       ob->query_skillmix_buff("add_earth")+"%","100%",ob->query_skillmix_buff("reduce_earth")+"%","100%");
-                        sp += HIC "≡" HIY "────────────────────────────────────" HIC "≡\n" NOR;
-                        sp += HIC "≡" HIY "──────────────--==状态恢复==--──────────────" HIC "≡\n\n" NOR;              
+                        sp += HIC "≡" HIY "------------------------------------------------------------------------" HIC "≡\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------==状态恢复==------------------------------" HIC "≡\n\n" NOR;
                         sp += sprintf(HIB "【偷取内力】" HIB " %9s / %-9s"
                                       HIB "【偷取生命】" HIB " %9s / %s\n\n",
                                       ob->query_skillmix_buff("leech_neili")+"%","90%",
                                       ob->query_skillmix_buff("leech_qi")+"%","90%");
-                        sp += HIC "≡" HIY "────────────────────────────────────" HIC "≡\n" NOR;
-                        sp += HIC "≡" HIY "──────────────--==战斗加成==--──────────────" HIC "≡\n\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------------------------------------------------" HIC "≡\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------==战斗加成==------------------------------" HIC "≡\n\n" NOR;
                         sp += sprintf(WHT "【攻击等级】" HIW " %9d / %-9d" NOR
                                       WHT "【防御等级】" HIW " %9d / %d\n" NOR
                                       WHT "【躲闪等级】" HIW " %9d / %-9d" NOR
@@ -586,13 +586,13 @@ int main(object me, string arg)
                                       ob->query_skillmix_buff("avoid_parry")+"%","90%",
                                       ob->query_skillmix_buff("avoid_dodge")+"%","90%",
                                       ob->query_skillmix_buff("avoid_attack")+"%","90%",
-                                      ob->query_skillmix_buff("avoid_force")+"%","90%");                      
-                        sp += HIC "≡" HIY "────────────────────────────────────" HIC "≡\n" NOR;
-                        sp += HIC "≡" HIY "──────────────--==高级属性==--──────────────" HIC "≡\n\n" NOR;        
+                                      ob->query_skillmix_buff("avoid_force")+"%","90%");
+                        sp += HIC "≡" HIY "------------------------------------------------------------------------" HIC "≡\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------==高级属性==------------------------------" HIC "≡\n\n" NOR;
                         sp += sprintf(HIW "【化解忙乱】" HIM " %9d / %-9d"
                                       HIW "【寻 宝 率】" HIM " %9s / %s\n"
                                       HIW "【双倍伤害】" CYN " %9s / %-9s"
-                                      HIW "【伤转内力】" CYN " %9s / %s\n"  
+                                      HIW "【伤转内力】" CYN " %9s / %s\n"
                                       HIW "【致    盲】" CYN " %9s / %-9s"
                                       HIW "【忽视致盲】" CYN " %9s / %s\n"
                                       HIW "【穿透破甲】" CYN " %9s / %-9s"
@@ -607,9 +607,9 @@ int main(object me, string arg)
                                       ob->query_skillmix_buff("through_armor")+"%","90%",
                                       ob->query_skillmix_buff("avoid_poison")+"%","100%",
                                       ob->query_skillmix_buff("full_self")+"%","90%");
-                      
-                        sp += HIC "≡" HIY "────────────────────────────────────" HIC "≡\n" NOR;
-                        sp += HIC "≡" HIY "──────────────--==终极属性==--──────────────" HIC "≡\n\n" NOR;         
+
+                        sp += HIC "≡" HIY "------------------------------------------------------------------------" HIC "≡\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------==终极属性==------------------------------" HIC "≡\n\n" NOR;
                         sp += sprintf(HIY "【冰    冻】" HIM " %9s / %-9s"
                                       HIY "【忽视冰冻】" HIM " %9s / %s\n"
                                       /*
@@ -625,7 +625,7 @@ int main(object me, string arg)
                                       HIY "【追加伤害】" HIM " %9s / %-9s"
                                       HIY "【化解伤害】" HIM " %9s / %s\n"
                                       HIY "【伤害反噬】" HIM " %9s / %-9s"
-                                      HIY "【浴血重生】" HIM " %9s / %s\n"                      
+                                      HIY "【浴血重生】" HIM " %9s / %s\n"
                                       HIY "【致命一击】" HIM " %9s / %-9s"
                                       HIY "【提升技能】" HIM " %9d / %d\n\n",
                                       ob->query_skillmix_buff("add_freeze")+"%","90%",ob->query_skillmix_buff("avoid_freeze")+"%","90%",
@@ -640,8 +640,8 @@ int main(object me, string arg)
                                       ob->query_skillmix_buff("counter_damage")+"%","90%",ob->query_skillmix_buff("avoid_die")+"%","90%",
                                       ob->query_skillmix_buff("fatal_blow")+"%","90%",ob->query_skillmix_buff("add_skill"),1200);
 
-                        //sp += HIC "≡" HIY "────────────────────────────────────" HIC "≡\n" NOR;
-                        sp += HIC "≡" HIY "──────────────--==王者归来==--──────────────" HIC "≡\n\n" NOR;
+                        //sp += HIC "≡" HIY "------------------------------------------------------------------------" HIC "≡\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------==王者归来==------------------------------" HIC "≡\n\n" NOR;
                         sp += sprintf(HIG + (ob == me ? "你" : ob->name()) + HIG "在%s里已经历练了 " NOR + HIC "%s\n" NOR,
                                       LOCAL_MUD_NAME(), time_period(query("online_time", ob)));
 
@@ -690,10 +690,10 @@ int main(object me, string arg)
 
                 } else
                         return notify_fail("只有巫师能察看别人的状态。\n");
-                
+
                         sp = HIM + (ob == me ? "你" : ob->name(1)) + "目前的能力进阶附加属性效果一览\n" NOR;
-                        //sp += HIC "≡" HIY "────────────────────────────────────" HIC "≡\n" NOR;
-                        sp += HIC "≡" HIY "──────────────--==天赋加成==--──────────────" HIC "≡\n\n" NOR;
+                        //sp += HIC "≡" HIY "------------------------------------------------------------------------" HIC "≡\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------==天赋加成==------------------------------" HIC "≡\n\n" NOR;
 
                         sp += sprintf(HIC "【臂力附加】" HIG " %9d / %-9d"
                                       HIC "【悟性附加】" HIG " %9d / %d\n"
@@ -703,8 +703,8 @@ int main(object me, string arg)
                                       ob->query_ability_buff("int"),2000,
                                       ob->query_ability_buff("con"),2000,
                                       ob->query_ability_buff("dex"),2000);
-                        sp += HIC "≡" HIY "────────────────────────────────────" HIC "≡\n" NOR;
-                        sp += HIC "≡" HIY "──────────────--==上限加成==--──────────────" HIC "≡\n\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------------------------------------------------" HIC "≡\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------==上限加成==------------------------------" HIC "≡\n\n" NOR;
                         sp += sprintf(HIC "【潜能上限】" HIM " %9d / %-9d"
                                       HIC "【体会上限】" HIM " %9d / %d\n"
                                       HIC "【内力上限】" HIM " %9d / %-9d"
@@ -716,9 +716,9 @@ int main(object me, string arg)
                                       ob->query_ability_buff("max_neili"),2000000,
                                       ob->query_ability_buff("max_jingli"),1000000,
                                       ob->query_ability_buff("max_qi"),2000000,
-                                      ob->query_ability_buff("max_jing"),1000000);        
-                        sp += HIC "≡" HIY "────────────────────────────────────" HIC "≡\n" NOR;
-                        sp += HIC "≡" HIY "──────────────--==练功加成==--──────────────" HIC "≡\n\n" NOR;
+                                      ob->query_ability_buff("max_jing"),1000000);
+                        sp += HIC "≡" HIY "------------------------------------------------------------------------" HIC "≡\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------==练功加成==------------------------------" HIC "≡\n\n" NOR;
                         sp += sprintf(HIC "【研究次数】" HIY " %9d / %-9d"
                                       HIC "【研究效果】" HIY " %9s / %s\n"
                                       HIC "【练习次数】" HIY " %9d / %-9d"
@@ -735,8 +735,8 @@ int main(object me, string arg)
                                       ob->query_ability_buff("learn_effect")+"%","2000%",
                                       ob->query_ability_buff("derive_times"),2000,
                                       ob->query_ability_buff("derive_effect")+"%","2000%");
-                        sp += HIC "≡" HIY "────────────────────────────────────" HIC "≡\n" NOR;
-                        sp += HIC "≡" HIY "──────────────--==五行加成==--──────────────" HIC "≡\n\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------------------------------------------------" HIC "≡\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------==五行加成==------------------------------" HIC "≡\n\n" NOR;
                         sp += sprintf(RED "【毒 伤 害】" RED " %9s / %-9s"
                                       RED "【抗    毒】" RED " %9s / %s\n"
                                       RED "【魔 伤 害】" RED " %9s / %-9s"
@@ -758,14 +758,14 @@ int main(object me, string arg)
                                       ob->query_ability_buff("add_water")+"%","100%",ob->query_ability_buff("reduce_water")+"%","100%",
                                       ob->query_ability_buff("add_fire")+"%","100%",ob->query_ability_buff("reduce_fire")+"%","100%",
                                       ob->query_ability_buff("add_earth")+"%","100%",ob->query_ability_buff("reduce_earth")+"%","100%");
-                        sp += HIC "≡" HIY "────────────────────────────────────" HIC "≡\n" NOR;
-                        sp += HIC "≡" HIY "──────────────--==状态恢复==--──────────────" HIC "≡\n\n" NOR;              
+                        sp += HIC "≡" HIY "------------------------------------------------------------------------" HIC "≡\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------==状态恢复==------------------------------" HIC "≡\n\n" NOR;
                         sp += sprintf(HIB "【偷取内力】" HIB " %9s / %-9s"
                                       HIB "【偷取生命】" HIB " %9s / %s\n\n",
                                       ob->query_ability_buff("leech_neili")+"%","90%",
                                       ob->query_ability_buff("leech_qi")+"%","90%");
-                        sp += HIC "≡" HIY "────────────────────────────────────" HIC "≡\n" NOR;
-                        sp += HIC "≡" HIY "──────────────--==战斗加成==--──────────────" HIC "≡\n\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------------------------------------------------" HIC "≡\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------==战斗加成==------------------------------" HIC "≡\n\n" NOR;
                         sp += sprintf(WHT "【攻击等级】" HIW " %9d / %-9d" NOR
                                       WHT "【防御等级】" HIW " %9d / %d\n" NOR
                                       WHT "【躲闪等级】" HIW " %9d / %-9d" NOR
@@ -801,13 +801,13 @@ int main(object me, string arg)
                                       ob->query_ability_buff("avoid_parry")+"%","90%",
                                       ob->query_ability_buff("avoid_dodge")+"%","90%",
                                       ob->query_ability_buff("avoid_attack")+"%","90%",
-                                      ob->query_ability_buff("avoid_force")+"%","90%");                      
-                        sp += HIC "≡" HIY "────────────────────────────────────" HIC "≡\n" NOR;
-                        sp += HIC "≡" HIY "──────────────--==高级属性==--──────────────" HIC "≡\n\n" NOR;        
+                                      ob->query_ability_buff("avoid_force")+"%","90%");
+                        sp += HIC "≡" HIY "------------------------------------------------------------------------" HIC "≡\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------==高级属性==------------------------------" HIC "≡\n\n" NOR;
                         sp += sprintf(HIW "【化解忙乱】" HIM " %9d / %-9d"
                                       HIW "【寻 宝 率】" HIM " %9s / %s\n"
                                       HIW "【双倍伤害】" CYN " %9s / %-9s"
-                                      HIW "【伤转内力】" CYN " %9s / %s\n"  
+                                      HIW "【伤转内力】" CYN " %9s / %s\n"
                                       HIW "【致    盲】" CYN " %9s / %-9s"
                                       HIW "【忽视致盲】" CYN " %9s / %s\n"
                                       HIW "【穿透破甲】" CYN " %9s / %-9s"
@@ -822,9 +822,9 @@ int main(object me, string arg)
                                       ob->query_ability_buff("through_armor")+"%","90%",
                                       ob->query_ability_buff("avoid_poison")+"%","100%",
                                       ob->query_ability_buff("full_self")+"%","90%");
-                      
-                        sp += HIC "≡" HIY "────────────────────────────────────" HIC "≡\n" NOR;
-                        sp += HIC "≡" HIY "──────────────--==终极属性==--──────────────" HIC "≡\n\n" NOR;         
+
+                        sp += HIC "≡" HIY "------------------------------------------------------------------------" HIC "≡\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------==终极属性==------------------------------" HIC "≡\n\n" NOR;
                         sp += sprintf(HIY "【冰    冻】" HIM " %9s / %-9s"
                                       HIY "【忽视冰冻】" HIM " %9s / %s\n"
                                       /*
@@ -840,7 +840,7 @@ int main(object me, string arg)
                                       HIY "【追加伤害】" HIM " %9s / %-9s"
                                       HIY "【化解伤害】" HIM " %9s / %s\n"
                                       HIY "【伤害反噬】" HIM " %9s / %-9s"
-                                      HIY "【浴血重生】" HIM " %9s / %s\n"                      
+                                      HIY "【浴血重生】" HIM " %9s / %s\n"
                                       HIY "【致命一击】" HIM " %9s / %-9s"
                                       HIY "【提升技能】" HIM " %9d / %d\n\n",
                                       ob->query_ability_buff("add_freeze")+"%","90%",ob->query_ability_buff("avoid_freeze")+"%","90%",
@@ -855,8 +855,8 @@ int main(object me, string arg)
                                       ob->query_ability_buff("counter_damage")+"%","90%",ob->query_ability_buff("avoid_die")+"%","90%",
                                       ob->query_ability_buff("fatal_blow")+"%","90%",ob->query_ability_buff("add_skill"),1200);
 
-                        //sp += HIC "≡" HIY "────────────────────────────────────" HIC "≡\n" NOR;
-                        sp += HIC "≡" HIY "──────────────--==王者归来==--──────────────" HIC "≡\n\n" NOR;
+                        //sp += HIC "≡" HIY "------------------------------------------------------------------------" HIC "≡\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------==王者归来==------------------------------" HIC "≡\n\n" NOR;
                         sp += sprintf(HIG + (ob == me ? "你" : ob->name()) + HIG "在%s里已经历练了 " NOR + HIC "%s\n" NOR,
                                       LOCAL_MUD_NAME(), time_period(query("online_time", ob)));
 
@@ -905,10 +905,10 @@ int main(object me, string arg)
 
                 } else
                         return notify_fail("只有巫师能察看别人的状态。\n");
-                
+
                         sp = HIM + (ob == me ? "你" : ob->name(1)) + "目前的能力进阶附加属性效果一览\n" NOR;
-                        //sp += HIC "≡" HIY "────────────────────────────────────" HIC "≡\n" NOR;
-                        sp += HIC "≡" HIY "──────────────--==天赋加成==--──────────────" HIC "≡\n\n" NOR;
+                        //sp += HIC "≡" HIY "------------------------------------------------------------------------" HIC "≡\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------==天赋加成==------------------------------" HIC "≡\n\n" NOR;
 
                         sp += sprintf(HIC "【臂力附加】" HIG " %9d / %-9d"
                                       HIC "【悟性附加】" HIG " %9d / %d\n"
@@ -918,8 +918,8 @@ int main(object me, string arg)
                                       ob->query_equipment_buff("int"),2000,
                                       ob->query_equipment_buff("con"),2000,
                                       ob->query_equipment_buff("dex"),2000);
-                        sp += HIC "≡" HIY "────────────────────────────────────" HIC "≡\n" NOR;
-                        sp += HIC "≡" HIY "──────────────--==上限加成==--──────────────" HIC "≡\n\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------------------------------------------------" HIC "≡\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------==上限加成==------------------------------" HIC "≡\n\n" NOR;
                         sp += sprintf(HIC "【潜能上限】" HIM " %9d / %-9d"
                                       HIC "【体会上限】" HIM " %9d / %d\n"
                                       HIC "【内力上限】" HIM " %9d / %-9d"
@@ -931,9 +931,9 @@ int main(object me, string arg)
                                       ob->query_equipment_buff("max_neili"),2000000,
                                       ob->query_equipment_buff("max_jingli"),1000000,
                                       ob->query_equipment_buff("max_qi"),2000000,
-                                      ob->query_equipment_buff("max_jing"),1000000);        
-                        sp += HIC "≡" HIY "────────────────────────────────────" HIC "≡\n" NOR;
-                        sp += HIC "≡" HIY "──────────────--==练功加成==--──────────────" HIC "≡\n\n" NOR;
+                                      ob->query_equipment_buff("max_jing"),1000000);
+                        sp += HIC "≡" HIY "------------------------------------------------------------------------" HIC "≡\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------==练功加成==------------------------------" HIC "≡\n\n" NOR;
                         sp += sprintf(HIC "【研究次数】" HIY " %9d / %-9d"
                                       HIC "【研究效果】" HIY " %9s / %s\n"
                                       HIC "【练习次数】" HIY " %9d / %-9d"
@@ -950,8 +950,8 @@ int main(object me, string arg)
                                       ob->query_equipment_buff("learn_effect")+"%","2000%",
                                       ob->query_equipment_buff("derive_times"),2000,
                                       ob->query_equipment_buff("derive_effect")+"%","2000%");
-                        sp += HIC "≡" HIY "────────────────────────────────────" HIC "≡\n" NOR;
-                        sp += HIC "≡" HIY "──────────────--==五行加成==--──────────────" HIC "≡\n\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------------------------------------------------" HIC "≡\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------==五行加成==------------------------------" HIC "≡\n\n" NOR;
                         sp += sprintf(RED "【毒 伤 害】" RED " %9s / %-9s"
                                       RED "【抗    毒】" RED " %9s / %s\n"
                                       RED "【魔 伤 害】" RED " %9s / %-9s"
@@ -973,14 +973,14 @@ int main(object me, string arg)
                                       ob->query_equipment_buff("add_water")+"%","100%",ob->query_equipment_buff("reduce_water")+"%","100%",
                                       ob->query_equipment_buff("add_fire")+"%","100%",ob->query_equipment_buff("reduce_fire")+"%","100%",
                                       ob->query_equipment_buff("add_earth")+"%","100%",ob->query_equipment_buff("reduce_earth")+"%","100%");
-                        sp += HIC "≡" HIY "────────────────────────────────────" HIC "≡\n" NOR;
-                        sp += HIC "≡" HIY "──────────────--==状态恢复==--──────────────" HIC "≡\n\n" NOR;              
+                        sp += HIC "≡" HIY "------------------------------------------------------------------------" HIC "≡\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------==状态恢复==------------------------------" HIC "≡\n\n" NOR;
                         sp += sprintf(HIB "【偷取内力】" HIB " %9s / %-9s"
                                       HIB "【偷取生命】" HIB " %9s / %s\n\n",
                                       ob->query_equipment_buff("leech_neili")+"%","90%",
                                       ob->query_equipment_buff("leech_qi")+"%","90%");
-                        sp += HIC "≡" HIY "────────────────────────────────────" HIC "≡\n" NOR;
-                        sp += HIC "≡" HIY "──────────────--==战斗加成==--──────────────" HIC "≡\n\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------------------------------------------------" HIC "≡\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------==战斗加成==------------------------------" HIC "≡\n\n" NOR;
                         sp += sprintf(WHT "【攻击等级】" HIW " %9d / %-9d" NOR
                                       WHT "【防御等级】" HIW " %9d / %d\n" NOR
                                       WHT "【躲闪等级】" HIW " %9d / %-9d" NOR
@@ -1016,13 +1016,13 @@ int main(object me, string arg)
                                       ob->query_equipment_buff("avoid_parry")+"%","90%",
                                       ob->query_equipment_buff("avoid_dodge")+"%","90%",
                                       ob->query_equipment_buff("avoid_attack")+"%","90%",
-                                      ob->query_equipment_buff("avoid_force")+"%","90%");                      
-                        sp += HIC "≡" HIY "────────────────────────────────────" HIC "≡\n" NOR;
-                        sp += HIC "≡" HIY "──────────────--==高级属性==--──────────────" HIC "≡\n\n" NOR;        
+                                      ob->query_equipment_buff("avoid_force")+"%","90%");
+                        sp += HIC "≡" HIY "------------------------------------------------------------------------" HIC "≡\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------==高级属性==------------------------------" HIC "≡\n\n" NOR;
                         sp += sprintf(HIW "【化解忙乱】" HIM " %9d / %-9d"
                                       HIW "【寻 宝 率】" HIM " %9s / %s\n"
                                       HIW "【双倍伤害】" CYN " %9s / %-9s"
-                                      HIW "【伤转内力】" CYN " %9s / %s\n"  
+                                      HIW "【伤转内力】" CYN " %9s / %s\n"
                                       HIW "【致    盲】" CYN " %9s / %-9s"
                                       HIW "【忽视致盲】" CYN " %9s / %s\n"
                                       HIW "【穿透破甲】" CYN " %9s / %-9s"
@@ -1037,9 +1037,9 @@ int main(object me, string arg)
                                       ob->query_equipment_buff("through_armor")+"%","90%",
                                       ob->query_equipment_buff("avoid_poison")+"%","100%",
                                       ob->query_equipment_buff("full_self")+"%","90%");
-                      
-                        sp += HIC "≡" HIY "────────────────────────────────────" HIC "≡\n" NOR;
-                        sp += HIC "≡" HIY "──────────────--==终极属性==--──────────────" HIC "≡\n\n" NOR;         
+
+                        sp += HIC "≡" HIY "------------------------------------------------------------------------" HIC "≡\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------==终极属性==------------------------------" HIC "≡\n\n" NOR;
                         sp += sprintf(HIY "【冰    冻】" HIM " %9s / %-9s"
                                       HIY "【忽视冰冻】" HIM " %9s / %s\n"
                                       /*
@@ -1055,7 +1055,7 @@ int main(object me, string arg)
                                       HIY "【追加伤害】" HIM " %9s / %-9s"
                                       HIY "【化解伤害】" HIM " %9s / %s\n"
                                       HIY "【伤害反噬】" HIM " %9s / %-9s"
-                                      HIY "【浴血重生】" HIM " %9s / %s\n"                      
+                                      HIY "【浴血重生】" HIM " %9s / %s\n"
                                       HIY "【致命一击】" HIM " %9s / %-9s"
                                       HIY "【提升技能】" HIM " %9d / %d\n\n",
                                       ob->query_equipment_buff("add_freeze")+"%","90%",ob->query_equipment_buff("avoid_freeze")+"%","90%",
@@ -1070,8 +1070,8 @@ int main(object me, string arg)
                                       ob->query_equipment_buff("counter_damage")+"%","90%",ob->query_equipment_buff("avoid_die")+"%","90%",
                                       ob->query_equipment_buff("fatal_blow")+"%","90%",ob->query_equipment_buff("add_skill"),1200);
 
-                        //sp += HIC "≡" HIY "────────────────────────────────────" HIC "≡\n" NOR;
-                        sp += HIC "≡" HIY "──────────────--==王者归来==--──────────────" HIC "≡\n\n" NOR;
+                        //sp += HIC "≡" HIY "------------------------------------------------------------------------" HIC "≡\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------==王者归来==------------------------------" HIC "≡\n\n" NOR;
                         sp += sprintf(HIG + (ob == me ? "你" : ob->name()) + HIG "在%s里已经历练了 " NOR + HIC "%s\n" NOR,
                                       LOCAL_MUD_NAME(), time_period(query("online_time", ob)));
 
@@ -1120,10 +1120,10 @@ int main(object me, string arg)
 
                 } else
                         return notify_fail("只有巫师能察看别人的状态。\n");
-                
+
                         sp = HIM + (ob == me ? "你" : ob->name(1)) + "目前的能力进阶附加属性效果一览\n" NOR;
-                        //sp += HIC "≡" HIY "────────────────────────────────────" HIC "≡\n" NOR;
-                        sp += HIC "≡" HIY "──────────────--==天赋加成==--──────────────" HIC "≡\n\n" NOR;
+                        //sp += HIC "≡" HIY "------------------------------------------------------------------------" HIC "≡\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------==天赋加成==------------------------------" HIC "≡\n\n" NOR;
 
                         sp += sprintf(HIC "【臂力附加】" HIG " %9d / %-9d"
                                       HIC "【悟性附加】" HIG " %9d / %d\n"
@@ -1133,8 +1133,8 @@ int main(object me, string arg)
                                       ob->query_talent_buff("int"),2000,
                                       ob->query_talent_buff("con"),2000,
                                       ob->query_talent_buff("dex"),2000);
-                        sp += HIC "≡" HIY "────────────────────────────────────" HIC "≡\n" NOR;
-                        sp += HIC "≡" HIY "──────────────--==上限加成==--──────────────" HIC "≡\n\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------------------------------------------------" HIC "≡\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------==上限加成==------------------------------" HIC "≡\n\n" NOR;
                         sp += sprintf(HIC "【潜能上限】" HIM " %9d / %-9d"
                                       HIC "【体会上限】" HIM " %9d / %d\n"
                                       HIC "【内力上限】" HIM " %9d / %-9d"
@@ -1146,9 +1146,9 @@ int main(object me, string arg)
                                       ob->query_talent_buff("max_neili"),2000000,
                                       ob->query_talent_buff("max_jingli"),1000000,
                                       ob->query_talent_buff("max_qi"),2000000,
-                                      ob->query_talent_buff("max_jing"),1000000);        
-                        sp += HIC "≡" HIY "────────────────────────────────────" HIC "≡\n" NOR;
-                        sp += HIC "≡" HIY "──────────────--==练功加成==--──────────────" HIC "≡\n\n" NOR;
+                                      ob->query_talent_buff("max_jing"),1000000);
+                        sp += HIC "≡" HIY "------------------------------------------------------------------------" HIC "≡\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------==练功加成==------------------------------" HIC "≡\n\n" NOR;
                         sp += sprintf(HIC "【研究次数】" HIY " %9d / %-9d"
                                       HIC "【研究效果】" HIY " %9s / %s\n"
                                       HIC "【练习次数】" HIY " %9d / %-9d"
@@ -1165,8 +1165,8 @@ int main(object me, string arg)
                                       ob->query_talent_buff("learn_effect")+"%","2000%",
                                       ob->query_talent_buff("derive_times"),2000,
                                       ob->query_talent_buff("derive_effect")+"%","2000%");
-                        sp += HIC "≡" HIY "────────────────────────────────────" HIC "≡\n" NOR;
-                        sp += HIC "≡" HIY "──────────────--==五行加成==--──────────────" HIC "≡\n\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------------------------------------------------" HIC "≡\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------==五行加成==------------------------------" HIC "≡\n\n" NOR;
                         sp += sprintf(RED "【毒 伤 害】" RED " %9s / %-9s"
                                       RED "【抗    毒】" RED " %9s / %s\n"
                                       RED "【魔 伤 害】" RED " %9s / %-9s"
@@ -1188,14 +1188,14 @@ int main(object me, string arg)
                                       ob->query_talent_buff("add_water")+"%","100%",ob->query_talent_buff("reduce_water")+"%","100%",
                                       ob->query_talent_buff("add_fire")+"%","100%",ob->query_talent_buff("reduce_fire")+"%","100%",
                                       ob->query_talent_buff("add_earth")+"%","100%",ob->query_talent_buff("reduce_earth")+"%","100%");
-                        sp += HIC "≡" HIY "────────────────────────────────────" HIC "≡\n" NOR;
-                        sp += HIC "≡" HIY "──────────────--==状态恢复==--──────────────" HIC "≡\n\n" NOR;              
+                        sp += HIC "≡" HIY "------------------------------------------------------------------------" HIC "≡\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------==状态恢复==------------------------------" HIC "≡\n\n" NOR;
                         sp += sprintf(HIB "【偷取内力】" HIB " %9s / %-9s"
                                       HIB "【偷取生命】" HIB " %9s / %s\n\n",
                                       ob->query_talent_buff("leech_neili")+"%","90%",
                                       ob->query_talent_buff("leech_qi")+"%","90%");
-                        sp += HIC "≡" HIY "────────────────────────────────────" HIC "≡\n" NOR;
-                        sp += HIC "≡" HIY "──────────────--==战斗加成==--──────────────" HIC "≡\n\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------------------------------------------------" HIC "≡\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------==战斗加成==------------------------------" HIC "≡\n\n" NOR;
                         sp += sprintf(WHT "【攻击等级】" HIW " %9d / %-9d" NOR
                                       WHT "【防御等级】" HIW " %9d / %d\n" NOR
                                       WHT "【躲闪等级】" HIW " %9d / %-9d" NOR
@@ -1231,13 +1231,13 @@ int main(object me, string arg)
                                       ob->query_talent_buff("avoid_parry")+"%","90%",
                                       ob->query_talent_buff("avoid_dodge")+"%","90%",
                                       ob->query_talent_buff("avoid_attack")+"%","90%",
-                                      ob->query_talent_buff("avoid_force")+"%","90%");                      
-                        sp += HIC "≡" HIY "────────────────────────────────────" HIC "≡\n" NOR;
-                        sp += HIC "≡" HIY "──────────────--==高级属性==--──────────────" HIC "≡\n\n" NOR;        
+                                      ob->query_talent_buff("avoid_force")+"%","90%");
+                        sp += HIC "≡" HIY "------------------------------------------------------------------------" HIC "≡\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------==高级属性==------------------------------" HIC "≡\n\n" NOR;
                         sp += sprintf(HIW "【化解忙乱】" HIM " %9d / %-9d"
                                       HIW "【寻 宝 率】" HIM " %9s / %s\n"
                                       HIW "【双倍伤害】" CYN " %9s / %-9s"
-                                      HIW "【伤转内力】" CYN " %9s / %s\n"  
+                                      HIW "【伤转内力】" CYN " %9s / %s\n"
                                       HIW "【致    盲】" CYN " %9s / %-9s"
                                       HIW "【忽视致盲】" CYN " %9s / %s\n"
                                       HIW "【穿透破甲】" CYN " %9s / %-9s"
@@ -1252,9 +1252,9 @@ int main(object me, string arg)
                                       ob->query_talent_buff("through_armor")+"%","90%",
                                       ob->query_talent_buff("avoid_poison")+"%","100%",
                                       ob->query_talent_buff("full_self")+"%","90%");
-                      
-                        sp += HIC "≡" HIY "────────────────────────────────────" HIC "≡\n" NOR;
-                        sp += HIC "≡" HIY "──────────────--==终极属性==--──────────────" HIC "≡\n\n" NOR;         
+
+                        sp += HIC "≡" HIY "------------------------------------------------------------------------" HIC "≡\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------==终极属性==------------------------------" HIC "≡\n\n" NOR;
                         sp += sprintf(HIY "【冰    冻】" HIM " %9s / %-9s"
                                       HIY "【忽视冰冻】" HIM " %9s / %s\n"
                                       /*
@@ -1270,7 +1270,7 @@ int main(object me, string arg)
                                       HIY "【追加伤害】" HIM " %9s / %-9s"
                                       HIY "【化解伤害】" HIM " %9s / %s\n"
                                       HIY "【伤害反噬】" HIM " %9s / %-9s"
-                                      HIY "【浴血重生】" HIM " %9s / %s\n"                      
+                                      HIY "【浴血重生】" HIM " %9s / %s\n"
                                       HIY "【致命一击】" HIM " %9s / %-9s"
                                       HIY "【提升技能】" HIM " %9d / %d\n\n",
                                       ob->query_talent_buff("add_freeze")+"%","90%",ob->query_talent_buff("avoid_freeze")+"%","90%",
@@ -1285,8 +1285,8 @@ int main(object me, string arg)
                                       ob->query_talent_buff("counter_damage")+"%","90%",ob->query_talent_buff("avoid_die")+"%","90%",
                                       ob->query_talent_buff("fatal_blow")+"%","90%",ob->query_talent_buff("add_skill"),1200);
 
-                        //sp += HIC "≡" HIY "────────────────────────────────────" HIC "≡\n" NOR;
-                        sp += HIC "≡" HIY "──────────────--==王者归来==--──────────────" HIC "≡\n\n" NOR;
+                        //sp += HIC "≡" HIY "------------------------------------------------------------------------" HIC "≡\n" NOR;
+                        sp += HIC "≡" HIY "------------------------------==王者归来==------------------------------" HIC "≡\n\n" NOR;
                         sp += sprintf(HIG + (ob == me ? "你" : ob->name()) + HIG "在%s里已经历练了 " NOR + HIC "%s\n" NOR,
                                       LOCAL_MUD_NAME(), time_period(query("online_time", ob)));
 
@@ -1309,7 +1309,7 @@ int main(object me, string arg)
                         me->start_more(sp);
                         return 1;
         }
-                                
+
         if (arg && arg != "")
         {
                 if( wizardp(me) || query("couple/child_id", me) )
@@ -1334,8 +1334,8 @@ int main(object me, string arg)
                 ob = me;
 
         sp = HIM + (ob == me ? "你" : ob->name(1)) + "目前的各附加属性效果一览\n" NOR;
-        //sp += HIC "≡" HIY "────────────────────────────────────" HIC "≡\n" NOR;
-        sp += HIC "≡" HIY "──────────────--==天赋加成==--──────────────" HIC "≡\n\n" NOR;
+        //sp += HIC "≡" HIY "------------------------------------------------------------------------" HIC "≡\n" NOR;
+        sp += HIC "≡" HIY "------------------------------==天赋加成==------------------------------" HIC "≡\n\n" NOR;
 
         sp += sprintf(HIC "【臂力附加】" HIG " %9d / %-9d"
                       HIC "【悟性附加】" HIG " %9d / %d\n"
@@ -1345,8 +1345,8 @@ int main(object me, string arg)
                       ob->query_all_buff("int"),2000,
                       ob->query_all_buff("con"),2000,
                       ob->query_all_buff("dex"),2000);
-        sp += HIC "≡" HIY "────────────────────────────────────" HIC "≡\n" NOR;
-        sp += HIC "≡" HIY "──────────────--==上限加成==--──────────────" HIC "≡\n\n" NOR;
+        sp += HIC "≡" HIY "------------------------------------------------------------------------" HIC "≡\n" NOR;
+        sp += HIC "≡" HIY "------------------------------==上限加成==------------------------------" HIC "≡\n\n" NOR;
         sp += sprintf(HIC "【潜能上限】" HIM " %9d / %-9d"
                       HIC "【体会上限】" HIM " %9d / %d\n"
                       HIC "【内力上限】" HIM " %9d / %-9d"
@@ -1358,9 +1358,9 @@ int main(object me, string arg)
                       ob->query_all_buff("max_neili"),2000000,
                       ob->query_all_buff("max_jingli"),1000000,
                       ob->query_all_buff("max_qi"),2000000,
-                      ob->query_all_buff("max_jing"),1000000);        
-        sp += HIC "≡" HIY "────────────────────────────────────" HIC "≡\n" NOR;
-        sp += HIC "≡" HIY "──────────────--==练功加成==--──────────────" HIC "≡\n\n" NOR;
+                      ob->query_all_buff("max_jing"),1000000);
+        sp += HIC "≡" HIY "------------------------------------------------------------------------" HIC "≡\n" NOR;
+        sp += HIC "≡" HIY "------------------------------==练功加成==------------------------------" HIC "≡\n\n" NOR;
         sp += sprintf(HIC "【研究次数】" HIY " %9d / %-9d"
                       HIC "【研究效果】" HIY " %9s / %s\n"
                       HIC "【练习次数】" HIY " %9d / %-9d"
@@ -1377,8 +1377,8 @@ int main(object me, string arg)
                       ob->query_all_buff("learn_effect")+"%","2000%",
                       ob->query_all_buff("derive_times"),2000,
                       ob->query_all_buff("derive_effect")+"%","2000%");
-        sp += HIC "≡" HIY "────────────────────────────────────" HIC "≡\n" NOR;
-        sp += HIC "≡" HIY "──────────────--==五行加成==--──────────────" HIC "≡\n\n" NOR;
+        sp += HIC "≡" HIY "------------------------------------------------------------------------" HIC "≡\n" NOR;
+        sp += HIC "≡" HIY "------------------------------==五行加成==------------------------------" HIC "≡\n\n" NOR;
         sp += sprintf(RED "【毒 伤 害】" RED " %9s / %-9s"
                       RED "【抗    毒】" RED " %9s / %s\n"
                       RED "【魔 伤 害】" RED " %9s / %-9s"
@@ -1400,14 +1400,14 @@ int main(object me, string arg)
                       ob->query_all_buff("add_water")+"%","100%",ob->query_all_buff("reduce_water")+"%","100%",
                       ob->query_all_buff("add_fire")+"%","100%",ob->query_all_buff("reduce_fire")+"%","100%",
                       ob->query_all_buff("add_earth")+"%","100%",ob->query_all_buff("reduce_earth")+"%","100%");
-        sp += HIC "≡" HIY "────────────────────────────────────" HIC "≡\n" NOR;
-        sp += HIC "≡" HIY "──────────────--==状态恢复==--──────────────" HIC "≡\n\n" NOR;              
+        sp += HIC "≡" HIY "------------------------------------------------------------------------" HIC "≡\n" NOR;
+        sp += HIC "≡" HIY "------------------------------==状态恢复==------------------------------" HIC "≡\n\n" NOR;
         sp += sprintf(HIB "【偷取内力】" HIB " %9s / %-9s"
                       HIB "【偷取生命】" HIB " %9s / %s\n\n",
                       ob->query_all_buff("leech_neili")+"%","90%",
                       ob->query_all_buff("leech_qi")+"%","90%");
-        sp += HIC "≡" HIY "────────────────────────────────────" HIC "≡\n" NOR;
-        sp += HIC "≡" HIY "──────────────--==战斗加成==--──────────────" HIC "≡\n\n" NOR;
+        sp += HIC "≡" HIY "------------------------------------------------------------------------" HIC "≡\n" NOR;
+        sp += HIC "≡" HIY "------------------------------==战斗加成==------------------------------" HIC "≡\n\n" NOR;
         sp += sprintf(WHT "【攻击等级】" HIW " %9d / %-9d" NOR
                       WHT "【防御等级】" HIW " %9d / %d\n" NOR
                       WHT "【躲闪等级】" HIW " %9d / %-9d" NOR
@@ -1443,13 +1443,13 @@ int main(object me, string arg)
                       ob->query_all_buff("avoid_parry")+"%","90%",
                       ob->query_all_buff("avoid_dodge")+"%","90%",
                       ob->query_all_buff("avoid_attack")+"%","90%",
-                      ob->query_all_buff("avoid_force")+"%","90%");                      
-        sp += HIC "≡" HIY "────────────────────────────────────" HIC "≡\n" NOR;
-        sp += HIC "≡" HIY "──────────────--==高级属性==--──────────────" HIC "≡\n\n" NOR;        
+                      ob->query_all_buff("avoid_force")+"%","90%");
+        sp += HIC "≡" HIY "------------------------------------------------------------------------" HIC "≡\n" NOR;
+        sp += HIC "≡" HIY "------------------------------==高级属性==------------------------------" HIC "≡\n\n" NOR;
         sp += sprintf(HIW "【化解忙乱】" HIM " %9d / %-9d"
                       HIW "【寻 宝 率】" HIM " %9s / %s\n"
                       HIW "【双倍伤害】" CYN " %9s / %-9s"
-                      HIW "【伤转内力】" CYN " %9s / %s\n"  
+                      HIW "【伤转内力】" CYN " %9s / %s\n"
                       HIW "【致    盲】" CYN " %9s / %-9s"
                       HIW "【忽视致盲】" CYN " %9s / %s\n"
                       HIW "【穿透破甲】" CYN " %9s / %-9s"
@@ -1464,9 +1464,9 @@ int main(object me, string arg)
                       ob->query_all_buff("through_armor")+"%","90%",
                       ob->query_all_buff("avoid_poison")+"%","100%",
                       ob->query_all_buff("full_self")+"%","90%");
-                      
-        sp += HIC "≡" HIY "────────────────────────────────────" HIC "≡\n" NOR;
-        sp += HIC "≡" HIY "──────────────--==终极属性==--──────────────" HIC "≡\n\n" NOR;         
+
+        sp += HIC "≡" HIY "------------------------------------------------------------------------" HIC "≡\n" NOR;
+        sp += HIC "≡" HIY "------------------------------==终极属性==------------------------------" HIC "≡\n\n" NOR;
         sp += sprintf(HIY "【冰    冻】" HIM " %9s / %-9s"
                       HIY "【忽视冰冻】" HIM " %9s / %s\n"
                       /*
@@ -1482,7 +1482,7 @@ int main(object me, string arg)
                       HIY "【追加伤害】" HIM " %9s / %-9s"
                       HIY "【化解伤害】" HIM " %9s / %s\n"
                       HIY "【伤害反噬】" HIM " %9s / %-9s"
-                      HIY "【浴血重生】" HIM " %9s / %s\n"                      
+                      HIY "【浴血重生】" HIM " %9s / %s\n"
                       HIY "【致命一击】" HIM " %9s / %-9s"
                       HIY "【提升技能】" HIM " %9d / %d\n\n",
                       ob->query_all_buff("add_freeze")+"%","90%",ob->query_all_buff("avoid_freeze")+"%","90%",
@@ -1497,8 +1497,8 @@ int main(object me, string arg)
                       ob->query_all_buff("counter_damage")+"%","90%",ob->query_all_buff("avoid_die")+"%","90%",
                       ob->query_all_buff("fatal_blow")+"%","90%",ob->query_all_buff("add_skill"),1200);
 
-        //sp += HIC "≡" HIY "────────────────────────────────────" HIC "≡\n" NOR;
-        sp += HIC "≡" HIY "──────────────--==王者归来==--──────────────" HIC "≡\n\n" NOR;
+        //sp += HIC "≡" HIY "------------------------------------------------------------------------" HIC "≡\n" NOR;
+        sp += HIC "≡" HIY "------------------------------==王者归来==------------------------------" HIC "≡\n\n" NOR;
         sp += sprintf(HIG + (ob == me ? "你" : ob->name()) + HIG "在%s里已经历练了 " NOR + HIC "%s\n" NOR,
                         LOCAL_MUD_NAME(), time_period(query("online_time", ob)));
 

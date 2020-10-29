@@ -99,9 +99,9 @@ int valid_learn(object me)
 }
 int practice_skill(object me)
 {
-        object obj;
+//      object obj;
         object *obs;
-        int i, skill, damage;
+        int /*i,*/ skill/*, damage*/;
 
         skill = me->query_skill("jiuyin-baiguzhao", 1);
         if( query("qi", me)<100 )
@@ -164,7 +164,7 @@ mapping query_action(object me, object weapon)
         int p_e2 = -60;
         int f_e1 = 300;
         int f_e2 = 600;
-        int i, lvl, seq, ttl = sizeof(action);
+        int /*i,lvl,*/ seq, ttl = sizeof(action);
 
         seq = random(ttl);       /* 选择出手招数序号 */
         return ([

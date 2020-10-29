@@ -4,7 +4,7 @@
 // by naihe  2002-11-03  于茂名
 
 // 已经改变了许多许多许多了……
-// naihe 17:07 03-11-1 
+// naihe 17:07 03-11-1
 
 #include <ansi.h>
 inherit ROOM;
@@ -212,10 +212,10 @@ void hjset_long()
     else temp_str = sprintf( HIG"(正常开放·场内%2d人)"NOR,
                 who_in_hj()["amount"] );
 
-    longs= "\n        　 "HIW"╭──────────────────────╮     
-           "NOR+WHT"╰╮   "NOR+WHT"幻境 · "+query("color_short_hj")+NOR+WHT" · 幽灵显现"NOR+WHT"   ╭╯     
-           "NOR+HIW"╭╯            "NOR+WHT"BY naihe 2003.10"NOR+HIW"            ╰╮     
-           "NOR+WHT"╰──────────────────────╯     "NOR"
+    longs= "\n        　 "HIW"╭--------------------------------------------╮
+           "NOR+WHT"╰╮   "NOR+WHT"幻境 · "+query("color_short_hj")+NOR+WHT" · 幽灵显现"NOR+WHT"   ╭╯
+           "NOR+HIW"╭╯            "NOR+WHT"BY naihe 2003.10"NOR+HIW"            ╰╮
+           "NOR+WHT"╰--------------------------------------------╯     "NOR"
                          "+temp_str+"
 
     你踏进了一处幽暗的所在，四周似有隐约光亮，却又无法觅其源头。一块
@@ -230,26 +230,26 @@ void hjset_long()
     if( query("player_msg1") )
     {
         temp = query("player_msg1");
-        longs += sprintf("    【 %-8s 发布消息(%8s):%-32s】\n", 
+        longs += sprintf("    【 %-8s 发布消息(%8s):%-32s】\n",
             temp[ "id" ], temp[ "time" ], temp["msg"] );
     }
     if( query("player_msg2") )
     {
         temp = query("player_msg2");
-        longs += sprintf("    【 %-8s 发布消息(%8s):%-32s】\n", 
+        longs += sprintf("    【 %-8s 发布消息(%8s):%-32s】\n",
             temp[ "id" ], temp[ "time" ], temp[ "msg" ] );
     }
     if( query("player_msg3") )
     {
         temp = query("player_msg3");
-        longs += sprintf("    【 %-8s 发布消息(%8s):%-32s】\n", 
+        longs += sprintf("    【 %-8s 发布消息(%8s):%-32s】\n",
             temp[ "id" ], temp[ "time" ], temp[ "msg" ] );
     }
 
     if( !query("player_msg1") && !query("player_msg2") && !query("player_msg3") )
         longs += sprintf("             【 %s 】\n", "现在没有玩家发布信息 (指令：hjmsg 内容)");
 
-    set( "long", longs + 
+    set( "long", longs +
 "    ----------------------------------------------------------------\n" );
 }
 
@@ -314,7 +314,7 @@ int do_enter_hj(string arg)
 void init()
 {
     object me = this_player();
-    
+
     if( !userp(me) || !living(me) )
         return;
     delete_temp("hj2003-valid_enter", me);
@@ -472,9 +472,9 @@ string look_ban()
     object out_room;
 
     write("
-       ┏━━━━━━━━━━━━━━━━┓
+       ┏--------------------------------┓
        ┃ "WHT"幻境·"+query("color_short_hj")+NOR+WHT"·幽灵显现"NOR" ┃
-       ┗━━━━━━━━━━━━━━━━┛
+       ┗--------------------------------┛
 ");
 
     out_room = find_object( __DIR__"room_gameover_hj" );
@@ -625,8 +625,8 @@ dellv ID        --> 清除某玩家在这里的 level 记录(并不清除其实�
 ************************************************************\n",
             GAME_OPEN ? HIG"主游戏  -->启动中"NOR : HIR"主游戏  -->关闭中"NOR,
             MAX_HJ_ENTER,
-            FREE_GAME ? HIY"现在是免费游戏。"NOR : HIG"现在是正常游戏，非免费。"NOR, 
-            ctime_format( time ), ctime_format(), 
+            FREE_GAME ? HIY"现在是免费游戏。"NOR : HIG"现在是正常游戏，非免费。"NOR,
+            ctime_format( time ), ctime_format(),
             temp / 86400, (temp % 86400) / 3600,
             (temp % 86400 % 3600) / 60, temp % 86400 % 3600 % 60,
             in_times, max_in_hj,
@@ -731,7 +731,7 @@ int do_create_room_file()
     {
         set_temp("hj_create_room", 1, me);
         return notify_fail("本指令将直接建立 .c 文件！它将建立文件名为：\n "+
-__DIR__ + "hj_room1.c  至 "+ __DIR__ + "hj_room"+ HJ_ROOM_AMOUNT+ ".c 
+__DIR__ + "hj_room1.c  至 "+ __DIR__ + "hj_room"+ HJ_ROOM_AMOUNT+ ".c
 共 "+HJ_ROOM_AMOUNT +" 个文件！你如果确定，请再次输入本指令。\n");
     }
 
@@ -750,7 +750,7 @@ int valid_leave(object me, string dir)
 {
     object menpiao;
     mapping conditions;
-    
+
     if( dir != "enter" )
         return ::valid_leave(me,dir);
     if( !userp(me) )

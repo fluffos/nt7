@@ -321,7 +321,7 @@ void init_line(mapping maze)
                         else
                         {
                                 if ( j%2 == 1 )
-                                        line[i][j] = line2[i][j] = HIG "─" NOR;
+                                        line[i][j] = line2[i][j] = HIG "--" NOR;
                                 else
                                 {
                                         if ( i == 0 )

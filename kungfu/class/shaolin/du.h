@@ -13,7 +13,7 @@ void attempt_apprentice(object ob)
         if (! permit_recruit(ob))
                 return;
 
-        if( !(ob_fam=query("family", ob)) || 
+        if( !(ob_fam=query("family", ob)) ||
             ob_fam["family_name"] != "少林派")
         {
                 command("say " + RANK_D->query_respect(ob) +
@@ -21,8 +21,8 @@ void attempt_apprentice(object ob)
                 return;
         }
 
-        if( query("class", ob) != "bonze" && 
-            ob_fam["family_name"] == "少林派") 
+        if( query("class", ob) != "bonze" &&
+            ob_fam["family_name"] == "少林派")
         {
                 command("say " + RANK_D->query_respect(ob) +
                         "是俗家弟子，不能在寺内学艺。");
@@ -56,9 +56,9 @@ void attempt_apprentice(object ob)
                                 command("say 贫僧又得一可塑之才，可喜可贺！");
 
                                 name=query("name", ob);
-                                new_name = "玄" + name[2..3];
+                                new_name = "玄" + name[1..1];
                                 set("name", new_name, ob);
-                
+
                                 command("say 从今以后你的法名叫做" +
                                         new_name + "！");
                                 command("recruit "+query("id", ob));

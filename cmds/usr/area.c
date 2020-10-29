@@ -131,7 +131,7 @@ int do_area_kaifa(object me, string arg)
                 msg = sprintf(HIC "\n%-18s%-28s%-8s%-8s%-18s\n" NOR,
                                 "地盘名称", "驻守帮众", "开发度", "忠诚度", "上月收入");
 
-                msg += HIY "───────────────────────────────────\n" NOR;
+                msg += HIY "----------------------------------------------------------------------\n" NOR;
 
                 j = 0;
                 foreach (area in member)
@@ -153,7 +153,7 @@ int do_area_kaifa(object me, string arg)
                         return notify_fail(arg + "现在没有任何地盘。\n");
 
                 msg += "\n目前" + HIM + fam + NOR + "共有" + HIM + chinese_number(j) + NOR + "处地盘。\n";
-                msg += HIY "───────────────────────────────────\n" NOR;
+                msg += HIY "----------------------------------------------------------------------\n" NOR;
 
                 write(msg);
                 return 1;
@@ -240,7 +240,7 @@ int do_area_tisheng(object me, string arg)
                 msg = sprintf(HIC "\n%-18s%-28s%-8s%-8s%-18s\n" NOR,
                                 "地盘名称", "驻守帮众", "开发度", "忠诚度", "上月收入");
 
-                msg += HIY "───────────────────────────────────\n" NOR;
+                msg += HIY "----------------------------------------------------------------------\n" NOR;
 
                 j = 0;
                 foreach (area in member)
@@ -262,7 +262,7 @@ int do_area_tisheng(object me, string arg)
                         return notify_fail(arg + "现在没有任何地盘驻守帮众。\n");
 
                 msg += "\n目前" + HIM + bunch + NOR + "共有" + HIM + chinese_number(j) + NOR + "处地盘驻守帮众。\n";
-                msg += HIY "───────────────────────────────────\n" NOR;
+                msg += HIY "----------------------------------------------------------------------\n" NOR;
 
                 write(msg);
                 return 1;
@@ -365,7 +365,7 @@ int show_area_all(object me, string arg)
         msg = sprintf(HIC "\n%-18s%-10s%-28s%-14s%-10s\n" NOR,
                       "地盘名称", "城市", "驻守帮众", "所属帮派", "资金(黄金)");
 
-        msg += HIY "────────────────────────────────────────\n" NOR;
+        msg += HIY "--------------------------------------------------------------------------------\n" NOR;
 
         j = 0;
         foreach (area in areas)
@@ -374,7 +374,7 @@ int show_area_all(object me, string arg)
 
                 if (! mapp(data)) continue;
 
-                city = LOOK_CMD->locate(area); 
+                city = LOOK_CMD->locate(area);
 
                 j++;
                 msg += sprintf(HIC "%-18s%-10s%-28s%-16s%6d\n" NOR,
@@ -389,7 +389,7 @@ int show_area_all(object me, string arg)
                 return notify_fail("现在泥潭没有任何地盘可被帮派利用。\n");
 
         msg += "\n目前泥潭共有" + HIM + chinese_number(j) + NOR + "处地盘。\n";
-        msg += HIY "────────────────────────────────────────\n" NOR;
+        msg += HIY "--------------------------------------------------------------------------------\n" NOR;
 
         write(msg);
         return 1;

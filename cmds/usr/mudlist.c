@@ -7,6 +7,8 @@
 #define INTERMUD2_D    "/adm/daemons/intermud2_d"
 #endif
 
+#define B2G(t) LANGUAGE_D->b2g(t)
+
 inherit F_CLEAN_UP;
 
 string help = @HELP
@@ -84,7 +86,7 @@ int main(object me, string arg)
 
         str+="□INTERMUD_2 MUDLIST\n\n"HIY"Cf"NOR"-系统成功自动判断编码类型\n"HIG"GB"NOR"-确认为GB编码\n"HIR"AD"NOR"-确认有大量广告讯息\n"HIB"Ig"NOR"-隔绝讯息\n\n";
         str+=sprintf("现在时刻：%s\n\n□确定常驻列表\n"HBBLU"%-:21s%-26s%-16s%5s %18s %-16s\n"NOR,TIME_D->replace_ctime(time()),"名称","中文名称(线上人数)","IP 位址","端口","状态","最后接触");
-        str+=repeat_string("─",52)+"\n";
+        str+=repeat_string("--",52)+"\n";
         foreach(t in c)
         {
 //              shout(sprintf("%s       \n",t));
@@ -127,12 +129,12 @@ int main(object me, string arg)
 
         }
 
-        str+=repeat_string("─",52)+"\n共 "+sizeof(mudlist)+" 笔资料，有 "+online+" 个 Mud 连线中。\n\n□等待确认列表\n";
+        str+=repeat_string("--",52)+"\n共 "+sizeof(mudlist)+" 笔资料，有 "+online+" 个 Mud 连线中。\n\n□等待确认列表\n";
         str+=sprintf(HBBLU"%-:21s%-26s%-16s%5s %18s %-16s\n"NOR,"名称","中文名称(线上人数)","IP 位置","端口","回应","最后接触");
-        str+=repeat_string("─",52)+"\n";
+        str+=repeat_string("--",52)+"\n";
         foreach(t in v)
         str+=sprintf("%-:21s%-26s%-16s%5s %18d %-16s\n",t,(incoming_mudlist[x[t]]["MUDNAME"]||"")+NOR+(incoming_mudlist[x[t]]["USERS"]?"("+incoming_mudlist[x[t]]["USERS"]+")":""),incoming_mudlist[x[t]]["HOSTADDRESS"],incoming_mudlist[x[t]]["PORT"]+"",incoming_mudlist[x[t]]["CONNECTION"],TIME_D->replace_ctime(incoming_mudlist[x[t]]["LASTESTCONTACT"]));
-        str+=repeat_string("─",52)+"\n";
+        str+=repeat_string("--",52)+"\n";
         str+="共 "+sizeof(incoming_mudlist)+" 笔资料，下次资讯更新:"+TIME_D->replace_ctime(fetch_variable("refresh_limit",i2)+REFRESH_INCOMING_TIME)+"\n\n总计共 "+sizeof(mudlist+incoming_mudlist)+" 个 Mud 。\n";
 
         online=0;

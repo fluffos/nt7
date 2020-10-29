@@ -35,7 +35,7 @@ void mud_shutdown()
 }
 
 // the name PATH store in dbase
-#define PATH(name)      (name[0..1] + "/" + name)
+#define PATH(name)      (name[0..0] + "/" + name)
 
 // remove the mapping of a name & id
 public void remove_name(string name, string id)
@@ -51,8 +51,8 @@ public void remove_name(string name, string id)
             ! sizeof(ms = explode(old, "/") - ({ id })))
         {
                 delete(PATH(name));
-                if (! sizeof(query(name[0..1])))
-                        delete(name[0..1]);
+                if (! sizeof(query(name[0..0])))
+                        delete(name[0..0]);
                 save();
                 return;
         }

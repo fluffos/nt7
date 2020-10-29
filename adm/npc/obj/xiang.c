@@ -69,7 +69,7 @@ string extra_long()
                         return "目前没有存放任何物品在箱子里。\n";
 
                 msg = HIW "\n目前你存放的物品有：\n编号  物品                                      数量\n"
-                          "──────────────────────────────────\n" NOR;
+                          "--------------------------------------------------------------------\n" NOR;
 
                 for (int i = 0; i < sizeof(store); i++)
                 {
@@ -81,7 +81,7 @@ string extra_long()
                         if (store[i]["amount"] == 0)
                                 store[i] = 0;
                 }
-                msg += HIW "──────────────────────────────────\n" NOR;
+                msg += HIW "--------------------------------------------------------------------\n" NOR;
 
                 store -= ({ 0 });
         if (sizeof(data_dbase))
@@ -330,7 +330,7 @@ int do_take(string arg)
                                                 set(ks[j], data[ks[j]], ob);
                                         }
                                         data_dbase[i] = 0;
-                                        if( shadow_ob = ob->query_default_object() ) 
+                                        if( shadow_ob = ob->query_default_object() )
                                                 set("shadow_ob", shadow_ob, ob);
                                 }
                         }
@@ -363,7 +363,7 @@ int do_take(string arg)
                                 call_other(ob, key, function_data[key]);
                 }
 
-                if( query("id", ob) != store[sn-1]["id"] || 
+                if( query("id", ob) != store[sn-1]["id"] ||
                     query("name", ob) != store[sn-1]["name"] )
                 {
                         //amount1++;
@@ -371,7 +371,7 @@ int do_take(string arg)
                         continue;
                 }
 
-                if( query("bind_owner", ob) && 
+                if( query("bind_owner", ob) &&
                     query("bind_owner", ob) != query("id", me) )
                 {
                         tell_object(me, ob->name() + "已经绑定，无法移动。\n");
@@ -498,9 +498,9 @@ int store_item(object me, object ob, int amount)
                 return 0;
         }
 
-        if( query("task_ob", ob) || 
-            query("unique", ob) || 
-            query("no_store", ob) || 
+        if( query("task_ob", ob) ||
+            query("unique", ob) ||
+            query("no_store", ob) ||
             ob->is_no_clone() ||
             query("maze_item", ob) )
         {
@@ -569,8 +569,8 @@ int store_item(object me, object ob, int amount)
 
         for (i = 0; i < n; i++)
         {
-                if( store[i]["id"] == query("id", ob) && 
-                    store[i]["name"] == query("name", ob) && 
+                if( store[i]["id"] == query("id", ob) &&
+                    store[i]["name"] == query("name", ob) &&
                     store[i]["file"] == base_name(ob))
                 {
                         store[i]["amount"] += amount;

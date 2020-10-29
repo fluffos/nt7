@@ -606,8 +606,8 @@ int look_room(object me, object env, int brief)
         object room;
         mapping exits;
         string str, ext, *dirs;
-        string map;
-        mixed  res;
+//      string map;
+//      mixed  res;
 
         if( !env ) {
                 tell_object(me, "你的四周灰蒙蒙地一片，什么也没有。\n");
@@ -739,12 +739,12 @@ int look_room(object me, object env, int brief)
                         case "east":
                                 room = load_object(exits["east"]);
                                 write(SETDISPLAY(4, 80) + filter_color(query("short", room)));
-                                write(SETDISPLAY(4, 78) + "─");
+                                write(SETDISPLAY(4, 78) + "--");
                                 break;
                         case "west":
                                 room = load_object(exits["west"]);
                                 write(SETDISPLAY(4, 60) + filter_color(query("short", room)));
-                                write(SETDISPLAY(4, 68) + "─");
+                                write(SETDISPLAY(4, 68) + "--");
                                 break;
                         case "westup":
                                 room = load_object(exits["westup"]);
@@ -808,13 +808,13 @@ int look_room(object me, object env, int brief)
                                 break;
                         }
 
-                        write(SETDISPLAY(1, 58) + "┏━━━━━━━━━━━━━━┓");
+                        write(SETDISPLAY(1, 58) + "┏----------------------------┓");
                         write(SETDISPLAY(2, 58) + "┃");
                         write(SETDISPLAY(3, 58) + "┃");
                         write(SETDISPLAY(4, 58) + "┃");
                         write(SETDISPLAY(5, 58) + "┃");
                         write(SETDISPLAY(6, 58) + "┃");
-                        write(SETDISPLAY(7, 58) + "┗━━━━━━━━━━━━━━┛");
+                        write(SETDISPLAY(7, 58) + "┗----------------------------┛");
                         write(SETDISPLAY(2, 88) + "┃");
                         write(SETDISPLAY(3, 88) + "┃");
                         write(SETDISPLAY(4, 88) + "┃");
@@ -921,7 +921,7 @@ int look_item(object me, object obj)
         mapping equiped;
         mapping unit;
         mapping *insert;
-        string ins;
+//      string ins;
         string short_name;
 
         string str, desc;
@@ -929,7 +929,7 @@ int look_item(object me, object obj)
         mapping enchase_prop, applied_prop = ([]);
         mapping in_data;
         string in_desc = "";
-        string *ikey;
+//      string *ikey;
         string *apply, *apply1, *apply2, *apply3;
         int i, f;
         int n, t;

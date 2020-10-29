@@ -139,7 +139,7 @@ void attempt_apprentice(object ob)
         }
 
         name=query("name", ob);
-        new_name = "灭" + name[2..3];
+        new_name = "灭" + name[1..1];
         NAME_D->remove_name(query("name", ob),query("id", ob));
         set("name", new_name, ob);
         NAME_D->map_name(query("name", ob),query("id", ob));
@@ -258,24 +258,23 @@ mixed ask_skill2()
         return 1;
 }
 
-int accept_ask(object me, string topic) 
-{ 
-        switch (topic) 
-        { 
-        case "涅磐" : 
-        case "凤凰涅磐" : 
-               return MASTER_D->teach_pfm(me, this_object(), 
-                             ([ "perform" : "can_exert/linji-zhuang/niepan", 
+int accept_ask(object me, string topic)
+{
+        switch (topic)
+        {
+        case "涅磐" :
+        case "凤凰涅磐" :
+               return MASTER_D->teach_pfm(me, this_object(),
+                             ([ "perform" : "can_exert/linji-zhuang/niepan",
                                 "name"    : "凤凰涅磐",
-                                "sk1"     : "linji-zhuang", 
-                                "lv1"     : 1000, 
-                                "sk2"     : "force", 
-                                "lv2"     : 1000, 
+                                "sk1"     : "linji-zhuang",
+                                "lv1"     : 1000,
+                                "sk2"     : "force",
+                                "lv2"     : 1000,
                                 //"reborn"  : 1,
-                                "gongxian": 500000, ])); 
-                break; 
-        default: 
-                return 0; 
-        } 
-} 
-
+                                "gongxian": 500000, ]));
+                break;
+        default:
+                return 0;
+        }
+}

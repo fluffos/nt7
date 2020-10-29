@@ -105,7 +105,7 @@ int do_kill()
 
 int do_unmarry(string arg)
 {
-        object me, obj,ob,*inv;
+        object me, obj/*,ob,*inv*/;
 
         me = this_player();
         if (me->is_busy())

@@ -39,7 +39,7 @@ void init()
 int do_nie(string arg)
 {
         object me, ob;
-        object where;
+//      object where;
 
         me = this_player();
 

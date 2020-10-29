@@ -64,9 +64,9 @@ void heart_beat()
         object owner;
         string startroom;
         int amount;
-        mapping job;
+//      mapping job;
         mapping goods;
-        object bonus;
+//      object bonus;
 
         ::heart_beat();
         if (! environment())

@@ -135,7 +135,7 @@ int main(object me, string arg)
         lrn = ob->query_learned();
         if( !mapp(lrn) ) lrn = ([]);
         str = "\n";
-//        str += HIC"≡"HIY"─────────────────────────────────"HIC"≡\n"NOR;
+//        str += HIC"≡"HIY"------------------------------------------------------------------"HIC"≡\n"NOR;
         if (!skill1)
         {
                 str+=(ob==me ? "你" : ob->name()) +"目前共学过"+chinese_number(sizeof(skl))+"项技能：\n\n";
@@ -143,7 +143,7 @@ int main(object me, string arg)
                 {
                         str_this=sprintf(NOR"│%s%s%-33s"NOR" - %-10s "NOR"%5d/%9d│"HIM"%s"NOR"\n",
                                 (lrn[sname[i]] >= (skl[sname[i]]+1) * (skl[sname[i]]+1)) ? HIM : "",
-                                (member_array(sname[i], mapped)==-1? "  ": "□"),
+                                (member_array(sname[i], mapped)==-1? "  ": "□ "),
                                 to_chinese(sname[i]) + " (" + sname[i] + ")",
                                 skill_level(SKILL_D(sname[i])->type(), skl[sname[i]]),
                                 skl[sname[i]], (int)lrn[sname[i]],
@@ -178,38 +178,38 @@ int main(object me, string arg)
                 if (num_know>0)
                 {
                         str+=sprintf(NOR"%s%|20s%s"NOR,
-                        "┌──"+HIY,
+                        "┌----"+HIY,
                         chinese_number(num_know)+"项知识技能",
-                        NOR+"────────────────────┐\n");
+                        NOR+"----------------------------------------┐\n");
                         str+=msg_sk_know;
-                        str+=NOR"└────────────────────────────────┘\n";
+                        str+=NOR"└----------------------------------------------------------------┘\n";
                 }
                 if (num_basic>0)
                 {
                         str+=sprintf(NOR"%s%|20s%s"NOR,
-                        "┌──"+HIY,
+                        "┌----"+HIY,
                         chinese_number(num_basic)+"项基本技能",
-                        NOR+"────────────────────┐\n");
+                        NOR+"----------------------------------------┐\n");
                         str+=msg_sk_basic;
-                        str+=NOR"└────────────────────────────────┘\n";
+                        str+=NOR"└----------------------------------------------------------------┘\n";
                 }
                 if (num_sp>0)
                 {
                         str+=sprintf(NOR"%s%|20s%s"NOR,
-                        "┌──"+HIY,
+                        "┌----"+HIY,
                         chinese_number(num_sp)+"项特殊技能",
-                        NOR+"────────────────────┐\n");
+                        NOR+"----------------------------------------┐\n");
                         str+=msg_sk_sp;
-                        str+=NOR"└────────────────────────────────┘\n";
+                        str+=NOR"└----------------------------------------------------------------┘\n";
                 }
                 if (num_other>0)
                 {
                         str+=sprintf(NOR"%s%|20s%s"NOR,
-                        "┌──"+HIY,
+                        "┌----"+HIY,
                         chinese_number(num_other)+"项其它技能",
-                        NOR+"────────────────────┐\n");
+                        NOR+"----------------------------------------┐\n");
                         str+=msg_sk_other;
-                        str+=NOR"└────────────────────────────────┘\n";
+                        str+=NOR"└----------------------------------------------------------------┘\n";
                 }
 
 
@@ -217,18 +217,18 @@ int main(object me, string arg)
         else
         {
                 str+=(ob==me ? "你" : ob->name()) +"目前学习"+to_chinese(skill1)+"技能的情况如下：\n";
-                        str+="┌────────────────────────────────┐\n";
+                        str+="┌----------------------------------------------------------------┐\n";
                         str += sprintf(NOR"│%s%s%-33s"NOR" - %-10s "NOR"%3d/%9d│"HIM"%s"NOR"\n",
                         (lrn[skill1] >= (skl[skill1]+1) * (skl[skill1]+1)) ? HIM : "",
-                        (member_array(skill1, mapped)==-1? "  ": "□"),
+                        (member_array(skill1, mapped)==-1? "  ": "□ "),
                         to_chinese(skill1) + " (" + skill1 + ")",
                         skill_level(SKILL_D(skill1)->type(), skl[skill1]),
                         skl[skill1], (int)lrn[skill1],
                         (wizardp(me) ? chinese_number((65-SKILL_D(skill1)->learn_bonus()-SKILL_D(skill1)->practice_bonus())/6) : ""));
-                        str+=NOR"└────────────────────────────────┘\n";
+                        str+=NOR"└----------------------------------------------------------------┘\n";
         }
 //        write("\n");
-//        str += HIC"≡"HIY"─────────────────────────────────"HIC"≡\n"NOR;
+//        str += HIC"≡"HIY"------------------------------------------------------------------"HIC"≡\n"NOR;
         str += sprintf("%s", flag?"该玩家目前不在线上。\n":"");
         str = column_string(str, SKILLS_D->skillmix_stats(ob), 80);
 //        me->start_more(str);
@@ -262,10 +262,10 @@ string skill_level(string type, int level)
 string pet_skill(object ob)
 {
         string desc;
-        object *list, couple_ob;
+//      object *list,couple_ob;
         mapping skl, lrn, map;
-        string *sname, *mapped,target,cardname;
-        int i, marry_flag;
+        string *sname, *mapped/*,target,cardname*/;
+        int i/*, marry_flag*/;
 
         seteuid(getuid());
         skl = ob->query_skills();

@@ -12,9 +12,9 @@
 
 varargs int x_name(object obj, string arg)
 {
-        int i, j;
+        int i/*, j*/;
         string x_id, x_id_a, x_id_b, *key, obj_parse;
-        string x_name, x_name_a, x_name_b, x_color;
+        string x_name, x_name_a, x_name_b/*, x_color*/;
         mapping name;
 
         if (! sizeof(obj->parse_command_id_list()))

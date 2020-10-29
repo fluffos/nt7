@@ -43,7 +43,7 @@ int success() { return 20; }
 int power_point(object me) { return 1.2; }
 mixed valid_damage(object me, object victim, int damage, object weapon)
 {
-        int ap, dp, level;
+        int ap, dp/*, level*/;
         object weapon1=query_temp("weapon", me);
         mapping prepare;
         string result, attack_skill;
@@ -104,4 +104,3 @@ string perform_action_file(string action)
 {
         return __DIR__"taxue-wuhen/" + action;
 }
-

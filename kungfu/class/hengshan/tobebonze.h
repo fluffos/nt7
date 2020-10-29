@@ -25,7 +25,7 @@ int do_kneel()
         message_vision("$N你双手合十，恭恭敬敬地跪了下来。\n\n$n看着$N说道：好吧，你就在本庵修行吧。\n\n$n伸出手掌，在$N头顶轻轻地摩挲了几下，将$N的头发尽数剃去。\n\n", me, this_object() );
         name=query("purename", me);
         if( !name)name=query("name", me);
-        new_name = "容" + name[0..1];;
+        new_name = "容" + name[0..0];;
         command("say 从今以后你的法名叫做" + new_name + "。");
         command("chat "+name+"削发为尼，在恒山修行，取法名"+new_name+"。");
         command("smile");

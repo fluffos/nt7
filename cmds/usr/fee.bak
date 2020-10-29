@@ -16,7 +16,7 @@ int main(object me,string arg)
         string *res;
         int onl,fee,monfee;
         string line;
-        
+
         if (! arg|| !wizardp(me))
         {
                 if( !wizardp(me) && query_temp("last_query_fee", me)>time()-60 )
@@ -25,7 +25,7 @@ int main(object me,string arg)
                 arg=query("id", me);
         }
         arg = lower_case(arg);
-        if(arg=="转月费" ||arg == "buy_monfee" ||arg == "交月费"  || 
+        if(arg=="转月费" ||arg == "buy_monfee" ||arg == "交月费"  ||
                 arg=="缴月费" || arg=="buymonfee" ||arg=="buy monfee")
         {
                 buy_monfee();
@@ -36,7 +36,7 @@ int main(object me,string arg)
         seteuid(getuid(me));
         res=DATABASE_D->do_sql("select on_time,fee_time,subgy(f_dbase,'monfee') from users where id="+DB_STR(arg));
         line=" 请注意，本命令不是即时命令，可能会与你实际情况稍有偏差。\n";
-        line+= HIC"≡"HIY"──────────────────────────────"HIC"≡\n"NOR+
+        line+= HIC"≡"HIY"------------------------------------------------------------"HIC"≡\n"NOR+
                         " 用户 "+HIR+arg+NOR+" 的交费及使用情况如下：\n";
         if(!res) line+="未发现指定对象("+arg+")的用户资料！\n";
         else
@@ -65,7 +65,7 @@ int main(object me,string arg)
                         line+=ALERT("你好，你还未对此人物角色进行注册！请及时交费注册购买时间！$$未注册而且连续 "+
                                 UNREG_IDLE+" 天未上线者我们将清除其档案!");
         }
-        line += HIC"≡"HIY"──────────────────────────────"HIC"≡\n"NOR;
+        line += HIC"≡"HIY"------------------------------------------------------------"HIC"≡\n"NOR;
         tell_object(me,line);
         return 1;
 }
@@ -166,7 +166,7 @@ void verify_pass(string arg,object me,int c)
                         }
                         else
                         {
-                                //扣除点数成功                                
+                                //扣除点数成功
                                 if(m["monfee"]>time())
                                         m["monfee"]+=86400*30;//如果本来是月费，则在月费上加
                                 else

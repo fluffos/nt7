@@ -12,7 +12,7 @@ void init()
                 COMBAT_D->do_attack(this_object(), this_player(),
                                     query_temp("weapon"));
                 addn_temp("beat_count", 1, this_player());
-        }       
+        }
 }
 
 int accept_object(object ob, object obj)
@@ -28,7 +28,7 @@ int accept_object(object ob, object obj)
                 return 0;
         }
 
-        if( (query("id", obj) == "damo ling") && 
+        if( (query("id", obj) == "damo ling") &&
             ob_fam["generation"] == my_fam["generation"] + 1 &&
             !query_temp("have_letter", ob) )
         {
@@ -37,8 +37,8 @@ int accept_object(object ob, object obj)
                 destruct(obj);
                 return 1;
         }
-        
-        if( query("id", obj) == "tuijian xin3" && 
+
+        if( query("id", obj) == "tuijian xin3" &&
             query_temp("have_letter", ob) )
         {
                 set_temp("apprentice_ok", 1, ob);
@@ -57,14 +57,14 @@ int accept_object(object ob, object obj)
 int accept_fight(object ob)
 {
         object me  = this_object();
-        
+
         if( !query_temp("fight_ok", ob))return 0;
 
         remove_call_out("checking");
         call_out("checking", 1, me, ob);
 
         delete_temp("fight_ok", ob);
-        
+
         return 1;
 }
 
@@ -77,13 +77,13 @@ int checking(object me, object ob)
         my_max_qi=query("max_qi", me);
         his_max_qi=query("max_qi", ob);
 
-        if (me->is_fighting()) 
+        if (me->is_fighting())
         {
                 call_out("checking",2, me, ob);
                 return 1;
         }
 
-        if (! present(ob, environment())) return 1; 
+        if (! present(ob, environment())) return 1;
 
         if( (query("qi", me)*100/my_max_qi) <= 50 )
         {
@@ -98,12 +98,12 @@ int checking(object me, object ob)
 
         if( (query("qi", ob)*100/his_max_qi)<50 )
         {
-                command("say 看来" + RANK_D->query_respect(ob) + 
+                command("say 看来" + RANK_D->query_respect(ob) +
                         "还得多加练习，方能在少林诸多弟子中出人头地 !\n");
                 return 1;
         }
 
-        return 1;  
+        return 1;
 }
 
 void attempt_apprentice(object ob)
@@ -119,7 +119,7 @@ void attempt_apprentice(object ob)
 
         name=query("name", ob);
 
-        if( !(ob_fam=query("family", ob)) || 
+        if( !(ob_fam=query("family", ob)) ||
             ob_fam["family_name"] != "少林派")
         {
                 command("say " + RANK_D->query_respect(ob) +
@@ -127,8 +127,8 @@ void attempt_apprentice(object ob)
                 return;
         }
 
-        if( query("class", ob) != "bonze" && 
-            ob_fam["family_name"] == "少林派") 
+        if( query("class", ob) != "bonze" &&
+            ob_fam["family_name"] == "少林派")
         {
                 command("say " + RANK_D->query_respect(ob) +
                         "是俗家弟子，不能在寺内学艺。");
@@ -143,7 +143,7 @@ void attempt_apprentice(object ob)
         }
 
         if (ob_fam["generation"] == (my_fam["generation"] + 1) &&
-            name[0..1] == "慧")
+            name[0..0] == "慧")
         {
                 command("say " + ob_fam["master_name"] +
                         "的徒弟怎麽跑到我这儿来了，哈哈哈 !");
@@ -156,12 +156,12 @@ void attempt_apprentice(object ob)
                 {
                         delete_temp("have_letter", ob);
                         delete_temp("apprentice_ok", ob);
-        
+
                         command("say 是" + ob_fam["master_name"] +
                                 "叫你来找我的吧，哈哈哈 !");
                         command("say 贫僧又得一可塑之才，真是可喜可贺 !");
 
-                        new_name = "慧" + name[2..3];
+                        new_name = "慧" + name[1..1];
                         set("name", new_name, ob);
 
                         command("say 从今以后你的法名叫做" + new_name +

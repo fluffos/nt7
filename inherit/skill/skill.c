@@ -127,8 +127,8 @@ int perform_action(object me, string arg)
         string action, target, file;
         object target_ob;
         object ob;
-        string *ret, *dirs, skill, str;
-        int    n, res;
+//      string *ret,*dirs,skill,str;
+        int /*   n,*/ res;
 
         ob = this_object();
         if( sscanf(arg, "%s %s", action, target) == 2 ) {

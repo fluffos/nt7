@@ -10,7 +10,7 @@ nosave mapping room_type = ([
 
 void create()
 {
-        object ob;
+//      object ob;
 
         set("short", "小院");
         set("long", @LONG

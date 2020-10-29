@@ -390,8 +390,8 @@ public string check_auction_info()
         else
         {
                 msg = "目前正在拍卖的物品有以下这些：\n";
-                msg += HIC "≡" HIY "─玩家──────────物品─────────"
-                       "───竞价者───────价格──────" HIC "≡\n" NOR;
+                msg += HIC "≡" HIY "--玩家--------------------物品------------------"
+                       "------竞价者--------------价格------------" HIC "≡\n" NOR;
 
                 id = keys(auction_info);
                 for (i = 0; i < sizeof(id); i++)
@@ -421,8 +421,8 @@ public string check_auction_info()
                                        name,
                                        MONEY_D->money_str(auction_info[id[i]]["value"]));
                 }
-                msg += HIC "≡" HIY "──────────────────────────"
-                       "───────────────────" HIC "≡\n" NOR;
+                msg += HIC "≡" HIY "----------------------------------------------------"
+                       "--------------------------------------" HIC "≡\n" NOR;
                 msg += sprintf("目前共有%s件拍卖品。\n", chinese_number(sizeof(auction_info)));
                 if (! sizeof(auction_info)) msg = "目前没有任何正在拍卖的物品。\n";
         }

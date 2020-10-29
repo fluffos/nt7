@@ -116,7 +116,7 @@ int do_kneel()
                 "$n伸出双手，将$N头顶长发挽成一个道髻。\n\n",me,this_object());
         name=query("purename", me);
         if( !name)name=query("name", me);
-        new_name = name[0..1] + "静" + name[2..3];
+        new_name = name[0..0] + "静" + name[1..1];
         command("say 从今以后你的道法号就叫做" + new_name + "。");
         command("smile");
         delete_temp("pending/join_quanzhen", me);

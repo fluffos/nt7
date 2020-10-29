@@ -92,7 +92,7 @@ LONG);
 
 string ask_me()
 {
-        object ob, me;
+        object /*ob,*/ me;
 
         me = this_player();
         if( query("family/family_name", me) != "关外胡家" )

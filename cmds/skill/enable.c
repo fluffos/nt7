@@ -39,7 +39,7 @@ mapping valid_types = ([
 int main(object me, string arg)
 {
         mapping map;
-        string *types, *skill;
+        string /**types,*/ *skill;
         string ski, map_to;
         string msg;
         int i, modify;
@@ -155,4 +155,3 @@ int help(object me)
 HELP );
         return 1;
 }
-

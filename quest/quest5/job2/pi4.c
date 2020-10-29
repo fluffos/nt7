@@ -81,8 +81,8 @@ void greeting(object ob)
 
 void to_rob(object ob)
 {
-        object *target, robber, room;              
-        int i;
+        object /**target,*/ robber, room;              
+//      int i;
         
         if (! ob || environment(ob) != environment()) 
                 return;

@@ -31,7 +31,7 @@ void init()
 
 int do_peiyu()
 {
-        object ob, me;
+        object /*ob,*/ me;
         me = this_player();
 
         if( !query_temp("zhonghua", me) )

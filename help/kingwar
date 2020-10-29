@@ -1,7 +1,7 @@
-──────────────────────────────
+------------------------------------------------------------
 $BBLU$$HIW$                        【王朝战争】                        $NOR$
-──────────────────────────────
-                          
+------------------------------------------------------------
+
 该任务与郭靖任务有一定的继承关系，任务选用的仍然是以宋朝末年
 蒙古入侵为任务时代背景。该任务一改以往任务之单调机械的固有模
 式，采取了更为智能化的玩家和NPC的互动方式进行运作,并且集军事
@@ -33,10 +33,10 @@ $HIY$统帅$NOR$——统帅指令有两类：一类是帅营内使用的指令�
 
 $CYN$帅营指令有：$NOR$
 
-    $HIC$paiqian sb to yayun-liangcao$NOR$      派人押运粮草        
-    $HIC$paiqian sb. to xunlian-bubing$NOR$     派人训练步兵         
-    $HIC$paiqian sb. to xunlian-qibing$NOR$     派人训练骑兵        
-    $HIC$paiqian sb. to xunlian-gongnu$NOR$     派人训练弓弩兵        
+    $HIC$paiqian sb to yayun-liangcao$NOR$      派人押运粮草
+    $HIC$paiqian sb. to xunlian-bubing$NOR$     派人训练步兵
+    $HIC$paiqian sb. to xunlian-qibing$NOR$     派人训练骑兵
+    $HIC$paiqian sb. to xunlian-gongnu$NOR$     派人训练弓弩兵
     $HIC$paiqian sb. to gouzhi-bingjia$NOR$     派人购置兵甲
     $HIC$paiqian sb. to gouzhi-zhanma$NOR$      派人购置战马
     $HIC$paiqian sb. to gouzhi-shimu$NOR$       派人购置石木
@@ -45,46 +45,46 @@ $CYN$帅营指令有：$NOR$
     $HIC$paiqian sb. to shouwei-xiangyang$NOR$  派人守卫襄阳
     $HIC$dianjiang$NOR$                         紧急召集所有将领（但在
                                       押运粮草的除外）
-                                                      
+
 $CYN$兵符指令有：$NOR$
 
-    $HIC$order sb to follow$NOR$                命令将领跟随        
-    $HIC$order sb to guard$NOR$                 命令将领坚守此处        
-    $HIC$order sb to < 方向 >$NOR$              命令将领朝某方向移动        
+    $HIC$order sb to follow$NOR$                命令将领跟随
+    $HIC$order sb to guard$NOR$                 命令将领坚守此处
+    $HIC$order sb to < 方向 >$NOR$              命令将领朝某方向移动
     $HIC$order sb to move < 方向 >$NOR$         命令将领朝某个方向持续
-                                      移动                                                       
-    $HIC$order sb to stop$NOR$                  命令将领停止移动          
+                                      移动
+    $HIC$order sb to stop$NOR$                  命令将领停止移动
     $HIC$move < 方向 >$NOR$                     指挥队伍朝某个方向持续
-                                      移动                                                       
-    $HIC$move stop$NOR$                         停止移动         
-    $HIC$inquiry$NOR$                           查看军队具体情况        
-    $HIC$yaliang$NOR$                           亲自压运粮草        
+                                      移动
+    $HIC$move stop$NOR$                         停止移动
+    $HIC$inquiry$NOR$                           查看军队具体情况
+    $HIC$yaliang$NOR$                           亲自压运粮草
     $HIC$tuji sb [on < 方向 >]$NOR$             指挥队伍攻击某个目标
-        
+
 $HIY$统领$NOR$——统领指令主要是令箭指令，具体如下：
 
-    $HIC$order sb to follow$NOR$                命令将领跟随        
-    $HIC$order sb to guard$NOR$                 命令将领坚守此处        
-    $HIC$order sb to < 方向 >$NOR$              命令将领朝某方向移动        
+    $HIC$order sb to follow$NOR$                命令将领跟随
+    $HIC$order sb to guard$NOR$                 命令将领坚守此处
+    $HIC$order sb to < 方向 >$NOR$              命令将领朝某方向移动
     $HIC$order sb to move < 方向 >$NOR$         命令将领朝某个方向持续
-                                      移动                                                     
-    $HIC$order sb to stop$NOR$                  命令将领停止移动        
+                                      移动
+    $HIC$order sb to stop$NOR$                  命令将领停止移动
     $HIC$move < 方向 >$NOR$                     指挥队伍朝某个方向持续
-                                      移动                                                      
-    $HIC$move stop$NOR$                         停止移动            
-    $HIC$inquiry$NOR$                           查看自己所带队伍情况        
-    $HIC$xunlian$NOR$                           训练自己的队伍        
+                                      移动
+    $HIC$move stop$NOR$                         停止移动
+    $HIC$inquiry$NOR$                           查看自己所带队伍情况
+    $HIC$xunlian$NOR$                           训练自己的队伍
     $HIC$tuji sb [on < 方向 >]$NOR$             指挥队伍攻击某个目标骑
                                       兵和弓弩兵指定方向
 
 由于有的时候元帅在前线打仗无法回来派遣玩家去做任务，所以在元
 帅帐营处有一监军太监，从他这里还可以领取各种任务，具体命令是
- 
+
     $HIC$lingming houqin-baozhang$NOR$          领取后勤保障任务
-    $HIC$lingming xunlian-bubing$NOR$           领取训练步兵任务         
-    $HIC$lingming xunlian-qibing$NOR$           领取训练骑兵任务        
-    $HIC$lingming xunlian-gongnu$NOR$           领取训练弓弩兵任务    
-                                                              
+    $HIC$lingming xunlian-bubing$NOR$           领取训练步兵任务
+    $HIC$lingming xunlian-qibing$NOR$           领取训练骑兵任务
+    $HIC$lingming xunlian-gongnu$NOR$           领取训练弓弩兵任务
+
 令箭指令可以在任何地点使用，但是如果是$HIY$ order $NOR$指令,必须是军衔
 低于自己的将领，同样$HIY$ xunlian $NOR$和$HIY$ yaliang $NOR$指令必须在帅营才可以
 生效。另外在辕门可以用$HIY$ repair $NOR$来修复防御工事，在蒙古军辕门则
@@ -123,7 +123,7 @@ $HIR$特别注意：$NOR$
 长蛇阵   5%    -5%    10%   -10%   -10%     5%    10%     0     -5%
 云龙阵  -5%    10%    -5%    -5%   -10%     5%     5%     5%     0
 
-兵法：步兵有奋战(fenzhan)、奋斗(fendou)和奋迅(fenxun) 
+兵法：步兵有奋战(fenzhan)、奋斗(fendou)和奋迅(fenxun)
       骑兵有突破(tupo)、突进(tujin)和突击(tuji)
       弓兵有骑射(qishe)、奔射(benshe)和飞射(feishe)
 
@@ -136,7 +136,7 @@ $HIR$特别注意：$NOR$
         骑兵攻击方式：
         gongji <目标> on <方向> with <阵法> & <兵法>
         gongji menggu junguan on north with yanyue & tuji
-    
+
         弓兵攻击方式：
         gongji <目标> on <方向> with <阵法> & <兵法>
         gongji menggu junguan on north with fengshi & feishe
@@ -152,9 +152,9 @@ $HIR$特别注意：$NOR$
 如果嫌攻击方式太麻烦，则可以选择设置环境($HIC$set auto_war 1$NOR$)则可
 让系统自动攻击，但射台和城楼的不会自动攻击，效果也差些。
 
-──────────────────────────────
+------------------------------------------------------------
 $BBLU$$HIW$                       【流程与心得】                       $NOR$
-──────────────────────────────
+------------------------------------------------------------
 
 1、 首先做守城任务
     参加王朝战争后在监军那输入lingming shouwei-xiangyang，然
@@ -187,5 +187,5 @@ exp 有关系，exp越高，成功率越低。
 战争进行的时间，每场战争进行时间为1个小时。
 时间。
 
-──────────────────────────────
+------------------------------------------------------------
                                                Write by Alon

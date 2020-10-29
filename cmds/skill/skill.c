@@ -46,7 +46,7 @@ int main(object me, string arg)
         if (! arg)
                 return notify_fail("指令格式：skill  <技能名称> | <技能中文名>\n");
 
-        MYGIFT_D->check_mygift(me, "newbie_mygift/skill"); 
+        MYGIFT_D->check_mygift(me, "newbie_mygift/skill");
         if (! stringp(file = SKILL_D(arg)) || file_size(file + ".c") <= 0)
         {
                 // 英文的找不到？那就找中文名
@@ -59,8 +59,8 @@ int main(object me, string arg)
         }
 
         msg = "关于" + to_chinese(arg) + "的详细属性如下：\n";
-        msg += HIC "≡" HIY "──────────────────"
-               "────" HIC "≡\n" NOR;
+        msg += HIC "≡" HIY "------------------------------------"
+               "--------" HIC "≡\n" NOR;
         msg += WHT + "  武功名称：  " HIG + arg + "\n" + NOR;
         msg += WHT + "  中文名称：  " HIG + to_chinese(arg) + "\n" + NOR;
 
@@ -72,16 +72,16 @@ int main(object me, string arg)
         if (member_array(arg, valid_types) != -1)
         {
                 msg += WHT "  武功所属：  " HIG "基本武功\n" NOR;
-                msg += HIC "≡" HIY "──────────────"
-                       "────────" HIC "≡\n" NOR;
+                msg += HIC "≡" HIY "----------------------------"
+                       "----------------" HIC "≡\n" NOR;
                 write(msg);
                 return 1;
         }
 
         if (! wizardp(me) && me->query_skill(arg) <= 0)
         {
-                msg += HIC "≡" HIY "──────────────"
-                       "────────" HIC "≡\n" NOR;
+                msg += HIC "≡" HIY "----------------------------"
+                       "----------------" HIC "≡\n" NOR;
                 write(msg);
                 return 1;
         }
@@ -129,8 +129,8 @@ int main(object me, string arg)
         // 查询内功的 exert 情况
         if (! is_force)
         {
-                msg += HIC "≡" HIY "──────────────"
-                       "────────" HIC "≡\n" NOR;
+                msg += HIC "≡" HIY "----------------------------"
+                       "----------------" HIC "≡\n" NOR;
                 write(msg);
                 return 1;
         }
@@ -142,7 +142,7 @@ int main(object me, string arg)
 
         if (dir[strlen(dir) - 1] != '/')
                 dir += "/";
- 
+
         if (file_size(dir + "exert/") == -2)
                 all_file = get_dir(dir + "exert/");
         else
@@ -150,8 +150,8 @@ int main(object me, string arg)
                 all_file = get_dir(dir);
         else
         {
-                msg += HIC "≡" HIY "──────────────"
-                       "────────" HIC "≡\n" NOR;
+                msg += HIC "≡" HIY "----------------------------"
+                       "----------------" HIC "≡\n" NOR;
                 write(msg);
                 return 1;
         }
@@ -180,8 +180,8 @@ int main(object me, string arg)
                 msg += "\n";
         }
 
-        msg += HIC "≡" HIY "──────────────────"
-               "────" HIC "≡\n" NOR;
+        msg += HIC "≡" HIY "------------------------------------"
+               "--------" HIC "≡\n" NOR;
         write(msg);
         return 1;
 }

@@ -616,7 +616,7 @@ string make_color(string map)
         map = replace_string(map, "↓", HIY"↓"NOR);
         map = replace_string(map, "→", HIY"→"NOR);
         map = replace_string(map, "←", HIY"←"NOR);
-        map = replace_string(map, "─", HIY"─"NOR);
+        map = replace_string(map, "--", HIY"--"NOR);
         map = replace_string(map, "│", HIY"│"NOR);
         map = replace_string(map, "┼", HIY"┼"NOR);
         map = replace_string(map, "┌", HIY"┌"NOR);

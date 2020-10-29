@@ -41,8 +41,8 @@ string query_skill_name(int level)
 
 int practice_skill(object me)
 {
-        object* ob, obj;
-        int i, skill, damage;
+//      object* ob,obj;
+//      int i,skill,damage;
 
         if ((int)me->query_skill("six-finger", 1))
                 return notify_fail("你已经学齐六脉神剑了。\n");

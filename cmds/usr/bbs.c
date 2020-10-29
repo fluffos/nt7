@@ -390,7 +390,7 @@ protected void confirm_p_choice(string arg,object ob)
              {
                      case "p":
                      case "P":
-                        if( time()-query("postover", this_player())<900 && 
+                        if( time()-query("postover", this_player())<900 &&
                             !wizardp(this_player(1)))
                         {
                                 write("你已经在不久前留言了，请稍等一会才继续留言。\n");
@@ -468,7 +468,7 @@ protected void confirm_p_choice(string arg,object ob)
 int edi(function callback)
 {
         write(CYN"    书写结束用'.'，取消输入用 '^q'，使用内建列编辑器用 '^e'。\n"NOR);
-        write(GRN"───－－－－－－－－－－－－－－－－－－－－－－－－－－－－－─\n│"NOR);
+        write(GRN"------－－－－－－－－－－－－－－－－－－－－－－－－－－－－－--\n│"NOR);
         input_to("input_lines", "", callback);
         return 1;
 }
@@ -476,7 +476,7 @@ int edi(function callback)
 void input_lines(string line, string text, function callback)
 {
         if( line=="." ) {
-                write(GRN"───－－－－－－－－－－－－－－－－－－－－－－－－－－－－－─\n"NOR);
+                write(GRN"------－－－－－－－－－－－－－－－－－－－－－－－－－－－－－--\n"NOR);
                 (*callback)(text);
                 return;
         } else if( line=="^q" ) {
@@ -613,7 +613,7 @@ void do_more(string cmd,string *text,int line,object ob)
                 if(line<0) line=0;
                 if(line<sizeof(text))
                 {
- //                       write(YEL"─－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－─\n"NOR);
+ //                       write(YEL"--－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－--\n"NOR);
                                for(i=line + 17; line<sizeof(text) && line<i; line++)
                            write("  "+text[line] + "\n");
                                if( line>=sizeof(text) )
@@ -627,7 +627,7 @@ void do_more(string cmd,string *text,int line,object ob)
                 if(line>=sizeof(text)) line=sizeof(text);
                        line = line - 23;
                        if(line<0) line=0;
-                       write(YEL"─－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－─\n"NOR);
+                       write(YEL"--－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－--\n"NOR);
                        for(i=line + 23;line<sizeof(text)&&line < i;line++)
                        write("  "+text[line]+"\n");
                        if( line>=sizeof(text) )

@@ -87,8 +87,8 @@ int main(object me, string arg)
                 else need2 = (lv2+1)*(lv2+1)*(lv2+1)*10000-query("yuanshen_exp", ob);
 
                 sp = (ob == me ? "你" : ob->name()) + "目前的属性上限如下：\n";
-                sp += HIC "≡" HIY "───────────────────────"
-                      "────────────" HIC "≡\n" NOR;
+                sp += HIC "≡" HIY "----------------------------------------------"
+                      "------------------------" HIC "≡\n" NOR;
 
                 sp += sprintf(HIC "【精力上限】 " HIG " %-27d"
                               HIC "【内力上限】 " HIG " %d\n",
@@ -133,8 +133,8 @@ int main(object me, string arg)
                       (query("die_protect/last_dead", me)+query("die_protect/duration", me)<time())?HIY"无保护\n"NOR:
                       HIY "保护中\n" NOR);
 
-                sp += HIC "≡" HIY "───────────────────────"
-                      "────────────" HIC "≡\n" NOR;
+                sp += HIC "≡" HIY "----------------------------------------------"
+                      "------------------------" HIC "≡\n" NOR;
                 tell_object(me, sp);
                 return 1;
         }
@@ -173,12 +173,12 @@ int main(object me, string arg)
                         return notify_fail("无法察看" + ob->name(1) + "的状态。\n");
 
                 sp = (ob == me ? "你" : ob->name()) + "目前的天赋属性如下：\n";
-                sp += HIC "≡" HIY "───────────────────────"
-                      "────────────" HIC "≡\n" NOR;
+                sp += HIC "≡" HIY "----------------------------------------------"
+                      "------------------------" HIC "≡\n" NOR;
                 sp += HIY "【 种 类 】 " HIC "『初始』 『先天』 『成功』 『失败』"
                       " 『故事』 『经脉』 『元神』\n" NOR;
-                sp += HIC "≡" HIY "───────────────────────"
-                      "────────────" HIC "≡\n" NOR;
+                sp += HIC "≡" HIY "----------------------------------------------"
+                      "------------------------" HIC "≡\n" NOR;
 
                 sp += sprintf(HIW "【 膂 力 】 " NOR + WHT " [%3d]    ["
                       HIG "%3d" NOR + WHT "]    [" HIW "%3d" NOR + WHT "]    ["
@@ -252,8 +252,8 @@ int main(object me, string arg)
                 query("jm/kar", ob),
                 query("ys/kar", ob));
 
-                sp += HIC "≡" HIY "───────────────────────"
-                      "────────────" HIC "≡\n" NOR;
+                sp += HIC "≡" HIY "----------------------------------------------"
+                      "------------------------" HIC "≡\n" NOR;
                 sp += sprintf( YEL " 般 若 掌： %s" NOR YEL "   无 常 杖： %s" NOR YEL "   金 刚 拳： %s\n" NOR,
                         query("sl_gift/yzc", ob)?HIY"○":HIC"×",query("sl_gift/zg", ob)?HIY"○":HIC"×",query("sl_gift/str", ob)?HIY"○":HIC"×");
                 sp += sprintf( YEL " 一 指 禅： %s" NOR YEL "   火 焰 刀： %s" NOR YEL "   禅宗心法： %s\n" NOR,
@@ -291,7 +291,7 @@ int main(object me, string arg)
                 return notify_fail("无法察看" + ob->name(1) + "的状态。\n");
 
         sp = (ob == me ? "你" : ob->name()) + "目前的状态属性如下：\n";
-        sp += HIC "≡" HIY "───────────────────────────────────" HIC "≡\n" NOR;
+        sp += HIC "≡" HIY "----------------------------------------------------------------------" HIC "≡\n" NOR;
 
         sp += sprintf(HIC "【 精 气 】 %s%8d/ %8d %s(%3d%%)"
                       HIC "    【 精 力 】 %s%8d / %8d (+%d)\n",
@@ -333,10 +333,10 @@ int main(object me, string arg)
                                       query("jianu", me));
         } else
         {
-                sp += HIC "【 平 和 】  ────────────    ";
+                sp += HIC "【 平 和 】  ------------------------    ";
         }
         sp += sprintf(HIW "【 经 验 】  " HIC "%d\n", my["combat_exp"]);
-        sp += HIC "≡" HIY "───────────────────────────────────" HIC "≡\n" NOR;
+        sp += HIC "≡" HIY "----------------------------------------------------------------------" HIC "≡\n" NOR;
         tell_object(me, sp);
         return 1;
 }

@@ -90,7 +90,7 @@ void QueryNpcInfo(string path)
                 write_file(filename,WHT"中文名字："NOR+query("name", obj)+"\n",0);
                 write_file(filename, WHT "英文ＩＤ: " NOR + sprintf("%s", implode(obj->parse_command_id_list(), ",")) + "\n", 0);
                 write_file(filename, QuerySkill(obj), 0);
-                write_file(filename, "─────────────────────────\n");
+                write_file(filename, "--------------------------------------------------\n");
 
                 write_file(filename, sprintf("【  精  】%10d      【 精力 】%d \n",
                                              query("max_jing", obj),query("max_jingli", obj)));
@@ -150,7 +150,7 @@ void QueryRoomInfo(string path)
                 }
 
                 num ++;
-                write_file(filename, "─────────────────────────\n", 0);
+                write_file(filename, "--------------------------------------------------\n", 0);
                 write_file(filename, YEL "房间序号：" WHT + num + "\n" NOR, 0);
                 write_file(filename,YEL"房间名称："WHT+query("short", obj)+"("+tmp+")\n"NOR,0);
                 write_file(filename,YEL"房间坐标："WHT"（"+query("coor/x", obj)+","+
@@ -206,7 +206,7 @@ void QueryItemInfo(string path)
                         continue;
                 }
                 num ++;
-                write_file(filename, GRN "─────────────────────────\n" NOR, 0);
+                write_file(filename, GRN "--------------------------------------------------\n" NOR, 0);
                 write_file(filename, WHT "物品序号：" NOR + num + "\n", 0);
                 write_file(filename,WHT"物品名称："NOR+query("name", obj)+"("+
                            implode(obj->parse_command_id_list(), ",") + ")\n", 0);
@@ -276,7 +276,7 @@ string QuerySkill(object ob)
                 m_enable = ([]);
 
         sname = keys(m_skills);
-        msg = msg + "─────────────────────────\n";
+        msg = msg + "--------------------------------------------------\n";
 
         for (i = 0; i < sizeof( m_skills ); i++)
         {

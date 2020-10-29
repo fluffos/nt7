@@ -24,7 +24,7 @@ LONG );
 
 int valid_leave(object me, string dir)
 {
-        mapping myfam;
+//      mapping myfam;
 
         me = this_player();
         if( (query_temp("weapon", me )

@@ -6,7 +6,7 @@
 
 inherit F_CLEAN_UP;
 
-#define BAR     "────────────────────────────────────────\n"
+#define BAR     "--------------------------------------------------------------------------------\n"
 
 string help = @HELP
 表情查询指令
@@ -23,7 +23,7 @@ semote <表情代号>       查看 <表情代号> 的详细表情讯息
 相关指令: command
 HELP;
 
-int help(object me) 
+int help(object me)
 {
 
         write(help);
@@ -124,4 +124,3 @@ int main(object me, string arg)
 
         return 1;
 }
-

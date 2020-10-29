@@ -23,7 +23,7 @@ public string make_msg(mapping num)
     int i3 = random(2);
     int i4 = random(2);
     int i5 = random(2);
-    int i6 = random(2);
+//  int i6 = random(2);
     int *i_num = ({ i1, i2, i3, i4, i5 });
     string msg = "\n";
     string get_msg;
@@ -182,7 +182,7 @@ public mapping get_question()
 //点阵干扰
 public string *trouble(string *str_point)
 {
-    int i, j, random_col, random_line, get_it;
+    int i/*, j*/, random_col, random_line, get_it;
     string the_line;
     int *int_line = ({0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15});
     int *int_col = ({2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17});

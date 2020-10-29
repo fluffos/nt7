@@ -24,7 +24,7 @@ int accept_object(object ob, object obj)
                 call_out("destroying", 1, me, obj);
                 return 1;
         }
-        
+
         if( query("id", obj) == "quanzhenxin1" && query_temp("have_letter", ob) )
         {
                 set_temp("apprentice_ok", 1, ob);
@@ -49,13 +49,13 @@ void destroying(object me, object obj)
 int accept_fight(object ob)
 {
         object me  = this_object();
-        
+
         if( !query_temp("fight_ok", ob))return 0;
 
         remove_call_out("checking");
         call_out("checking", 1, me, ob);
         delete_temp("fight_ok", ob);
-        
+
         return 1;
 }
 
@@ -67,13 +67,13 @@ int checking(object me, object ob)
         my_max_qi=query("max_qi", me);
         his_max_qi=query("max_qi", ob);
 
-        if (me->is_fighting()) 
+        if (me->is_fighting())
         {
                 call_out("checking",2, me, ob);
                 return 1;
         }
 
-        if ( !present(ob, environment()) ) return 1; 
+        if ( !present(ob, environment()) ) return 1;
 
         if( (query("qi", me)*100/my_max_qi) <= 50 )
         {
@@ -87,12 +87,12 @@ int checking(object me, object ob)
 
         if( (query("qi", ob)*100/his_max_qi)<50 )
         {
-                command("say 看来" + RANK_D->query_respect(ob) + 
+                command("say 看来" + RANK_D->query_respect(ob) +
                         "还得多加练习，方能在本教诸多弟子中出人头地！\n");
                 return 1;
         }
 
-        return 1;  
+        return 1;
 }
 
 void attempt_apprentice(object ob)
@@ -141,12 +141,12 @@ void attempt_apprentice(object ob)
                 {
                         delete_temp("have_letter", ob);
                         delete_temp("apprentice_ok", ob);
-        
+
                         command("say 是"+ob_fam["master_name"]+"叫你来找我的？好，好。");
                         command("say 贫道看你是可塑之才，你就安心学艺吧！");
                         if( query("class", ob) == "quanzhen" )
                         {
-                                new_name = name[0..1] + "清" + name[4..5];
+                                new_name = name[0..0] + "清" + name[2..2];
                                 set("name", new_name, ob);
                                 command("say 从今以后你的道号叫做"+new_name+ "，你现在是全真教清字辈弟子了。");
                         }

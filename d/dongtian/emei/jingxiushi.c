@@ -44,8 +44,8 @@ int halt_jingxiu(object me)
 
 int jingxiuing(object me)
 {
-        int i, isk, mylevel, kar, radd, rnd = 360;
-        string spsk, sks, *bls, *basicskills = ({});
+        int /*i,*/ isk, mylevel, kar, radd, rnd = 360;
+        string /*spsk,*/ sks, *bls, *basicskills = ({});
         int zhenbouns;
 
         if (environment(me)!=this_object()) {
@@ -242,7 +242,6 @@ void init()
         
         ::init();
 }
-
 
 
 

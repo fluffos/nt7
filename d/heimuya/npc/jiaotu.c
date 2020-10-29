@@ -21,7 +21,7 @@ void create()
 }        
 void init()
 {
-        object ob,me,what;
+        object ob,me/*,what*/;
         ::init();
         ob = this_player();
         me = this_object();

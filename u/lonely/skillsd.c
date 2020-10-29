@@ -325,7 +325,7 @@ public string skillmix_stats(object me)
 
 
         msg += "\n\n\n\n\n\n";
-        msg += sprintf(NOR HIW "┏━━━━━━━━━━┓\n" NOR);
+        msg += sprintf(NOR HIW "┏--------------------┓\n" NOR);
         msg += sprintf(NOR HIW "┃轻功->%-14s" NOR HIW "┃\n" NOR, to_chinese(temp->dodge));
         msg += sprintf(NOR HIW "┃招架->%-14s" NOR HIW "┃\n" NOR, to_chinese(temp->parry));
         msg += sprintf(NOR HIW "┃内功->%-14s" NOR HIW "┃\n" NOR, to_chinese(temp->force));
@@ -336,9 +336,9 @@ public string skillmix_stats(object me)
                 msg += sprintf(NOR HIW "┃其他->%-14s" NOR HIW "┃\n" NOR,
                                need[keys_need[i]] + to_chinese(keys_need[i]));
 
-        msg += sprintf(NOR HIW "┗━━━━━━━━━━┛\n" NOR);
+        msg += sprintf(NOR HIW "┗--------------------┛\n" NOR);
         msg += sprintf(" %-22s\n" NOR, trans_color(temp->name, 3));
-        msg += sprintf(NOR HIC "┏━━━━━━━━━━┓" NOR "\n" );
+        msg += sprintf(NOR HIC "┏--------------------┓" NOR "\n" );
 
         stats = temp->stats;
         keys_stats = keys(stats);
@@ -350,7 +350,7 @@ public string skillmix_stats(object me)
 #endif
                 msg += sprintf(NOR HIC "┃" NOR "%-" + (20 + len) + "s" NOR HIC "┃" NOR "\n", str);
         }
-        msg += sprintf(NOR HIC "┗━━━━━━━━━━┛" NOR "\n");
+        msg += sprintf(NOR HIC "┗--------------------┛" NOR "\n");
 
         return msg;
 }

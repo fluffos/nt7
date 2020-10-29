@@ -194,7 +194,8 @@ void log_error(string file, string message)
                         if( find_object(CHANNEL_D) )
                                 CHANNEL_D->channel_broadcast("debug", user->query_idname()+"编译时段"+error_type+"："+message);
                 }
-                tell_object(user, "\n编译时段"+error_type+"：" + message);
+                else
+                        tell_object(user, "\n编译时段"+error_type+"：" + message);
         }
         else
         {

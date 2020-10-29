@@ -22,13 +22,13 @@ int main(object me, string arg)
         mapping all_note, analecta;
         mapping *analectas;
 
-        MYGIFT_D->check_mygift(me, "newbie_mygift/wenxuan");   
+        MYGIFT_D->check_mygift(me, "newbie_mygift/wenxuan");
         year = localtime(time())[LT_YEAR];
         analectas = ANALECTA_D->query_year_analecta(year);
 
-        info = HIC + LOCAL_MUD_NAME() + "(" + HIW + upper_case(INTERMUD_MUD_NAME) + 
-               HIC + ")文章选集：\n" NOR WHT "──────────────────"
-               "──────────────────\n" NOR;
+        info = HIC + LOCAL_MUD_NAME() + "(" + HIW + upper_case(INTERMUD_MUD_NAME) +
+               HIC + ")文章选集：\n" NOR WHT "------------------------------------"
+               "------------------------------------\n" NOR;
 
         // 阅读最新文选
         if (arg == "new" || arg && sscanf(arg, "new %d", year))
@@ -56,10 +56,10 @@ int main(object me, string arg)
         if (arg && sscanf(arg, "add %d from %s", i, name) == 2)
         {
                 if (! objectp(board = present(name, environment(me))))
-                        info += CYN " 这里没有 " WHT + name + 
+                        info += CYN " 这里没有 " WHT + name +
                                 CYN " 这块留言板。\n" NOR;
                 else
-                if (! SECURITY_D->valid_grant(me, "(immortal)") 
+                if (! SECURITY_D->valid_grant(me, "(immortal)")
                  && query("id", me) != query("banzhu", board) )
                         info += CYN " 你尚无权力添加文选。\n" NOR;
                 else
@@ -220,8 +220,8 @@ int main(object me, string arg)
         }
         else return help(me);
 
-        info += NOR WHT "\n───────────────────────────────"
-                "─────" NOR;
+        info += NOR WHT "\n--------------------------------------------------------------"
+                "----------" NOR;
         me->start_more(info);
         return 1;
 }

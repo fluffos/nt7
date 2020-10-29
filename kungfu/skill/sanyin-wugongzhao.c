@@ -44,8 +44,8 @@ int valid_learn(object me)
 
 int practice_skill(object me)
 {
-        object* ob;
-        int i,damage;
+//      object* ob;
+//      int i,damage;
         if( query_temp("weapon", me) || query_temp("secondary_weapon", me) )
                 return notify_fail("你的必须空手才能练习。\n");
         if( query("qi", me)<30 )

@@ -22,7 +22,7 @@ int main(object me, string arg)
         int pot_limit;
         string msg;
         mixed prompt;
-        string map;
+//      string map;
 
         if (! arg)
         {

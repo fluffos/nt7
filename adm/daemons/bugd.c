@@ -46,9 +46,9 @@ string list_bug(int options)
 
         list_buginfo = sort_array(list_buginfo, (: (to_int($1["number"]) < to_int($2["number"])) ? 1 : -1 :));
         listmsg =  "\n"+MUD_FULL_NAME+HIY" 臭虫回报系统\n"NOR;
-        listmsg += WHT"─────────────────────────────────────\n"NOR;
+        listmsg += WHT"--------------------------------------------------------------------------\n"NOR;
         listmsg += "编号 回报者                   主题                          处理状态  回应\n";
-        listmsg += WHT"─────────────────────────────────────\n"NOR;
+        listmsg += WHT"--------------------------------------------------------------------------\n"NOR;
 
         foreach( mapping data in list_buginfo )
         {
@@ -61,7 +61,7 @@ string list_bug(int options)
                                    data["author_idname"], data["title"], data["status"],
                                    sizeof(data["reply"]) ? sizeof(data["reply"])+"" : "");
         }
-        listmsg += WHT"─────────────────────────────────────\n"NOR;
+        listmsg += WHT"--------------------------------------------------------------------------\n"NOR;
 
         if( options & LIST_OPT_ALL )
                 listmsg += "列出所有回报资料\n";
@@ -189,7 +189,7 @@ string query_bug(string number)
         bugmsg += sprintf(HIM"时间"NOR" %-20s "HIM"回报"NOR" %s\n", TIME_D->replace_ctime(data["time"]), data["author_idname"]);
         bugmsg += sprintf(HIM"状况"NOR" %-"+(20+len)+"s "HIM"回应"NOR" %d\n", data["status"], sizeof(data["reply"]));
         bugmsg += sprintf(HIM"地点"NOR" %s\n", data["where"]);
-        bugmsg += WHT"─────────────────────────────────────\n"NOR;
+        bugmsg += WHT"--------------------------------------------------------------------------\n"NOR;
         bugmsg += data["content"]+"\n";
 
         if( sizeof(data["reply"]) )
@@ -204,7 +204,7 @@ string query_bug(string number)
                 }
         }
 
-        bugmsg += WHT"─────────────────────────────────────\n"NOR;
+        bugmsg += WHT"--------------------------------------------------------------------------\n"NOR;
 
         return bugmsg;
 }

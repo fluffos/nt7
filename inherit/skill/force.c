@@ -152,7 +152,7 @@ int hatred_check(object me)
 {
         int hatred;
         int force;
-        int i;
+//      int i;
 
         hatred=query("total_hatred", me);
         force = me->query_skill("force");

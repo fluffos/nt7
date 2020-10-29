@@ -2,7 +2,7 @@ inherit SKILL;
 
 int valid_learn(object me)
 {
-        object ob;
+//      object ob;
 
         if( query("max_neili", me)<500 )
                 return notify_fail("你的内力不够，没有办法练黑血神针。\n");

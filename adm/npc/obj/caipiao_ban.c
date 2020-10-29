@@ -8,7 +8,7 @@
 #include <localtime.h>
 inherit ITEM;
 inherit F_SAVE;
-inherit F_NOCLONE; 
+inherit F_NOCLONE;
 
 mixed *all_biao;
 nosave string *touzhu;
@@ -38,8 +38,8 @@ void create()
 
         set("times", 1);
         restore();
-        set("startroom", "/d/city/qiyuan/xxzl1"); 
-        check_clone(); 
+        set("startroom", "/d/city/qiyuan/xxzl1");
+        check_clone();
 }
 
 void init()
@@ -87,7 +87,7 @@ int do_ya(int arg)
                 message_vision("$N把投票单写好后，扔进了投票板。天上突然掉下了一张彩票，$N连忙揣了起来。\n",me);
                 //addn("balance", -100000, me);
                 //tell_object(me,"钱庄已经扣除了你十两黄金。请在"+query("kaijiang_cdate")+"来等待结果吧！\n");
-                if( !MEMBER_D->player_pay(me, 2) ) 
+                if( !MEMBER_D->player_pay(me, 2) )
                 {
                         tell_object(me,"交易失败。\n");
                         return 1;
@@ -128,7 +128,7 @@ void touzhu_1(string num,object me)
         int *jieguo=({});
         string str;
         int *tmp = ({});
-        
+
         if( !num || num=="" )
         {
                 tell_object(me,"请选7个1-30中的号码，用逗号隔开。\n");
@@ -165,7 +165,7 @@ void touzhu_1(string num,object me)
         str="";
         for(i=0;i<sizeof(touzhu);i++)
         {
-                if( !intp(z=atoi(touzhu[i])) || z<1 || z>30 || sizeof(touzhu)!=7) 
+                if( !intp(z=atoi(touzhu[i])) || z<1 || z>30 || sizeof(touzhu)!=7)
                 {
                         j=1;
                         break;
@@ -235,7 +235,7 @@ void check(object me)
                 break;
         }
 
-        MEMBER_D->db_pay_member(me, money); 
+        MEMBER_D->db_pay_member(me, money);
 
         write(HIR"你中了"+chinese_number(money)+" NT,已经拨入你的账户！\n");
         message("system",HIW"〖福彩〗："+HIC" "+query("name",me)+HIW" 中了"+HIY" "+chinese_number(money)+HIW" NT，已经拨入帐户！\n"NOR,users());
@@ -289,7 +289,7 @@ int do_read(string arg)
                 write("祝您玩得痛快!\n");
                 return 1;
         }
-        else        
+        else
                 write("你要看什么？购买规则请read rules，购买情况请read biao,兑奖规则请read duijiang。\n");
         return 1;
 }
@@ -300,20 +300,20 @@ string show_player()
         string str="";
         int *str_te,*str_1,*str_2,*str_3,*str_4,*str_5,*list, *str_old;
         mapping name;
-    
+
         i=0;
         if( !query("duijiang") )
         {
                 h=sizeof(all_biao);
                 str+=HIW"本期彩票已有 "HIG+chinese_number(sizeof(all_biao))+HIW" 位玩家投注，投注状况如下：\n"NOR;
-                str+="┏━━━━━━┳━━━━━━━━━━━┳━━━┓\n";
+                str+="┏------------┳----------------------┳------┓\n";
                 while (i<h)
                 {
                         name=all_biao[i];
                         str+= sprintf("┃%-12s┃%22s┃%-6s┃\n",HIR+name["name"]+NOR,name["z_num"],name["jieguo"],);
                         i++;
                 }
-                str+="┗━━━━━━┻━━━━━━━━━━━┻━━━┛\n"NOR;
+                str+="┗------------┻----------------------┻------┛\n"NOR;
                 if( query("end_cdate") ) str+=HIW"本期投注截止时间："HIY+query("end_cdate")+HIW"\n本期彩票开奖时间："HIM+query("kaijiang_cdate")+"\n"NOR;
                 else str+=HIR"本期彩票已经截止购买,"HIW"开奖时间："HIG+query("kaijiang_cdate")+HIW"。\n"NOR;
                 str+=HIW"本期彩票累计奖金："HIY+query("all_gold")+HIG" NT。\n"NOR;
@@ -368,9 +368,9 @@ string show_player()
         save();
         list+=str_te+str_1+str_2+str_3+str_4+str_old;
         str_te=str_1=str_2=str_3=str_4=str_5=str_old=({});
-        str+="┏━━━━━━┳━━━━━━━━━━━┳━━━┓\n";
+        str+="┏------------┳----------------------┳------┓\n";
         str+= sprintf("┃%-12s┃%-22s┃%-6s┃\n","玩家名","  投   注   号   码   ","所中奖");
-        str+="┣━━━━━━╋━━━━━━━━━━━╋━━━┫\n";
+        str+="┣------------╋----------------------╋------┫\n";
         z=0;
         h=sizeof(list);
         set("zhongjiang_num",h);
@@ -385,7 +385,7 @@ string show_player()
                 z++;
         }
         list=({});
-        str+="┗━━━━━━┻━━━━━━━━━━━┻━━━┛\n"NOR;
+        str+="┗------------┻----------------------┻------┛\n"NOR;
         str+=HIW"本期尚未兑奖注数："HIM+chinese_number(m)+HIW"\n"NOR;
         str+=HIW"下期彩票发行时间："HIG+query("start_cdate")+HIW"\n"NOR;
         str+=HIW"下期彩票预计奖金："HIY+query("all_gold")+HIW" NT。\n"NOR;
@@ -397,7 +397,7 @@ int do_duijiang()//兑奖指令
 {
         int i,j,k,m,n,money;
         object me;
-        
+
         me = this_player();
         if( !query("duijiang") )
                 return notify_fail("还未到兑奖时间！\n");

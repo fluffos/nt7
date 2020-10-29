@@ -137,16 +137,16 @@ int main(object me, string arg)
 
         case "battle":
                 return BUNCH_D->query_bunch_battle(me);
-        
+
         case "honors":
                 if( !stringp(fname=query("bunch/bunch_name", me)) )
                         return notify_fail("你现在还没有加入任何帮派呢。\n");
                 tell_object(me, "你所在的帮派目前帮派荣誉为 "+BUNCH_D->query_bunch_honors(fname)+" 点。\n");
                 return 1;
-        
+
         case "efficient":
                 return bunch_efficient(me, arg);
-                
+
         case "out":
                 if( !stringp(fname=query("bunch/bunch_name", me)) )
                         return notify_fail("你现在还没有加入任何帮派呢。\n");
@@ -243,7 +243,7 @@ int show_bunch_hatred(object me, string arg)
 
         count = 0;
         msg = WHT "目前" + fam + "在江湖上的仇敌都有\n" NOR
-              HIY "────────────────\n" NOR;
+              HIY "--------------------------------\n" NOR;
         for (i = 0; i < sizeof(ids) && count < 30; i++)
         {
                 data = hatred[ids[i]];
@@ -256,7 +256,7 @@ int show_bunch_hatred(object me, string arg)
                                ++count, st, HIR, data[1], NOR);
         }
 
-        msg += HIY "────────────────\n" NOR;
+        msg += HIY "--------------------------------\n" NOR;
         if (i < sizeof(ids))
                 msg += WHT "江湖上的敌人太多，难以尽数。\n" NOR;
         else
@@ -358,7 +358,7 @@ int show_bunch_all(object me, string arg)
 
         msg = sprintf(WHT "%-12s%-20s%-10s%-10s%-12s%-10s\n" NOR,
                       "帮会名称", "帮会帮主", "玩家数", "地盘数", "联盟帮派", "总坛");
-        msg += HIY "───────────────────────────────────\n" NOR;
+        msg += HIY "----------------------------------------------------------------------\n" NOR;
 
         n = 0;
         foreach (bunch in fam)
@@ -385,7 +385,7 @@ int show_bunch_all(object me, string arg)
                 return notify_fail("现在没有任何帮派信息。\n");
 
         msg += "\n目前泥潭共有" + HIM + chinese_number(n) + NOR + "个帮派。\n";
-        msg += HIY "───────────────────────────────────\n" NOR;
+        msg += HIY "----------------------------------------------------------------------\n" NOR;
 
         write(msg);
         return 1;
@@ -427,7 +427,7 @@ int show_bunch_info(object me, string arg)
 
         /*
         msg = WHT "\n" + fam + "的帮派玩家列表\n" NOR;
-        msg += HIY "───────────────────────────\n" NOR;
+        msg += HIY "------------------------------------------------------\n" NOR;
         member = sort_array(member, (: sort_member :));
         foreach (id in member)
         {
@@ -445,9 +445,9 @@ int show_bunch_info(object me, string arg)
 
         */
         msg = WHT "\n" + fam + "的帮派资料汇总表\n" NOR;
-        msg += HIY "\n───────────────────────────\n" NOR;
+        msg += HIY "\n------------------------------------------------------\n" NOR;
         msg += WHT + fam + "上个月收入单表\n" NOR;
-        msg += HIY "───────────────────────────\n" NOR;
+        msg += HIY "------------------------------------------------------\n" NOR;
         i=query(fam+"/last_area_money", get_object(BUNCH_D));
         if (! intp(i))   i = 0;
         msg += "地盘收入：" + MONEY_D->money_str(i) + "\n\n";
@@ -462,7 +462,7 @@ int show_bunch_info(object me, string arg)
         msg+="帮派福利：双倍经验 "+BUNCH_D->query_bunch_efficient(fam, "exp")+" 秒、";
         msg+="双倍潜能 "+BUNCH_D->query_bunch_efficient(fam, "pot")+" 秒、";
         msg+="双倍体会 "+BUNCH_D->query_bunch_efficient(fam, "mar")+" 秒\n";
-        msg += HIY "───────────────────────────\n" NOR;
+        msg += HIY "------------------------------------------------------\n" NOR;
 
         msg += sprintf("现在%s在江湖上具有 %s%d%s 点声望。\n",
                        fam, HIY, BUNCH_D->query_bunch_fame(fam), NOR);
@@ -508,7 +508,7 @@ int show_bunch_area(object me, string arg)
         msg = sprintf(HIC "\n%-18s%-10s%-28s%-8s%-8s%-18s\n" NOR,
                       "地盘名称", "城市", "驻守帮众", "开发度", "忠诚度", "上月收入");
 
-        msg += HIY "────────────────────────────────────────\n" NOR;
+        msg += HIY "--------------------------------------------------------------------------------\n" NOR;
 
         n = 0;
         foreach (id in member)
@@ -530,7 +530,7 @@ int show_bunch_area(object me, string arg)
                 return notify_fail(arg + "现在没有任何地盘。\n");
 
         msg += "\n目前" + HIM + fam + NOR + "共有" + HIM + chinese_number(n) + NOR + "处地盘。\n";
-        msg += HIY "────────────────────────────────────────\n" NOR;
+        msg += HIY "--------------------------------------------------------------------------------\n" NOR;
         // me->start_more(msg);
         write(msg);
         return 1;
@@ -573,7 +573,7 @@ int expell_bunch_member(object me, string arg)
                 return 1;
         }
 
-        if( query("bunch/level", me) != 7 || 
+        if( query("bunch/level", me) != 7 ||
             BUNCH_D->query_bunch_info(fname,"master") != query("id", me) )
         {
                 write("只有帮主才有权利开除某人出帮会！\n");
@@ -630,7 +630,7 @@ int bunch_efficient(object me, string arg)
                 return 1;
         }
 
-        if( query("bunch/level", me) != 7 || 
+        if( query("bunch/level", me) != 7 ||
             BUNCH_D->query_bunch_info(fname,"master") != query("id", me) )
         {
                 write("只有帮主才有权利使用帮派的荣誉点！\n");
@@ -642,13 +642,13 @@ int bunch_efficient(object me, string arg)
                 write("你要用帮派荣誉点来干什么？\n");
                 return 1;
         }
-        
+
         if( BUNCH_D->query_bunch_honors(fname) < 500 )
         {
                 write("你的帮派荣誉点不够！\n");
                 return 1;
-        }        
-        
+        }
+
         switch (arg)
         {
         case "exp":
@@ -666,7 +666,7 @@ int bunch_efficient(object me, string arg)
                         "听说帮派『" + fname + HIM"』兑换了荣誉点，全帮双倍潜能2小时！\n"NOR);
                 write("你开始使用帮派荣誉点200点兑换全帮双倍潜能2小时！\n");
                 break;
-                
+
         case "mar":
                 BUNCH_D->add_bunch_honors(fname,-500);
                 BUNCH_D->set_bunch_efficient(fname, arg, 7200);
@@ -682,7 +682,7 @@ int bunch_efficient(object me, string arg)
                         "听说帮派『" + fname + HIM"』兑换了荣誉点，全帮研究效率增加20%持续2小时！\n"NOR);
                 write("你开始使用帮派荣誉点200点兑换全帮研究效率增加20%持续2小时！\n");
                 break;
-        
+
         case "jiqu":
                 BUNCH_D->add_bunch_honors(fname,-500);
                 BUNCH_D->set_bunch_efficient(fname, arg, 7200);
@@ -693,7 +693,7 @@ int bunch_efficient(object me, string arg)
         default:
                 write("你使用帮派荣誉点用来兑换什么呢？！\n");
                 break;
-        }                
+        }
 
         return 1;
 }
@@ -874,8 +874,8 @@ int inherit_bunch_master(object me, string arg)
 
         seteuid(getuid());
 
-        if( !stringp(banghui=query("bunch/bunch_name", me)) || 
-            query("bunch/level", me) != 7 || 
+        if( !stringp(banghui=query("bunch/bunch_name", me)) ||
+            query("bunch/level", me) != 7 ||
             BUNCH_D->query_bunch_info(banghui,"master") != query("id", me) )
                 return notify_fail("只有帮会的帮主才能使用这条指令。\n");
 
@@ -965,7 +965,7 @@ int show_bunch_league(object me, string arg)
                 return 1;
         }
 
-        if( !query("bunch/level", me) || 
+        if( !query("bunch/level", me) ||
             query("bunch/level", me)<7 )
                 return notify_fail("你并不是" + bname + "帮派的龙头老大。\n");
 
@@ -1037,7 +1037,7 @@ int bunch_arrest(object me, string arg)
         if(! arg)
         {
                 msg = HIR "通缉黑名单\n" NOR;
-                msg += "───────────────────────\n" NOR;
+                msg += "----------------------------------------------\n" NOR;
 
                 vendetta = BUNCH_D->query_bunch_info(banghui, "vendetta");
 
@@ -1056,12 +1056,12 @@ int bunch_arrest(object me, string arg)
 
                 if (cnt == 0 || (cnt % 4))
                         msg += "\n";
-                msg += "───────────────────────\n" NOR;
+                msg += "----------------------------------------------\n" NOR;
                 me->start_more(msg);
                 return 1;
         }
 
-        if( !query("bunch/level", me) || 
+        if( !query("bunch/level", me) ||
               query("bunch/level", me)<7 )
                 return notify_fail("你并不是" + banghui + "帮派的龙头老大。\n");
 
@@ -1162,7 +1162,7 @@ int bunch_invite(object me, string arg)
 
         flag = 0;
 
-        if( intp(query("bunch/level", me)) && 
+        if( intp(query("bunch/level", me)) &&
             query("bunch/level", me)>4 )
                 flag = 1;
 
@@ -1204,8 +1204,8 @@ int bunch_invite(object me, string arg)
                 switch(query("bunch/zhengzhao", ob) )
                 {
                 case 1:
-                        if( (!stringp(bunch=query("bunch/bunch_name", ob)) || 
-                            query("bunch/zhongcheng", ob)<query("meili", me)) && 
+                        if( (!stringp(bunch=query("bunch/bunch_name", ob)) ||
+                            query("bunch/zhongcheng", ob)<query("meili", me)) &&
                             query("qi", ob)*100>query("max_qi", ob)*80 )
                         {
                                 message_vision("$N对$n说道：“即是如此，你我不如切磋(qiecuo)一下武功如何？”\n",
@@ -1217,7 +1217,7 @@ int bunch_invite(object me, string arg)
                         return 1;
 
                 case 2:
-                        if( !(bunch=query("bunch/bunch_name", ob)) || 
+                        if( !(bunch=query("bunch/bunch_name", ob)) ||
                             query("bunch/zhongcheng", ob)<query("meili", me) )
                         {
                                 money=query("combat_exp", ob)/1000;
@@ -1312,7 +1312,7 @@ int join_bunch(object me, string arg)
         if( query("combat_exp", me)<1000 )
                 return notify_fail("你才初入江湖，在磨练磨练吧。\n");
 
-        if( stringp(bunch=query("bunch/bunch_name", me)) || 
+        if( stringp(bunch=query("bunch/bunch_name", me)) ||
             stringp(bunch=query("league/league_name", me)) )
                 return notify_fail("抱歉，你已经是「" + bunch + "」的人了，无法加入其他帮会。\n");
 
@@ -1359,7 +1359,7 @@ int bunch_color(object me, string arg)
         if( !stringp(banghui=query("bunch/bunch_name", me)) )
                 return notify_fail("你还没有组建或加入任何帮派。\n");
 
-        if( !query("bunch/level", me) || 
+        if( !query("bunch/level", me) ||
               query("bunch/level", me)<7 )
                 return notify_fail("你并不是" + banghui + "帮派的龙头老大。\n");
 

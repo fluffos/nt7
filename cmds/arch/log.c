@@ -38,7 +38,7 @@ int main(object me, string arg)
                                 if (! flag)
                                 {
                                         msg +=HIW "\n目前记录的情况如下：\n"
-                                              HIY "────────────────────────\n" NOR;
+                                              HIY "------------------------------------------------\n" NOR;
                                         flag = 1;
                                 }
                                 msg += sprintf("%s%-14s  目前被  %-14s 记录日志。\n" NOR,
@@ -57,7 +57,7 @@ int main(object me, string arg)
                         if (! flag)
                         {
                                 msg += HIW "\n目前正在记录的使用者情况如下：\n"
-                                       HIY "────────────────────────\n" NOR;
+                                       HIY "------------------------------------------------\n" NOR;
                                 flag = 1;
                         }
 
@@ -98,13 +98,13 @@ int help (object me)
 {
         write(@HELP
 指令格式: log <player> | ?
- 
+
 记录 <player> 的日志，日志文件生成在 /log/user/player 下面。
 如果没有声明停止记录该玩家的日志，系统将一直记录下去，即使
 退出后重新连线进入也不会停止。
 
 如果输入 ? 作为参数，列出当前记录的情况。
- 
+
 HELP );
         return 1;
 }

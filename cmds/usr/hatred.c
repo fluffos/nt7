@@ -70,7 +70,7 @@ int main(object me, string arg)
 
         count = 0;
         msg = WHT "目前" + fam + "在江湖上的仇敌都有\n" NOR
-              HIY "────────────────\n" NOR;
+              HIY "--------------------------------\n" NOR;
         for (i = 0; i < sizeof(ids) && count < 30; i++)
         {
                 data = hatred[ids[i]];
@@ -83,7 +83,7 @@ int main(object me, string arg)
                                ++count, st, HIR, data[1], NOR);
         }
 
-        msg += HIY "────────────────\n" NOR;
+        msg += HIY "--------------------------------\n" NOR;
         if (i < sizeof(ids))
                 msg += WHT "江湖上的敌人太多，难以尽数。\n" NOR;
         else

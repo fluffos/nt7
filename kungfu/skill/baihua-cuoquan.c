@@ -134,7 +134,7 @@ int get_ready(object me)
 
 int get_finish(object me)
 {
-        object ob;
+//      object ob;
 
         if( query("int", me)<28 )
         {

@@ -11,24 +11,24 @@ string aaa = "";
 int aa = 0;
 int bb = 0;
 
-mapping TABLE = ([ // table /*┌┐┖┚─┃├┤┬┴┼*/
+mapping TABLE = ([ // table /*┌┐┖┚--┃├┤┬┴┼*/
 0: ([
         0 :({ "┌",HIR"车"NOR, 1,1 }),
-        1 :({ "─", "  ", 0,0 }),
+        1 :({ "--", "  ", 0,0 }),
         2 :({ "┬",HIR"马"NOR, 2,1 }),
-        3 :({ "─", "  ", 0,0 }),
+        3 :({ "--", "  ", 0,0 }),
         4 :({ "┬",HIR"相"NOR, 3,1 }),
-        5 :({ "─", "  ", 0,0 }),
+        5 :({ "--", "  ", 0,0 }),
         6 :({ "┬",HIR"仕"NOR, 4,1 }),
-        7 :({ "─", "  ", 0,0 }),
+        7 :({ "--", "  ", 0,0 }),
         8 :({ "┬",HIR"帅"NOR, 5,1 }),
-        9 :({ "─", "  ", 0,0 }),
+        9 :({ "--", "  ", 0,0 }),
         10:({ "┬",HIR"仕"NOR, 4,1 }),
-        11:({ "─", "  ", 0,0 }),
+        11:({ "--", "  ", 0,0 }),
         12:({ "┬",HIR"相"NOR, 3,1 }),
-        13:({ "─", "  ", 0,0 }),
+        13:({ "--", "  ", 0,0 }),
         14:({ "┬",HIR"马"NOR, 2,1 }),
-        15:({ "─", "  ", 0,0 }),
+        15:({ "--", "  ", 0,0 }),
         16:({ "┐",HIR"车"NOR, 1,1 }),
         ]),
 1: ([
@@ -53,21 +53,21 @@ mapping TABLE = ([ // table /*┌┐┖┚─┃├┤┬┴┼*/
 
 2: ([
         0 :({ "├", "  ", 0,0 }),
-        1 :({ "─", "  ", 0,0 }),
+        1 :({ "--", "  ", 0,0 }),
         2 :({ "┼", "  ", 0,0 }),
-        3 :({ "─", "  ", 0,0 }),
+        3 :({ "--", "  ", 0,0 }),
         4 :({ "┼", "  ", 0,0 }),
-        5 :({ "─", "  ", 0,0 }),
+        5 :({ "--", "  ", 0,0 }),
         6 :({ "┼", "  ", 0,0 }),
-        7 :({ "─", "  ", 0,0 }),
+        7 :({ "--", "  ", 0,0 }),
         8 :({ "┼", "  ", 0,0 }),
-        9 :({ "─", "  ", 0,0 }),
+        9 :({ "--", "  ", 0,0 }),
         10:({ "┼", "  ", 0,0 }),
-        11:({ "─", "  ", 0,0 }),
+        11:({ "--", "  ", 0,0 }),
         12:({ "┼", "  ", 0,0 }),
-        13:({ "─", "  ", 0,0 }),
+        13:({ "--", "  ", 0,0 }),
         14:({ "┼", "  ", 0,0 }),
-        15:({ "─", "  ", 0,0 }),
+        15:({ "--", "  ", 0,0 }),
         16:({ "┤", "  ", 0,0 }),
         ]),
 3: ([
@@ -91,21 +91,21 @@ mapping TABLE = ([ // table /*┌┐┖┚─┃├┤┬┴┼*/
         ]),
 4 : ([
         0 :({ "├", "  ", 0,0 }),
-        1 :({ "─", "  ", 0,0 }),
+        1 :({ "--", "  ", 0,0 }),
         2 :({ "┼",HIR"炮"NOR, 6,1 }),
-        3 :({ "─", "  ", 0,0 }),
+        3 :({ "--", "  ", 0,0 }),
         4 :({ "┼", "  ", 0,0 }),
-        5 :({ "─", "  ", 0,0 }),
+        5 :({ "--", "  ", 0,0 }),
         6 :({ "┼", "  ", 0,0 }),
-        7 :({ "─", "  ", 0,0 }),
+        7 :({ "--", "  ", 0,0 }),
         8 :({ "┼", "  ", 0,0 }),
-        9 :({ "─", "  ", 0,0 }),
+        9 :({ "--", "  ", 0,0 }),
         10:({ "┼", "  ", 0,0 }),
-        11:({ "─", "  ", 0,0 }),
+        11:({ "--", "  ", 0,0 }),
         12:({ "┼", "  ", 0,0 }),
-        13:({ "─", "  ", 0,0 }),
+        13:({ "--", "  ", 0,0 }),
         14:({ "┼",HIR"炮"NOR, 6,1 }),
-        15:({ "─", "  ", 0,0 }),
+        15:({ "--", "  ", 0,0 }),
         16:({ "┤", "  ", 0,0 }),
         ]),
 5 : ([
@@ -129,21 +129,21 @@ mapping TABLE = ([ // table /*┌┐┖┚─┃├┤┬┴┼*/
         ]),
 6 : ([
         0 :({ "├",HIR"兵"NOR, 7,1 }),
-        1 :({ "─", "  ", 0,0 }),
+        1 :({ "--", "  ", 0,0 }),
         2 :({ "┼", "  ", 0,0 }),
-        3 :({ "─", "  ", 0,0 }),
+        3 :({ "--", "  ", 0,0 }),
         4 :({ "┼",HIR"兵"NOR, 7,1 }),
-        5 :({ "─", "  ", 0,0 }),
+        5 :({ "--", "  ", 0,0 }),
         6 :({ "┼", "  ", 0,0 }),
-        7 :({ "─", "  ", 0,0 }),
+        7 :({ "--", "  ", 0,0 }),
         8 :({ "┼",HIR"兵"NOR, 7,1 }),
-        9 :({ "─", "  ", 0,0 }),
+        9 :({ "--", "  ", 0,0 }),
         10:({ "┼", "  ", 0,0 }),
-        11:({ "─", "  ", 0,0 }),
+        11:({ "--", "  ", 0,0 }),
         12:({ "┼",HIR"兵"NOR, 7,1 }),
-        13:({ "─", "  ", 0,0 }),
+        13:({ "--", "  ", 0,0 }),
         14:({ "┼", "  ", 0,0 }),
-15:({ "─", "  ", 0,0 }),
+15:({ "--", "  ", 0,0 }),
         16:({ "┤",HIR"兵"NOR, 7,1 }),
         ]),
 7 : ([
@@ -167,21 +167,21 @@ mapping TABLE = ([ // table /*┌┐┖┚─┃├┤┬┴┼*/
         ]),
 8 : ([
 0 :({ "┖", "  ", 0,0 }),
-        1 :({ "─", "  ", 0,0 }),
+        1 :({ "--", "  ", 0,0 }),
         2 :({ "┴", "  ", 0,0 }),
-        3 :({ "─", "  ", 0,0 }),
+        3 :({ "--", "  ", 0,0 }),
         4 :({ "┴", "  ", 0,0 }),
-        5 :({ "─", "  ", 0,0 }),
+        5 :({ "--", "  ", 0,0 }),
         6 :({ "┴", "  ", 0,0 }),
-        7 :({ "─", "  ", 0,0 }),
+        7 :({ "--", "  ", 0,0 }),
         8 :({ "┴", "  ", 0,0 }),
-        9 :({ "─", "  ", 0,0 }),
+        9 :({ "--", "  ", 0,0 }),
         10:({ "┴", "  ", 0,0 }),
-        11:({ "─", "  ", 0,0 }),
+        11:({ "--", "  ", 0,0 }),
         12:({ "┴", "  ", 0,0 }),
-        13:({ "─", "  ", 0,0 }),
+        13:({ "--", "  ", 0,0 }),
         14:({ "┴", "  ", 0,0 }),
-        15:({ "─", "  ", 0,0 }),
+        15:({ "--", "  ", 0,0 }),
         16:({ "┚", "  ", 0,0 }),
         ]),
 9 : ([
@@ -189,21 +189,21 @@ mapping TABLE = ([ // table /*┌┐┖┚─┃├┤┬┴┼*/
         ]),
 10: ([
         0 :({ "┌", "  ", 0,0 }),
-1 :({ "─", "  ", 0,0 }),
+1 :({ "--", "  ", 0,0 }),
         2 :({ "┬", "  ", 0,0 }),
-        3 :({ "─", "  ", 0,0 }),
+        3 :({ "--", "  ", 0,0 }),
         4 :({ "┬", "  ", 0,0 }),
-        5 :({ "─", "  ", 0,0 }),
+        5 :({ "--", "  ", 0,0 }),
         6 :({ "┬", "  ", 0,0 }),
-        7 :({ "─", "  ", 0,0 }),
+        7 :({ "--", "  ", 0,0 }),
         8 :({ "┬", "  ", 0,0 }),
-        9 :({ "─", "  ", 0,0 }),
+        9 :({ "--", "  ", 0,0 }),
         10:({ "┬", "  ", 0,0 }),
-        11:({ "─", "  ", 0,0 }),
+        11:({ "--", "  ", 0,0 }),
         12:({ "┬", "  ", 0,0 }),
-        13:({ "─", "  ", 0,0 }),
+        13:({ "--", "  ", 0,0 }),
         14:({ "┬", "  ", 0,0 }),
-        15:({ "─", "  ", 0,0 }),
+        15:({ "--", "  ", 0,0 }),
         16:({ "┐", "  ", 0,0 }),
         ]),
 11: ([
@@ -227,21 +227,21 @@ mapping TABLE = ([ // table /*┌┐┖┚─┃├┤┬┴┼*/
         ]),
 12 : ([
         0 :({ "├",HIC"卒"NOR, 7,2 }),
-        1 :({ "─", "  ", 0,0 }),
+        1 :({ "--", "  ", 0,0 }),
         2 :({ "┼", "  ", 0,0 }),
-        3 :({ "─", "  ", 0,0 }),
+        3 :({ "--", "  ", 0,0 }),
         4 :({ "┼",HIC"卒"NOR, 7,2 }),
-        5 :({ "─", "  ", 0,0 }),
+        5 :({ "--", "  ", 0,0 }),
         6 :({ "┼", "  ", 0,0 }),
-        7 :({ "─", "  ", 0,0 }),
+        7 :({ "--", "  ", 0,0 }),
         8 :({ "┼",HIC"卒"NOR, 7,2 }),
-9 :({ "─", "  ", 0,0 }),
+9 :({ "--", "  ", 0,0 }),
         10:({ "┼", "  ", 0,0 }),
-        11:({ "─", "  ", 0,0 }),
+        11:({ "--", "  ", 0,0 }),
         12:({ "┼",HIC"卒"NOR, 7,2 }),
-        13:({ "─", "  ", 0,0 }),
+        13:({ "--", "  ", 0,0 }),
         14:({ "┼", "  ", 0,0 }),
-        15:({ "─", "  ", 0,0 }),
+        15:({ "--", "  ", 0,0 }),
         16:({ "┤",HIC"卒"NOR, 7,2 }),
         ]),
 13: ([
@@ -265,21 +265,21 @@ mapping TABLE = ([ // table /*┌┐┖┚─┃├┤┬┴┼*/
         ]),
 14: ([
         0 :({ "├", "  ", 0,0 }),
-        1 :({ "─", "  ", 0,0 }),
+        1 :({ "--", "  ", 0,0 }),
         2 :({ "┼",HIC"砲"NOR, 6,2 }),
-        3 :({ "─", "  ", 0,0 }),
+        3 :({ "--", "  ", 0,0 }),
         4 :({ "┼", "  ", 0,0 }),
-        5 :({ "─", "  ", 0,0 }),
+        5 :({ "--", "  ", 0,0 }),
         6 :({ "┼", "  ", 0,0 }),
-        7 :({ "─", "  ", 0,0 }),
+        7 :({ "--", "  ", 0,0 }),
         8 :({ "┼", "  ", 0,0 }),
-        9 :({ "─", "  ", 0,0 }),
+        9 :({ "--", "  ", 0,0 }),
         10:({ "┼", "  ", 0,0 }),
-        11:({ "─", "  ", 0,0 }),
+        11:({ "--", "  ", 0,0 }),
         12:({ "┼", "  ", 0,0 }),
-        13:({ "─", "  ", 0,0 }),
+        13:({ "--", "  ", 0,0 }),
         14:({ "┼",HIC"砲"NOR, 6,2 }),
-        15:({ "─", "  ", 0,0 }),
+        15:({ "--", "  ", 0,0 }),
         16:({ "┤", "  ", 0,0 })
 ]),
 15: ([
@@ -303,21 +303,21 @@ mapping TABLE = ([ // table /*┌┐┖┚─┃├┤┬┴┼*/
         ]),
 16: ([
         0 :({ "├", "  ", 0,0 }),
-        1 :({ "─", "  ", 0,0 }),
+        1 :({ "--", "  ", 0,0 }),
         2 :({ "┼", "  ", 0,0 }),
-        3 :({ "─", "  ", 0,0 }),
+        3 :({ "--", "  ", 0,0 }),
         4 :({ "┼", "  ", 0,0 }),
-        5 :({ "─", "  ", 0,0 }),
+        5 :({ "--", "  ", 0,0 }),
         6 :({ "┼", "  ", 0,0 }),
-        7 :({ "─", "  ", 0,0 }),
+        7 :({ "--", "  ", 0,0 }),
         8 :({ "┼", "  ", 0,0 }),
-        9 :({ "─", "  ", 0,0 }),
+        9 :({ "--", "  ", 0,0 }),
         10:({ "┼", "  ", 0,0 }),
-        11:({ "─", "  ", 0,0 }),
+        11:({ "--", "  ", 0,0 }),
         12:({ "┼", "  ", 0,0 }),
-        13:({ "─", "  ", 0,0 }),
+        13:({ "--", "  ", 0,0 }),
         14:({ "┼", "  ", 0,0 }),
-        15:({ "─", "  ", 0,0 }),
+        15:({ "--", "  ", 0,0 }),
         16:({ "┤", "  ", 0,0 })
         ]),
 18: ([
@@ -341,21 +341,21 @@ mapping TABLE = ([ // table /*┌┐┖┚─┃├┤┬┴┼*/
         ]),
 19: ([
         0 :({ "┖",HIC"車"NOR, 1,2 }),
-        1 :({ "─", "  ", 0,0 }),
+        1 :({ "--", "  ", 0,0 }),
         2 :({ "┴",HIC"馬"NOR, 2,2 }),
-        3 :({ "─", "  ", 0,0 }),
+        3 :({ "--", "  ", 0,0 }),
         4 :({ "┴",HIC"象"NOR, 3,2 }),
-        5 :({ "─", "  ", 0,0 }),
+        5 :({ "--", "  ", 0,0 }),
         6 :({ "┴",HIC"士"NOR, 4,2 }),
-        7 :({ "─", "  ", 0,0 }),
+        7 :({ "--", "  ", 0,0 }),
         8 :({ "┴",HIC"將"NOR, 5,2 }),
-        9 :({ "─", "  ", 0,0 }),
+        9 :({ "--", "  ", 0,0 }),
 10:({ "┴",HIC"士"NOR, 4,2 }),
-        11:({ "─", "  ", 0,0 }),
+        11:({ "--", "  ", 0,0 }),
         12:({ "┴",HIC"象"NOR, 3,2 }),
-        13:({ "─", "  ", 0,0 }),
+        13:({ "--", "  ", 0,0 }),
         14:({ "┴",HIC"馬"NOR, 2,2 }),
-        15:({ "─", "  ", 0,0 }),
+        15:({ "--", "  ", 0,0 }),
         16:({ "┚",HIC"車"NOR, 1,2 }),
         ]),
 
@@ -389,8 +389,8 @@ string *tossText = ({
         "│●  ●│\n"
         "│●  ●│\n",
 
-        "┏━━━┐\n",
-        "┖━━━┛\n",
+        "┏------┐\n",
+        "┖------┛\n",
 });
 
 
@@ -423,7 +423,7 @@ void create()
 }
 void init() {
 init_tab();
-        add_action("do_move","move");   
+        add_action("do_move","move");
         add_action("do_toss","toss");
         add_action("do_reset","reset");
         add_action("do_save","csave");
@@ -434,13 +434,13 @@ init_tab();
 }
 
 string query_save_file()
-{ 
+{
 if( bb == 1 )
-return DATA_DIR + "cchess/" 
+return DATA_DIR + "cchess/"
 +query("id", this_player())[0..0]
 +"/"+query("id", this_player());
 else
-return DATA_DIR + "cchess/cchess"; 
+return DATA_DIR + "cchess/cchess";
 }
 
 int init_tab() {
@@ -452,7 +452,7 @@ int init_tab() {
 int do_move(string arg) {
         int sROW,sCOL,tROW,tCOL,i,ii,x,y,tem,tem1,tem2,tem3,tem4;
         string msg,msg1;
-object ob,me; 
+object ob,me;
 ob = this_object();
 me = this_player();
 msg1 = "";
@@ -504,7 +504,7 @@ if( query("round", ob) == 1 && cc != 2 )
                 return notify_fail("你拿错棋子了吧！\n");
 
 
-//车 
+//车
 if( che == 1 ){
 if( tCOL != sCOL && sROW != tROW )
 return notify_fail("这个棋子只能走直线。\n");
@@ -547,11 +547,11 @@ if( tCOL < (sCOL - 4) || tCOL > (sCOL + 4) ||
 tROW < (sROW - 4) || tROW > (sROW + 4 ) )
 return notify_fail("这个棋子不能移动到那个地方。\n");
 
-if( (tCOL == sCOL - 2 || tCOL == sCOL + 2) && 
+if( (tCOL == sCOL - 2 || tCOL == sCOL + 2) &&
 (tROW != sROW - 4 && tROW != sROW + 4) )
 return notify_fail("这个棋子不能移动到那个地方。\n");
 
-if( (tCOL == sCOL - 4 || tCOL == sCOL + 4) && 
+if( (tCOL == sCOL - 4 || tCOL == sCOL + 4) &&
 (tROW != sROW - 2 && tROW != sROW + 2) )
 return notify_fail("这个棋子不能移动到那个地方。\n");
 
@@ -572,7 +572,7 @@ if( che == 3 ){
 if( tCOL == sCOL || sROW == tROW )
 return notify_fail("相不能走直线。\n");
 
-if( (tROW != sROW-4 && tROW != sROW+4) || (tCOL != sCOL-4 
+if( (tROW != sROW-4 && tROW != sROW+4) || (tCOL != sCOL-4
 && tCOL != sCOL+4) )
 return notify_fail("这个棋子不能移动到那个地方。\n");
 
@@ -601,7 +601,7 @@ if( che == 4 ){
 if( tCOL == sCOL || sROW == tROW )
 return notify_fail("仕不能走直线。\n");
 
-if( (tROW != sROW-2 && tROW != sROW+2) || (tCOL != sCOL-2 
+if( (tROW != sROW-2 && tROW != sROW+2) || (tCOL != sCOL-2
 && tCOL != sCOL+2) )
 return notify_fail("这个棋子不能移动到那个地方。\n");
 
@@ -734,8 +734,8 @@ set("over", this_player()->name(), ob);
 TABLE[table[tROW]][tCOL][2] = TABLE[table[sROW]][sCOL][2];
 TABLE[table[tROW]][tCOL][3] = TABLE[table[sROW]][sCOL][3];
         TABLE[table[sROW]][sCOL][1] = "  ";
-TABLE[table[sROW]][sCOL][2] = 0; 
-TABLE[table[sROW]][sCOL][3] = 0; 
+TABLE[table[sROW]][sCOL][2] = 0;
+TABLE[table[sROW]][sCOL][3] = 0;
 
 tem4 = 0;
         for( y=0;y<6;y++ ){
@@ -766,7 +766,7 @@ if( tem == tem1 ){
 for (i=tem3+2;i<tem2;i++){
 if( i%2!=0) continue;
 if( TABLE[table[i]][tem][1] != "  " )
-tem4 = 1; 
+tem4 = 1;
 }
 if( tem4 == 0 ){
         msg1 += (sprintf(HIY"%s赢得了这场比赛的胜利。\n"NOR,
@@ -789,7 +789,7 @@ else
                                         chinese_number(10-(sCOL/2+1)),
                                         chinese_number(10-(tCOL/2+1)) );
 
-        else 
+        else
 if( cc1 == 2 )
                 if( sROW>tROW )
                         msg = sprintf("『%s』%s进%s",
@@ -802,7 +802,7 @@ TABLE[table[tROW]][tCOL][1],
                                                 chinese_number(sCOL/2+1),
                                                 sCOL==tCOL?chinese_number( (tROW-sROW)/2 ):chinese_number(tCOL/2+1) );
 
-else 
+else
                 if( tROW>sROW )
                         msg = sprintf("『%s』%s进%s",
 TABLE[table[tROW]][tCOL][1],
@@ -820,7 +820,7 @@ chinese_number(10-(sCOL/2+1)),
 do_check();
 
 if( aa == 4 ){
-aaa += msg+"\n"; 
+aaa += msg+"\n";
 aa = 0;
 } else {
 aaa += msg+" ";
@@ -828,7 +828,7 @@ aa += 1;
 }
 
 
-query("round",ob) == 1?set("round",0,ob):set("round",1,ob); 
+query("round",ob) == 1?set("round",0,ob):set("round",1,ob);
 return 1;
 }
 
@@ -856,13 +856,13 @@ if( query("num", ob) == num )
 
 if( query("name1", ob)){
 query("num", ob)>num?set("first",query("name1", ob),ob )
- :set("first",me->name(),ob); 
+ :set("first",me->name(),ob);
         message_vision(query("first", ob)+"使用红色棋子先行。\n",me);
 }
 
 set("num", num, ob);
-query("name1",ob)?set("name2",me->name(),ob): set("name1",me->name(),ob); 
- query("id1",ob)?set("id2",query("id",me),ob):set("id1",query("id",me),ob); 
+query("name1",ob)?set("name2",me->name(),ob): set("name1",me->name(),ob);
+ query("id1",ob)?set("id2",query("id",me),ob):set("id1",query("id",me),ob);
 
         return 1;
 }
@@ -1031,7 +1031,7 @@ TABLE[table[tem1+2]][tem][3] != TABLE[table[tem1]][tem][3] )
 check = 1;
 
 if( tem1 > 9 )
-if( TABLE[table[tem1-2]][tem][2] == 7 && 
+if( TABLE[table[tem1-2]][tem][2] == 7 &&
 TABLE[table[tem1-2]][tem][3] != TABLE[table[tem1]][tem][3] )
 check = 1;
 
@@ -1113,22 +1113,22 @@ tem3 += 1;
 if( tem1 > 1 ){
 if( TABLE[table[tem1-2]][tem-2][2] == 0 ){
 if( tem1 > 2 )
-if( TABLE[table[tem1-4]][tem-2][2] == 2 && 
+if( TABLE[table[tem1-4]][tem-2][2] == 2 &&
 TABLE[table[tem1-4]][tem-2][3] != TABLE[table[tem1]][tem][3] )
 check = 1;
 
-if( TABLE[table[tem1-2]][tem-4][2] == 2 && TABLE[table[tem1-2]][tem-4][3] != 
+if( TABLE[table[tem1-2]][tem-4][2] == 2 && TABLE[table[tem1-2]][tem-4][3] !=
 TABLE[table[tem1]][tem][3] )
 check = 1;
 }
 
 if( TABLE[table[tem1-2]][tem+2][2] == 0 ){
 if( tem1 > 2 )
-if( TABLE[table[tem1-4]][tem+2][2] == 2 && 
+if( TABLE[table[tem1-4]][tem+2][2] == 2 &&
 TABLE[table[tem1-4]][tem+2][3] != TABLE[table[tem1]][tem][3] )
 check = 1;
 
-if( TABLE[table[tem1-2]][tem+4][2] == 2 && TABLE[table[tem1-2]][tem+4][3] != 
+if( TABLE[table[tem1-2]][tem+4][2] == 2 && TABLE[table[tem1-2]][tem+4][3] !=
 TABLE[table[tem1]][tem][3] )
 check = 1;
 }
@@ -1137,22 +1137,22 @@ check = 1;
 if( tem1 < 17 ){
 if( TABLE[table[tem1+2]][tem-2][2] == 0 ){
 if( tem1 < 16 )
-if( TABLE[table[tem1+4]][tem-2][2] == 2 && 
+if( TABLE[table[tem1+4]][tem-2][2] == 2 &&
 TABLE[table[tem1+4]][tem-2][3] != TABLE[table[tem1]][tem][3] )
 check = 1;
 
-if( TABLE[table[tem1+2]][tem-4][2] == 2 && TABLE[table[tem1+2]][tem-4][3] != 
+if( TABLE[table[tem1+2]][tem-4][2] == 2 && TABLE[table[tem1+2]][tem-4][3] !=
 TABLE[table[tem1]][tem][3] )
 check = 1;
 }
 
 if( TABLE[table[tem1+2]][tem+2][2] == 0 ){
 if( tem1 < 16 )
-if( TABLE[table[tem1+4]][tem+2][2] == 2 && 
+if( TABLE[table[tem1+4]][tem+2][2] == 2 &&
 TABLE[table[tem1+4]][tem+2][3] != TABLE[table[tem1]][tem][3] )
 check = 1;
 
-if( TABLE[table[tem1+2]][tem+4][2] == 2 && TABLE[table[tem1+2]][tem+4][3] != 
+if( TABLE[table[tem1+2]][tem+4][2] == 2 && TABLE[table[tem1+2]][tem+4][3] !=
 TABLE[table[tem1]][tem][3] )
 check = 1;
 }
@@ -1174,13 +1174,13 @@ int do_deploy()
 object me,ob;
 me = this_player();
 ob = this_object();
-bb = 1; 
+bb = 1;
 
 if( query("id1", ob) )
-if( (present(query("id1", ob),environment(ob))) || 
+if( (present(query("id1", ob),environment(ob))) ||
 (present(query("id2", ob),environment(ob))) )
 if( me->name() != query("name1", ob) && me->name() != query("name2", ob) && !query("over", ob) )
-return notify_fail("比赛还在进行中，你不能乱动棋盘！\n"); 
+return notify_fail("比赛还在进行中，你不能乱动棋盘！\n");
 
 if( !restore() ) return notify_fail("你目前没有纪录的残局。\n");
 
@@ -1196,13 +1196,13 @@ ob = this_object();
 me = this_player();
 
 if( me->name() != query("name1", ob) && me->name() != query("name2", ob) )
-return notify_fail("你并没有在下棋。\n"); 
+return notify_fail("你并没有在下棋。\n");
 
 if( query("over", ob) )
-return notify_fail("这盘棋已经结束了。\n"); 
+return notify_fail("这盘棋已经结束了。\n");
 
 if( bche == "" && rche == "" )
-return notify_fail("这样就认输了?\n"); 
+return notify_fail("这样就认输了?\n");
 
 message_vision(HIW"$N长叹一声“...我输了！...”\n"NOR,this_player());
 set("over",query("name1", ob) == me->name()?query("name2", ob):
@@ -1216,7 +1216,7 @@ int do_help(string arg)
 if( arg == "cchess" ){
 write(sprintf("%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n",
 "———————————————————————————",
-"中国象棋（cchess）",  
+"中国象棋（cchess）",
 "———————————————————————————",
 "下子   ：move <横座标> <纵座标> to <横座标> <纵座标>",
 "重下      ：reset",
@@ -1225,7 +1225,7 @@ write(sprintf("%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n",
 "掷骰      ：toss",
 "回顾      ：review",
 "认输   ：lose",)
-); 
+);
 return 1;
 }
 }
@@ -1244,10 +1244,10 @@ ob = this_object();
 bb = 0;
 
 if( query("id2", ob) )
-if( (present(query("id1", ob),environment(ob))) || 
+if( (present(query("id1", ob),environment(ob))) ||
 (present(query("id2", ob),environment(ob))) )
 if( me->name() != query("name1", ob) && me->name() != query("name2", ob) && !query("over", ob) )
-return notify_fail("比赛还在进行中，你不能乱动棋盘！\n"); 
+return notify_fail("比赛还在进行中，你不能乱动棋盘！\n");
 if( restore() ){
 setup();
         message_vision( "$N把棋盘重新摆好了。\n",this_player());

@@ -71,7 +71,7 @@ string long()
                                 repeat_string(" ", (max - 2) / 2);
                         else {
                                 line =  repeat_string(" ", (max - BASE[base][j] * 2) / 2) +
-                                        CYN + repeat_string("━", BASE[base][j]) + NOR +
+                                        CYN + repeat_string("--", BASE[base][j]) + NOR +
                                         repeat_string(" ", (max - BASE[base][j]* 2) / 2);
                         }
 
@@ -80,7 +80,7 @@ string long()
                 info[base] = msg;
         }
         set("info", info);
-        long = WHT "现在" + ((! STEP) ? "第一步还没走" 
+        long = WHT "现在" + ((! STEP) ? "第一步还没走"
                 : "已经走了 " + STEP + " 步") + "。\n\n" + NOR;
 
         for (i = 0; i < MAX; i++)
@@ -308,4 +308,3 @@ default:
 
 return 1;
 }
-

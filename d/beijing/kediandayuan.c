@@ -29,7 +29,7 @@ LONG );
 
 int valid_leave(object me, string dir)
 {
-        int i;
+//      int i;
         object room;
 
         if (dir != "east" )
@@ -59,7 +59,7 @@ void init()
 
 int do_thrust(string arg)
 {
-        object room, me,man;
+        object room/*, me*/,man;
         object weapon;
 
         if (! arg || arg != "wall" ) return notify_fail("你要刺什么？\n");

@@ -118,7 +118,7 @@ string *ship = ({HIW "\n$N仗剑沉吟道###，霎时一股剑气，化作透明
 
 mixed hit_ob(object me, object victim, int damage_bonus, int factor)
 {
-        mixed result;
+//      mixed result;
         string msg;
         int lvl , flagli = 0;
         int idx,idx2,ap,dp,damage,damage2;

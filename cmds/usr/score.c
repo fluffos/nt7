@@ -64,7 +64,7 @@ int main(object me, string arg)
         if( query("couple/child_id", me) == query("id", ob) )
                 can_score = 1;
         else
-        if( stringp(startroom=query("startroom", ob)) && 
+        if( stringp(startroom=query("startroom", ob)) &&
             objectp(the_room = load_object(startroom)) &&
             query("room_owner_id", the_room) == query("id", me) )
                 can_score = 1;
@@ -84,7 +84,7 @@ int main(object me, string arg)
         line = sprintf( BOLD "\n%s" NOR "%s\n", RANK_D->query_rank(ob), ob->short(1) );
         // ob->update_age();
 
-        line += sprintf( YEL "┏━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━┓\n" NOR );
+        line += sprintf( YEL "┏------------------------------------┳--------------------------┓\n" NOR );
 
         if( playerp(ob) ) {
                 age=query("age", ob);
@@ -170,7 +170,7 @@ int main(object me, string arg)
         line += sprintf( HIW "【战斗保护力】" NOR "%12d" YEL "┃\n" NOR ,
                 ob->query_all_buff("armor"));
 
-        line += sprintf( YEL "┃                          ┏━━━━┻━━━━━━━━━━━━━┫\n" NOR,);
+        line += sprintf( YEL "┃                          ┏--------┻--------------------------┫\n" NOR,);
 
         line += sprintf( YEL "┃" HIG "【门派】" NOR "%-18.8s" YEL "┃" NOR,
                 ob->query_family()?ob->query_family():"普通百姓" );
@@ -225,10 +225,10 @@ int main(object me, string arg)
                 line+=sprintf(YEL"┃"HIY"【阅历】"NORHIW"%-10d"NORHIY"【戾气】"NORHIW"%-10d"NORYEL"┃\n"NOR,query("score", ob)?query("score", ob):0,query("total_hatred", ob)?query("total_hatred", ob):0);
                 if( my["couple"]["have_couple"])
                 {
-                        line += sprintf( YEL "┃" HIW "【%s】" NOR "%-18.8s" YEL "┗━━━━━━━━━━━━━━━━━━┫\n" NOR , my["couple"]["couple_gender"],my["couple"]["couple_name"] + "(" + my["couple"]["couple_id"]  + ")");
+                        line += sprintf( YEL "┃" HIW "【%s】" NOR "%-18.8s" YEL "┗------------------------------------┫\n" NOR , my["couple"]["couple_gender"],my["couple"]["couple_name"] + "(" + my["couple"]["couple_id"]  + ")");
                 } else
                 {
-                        line += sprintf( YEL "┃" HIW "【伴侣】" NOR "%-18.8s" YEL "┗━━━━━━━━━━━━━━━━━━┫\n" NOR , "没有");
+                        line += sprintf( YEL "┃" HIW "【伴侣】" NOR "%-18.8s" YEL "┗------------------------------------┫\n" NOR , "没有");
                 }
                 line += sprintf( YEL "┃" HIW "【子女】" NOR "%-56s" NOR YEL "┃\n", mapp(my["couple"]["child"]) ? my["couple"]["child"]["name"] : "没有");
         }
@@ -239,10 +239,10 @@ int main(object me, string arg)
                 line += sprintf( YEL "┃" HIR "【荣誉】" NOR HIW "%-10d" NOR HIR "【戾气】"NOR HIW "%-10d" NOR YEL "┃\n" NOR ,query("honors",ob)?query("honors",ob):0,query("total_hatred",ob)?query("total_hatred",ob):0 );
                 if( my["couple"]["couple_name"])
                 {
-                        line += sprintf( YEL "┃" HIW "【%s】" NOR "%-18s" YEL "┗━━━━━━━━━━━━━━━━━━┫\n" NOR , "伴侣",my["couple"]["couple_name"] + "(" + my["couple"]["couple_id"]  + ")");
+                        line += sprintf( YEL "┃" HIW "【%s】" NOR "%-18s" YEL "┗------------------------------------┫\n" NOR , "伴侣",my["couple"]["couple_name"] + "(" + my["couple"]["couple_id"]  + ")");
                 } else
                 {
-                        line += sprintf( YEL "┃" HIW "【伴侣】" NOR "%-18.8s" YEL "┗━━━━━━━━━━━━━━━━━━┫\n" NOR , "没有");
+                        line += sprintf( YEL "┃" HIW "【伴侣】" NOR "%-18.8s" YEL "┗------------------------------------┫\n" NOR , "没有");
                 }
                 line += sprintf( YEL "┃" HIW "【子女】" NOR "%-56s" NOR YEL "┃\n", my["couple"]["child_name"] ? my["couple"]["child_name"] : "没有");
         }
@@ -250,7 +250,7 @@ int main(object me, string arg)
         {
                 line += sprintf( YEL "┃" HIW "【婚姻】" NOR "单身              " );
                 line += sprintf( YEL "┃" HIR "【荣誉】" NOR HIW "%-10d" NOR HIR "【戾气】"NOR HIW "%-10d" NOR YEL "┃\n" NOR ,query("honors",ob)?query("honors",ob):0,query("total_hatred",ob)?query("total_hatred",ob):0 );
-                line += sprintf( YEL "┃" HIW "【伴侣】" NOR "没有              " YEL "┗━━━━━━━━━━━━━━━━━━┫\n" NOR );
+                line += sprintf( YEL "┃" HIW "【伴侣】" NOR "没有              " YEL "┗------------------------------------┫\n" NOR );
                 line += sprintf( YEL "┃" HIW "【子女】" NOR "%-56s" NOR YEL "┃\n", "没有" );
         }
 
@@ -331,7 +331,7 @@ int main(object me, string arg)
         line += sprintf( YEL "┃" NOR HIY " 武学宗师： %s" NOR HIY "    大小周天： %s" NOR HIY "   元婴出世： %s" NOR HIY "    生死玄关：%s " NOR YEL "┃\n" NOR,
                 ultrap(ob)?"○":HIC"×",query("breakup", ob)?"○":HIC"×",query("animaout", ob)?"○":HIC"×",query("death", ob)?"○":HIC"×");
 
-        line += sprintf( YEL "┣━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┫\n" NOR );
+        line += sprintf( YEL "┣--------------------┳--------------------┳--------------------┫\n" NOR );
 
         line += sprintf( YEL "┃" HIB "【杀生次数】" NOR HIR"%6d位"NOR,
                 (int)mci["MKS"] + (int)mci["PKS"]);
@@ -349,7 +349,7 @@ int main(object me, string arg)
                 (int)mci["DPS_BAD"]);
         line += YEL "┃\n" NOR;
 
-        line += sprintf( YEL "┣━━━━━━━━━━┻━━━━━━━━━━┻━━━━━━━━━━┫\n" NOR );
+        line += sprintf( YEL "┣--------------------┻--------------------┻--------------------┫\n" NOR );
 
         line += sprintf( YEL "┃" NOR HIB " 你目前的杀戮值是：%s%-45d"NOR YEL "┃\n" NOR,
                          (query("pk_score", ob) >= 3)?HIM:(query("pk_score", ob) >= 1)?HIR:HIW,
@@ -379,7 +379,7 @@ int main(object me, string arg)
 #endif
                 line += sprintf( YEL "┃" NOR "%" + sprintf("%d",(64 + len)) + "-s" NOR YEL "┃\n" NOR, msg );
         }
-        line += YEL "┗━━━━━━━━━━━━━━━━━━━━━━━━━【个人档案】━┛\n" NOR;
+        line += YEL "┗--------------------------------------------------【个人档案】--┛\n" NOR;
 
         line += sprintf( WHT " □%s在" HIG + CHINESE_MUD_NAME + NOR "里的游戏时间是:" HIY "%s \n\n" NOR,
                          ob == me ? "你" : ob->name(1), time_period((int)query("online_time",ob)) );

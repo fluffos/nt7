@@ -255,8 +255,8 @@ int main(object me, string arg)
 
 string title(string t)
 {
-        return "───────────── " + t +
-               " ─────────────\n";
+        return "-------------------------- " + t +
+               " --------------------------\n";
 }
 
 string auth_msg(mapping ruler, mapping default_ruler, string euid, string status)

@@ -242,9 +242,9 @@ public int is_inited()
                 }
                 else
                 {
-                        if( (query("vendor_goods", shop) && 
-                             sizeof(query("vendor_goods", shop))>0) || 
-                             query("all_vendor_goods", shop) || 
+                        if( (query("vendor_goods", shop) &&
+                             sizeof(query("vendor_goods", shop))>0) ||
+                             query("all_vendor_goods", shop) ||
                              query("owner", shop) != "VOID_SHOP" )
                         {
                                 is_ok = 0;
@@ -530,7 +530,7 @@ public int reset_shop(object me, string arg)
         the_waiter = present("huo ji", the_shop);
         if (the_waiter)
         {
-                if( arrayp(m=query("waiter", the_shop)) && 
+                if( arrayp(m=query("waiter", the_shop)) &&
                         sizeof(props = keys(m)))
                 {
                         foreach (prop in props)
@@ -560,7 +560,7 @@ public int list_shop(object me)
         string str;
 
         msg = WHT "当前" + LOCAL_MUD_NAME() + "的店铺列表如下：\n" NOR;
-        msg += HIC"≡" HIY "────────────────────────────────────" HIC "≡\n" NOR;
+        msg += HIC"≡" HIY "------------------------------------------------------------------------" HIC "≡\n" NOR;
         for (i = 0; i < sizeof(all_shop); i++)
         {
                 arg = all_shop[i]["id"];
@@ -573,7 +573,7 @@ public int list_shop(object me)
                 if (! the_shop)
                         continue;
 
-                if( objectp(ob=find_player(query("owner", the_shop))) && 
+                if( objectp(ob=find_player(query("owner", the_shop))) &&
                         this_player()->visible(ob))
                         na=HIR+query("name", ob);
                 else
@@ -584,7 +584,7 @@ public int list_shop(object me)
                 msg += sprintf(WHT " 店铺：" HIG "%s[" HIW "%s" HIG "] " NOR ,
                                 all_shop[i]["name"], arg);
 
-               str=(query("shop_type", the_shop) && 
+               str=(query("shop_type", the_shop) &&
                                query("owner", the_shop) != "VOID_SHOP")?
                                HIG " 营业中 " NOR : HIY "暂不营业" NOR,
                msg += sprintf(HIG"%8s%s"NOR,str,makeup_space(str,8));
@@ -603,7 +603,7 @@ public int list_shop(object me)
 
                msg += "\n";
         }
-        msg += HIC"≡"HIY"────────────────────────────────────" HIC "≡\n" NOR;
+        msg += HIC"≡"HIY"------------------------------------------------------------------------" HIC "≡\n" NOR;
         msg += WHT"总共有" + chinese_number(sizeof(all_shop)) + "家店铺。\n"NOR;
         tell_object(me, msg);
         return 1;
@@ -752,9 +752,9 @@ public string do_stock(object ob, object me, string arg)
         if( query("no_sell", goods) )
                 return "这个东西太招摇了，还是别拿出来贩卖。\n";
 
-        if( query("no_get", goods) || query("no_drop", goods) || 
-            query("no_put", goods) || query("no_beg", goods) || 
-            query("no_steal", goods) || query("no_drop", goods) || 
+        if( query("no_get", goods) || query("no_drop", goods) ||
+            query("no_put", goods) || query("no_beg", goods) ||
+            query("no_steal", goods) || query("no_drop", goods) ||
             query("item_make", goods) || query("owner", goods) )
                 return "这个东西摆不上货架，就暂时别拿出来卖啦。\n";
 
@@ -904,7 +904,7 @@ public string do_list(object ob, object me, string arg)
         if( !query("shop_type", room) )
                 return "对不起，该店铺目前已经被巫师关闭。\n";
 
-        if( query("ban", room) && 
+        if( query("ban", room) &&
                 member_array(query("id", me),query("ban", room)) != -1 )
                 return "你是这家店铺不受欢迎的人物，无法购买东西。\n";
 
@@ -993,7 +993,7 @@ public int do_buy(object obj, object me, string arg)
                return 1;
         }
 
-        if( query("ban", room) && 
+        if( query("ban", room) &&
                 member_array(query("id", me),query("ban", room)) != -1 )
         {
 
@@ -1297,7 +1297,7 @@ public string list_invite(object ob, object me)
                 return "您并没有设定任何的贵宾。\n";
 
         msg = HIC "您所定义的贵宾有以下几位：\n" NOR;
-        msg += HIC "≡" HIY "────────────" HIC "≡\n" NOR;
+        msg += HIC "≡" HIY "------------------------" HIC "≡\n" NOR;
         invite_key = sort_array(keys(invite), 1);
 
         for (i = 0; i < sizeof(invite_key); i++)
@@ -1306,7 +1306,7 @@ public string list_invite(object ob, object me)
                                invite_key[i], chinese_number(invite[invite_key[i]]));
         }
 
-        msg += HIC "≡" HIY "────────────" HIC "≡\n" NOR;
+        msg += HIC "≡" HIY "------------------------" HIC "≡\n" NOR;
         msg += HIC "总共有 " HIY + sizeof(invite) + HIC " 个贵宾。\n" NOR;
         return msg;
 }
@@ -1365,12 +1365,12 @@ public string list_ban(object ob, object me)
                 return msg;
         }
         msg = HIC "您所定义的黑户有如下玩家：\n" NOR;
-        msg += HIC "≡" HIY "────────────" HIC "≡\n" NOR;
+        msg += HIC "≡" HIY "------------------------" HIC "≡\n" NOR;
         for (i = 0;i < sizeof(ban);i++)
         {
                 msg += sprintf(CYN "  %s\n" NOR, ban[i]);
         }
-        msg += HIC "≡" HIY "────────────" HIC "≡\n" NOR;
+        msg += HIC "≡" HIY "------------------------" HIC "≡\n" NOR;
         msg += HIC "总共有 " HIY + sizeof(ban) + HIC " 个黑户。\n" NOR;
         return msg;
 }
@@ -1557,7 +1557,7 @@ public string do_list_all(object me,string arg)
         string  *dk;
 
         msg = WHT "泥潭所有店铺，查询货物 " + arg + " 的结果如下：\n" NOR;
-        msg += HIC "≡" HIY "──────────────────────────────────" HIC "≡\n" NOR;
+        msg += HIC "≡" HIY "--------------------------------------------------------------------" HIC "≡\n" NOR;
 
         for (j = 0; j < sizeof(all_shop); j++)
         {
@@ -1570,7 +1570,7 @@ public string do_list_all(object me,string arg)
                         // destruct(ob);
                         continue;
                 }
-                if( query("ban", ob) && 
+                if( query("ban", ob) &&
                     member_array(query("id", me),query("ban", ob)) != -1 )
                 {
                         // destruct(ob);
@@ -1646,11 +1646,11 @@ public string do_list_all(object me,string arg)
                 }
                 msg += "------------------------------------------------------------------------\n";
         }
-        msg += HIC "≡" HIY "──────────────────────────────────" HIC "≡\n" NOR;
+        msg += HIC "≡" HIY "--------------------------------------------------------------------" HIC "≡\n" NOR;
 
         msg += WHT "泥潭所有小贩子查询货物 " + arg + " 结果如下：\n" NOR;
 
-        msg += HIC "≡" HIY "──────────────────────────────────" HIC "≡\n" NOR;
+        msg += HIC "≡" HIY "--------------------------------------------------------------------" HIC "≡\n" NOR;
         all_user=filter_array(users(),(:query_temp("on_bantan", $1):));
         if (sizeof(all_user))
         {
@@ -1727,7 +1727,7 @@ public string do_list_all(object me,string arg)
                 }
         }
 
-        msg += HIC "≡" HIY "──────────────────────────────────" HIC "≡\n" NOR;
+        msg += HIC "≡" HIY "--------------------------------------------------------------------" HIC "≡\n" NOR;
 
         return msg;
 }
@@ -1742,9 +1742,9 @@ public string check_shop_status()
         all_tax = 0;
 
         msg = "\n" + HIC + LOCAL_MUD_NAME() + "所有商店，本届营业状况列表如下：\n" NOR;
-        msg += HIC "≡" HIY "──────────────────────────────────" HIC "≡\n" NOR;
+        msg += HIC "≡" HIY "--------------------------------------------------------------------" HIC "≡\n" NOR;
         msg += sprintf(HIC " %-14s%-30s%s\n" NOR,"店名","利润","交税");
-        msg += HIC "≡" HIY "──────────────────────────────────" HIC "≡\n" NOR;
+        msg += HIC "≡" HIY "--------------------------------------------------------------------" HIC "≡\n" NOR;
         for (i = 0;i < sizeof(all_shop);i++)
         {
                 the_shop = get_object(SHOP_DIR + all_shop[i]["start_room"]);
@@ -1763,7 +1763,7 @@ public string check_shop_status()
 
                 // destruct(the_shop);
         }
-        msg += HIC "≡" HIY "──────────────────────────────────" HIC "≡\n" NOR;
+        msg += HIC "≡" HIY "--------------------------------------------------------------------" HIC "≡\n" NOR;
         msg += sprintf(HIC "%-14s%-30s%s\n\n" NOR,
                        chinese_number(sizeof(all_shop)) + "家店铺",
                        chinese_number(all_profit) + "两黄金",

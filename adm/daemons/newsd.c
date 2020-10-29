@@ -149,7 +149,7 @@ void show_news(object me, int raw)
         }
 
         msg = "目前游戏中的最新消息如下。\n"
-              HIC "≡" HIY "───────────────────────────────────────" HIC "≡\n" NOR;
+              HIC "≡" HIY "------------------------------------------------------------------------------" HIC "≡\n" NOR;
         last_time_read=query("last_read_news", me);
         i = sizeof(notes);
         while (i--)
@@ -188,7 +188,7 @@ void show_news(object me, int raw)
                 return;
         }
 
-        msg += HIC "≡" HIY "───────────────────────────────────────" HIC "≡\n" NOR;
+        msg += HIC "≡" HIY "------------------------------------------------------------------------------" HIC "≡\n" NOR;
 
         me->start_more(msg);
 }
@@ -393,15 +393,15 @@ void do_read(object me, string arg)
         }
         num--;
 #ifdef DB_SAVE
-        me->start_more(sprintf(HIC "≡" HIY "──────────────────"
-                               "─────────────────────" HIC "≡\n"
+        me->start_more(sprintf(HIC "≡" HIY "------------------------------------"
+                               "------------------------------------------" HIC "≡\n"
                                NOR "[%3d] %-" + (40
 #ifndef LONELY_IMPROVED
                                                     + color_len(notes[num][TITLE])
 #endif
                                                       ) +
-                               "s %16s (%s)\n" HIC "≡" HIY "──────────────────"
-                               "─────────────────────" HIC "≡\n" NOR,
+                               "s %16s (%s)\n" HIC "≡" HIY "------------------------------------"
+                               "------------------------------------------" HIC "≡\n" NOR,
                                // num + 1, notes[num][TITLE], notes[num][AUTHOR],
                                num + 1, notes[num][TITLE], NITAN_VER,
                                TIME_D->replace_ctime(notes[num][TIME])) + notes[num][MSG]);
@@ -411,11 +411,11 @@ void do_read(object me, string arg)
         if (notes[num][TIME] > (int)last_read_time)
                 set("last_read_news", notes[num][TIME], me);
 #else
-        me->start_more(sprintf(HIC "≡" HIY "──────────────────"
-                               "─────────────────────" HIC "≡\n"
+        me->start_more(sprintf(HIC "≡" HIY "------------------------------------"
+                               "------------------------------------------" HIC "≡\n"
                                NOR " [%3d] %-" + (40 + color_len(notes[num]["title"])) +
-                               "s %16s (%s)\n" HIC "≡" HIY "──────────────────"
-                               "─────────────────────" HIC "≡\n\n" NOR,
+                               "s %16s (%s)\n" HIC "≡" HIY "------------------------------------"
+                               "------------------------------------------" HIC "≡\n\n" NOR,
                                // num + 1, notes[num]["title"], notes[num]["author"],
                                num + 1, notes[num]["title"], NITAN_VER,
                                TIME_D->replace_ctime(notes[num]["time"])) + notes[num]["msg"]);
@@ -563,11 +563,11 @@ void auto_notice(object me)
         msg += HIG "新闻精灵告诉你来自神界的最新消息：\n" NOR;
         tell_object(me, msg);
 #ifdef DB_SAVE
-        me->start_more(sprintf(HIC "≡" HIY "──────────────────"
-                               "─────────────────────" HIC "≡\n"
+        me->start_more(sprintf(HIC "≡" HIY "------------------------------------"
+                               "------------------------------------------" HIC "≡\n"
                                NOR "[%3d] %-" + (40 + color_len(notes[num][TITLE])) + "s %16s (%s)\n"
-                               HIC "≡" HIY "──────────────────"
-                               "─────────────────────" HIC "≡\n" NOR,
+                               HIC "≡" HIY "------------------------------------"
+                               "------------------------------------------" HIC "≡\n" NOR,
                                // num + 1, notes[num][TITLE], notes[num][AUTHOR],
                                num + 1, notes[num][TITLE], NITAN_VER,
                                TIME_D->replace_ctime(notes[num][TIME])) + notes[num][MSG]);
@@ -578,11 +578,11 @@ void auto_notice(object me)
         if (notes[num][TIME] > (int)last_read_time)
                 set("last_read_news", notes[num][TIME], me);
 #else
-        me->start_more(sprintf(HIC "≡" HIY "──────────────────"
-                               "─────────────────────" HIC "≡\n"
+        me->start_more(sprintf(HIC "≡" HIY "------------------------------------"
+                               "------------------------------------------" HIC "≡\n"
                                NOR "[%3d] %-" + (40 + color_len(notes[num]["title"])) + "s %16s (%s)\n"
-                               HIC "≡" HIY "──────────────────"
-                               "─────────────────────" HIC "≡\n" NOR,
+                               HIC "≡" HIY "------------------------------------"
+                               "------------------------------------------" HIC "≡\n" NOR,
                                // num + 1, notes[num]["title"], notes[num]["author"],
                                num + 1, notes[num]["title"], NITAN_VER,
                                TIME_D->replace_ctime(notes[num]["time"])) + notes[num]["msg"]);
@@ -641,7 +641,7 @@ void do_search(object me, string arg)
         last_time_read=query("last_read_news", me);
 
         msg = sprintf("根据 " HIY "%s" NOR " 搜索 " HIY "%s" NOR " 得到如下符合条件新闻：\n"
-                      HIC "≡" HIY "───────────────────────────────────────" HIC "≡\n" NOR,
+                      HIC "≡" HIY "------------------------------------------------------------------------------" HIC "≡\n" NOR,
                       arg, theway);
 
         i = sizeof(notes);
@@ -702,7 +702,7 @@ void do_search(object me, string arg)
                 return;
         }
 
-        msg += HIC "≡" HIY "───────────────────────────────────────" HIC "≡\n" NOR;
+        msg += HIC "≡" HIY "------------------------------------------------------------------------------" HIC "≡\n" NOR;
 
         me->start_more(msg);
 }

@@ -28,7 +28,7 @@ int accept_object(object ob, object obj)
 {
         object me = this_object();
 
-        mapping my_fam=query("family", me);
+//      mapping my_fam=query("family", me);
         mapping ob_fam=query("family", ob);
 
         if( query("id", obj) != "qingzhu ling" )
@@ -175,4 +175,3 @@ void win()
         command("say 就你这点水平也想升袋？下去练练再来吧。");
         ::win();
 }
-

@@ -99,7 +99,7 @@ void create()
 		"无名神僧" : "神僧，他老人家，当称达摩转世，佛法超群。",
 		"神僧" : "神僧，他老人家，当称达摩转世，佛法超群。",
 		"虚竹" : (: ask_xuzhu :),
-		
+
 		"罪孽" : (: ask_zuinie :),
 		"耻辱" : (: ask_zuinie :),
 		"败类" : (: ask_zuinie :),
@@ -148,7 +148,7 @@ void attempt_apprentice(object ob)
 		return;
 	}
 
-	if ( ob_fam["generation"] == (my_fam["generation"] + 1) && name[0..1] == "澄") {
+	if ( ob_fam["generation"] == (my_fam["generation"] + 1) && name[0..0] == "澄") {
 		command("say " + ob_fam["master_name"] + "的徒弟怎麽跑到我这儿来了，哈哈哈 !");
 		command("recruit " + ob->query("id"));
 	}
@@ -491,7 +491,7 @@ int ask_xuzhu()
 	  if(random(2)) command("sigh");
 	  else command("say");
 	  return 1;
-	}	
+	}
 	command("? "+me->query("id"));
 	command("say 虚竹，好像是少林第三十九代弟子之一。不知道施主找他何事？");
 	return 1;
@@ -505,7 +505,7 @@ int ask_yeerniang()
 	   command("fear "+me->query("id"));
 	   command("say "+RANK_D->query_respect(me) +"还是小心通缉吧！");
 	   return 1;
-	}	
+	}
 	if(me->query(QUESTDIR3+"bad") && me->query(QUESTDIR5+"start")&& !me->query_temp(QUESTDIR5+"yeerniang")&& !me->query(QUESTDIR5+"over"))
 	{
 		command("? "+me->query("id"));
@@ -520,13 +520,13 @@ int ask_yeerniang()
 		command("say 我真的没有料到叶二娘就是当年叶家庄的叶二姑娘。罪孽罪孽。");
 		me->set_temp(QUESTDIR5+"yeerniang",1);
 		return 1;
-	}	
+	}
 	if(me->query(QUESTDIR3+"bad") && me->query(QUESTDIR5+"start")&& (me->query_temp(QUESTDIR5+"yeerniang")||me->query(QUESTDIR5+"over")))
 	{
 		command("sigh");
 		command("say 我真的没有料到叶二娘就是当年叶家庄的叶二姑娘。罪孽罪孽。");
 		return 1;
-	}	
+	}
 	command("say 可是四大恶人的叶二娘？");
 	command("dunno "+me->query("id"));
 	return 1;
@@ -542,13 +542,13 @@ int ask_zuinie()
 		command("sigh");
 		me->set_temp(QUESTDIR5+"zuinie",1);
 		return 1;
-	}	
+	}
 	if(me->query(QUESTDIR3+"bad") && me->query(QUESTDIR5+"start")&& (me->query_temp(QUESTDIR5+"yeerniang")||me->query(QUESTDIR5+"over")))
 	{
 		command("sigh");
 		command("say 我真的没有料到叶二娘就是当年叶家庄的叶二姑娘。罪孽罪孽。");
 		return 1;
-	}	
+	}
 	command("say 我弥陀佛！我佛慈悲！");
 	return 1;
 }
@@ -560,7 +560,7 @@ int ask_zhangxing()
 	  message_vision(HIC"$N哼了一声，道：家法何在，寺规何在。想不到百年少林竟然出现这等事情，还妄称佛门善地。\n"NOR,me);
 		command("sigh "+me->query("id"));
 		command("nod "+me->query("id"));
-		
+
 	  message_vision(HIY"\n$N朗声说道：“不错，老衲犯了佛门大戒，有伤鹳林清誉。国有国法，家有家规。自来任何门派\n"
 	                    "帮会，宗族寺院，都难免有不肖弟子。清名令誉之保全，不在求永远无人犯规，在求事事按律惩处，不\n"
 	                    "稍假借。依本寺戒律，玄慈犯了淫戒，且身为方丈，罪刑加倍。执法僧重重责打玄慈二百棍。少林寺清\n"
@@ -581,13 +581,13 @@ int ask_zhangxing()
     remove_call_out("zhangxing");
     call_out("zhangxing",5,me,this_object());
 		return 1;
-	}	
+	}
 	if(me->query(QUESTDIR3+"bad") && me->query(QUESTDIR5+"start")&& (me->query_temp(QUESTDIR5+"zhangxing")||me->query(QUESTDIR5+"over")))
 	{
 	  message_vision(HIY"$N道了声佛号，面露悲痛之色。\n"NOR,this_object());
 		command("say 老衲确实罪孽。我弥陀佛。");
 		return 1;
-	}	
+	}
 	command("? "+me->query("id"));
 	return 1;
 }
@@ -623,7 +623,7 @@ void zhangxing(object me,object ob)
    }
    return;
 }
-		
+
 int ask_xiaofeng()
 {
 	object room,me = this_player();
@@ -642,12 +642,12 @@ int ask_xiaofeng()
 	   return 1;
 	}
 	if(me->query(QUESTDIR3+"good") &&!me->query_temp(QUESTDIR4+"shaolinzhen")&& !me->query(QUESTDIR4+"start"))
-	{	  
+	{
 		if(!me->query_temp(QUESTDIR4+"askxuanci"))
 		{
 			message_vision(HIC"你急声道：江湖传言，萧峰为避免南征之战，拒绝可汗命令，现被投入铁牢之中。\n"NOR,me);
 			command("ah "+me->query("id"));
-		}	
+		}
 		//增加时间和经验间隔限制
 		//时间一天，经验500K
         if(!me->query_temp(QUESTDIR4+"dagouzhen") && me->query(QUESTDIR+"time")&&time()-me->query(QUESTDIR+"time")<86400)
@@ -664,14 +664,14 @@ int ask_xiaofeng()
 	obj = users();
 	x = sizeof(obj);
 	while(x--) {
-		  if ( obj[x]->query_temp(QUESTDIR4+"askxuanci") && obj[x]!=me) 
+		  if ( obj[x]->query_temp(QUESTDIR4+"askxuanci") && obj[x]!=me)
 		  {
 			  command("nod "+me->query("id"));
-			  command("say 我也听说这事情，已经有"+obj[x]->query("name")+RANK_D->query_respect(obj[x]) +"前往大辽营救去了，"+obj[x]->query("name")+RANK_D->query_respect(obj[x]) +"武功高强，料想也无大碍！");	
+			  command("say 我也听说这事情，已经有"+obj[x]->query("name")+RANK_D->query_respect(obj[x]) +"前往大辽营救去了，"+obj[x]->query("name")+RANK_D->query_respect(obj[x]) +"武功高强，料想也无大碍！");
 			  return 1;
 		  }
 	  }
-  	
+
 	if(!me->query_temp(QUESTDIR4+"askxuanci"))
 	{
 		command("whisper "+me->query("id")+" 如果当真，少林自当尽力，当年少林与萧家误会颇多，这也是我中原武林赎罪的一次良机。\n"NOR);
@@ -684,13 +684,13 @@ int ask_xiaofeng()
 	if (!(room = find_object("/d/shaolin/shaolinzhen")))
 		room = load_object("/d/shaolin/shaolinzhen");
 	if(!room)
-	{ 
+	{
       	tell_object(me,HIR"\n赶快找wiz吧，竟然房间不存在!!!\n");
         log_file("quest/TLBB", sprintf("%s(%s)营救萧峰篇少林阵法文件缺少！\n", me->name(1),me->query("id")) );
     }
     else
     {
-      tell_room(environment(me),HIC""+me->query("name")+"随玄慈主持匆匆出去了。\n"NOR, ({ me }));        
+      tell_room(environment(me),HIC""+me->query("name")+"随玄慈主持匆匆出去了。\n"NOR, ({ me }));
 		  tell_object(me,HIR"你随玄慈主持来到一个小屋之中，却见四端分别站着一个少林弟子。\n");
 		  //设定标志
 		  me->set(QUESTDIR+"time",time());
@@ -700,24 +700,24 @@ int ask_xiaofeng()
 		  tell_object(me,HIY"\n玄慈主持向你挥了挥手，退了出去。\n"NOR);
 		  this_object()->move("/d/shaolin/fzjs2");
 
-		  tell_room(environment(this_object()),HIC"玄慈主持匆匆回来了，神色很是慌张。\n"NOR, ({ this_object()}));    
-		  log_file("quest/TLBB", sprintf("%s(%s)营救萧峰篇进入少林阵法。经验：%d。\n", me->name(1),me->query("id"), me->query("combat_exp")) );                  
+		  tell_room(environment(this_object()),HIC"玄慈主持匆匆回来了，神色很是慌张。\n"NOR, ({ this_object()}));
+		  log_file("quest/TLBB", sprintf("%s(%s)营救萧峰篇进入少林阵法。经验：%d。\n", me->name(1),me->query("id"), me->query("combat_exp")) );
 		  me->set_temp(QUESTDIR5+"askxuanci",1);
 		  me->set_temp("quest/busy",1);//与任务系统冲突标志
     }
     return 1;
-	}	
+	}
 	if(me->query(QUESTDIR3+"good")&& !me->query(QUESTDIR4+"over") &&(me->query(QUESTDIR4+"start")|| me->query_temp(QUESTDIR5+"dagouzhen")))
 	{
 		command("addoil "+me->query("id"));
 		command("say "+RANK_D->query_respect(me) +"却是了得。老衲佩服。还请"+RANK_D->query_respect(me) +"主持大局。");
 		return 1;
-	}	
+	}
 	if(me->query(QUESTDIR3+"good") &&me->query(QUESTDIR4+"over"))
 	{
 		command("admire "+me->query("id"));
 		return 1;
-	}	
+	}
 	if(random(2)) command("@@ "+me->query("id"));
 	else command("laugh "+me->query("id"));
 	return 1;

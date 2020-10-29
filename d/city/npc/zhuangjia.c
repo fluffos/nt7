@@ -49,7 +49,7 @@ varargs int gen_point(int j)
         int i = random(6);
 
         if (j > 0 && j < 7) i = j - 1;
-        say("┌───┐\n"+point[i]+"└───┘\n");
+        say("┌------┐\n"+point[i]+"└------┘\n");
         return i+1;
 }
 

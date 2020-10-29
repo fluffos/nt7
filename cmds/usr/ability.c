@@ -36,7 +36,7 @@ int main(object me, string arg)
         {
                 if( !sscanf(arg, "+ %d", a_num) )
                         return notify_fail("提高能力的格式：ability + 能力名称 \n");
-                        
+
                 if( a_num < 1 || a_num > 50 )
                         return notify_fail("没有此代码的能力（请输入1-35）\n");
 
@@ -46,10 +46,10 @@ int main(object me, string arg)
 
                         if( !valid_ability_improve(ob, arg1, 0) )
                                 return notify_fail("你的经验等级还不足以掌握更高的该项能力。\n");
-                                
+
                         if( !do_ability_cost(ob, arg1, 0) )
                                 return notify_fail("你没有足够的能力点和潜能储蓄来提高此项能力。\n");
-                                
+
                         improve_ability( ob, arg1, 0);
                         tell_object(ob, "该第"+ (a_num) + "能力提高完毕。\n");
                         return 1;
@@ -67,10 +67,10 @@ int main(object me, string arg)
                         arg1 = fam_ability[myclass][a_num-21];
                         if( !valid_ability_improve(ob, arg1, 1) )
                                 return notify_fail("你的经验等级还不足以掌握更高的该项能力。\n");
-                                
+
                         if( !do_ability_cost(ob, arg1, 1) )
                                 return notify_fail("你没有足够的能力点储蓄来提高此项能力。\n");
-                                
+
                         improve_ability(ob, arg1, 1);
                         tell_object(ob, "该第"+ (a_num) + "能力提高完毕。\n");
                 }
@@ -78,7 +78,7 @@ int main(object me, string arg)
                 return 1;
         }
 
-        
+
         write("\n");
         write(HIC    "序号              功效                      等级          升级点数\n"NOR);
         write(HIG "——————————————————————————————————\n" NOR);
@@ -87,11 +87,11 @@ int main(object me, string arg)
         for(i=0; i<sizeof(bas_ability); i++)
                 write(sprintf(WHT"("WHT"%3d"WHT")", (i+1)) + HIC"\t"+ get_ability_info(ob, bas_ability[i], 0) + NOR);
         write("\n");
-     
+
         write(HIG "——————————————————————————————————\n" NOR);
         write(HIC"门派能力进阶：\n\n"NOR);
 
-        if( !stringp(myclass=query("family/family_name", ob)) )       
+        if( !stringp(myclass=query("family/family_name", ob)) )
                 write("无门无派无特色。\n");
         /*
         else if( query("betrayer", ob) )
@@ -102,7 +102,7 @@ int main(object me, string arg)
         else
                 for( i=0; i<30; i++ )
                 {
-                        if( i > sizeof(fam_ability[myclass])-1 ) break; 
+                        if( i > sizeof(fam_ability[myclass])-1 ) break;
                         write(sprintf(WHT"("WHT"%3d"WHT")", (i+21)) + HIC"\t"+ get_ability_info(ob, fam_ability[myclass][i],1) + NOR);
                 }
 
@@ -121,9 +121,9 @@ int help(object me)
 {
 write(@HELP
 
-────────────────────────────────
-指令格式 :     ability 
-────────────────────────────────
+----------------------------------------------------------------
+指令格式 :     ability
+----------------------------------------------------------------
 
 ability         让你知道你目前所学过的一切能力，
 ability + n     提高第ｎ项能力的等级。
@@ -152,7 +152,7 @@ ability + n     提高第ｎ项能力的等级。
 晶；之后每重置一次，会再额外消耗一个龙晶；第25次及之后的重置
 将不会再额外增加消耗，固定每次25个龙晶。
 
-────────────────────────────────
+----------------------------------------------------------------
 HELP
     );
 

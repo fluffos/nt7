@@ -49,12 +49,12 @@ string extra_long()
         string msg;
         mapping in_data, en_data;
         string in_desc;
-        
+
         if( !all || sizeof(all) < 1 )
                 return "目前没有存放任何物品在如意乾坤袋里。\n";
 
         msg = HIW "\n目前你存放的物品有：\n编号  物品                            数量       属性\n"
-                  "────────────────────────────────\n" NOR;
+                  "----------------------------------------------------------------\n" NOR;
         for( int i=0; i<sizeof(all); i++ ) {
 #ifdef LONELY_IMPROVED
                 ob_name_real_len = 0;
@@ -62,35 +62,35 @@ string extra_long()
                 ob_name_real_len = color_len(all[i]->name + "(" + all[i]->id + ")");
 #endif
                 in_data = copy(all[i]->data);
-                in_desc = ""; 
+                in_desc = "";
                 if( sizeof(in_data) > 0 && !undefinedp(in_data["enchase"]) )
                 {
                         en_data = copy(in_data["enchase"]);
                         if( !undefinedp(en_data["apply_prop"]) )
                         {
                                 in_desc += "镶嵌属性：";
-                                foreach( string key in keys(en_data["apply_prop"]) ) 
-                                        in_desc += HIK + filter_color(EQUIPMENT_D->chinese(key, en_data["apply_prop"][key]),1) + NOR+","; 
+                                foreach( string key in keys(en_data["apply_prop"]) )
+                                        in_desc += HIK + filter_color(EQUIPMENT_D->chinese(key, en_data["apply_prop"][key]),1) + NOR+",";
                         }
                         if( !undefinedp(en_data["weapon_prop"]) )
                         {
                                 in_desc += "镶嵌兵器：";
-                                foreach( string key in keys(en_data["weapon_prop"]) ) 
-                                        in_desc += HIK + filter_color(EQUIPMENT_D->chinese(key, en_data["weapon_prop"][key]),1) + NOR+","; 
+                                foreach( string key in keys(en_data["weapon_prop"]) )
+                                        in_desc += HIK + filter_color(EQUIPMENT_D->chinese(key, en_data["weapon_prop"][key]),1) + NOR+",";
                         }
                         if( !undefinedp(en_data["armor_prop"]) )
                         {
                                 in_desc += "镶嵌防具：";
-                                foreach( string key in keys(en_data["armor_prop"]) ) 
-                                        in_desc += HIK + filter_color(EQUIPMENT_D->chinese(key, en_data["armor_prop"][key]),1) + NOR+","; 
+                                foreach( string key in keys(en_data["armor_prop"]) )
+                                        in_desc += HIK + filter_color(EQUIPMENT_D->chinese(key, en_data["armor_prop"][key]),1) + NOR+",";
                         }
                         if( !undefinedp(en_data["rings_prop"]) )
                         {
                                 in_desc += "镶嵌饰品：";
-                                foreach( string key in keys(en_data["rings_prop"]) ) 
-                                        in_desc += HIK + filter_color(EQUIPMENT_D->chinese(key, en_data["rings_prop"][key]),1) + NOR+","; 
+                                foreach( string key in keys(en_data["rings_prop"]) )
+                                        in_desc += HIK + filter_color(EQUIPMENT_D->chinese(key, en_data["rings_prop"][key]),1) + NOR+",";
                         }
-                        in_desc = in_desc[0..<2]; 
+                        in_desc = in_desc[0..<2];
                 }
                 msg += sprintf("[%2d]  %-" + (26 + ob_name_real_len) + "s      %-11d%s\n",
                                i+1, all[i]->name + "(" + all[i]->id + ")",
@@ -98,7 +98,7 @@ string extra_long()
                 if( all[i]->amount == 0 )
                         all[i] = 0;
         }
-        msg += HIW "────────────────────────────────\n" NOR;
+        msg += HIW "----------------------------------------------------------------\n" NOR;
         all -= ({ 0 });
         return msg;
 }
@@ -203,7 +203,7 @@ int do_take(string arg)
                                 call_other(ob, k, fun_data[k]);
                 }
 
-                if( query("bind_owner", ob) && 
+                if( query("bind_owner", ob) &&
                     query("bind_owner", ob) != query("id", me)){
                         all[n]->amount += amount;
                         tell_object(me, ob->name() + "已经绑定，无法移动。\n");
@@ -342,8 +342,8 @@ int store_item(object me, object ob, int amount)
                 return 0;
         }
 
-        if( query("task_ob", ob) || query("unique", ob) || 
-            query("no_store", ob) || ob->is_no_clone() || query("hj_game", ob) || 
+        if( query("task_ob", ob) || query("unique", ob) ||
+            query("no_store", ob) || ob->is_no_clone() || query("hj_game", ob) ||
             query("maze_item", ob) || ob->is_money() || query("no_put", ob)){
                 tell_object(me,"如意乾坤袋不保存"+query("name", ob)+"，请你自己妥善处理。\n");
                 return 0;

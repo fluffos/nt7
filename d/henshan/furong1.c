@@ -14,10 +14,10 @@ void create()
 处石壁(wall)上布满了蜘蛛网，看来这里的主人已经很久没有来了。
 想到这里不禁苍凉之意顿起：「芙蓉花开时，不见主人归」。
 LONG );
-   
+
         set("exits",([
                 "out" : __DIR__"furong",
-        ]));        
+        ]));
 
         set("item_desc",([
                 "wall"  : (: look_wall :),
@@ -30,10 +30,10 @@ LONG );
         ]));
 
         setup();
-}        
+}
 
 void init()
-{       
+{
         add_action("do_pull", "pull");
         add_action("do_think", "think");
         add_action("do_climb", "climb");
@@ -42,7 +42,7 @@ void init()
 int do_pull(string arg)
 {
         object here;
- 
+
         if (! here = find_object(__DIR__"furong1"))
                 here = load_object(__DIR__"furong1");
 
@@ -55,9 +55,9 @@ int do_pull(string arg)
         if( query_temp("marks/拉", here) )
         {
                 write("蜘蛛网已经被拉破了。\n");
-                return 1;        
+                return 1;
         }
-    
+
         write(HIC "\n你把蜘蛛网拉了下来。\n" NOR);
         set_temp("marks/拉", 1, here);
 
@@ -135,15 +135,15 @@ string look_wall()
 
                 write(WHT @TEXT
 
-  ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+  ┏--------------------------------------------------------┓
   ┃                                                 ****** ┃
   ┃   ●>        ●       ●        ●       ●     * 芙 * ┃
-  ┃   \ __    ━v|\     \//>━    \//\__   ━v|^    * 蓉 * ┃
+  ┃   \ __    --v|\     \//>--    \//\__   --v|^    * 蓉 * ┃
   ┃   /<        /<       />             />        /<     * 剑 * ┃
   ┃                                                     * 法 * ┃
   ┃                                                     ****** ┃
-  ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
-                                                             
+  ┗--------------------------------------------------------┛
+
 TEXT NOR);
                 return "\n";
          }
@@ -174,7 +174,7 @@ string look_net()
 }
 
 int do_climb(string arg)
-{        
+{
         object me = this_player();
 
           if (! arg || arg != "stone")
@@ -183,6 +183,6 @@ int do_climb(string arg)
         write(HIG "\n你踩着洞中突出的石头上，很快爬出了洞口。\n\n" NOR);
 
         me->move(__DIR__"furongfeng");
-           
+
         return 1;
 }

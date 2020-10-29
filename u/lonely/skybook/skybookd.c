@@ -68,14 +68,14 @@ string quest_feihu(object me)
 
         if(!query("quest/雪山飞狐",me))
         {
-                str = "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n";
+                str = "------------------------------------------------------------\n";
                 str +=get_string(HIW"【目前关于雪山飞狐，没有任何纪录】"NOR);
                 return str;
         }
 
-        str =   "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n";
+        str =   "------------------------------------------------------------\n";
         str +=get_string(HIW"【雪山飞狐】"NOR);
-        str +=  "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n";
+        str +=  "------------------------------------------------------------\n";
         if(query("quest/雪山飞狐/time",me))
         {
                 if(!query("quest/雪山飞狐/解药篇/over",me) )
@@ -104,7 +104,7 @@ string quest_feihu(object me)
         }
 
         str +=get_string(YEL"你已经帮助胡斐完善胡家刀法，获得一些奖励。"NOR);
-        
+
         if(!query("quest/雪山飞狐/复仇篇",me))
         {
                 if(random(2)) str +=get_string(HBRED"从阎基处你获得过一些旧事，下一步：辨真假。"NOR);
@@ -112,16 +112,16 @@ string quest_feihu(object me)
                 str +=feihu_skill(me);
                 return str;
         }
-        
+
         if(!query("quest/雪山飞狐/复仇篇/over",me))
         {
                 if(random(2)) str +=get_string(HBRED"当年苗、胡之争，似乎已经明了，只是果真如此吗？"NOR);
                 else          str +=get_string(HBRED"看来仇人已经明了，只是真正的凶手真的是苗人风吗？"NOR);
                 str +=feihu_skill(me);
                 return str;
-        }   
+        }
         str +=get_string(YEL"你已经还原给苗人风和胡斐一个真相，获得一些奖励。"NOR);
-        
+
         if(!query("quest/雪山飞狐/解药篇",me))
         {
                 if(random(2)) str +=get_string(HBRED"但是受小人暗算，苗人风中毒生死未明。"NOR);
@@ -129,7 +129,7 @@ string quest_feihu(object me)
                 str +=feihu_skill(me);
                 return str;
         }
-        
+
         if(!query("quest/雪山飞狐/解药篇/over",me))
         {
                 if(random(2)) str +=get_string(HBRED"真相已经明了，而苗人风中毒生死未明。下一步：寻找解药。"NOR);
@@ -140,7 +140,7 @@ string quest_feihu(object me)
 
         str +=get_string(YEL"五毒教，你成功帮助程灵素夺得七星海棠。"NOR);
         str +=get_string(YEL"药王谷，你成功地炼制解药成功，获得一些奖励。"NOR);
-        
+
         if(!query("quest/雪山飞狐/宝藏",me))
         {
                 str +=get_string(HBRED"你已经完成雪山飞狐的基本情节，最后涉及到一个宝藏。"NOR);
@@ -148,9 +148,9 @@ string quest_feihu(object me)
                 return str;
         }
 
-        str +=   "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n";
+        str +=   "------------------------------------------------------------\n";
         str +=get_string(HIB"【闯王宝藏】"NOR);
-        str +=   "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n";
+        str +=   "------------------------------------------------------------\n";
         if(query("quest/雪山飞狐/宝藏/time",me))
                 str +=get_string(WHT"寻宝纪录时间："+CHINESE_D->chinese_date(query("quest/雪山飞狐/宝藏/time",me),1)+"。"NOR);
         if(query("quest/雪山飞狐/宝藏/combat_exp",me))
@@ -187,9 +187,9 @@ string feihu_skill(object me)
 
         if(me->query("quest/雪山飞狐/两页刀法篇/over"))
         {
-                str =   "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n";
+                str =   "------------------------------------------------------------\n";
                 str +=get_string(HIC"【飞狐武功】"NOR);
-                str +=  "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n";
+                str +=  "------------------------------------------------------------\n";
                 if(query("quest/雪山飞狐/武功/time",me))
                         str +=get_string(WHT"武功纪录时间："+CHINESE_D->chinese_date(query("quest/雪山飞狐/武功/time",me),1)+"。"NOR);
                 if(query("quest/雪山飞狐/武功/combat_exp",me))
@@ -215,7 +215,7 @@ string feihu_skill(object me)
                         str +=get_string(YEL"你失去了学习胡家刀法的"+chinese_number(query("quest/雪山飞狐/武功/hujiadaofa_fail",me))+"次机会，但你还有无限机会。"NOR);
                 else
                         str +=get_string(HBRED"你现在拥有学习胡家刀法的机会。你可以在适当的时候请教胡斐。"NOR);
-       
+
            if(query("quest/雪山飞狐/解药篇/over",me))
            {
                    if(query("quest/雪山飞狐/武功/fight_miao",me))
@@ -254,14 +254,14 @@ string quest_lchj(object me)
 
         if(!query("quest/连城诀",me))
         {
-                str =    "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n";
+                str =    "------------------------------------------------------------\n";
                 str +=get_string(HIW"【目前关于连城诀，没有任何纪录】"NOR);
                 return str;
         }
 
-        str =   "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n";
+        str =   "------------------------------------------------------------\n";
         str +=get_string(HIW"【连城诀】"NOR);
-        str +=  "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n";
+        str +=  "------------------------------------------------------------\n";
 
         if(query("quest/连城诀/time",me))
         {
@@ -300,7 +300,7 @@ string quest_lchj(object me)
         str +=get_string(YEL"你从丁典获得乌蚕衣，并在雪谷得遇狄云。"NOR);
 
         if(!query("quest/连城诀/武馆探密篇/over",me))
-        {               
+        {
                 if(random(2)) str +=get_string(HBRED"下一步：密探武馆。也许真相永远将是一个谜。"NOR);
                 else          str +=get_string(HBRED"又是传说中的绝世武功和连城财宝，到底真相如何？"NOR);
                 str +=lchj_skill(me);
@@ -323,9 +323,9 @@ string lchj_skill(object me)
 
         if(query("quest/连城诀/雪谷激斗篇/start",me))
         {
-                str =   "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n";
+                str =   "------------------------------------------------------------\n";
                 str +=get_string(HIB"【连城武功】"NOR);
-                str +=  "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n";
+                str +=  "------------------------------------------------------------\n";
                 if(query("quest/连城诀/武功/time",me))
                         str +=get_string(WHT"武功纪录时间："+CHINESE_D->chinese_date(query("quest/连城诀/武功/time",me),1)+"。"NOR);
                 if(query("quest/连城诀/武功/combat_exp",me))
@@ -337,7 +337,7 @@ string lchj_skill(object me)
                 {
                         str +=get_string(HBYEL"你从丁典学到神照经，并更能灵活使用神照绝技。"NOR);
                         str +=get_string(HBYEL"你又从狄云处获得一些经验，对神照经有着更深层次的领悟。"NOR);
-                }       
+                }
                 else if(query("quest/连城诀/武功/shenzhao",me)==1)
                 {
                         str +=get_string(HBYEL"你从丁典学到神照经，并更能灵活使用神照绝技。"NOR);
@@ -354,7 +354,7 @@ string lchj_skill(object me)
                                    str +=get_string(YEL"你失去了狄云处领悟神照经的"+chinese_number(query("quest/连城诀/武功/shenzhao_fail2",me))+"次机会，但你还有无限机会。"NOR);
                            else str +=get_string(HBRED"你现在拥有从狄云处领悟更高层次神照经的机会。你可以在适当的时候请教狄云。"NOR);
                    }
-                } 
+                }
                 else if(query("quest/连城诀/武功/shenzhao_fail",me)>=3 && query("registered",me)<3)
                         str +=get_string(YEL"你失去从丁典领悟神照经的机会，但如果参入VIP，你将获得新的机会。"NOR);
                 else if(query("quest/连城诀/武功/shenzhao_fail",me) && query("quest/连城诀/武功/shenzhao_fail",me)<3 && query("registered",me)<3)
@@ -362,7 +362,7 @@ string lchj_skill(object me)
                 else if(query("quest/连城诀/武功/shenzhao_fail",me))
                         str +=get_string(YEL"你失去从丁典领悟神照经的"+chinese_number(query("quest/连城诀/武功/shenzhao_fail",me))+"次机会，但你还有无限机会。"NOR);
                 else str +=get_string(HBRED"你现在拥有领悟神照经的机会。你可以在适当的时候请教丁典。"NOR);
-        
+
                 if(query("quest/连城诀/雪谷激斗篇/over",me))
                 {
                         if(query("quest/连城诀/武功/sword",me))
@@ -387,14 +387,14 @@ string quest_tlbb(object me)
 
         if(!query("quest/天龙八部",me))
         {
-                str =    "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n";
+                str =    "------------------------------------------------------------\n";
                 str +=get_string(HIW"【目前关于天龙八部，没有任何纪录】"NOR);
                 return str;
         }
 
-        str =   "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n";
+        str =   "------------------------------------------------------------\n";
         str +=get_string(HIW"【天龙八部】"NOR);
-        str +=  "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n";
+        str +=  "------------------------------------------------------------\n";
 
         if(query("quest/天龙八部/time",me))
         {
@@ -440,7 +440,7 @@ string quest_tlbb(object me)
         str +=get_string(YEL"你已经将段誉从万劫谷救回，并获得一些奖励。"NOR);
 
         if(!query("quest/天龙八部/天龙营救篇/over",me))
-        {               
+        {
                 if(random(2)) str +=get_string(HBRED"下一步：天龙寺大战。倒霉的段誉又牵涉其中，当然只有你来帮忙。"NOR);
                 else          str +=get_string(HBRED"西夏第一佛法高僧，武功也是深不可测，能阻止他的只有你了。"NOR);
                 str +=tlbb_skill(me);
@@ -467,7 +467,7 @@ string quest_tlbb(object me)
         {
                 if(!query("quest/天龙八部/复兴天下篇/over",me))
                         str +=get_string(HBRED"为独霸武林，联手慕容，江湖上，毕竟还是得看拳头的。"NOR);
-                else 
+                else
                         str +=get_string(YEL"你独闯少林大败群丐，击退无名神僧与萧峰联手，为天下第一。"NOR);
                 str +=tlbb_skill(me);
                 return str;
@@ -476,7 +476,7 @@ string quest_tlbb(object me)
         {
                 if(!query("quest/天龙八部/大辽救援篇/over",me))
                         str +=get_string(HBRED"萧峰为百姓找想，誓不战争，此人当要救的。只是危险重重。"NOR);
-                else 
+                else
                         str +=get_string(YEL"你完胜中原群雄，并潜入大辽，成功营救萧峰，为侠义豪杰。"NOR);
                 str +=tlbb_skill(me);
                 return str;
@@ -490,9 +490,9 @@ string tlbb_skill(object me)
 
         if(query("quest/天龙八部/武功", me))
         {
-                str =   "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n";
+                str =   "------------------------------------------------------------\n";
                 str +=get_string(HIC"【天龙武功】"NOR);
-                str +=  "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n";
+                str +=  "------------------------------------------------------------\n";
                 if(query("quest/天龙八部/武功/time",me))
                         str +=get_string(WHT"最后学习纪录时间："+CHINESE_D->chinese_date(query("quest/天龙八部/武功/time",me),1)+"。"NOR);
                 if(query("quest/天龙八部/武功/combat_exp",me))
@@ -501,7 +501,7 @@ string tlbb_skill(object me)
                         str +="\n";
                 }
                 if(query("quest/天龙八部/武功/yuxiang",me))
-                {            
+                {
                         if(query("quest/天龙八部/凌波微步篇/over",me))
                                 str +=get_string(YEL"你找到MM的玉像，并获得一些提示。你获得记载凌波微步的帛卷。"NOR);
                         else
@@ -520,7 +520,7 @@ string tlbb_skill(object me)
                         str +=get_string(YEL"但你还有机会学习，新的帛卷可以从玉像处重新获得。"NOR);
                 }
                 else str +=get_string(HBRED"你现在拥有学习北冥神功的机会。"NOR);
-        
+
                 if(query("quest/天龙八部/武功/pass",me))
                         str +=get_string(HBYEL"并从中已经学到了凌波微步。"NOR);
                 else if(query("quest/天龙八部/武功/fail",me)>=3 && query("registered",me)<3)
@@ -540,7 +540,7 @@ string tlbb_skill(object me)
                 if(query("quest/tonglao/pass",me))
                         str +=get_string(YEL"你曾"+chinese_number(query("quest/tonglao/quest",me))+"次见到天山灯火，偶救天山童姥，并学到绝世武功。"NOR);
                 else if(query("quest/tonglao/second",me))
-                        str +=get_string(YEL"你曾"+chinese_number(query("quest/tonglao/quest",me))+"次见到天山灯火，偶救天山童姥。"NOR); 
+                        str +=get_string(YEL"你曾"+chinese_number(query("quest/tonglao/quest",me))+"次见到天山灯火，偶救天山童姥。"NOR);
                 else str +=get_string(YEL"你曾"+chinese_number(query("quest/tonglao/quest",me))+"次见到天山灯火，但什么也没发现。"NOR);
         }
 
@@ -555,14 +555,14 @@ string quest_shediao(object me)
 
         if(!me->query("quest/射雕英雄传"))
         {
-                str =    "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n";
+                str =    "------------------------------------------------------------\n";
                 str +=get_string(HIW"【目前关于射雕英雄传，没有任何纪录】"NOR);
                 return str;
         }
 
-        str =   "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n";
+        str =   "------------------------------------------------------------\n";
         str +=get_string(HIW"【射雕英雄传】"NOR);
-        str +=  "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n";
+        str +=  "------------------------------------------------------------\n";
 
         if(query("quest/射雕英雄传/time",me))
         {
@@ -599,9 +599,9 @@ string shediao_skill(object me)
 
         if(query("quest/射雕英雄传/yangjiaqiang",me))
         {
-                str =   "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n";
+                str =   "------------------------------------------------------------\n";
                 str +=get_string(HIC"【射雕武功】"NOR);
-                str +=  "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n";
+                str +=  "------------------------------------------------------------\n";
                 if(query("quest/射雕英雄传/yangjiaqiang/time",me))
                         str +=get_string(WHT"最后学习纪录时间："+CHINESE_D->chinese_date(query("quest/射雕英雄传/yangjiaqiang/time",me),1)+"。"NOR);
                 if(query("quest/射雕英雄传/yangjiaqiang/combat_exp",me))
@@ -610,7 +610,7 @@ string shediao_skill(object me)
                         str +="\n";
                 }
                 if(query("quest/射雕英雄传/风雪惊变/over",me))
-                {            
+                {
                                 str +=get_string(YEL"你成功救援郭啸天、杨铁心两家，并获得一些奖励。"NOR);
                 }
                 if(query("quest/射雕英雄传/yangjiaqiang/pass",me))

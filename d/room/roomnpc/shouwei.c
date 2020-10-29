@@ -55,7 +55,7 @@ void init()
 
 int accept_object(object who, object ob)
 {
-        object obn;
+//      object obn;
 
         if( !query("money_id", ob) )
                 return 0;

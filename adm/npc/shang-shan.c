@@ -258,7 +258,7 @@ int do_recopy(object me, object ob)
 
 int do_clone(object me, object ob)
 {
-        object *inv, newob,weapon;
+        object *inv/*, newob*/,weapon;
         mapping hp_status, skill_status, map_status;
         string *sname, *mname;
         int i, temp;

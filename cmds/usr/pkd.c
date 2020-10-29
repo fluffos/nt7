@@ -31,7 +31,7 @@ int main(object me, string arg)
 
         msg = HIR "现在屠人场中除了你还剩下" + chinese_number(sizeof(obs)) +
               "人，他们是：\n" NOR;
-        msg += HIC "≡" HIY "───────────────────────────────────" HIC "≡\n" NOR;
+        msg += HIC "≡" HIY "----------------------------------------------------------------------" HIC "≡\n" NOR;
         for (i = 0; i < sizeof(obs); i++)
         {
                 sht=obs[i]->name(1)+"("+query("id", obs[i])+")";
@@ -43,7 +43,7 @@ int main(object me, string arg)
 
         if (i % 4)
                 msg += "\n";
-        msg += HIC "≡" HIY "───────────────────────────────────" HIC "≡\n" NOR;
+        msg += HIC "≡" HIY "----------------------------------------------------------------------" HIC "≡\n" NOR;
         write(msg);
         return 1;
 }
@@ -54,7 +54,7 @@ write(@HELP
 指令格式 : pkd
 
 用这条指令可以查看目前还有谁在屠人场中比赛。
- 
+
 HELP );
         return 1;
 }

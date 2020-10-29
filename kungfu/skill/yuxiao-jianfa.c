@@ -180,7 +180,7 @@ mixed hit_ob(object me, object victim, int damage)
 {
         mixed result;
         string name;
-        object weapon;
+//      object weapon;
         name = xue_name[random(sizeof(xue_name))];
 
         if( damage < 50 ) return 0;

@@ -324,7 +324,7 @@ protected void restore_status(object me)
 
 protected int start_competition(int top_num)
 {
-        int i;
+//      int i;
         object ob;
         
         if (top_num < 0)

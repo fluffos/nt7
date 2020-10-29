@@ -1152,7 +1152,7 @@ protected mixed init_to_link(int x,int y)
 // 初始化地图的处理
 void init_line()
 {
-        int i, x, y, flag;
+        int i, x, y/*, flag*/;
 
         line = allocate(l*2+1);  // 显示详细地图
         line2 = allocate(l*2+1); // 显示普通地图
@@ -1186,7 +1186,7 @@ void init_line()
                                         line[x][y] = line2[x][y] = HIG "│" NOR;
                         } else {
                                 if( x%2 == 1 )
-                                        line[x][y] = line2[x][y] = HIG "─" NOR;
+                                        line[x][y] = line2[x][y] = HIG "--" NOR;
                                 else {
                                         if( y == 0 ) {
                                                 if( x == 0 )

@@ -42,8 +42,8 @@ void init()
 int do_ketou()
 {
         object *inv, pai, me = this_player();
-        string partynm;
-        int i, j, mylvl, oblvl;
+//      string partynm;
+        int i, j/*, mylvl, oblvl*/;
 
         if( !query("party", me) )
                 return notify_fail("你不属于任何帮会！\n");

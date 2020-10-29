@@ -31,7 +31,7 @@ int main(object me,string arg)
         //非巫师就过滤掉这些巫师频道设置
         if(!wizardp(me)) chann -= ({"wiz","sys","debug","nch"});
         chann -= ({"shout"});
-        
+
         if(arg)
                 return do_chan(arg,me,1);
         show_main(me);
@@ -43,12 +43,12 @@ int show_main(object me)
         class channel_class ch;
         string *tuned_ch;
         string s,str,state;
-        
+
         ch = new(class channel_class);
         //tuned_ch=query("channels", me);
         tuned_ch = CHANNEL_D->query_using_channel(me, 1);
 
-        str=me->name()+"的频道设置为：\n"HIC"≡"HIY"──────────────────────────────"HIC"≡\n"NOR;
+        str=me->name()+"的频道设置为：\n"HIC"≡"HIY"------------------------------------------------------------"HIC"≡\n"NOR;
         str+=sprintf(HIC" %-10s        %-8s         %-8s\n\n","频道命令","频道名称","频道状态");
         foreach(s in chann)
         {
@@ -59,7 +59,7 @@ int show_main(object me)
                 else state=HIY"公共窗口";
                 str+=sprintf(WHT"[%-10s]       [%-8s]        %-8s\n",s,ch->msg,state);
         }
-        str+="\n"HIC"≡"HIY"──────────────────────────────"HIC"≡\n"NOR;
+        str+="\n"HIC"≡"HIY"------------------------------------------------------------"HIC"≡\n"NOR;
         str+="请输入命令("HIY"help"NOR"看帮助，"HIY"exit"NOR"退出)：";
         write(str);
         input_to( (: do_chan :) ,me);
@@ -69,28 +69,28 @@ int show_main(object me)
 
 void open_ch(object me,string arg)
 {
-        class channel_class ch; 
-        mapping channels = fetch_variable("channels", get_object(CHANNEL_D)); 
+        class channel_class ch;
+        mapping channels = fetch_variable("channels", get_object(CHANNEL_D));
         int my_channels = query("channels", me);
-        
-        if( undefinedp(ch = channels[arg]) || !classp(ch) ) 
+
+        if( undefinedp(ch = channels[arg]) || !classp(ch) )
                 return;
-        
-        set("channels", my_channels | ch->number, me); 
-        CHANNEL_D->register_channel(me, ch->number); 
+
+        set("channels", my_channels | ch->number, me);
+        CHANNEL_D->register_channel(me, ch->number);
 }
 
 int do_chan(string arg,object me,int once)
 {
         string ch,cmd;
         int tmp;
-        
+
         if(!arg)
         {
                 write("\n请输入命令("HIY"help"NOR"看帮助，"HIY"exit"NOR"退出)：");
                 input_to( (: do_chan :) ,me);
                 return 1;
-        }               
+        }
         arg=lower_case(arg);
         arg=me->remove_leading_space(arg);
         while(strsrch(arg,"  ")!=-1) arg=replace_string(arg,"  "," ");
@@ -173,4 +173,3 @@ chann rumor public —— 此操作将在公共窗口打开rumor频道
 HELP );
     return 1;
 }
-

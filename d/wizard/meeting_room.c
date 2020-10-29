@@ -114,9 +114,9 @@ int do_say(string msg)
 
 int do_over()
 {
-        object *ob, me;
-        int i;
-        string wiz_status;
+        object /**ob,*/ me;
+//      int i;
+//      string wiz_status;
         me = this_player();
         
         if (! wizardp(me) || wiz_level(me) < wiz_level("(arch)"))

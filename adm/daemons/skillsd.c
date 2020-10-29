@@ -325,7 +325,7 @@ public string skillmix_stats(object me)
 
 
         msg += "\n\n\n\n\n\n";
-        msg += sprintf(NOR HIW "┏━━━━━━━━━━┓\n" NOR);
+        msg += sprintf(NOR HIW "┏--------------------┓\n" NOR);
         msg += sprintf(NOR HIW "┃轻功->%-14s" NOR HIW "┃\n" NOR, to_chinese(temp->dodge));
         msg += sprintf(NOR HIW "┃招架->%-14s" NOR HIW "┃\n" NOR, to_chinese(temp->parry));
         msg += sprintf(NOR HIW "┃内功->%-14s" NOR HIW "┃\n" NOR, to_chinese(temp->force));
@@ -336,9 +336,9 @@ public string skillmix_stats(object me)
                 msg += sprintf(NOR HIW "┃其他->%-14s" NOR HIW "┃\n" NOR,
                                need[keys_need[i]] + to_chinese(keys_need[i]));
 
-        msg += sprintf(NOR HIW "┗━━━━━━━━━━┛\n" NOR);
+        msg += sprintf(NOR HIW "┗--------------------┛\n" NOR);
         msg += sprintf(" %-22s\n" NOR, trans_color(temp->name, 3));
-        msg += sprintf(NOR HIC "┏━━━━━━━━━━┓" NOR "\n" );
+        msg += sprintf(NOR HIC "┏--------------------┓" NOR "\n" );
 
         stats = temp->stats;
         keys_stats = keys(stats);
@@ -350,7 +350,7 @@ public string skillmix_stats(object me)
 #endif
                 msg += sprintf(NOR HIC "┃" NOR "%-" + (20 + len) + "s" NOR HIC "┃" NOR "\n", str);
         }
-        msg += sprintf(NOR HIC "┗━━━━━━━━━━┛" NOR "\n");
+        msg += sprintf(NOR HIC "┗--------------------┛" NOR "\n");
 
         return msg;
 }
@@ -549,9 +549,9 @@ varargs void query_skill_power(object me, string arg)
         mixed n;
 
         msg = WHT "目前江湖上所有武功各种参数值如下\n\n" NOR;
-        msg += "─────────────────────────────────────────\n";
+        msg += "----------------------------------------------------------------------------------\n";
         msg += BBLU HIW "技能名称                      命中  躲闪  招架  伤害  内功  难度  级别  门派  调整\n" NOR;
-        msg += "─────────────────────────────────────────\n";
+        msg += "----------------------------------------------------------------------------------\n";
 
         if( stringp(arg) && ! undefinedp(all_skills[arg]) )
         {
@@ -675,7 +675,7 @@ varargs void query_skill_power(object me, string arg)
                                 (delta < 0) ? HIR "-" : WHT "+",
                                  abs(delta), NOR);
         }
-        msg += "─────────────────────────────────────────\n";
+        msg += "----------------------------------------------------------------------------------\n";
         me->start_more(msg);
 }
 
@@ -3119,7 +3119,7 @@ int attack_power(object me, string skill)
         int i, value, ap, scale, tmp;
         string map_skill;
         string rank;
-        object ob;
+//      object ob;
         int delta;
 
         if( !objectp(me) ) return 0;
@@ -3271,7 +3271,7 @@ int defense_power(object me, string skill)
         int i, value, dp, scale, tmp;
         string map_skill;
         string rank;
-        object ob;
+//      object ob;
         int delta;
 
         if( !objectp(me) ) return 0;
@@ -3391,7 +3391,7 @@ int damage_power(object me, string skill)
         int i, value, damage, scale, tmp;
         string map_skill;
         string rank;
-        object ob;
+//      object ob;
         int delta;
 
         if( !objectp(me) ) return 0;
@@ -3580,9 +3580,9 @@ mapping trans_data(string mark)
 
 void disable_skillmix(object me)
 {
-        mapping stats, applied_prop;
-        string *apply;
-        int i, flag;
+//      mapping stats,applied_prop;
+//      string *apply;
+//      int i,flag;
 
         if( !query("skillmix", me) )
                 return;
@@ -3615,9 +3615,9 @@ void disable_skillmix(object me)
 
 varargs void enable_skillmix(object me, mapping stats, mapping need)
 {
-        mapping applied_prop;
+//      mapping applied_prop;
         string *apply;
-        int i, flag;
+        int i/*, flag*/;
 
         if (! mapp(stats) || ! sizeof(stats))
                 return;
@@ -3698,7 +3698,7 @@ void broadcast_news()
         object *obs, ob;
         string *key;
         string skill;
-        mixed value;
+//      mixed value;
 
         if( !rdc_skills ) rdc_skills = ([]);
         if( !add_skills ) add_skills = ([]);

@@ -1,4 +1,4 @@
-// This program is a part of NITAN MudLIB 
+// This program is a part of NITAN MudLIB
 // redl 2013/10
 #include <ansi.h>
 inherit ROOM;
@@ -145,7 +145,7 @@ mapping *REQ_ITEMS = ({
                 "神器萧" :              "/inherit/template/weapon/xsword"
         ])
         });
-        
+
 
 int clean_up() { return 1;}
 
@@ -157,7 +157,7 @@ string load_name()
 
 int save_name(string arg)
 {
-        if (!arg || arg=="") 
+        if (!arg || arg=="")
                 return notify_fail(NOR"没有arg来指定洞天名！\n"NOR);
         write_file(__DIR__"name.o", arg, 1);
         reload_object(this_object());
@@ -171,7 +171,7 @@ int owner_level(object me)
         int i;
         string *owns, *broids;
         mapping bro;
-        
+
         if (!query("flag_init")) reload_object(this_object());
 
         owns = query("owners");
@@ -184,9 +184,9 @@ int owner_level(object me)
                                         return 1;//主人的结义
                                 }
                                 }
-                
+
         }
-        
+
         return 0;
 }
 
@@ -210,7 +210,7 @@ int attacking(object me)
         object *obs, *t, tob;
         string coupid, *owns = ({});
         int ti1, ti2, n = 0, i, plv, npci = random(2) + 2;
-        
+
         if (query("xiang_life") < 2 && objectp(me) && !playerp(me)) {//先玩家1点攻破
                 CHANNEL_D->channel_broadcast("rumor", NOR + MAG + "据说" + dtname + "洞天被神秘人攻破。\n" NOR);
                 message_vision(append_color(NOR YEL "魔像阵图已经被$N" NOR YEL "攻破，天旋地转之中洞天一阵扭曲。\n" NOR, YEL), me);
@@ -235,13 +235,13 @@ int attacking(object me)
                 me->command("halt");
                 return 1;
         }
-        
-        message_vision(YEL + "$N" + (random(2) ? "疯狂地" : "冷静地") + (random(2) ? "击打" : "攻击") + (random(2) ? "阵图" : "魔像") +  
+
+        message_vision(YEL + "$N" + (random(2) ? "疯狂地" : "冷静地") + (random(2) ? "击打" : "攻击") + (random(2) ? "阵图" : "魔像") +
                 //"<耐久:"+ to_string(query("xiang_life")) + "/" + to_string(query("xiang_maxlife")+query("apply/xiang_maxlife")) + ">\n" + NOR,  me);
                 sprintf( YEL "%-3s%4d\n" NOR, (random(2) ? ".." : "..."), query("xiang_life")), me);
-                
+
        //if (isnpc)     {}
-                
+
         addn("xiang_life", -1);
         if (query("xiang_life") < 1) {
                         CHANNEL_D->channel_broadcast("rumor", NOR + MAG + "据说" + dtname + "洞天被玩家们攻破。\n" NOR);
@@ -249,7 +249,7 @@ int attacking(object me)
                                 t = me->query_team();
                                 n = sizeof(t);
                                 if (n)
-                                {                                
+                                {
                                         foreach(tob in t)
                                         {
                                                 if (objectp(tob) && playerp(tob) && environment(tob) == environment(me))
@@ -273,11 +273,11 @@ int attacking(object me)
                                                         coupid = query("couple/couple_id", me);
                                                         if (coupid) owns += ({coupid});
                                 }
-                        
+
                         set("enhance/xiang_maxlife", 50*query("zhen_type"));
                         set("enhance/num_yanxi", 300*query("zhen_type"));
                         ti1 = query("enhance/xiang_maxlife");
-                        ti2 = query("enhance/num_yanxi");       
+                        ti2 = query("enhance/num_yanxi");
                         __DIR__"data.c"->do_clear();
                 set("hold_time", time());
                 set("owners", owns);
@@ -297,7 +297,7 @@ int attacking(object me)
                            //query("dongtian/my/dtname", $1) != dtname
                            !owner_level($1)
                            :));
-                
+
                 while (npci--) {
                                 ob = new(__DIR__"npc/guarder");
                                 plv = query("guarder_level") / 10;
@@ -306,7 +306,7 @@ int attacking(object me)
                                 set("guarder_level", query("guarder_level") + plv, ob);
                                 set("nflee", time() + 45 + random(15) + query("guarder_lifetime"), ob);
                                 ob->do_copyskill();
-                                ob->move(this_object()); 
+                                ob->move(this_object());
                                 set("name", dtname + query("name", ob), ob);
                                 //ob->set_leader(me);
                                 set("enemy_player", me, ob);
@@ -332,14 +332,14 @@ int do_break()
 {//攻击阵图时，全广场的非主人玩家受反击
         object me = this_player();
         object previous = query("attacker_player");
-        
+
         if (me->is_busy())
                 return notify_fail(NOR "你还是忙完再说吧。\n" NOR);
         if (me->is_fighting())
                 return notify_fail(NOR "你还是打完架再说吧。\n" NOR);
 
         me->start_busy(2);
-        
+
         if (owner_level(me))
                 return notify_fail( NOR "你就是这洞天的一员呢。\n" NOR);
 
@@ -351,10 +351,10 @@ int do_break()
 
         if (query("xiang_life") < 1)
                 return notify_fail(NOR "此处大阵已破，无需攻打。\n" NOR);
-                
+
         if (query("protect_time") > time())
                 return notify_fail(NOR "此处洞天处于两小时保护中。\n" NOR);
-                
+
         if (query("hold_time") == query_temp("dongtian/invite/hold_time", me))
                 return notify_fail(NOR "你忘记你怎么进来的了？脑后生有反骨吧。\n" NOR);
 
@@ -363,12 +363,12 @@ int do_break()
 
         if ( previous && objectp(previous) && environment(previous) == this_object())
                 return notify_fail(NOR + query("name", previous) + "正在攻击阵图。\n" + NOR);
-                
+
         set("attacker_player", me);
 
     me->start_busy((: call_other, __FILE__, "attacking" :),
                        (: call_other, __FILE__, "halt_attacking" :));
-        
+
         me->set_short_desc("正在攻击阵图。");
         //write(NOR "你开始攻击护山大阵的阵图，<halt>可以中止。\n" NOR);
         write(NOR "你开始攻击护山大阵阵图。\n" NOR);
@@ -383,7 +383,7 @@ int do_break()
 int do_break2(object me)//掠夺专用
 {
         object previous = query("attacker_player");
-        
+
         if (query("hold_time") < 2) return 1;//已经是npc的洞天
 
         if (me->is_busy())
@@ -393,7 +393,7 @@ int do_break2(object me)//掠夺专用
 
         if (query("xiang_life") < 1)
                 return notify_fail(NOR "此处大阵已破，无需攻打。\n" NOR);
-                
+
         if (query("protect_time") > time())
                 return notify_fail(NOR "此处洞天处于两小时保护中。\n" NOR);
 
@@ -402,7 +402,7 @@ int do_break2(object me)//掠夺专用
 
         set("attacker_player", me);
         remove_call_out("halt_attacking2");
-        call_out("halt_attacking2", 3 + random(7));             
+        call_out("halt_attacking2", 3 + random(7));
         attacking(me);
         return 1;
 }
@@ -417,32 +417,32 @@ int do_imbue(string arg)
         int damage = 100, fatalblow = 2, attack = 48;
         mapping weap = ([]);
         string act = "击";
-        
+
         if( me->is_busy()) {
                 return notify_fail( NOR "你现在正忙着呢。\n" NOR);
         }
-        
+
         if (!arg || arg=="") {
                 return notify_fail( NOR "指令格式:<imb 武器id> <imb none>\n" NOR);
         }
-        
+
         me->start_busy(4);
-        
+
         if (owner_level(me) <2 && wiz_level(me) < 5) //非洞天的主人之一
                 return notify_fail( NOR "你不是这个洞天的主人！\n" NOR);
-        
+
         if (arg == "none") {
-                if (!__DIR__"data.c"->do_load("xiang_weapons")) 
+                if (!__DIR__"data.c"->do_load("xiang_weapons"))
                         return notify_fail( NOR "阵图上已经没有任何武器了。\n" NOR);
-                        
+
                 __DIR__"data.c"->do_save("xiang_weapons", 0);
                 delete("xiang_weapons");
                 message_vision(append_color(NOR CYN "$N" NOR CYN "低头祷告，魔神雕像六臂一振，手上的兵器全部化为齑粉。\n" NOR, CYN), me);
                 return 1;
         }
-        
+
         ob = present(arg, me);
-        
+
         if( !ob )
         {
                 inv = all_inventory(me);
@@ -459,8 +459,8 @@ int do_imbue(string arg)
         if ( !objectp(ob) )
         {
                 return notify_fail( NOR "你身上没有这件武器。\n" NOR);
-        }               
-                        
+        }
+
                         if (sscanf(base_name(ob), "/inherit/template/weapon/%*s") ||
                                 sscanf(base_name(ob), "/inherit/template/armor/finger%*s") ||
                                 sscanf(base_name(ob), "/inherit/template/armor/hands%*s")
@@ -486,7 +486,7 @@ int do_imbue(string arg)
                                 damage += query("enchase/apply_prop/max_neili", ob);
                                 damage *= 10000 + 350 * sizeof(query("enchase/apply_prop", ob)) + 450 * sizeof(query("weapon_prop", ob)) + 350 * sizeof(query("armor_prop", ob));
                                 damage /= 10000 + ( (random(2))? (random(100)) : (-random(100)) );
-                                
+
                                 fatalblow += to_int(query("weapon_prop/fatal_blow", ob)) * 2;
                                 fatalblow += to_int(query("weapon_prop/double_damage", ob));
                                 fatalblow += to_int(query("weapon_prop/add_damage", ob));
@@ -495,7 +495,7 @@ int do_imbue(string arg)
                                 attack += to_int(query("weapon_prop/kar", ob)) * 2;
                                 attack += to_int(query("weapon_prop/int", ob));
                                 attack += to_int(query("weapon_prop/dex", ob));
-                                
+
                                 fatalblow += to_int(query("armor_prop/fatal_blow", ob)) * 2;
                                 fatalblow += to_int(query("armor_prop/double_damage", ob));
                                 fatalblow += to_int(query("armor_prop/add_damage", ob));
@@ -504,7 +504,7 @@ int do_imbue(string arg)
                                 attack += to_int(query("armor_prop/kar", ob)) * 2;
                                 attack += to_int(query("armor_prop/int", ob));
                                 attack += to_int(query("armor_prop/dex", ob));
-                                
+
                                 fatalblow += to_int(query("enchase/apply_prop/fatal_blow", ob)) * 2;
                                 fatalblow += to_int(query("enchase/apply_prop/double_damage", ob));
                                 fatalblow += to_int(query("enchase/apply_prop/add_damage", ob));
@@ -513,16 +513,16 @@ int do_imbue(string arg)
                                 attack += to_int(query("enchase/apply_prop/kar", ob)) * 2;
                                 attack += to_int(query("enchase/apply_prop/int", ob));
                                 attack += to_int(query("enchase/apply_prop/dex", ob));
-                                
+
                                 fatalblow += random(sizeof(query("weapon_prop", ob)) + sizeof(query("armor_prop", ob)));
                                 attack += random(sizeof(query("enchase/apply_prop", ob)));
-                                
+
                                 quality = query("quality_level", ob);
                                 if (!quality || quality < 1) quality = 1;
                                 attack += quality - 2;
                                 fatalblow += quality - 2;
                                 damage *= quality * quality;
-                                
+
                                 switch (query("skill_type", ob)) {
                                         case "blade":
                                         case "axe":
@@ -548,12 +548,12 @@ int do_imbue(string arg)
                                                 act = "砸";
                                                 break;
                                 }
-                                
+
                                 if (sscanf(base_name(ob), "/inherit/template/armor/finger%*s"))
                                         act = "戳";
                                 if (sscanf(base_name(ob), "/inherit/template/armor/hands%*s"))
                                         act = "拍";
-                                
+
                         weap = __DIR__"data.c"->do_load("xiang_weapons");
                         if (undefinedp(weap) || !weap || !sizeof(weap) || !mapp(weap)) {
                                 __DIR__"data.c"->do_save("xiang_weapons", ([
@@ -570,19 +570,19 @@ int do_imbue(string arg)
                         else {
                                 if (weap["number"] > query("zhen_type"))
                                         return notify_fail( NOR "阵图等级不足！\n" NOR);
-                                
-                                if (random(fatalblow) > weap["fatalblow"] / 2) 
+
+                                if (random(fatalblow) > weap["fatalblow"] / 2)
                                         fatalblow = 1;
                                 else
                                         fatalblow = 0;
-                                        
-                                if (random(attack) > weap["attack"] * 2 / 3) 
+
+                                if (random(attack) > weap["attack"] * 2 / 3)
                                         attack = 1;
                                 else
                                         attack = 0;
-                                        
+
                                 damage /= 8;
-                                        
+
                                 __DIR__"data.c"->do_save("xiang_weapons", ([
                                                 "name"  :       weap["name"],
                                                 "colorname"     :       weap["colorname"],
@@ -600,7 +600,7 @@ int do_imbue(string arg)
                                 //write(NOR "你把武器嵌入了阵图，更新还要稍后。\n");
                                 return 1;
                         }
-                        
+
         return notify_fail( NOR "你想嵌入的这个是啥武器！？\n" NOR);
 }
 
@@ -620,7 +620,7 @@ string load_weapon()
 int do_kneel(string arg)
 {
         object me = this_player();
-        
+
         if (!arg || arg!="xiang")
                 return notify_fail(NOR + "你想膜拜什么？\n" + NOR);
 
@@ -636,17 +636,17 @@ string look_xiang(object me)
 {
         if (me->is_busy()) return NOR"你现在正忙。\n"NOR;
         me->start_busy(3);
-        
+
         add_action("do_kneel", "kneel");
-        return 
+        return
 HIK + "『" + query("zhen_lvname") + HIK + "阵图』" + HIY + repeat_string("★", query("zhen_type")) + "\n" + NOR
-YEL 
+YEL
 "这是一尊庄严的魔神雕像，脚踩腾蛇拉着的战辇，披挂麒麟甲。\n"
 "这丈六金身三头六臂，脸呈欢喜冷漠狰狞像，每支手臂各持武器，\n"
 "其中显眼的是" NOR YEL "［" + load_weapon() + NOR + YEL  "］\n"
-HIK 
+HIK
 "耐久:"+ to_string(query("xiang_life")) + "/" + to_string(query("xiang_maxlife")+query("apply/xiang_maxlife")) + " (break-破坏, upg-升级, imb-嵌入)\n"
-"\n" + 
+"\n" +
 NOR +
 "你看完后有种想膜拜(kneel xiang)的冲动..\n" + NOR;
 }
@@ -654,24 +654,24 @@ NOR +
 int chk_zhenlv()
 {
         int lv, lifetime = 0, level = 0, pro = 0;
-        
+
         level = query("guarder_level");
         lifetime = query("guarder_lifetime");
         pro = query("guarder_pro");
-        
-                if (lifetime >= 100 && level >= 300 && pro >= 50) 
+
+                if (lifetime >= 100 && level >= 300 && pro >= 50)
                         set("zhen_type", 5);
-                else if (lifetime >= 80 && level >= 200 && pro >= 40) 
+                else if (lifetime >= 80 && level >= 200 && pro >= 40)
                         set("zhen_type", 4);
-                else if (lifetime >= 60 && level >= 150 && pro >= 30) 
+                else if (lifetime >= 60 && level >= 150 && pro >= 30)
                         set("zhen_type", 3);
-                else if (lifetime >= 40 && level >= 100 && pro >= 20) 
+                else if (lifetime >= 40 && level >= 100 && pro >= 20)
                         set("zhen_type", 2);
-                else if (lifetime >= 20 && level >= 50 && pro >= 10) 
+                else if (lifetime >= 20 && level >= 50 && pro >= 10)
                         set("zhen_type", 1);
-                else 
+                else
                         set("zhen_type", 0);
-        
+
         lv = query("zhen_type");
         set("zhen_lvname", SHORTZHEN[lv]);
         return lv;
@@ -727,7 +727,7 @@ int set_sys_owner()
                         ]),
                 });
         int rndzlv = random(5) + 1;
-        
+
         __DIR__"data.c"->do_clear();
 
         set("guarder_lifetime", 20*rndzlv+ random(80));
@@ -751,11 +751,11 @@ int set_sys_owner()
 //      __DIR__"data.c"->do_save("enhance/num_yanxi", query("enhance/num_yanxi"));
 
         __DIR__"data.c"->do_save("xiang_weapons", xweap[random(sizeof(xweap))]);
-        
+
         set("hold_time", 1);
         __DIR__"data.c"->do_save("hold_time", query("hold_time"));
         tell_room(this_object(), NOR HIY "\n重设了洞天为NPC所有！\n\n" NOR);
-        return 1;                               
+        return 1;
 }
 
 int reload_me()
@@ -765,7 +765,7 @@ int reload_me()
                 set_sys_owner();
                 reload_object(this_object());
                 return 1;
-        } 
+        }
         dtname = load_name();
         set("short", HIC + dtname + "广场" + NOR);
         set("owners", __DIR__"data.c"->do_load("owners"));
@@ -779,7 +779,7 @@ int reload_me()
         //set("apply", __DIR__"data.c"->do_load("apply"));
         set("enhance/xiang_maxlife", __DIR__"data.c"->do_load("enhance/xiang_maxlife"));
         set("enhance/num_yanxi", __DIR__"data.c"->do_load("enhance/num_yanxi"));
-        
+
         chk_zhenlv();
         load_weapon();
         return 1;
@@ -810,15 +810,15 @@ int do_smash2(object me, object ob, object where)
 
         if (zlv<1)
                 mx = 1;
-        else if (zlv<2) 
+        else if (zlv<2)
                 mx = 2;
-        else if (zlv<4) 
+        else if (zlv<4)
                 mx = 3;
-        else if (zlv<5) 
+        else if (zlv<5)
                 mx = 6;
         else
                 mx = 9;
-        
+
         jiali = query("jiali", me);
         jiali -= 8000;
         if (jiali < 0) jiali = 0;
@@ -846,11 +846,11 @@ int do_smash2(object me, object ob, object where)
                                 damage = damage * 3 / 4 + random(damage / 4);
                         }
 
-                msg = NOR + CYN + (random(2) ? "天上":"云中") + 
-                        NOR + HIY + (random(2) ? "显现":"凝聚出") + "一" + 
-                        NOR + HIY + weap["unit"] + 
-                        NOR + BLINK + weap["colorname"] + 
-                        NOR + HIY + "，" + (random(2) ? "挟":"挈") + "着" + NOR + BLINK + (random(2) ? (YEL + "闪电"): (HIR + "雷火"))  + 
+                msg = NOR + CYN + (random(2) ? "天上":"云中") +
+                        NOR + HIY + (random(2) ? "显现":"凝聚出") + "一" +
+                        NOR + HIY + weap["unit"] +
+                        NOR + BLINK + weap["colorname"] +
+                        NOR + HIY + "，" + (random(2) ? "挟":"挈") + "着" + NOR + BLINK + (random(2) ? (YEL + "闪电"): (HIR + "雷火"))  +
                         NOR + HIY + (random(2) ? "摧枯拉朽地":"势不可当地") +  weap["act"] + (random(2) ? "往":"向") + "$N" + NOR + HIY + "。"+
                         NOR + HIK + "  ( " + (flag ? ((bflag ? NOR + BLINK + WHT + "暴击" : NOR + WHT + "伤害") + "：" + to_string(damage)) : ("失败：" + to_string(attack) + " > " + to_string(arnd))) + NOR + HIK + " )\n" + NOR ;
                 message_vision(msg, ob);
@@ -880,15 +880,15 @@ int do_smash2(object me, object ob, object where)
         message_vision("\n", ob);
 
                         if (query("qi", ob) < 0 || query("jing", ob) < 0) {
-                                set_temp("die_reason", NOR + HIR + "被" + 
+                                set_temp("die_reason", NOR + HIR + "被" +
                                         ((me->is_character())? (NOR + HIR + query("name", me)):(NOR + HIR + query("zhen_lvname") + "魔像")) + NOR + HIR + "请来的" + dtname +
                                          weap["colorname"] + NOR + HIR + weap["act"] + "死了", ob);
                                 ob->die();
                         }
-        
+
         return 1;
 }
-        
+
 int do_smash(object me, object ob, object where)
 {
         object lian;
@@ -905,23 +905,23 @@ int do_smash(object me, object ob, object where)
                 me->start_busy(4);
         }
         ob->start_busy(4);
-        
+
         lian = query_temp("armor/hairpin", ob);
-        if (lian && objectp(lian) && 
-                query("id", lian)=="qiyun lian" && 
-                query("quality_level", lian)>query("zhen_type") && 
+        if (lian && objectp(lian) &&
+                query("id", lian)=="qiyun lian" &&
+                query("quality_level", lian)>query("zhen_type") &&
                 random(3)) {
-                message_vision(NOR + YEL + "$N" + NOR + YEL + "头戴的" + query("name", lian) + NOR + YEL + "微微一动，\n" + 
-                        "只见虚空破碎，" + HIC + query("dtname", lian) + NOR + YEL + "穿过来只巨掌，往空中一挥道：退～～\n" + 
+                message_vision(NOR + YEL + "$N" + NOR + YEL + "头戴的" + query("name", lian) + NOR + YEL + "微微一动，\n" +
+                        "只见虚空破碎，" + HIC + query("dtname", lian) + NOR + YEL + "穿过来只巨掌，往空中一挥道：退～～\n" +
                         NOR + HIC + "漫天乌云立时消散，天上转赴清明，星空回复朗透...\n\n" + NOR, ob);
                 if (objectp(ob)) delete_temp("dongtian/smash_step", ob);
                         return 0;
         }
-        
+
         if (query_temp("dongtian/smash_step", ob) < 2 || (random(2) && query_temp("dongtian/smash_step", ob) < 3)) {
                 addn_temp("dongtian/smash_step", 1, ob);
-                message_vision(NOR + WHT + "天地灵气" + (random(2) ? "疯狂地聚集": (random(2) ? "狂躁":"浩荡") + "如潮") + 
-                        "，" + (random(2) ? (random(2) ? "天威":"如泰山") + "压得$N" + NOR + WHT + "动弹" + (random(2) ? "不得":"不了") + "。":"牵引着$N" + NOR + WHT + "转不了身。") + "\n\n" + NOR, ob);      
+                message_vision(NOR + WHT + "天地灵气" + (random(2) ? "疯狂地聚集": (random(2) ? "狂躁":"浩荡") + "如潮") +
+                        "，" + (random(2) ? (random(2) ? "天威":"如泰山") + "压得$N" + NOR + WHT + "动弹" + (random(2) ? "不得":"不了") + "。":"牵引着$N" + NOR + WHT + "转不了身。") + "\n\n" + NOR, ob);
                 call_out("do_smash", random(2) + 1, me, ob, where);
         } else {
                 if (me->is_character()) {
@@ -941,7 +941,7 @@ int can_smash(object me, object ob, int chance)
         string msg = NOR;
         object where;
         mapping weap = query("xiang_weapons");
-        if (!me || !ob) 
+        if (!me || !ob)
                 return 0;
         if (undefinedp(weap) || !weap || !sizeof(weap) || !mapp(weap))
                 return 0;
@@ -960,12 +960,12 @@ int can_smash(object me, object ob, int chance)
         if (!query_temp("dongtian/smash_time", where) || query_temp("dongtian/smash_time", where) < time()) {
                 set_temp("dongtian/smash_time", time() + 15, where);
                 msg = NOR + HBWHT + HIC + "\n忽然间，\n" + HIY + "雷声滚滚，\n" + HIB + "乌云密布..\n" + NOR;
-                tell_room(where, msg);  
+                tell_room(where, msg);
         }
                 if (me->is_character()) {
                         me->start_busy(4);
                         msg = NOR + CYN + me->name() + NOR + CYN + "踏罡布斗，口里念念有词：“使吾之剑，以为雷引...”\n" + NOR;
-                        tell_room(where, msg);  
+                        tell_room(where, msg);
                 }
         call_out("do_smash", 1, me, ob, where);
         return 1;
@@ -976,7 +976,7 @@ int create_reqitem()
         string strt, *strk = ({});
         int lv, i;
         int lifetime = 0, level = 0, pro = 0;
-        
+
         if (!query("flag_init")) reload_object(this_object());
 
         level = query("guarder_level");
@@ -984,15 +984,15 @@ int create_reqitem()
         pro = query("guarder_pro");
 
         if (!query("upg/require/1")) {
-                if (level >= 200) 
+                if (level >= 200)
                         lv = 4;
-                else if (level >= 150) 
+                else if (level >= 150)
                         lv = 3;
-                else if (level >= 100) 
+                else if (level >= 100)
                         lv = 2;
-                else if (level >= 50) 
+                else if (level >= 50)
                         lv = 1;
-                else 
+                else
                         lv = 0;
                 strk = keys(REQ_ITEMS[lv]);
                 for( i = 0; i < 3; i++ ) {
@@ -1003,15 +1003,15 @@ int create_reqitem()
                 set("upg/require_quality_level/1", lv + 2);
         }
         if (!query("upg/require/2")) {
-                if (lifetime >= 80) 
+                if (lifetime >= 80)
                         lv = 4;
-                else if (lifetime >= 60) 
+                else if (lifetime >= 60)
                         lv = 3;
-                else if (lifetime >= 40) 
+                else if (lifetime >= 40)
                         lv = 2;
-                else if (lifetime >= 20) 
+                else if (lifetime >= 20)
                         lv = 1;
-                else 
+                else
                         lv = 0;
                 strk = keys(REQ_ITEMS[lv]);
                 for( i = 0; i < 3; i++ ) {
@@ -1022,15 +1022,15 @@ int create_reqitem()
                 set("upg/require_quality_level/2", lv + 2);
         }
         if (!query("upg/require/3")) {
-                if (pro >= 40) 
+                if (pro >= 40)
                         lv = 4;
-                else if (pro >= 30) 
+                else if (pro >= 30)
                         lv = 3;
-                else if (pro >= 20) 
+                else if (pro >= 20)
                         lv = 2;
-                else if (pro >= 10) 
+                else if (pro >= 10)
                         lv = 1;
-                else 
+                else
                         lv = 0;
                 strk = keys(REQ_ITEMS[lv]);
                 for( i = 0; i < 3; i++ ) {
@@ -1064,7 +1064,7 @@ int create_reqitem()
                         set("upg/require/6/" + strt, REQ_ITEMS2[strt]);
                 }
         }
-                        
+
         return 1;
 }
 
@@ -1089,7 +1089,7 @@ int chk_reqitems(object me, int idx)
         string file, obname, *strk = ({});
         object ob, *inv, *obs = ({});
         int max_amount;
-        
+
         if (!query("upg/require/" + to_string(idx)))
                 return 0;//不能出现
         strk = keys(query("upg/require/" + to_string(idx)));
@@ -1099,7 +1099,7 @@ int chk_reqitems(object me, int idx)
                 tell_object(me, NOR "你身上的物品超过了60件。\n" NOR);//减负检查环节
                 return 0;
         }
-        
+
         for( i = 0; i < j; i++ ) {
                 obname = strk[i];
                 file = query("upg/require/" + to_string(idx))[obname];
@@ -1116,7 +1116,7 @@ int chk_reqitems(object me, int idx)
                                 create_reqitem();
                                 return 1;
                         }
-                        
+
                         if( base_name(inv[k]) == file ) //加入判断品质神器传说史诗
                         {
                                 if (sscanf(base_name(inv[k]), "/inherit/template/weapon/%*s") || sscanf(base_name(inv[k]), "/inherit/template/armor/%*s")) {
@@ -1135,13 +1135,13 @@ int chk_reqitems(object me, int idx)
                                 }
                         }
                 }
-                
+
         if ( !flag )
         {
                 tell_object(me, NOR "你身上没有携带" + obname + "。\n" NOR);
-        }               
         }
-        
+        }
+
         //write ("j:" + to_string(j) + " count:" + to_string(count) + "\n");
         if (j == count) {
                 for( i = 0; i < sizeof(obs); i++ ) {
@@ -1173,20 +1173,20 @@ int chk_reqtcash(object me, int amount)
         string file, obname;
         object ob, *inv;
         int max_amount;
-        
+
         inv = all_inventory(me);
         if (wiz_level(me) < 5 && sizeof(inv) > 50) {
                 tell_object(me, NOR "你身上的物品超过了50件。\n" NOR);//减负检查环节
                 return 0;
         }
-        
+
                 obname = "千两金票";
                 file = "/clone/money/thousand-gold";
                 //write (obname + " - " + file + "\n");
                 flag = 0;
                 for( k = 0; k < sizeof(inv); k++ )
                 {
-                        if( base_name(inv[k]) == file ) 
+                        if( base_name(inv[k]) == file )
                         {
                                         flag = 1;
                                         ob = inv[k];
@@ -1198,19 +1198,19 @@ int chk_reqtcash(object me, int amount)
         {
                 tell_object(me, NOR "你身上没有携带" + obname + "。\n" NOR);
                 return 0;
-        }               
-        
+        }
+
                         max_amount = ob->query_amount();
                         if (!max_amount || max_amount < amount) {
                         tell_object(me, NOR "你身上携带的" + obname + "数量不足。\n" NOR);
                 return 0;
-            } else if (max_amount == amount) {  
+            } else if (max_amount == amount) {
                                 destruct(ob);
                         } else {
                                 ob->add_amount(-amount);
                         }
                         message_vision(append_color(NOR CYN "$N举起" + chinese_number(amount) + query("unit", ob) + obname + NOR + CYN + "虔诚地献到魔神雕像的手上。\n" NOR, CYN), me);
-                        
+
                 return 1;
 }
 
@@ -1232,17 +1232,17 @@ int do_upg(string arg)
 
         //msg = HIK + "『" + query("zhen_lvname") + HIK + "阵图』" + HIY + repeat_string("★", query("zhen_type")) + NOR + "(前三项为零的洞天归于无主)\n" + NOR;
         msg = HIK + "『" + query("zhen_lvname") + HIK + "阵图』" + HIY + repeat_string("★", query("zhen_type")) + NOR + "\n" + NOR;
-        msg += sprintf( YEL "╔━━━━━━━━━━━━━━╦━━━━━━━━━━━━━━━━━━━━━╗\n" NOR );
-        msg += sprintf( YEL "┃" HIC "⒈傀儡等级+8：" NOR CYN "%9d/600 "YEL "┃" WHT "需求：" NOR HIK "%-36s" NOR YEL "┃\n" NOR, query("guarder_level"), sort_itemnames(1));        
-        msg += sprintf( YEL "┃" HIC "⒉傀儡生存时间+5：" NOR CYN "%5d/200 "YEL "┃" WHT "需求：" NOR HIK "%-36s" NOR YEL "┃\n" NOR, query("guarder_lifetime"), sort_itemnames(2));     
-        msg += sprintf( YEL "┃" HIC "⒊傀儡出战机率+3：" NOR CYN "%5d/99  "YEL "┃" WHT "需求：" NOR HIK "%-36s" NOR YEL "┃\n" NOR, query("guarder_pro"), sort_itemnames(3));  
-        msg += sprintf( YEL "┃" HIC "⒋阵图耐久+5：" NOR CYN "%9d/"+to_string(450+query("enhance/xiang_maxlife"))+" "YEL "┃" WHT "需求：" NOR HIK "%-36s" NOR YEL "┃\n" NOR, query("apply/xiang_maxlife"), sort_itemnames(4));       
-        msg += sprintf( YEL "┃" HIC "⒌阵图修复效率+1：" NOR CYN "%5d/9   "YEL "┃" WHT "需求：" NOR HIK "%-36s" NOR YEL "┃\n" NOR, query("apply/xiang_repair"), sort_itemnames(5));   
-        msg += sprintf( YEL "┃" HIC "⒍洞天研习次数+6：" NOR CYN "%5d/"+to_string(YANXI_NUM+query("enhance/num_yanxi"))+""YEL "┃" WHT "需求：" NOR HIK "%-36s" NOR YEL "┃\n" NOR, query("apply/num_yanxi"), sort_itemnames(6));   
-        msg += sprintf( YEL "┃" HIC "⒎祭祀魔像：" NOR CYN "%11d/5000"YEL "┃" WHT "需求：" NOR HIK "%-36s" NOR YEL "┃\n" NOR, query("apply/num_jisi"), "５００张千两金票");      
-        msg += sprintf( YEL "╚━━━━━━━━━━━━━━╩━━━━━━━━━━━━━━━━━━━━━╝\n" NOR );
+        msg += sprintf( YEL "╔----------------------------╦------------------------------------------╗\n" NOR );
+        msg += sprintf( YEL "┃" HIC "⒈傀儡等级+8：" NOR CYN "%9d/600 "YEL "┃" WHT "需求：" NOR HIK "%-36s" NOR YEL "┃\n" NOR, query("guarder_level"), sort_itemnames(1));
+        msg += sprintf( YEL "┃" HIC "⒉傀儡生存时间+5：" NOR CYN "%5d/200 "YEL "┃" WHT "需求：" NOR HIK "%-36s" NOR YEL "┃\n" NOR, query("guarder_lifetime"), sort_itemnames(2));
+        msg += sprintf( YEL "┃" HIC "⒊傀儡出战机率+3：" NOR CYN "%5d/99  "YEL "┃" WHT "需求：" NOR HIK "%-36s" NOR YEL "┃\n" NOR, query("guarder_pro"), sort_itemnames(3));
+        msg += sprintf( YEL "┃" HIC "⒋阵图耐久+5：" NOR CYN "%9d/"+to_string(450+query("enhance/xiang_maxlife"))+" "YEL "┃" WHT "需求：" NOR HIK "%-36s" NOR YEL "┃\n" NOR, query("apply/xiang_maxlife"), sort_itemnames(4));
+        msg += sprintf( YEL "┃" HIC "⒌阵图修复效率+1：" NOR CYN "%5d/9   "YEL "┃" WHT "需求：" NOR HIK "%-36s" NOR YEL "┃\n" NOR, query("apply/xiang_repair"), sort_itemnames(5));
+        msg += sprintf( YEL "┃" HIC "⒍洞天研习次数+6：" NOR CYN "%5d/"+to_string(YANXI_NUM+query("enhance/num_yanxi"))+""YEL "┃" WHT "需求：" NOR HIK "%-36s" NOR YEL "┃\n" NOR, query("apply/num_yanxi"), sort_itemnames(6));
+        msg += sprintf( YEL "┃" HIC "⒎祭祀魔像：" NOR CYN "%11d/5000"YEL "┃" WHT "需求：" NOR HIK "%-36s" NOR YEL "┃\n" NOR, query("apply/num_jisi"), "５００张千两金票");
+        msg += sprintf( YEL "╚----------------------------╩------------------------------------------╝\n" NOR );
         msg += NOR "指令格式:<upg 序号>\n" NOR;
-        
+
         if (!arg || arg=="" || sscanf(arg, "%d", val)!=1) {
                 tell_object(me, msg);
                 return 1;
@@ -1252,49 +1252,49 @@ int do_upg(string arg)
                 return notify_fail( NOR "你不是这个洞天的主人！\n" NOR);
 
         if (val < 1 || val > 7)
-                return notify_fail( NOR "序号超出范围！\n" NOR);        
-                
+                return notify_fail( NOR "序号超出范围！\n" NOR);
+
         switch (val) {
                 case 1:
-                        if (query("guarder_level") >= 600) return notify_fail( NOR "阵图的这项能力已经升到顶级了！\n" NOR);       
-                        if (!chk_reqitems(me, 1) && wiz_level(me) < 7) return notify_fail( NOR "阵图的升级失败！\n" NOR);   
+                        if (query("guarder_level") >= 600) return notify_fail( NOR "阵图的这项能力已经升到顶级了！\n" NOR);
+                        if (!chk_reqitems(me, 1) && wiz_level(me) < 7) return notify_fail( NOR "阵图的升级失败！\n" NOR);
                         set("guarder_level", query("guarder_level") + 8);
                         __DIR__"data.c"->do_save("guarder_level", query("guarder_level"));
                         break;
                 case 2:
-                        if (query("guarder_lifetime") >= 200) return notify_fail( NOR "阵图的这项能力已经升到顶级了！\n" NOR);       
-                        if (!chk_reqitems(me, 2) && wiz_level(me) < 7) return notify_fail( NOR "阵图的升级失败！\n" NOR);   
+                        if (query("guarder_lifetime") >= 200) return notify_fail( NOR "阵图的这项能力已经升到顶级了！\n" NOR);
+                        if (!chk_reqitems(me, 2) && wiz_level(me) < 7) return notify_fail( NOR "阵图的升级失败！\n" NOR);
                         set("guarder_lifetime", query("guarder_lifetime") + 5);
                         __DIR__"data.c"->do_save("guarder_lifetime", query("guarder_lifetime"));
                         break;
                 case 3:
-                        if (query("guarder_pro") >= 99) return notify_fail( NOR "阵图的这项能力已经升到顶级了！\n" NOR);       
-                        if (!chk_reqitems(me, 3) && wiz_level(me) < 7) return notify_fail( NOR "阵图的升级失败！\n" NOR);   
+                        if (query("guarder_pro") >= 99) return notify_fail( NOR "阵图的这项能力已经升到顶级了！\n" NOR);
+                        if (!chk_reqitems(me, 3) && wiz_level(me) < 7) return notify_fail( NOR "阵图的升级失败！\n" NOR);
                         set("guarder_pro", query("guarder_pro") + 3);
                         __DIR__"data.c"->do_save("guarder_pro", query("guarder_pro"));
                         break;
                 case 4:
-                        if (query("apply/xiang_maxlife") >= 450 + query("enhance/xiang_maxlife")) return notify_fail( NOR "阵图的这项能力已经升到顶级了！\n" NOR);        
-                        if (!chk_reqitems(me, 4) && wiz_level(me) < 7) return notify_fail( NOR "阵图的升级失败！\n" NOR);   
+                        if (query("apply/xiang_maxlife") >= 450 + query("enhance/xiang_maxlife")) return notify_fail( NOR "阵图的这项能力已经升到顶级了！\n" NOR);
+                        if (!chk_reqitems(me, 4) && wiz_level(me) < 7) return notify_fail( NOR "阵图的升级失败！\n" NOR);
                         set("apply/xiang_maxlife", query("apply/xiang_maxlife") + 5);
                         __DIR__"data.c"->do_save("apply/xiang_maxlife", query("apply/xiang_maxlife"));
                         break;
                 case 5:
-                        if (query("apply/xiang_repair") >= 9) return notify_fail( NOR "阵图的这项能力已经升到顶级了！\n" NOR);       
-                        if (!chk_reqitems(me, 5) && wiz_level(me) < 7) return notify_fail( NOR "阵图的升级失败！\n" NOR);   
+                        if (query("apply/xiang_repair") >= 9) return notify_fail( NOR "阵图的这项能力已经升到顶级了！\n" NOR);
+                        if (!chk_reqitems(me, 5) && wiz_level(me) < 7) return notify_fail( NOR "阵图的升级失败！\n" NOR);
                         set("apply/xiang_repair", query("apply/xiang_repair") + 1);
                         __DIR__"data.c"->do_save("apply/xiang_repair", query("apply/xiang_repair"));
                         break;
                 case 6:
-                        if (query("apply/num_yanxi") >= YANXI_NUM + query("enhance/num_yanxi")) return notify_fail( NOR "阵图的这项能力已经升到顶级了！\n" NOR);        
-                        if (!chk_reqitems(me, 6) && wiz_level(me) < 7) return notify_fail( NOR "阵图的升级失败！\n" NOR);   
+                        if (query("apply/num_yanxi") >= YANXI_NUM + query("enhance/num_yanxi")) return notify_fail( NOR "阵图的这项能力已经升到顶级了！\n" NOR);
+                        if (!chk_reqitems(me, 6) && wiz_level(me) < 7) return notify_fail( NOR "阵图的升级失败！\n" NOR);
                         set("apply/num_yanxi", query("apply/num_yanxi") + 6);
                         __DIR__"data.c"->do_save("apply/num_yanxi", query("apply/num_yanxi"));
                         break;
                 case 7:
-                        if (query("apply/num_jisi") >= 4000) return notify_fail( NOR "这项能力暂时没有必要去升级。\n" NOR); 
-                        if (query("apply/num_jisi") >= 5000) return notify_fail( NOR "阵图的这项能力已经升到顶级了！\n" NOR);       
-                        if (!chk_reqtcash(me, 500) && wiz_level(me) < 7) return notify_fail( NOR "阵图的升级失败！\n" NOR); 
+                        if (query("apply/num_jisi") >= 4000) return notify_fail( NOR "这项能力暂时没有必要去升级。\n" NOR);
+                        if (query("apply/num_jisi") >= 5000) return notify_fail( NOR "阵图的这项能力已经升到顶级了！\n" NOR);
+                        if (!chk_reqtcash(me, 500) && wiz_level(me) < 7) return notify_fail( NOR "阵图的升级失败！\n" NOR);
                         set("apply/num_jisi", 5000);
                         __DIR__"data.c"->do_save("apply/num_jisi", query("apply/num_jisi"));
                         break;
@@ -1302,22 +1302,22 @@ int do_upg(string arg)
         msg = NOR CYN "...\n\n" NOR;
         //msg = HIK + "『" + query("zhen_lvname") + HIK + "阵图』" + HIY + repeat_string("★", query("zhen_type")) + NOR + "(前三项为零的洞天归于无主)\n" + NOR;
         msg = HIK + "『" + query("zhen_lvname") + HIK + "阵图』" + HIY + repeat_string("★", query("zhen_type")) + NOR + "\n" + NOR;
-        msg += sprintf( YEL "╔━━━━━━━━━━━━━━╦━━━━━━━━━━━━━━━━━━━━━╗\n" NOR );
-        msg += sprintf( YEL "┃" HIC "⒈傀儡等级+8：" NOR CYN "%9d/600 "YEL "┃" WHT "需求：" NOR HIK "%-36s" NOR YEL "┃\n" NOR, query("guarder_level"), sort_itemnames(1));        
-        msg += sprintf( YEL "┃" HIC "⒉傀儡生存时间+5：" NOR CYN "%5d/200 "YEL "┃" WHT "需求：" NOR HIK "%-36s" NOR YEL "┃\n" NOR, query("guarder_lifetime"), sort_itemnames(2));     
-        msg += sprintf( YEL "┃" HIC "⒊傀儡出战机率+3：" NOR CYN "%5d/99  "YEL "┃" WHT "需求：" NOR HIK "%-36s" NOR YEL "┃\n" NOR, query("guarder_pro"), sort_itemnames(3));  
-        msg += sprintf( YEL "┃" HIC "⒋阵图耐久+5：" NOR CYN "%9d/"+to_string(450+query("enhance/xiang_maxlife"))+" "YEL "┃" WHT "需求：" NOR HIK "%-36s" NOR YEL "┃\n" NOR, query("apply/xiang_maxlife"), sort_itemnames(4));       
-        msg += sprintf( YEL "┃" HIC "⒌阵图修复效率+1：" NOR CYN "%5d/9   "YEL "┃" WHT "需求：" NOR HIK "%-36s" NOR YEL "┃\n" NOR, query("apply/xiang_repair"), sort_itemnames(5));   
-        msg += sprintf( YEL "┃" HIC "⒍洞天研习次数+6：" NOR CYN "%5d/"+to_string(YANXI_NUM+query("enhance/num_yanxi"))+""YEL "┃" WHT "需求：" NOR HIK "%-36s" NOR YEL "┃\n" NOR, query("apply/num_yanxi"), sort_itemnames(6));   
-        msg += sprintf( YEL "┃" HIC "⒎祭祀魔像：" NOR CYN "%11d/5000"YEL "┃" WHT "需求：" NOR HIK "%-36s" NOR YEL "┃\n" NOR, query("apply/num_jisi"), "５００张千两金票");      
-        msg += sprintf( YEL "╚━━━━━━━━━━━━━━╩━━━━━━━━━━━━━━━━━━━━━╝\n" NOR );
+        msg += sprintf( YEL "╔----------------------------╦------------------------------------------╗\n" NOR );
+        msg += sprintf( YEL "┃" HIC "⒈傀儡等级+8：" NOR CYN "%9d/600 "YEL "┃" WHT "需求：" NOR HIK "%-36s" NOR YEL "┃\n" NOR, query("guarder_level"), sort_itemnames(1));
+        msg += sprintf( YEL "┃" HIC "⒉傀儡生存时间+5：" NOR CYN "%5d/200 "YEL "┃" WHT "需求：" NOR HIK "%-36s" NOR YEL "┃\n" NOR, query("guarder_lifetime"), sort_itemnames(2));
+        msg += sprintf( YEL "┃" HIC "⒊傀儡出战机率+3：" NOR CYN "%5d/99  "YEL "┃" WHT "需求：" NOR HIK "%-36s" NOR YEL "┃\n" NOR, query("guarder_pro"), sort_itemnames(3));
+        msg += sprintf( YEL "┃" HIC "⒋阵图耐久+5：" NOR CYN "%9d/"+to_string(450+query("enhance/xiang_maxlife"))+" "YEL "┃" WHT "需求：" NOR HIK "%-36s" NOR YEL "┃\n" NOR, query("apply/xiang_maxlife"), sort_itemnames(4));
+        msg += sprintf( YEL "┃" HIC "⒌阵图修复效率+1：" NOR CYN "%5d/9   "YEL "┃" WHT "需求：" NOR HIK "%-36s" NOR YEL "┃\n" NOR, query("apply/xiang_repair"), sort_itemnames(5));
+        msg += sprintf( YEL "┃" HIC "⒍洞天研习次数+6：" NOR CYN "%5d/"+to_string(YANXI_NUM+query("enhance/num_yanxi"))+""YEL "┃" WHT "需求：" NOR HIK "%-36s" NOR YEL "┃\n" NOR, query("apply/num_yanxi"), sort_itemnames(6));
+        msg += sprintf( YEL "┃" HIC "⒎祭祀魔像：" NOR CYN "%11d/5000"YEL "┃" WHT "需求：" NOR HIK "%-36s" NOR YEL "┃\n" NOR, query("apply/num_jisi"), "５００张千两金票");
+        msg += sprintf( YEL "╚----------------------------╩------------------------------------------╝\n" NOR );
         msg += HIG "第" + chinese_number(arg) + "项能力成功升级！\n" NOR;
         if (chk_zhenlv() > old) {
                 msg += HIG + "恭喜" + dtname + HIG + "你将阵图升级为" + query("zhen_lvname") + "！！\n" NOR;
                 CHANNEL_D->channel_broadcast("dt",  NOR + WHT + "听说" + HIC + dtname + NOR + WHT + "的护山大阵，从" + oldzhenname + NOR + WHT + "演变为" + query("zhen_lvname") + NOR + WHT + "了。\n" + NOR);
                 __DIR__"enter.c"->reload_me();
         }
-                
+
         tell_object(me, msg);
         return 1;
 }
@@ -1325,7 +1325,7 @@ int do_upg(string arg)
 void create()
 {
                 reload_me();
-        set("long", 
+        set("long",
 "这里是仙府前的广场，地面全部用汉白玉铺砌，亮光闪闪，一眼望去，\n"
 "使人生出渺小之心。远方白云朵朵，恍若轻纱，竟然都在脚下漂浮。一尊气\n"
 "象恢宏的巨石雕像("CYN"xiang"NOR")，牢牢屹立在广场中央。绕过雕像之后是一扇大石\n"
@@ -1349,22 +1349,22 @@ void create()
                 set("no_flyto", 1);
                 set("no_drift", 1);
                 set("no_protect", 1);
-                
+
                 set("xiang_life", XIANG_MAXLIFE);
                 set("xiang_maxlife", XIANG_MAXLIFE);
                 //set("max_carry_user", 30);
-                
+
                 set("flag_init", 1);
         set_heart_beat(41);//很合适的素数
         set("pathstring", replace_string(base_name( this_object() ), "guangchang", ""));
         setup();
 }
 
-int discmds() 
-{ 
-        tell_object(this_player(), "这里不允许你这样做。\n");  
-        return 1;  
-} 
+int discmds()
+{
+        tell_object(this_player(), "这里不允许你这样做。\n");
+        return 1;
+}
 
 int do_clear()
 {
@@ -1377,21 +1377,21 @@ int do_sav(string arg)
 {
         string key;
         int val;
-        
-        if (!arg || arg=="") 
+
+        if (!arg || arg=="")
                 return notify_fail(NOR"没有指定arg:key val！\n"NOR);
-        
-        if (sscanf(arg, "%s %d", key, val)!=2) 
+
+        if (sscanf(arg, "%s %d", key, val)!=2)
                 return notify_fail(NOR"没有指定arg:key val！\n"NOR);
-                
+
         return __DIR__"data.c"->do_save(key, val);
 }
 
 int do_invit(string arg)
 {
-        if (!arg || arg=="") 
+        if (!arg || arg=="")
                 return notify_fail(NOR"没有指定玩家id！\n"NOR);
-        
+
         //set("dongtian/my/dtname", dtname, find_player(arg));
         return 1;
 }
@@ -1399,10 +1399,10 @@ int do_invit(string arg)
 int do_settu(string arg)
 {
         int i1, i2, i3;
-        if (!arg || arg=="") 
+        if (!arg || arg=="")
                 return notify_fail(NOR"guarder_lifetime 100,guarder_level 300,guarder_pro 50！\n"NOR);
-                
-        if (sscanf(arg, "%d %d %d", i1, i2, i3)!=3) 
+
+        if (sscanf(arg, "%d %d %d", i1, i2, i3)!=3)
                 return notify_fail(NOR"guarder_lifetime 100,guarder_level 300,guarder_pro 50！\n"NOR);
 
         __DIR__"data.c"->do_save("guarder_lifetime", i1);
@@ -1414,9 +1414,9 @@ int do_settu(string arg)
 void add_ownlist(object me)
 {
         object *owns;
-        
+
         if (!me->is_character()) return;
-        
+
         if ((playerp(me) && interactive(me) && owner_level(me))
                 || query("id", me) == "kuilei jiang") {
                 owns = query("ownlist");
@@ -1424,7 +1424,7 @@ void add_ownlist(object me)
                         set("ownlist",  ({me}));
                 else if (member_array(me, owns) < 0)
                         set("ownlist",  owns + ({me}));
-                
+
                 tell_object(me, NOR HIG "你心里一动，似乎和魔像建立了某种心神联系。\n" NOR);
                 if (query("apply/num_jisi")>=1000) tell_object(me, NOR CYN "你感到魔像微不可察地对你点了点头。\n" NOR);
                 else tell_object(me, NOR CYN "你耳边传来一阵若有若无的声音道：饿...\n" NOR);
@@ -1433,16 +1433,16 @@ void add_ownlist(object me)
         }
 }
 
-void init() 
-{ 
+void init()
+{
         object me = this_player();
-        
-        if ((playerp(me)) && 
+
+        if ((playerp(me)) &&
                 (!query("load_dt_time") || query("load_dt_time")+60 < time())) {//没有读取过，或者读取时间超过了一分钟
                         set("load_dt_time", time());
                         reload_me();
         }
-        
+
         if ( wiz_level(me) > 5 ) {
                 add_action("do_clear", "clear");
                 add_action("save_name", "name");
@@ -1451,15 +1451,15 @@ void init()
                 add_action("do_expel_allusers", "expel");
                 //add_action("do_invit", "invit");
         }
-        
-        if ((playerp(me) && wiz_level(me) < 6) || (base_name(me)=="/clone/user/baby")) add_action("discmds", ({  
-                                                                "steal", "cast", "conjure", "array", "fight", 
-                                                                "quit", "home", "exit", "recall", "ansuan", "touxi", 
-                                                                "surrender", "chatroom", "rideto", "stab", 
-                                                                "guard", "ride", "hit", "array",  "battle", "accept",//"team", 
+
+        if ((playerp(me) && wiz_level(me) < 6) || (base_name(me)=="/clone/user/baby")) add_action("discmds", ({
+                                                                "steal", "cast", "conjure", "array", "fight",
+                                                                "quit", "home", "exit", "recall", "ansuan", "touxi",
+                                                                "surrender", "chatroom", "rideto", "stab",
+                                                                "guard", "ride", "hit", "array",  "battle", "accept",//"team",
                 }));  //只可以下kill，但不准跑掉，死战。可以在此组队
-                
-                
+
+
                 if (playerp(me) && interactive(me)) {
                         add_action("do_break", "break");
                         add_action("do_imbue", "imb");
@@ -1471,53 +1471,53 @@ void init()
         if (owner_level(me)) {
                 set_temp("dongtian/invite/hold_time", query("hold_time"), me);
         }
-                
-                
+
+
 }
 
 int valid_leave(object me, string dir)
 {
         if (me->is_busy())
                 return notify_fail(NOR "你还是忙完再说吧。\n" NOR);
-        
+
         if (me->is_fighting())
                 return notify_fail(NOR"你还是先解决目前的敌人吧！\n"NOR);
 
         if (!playerp(me) && (strsrch(base_name(me), "dongtian") == -1))
                 return notify_fail(NOR"你不是玩家！\n"NOR);
-                
+
         if (query("attacker_player") == me)
                 return notify_fail(NOR"你必须先停止对阵图的攻击！\n"NOR);
-                
+
         if ((strsrch(base_name(me), "dongtian") == -1) && dir == "north" && query("hold_time") < 2 && wiz_level(me) < 6) {//洞天非玩家所属
                 return notify_fail(NOR"这洞天目前没有主人，你不先尝试(break)来占领？\n"NOR);
-        }               
+        }
 
         if (dir == "out" && owner_level(me)) {
                 return notify_fail(NOR"你有洞天的通行权，从后山的传送阵出去吧。\n"NOR);
         }
-        
+
         if (dir == "out") {
                 delete_temp("dongtian/houshan", me);
         }
-        
+
         return ::valid_leave(me, dir);
 }
 
 /*int place_boss()
 {
         string fil;
-        string *flist = ({"huashan-pantu", "chaoting-taofan", "yan-ji", "tian-boguang", "jianzhong-daoke", "yang-kang", 
+        string *flist = ({"huashan-pantu", "chaoting-taofan", "yan-ji", "tian-boguang", "jianzhong-daoke", "yang-kang",
                 "liu-changjie", "dugu-qiubai", "jinlun-fawang", "zuo-lengchan", "gongsun-zhi", "jiangshi-daozhang", "fusang-wushi"});
         object boss;
-        
+
                 while (!fil || !get_object("/kungfu/class/misc/" + fil)->is_character()) {
                         fil = flist[random(sizeof(flist))];
                 }
                 boss = new("/kungfu/class/misc/" + fil);
                 delete("drops", boss);
                 boss->move(this_object());
-        
+
         return 1;
 }*/
 
@@ -1527,10 +1527,10 @@ int do_expel_allusers()//驱逐所有的生物到传送阵，删除他们的star
         object *enemies;
         string fil, *flist = get_dir(query("pathstring"));
         int flag;
-        
+
         me = get_object(__DIR__"teleport");
         if (!objectp(me)) return 0;
-        
+
         foreach (fil in flist) {
                 if (strsrch(fil, "teleport.c") != -1) continue;
                 if (strsrch(fil, ".c") == -1) continue;
@@ -1539,12 +1539,12 @@ int do_expel_allusers()//驱逐所有的生物到传送阵，删除他们的star
                 if (!flag) continue;
                 flag = room->is_room();
                 if (!flag) continue;
-                
+
                 enemies = filter_array(deep_inventory(room),
                            (: $1->is_character() &&
                            !owner_level($1)
                            :));
-                           
+
                 if (arrayp(enemies) && sizeof(enemies)) foreach (enemy in enemies) {
                         if (strsrch(base_name(enemy), "dongtian") != -1) continue;
                         //if (base_name(enemy)=="/kungfu/class/misc/haigui") continue;
@@ -1560,7 +1560,7 @@ int do_expel_allusers()//驱逐所有的生物到传送阵，删除他们的star
                         message_vision(append_color(NOR YEL "$N" NOR YEL "啪哒一声从天上摔了下来。\n" NOR, YEL), enemy);
                 }
         }
-        
+
         return 1;
 }
 
@@ -1569,7 +1569,7 @@ int place_ldz()
         int n = query("lveduo_n");
         int lv, i, j = random(4) + 2;
         object ob;
-        
+
         add_qy2(n);//梯形累加，最高5000点
         remove_call_out("place_ldz");
         if (query("hold_time") < 2) return 0;
@@ -1589,7 +1589,7 @@ int place_ldz()
                 if (n < 1) break;
         }
 
-        if (n > 0) call_out("place_ldz", 30 + random(16));              
+        if (n > 0) call_out("place_ldz", 30 + random(16));
         set("lveduo_n", n);
         return 1;
 }
@@ -1604,19 +1604,19 @@ int do_tick_minute()
         object previous = query("attacker_player");
         int repi, repc, repmax;
         string msg;
-        
+
         if (!query("flag_init")) reload_object(this_object());
-        
+
         get_object(__DIR__"zhenbaoge")->add_encounter();
         get_object(__DIR__"cangjingge")->add_encounter();
-        
+
     delete("attacker_player");
         if (previous && objectp(previous)) {
                 previous->set_short_desc(0);
                 previous->command("halt");
         }
-        
-//有祭祀能量时...start  
+
+//有祭祀能量时...start
  if (query("apply/num_jisi")) {
         if (query("hold_time") > 1) {
                 addn("apply/num_jisi", -1);//玩家为主人时，0为无主，1为npc
@@ -1630,7 +1630,7 @@ int do_tick_minute()
                 else if (query("apply/num_jisi") == 100)
                         CHANNEL_D->channel_broadcast("dt", NOR + WHT + "听说" + HIC + dtname + NOR + WHT + "魔像快要饿死了。\n" + NOR);
         }
-        
+
         //回复耐久
         if ((repc = query("xiang_life")) < (repmax = query("xiang_maxlife") + query("apply/xiang_maxlife"))) {
                 msg = NOR + "魔像轻轻地吸了口气，犹如长鲸吸水，天地元气蜂拥而至。\n ↑.";
@@ -1643,7 +1643,7 @@ int do_tick_minute()
                 addn("xiang_life", repi);
                 tell_room(this_object(), msg);
         }
-        
+
         //傀儡将刷新
         if (!query("born_klj")) {
                 klj = query("guarder_pro") / 10;
@@ -1660,7 +1660,7 @@ int do_tick_minute()
                                 ob->do_copyskill();
                                 set("dtname", dtname, ob);
                                 set("name", dtname + query("name", ob), ob);
-                                ob->move(this_object()); 
+                                ob->move(this_object());
                         ob->stop_busy();
                         ob->command("exert powerup");
                         ob->stop_busy();
@@ -1669,9 +1669,9 @@ int do_tick_minute()
                         ob->command("exert zu");
                         ob->stop_busy();
                         my = ob->query_entire_dbase();
-                        my["jing"]   = my["eff_jing"]   = my["max_jing"]; 
-                        my["jingli"] = my["eff_jingli"] = my["max_jingli"]; 
-                        my["qi"]     = my["eff_qi"]     = my["max_qi"]; 
+                        my["jing"]   = my["eff_jing"]   = my["max_jing"];
+                        my["jingli"] = my["eff_jingli"] = my["max_jingli"];
+                        my["qi"]     = my["eff_qi"]     = my["max_qi"];
                         my["neili"]  = my["max_neili"];
                                 /*enemy = query("attacker_player");
                                 if (enemy && objectp(enemy)) {
@@ -1691,8 +1691,8 @@ int do_tick_minute()
                 owns = query("ownlist");
                 if (!undefinedp(owns) && owns && sizeof(owns)) {
                         foreach (own in owns) {
-                                if (!own || 
-                                        !objectp(where=environment(own)) || 
+                                if (!own ||
+                                        !objectp(where=environment(own)) ||
                                         (playerp(own) && query("hold_time") != query_temp("dongtian/invite/hold_time", own)) ||
                                         (playerp(own) && !owner_level(own)) /*||
                                         ( (strsrch(base_name(where), query("pathstring")) == -1) && !playerp(own) )*/
@@ -1706,7 +1706,7 @@ int do_tick_minute()
                                 enemy = enemies[random(sizeof(enemies))];
                                         if (playerp(own)) can_smash(own, enemy, 80);
                                         else  can_smash(own, enemy, 90);
-                                } else if(!random(10) && !own->is_fighting() && 
+                                } else if(!random(10) && !own->is_fighting() &&
                                         (base_name(where)=="/d/city/swing" || base_name(where)=="/d/city/kedian4")) {
                                                 addqy = add_qy();
                                                 if (addqy) tell_object(own, NOR HIY "你在聊天室发呆为洞天挣得气运 +" + (string)addqy + "\n" NOR);
@@ -1714,7 +1714,7 @@ int do_tick_minute()
                         }
                         set("ownlist",  owns);
                 }
-                
+
         //阵里，可能会有玩家被其他玩家背进去害死
         enemies = filter_array(all_inventory(get_object(__DIR__"enter")),
                            (: playerp($1) &&
@@ -1745,8 +1745,8 @@ int do_tick_minute()
                         can_smash(me, enemy, 50);
                 }
         }
-        
-        //恢复大殿和后殿里的主人                           
+
+        //恢复大殿和后殿里的主人
         msg = NOR + HBGRN + CYN "徐徐清风吹过，精纯的天地灵气修补了你的身体。\n" + NOR;
         where = get_object(__DIR__"dadian");
         if (where && objectp(where)) {
@@ -1756,9 +1756,9 @@ int do_tick_minute()
                            :));
                 if (arrayp(enemies) && sizeof(enemies)) {foreach (enemy in enemies) {
                         my = enemy->query_entire_dbase();
-                        my["jing"]   = my["eff_jing"]   = my["max_jing"]; 
-                        my["jingli"] = my["eff_jingli"] = my["max_jingli"]; 
-                        my["qi"]     = my["eff_qi"]     = my["max_qi"]; 
+                        my["jing"]   = my["eff_jing"]   = my["max_jing"];
+                        my["jingli"] = my["eff_jingli"] = my["max_jingli"];
+                        my["qi"]     = my["eff_qi"]     = my["max_qi"];
                         my["neili"]  = my["max_neili"];
                                 }
 //                              addqy = sizeof(enemies);
@@ -1776,18 +1776,18 @@ int do_tick_minute()
                            :));
                 if (arrayp(enemies) && sizeof(enemies)) {foreach (enemy in enemies) {
                         my = enemy->query_entire_dbase();
-                        my["jing"]   = my["eff_jing"]   = my["max_jing"]; 
-                        my["jingli"] = my["eff_jingli"] = my["max_jingli"]; 
-                        my["qi"]     = my["eff_qi"]     = my["max_qi"]; 
+                        my["jing"]   = my["eff_jing"]   = my["max_jing"];
+                        my["jingli"] = my["eff_jingli"] = my["max_jingli"];
+                        my["qi"]     = my["eff_qi"]     = my["max_qi"];
                         my["neili"]  = my["max_neili"];
                                 }
                 }
                 tell_room(where, msg);
         }
-        
+
  }
  //有祭祀能量时...end
-        
+
         if (query("lveduo_time") && query("lveduo_time") < time()) {
                 delete("lveduo_time");
                 if (query("hold_time") < 2) {
@@ -1815,9 +1815,9 @@ int do_tick_minute()
                 //tell_room(this_object(), MAG "听说两小时后，" + msg + "人将图谋对" + dtname + "洞天发起掠夺。\n" NOR);
                 CHANNEL_D->channel_broadcast("dt", NOR + HIW + "风传两小时后，" + msg + "人将图谋对" + HIC + dtname + "洞天" + NOR + HIW + "发起掠夺。\n" NOR);
         }
-        
+
         return 1;
-        
+
 }
 
 int addn_c(int a, int b)
@@ -1826,7 +1826,7 @@ int addn_c(int a, int b)
                 if (a - b >= 0) return b;
                 return a;
         }
-        
+
         return 0;
 }
 
@@ -1837,11 +1837,11 @@ void addn_p()
         int old = chk_zhenlv();
         int flag = 1;
         object *enemies;
-        
+
         if (query("hold_time") < 2) {//洞天非玩家所属，衰败加2倍
                 num *= 3;
         }
-                
+
         if (rnd < 90 && (i = addn_c(query("guarder_level"), num))) {
                 addn("guarder_level", -i);
                 __DIR__"data.c"->do_save("guarder_level", query("guarder_level"));
@@ -1862,7 +1862,7 @@ void addn_p()
                 addn("apply/num_yanxi", -i);
                 __DIR__"data.c"->do_save("apply/num_yanxi", query("apply/num_yanxi"));
         }
-        
+
         if (query("hold_time") == 1)//已经是npc所有
         {
                 if (query("guarder_level") < 1 && query("guarder_lifetime") < 1 && query("guarder_pro") < 1) {//反弹
@@ -1899,14 +1899,14 @@ void create3(string na, string pa, string aa)
         object *enemies;
         int flag = 1;
 
-        if (!query("flag_init")) reload_object(this_object());          
+        if (!query("flag_init")) reload_object(this_object());
         //CHANNEL_D->channel_broadcast("debug", NOR + HIG + "na:"+ na + "  pa:" + pa + "\n" + NOR);
-        
+
         eroom = get_object(__DIR__"enter");
         if (!objectp(eroom)) return;//没有大阵
         //if (stringp(query("exits/out", eroom)) && query("hold_time") > 1) return;//大阵已经创建，并且属于玩家洞天
         flist = get_dir(pa);
-        
+
         while (flag) {
                 if (!sizeof(flist)) break;
                 ft = flist[random(sizeof(flist))];
@@ -1918,17 +1918,17 @@ void create3(string na, string pa, string aa)
                 flag = 0;
         }
         //CHANNEL_D->channel_broadcast("debug", NOR + HIG + "basename:" + base_name(room) + "\n" + NOR);
-        
+
         if ( stringp(query("exits/out", eroom)) && objectp(oroom = get_object(query("exits/out", eroom))) ) {
                 tell_room(oroom, NOR HIB "只见空间扭曲，通往" + dtname + "洞天的阵门已经合上了。\n" NOR);
                 delete("exits/dongtian", oroom);
         }
-        
+
         __DIR__"data.c"->do_save2("outroom", base_name(room));
 
         if (!query("flag_init", eroom)) reload_object(eroom);
         else {
-                eroom->create_exit2(); 
+                eroom->create_exit2();
         }
 
         if (na && query("hold_time") < 2) {//洞天非玩家所属，并且没有人闯阵时
@@ -1949,14 +1949,14 @@ void create3(string na, string pa, string aa)
                         reload_object(eroom);
                 }
         }
-        
-        CHANNEL_D->channel_broadcast("news", NOR + HIG + "传说" + HIC + dtname + "洞天" + HIG + "在" + aa + "现世。\n" NOR);      
+
+        CHANNEL_D->channel_broadcast("news", NOR + HIG + "传说" + HIC + dtname + "洞天" + HIG + "在" + aa + "现世。\n" NOR);
         //CHANNEL_D->channel_broadcast("debug", NOR + HIW + "洞天福地：在 " + base_name(room) + " 创建了通往" + dtname + "洞天的dongtian入口。\n" + NOR);
 }
 
 int create2(string na, string pa, string aa)
 {
-        call_out("create3", 3, na,pa,aa);               
+        call_out("create3", 3, na,pa,aa);
         return 1;
 }
 
@@ -1984,7 +1984,7 @@ void cg_check()
         string sid, hu = "/d/dongtian/obj/baiyuhu.c";
         int sguid;
         mapping students = __DIR__"data.c"->do_load2("students");
-        
+
         //DEBUG_CHANNEL(1);
         if (undefinedp(students) || !students || !sizeof(students))
                 return;
@@ -2023,7 +2023,7 @@ int add_qy()
         set("dt_qy_addtime", time() + 15);//至少15秒
         qy += qyn;
         set("dt_qy", qy);
-        __DIR__"data.c"->do_save("qy", qy);     
+        __DIR__"data.c"->do_save("qy", qy);
         return qyn;
 }
 
@@ -2032,7 +2032,7 @@ int add_qy2(int addnum)
         int qy = query_dt_qy();
         qy += addnum;
         set("dt_qy", qy);
-        __DIR__"data.c"->do_save("qy", qy);     
+        __DIR__"data.c"->do_save("qy", qy);
         return qy;
 }
 
@@ -2041,44 +2041,44 @@ int count_qy()
         object ob, room = get_object(__DIR__"houdian.c");
         int qy = query_dt_qy();
         int giftnum = query("dt_qy_giftnum");
-        
+
         if (undefinedp(giftnum) || !giftnum)
                 giftnum = __DIR__"data.c"->do_load("giftnum");
         if (undefinedp(giftnum) || !giftnum) {
                 giftnum = 1;
         }
-        
-        //普通最佳情况下，每天不过3500点气运，等于3天可在此抽一次。 
+
+        //普通最佳情况下，每天不过3500点气运，等于3天可在此抽一次。
         //屠人场的傀儡将被杀的情况下，就凑不足10000点气运
         //白玉笏直接返点20000，等于直接给2次抽取机会
         if ((qy / 10000) >= giftnum) {
                 giftnum += 1;
-                
+
                 if (!random(6)) {
                         ob = new("/u/redl/npc/obj/ntb");
                         log_file("static/yangyong3",sprintf("%s 洞天 10000气运 -> 百元泥潭币, 主人( %s )\n",TIME_D->replace_ctime(time()), implode(query("owners"), "、")));
                 }
                 else ob = EQUIPMENT_D->create_dynamic("", 60, 600);
-                CHANNEL_D->channel_broadcast("dt", NOR + HIW + "传说" + HIC + load_name() + "洞天" + NOR + HIW + 
+                CHANNEL_D->channel_broadcast("dt", NOR + HIW + "传说" + HIC + load_name() + "洞天" + NOR + HIW +
                          "秉承天地气运，后殿的功德池内结出了" +  query("name", ob) + NOR + HIW + "。\n" + NOR);
-                ob->move(room); 
+                ob->move(room);
                 set("who_get/id", "redl", ob);
                 set("who_get/time", time() + 180, ob);//3分钟内谁也不能捡起
                 tell_room(room, NOR + "功德池内气运莲花冉冉盛开，其中一朵托起" + query("name", ob) + NOR + "后一振抛在地上。\n" + NOR);
         }
-        
+
         set("dt_qy_giftnum", giftnum);
-        __DIR__"data.c"->do_save("giftnum", giftnum);   
+        __DIR__"data.c"->do_save("giftnum", giftnum);
         return 1;
 }
 
 void heart_beat()
 {
-        object ob; 
+        object ob;
         string roompath, roomname;
         int plv;
         mapping my;
-        
+
         do_tick_minute();
         if (query("addn_p_minute") < time()) {
                 set("addn_p_minute", time() + 3200);
@@ -2093,7 +2093,7 @@ void heart_beat()
 
         if (query("qybattle_minute") < time() && query("hold_time") > 1) {
                 set("qybattle_minute", time() + 28800);
-                
+
                                 ob = new(__DIR__"npc/guarder2");
                                 set("croom", this_object(), ob);
                                 plv = query("guarder_level") / 10;
@@ -2106,7 +2106,7 @@ void heart_beat()
                                 set("name", dtname + query("name", ob), ob);
                                 roompath = "/d/pk/turen" + (string)(1 + random(12));
                                 //DEBUG_CHANNEL((string)query_dt_qy() + " - " + roompath);
-                                ob->move(roompath); 
+                                ob->move(roompath);
                                 roomname = query("short", environment(ob));
                                 CHANNEL_D->channel_broadcast("dt", NOR + WHT + query("name", ob) + NOR + WHT + "：秉承洞天气运( " + (string)query_dt_qy() + " )点在" + roomname + NOR + WHT + "接受挑战。\n" + NOR);
                         ob->stop_busy();
@@ -2117,9 +2117,9 @@ void heart_beat()
                         ob->command("exert zu");
                         ob->stop_busy();
                         my = ob->query_entire_dbase();
-                        my["jing"]   = my["eff_jing"]   = my["max_jing"]; 
-                        my["jingli"] = my["eff_jingli"] = my["max_jingli"]; 
-                        my["qi"]     = my["eff_qi"]     = my["max_qi"]; 
+                        my["jing"]   = my["eff_jing"]   = my["max_jing"];
+                        my["jingli"] = my["eff_jingli"] = my["max_jingli"];
+                        my["qi"]     = my["eff_qi"]     = my["max_qi"];
                         my["neili"]  = my["max_neili"];
                                 set("chat_chance", 3, ob);
                                 add_ownlist(ob);
@@ -2129,6 +2129,3 @@ void heart_beat()
                 else set_heart_beat(37);
 
 }
-
-
-

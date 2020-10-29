@@ -23,7 +23,7 @@ void create()
 void use_poison()
 {
         object *enemy, ob;
-        string msg;
+//      string msg;
 
         enemy = query_enemy();
         if( sizeof(enemy) ) ob = enemy[random(sizeof(enemy))];

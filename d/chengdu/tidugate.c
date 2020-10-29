@@ -24,7 +24,7 @@ LONG );
 
 int valid_leave(object me, string dir)
 {
-        int i;
+//      int i;
         object bing;
 
         bing = present("qin bing", environment(me));

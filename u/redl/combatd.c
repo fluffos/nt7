@@ -2221,12 +2221,12 @@ varargs int do_attack(object me, object victim, object weapon, int attack_type)
                         tell_object(me, SETDISPLAY(21,49)+DELLINE);
                         tell_object(me, SETDISPLAY(22,49)+DELLINE);
                         tell_object(me, SETDISPLAY(23,49)+DELLINE);
-                        tell_object(me, SETDISPLAY(21,50)+HIY"┏━━━━━━━━━━━━━┓");
+                        tell_object(me, SETDISPLAY(21,50)+HIY"┏--------------------------┓");
                         tell_object(me, SETDISPLAY(22,50)+HIY"┃");
                         tell_object(me, SETDISPLAY(22,52)+HIG"精："HIR+query("jing",me)+"/"+query("eff_jing",me));
                         tell_object(me, SETDISPLAY(22,65)+HIG"气："HIR+query("qi",me)+"/"+query("eff_qi",me));
                         tell_object(me, SETDISPLAY(22,78)+HIY"┃");
-                        tell_object(me, SETDISPLAY(23,50)+HIY"┗━━━━━━━━━━━━━┛"NOR);
+                        tell_object(me, SETDISPLAY(23,50)+HIY"┗--------------------------┛"NOR);
                         tell_object(me, REST);
                 }
                 */

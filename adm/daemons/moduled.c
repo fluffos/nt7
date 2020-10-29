@@ -134,7 +134,7 @@ string module_stats(object ob, object owner)
         string modlevel, modname, *apply, *eq_files, *key;
         mapping modparts, data;
         mapping stats;
-        int i, j, n, bas, num, len = 0;
+        int i/*, j, n*/, bas, num, len = 0;
         string msg, str, eq_str;
 
         // 初始化资料
@@ -144,7 +144,7 @@ string module_stats(object ob, object owner)
 
         if( classp(query_temp("module/"+modlevel+"_"+modname, owner)) )
         {
-                mod_stats = query_temp("module/"+modlevel+"_"+modname, owner); 
+                mod_stats = query_temp("module/"+modlevel+"_"+modname, owner);
         }
         else
         {
@@ -165,14 +165,14 @@ string module_stats(object ob, object owner)
                 // 自造未激活套装部件
                 else
                         modparts = query_temp("module/modparts_" + modlevel+"_"+modname, owner);
-                
+
                 if( !mapp(modparts) ) modparts = ([]);
                 apply = keys(modparts);
-                
+
                 msg = sprintf(HIW"  %s(%d/%d"NOR")\n",
                                modname,
                                query_temp("module/modamount_"+modlevel+"_"+modname, owner), num);
-                msg+= sprintf(NOR "┏━━━━━━━━━━┓\n");
+                msg+= sprintf(NOR "┏--------------------┓\n");
 
                 data = query_temp("module/modparts_" + modlevel+"_"+modname, owner);
                 if( !mapp(data) ) data = ([]);
@@ -201,14 +201,14 @@ string module_stats(object ob, object owner)
                         msg += str;
                 }
 
-                msg += sprintf(NOR "┗━━━━━━━━━━┛\n");
+                msg += sprintf(NOR "┗--------------------┛\n");
                 bas = mod_stats->bas;
                 if( query_temp("module/modamount_"+modlevel+"_"+modname, owner) >= bas )
                         eq_str = HIR;
                 else
                         eq_str = HIK;
                 //msg += sprintf(HIG"  装备效果"NOR")\n");
-                msg += sprintf(NOR "%s┏━━━━━━━━━━┓"NOR"\n", eq_str);
+                msg += sprintf(NOR "%s┏--------------------┓"NOR"\n", eq_str);
 
                 str = sprintf("%d件:", bas);
                 msg += sprintf(NOR "%s┃"NOR"%-20s%s┃"NOR"\n", eq_str, str, eq_str);
@@ -249,8 +249,8 @@ string module_stats(object ob, object owner)
                         }
                 }
 
-                
-                msg += sprintf(NOR "%s┗━━━━━━━━━━┛"NOR"\n", eq_str);
+
+                msg += sprintf(NOR "%s┗--------------------┛"NOR"\n", eq_str);
         }
         return msg;
 }
@@ -283,7 +283,7 @@ int valid_module(class eqmodule mod_stats)
 class eqmodule load_module(string modlevel)
 {
         string filename, this_file, temp_str;
-        object ob;
+//      object ob;
         class eqmodule item;
         string *field;
         string modname, names, bas_prop, adv_prop;
@@ -382,7 +382,7 @@ class eqmodule load_module(string modlevel)
                 }
                 item->mod_parts = copy(stats);
         }
-        
+
         if( !all ) all = ([]);
         all[modlevel] = copy(item);
         return item;
@@ -403,7 +403,7 @@ void equip_module(object ob, object owner)
         int i, n;
         int bas, num;
         int max_qi, max_jing;
-        
+
         if( ob->is_item_make() )
         {
                 // 自造装备非装备主人无法激活套装属性
@@ -413,7 +413,7 @@ void equip_module(object ob, object owner)
 
         modlevel = query("mod_level", ob); // 套装的序号、等级
         modname = query("mod_name", ob);   // modname 来判断是否是套装
-        
+
         inv = owner->query_equipment_objects(); // 优化效率
         if( ob->is_item_make() )        // 检查套装部件
         {
@@ -428,7 +428,7 @@ void equip_module(object ob, object owner)
                            query("mod_level", $1) == $(modlevel) && !$1->is_item_make() :));
 
         n = sizeof(obs); // 装备的套装件数
-        
+
         // 自造的绿化的时候用base_name作为mark，掉落的用部件序号作为mark
         file = query("mod_mark", ob);
         name = query("name", ob);
@@ -436,7 +436,7 @@ void equip_module(object ob, object owner)
         // 标记套装组件
         modparts=query_temp("module/modparts_"+modlevel+"_"+modname, owner);
         if( !mapp(modparts) || !sizeof(modparts) ) modparts = ([]);
-        modparts[file] = name; 
+        modparts[file] = name;
         set_temp("module/modparts_"+modlevel+"_"+modname, modparts, owner);
 
         // 标记套装件数
@@ -444,16 +444,16 @@ void equip_module(object ob, object owner)
 
         // 装备的套装设置标记
         set_temp("mod_equip", 1, ob);
-        
+
         // 少于2件不成套装
         if( n < 2 ) return;
-                
+
         // 读取套装资料
         if( undefinedp(all[modlevel]) )
                 mod_stats = load_module(modlevel);
         else
                 mod_stats = copy(all[modlevel]);
-                
+
         // 检查合法性
         //if( !valid_module(mod_stats) )
         //        return;
@@ -465,7 +465,7 @@ void equip_module(object ob, object owner)
         else if( n == bas )
         {
                 // 加上正在装备的ob，正好激活套装属性
-                mod_stats->mod_name = modname; 
+                mod_stats->mod_name = modname;
                 if( ob->is_item_make() )        // 补充套装的部件资料
                         mod_stats->mod_parts = ([ file : name ]);
 
@@ -481,7 +481,7 @@ void equip_module(object ob, object owner)
 
                         set_temp("mod_active", 1, obs[i]);  // look时候颜色变化以及激活绿化属性
                 }
-      
+
                 set_temp("module/"+modlevel+"_"+modname, mod_stats, owner);  // 玩家身上标记套装属性
                 set_temp("fullsuit/"+modlevel+"_"+modname, mod_stats->bas_prop, owner);
         }
@@ -491,7 +491,7 @@ void equip_module(object ob, object owner)
                         error("套装属性出现混乱，请立刻提交bug给admin。\n");
 
                 // 套装全齐了
-                mod_stats->mod_name = modname;  
+                mod_stats->mod_name = modname;
                 if( ob->is_item_make() )
                 {
                         data = copy(tmp_stats->mod_parts);
@@ -500,21 +500,21 @@ void equip_module(object ob, object owner)
                 }
 
                 set_temp("mod_active", 1, ob);
-                
+
                 set_temp("module/"+modlevel+"_"+modname, mod_stats, owner);  // 玩家身上标记套装属性
-                
-                
+
+
                 applied_prop = copy(mod_stats->bas_prop);
                 stats = copy(mod_stats->adv_prop);
                 apply = keys(stats);
-                for( i = 0; i<sizeof(apply); i++ ) 
+                for( i = 0; i<sizeof(apply); i++ )
                 {
-                        if( undefinedp(applied_prop[apply[i]]) ) 
-                                applied_prop[apply[i]] = stats[apply[i]]; 
+                        if( undefinedp(applied_prop[apply[i]]) )
+                                applied_prop[apply[i]] = stats[apply[i]];
                         else
-                                applied_prop[apply[i]] += stats[apply[i]]; 
+                                applied_prop[apply[i]] += stats[apply[i]];
                 }
-                
+
                 set_temp("fullsuit/"+modlevel+"_"+modname, applied_prop, owner);
 
                 if( ob->is_item_make() ) // 备齐了全套装备
@@ -527,7 +527,7 @@ void equip_module(object ob, object owner)
                 if( !classp(tmp_stats = copy(query_temp("module/"+modlevel+"_"+modname, owner))) )
                         error("套装属性出现混乱，请立刻提交bug给admin。\n");
 
-                mod_stats->mod_name = modname;  
+                mod_stats->mod_name = modname;
 
                 if( ob->is_item_make() )
                 {
@@ -541,11 +541,11 @@ void equip_module(object ob, object owner)
                 set_temp("module/"+modlevel+"_"+modname, mod_stats, owner);  // 玩家身上标记套装属性
                 set_temp("fullsuit/"+modlevel+"_"+modname, mod_stats->bas_prop, owner);
         }
-        
+
         // 战场上无效
         if( query_temp("warquest", owner) ) return;
-        
-        owner->reset_buff_cache(); 
+
+        owner->reset_buff_cache();
 
         max_qi = query("max_qi", owner);
         max_jing = query("max_jing", owner);
@@ -560,7 +560,7 @@ void equip_module(object ob, object owner)
                 max_jing = 0;
         addn("eff_qi", max_qi, owner);
         addn("eff_jing", max_jing, owner);
-                
+
         return;
 }
 
@@ -570,13 +570,13 @@ void unequip_module(object ob, object owner)
 {
         class eqmodule mod_stats;
         class eqmodule tmp_stats;
-        mapping data, stats, prop, applied_prop;
+        mapping data/*, stats, prop, applied_prop*/;
         mapping modparts;
-        string *apply;
+//      string *apply;
         string modname;
         string modlevel, file, name;
         object *inv, *obs;
-        int i, j, n, flag = 0;
+        int i/*, j*/, n/*, flag = 0*/;
         int bas, num;
 
         if( ob->is_item_make() ) {
@@ -586,7 +586,7 @@ void unequip_module(object ob, object owner)
 
         modlevel = query("mod_level", ob);
         modname = query("mod_name", ob);
-        
+
         inv = owner->query_equipment_objects();
         if( ob->is_item_make() )        // 检查套装部件
         {
@@ -605,15 +605,15 @@ void unequip_module(object ob, object owner)
         // 检查套装部件ob是否是套装里的一件
         file = query("mod_mark", ob);
         name = query("name", ob);
-        
+
         // 标记套装文件
         modparts=query_temp("module/modparts_"+modlevel+"_"+modname, owner);
         if( !mapp(modparts) || !sizeof(modparts) )
                 modparts = ([]);
-        
+
         map_delete(modparts, file);
         set_temp("module/modparts_"+modlevel+"_"+modname, modparts, owner);
-        
+
 
         // 标记套装件数
         addn_temp("module/modamount_"+modlevel+"_"+modname, -1, owner);
@@ -628,10 +628,10 @@ void unequip_module(object ob, object owner)
         if( query_temp("module/modamount_"+modlevel+"_"+modname, owner) != n )
                 error("套装装备件数出现混乱，请立刻提交bug给admin。\n");
         */
-        
+
         // 少于2件不成套装
         if( n < 1 ) return;
-      
+
 
         // 读取套装资料
         if( undefinedp(all[modlevel]) )
@@ -642,7 +642,7 @@ void unequip_module(object ob, object owner)
         // 检查合法性
         //if( !valid_module(mod_stats) )
         //        return;
-                
+
         bas = mod_stats->bas;
         num = mod_stats->num;
 
@@ -669,18 +669,18 @@ void unequip_module(object ob, object owner)
         else if( n == num-1 ) {
                 if( !classp(tmp_stats = copy(query_temp("module/"+modlevel+"_"+modname, owner))) )
                         error("套装属性出现混乱，请立刻提交bug给admin。\n");
-                
-                mod_stats->mod_name = modname;  
+
+                mod_stats->mod_name = modname;
                 if( ob->is_item_make() )
                 {
                         data = copy(tmp_stats->mod_parts);
                         map_delete(data, file);
                         mod_stats->mod_parts = copy(data);
                 }
-                
+
                 set_temp("module/"+modlevel+"_"+modname, mod_stats, owner);
                 set_temp("fullsuit/"+modlevel+"_"+modname, mod_stats->bas_prop, owner);
-                
+
                 if( ob->is_item_make() )
                         delete_temp("modequip_itemmake_level", owner); // 删除套装等级，suit special调用
 
@@ -690,7 +690,7 @@ void unequip_module(object ob, object owner)
         {
                 if( !classp(tmp_stats = copy(query_temp("module/"+modlevel+"_"+modname, owner))) )
                         error("套装属性出现混乱，请立刻提交bug给admin。\n");
-                
+
                 mod_stats->mod_name = modname;  // 自造套装名称不是一样
                 if( ob->is_item_make() )
                 {
@@ -698,7 +698,7 @@ void unequip_module(object ob, object owner)
                         map_delete(data, file);
                         mod_stats->mod_parts = copy(data);
                 }
-                
+
                 set_temp("module/"+modlevel+"_"+modname, mod_stats, owner);
                 set_temp("fullsuit/"+modlevel+"_"+modname, mod_stats->bas_prop, owner);
 
@@ -711,8 +711,8 @@ public int suit_special(object me, string arg)
 {
         mapping buff, data;
         string msg;
-        mapping map_status; 
-        string *mname; 
+        mapping map_status;
+        string *mname;
         object *obs;
         int i, suitlvl, skill, temp;
 
@@ -726,51 +726,51 @@ public int suit_special(object me, string arg)
         化解伤害、抵抗虚弱、封存绝招、绝招防御、研究效果、汲取效果
         */
 
-        obs = me->query_equipment_objects(); 
+        obs = me->query_equipment_objects();
         obs = filter_array(obs,
                         (: $1->is_item_make() /*&& $1->item_owner() == $(query("id", me))*/ :));
-        
+
         if( sizeof(obs) < 9 )
                 return notify_fail("你没有装备全套的九件装备。\n");
 
         if( suitlvl < 4 )
                 return notify_fail("你目前装备的套装等级不够，无法使用套装特技！\n");
-                                
+
         for( i=0; i<sizeof(obs); i++ )
         {
                 if( query("qianghua/level", obs[i]) < 9 )
                         return notify_fail("由于"+obs[i]->name(1)+NOR"不是九星装备，无法使用套装特技！\n");
         }
-        
+
         if( arg == "sun" ) // 增加命中
-        {                   
+        {
 
                 if( BUFF_D->check_buff(me, "powerofsun") )
                         return notify_fail("你现在正在运用此类特技中，请稍后再使用。\n");
-        
+
                 if( query("neili", me) < 1000000 )
                         return notify_fail("你的内力不足，无法施展套装绝技。\n");
-                
+
                 if( query("neili", me) < query("max_neili", me) )
                         return notify_fail("你的剩余内力不足，无法施展套装绝技。\n");
-                
+
                 if( query("neili", me) > 2 * query("max_neili", me) ) set("neili", 2 * query("max_neili", me), me);
                 skill = query("neili", me) / 10000;
                 set("neili", 0, me);
-        
+
                 msg = HIC "$N" HIC "一声长吟，只见太阳之力源源不尽被吸进全身装备，刹那间流光异彩，将其笼罩！\n" NOR;
-                
+
                 data = ([]);
                 map_status = me->query_skill_map();
                 if( sizeof(map_status) )
                 {
-                        mname  = keys(map_status); 
-                        temp = sizeof(map_status); 
+                        mname  = keys(map_status);
+                        temp = sizeof(map_status);
 
-                        for( i=0; i<temp; i++ ) 
+                        for( i=0; i<temp; i++ )
                                 data[mname[i]] = skill;
                 }
-                                
+
                 data +=
                 ([
                         "str"   : skill,
@@ -778,7 +778,7 @@ public int suit_special(object me, string arg)
                         "attack": skill,
                         "ap_power": 200,
                 ]);
-                
+
                 buff =
                 ([
                         "caster": me,
@@ -789,9 +789,9 @@ public int suit_special(object me, string arg)
                         "attr"  : "bless",
                         "name"  : "套装特技·太阳之力",
                         "time"  : skill,
-                        "buff_data": data,      
+                        "buff_data": data,
                         "buff_msg" : msg,
-                        "disa_msg" : "你的套装特技·太阳之力运行完毕，将内力收回丹田。\n",                      
+                        "disa_msg" : "你的套装特技·太阳之力运行完毕，将内力收回丹田。\n",
                 ]);
 
                 BUFF_D->buffup(buff);
@@ -806,27 +806,27 @@ public int suit_special(object me, string arg)
 
                 if( query("neili", me) < 1000000 )
                         return notify_fail("你的内力不足，无法施展套装绝技。\n");
-                
+
                 if( query("neili", me) < query("max_neili", me) )
                         return notify_fail("你的剩余内力不足，无法施展套装绝技。\n");
-                
+
                 if( query("neili", me) > 2 * query("max_neili", me) ) set("neili", 2 * query("max_neili", me), me);
                 skill = query("neili", me) / 10000;
                 set("neili", 0, me);
-                
+
                 msg = HIR "$N举头望天，悠然一声长叹，刹那间月亮之力源源不尽被吸进全身装备，全身被红色的光芒包裹，杀气骤现！\n" NOR;
-                
+
                 data = ([]);
                 map_status = me->query_skill_map();
                 if( sizeof(map_status) )
                 {
-                        mname  = keys(map_status); 
-                        temp = sizeof(map_status); 
+                        mname  = keys(map_status);
+                        temp = sizeof(map_status);
 
-                        for( i=0; i<temp; i++ ) 
+                        for( i=0; i<temp; i++ )
                                 data[mname[i]] = skill;
                 }
-                                
+
                 data +=
                 ([
                         "str"   : skill,
@@ -834,7 +834,7 @@ public int suit_special(object me, string arg)
                         "unarmed_damage": skill,
                         "da_power": 300,
                 ]);
-                
+
                 buff =
                 ([
                         "caster": me,
@@ -845,16 +845,16 @@ public int suit_special(object me, string arg)
                         "attr"  : "bless",
                         "name"  : "套装特技·月亮之力",
                         "time"  : skill,
-                        "buff_data": data,      
+                        "buff_data": data,
                         "buff_msg" : msg,
-                        "disa_msg" : "你的套装特技·月亮之力运行完毕，将内力收回丹田。\n",                      
+                        "disa_msg" : "你的套装特技·月亮之力运行完毕，将内力收回丹田。\n",
                 ]);
 
                 BUFF_D->buffup(buff);
 
                 return 1;
         }
-        
+
         else if( arg == "star" )
         {
                 if( BUFF_D->check_buff(me, "powerofstar") )
@@ -862,16 +862,16 @@ public int suit_special(object me, string arg)
 
                 if( query("neili", me) < 1000000 )
                         return notify_fail("你的内力不足，无法施展套装绝技。\n");
-                
+
                 if( query("neili", me) < query("max_neili", me) )
                         return notify_fail("你的剩余内力不足，无法施展套装绝技。\n");
-                
+
                 if( query("neili", me) > 2 * query("max_neili", me) ) set("neili", 2 * query("max_neili", me), me);
                 skill = query("neili", me) / 10000;
                 set("neili", 0, me);
-                
+
                 msg = HIR "$N长啸一声，顿时星辰之力源源不尽被吸进全身装备，所过之处泛出红色血芒，令人心胆具寒。\n" NOR;
-                   
+
                 data =
                 ([
                         "leech_neili" : 30,
@@ -880,7 +880,7 @@ public int suit_special(object me, string arg)
                         "fatal_blow"  : 30,
                         "avoid_busy"  : 30,
                 ]);
-                
+
                 buff =
                 ([
                         "caster": me,
@@ -891,18 +891,18 @@ public int suit_special(object me, string arg)
                         "attr"  : "bless",
                         "name"  : "套装特技·星辰之力",
                         "time"  : skill,
-                        "buff_data": data,      
+                        "buff_data": data,
                         "buff_msg" : msg,
-                        "disa_msg" : "你的套装特技·星辰之力运行完毕，将内力收回丹田。\n",                      
+                        "disa_msg" : "你的套装特技·星辰之力运行完毕，将内力收回丹田。\n",
                 ]);
 
                 BUFF_D->buffup(buff);
 
                 return 1;
         }
-        
+
         else
                 write("套装特技使用格式：suit sun|moon|star\n");
-     
+
         return 1;
 }

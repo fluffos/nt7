@@ -47,7 +47,7 @@ private string replace_keys(string description)
 }
 private string emotion_detail_description(string emotion, mixed info)
 {
-        string msg = "── 表情 "HIY+emotion+NOR+" 之详细叙述如下："+repeat_string("─", 13-(strlen(emotion)/2))+"\n";
+        string msg = "---- 表情 "HIY+emotion+NOR+" 之详细叙述如下："+repeat_string("--", 13-(strlen(emotion)/2))+"\n";
 
         msg += NOR WHT"1.无对象无附加文字    ："NOR+replace_keys(info[NONE_ALL])+"\n";
         msg += NOR WHT"2.无对象有附加文字    ："NOR+replace_keys(info[NONE_ALL_ARG])+"\n";
@@ -57,7 +57,7 @@ private string emotion_detail_description(string emotion, mixed info)
         msg += NOR WHT"6.对象为某人有附加文字："NOR+replace_keys(info[YOU_ALL_ARG])+"\n";
         msg += NOR WHT"7.表情注解            ："NOR+(info[NOTE] || "尚未设定")+"\n";
         msg += NOR WHT"8.使用次数            ："NOR+info[USE]+" 次\n";
-        msg += "───────────────────────────\n";
+        msg += "------------------------------------------------------\n";
         return msg;
 }
 

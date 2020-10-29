@@ -95,7 +95,7 @@ void create()
         set("long",@LONG
 
 一个胖胖的阿姨正在盯著你。
-        
+
 LONG
 );
         set_weight(1);
@@ -218,7 +218,7 @@ int do_addin()
                                         "对著"+me->name(1)+"说： 你的帐户里面没有足够的赌资。\n",me);
                                         return 1;
                                 }
-                                break;        
+                                break;
                         case 2:
                                 if( query("bank/now", me)<BetAmount*5){
                                         message_vision(this_object()->name()+
@@ -279,7 +279,7 @@ int do_dump(string str,object me)
         string ponid;
         mapping who;
         object met,user;
- 
+
         if (!me) me=this_player();
         if( check_id(query("id", me),"player") != "");
         else {
@@ -416,7 +416,7 @@ int do_eat(string str)
         string num1,num2;
         object me=this_player();
         mapping who;
- 
+
         if (!str || sscanf(str,"%s %s",num1,num2)!=2) return 0;
         if( check_id(query("id", me),"player") != "");
         else {
@@ -487,7 +487,7 @@ int do_gon(string str,object me)
 {
         int i;
         mapping who;
- 
+
         if (!me) me=this_player();
         if( check_id(query("id", me),"player") != "");
         else {
@@ -510,7 +510,7 @@ int do_gon(string str,object me)
            return 1;
         }
         if (!str) str=LastDump;
- 
+
         if( query("id", me) == P1Data["Id"])who=P1Data;
         else if( query("id", me) == P2Data["Id"])who=P2Data;
         else if( query("id", me) == P3Data["Id"])who=P3Data;
@@ -585,7 +585,7 @@ varargs int do_win(string str,object me)
         string Mj="";
         mapping who;
         object met;
- 
+
         if (!me) me=this_player();
         if( check_id(query("id", me),"player") != "");
         else {
@@ -719,7 +719,7 @@ varargs int do_win(string str,object me)
                                                 addn("bank/past", (BetAmount*(j+3+b)), me);
                                                 message_vision("$N很不服气的转帐"+BetAmount*(j+3+b)+"给$n。\n",met,me);
                                              }
-                                        break;        
+                                        break;
                                 case 2:
                                         money=query("bank/now", met);
                                         if(money<(j+3+b)*BetAmount) {
@@ -730,7 +730,7 @@ varargs int do_win(string str,object me)
                                                 addn("bank/now", (BetAmount*(j+3+b)), me);
                                                 message_vision("$N很不服气的转帐"+BetAmount*(j+3+b)+"给$n。\n",met,me);
                                              }
-                                        break;        
+                                        break;
                                 case 3:
                                         money=query("bank/future", met);
                                         if(money<(j+3+b)*BetAmount) {
@@ -746,10 +746,10 @@ varargs int do_win(string str,object me)
                                         break;
                         }
                  }
-                 
+
                  score = ({ 0,1,0,j+3+b,0}); // ({ 自摸,胡牌,放枪,台数<放枪为负的>,犯规 })
                  set_mjdata(me,score);
-                                  
+
                  for (i=0;i<Play;i++)
                  {
                      if(NowPlayerId[i]==LastDumpId) continue;
@@ -764,7 +764,7 @@ varargs int do_win(string str,object me)
                         //this_object()->save();
                      }
                  }
-                 
+
               }
            }
            else
@@ -797,7 +797,7 @@ varargs int do_win(string str,object me)
                                                 addn("bank/past", (BetAmount*(j+3+bb)), me);
                                                 message_vision("$N很不服气的转帐"+BetAmount*(j+3+bb)+"给$n。\n",met,me);
                                              }
-                                        break;        
+                                        break;
                                 case 2:
                                         money=query("bank/now", met);
                                         if(money<(j+3+bb)*BetAmount) {
@@ -808,7 +808,7 @@ varargs int do_win(string str,object me)
                                                 addn("bank/now", (BetAmount*(j+3+bb)), me);
                                                 message_vision("$N很不服气的转帐"+BetAmount*(j+3+bb)+"给$n。\n",met,me);
                                              }
-                                        break;        
+                                        break;
                                 case 3:
                                         money=query("bank/future", met);
                                         if(money<(j+3)*BetAmount) {
@@ -868,17 +868,17 @@ varargs int do_win(string str,object me)
                                         money=query("bank/past", me);
                                         addn("bank/past", (-BetAmount*j), me);
                                         message_vision("$n没收了$N"+BetAmount*j+"的存款。\n",me,this_object());
-                                        break;        
+                                        break;
                                 case 2:
                                         money=query("bank/now", me);
                                         addn("bank/now", (-BetAmount*j), me);
                                         message_vision("$n没收了$N"+BetAmount*j+"的存款。\n",me,this_object());
-                                        break;        
+                                        break;
                                 case 3:
                                         money=query("bank/future", me);
                                         addn("bank/future", (-BetAmount*j), me);
                                         message_vision("$n没收了$N"+BetAmount*j+"的存款。\n",me,this_object());
-                                        break;        
+                                        break;
                                 default:
                                         break;
                         }
@@ -919,7 +919,7 @@ int do_check_win(string str,int flag)
         int t,k,W,T,S,Sp;
         string tempW="",tempT="",tempS="",tempB="";
         string Special="1w9w1s9s1t9teasowenojofaba";
- 
+
         K=0;
         if (size > 33 && !flag){
            if (do_check_Mj(str,"ea")&&do_check_Mj(str,"so")&&do_check_Mj(str,"we")&&do_check_Mj(str,"no")&&
@@ -1075,7 +1075,7 @@ int check_hu(string strW)
            i=-2;
         }
         }
- 
+
         if (sizeof(strW) > 5){
            for (i=0;i<sizeof(strW);i+=2) {//再把刻删掉
                check=do_check_Mj(strW,strW[i..i+1]);
@@ -1101,7 +1101,7 @@ int do_touch(string str,object me)
 {
         int i,check;
         mapping who;
- 
+
         if (!me) me=this_player();
         if( check_id(query("id", me),"player") != "");
         else {
@@ -1176,7 +1176,7 @@ int do_pon(string str,object me)
 {
         int i;
         mapping who;
- 
+
         if (!me) me=this_player();
         if( check_id(query("id", me),"player") != "");
         else {
@@ -1267,7 +1267,7 @@ int check_player()
                         if(user->is_inactive()) return 0;
                 }
                 else return 0;
-                
+
         }
         return 1;
 }
@@ -1279,7 +1279,7 @@ int do_restart(string str)
         if (str!="mj"){
            if( check_id(query("id", me),"player") != "");
            else if(!check_player());
-           else 
+           else
            {
               command("stare"+query("id", me));
               command("say 这牌局跟你没关系。");
@@ -1337,7 +1337,7 @@ int wash_mj(int amount)
         P1Data["AutoGon"]="";
         P1Data["AutoPon"]="";
         P1Data["Dump"]="";
- 
+
         P2Data["Mj"]="";
         P2Data["OutGon"]="";
         P2Data["Out"]="";
@@ -1348,7 +1348,7 @@ int wash_mj(int amount)
         P2Data["AutoGon"]="";
         P2Data["AutoPon"]="";
         P2Data["Dump"]="";
- 
+
         P3Data["Mj"]="";
         P3Data["OutGon"]="";
         P3Data["Out"]="";
@@ -1359,7 +1359,7 @@ int wash_mj(int amount)
         P3Data["AutoGon"]="";
         P3Data["AutoPon"]="";
         P3Data["Dump"]="";
- 
+
         P4Data["Mj"]="";
         P4Data["OutGon"]="";
         P4Data["Out"]="";
@@ -1370,7 +1370,7 @@ int wash_mj(int amount)
         P4Data["AutoGon"]="";
         P4Data["AutoPon"]="";
         P4Data["Dump"]="";
- 
+
         end=END;
         NO_HU=START;
         NO_GON=START;
@@ -1402,7 +1402,7 @@ int wash_mj(int amount)
                } else i--;
            }
         }
- 
+
 //        for (i=0;i<sizeof(X);i++) printf("%s=%d ",X[i],MjE_Data[X[i]]);
         message_vision("\n$N很快的把桌上的牌整理好。\n\n",this_object());
         command("say 嗯!!好了可以开始了!!");
@@ -1458,7 +1458,7 @@ int do_setmj(string str)
         string numstr;
         mapping who;
         object me=this_player();
- 
+
         if( query("id", me) == P1Data["Id"])who=P1Data;
         else if( query("id", me) == P2Data["Id"])who=P2Data;
         else if( query("id", me) == P3Data["Id"])who=P3Data;
@@ -1539,7 +1539,7 @@ int do_setmj(string str)
               who["Show"]="";
               return notify_fail("你取消显示设定。\n");
            }
- 
+
            if (numstr=="代码"||numstr=="3"){
               numstr="代码";
               write("你设定只显示代码。\n");
@@ -1585,7 +1585,7 @@ int do_check_eat(string num1,string num2,string LastDump)
         A=do_check_num(num1,2);
         B=do_check_num(num2,2);
         C=do_check_num(LastDump,2);
- 
+
         if (A > 9 || B > 9 || C > 9) return 0;
         if ((A+B)%2!=0){
            if (A > B){
@@ -1626,11 +1626,11 @@ string show_mj(string str,int flag)
              size=strlen(Mj);
              Mj1="┌";
              for (a=0;a<(size/2)-1;a++){
-                 if (a%2==0) Mj1+="─";
+                 if (a%2==0) Mj1+="--��";
                  else Mj1+="┬";
              }
              Mj1+="┐\n│";
- 
+
              for (a=0;a<size-1;a++){
                  if (flag==5 || flag==6){
                     if (Mj[a+2..a+3]=="万") Mj1+=HIR;
@@ -1680,7 +1680,7 @@ string show_mj(string str,int flag)
              for (a=(size/2)-1;a>0;a--){
                  if (a%2!=0){
                     if (flag==0 || flag==5) Mj1+=str[a-1..a];
-                    else Mj1+="─";
+                    else Mj1+="--��";
                  }
                  else Mj1+="┴";
              }
@@ -1789,7 +1789,7 @@ int delete_last_dump(string whoId)
 mixed do_check_num(string str,int flag)
 {
         int number;
- 
+
         if (!str) return MjC[0];
         sscanf(str,"%d%s",number,str);
         if (number == 0){
@@ -1846,7 +1846,7 @@ void check_flower(mapping who)
 {
         string newstr = "",str=who["Mj"],temp,temp1;
         int i = strlen(str),j;
- 
+
         while(i--){
               i--;
            temp=str[i..i+1];
@@ -1878,7 +1878,7 @@ int do_check_Mj(string datastr,string str)
         return (sizeof(temp)-1);
 */
         int size=strlen(datastr),check=0;
- 
+
         while(size--){
               size--;
           if (datastr[size..size+1]==str) check++;
@@ -1910,7 +1910,7 @@ string do_delete_Mj(string datastr,string str,int amount)//把某牌去掉
 string sort_data(string str)
 {
         int i = strlen(str),a,b,c,d;
- 
+
         string newstr="",temp="";
         for (a=-1;a<i;a++){
             a++;
@@ -2057,7 +2057,7 @@ int do_look(string arg)
                     Mj+="西家["+NowPlayerId[2]+"]:"+NOR+p3o+"\n";
                     if(NowPlayer==3) Mj+=HIY;
                     Mj+="北家["+NowPlayerId[3]+"]:"+NOR+p4o+"\n";
-              
+
                     Mj+=sprintf("[%10s]打过的牌有:",P1Data["Id"]);
                     Mj+=show_mj(P1Data["Dump"],2)+"\n";
 
@@ -2112,7 +2112,7 @@ write(@HELP_TIN
      2. setmj tin 5w     (设定听五万)
      3. setmj auto tin   (设定自动摸打)
      4. dump 3w          (打掉废牌开始自动听牌)
-     
+
    <PS. 如果设定当中打错了, 请打 setmj tin none 重新设定要听的牌。>
 
    想查询更详细的setmj 用法请打 help setmj 。
@@ -2153,7 +2153,7 @@ HELP_TIN);
         if(!str)
         {
                 write("tin <废牌代号>。\n");
-                return 1;        
+                return 1;
         } else {
                 check=do_check_Mj(MjE,str);
                 if (check==0) return notify_fail("没有["+str+"]这种代码。\n");
@@ -2206,7 +2206,7 @@ string to_say_play()
 return @HELP
 
         指  令    例          子                             说    明
-    ┌────────────────────────────────┐
+    �----------------------------------------------------------------──────────────────────┐
     │  bet       bet 100 设定每台为100货币                  设定赌注 │
     │  addin     ----------                                 加入排局 │
     │  look      l mj或.看自己牌,l 1p或.1看玩家1的牌                 │
@@ -2222,17 +2222,17 @@ return @HELP
     │  restart   restart 或 restart mj。                    重新开始 │
     │  showmj    showmj <id> 让其他人看自己的牌             现牌     │
     │  top       top                                        查资料   │
-    └────────────────────────────────┘
+    �----------------------------------------------------------------──────────────────────┘
 HELP;
     //    return 1;
 }
 string to_say_rule()
 {
 return @HELP
- 
+
 　　每胡就有底台３，在加上所得的台就是总台，要是自摸就＊３，相当于三一的算法。
 放枪就由总战绩那扣掉所失的台数。胡者则加上去。
- 
+
 HELP;
     //    return 1;
 }
@@ -2334,7 +2334,7 @@ int show_top(string str)
                         );
         }
         me->start_more(output);
-        return 1;        
+        return 1;
 }
 */
 // score 格式: ({ 0自摸,1胡牌,2放枪,3台数<放枪为负的>,4犯规 })
@@ -2362,7 +2362,7 @@ int set_mjdata(object me,int *score)
                 record[getuid(me)]["lose"]+=score[2];
                 record[getuid(me)]["total"]+=score[3];
                 record[getuid(me)]["bad"]+=score[4];
-                
+
         }
         return 1;
 }
@@ -2453,7 +2453,7 @@ int get_tc(mapping who)
         &&  do_check_Mj(tempB,"so") > 1
         &&  do_check_Mj(tempB,"we") > 1
         &&  do_check_Mj(tempB,"no") > 1) Tc+="@F";
- 
+
         for (i=0;i<sizeof(str);i+=2){
             if (str[i..i+1]=="xx") continue;
             if (do_check_Mj(str,str[i..i+1])==3) check++;
@@ -2563,7 +2563,7 @@ string *do_sort_record(string type,string *keys)
                          max_value=record[temp_keys[j]][type];
                          mark=j;
                         }
-                        
+
                 }
                 if(sizeof(temp_keys)>0)
                 {
@@ -2696,7 +2696,7 @@ string find_tin(string mymj)
                 {
                         if(sizeof(Smj)>0 && sizeof(Smj)%6 == 0) continue;
                 }
-        
+
                 cardd+=({cardnum[i]});
         }
         if(sizeof(cardd)>11) return "ERROR";
@@ -2725,7 +2725,7 @@ string show_site(string myid)
                 if(Play>1) down = NowPlayerId[1];
                 if(Play>2) face = NowPlayerId[2];
                 if(Play>3) up = NowPlayerId[3];
-        } 
+        }
          else if(sizeof(NowPlayerId)>1 && myid==NowPlayerId[1])
         {
                 if(Play>2) down = NowPlayerId[2];
@@ -2744,7 +2744,7 @@ string show_site(string myid)
                 face = NowPlayerId[1];
                 up = NowPlayerId[2];
         }
-        else 
+        else
         {
                         if(Play>0) myid = NowPlayerId[0];
                         if(Play>1) down = NowPlayerId[1];
@@ -2756,23 +2756,23 @@ string show_site(string myid)
         else if(NowPlayerId[NowPlayer]==down) down_mark="*";
         else if(NowPlayerId[NowPlayer]==myid) myid_mark="*";
 //                     face
-//               ┌─────┐
+//               �----------────┐
 //               │  　　　  │
 //               │　      　│
 //             up│　  ∵  　│down
 //               │　      　│
 //               │  　　　  │
-//               └─────┘
+//               �----------────┘
 //                    myid
 
         out = sprintf("             %13s\n",face_mark+face);
-        out += "               ┌─────┐\n";
+        out += "               �----------────┐\n";
         out += "               │  　　　  │\n";
         out += "               │　      　│\n";
         out += sprintf("  %13s│　  ∵  　│%-13s\n",up_mark+up,down_mark+down);
         out += "               │　      　│\n";
         out += "               │  　　　  │\n";
-        out += "               └─────┘\n";
+        out += "               �----------────┘\n";
         out += sprintf("             %13s\n\n",myid_mark+myid);
         return out;
 }

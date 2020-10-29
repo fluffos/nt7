@@ -134,7 +134,7 @@ int get_ready(object me)
 
 int get_finish(object me)
 {
-        object ob;
+//      object ob;
 
         /*
         if (query("character", me) != "光明磊落" &&
@@ -239,7 +239,7 @@ mapping query_action(object me, object weapon)
 int valid_learn(object me)
 {
         int level;
-        int i;
+//      int i;
 
         /*
         if (query("character", me) != "光明磊落" &&

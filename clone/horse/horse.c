@@ -143,7 +143,7 @@ int move_to(object me, string place)
 {
         object running, horse, follower;
         string trans_path;
-        int trans_times, sk_riding, horse_level, horse_tili, cost_tili, level;
+        int trans_times, sk_riding/*, horse_level*/, horse_tili, cost_tili, level;
         string temp,temp2;
         object trans_target, me_env;
         

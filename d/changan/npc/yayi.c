@@ -15,7 +15,7 @@ varargs void drool(string msg, string who);
 
 void create()
 {
-        string name, id;
+        string name/*, id*/;
         name = first_name[random(sizeof(first_name))];
         name += name_words[random(sizeof(name_words))];
         name += name_words[random(sizeof(name_words))];

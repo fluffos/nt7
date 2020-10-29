@@ -27,17 +27,17 @@ int main(object me, string arg)
         {
                 i = 1;
                 msg = sprintf(HIC "%s(" HIW "%s" HIC ")的数据库列表：\n" NOR
-                              HIW "──数据库名──────表数───\n" NOR,
+                              HIW "----数据库名------------表数------\n" NOR,
                               LOCAL_MUD_NAME(), upper_case(INTERMUD_MUD_NAME));
 
                 while (sizeof(ret = DATABASE_D->db_fetch_row("SHOW DATABASES", i)))
                 {
                         sql = sprintf("SHOW TABLES FROM %s", ret[0]);
-                        msg += sprintf(CYN "   %-18s [ " WHT "%3d" CYN " ]\n" NOR, ret[0], 
+                        msg += sprintf(CYN "   %-18s [ " WHT "%3d" CYN " ]\n" NOR, ret[0],
                                        DATABASE_D->db_query(sql));
                         i++;
                 }
-                msg += sprintf(HIW "─────────────────\n" NOR 
+                msg += sprintf(HIW "----------------------------------\n" NOR
                                HIC "本机共有 " HIW "%d" HIC " 个数据库。" NOR, i - 1);
         }
         // 列出指定游戏数据库的数据表(显示列数量)
@@ -52,7 +52,7 @@ int main(object me, string arg)
                         return notify_fail(CYN "没有 " WHT + db + CYN " 这个数据库。\n" NOR);
 
                 msg = sprintf(HIC "数据库(" HIW "%s" HIC ")的数据表：\n" NOR
-                              HIW "──数据表名────────────列───行──\n" NOR, db);
+                              HIW "----数据表名------------------------列------行----\n" NOR, db);
 
                 while (sizeof(ret = DATABASE_D->db_fetch_row(sql, i)))
                 {
@@ -66,7 +66,7 @@ int main(object me, string arg)
                                        ret[0], cnum, lnum);
                         i++;
                 }
-                msg += sprintf(HIW "─────────────────────────\n" NOR 
+                msg += sprintf(HIW "--------------------------------------------------\n" NOR
                                HIC "此数据库共有 " HIW "%d" HIC " 张数据表。" NOR, i - 1);
         }
         // 列出其他数据库中指定数据表的字段信息
@@ -81,7 +81,7 @@ int main(object me, string arg)
                         return notify_fail(CYN "没有 " WHT + db + CYN " 这个数据库。\n" NOR);
 
                 msg = sprintf(HIC "数据库(" HIW "%s" HIC ")的数据表：\n" NOR
-                              HIW "──数据表名────────────列──\n" NOR, db);
+                              HIW "----数据表名------------------------列----\n" NOR, db);
 
                 while (sizeof(ret = DATABASE_D->db_fetch_row(sql, i)))
                 {
@@ -92,7 +92,7 @@ int main(object me, string arg)
                                        ret[0], cnum);
                         i++;
                 }
-                msg += sprintf(HIW "─────────────────────\n" NOR 
+                msg += sprintf(HIW "------------------------------------------\n" NOR
                                HIC "此数据库共有 " HIW "%d" HIC " 张数据表。" NOR, i - 1);
         }
         // 列出游戏数据库中指定数据表的字段信息
@@ -106,7 +106,7 @@ int main(object me, string arg)
                         return notify_fail(CYN "没有 " WHT + tb + CYN " 这个数据表。\n" NOR);
 
                 msg = sprintf(HIC "数据表(" HIW "%s" HIC ")的结构：\n" NOR
-                              HIW "──字段名──────────────附加信息──────\n" NOR, tb);
+                              HIW "----字段名----------------------------附加信息------------\n" NOR, tb);
 
                 while (sizeof(ret = DATABASE_D->db_fetch_row(sql, i)))
                 {
@@ -118,7 +118,7 @@ int main(object me, string arg)
                                        implode(res, CYN " | " WHT));
                         i++;
                 }
-                msg += sprintf(HIW "─────────────────────────────\n" NOR 
+                msg += sprintf(HIW "----------------------------------------------------------\n" NOR
                                HIC "此数据表共有 " HIW "%d" HIC " 个字段。" NOR, i - 1);
         }
         // 按照表达式查询制定数据表中制定字段的内容
@@ -137,18 +137,18 @@ int main(object me, string arg)
                         sql = sprintf("SELECT %s FROM %s WHERE %s", col, tb, expr);
 
                         msg = sprintf(HIC "查询(" HIW "%s" HIC ")的结果：\n" NOR
-                              HIW "──字段名────────────────────────\n" NOR
+                              HIW "----字段名------------------------------------------------\n" NOR
                               HIC "   %s\n" NOR
-                              HIW "───────────────────────查询结果──\n" NOR,
+                              HIW "----------------------------------------------查询结果----\n" NOR,
                               sql, col);
 
                         while (sizeof(ret = DATABASE_D->db_fetch_row(sql, i)))
                         {
-                                msg += sprintf(CYN "   %" + (stringp(ret[0]) ? "s" : "O") + 
+                                msg += sprintf(CYN "   %" + (stringp(ret[0]) ? "s" : "O") +
                                                "\n" NOR, ret[0]);
                                 i++;
                         }
-                        msg += sprintf(HIW "─────────────────────────────\n" NOR 
+                        msg += sprintf(HIW "----------------------------------------------------------\n" NOR
                                        HIC "此次查询共有 " HIW "%d" HIC " 个符合结果。" NOR, i - 1);
                         if (! (i - 1))
                                 return notify_fail(sprintf(CYN "查询：" WHT "%s" CYN "\n没有得到任何结果，请检"
@@ -162,18 +162,18 @@ int main(object me, string arg)
                         sql = sprintf("SELECT %s FROM %s", col, tb);
 
                         msg = sprintf(HIC "查询(" HIW "%s" HIC ")的结果：\n" NOR
-                              HIW "──字段名────────────────────────\n" NOR
+                              HIW "----字段名------------------------------------------------\n" NOR
                               HIC "   %s\n" NOR
-                              HIW "───────────────────────查询结果──\n" NOR,
+                              HIW "----------------------------------------------查询结果----\n" NOR,
                               sql, col);
 
                         while (sizeof(ret = DATABASE_D->db_fetch_row(sql, i)))
                         {
-                                msg += sprintf(CYN "   %" + (stringp(ret[0]) ? "s" : "O") + 
+                                msg += sprintf(CYN "   %" + (stringp(ret[0]) ? "s" : "O") +
                                                "\n" NOR, ret[0]);
                                 i++;
                         }
-                        msg += sprintf(HIW "─────────────────────────────\n" NOR 
+                        msg += sprintf(HIW "----------------------------------------------------------\n" NOR
                                        HIC "此次查询共有 " HIW "%d" HIC " 个符合结果。" NOR, i - 1);
                         if (! (i - 1))
                                 return notify_fail(sprintf(CYN "查询：" WHT "%s" CYN "\n没有得到任何结果，请检"
@@ -209,7 +209,7 @@ int main(object me, string arg)
 
                 // 显示信息
                 msg = sprintf(HIC "查询(" HIW "%s" HIC ")的第 " HIW "%d" HIC " 行结果：\n" NOR
-                              HIW "──字段名────────────字段内容────────\n" NOR,
+                              HIW "----字段名------------------------字段内容----------------\n" NOR,
                               sql, n);
                 cnum = sizeof(arr);
 
@@ -219,7 +219,7 @@ int main(object me, string arg)
                 for (i = 0; i < cnum; i++)
                         msg += sprintf(CYN "  %-30s " WHT "%O\n" NOR, arr[i], ret[i]);
 
-                msg += sprintf(HIW "─────────────────────────────\n" NOR 
+                msg += sprintf(HIW "----------------------------------------------------------\n" NOR
                                HIC "此列共有 " HIW "%d" HIC " 个字段。" NOR, cnum);
 
                 // 准备下一次查询
@@ -250,7 +250,7 @@ int main(object me, string arg)
 
                 // 显示信息
                 msg = sprintf(HIC "查询(" HIW "%s" HIC ")的第 " HIW "%d" HIC " 行结果：\n" NOR
-                              HIW "──字段名────────────字段内容────────\n" NOR,
+                              HIW "----字段名------------------------字段内容----------------\n" NOR,
                               sql, n);
                 cnum = sizeof(arr);
 
@@ -260,7 +260,7 @@ int main(object me, string arg)
                 for (i = 0; i < cnum; i++)
                         msg += sprintf(CYN "  %-30s " WHT "%O\n" NOR, arr[i], ret[i]);
 
-                msg += sprintf(HIW "─────────────────────────────\n" NOR 
+                msg += sprintf(HIW "----------------------------------------------------------\n" NOR
                                HIC "此列共有 " HIW "%d" HIC " 个字段。" NOR, cnum);
 
                 // 准备下一次查询
@@ -294,25 +294,25 @@ protected void done_edit(object me, string sql)
                 return;
         }
         if (sql[<1..<0] == "\n") sql = sql[0..<2];
-        msg = sprintf(HIC "语句(" HIW "%s" HIC ")的执行结果：\n" 
-                      HIW "────────────────────────────────"
-                      "───────\n" NOR, sql);
+        msg = sprintf(HIC "语句(" HIW "%s" HIC ")的执行结果：\n"
+                      HIW "----------------------------------------------------------------"
+                      "--------------\n" NOR, sql);
         if (! ret = DATABASE_D->db_query(sql))
         {
-                msg += CYN "没有得到任何可用信息。\n" HIW "────────────────"
-                       "───────────────────────\n" NOR;
+                msg += CYN "没有得到任何可用信息。\n" HIW "--------------------------------"
+                       "----------------------------------------------\n" NOR;
         } else
         if (stringp(ret))
         {
                 msg += sprintf(HIR "错误信息：" NOR WHT "%s\n" NOR
-                               HIW "────────────────────────────"
-                               "───────────\n" NOR, ret);
+                               HIW "--------------------------------------------------------"
+                               "----------------------\n" NOR, ret);
         } else
         {
                 res = DATABASE_D->db_all_query(sql);
                 msg += sprintf(WHT "%O\n" NOR
-                               HIW "────────────────────────────"
-                               "───────────\n" NOR, res);
+                               HIW "--------------------------------------------------------"
+                               "----------------------\n" NOR, res);
         }
         tell_object(me, msg);
         return;

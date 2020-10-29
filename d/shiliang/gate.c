@@ -28,7 +28,7 @@ LONG
 }
 void init()
 {
-    object book, me;
+    object /*book,*/ me;
     me = this_player();
     add_action("do_climb", "climb");
 }

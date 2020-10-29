@@ -161,7 +161,7 @@ void attempt_apprentice(object ob)
 
         name=query("name", ob);
 
-        if( !(ob_fam=query("family", ob)) || 
+        if( !(ob_fam=query("family", ob)) ||
             ob_fam["family_name"] != "少林派")
         {
                 command("say " + RANK_D->query_respect(ob) +
@@ -234,7 +234,7 @@ void attempt_apprentice(object ob)
 
         command("char 老衲又得一可塑之才，真是大畅老怀 !");
         name=query("name", ob);
-        new_name = "渡" + name[2..3];
+        new_name = "渡" + name[1..1];
         NAME_D->remove_name(query("name", ob),query("id", ob));
         set("name", new_name, ob);
         NAME_D->map_name(query("name", ob),query("id", ob));
@@ -510,40 +510,40 @@ int accept_ask(object me, string topic)
                                  "reborn"  : 1,
                                  "gongxian": 3000, ]));
                       break;
-        case "神剑指穴" : 
-                return MASTER_D->teach_pfm(me, this_object(), 
-                        ([ "perform" : "can_perform/lunhui-jian/zhi", 
-                           "name"    : "神剑指穴", 
-                           "sk1"     : "lunhui-jian", 
-                           "lv1"     : 160, 
-                           "force"   : 300, 
-                           "gongxian": 550, 
-                           "neili": 2000, 
-                           "shen"    : 30000, ])); 
-                break; 
-        case "我入地狱" : 
-                return MASTER_D->teach_pfm(me, this_object(), 
-                        ([ "perform" : "can_perform/lunhui-jian/ru", 
-                           "name"    : "我入地狱", 
-                           "sk1"     : "lunhui-jian", 
-                           "lv1"     : 200, 
-                           "neili"   : 4000, 
-                           "force"   : 300, 
-                           "gongxian": 1000, 
-                           "shen"    : 100000, ])); 
-                break; 
-        case "六道轮回" : 
-                return MASTER_D->teach_pfm(me, this_object(), 
-                        ([ "perform" : "can_perform/lunhui-jian/lun", 
-                           "name"    : "六道轮回", 
-                           "sk1"     : "lunhui-jian", 
-                           "lv1"     : 240, 
-                           "neili"   : 5000, 
-                           "force"   : 350, 
-                           "gongxian": 1500, 
-                           "shen"    : 100000, ])); 
-                break; 
-         
+        case "神剑指穴" :
+                return MASTER_D->teach_pfm(me, this_object(),
+                        ([ "perform" : "can_perform/lunhui-jian/zhi",
+                           "name"    : "神剑指穴",
+                           "sk1"     : "lunhui-jian",
+                           "lv1"     : 160,
+                           "force"   : 300,
+                           "gongxian": 550,
+                           "neili": 2000,
+                           "shen"    : 30000, ]));
+                break;
+        case "我入地狱" :
+                return MASTER_D->teach_pfm(me, this_object(),
+                        ([ "perform" : "can_perform/lunhui-jian/ru",
+                           "name"    : "我入地狱",
+                           "sk1"     : "lunhui-jian",
+                           "lv1"     : 200,
+                           "neili"   : 4000,
+                           "force"   : 300,
+                           "gongxian": 1000,
+                           "shen"    : 100000, ]));
+                break;
+        case "六道轮回" :
+                return MASTER_D->teach_pfm(me, this_object(),
+                        ([ "perform" : "can_perform/lunhui-jian/lun",
+                           "name"    : "六道轮回",
+                           "sk1"     : "lunhui-jian",
+                           "lv1"     : 240,
+                           "neili"   : 5000,
+                           "force"   : 350,
+                           "gongxian": 1500,
+                           "shen"    : 100000, ]));
+                break;
+
 
         default:
                 return 0;

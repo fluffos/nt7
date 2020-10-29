@@ -27,8 +27,8 @@ int is_container() { return 1; }
 
 void init()
 {
-        object ob;
-        object me = this_player();
+//      object ob;
+//      object me = this_player();
         /*
         if( query("combat_exp", me) <= 5000
          && query("amount", this_object()) >= 10

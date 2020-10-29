@@ -35,7 +35,7 @@ void create()
 int convert(string arg)
 {
         object me = this_player();
-        object ob;
+//      object ob;
 
         if (arg!="snake" && arg!="she" && arg!="qing she") return 0;
         if( query("family/family_name", me) != "欧阳世家" )

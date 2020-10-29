@@ -175,7 +175,7 @@ void attempt_apprentice(object ob)
         }
 
         name=query("name", ob);
-        new_name = "静" + name[2..3];
+        new_name = "静" + name[1..1];
         NAME_D->remove_name(query("name", ob),query("id", ob));
         set("name", new_name, ob);
         NAME_D->map_name(query("name", ob),query("id", ob));
@@ -785,15 +785,14 @@ void unconcious()
         die();
 }
 */
-     int recognize_apprentice(object me, string skill) 
-     { 
+     int recognize_apprentice(object me, string skill)
+     {
              if( skill != "yitian-jian")
                          return 0;
-             if (query("family/family_name", me) != "峨嵋派") return -1 ; 
+             if (query("family/family_name", me) != "峨嵋派") return -1 ;
              if(query("family/master_name", me) == "风陵师太" )
 {
-             message_vision("灭绝师太对$N说道：既然是同门师妹，我就教你倚天剑法吧。\n", me); 
-             return 1; 
+             message_vision("灭绝师太对$N说道：既然是同门师妹，我就教你倚天剑法吧。\n", me);
+             return 1;
      }
-     } 
-
+     }
