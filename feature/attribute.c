@@ -91,7 +91,7 @@ int query_talent_buff(string key)
 
 int query_all_buff(string key)
 {
-        int max_qi, max_jing;
+//      int max_qi,max_jing;
         int value;
         
         if( undefinedp(value = query_temp("buff_cache/"+key)) )
@@ -162,7 +162,7 @@ int query_con()
 int query_dex()
 {
         mapping sk;
-        int str, scale;
+        int str/*, scale*/;
         int ability = 0;
 
         //scale = (this_object()->query_encumbrance()*100)/this_object()->query_max_encumbrance();

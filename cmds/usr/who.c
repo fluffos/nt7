@@ -307,7 +307,7 @@ mixed main(object me, string arg, int remote)
         if (opt_employ)     
         {
                 object *virep_ob = ({ });
-                mapping db;
+//              mapping db;
                 object cob, eob;
                 string *virlist;
                 

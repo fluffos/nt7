@@ -1113,7 +1113,7 @@ private void from_zhenyuan()
 
 private void from_xuanming()
 {
-        object ob;
+//      object ob;
 
         set("scale", 135);
         set("from", ({
@@ -1295,7 +1295,7 @@ private void from_quanzhen()
 
 private void from_emei()
 {
-        object ob;
+//      object ob;
 
         set("scale", 130);
         set("from", ({ 
@@ -1345,7 +1345,7 @@ private void from_emei()
 
 private void from_murong() 
 { 
-        object ob;
+//      object ob;
 
         set("scale", 130);
         set("from", ({  
@@ -1396,7 +1396,7 @@ private void from_murong()
 
 private void from_hujia()
 {  
-        object ob; 
+//      object ob; 
 
        set("scale", 130); 
        set("from", ({   

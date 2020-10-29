@@ -193,15 +193,15 @@ int list_buffs(){
 int remove_buffup(object who,int index_num,int flag)
 {
         mapping buff;
-        object caster;
-        string type,name;
+//      object caster;
+        string /*type,*/name;
         mixed data;
         string *apply;
-        int time,warn_time;
-        string buff_msg,warn_msg,disa_msg;
+//      int time,warn_time;
+        string /*buff_msg,warn_msg,*/disa_msg;
         string shield_type,shield_desc;
-        string buffup_name,buffup_type,buffup_msg;
-        int buffup_ratio;
+        string buffup_name/*,buffup_type*/,buffup_msg;
+//      int buffup_ratio;
         int shield_amount;
         string disable_type, env_type;
         string block_msg;
@@ -363,20 +363,20 @@ int warn(object who,int index_num,int warn_time)
 int buffup(mapping buff)
 {
         object caster,who;
-        string type,type2,name;
+//      string type,type2,name;
         int index_num;
         mixed data;
-        mapping my_temp;
+//      mapping my_temp;
         string *apply;
-        int time,warn_time;
-        string buff_msg,warn_msg,disa_msg;
+        int time/*,warn_time*/;
+        string buff_msg/*,warn_msg,disa_msg*/;
         string shield_type,shield_desc;
         int shield_amount;
         string buffup_name,buffup_type,buffup_msg;
         int buffup_ratio;
         string disable_type, env_type;
         string block_msg;
-        int env_type_c;
+//      int env_type_c;
         int special_func;
         int i, n;
 
@@ -614,7 +614,7 @@ int get_buff_num(object me,int attr)
 {
         mapping buff_list,buff;
         string *lists;
-        int i,time,warn_time,idx,flag1=0,flag2=0;
+        int i/*,time,warn_time*/,idx,flag1=0,flag2=0;
 
         buff_list=query_temp("buff_list", me);
         if( !mapp(buff_list) || !sizeof(buff_list) )

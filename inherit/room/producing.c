@@ -80,7 +80,7 @@ void heart_beat()
         int rate;
         string cost;
         int cost_total;
-        int eff;
+//      int eff;
 
         if (! mapp(product = query("product")))
         {

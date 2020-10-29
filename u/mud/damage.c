@@ -9,7 +9,7 @@
 #include <action.h>
 #include <condition.h>
 
-inherit __DIR__"limb";
+inherit "/feature/limb";
 
 #define PVP_DAMAGE_SCALE        40
 #define PVP_WOUND_SCALE         30

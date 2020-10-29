@@ -27,7 +27,7 @@ void create()
 
 int accept_object(object who, object ob)
 {
-        object myenv;
+//      object myenv;
         object *obs;
 
         if( query("money_id", ob) && ob->value() >= 100 )

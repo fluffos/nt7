@@ -8,7 +8,7 @@
 
 string query_rank(object ob)
 {
-        mapping fam;
+//      mapping fam;
         mapping toplist;
 
         int shen;

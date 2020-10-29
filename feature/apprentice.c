@@ -4,7 +4,7 @@
 int is_apprentice_of(object ob)
 {
         mapping family;
-        string *fams;
+//      string *fams;
 
         if( !mapp(family = query("family")) ) return 0;
 

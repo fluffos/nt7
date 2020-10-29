@@ -427,7 +427,7 @@ string make_cn_name()
 {
         string *ks_cn_sname, *ks_cn_pname;
         string fir_name, sec_name, result_name;
-        int iname;
+//      int iname;
 
         string *new_sname;
         string *new_pname;

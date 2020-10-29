@@ -100,7 +100,7 @@ protected nomask int command_hook(string arg)
 {
         object me = this_object();
         string verb = query_verb();
-        int command_timecost;
+//      int command_timecost;
         int result;
 
         if( !objectp(me) ) return 0;
@@ -210,7 +210,7 @@ nomask void enable_player()
 
 nomask void disable_player(string type)
 {
-        object env;
+//      object env;
 
         if( !is_root(previous_object()) &&
             previous_object() != this_object() ) return;

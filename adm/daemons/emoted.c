@@ -376,7 +376,7 @@ string listemote(object me,int arg)
        int i;
        mapping emote;
        string *e;
-       string result="", msg, str;
+       string result=""/*, msg*/, str;
 
         str="";
         e = sort_array(query_all_emote(), 1);

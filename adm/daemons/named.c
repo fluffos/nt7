@@ -166,7 +166,7 @@ public string invalid_new_name(string name)
         string id;
         int i;
         int l;
-        debug_message(name);
+        // debug_message(name);
         if (!stringp(name) || strlen(name) < 1)
                 return "不能使用空名字。\n";
 

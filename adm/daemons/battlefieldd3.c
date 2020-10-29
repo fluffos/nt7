@@ -346,7 +346,7 @@ varargs int receive_damage(object me, string type, int damage, object who)
 private void auto_check()
 {
         object ob;
-        string msg;
+//      string msg;
         string room;
         object *lost;
         int i;
@@ -711,7 +711,7 @@ void calculate_score()
         int rank;
         string family;
         object player;
-        string file;
+//      string file;
         object insigne;
         int insigne_count;
         string *sorted_players = get_sorted_players();
@@ -843,10 +843,10 @@ int remove()
 
 void heart_beat()
 {
-        mapping buff, data;
+//      mapping buff,data;
         string *directions = ({ "north", "south", "east", "west" });
-        object where;
-        int i;
+//      object where;
+//      int i;
         
         if( battle_start_time > 0 )
         {

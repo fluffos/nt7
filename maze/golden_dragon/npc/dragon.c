@@ -79,7 +79,7 @@ HIY"这是一条全身金黄，在黄沙中长大的神龙！它全身散发着�
 
 void init()
 {
-        object me, ob;
+        object me/*, ob*/;
 
         ::init();
         if (! interactive(me = this_player()))

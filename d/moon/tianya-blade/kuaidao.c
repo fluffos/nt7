@@ -1,7 +1,7 @@
 // ice@fy4
 #include <ansi.h>
 #include <combat.h>
-inherit SSERVER;
+inherit F_SSERVER;
 int perform(object me, object target)
 {
     string msg;
@@ -12,7 +12,7 @@ int perform(object me, object target)
     if ( me->query("class")!= "bandit")
 		    return notify_fail("神教弟子才能领悟快刀。\n");
     if(userp(me) && (int)me->query_skill("tianya-blade",1) < 400)
-	return notify_fail("你的天涯明月刀还不够精纯！\n");      
+	return notify_fail("你的天涯明月刀还不够精纯！\n");
 /* if( !target ) target = offensive_target(me);
 
         if( !target
@@ -22,12 +22,12 @@ int perform(object me, object target)
     enemy = me->query_enemy();
     if (me->query("class")!= "bandit"&&me->query_skill_mapped("force") != "yueying"&&me->query("force")<me->query("force_factor")*2)
      return notify_fail("非月影神功催动［快刀］ 需要"+me->query("force_factor")*2+"点内力。\n");
-   
+
     if (!me->is_fighting()) return notify_fail("［快刀］只能对战斗中的对手使用。\n");
 
     if(target)
 	return notify_fail("快刀不需要指定使用对象！！\n");
-    weapon=me->query_temp("weapon"); 
+    weapon=me->query_temp("weapon");
 
     msg = HIR "\n$N"+HIR"将刀横于胸前，左手中指在刀背上一弹，右手借力挥刀。。。\n"NOR;
     combat_message_vision(msg,me);
@@ -46,8 +46,8 @@ int perform(object me, object target)
     extra += me->query_skill("tianya-blade",1)*me->query_skill("move",1)/7;
     else  if (me->query_skill("tianya-blade",1)>500||me->query_skill("move",1)>500)
     extra += me->query_skill("tianya-blade",1)*me->query_skill("move",1)/10;
-  
-    if ( me->query("class")== "bandit") 
+
+    if ( me->query("class")== "bandit")
 	bonus = extra/3;
     if((int)me->query_skill("tianya-blade",1) > 120) extra = extra + bonus;
     if( (me->query("class")== "bandit") && ((int)me->query_temp("bladeup")) )  extra += random(extra/4);
@@ -64,8 +64,8 @@ int perform(object me, object target)
     }
    if (me->query("class")!= "bandit"&&me->query_skill_mapped("force") != "yueying")
    	me->add("force",-me->query("force_factor")*2);
- 
-    if (me->query_busy()<n) 
+
+    if (me->query_busy()<n)
 	me->start_busy(n);
     return 1;
-}  
+}

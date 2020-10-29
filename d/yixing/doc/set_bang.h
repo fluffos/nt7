@@ -79,8 +79,7 @@ void set_follower(object ob, object owner)
 
         ob->set("inquiry/" + fam, fam + "威震江湖，指日可待！！！");
         name = (string)owner->query("name");
-        ob->set("inquiry/" + "帮主", "我对我们" + name[0..01] + "帮主的景仰之情腥缣咸辖嗖痪?);
+        ob->set("inquiry/" + "帮主", "我对我们" + name[0..1] + "帮主的景仰之情腥缣咸辖嗖痪?);
         ob->set("inquiry/" + name, "这几个字是你说的吗？");
-        ob->set("inquiry/" + name[0..01] + "帮主", "我对我们" + name[0..01] + "镏鞯木把鲋椋腥缣咸辖嗖痪?);
+        ob->set("inquiry/" + name[0..01] + "帮主", "我对我们" + name[0..1] + "镏鞯木把鲋椋腥缣咸辖嗖痪?);
 }
-

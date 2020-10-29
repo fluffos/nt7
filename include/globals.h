@@ -14,8 +14,8 @@
 
 #define NO_FEE
 #define BUSY_MESSAGE     "你现在忙得很，无法做任何事情。\n"
-#define DEBUG_CHANNEL(x) CHANNEL_D->channel_broadcast("debug", "调试精灵："+(string)x) 
-//#define NCH_CHANNEL(x) CHANNEL_D->channel_broadcast("nch", "I2D 精灵："+(string)x) 
+#define DEBUG_CHANNEL(x) CHANNEL_D->channel_broadcast("debug", "调试精灵："+(string)x)
+//#define NCH_CHANNEL(x) CHANNEL_D->channel_broadcast("nch", "I2D 精灵："+(string)x)
 
 // Important directories
 #define INC_DIR                 "/include/"
@@ -65,6 +65,7 @@
 #define BACKUP_D                "/adm/daemons/backupd"
 #define BATTLEFIELD_D           "/adm/daemons/battlefieldd"
 #define BOARD_D                 "/adm/daemons/boardd"
+#define ANNIE_D                 "/adm/daemons/buffd"
 #define BUFF_D                  "/adm/daemons/buffd"
 #define BUSINESS_D              "/adm/daemons/businessd"
 #define BUNCH_D                 "/adm/daemons/bunchd"
@@ -99,7 +100,7 @@
 #define HTML_D                  "/adm/daemons/html_d"
 #define IDENTIFY_D              "/adm/daemons/identifyd"
 #define INQUIRY_D               "/adm/daemons/inquiryd"
-#define INTERMUD2_D             "/adm/daemons/intermud2_d" 
+#define INTERMUD2_D             "/adm/daemons/intermud2_d"
 #define ITEM_D                  "/adm/daemons/itemd"
 #define LEAGUE_D                "/adm/daemons/leagued"
 #define LANGUAGE_D              "/adm/daemons/languaged"
@@ -129,7 +130,7 @@
 #define PIG_D                   "/adm/daemons/pigd"
 #define PROFILE_D               "/adm/daemons/profiled"
 #define QUEST_D                 "/adm/daemons/questd"
-#define XYWAR_D                 "/adm/daemons/xyward" 
+#define XYWAR_D                 "/adm/daemons/xyward"
 #define X_NameD                 "/adm/daemons/x_named"
 #define X_PointD                "/adm/daemons/x_pointd"
 #define X_QuestD                "/adm/daemons/x_questd"
@@ -291,7 +292,7 @@
 #define F_MOVE                  "/feature/move.c"
 #define F_NAME                  "/feature/name.c"
 #define F_NOCLONE               "/feature/noclone.c"
-#define F_NATURE                "/feature/nature.c" 
+#define F_NATURE                "/feature/nature.c"
 #define F_OBSAVE                "/feature/obsave.c"
 #define F_QUESTER               "/feature/quester.c"
 #define F_QUEST                 "/feature/quest.c"
@@ -322,4 +323,3 @@
 
 #undef PROFILE_COMMANDS
 #undef COUNT_COMMAND_TIMECOST
-

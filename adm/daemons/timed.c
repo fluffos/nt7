@@ -81,7 +81,7 @@ protected void init_crontab()
 {
         string *table, *time_zone;
         class cron_item item;
-        int flag, legal = 0;
+        int flag/*, legal = 0*/;
         object ob;
         string *items;
         int i, n;
@@ -486,7 +486,7 @@ void create()
 // 分配船只
 void alloate_boat(int which)
 {
-        object ob_boat, ob_old_boat; 
+        object ob_boat/*, ob_old_boat*/; 
         string *key_boats, *key_para;
         int i, n;
         object ob_place;
@@ -614,4 +614,3 @@ string query_name()
 {
         return "时间系统(TIME_D)";
 }
-

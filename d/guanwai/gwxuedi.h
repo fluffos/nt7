@@ -65,9 +65,9 @@ void do_cold(object me, int scale, int con)
 void cold_effect()
 {
         object *ob;
-        object cloth;
+//      object cloth;
         int con;
-        int damage;
+//      int damage;
         int i;
 
         remove_call_out("cold_effect");

@@ -18,7 +18,7 @@ object get_owner()
 }
 
 object book_owner = get_owner();
-nosavestringbook_owner_name=(objectp(book_owner) && userp(book_owner))?query("name", book_owner):"某人";
+nosave string book_owner_name=(objectp(book_owner) && userp(book_owner))?query("name", book_owner):"某人";
 
 int do_rumor(string arg)
 {

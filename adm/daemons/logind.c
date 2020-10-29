@@ -257,9 +257,9 @@ protected void get_version(string arg, object ob)
 
 protected void pass_id(string arg, object ob)
 {
-        mixed  res;
+//      mixed  res;
         int    flag;
-        string where;
+//      string where;
 
         write("该服务尚未启用。\n");
         call_out("destruct_ob", 0, ob);
@@ -363,8 +363,8 @@ LONG ;
 protected void get_id(string arg, object ob)
 {
         object *usr;
-        string where, ip;
-        mixed  res;
+//      string where,ip;
+//      mixed  res;
         int    i, flag;
 
         arg = lower_case(arg);
@@ -615,7 +615,7 @@ protected void get_wizpwd(string pass, object ob)
 
 protected void confirm_cruiseid(string yn, object ob)
 {
-        int t;
+//      int t;
 
         write("\n");
         if( upper_case(yn) == "Y" ) {
@@ -637,8 +637,8 @@ protected void confirm_cruiseid(string yn, object ob)
 
 protected void get_cruisepwd(string pass, object ob)
 {
-        string sites;
-        string passwd;
+//      string sites;
+//      string passwd;
         write("\n");
 
 #ifdef DB_SAVE
@@ -727,9 +727,9 @@ protected void reset_ad_password(string pass, object ob)
 
 protected void confirm_reset_ad_password(string pass, object ob)
 {
-        mapping my;
+//      mapping my;
         string old_pass;
-        string passwd;
+//      string passwd;
 
         write("\n");
         old_pass=query_temp("ad_password", ob);
@@ -746,9 +746,9 @@ protected void confirm_reset_ad_password(string pass, object ob)
 protected void check_ok(object ob)
 {
         object user;
-        string *res;
-        string str, str1, str2;
-        int    on, fee, i, rec = 0;
+//      string *res;
+//      string str,str1,str2;
+        int /*   on,fee,i,*/ rec = 0;
 
         /*
         if( !BAN_D->vaild_allow_address(ob) ) {
@@ -1056,9 +1056,9 @@ protected void new_ad_password(string pass, object ob)
 
 protected void confirm_ad_password(string pass, object ob)
 {
-        mapping my;
+//      mapping my;
         string old_pass;
-        string passwd;
+//      string passwd;
 
         write("\n");
         old_pass=query_temp("ad_password", ob);
@@ -1107,9 +1107,9 @@ protected void new_password(string pass, object ob)
 
 protected void confirm_password(string pass, object ob)
 {
-        mapping my;
+//      mapping my;
         string old_pass;
-        string passwd;
+//      string passwd;
 
         write("\n");
         old_pass=query_temp("password", ob);
@@ -1305,10 +1305,10 @@ varargs void enter_world(object ob, object user, int silent, int timer, string a
 {
         object cloth, shoe;
         string startroom;
-        string place, address;
-        string sql, ip_number;
+//      string place,address;
+//      string sql,ip_number;
         string msg;
-        string *ret;
+//      string *ret;
         object login_ob, *users;
         mapping marry;
         mixed err;
@@ -1639,10 +1639,10 @@ varargs void enter_world(object ob, object user, int silent, int timer, string a
 
 varargs void reconnect(object ob, object user, int silent)
 {
-        string sql, ip_number;
-        string place, address;
+//      string sql,ip_number;
+//      string place,address;
         string msg;
-        string *ret;
+//      string *ret;
         int net_dead_time = query_temp("net_dead_time", user);
         string *msg_data = user->query_last_msg();
 

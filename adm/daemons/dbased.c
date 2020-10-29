@@ -104,7 +104,7 @@ public int announce_all_save_object(int destruct_flag)
 // 清理所有对象
 int cleanup_all_save_object(int raw)
 {
-        object ob;
+//      object ob;
         string *e;
         int i;
 
@@ -162,7 +162,7 @@ int set_data(mixed data)
 mixed query_object_data(mixed ob)
 {
         string index;
-        mixed  data;
+//      mixed  data;
 
         if( !ob ) return 0;
 

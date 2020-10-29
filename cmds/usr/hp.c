@@ -22,7 +22,7 @@ int main(object me, string arg)
         {
                 int ml, mn;
                 mixed need, need2;
-                string combat_exp;
+                // string combat_exp;
                 int lv, lv2, level, exp;
 
                 if (arg == "-m")
@@ -59,13 +59,13 @@ int main(object me, string arg)
                 if( query("special_skill/might", ob) )
                 {
                         ml = (int)ob->query_skill("force") / 2;
-                        ml += ml * 20 / 100; 
+                        ml += ml * 20 / 100;
                 }
                 else
                         ml = (int)ob->query_skill("force") / 2;
-                
+
                 ml += ob->query_all_buff("jiali");
-                       
+
                 // 愤怒之心增加加怒上限
                 if( query("special_skill/wrath", ob) )
                         mn = ob->query_max_craze() / 70;
@@ -80,7 +80,7 @@ int main(object me, string arg)
                 need=(lv+1)*(lv+1)*(lv+1)*10000-query("combat_exp", ob);
 
                 if (need < 1) need = 1;
-                
+
                 lv2=query("yuanshen_level", ob);
                 if( lv2 < 1 ) need2 = 10000000000-query("combat_exp", ob);
                 else if( lv2 == 100 ) need2 = 0;
@@ -101,13 +101,13 @@ int main(object me, string arg)
 
                 sp += sprintf(HIC "【当前等级】 " NOR + WHT " %-27d"
                               HIC "【升级所需】 " NOR + WHT " %d\n", lv, need);
-                
+
                 sp += sprintf(HIC "【血脉等级】 " NOR + HIR " %-27d"
                               HIC "【升级所需】 " NOR + HIR " %s\n", query("xuemai_level", ob), (100-query("xuemai/points", ob))+"%");
 
                 sp += sprintf(HIC "【元神等级】 " NOR + HIY " %-27d"
                               HIC "【升级所需】 " NOR + HIY " %d\n", lv2, need2);
-                              
+
                 sp += sprintf(HIC "【能力点数】 " NOR + WHT " %-27d"
                               HIC "【武功上限】 " NOR + WHT " %d\n",
                       query("ability", ob),level);
@@ -118,14 +118,14 @@ int main(object me, string arg)
 
                 sp += sprintf(HIC "【最大加怒】 " NOR + WHT " %-27O"
                               HIC "【最大加力】 " NOR + WHT " %d\n",
-                      (mn > 0 ? mn : "───"), ml);                
+                      (mn > 0 ? mn : 0), ml);
 
 #ifdef LONELY_IMPROVED
                 sp += HIW "【死亡保护】  " NOR + sprintf("%-27s",
 #else
                 sp += HIW "【死亡保护】  " NOR + sprintf("%-43s",
 #endif
-                      (!query("combat/WPK", ob) && !query("no_newbie", ob) && (query("newbie", ob) || 
+                      (!query("combat/WPK", ob) && !query("no_newbie", ob) && (query("newbie", ob) ||
                       query("combat_exp", ob)<20000000))?HIY"保护中"NOR:
                       HIY "无保护" NOR);
 
@@ -254,12 +254,12 @@ int main(object me, string arg)
 
                 sp += HIC "≡" HIY "───────────────────────"
                       "────────────" HIC "≡\n" NOR;
-                sp += sprintf( YEL " 般 若 掌： %s" NOR YEL "   无 常 杖： %s" NOR YEL "   金 刚 拳： %s\n" NOR, 
-                        query("sl_gift/yzc", ob)?HIY"○":HIC"×",query("sl_gift/zg", ob)?HIY"○":HIC"×",query("sl_gift/str", ob)?HIY"○":HIC"×"); 
-                sp += sprintf( YEL " 一 指 禅： %s" NOR YEL "   火 焰 刀： %s" NOR YEL "   禅宗心法： %s\n" NOR, 
-                        query("sl_gift/con", ob)?HIY"○":HIC"×",query("sl_gift/huoyandao", ob)?HIY"○":HIC"×",query("sl_gift/int", ob)?HIY"○":HIC"×"); 
-                sp += sprintf( YEL " 桃花密阵： %s" NOR YEL "   一灯疗伤： %s" NOR YEL " 大乘涅磐功： %s\n" NOR, 
-                        query("taohua_maze", ob)?HIY"○":HIC"×",query("dali/yideng_rewarded", ob)?HIY"○":HIC"×",query("sl_gift/mhyn", ob)?HIY"○":HIC"×"); 
+                sp += sprintf( YEL " 般 若 掌： %s" NOR YEL "   无 常 杖： %s" NOR YEL "   金 刚 拳： %s\n" NOR,
+                        query("sl_gift/yzc", ob)?HIY"○":HIC"×",query("sl_gift/zg", ob)?HIY"○":HIC"×",query("sl_gift/str", ob)?HIY"○":HIC"×");
+                sp += sprintf( YEL " 一 指 禅： %s" NOR YEL "   火 焰 刀： %s" NOR YEL "   禅宗心法： %s\n" NOR,
+                        query("sl_gift/con", ob)?HIY"○":HIC"×",query("sl_gift/huoyandao", ob)?HIY"○":HIC"×",query("sl_gift/int", ob)?HIY"○":HIC"×");
+                sp += sprintf( YEL " 桃花密阵： %s" NOR YEL "   一灯疗伤： %s" NOR YEL " 大乘涅磐功： %s\n" NOR,
+                        query("taohua_maze", ob)?HIY"○":HIC"×",query("dali/yideng_rewarded", ob)?HIY"○":HIC"×",query("sl_gift/mhyn", ob)?HIY"○":HIC"×");
                 sp += sprintf( YEL " 天赋重置： "NOR+HIC"%s\n" NOR, chinese_number(query("gift/washed", ob)) );
                 tell_object(me, sp);
                 return 1;
@@ -276,7 +276,7 @@ int main(object me, string arg)
                 if (! ob || (! ob->is_character() && ! ob->is_owner(me)) || ! me->visible(ob))
                         return notify_fail("你要察看谁的状态？\n");
 
-                if( !wizardp(me) && query("couple/child_id", me) != query("id", ob) && 
+                if( !wizardp(me) && query("couple/child_id", me) != query("id", ob) &&
                     ! ob->is_owner(me))
                         return notify_fail("你要察看谁的状态？\n");
         } else

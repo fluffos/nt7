@@ -33,15 +33,15 @@ void create() { seteuid(getuid()); }
 
 int main(object me, string arg)
 {
-        string dest, mout, min, dir, blk, gud, skill, thing_msg;
-        object env, obj, blocker, thing;
-        mapping block;
-        mixed old_target;
+        string dest, mout, min, dir/*, blk, gud, skill*/, thing_msg;
+        object env, obj/*, blocker*/, thing;
+//      mapping block;
+//      mixed old_target;
         int result;
-        int sen_cost;
+//      int sen_cost;
         mapping exit;
         object *f_obs, *ob;
-        object temp_ob;
+//      object temp_ob;
         mixed flee;
         mapping my, my_temp;
         mapping my_env, my_armor;
@@ -49,7 +49,7 @@ int main(object me, string arg)
         object *users;
         object riding;
 
-        int i, my_dex, count = 0;
+//      int i,my_dex,count = 0;
 
         if (! arg) return notify_fail("你要往哪个方向走？\n");
 

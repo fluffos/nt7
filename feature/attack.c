@@ -143,7 +143,7 @@ void kill_ob(object ob)
         object me;
         object env;
         object gob;
-        int i;
+//      int i;
 
         me = this_object();
         if( !living(me) || !ob )
@@ -400,7 +400,7 @@ void remove_all_want()
 void remove_all_killer()
 {
         int i;
-        object ob;
+//      object ob;
 
         enemy -= ({ 0 });
         remove_all_want();
@@ -563,8 +563,8 @@ void init()
         object me;
         object ob;
         mapping my, its;
-        string bunch_name;
-        string vendetta_mark;
+//      string bunch_name;
+//      string vendetta_mark;
 
         // We check these conditions here prior to handle auto fights. Although
         // most of these conditions are checked again in COMBAT_D's auto_fight()

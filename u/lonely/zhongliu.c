@@ -6,12 +6,12 @@
 #define S_TIME 480 // 最多使用8分钟，每次60秒
 #define L_TIME 3600 // 一小时复原
 
-inherit SSERVER;
+inherit F_SSERVER;
 int perform(object me, object target)
 {
 	string msg, type;
 	int duration, extra, add, skill, num, amount;
-	mapping buff;
+	mapping buff, data;
 	object weapon;
 
 	extra = me->query_skill("fall-steps",1);
@@ -54,13 +54,13 @@ int perform(object me, object target)
 		msg = "$N招式瞬息万变，有如大海潮生，一渡末平，一波又起，周围八尺之内，便似布起了一道铁壁铜墙一般。\n";
 	}
 	add = me->query("timer/pfm/tx-zhongliu")/60;
-	amount = 200 - F_ABILITY->check_ability(me,"3_zhongliu_add",3)*20;
-	data = 
+	amount = 200 - ABILITY_D->check_ability(me,"3_zhongliu_add",3)*20;
+	data =
 	        ([
                    "reduce_damage" : 50,
-	                "attack", -amount,
+	                "attack" : -amount,
 	        ]);
-	                
+
 	buff =
 		([
 			"caster": me,
@@ -85,7 +85,6 @@ int perform(object me, object target)
 		]);
 	ANNIE_D->buffup(buff);
 
-	write(WHT"（在接下来的"+ ((me->query("timer/tx-zhongliu") + L_TIME - time())/60) + "分钟里你还能使用"+ add + "次中流）\n"NOR); 
+	write(WHT"（在接下来的"+ ((me->query("timer/tx-zhongliu") + L_TIME - time())/60) + "分钟里你还能使用"+ add + "次中流）\n"NOR);
 	return 1;
 }
-

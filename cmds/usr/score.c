@@ -37,9 +37,9 @@ int main(object me, string arg)
         mapping my,mci;
         string line , skill_type;
         object weapon;
-        int jings, qis, j, i, x, cnt;
+        int jings, qis/*, j, i, x, cnt*/;
         int attack_points, dodge_points, parry_points;
-        string jbd, msg;
+        string /*jbd,*/ msg;
         int can_score = 0;
         int age, month;
         string startroom = "";

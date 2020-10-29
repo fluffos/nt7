@@ -1,6 +1,6 @@
 #include <ansi.h>
 #include <combat.h>
-inherit SSERVER;
+inherit F_SSERVER;
 
 int perform(object me, object target)
 {
@@ -30,4 +30,3 @@ int perform(object me, object target)
 	me->perform_busy(2);
 	return 1;
 }
-

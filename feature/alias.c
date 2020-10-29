@@ -199,7 +199,7 @@ string process_input(string str)
 {
         string verb, doargs, *args;
         string cmd, argstr;
-        object me, ob;
+        object me/*, ob*/;
         int i, j;
 
         me = this_object();

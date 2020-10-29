@@ -11,7 +11,7 @@ inherit SKILL;
 
 int valid_learn(object me)
 {
-        int layer;
+//      int layer;
         int lvl;
 
         lvl = me->query_skill("zuoyou-hubo", 1);

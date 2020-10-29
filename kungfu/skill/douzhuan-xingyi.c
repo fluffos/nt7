@@ -3,7 +3,7 @@
 #include <ansi.h>;
 #include <combat.h>
 inherit SKILL;
-inherit F_SSERVER;
+// inherit F_SSERVER;
 string type() { return "martial"; }
 string martialtype() { return "skill"; }
 
@@ -38,7 +38,7 @@ string query_parry_msg(object weapon)
 }
 int valid_learn(object me)
 {
-        object ob;
+//      object ob;
         int d_lvl = (int) me->query_skill("douzhuan-xingyi",1);
         //int s_lvl = (int) me->query_skill("shenyuan-gong",1);
         int s_lvl = (int) me->query_skill("force",1);
@@ -77,14 +77,14 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
          if ((int) me->query_skill("douzhuan-xingyi", 1) < 100 ||
           ! living(me) )
               return;
-        
+
           // 移星换月效果
-          if (query_temp("yixinghuanyue", me)) 
+          if (query_temp("yixinghuanyue", me))
           {
-                me->stop_busy(); 
-                me->clear_weak(); 
+                me->stop_busy();
+                me->clear_weak();
           }
-                
+
           mp = ob->query_skill("count", 1);
           ap = ob->query_skill("force", 1);
           dp = me->query_skill("parry", 1);
@@ -148,7 +148,7 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
                      set_temp("xingyi/"+query("id", ob), 1, me);
                      me->start_call_out((: call_other, __FILE__, "xingyi",
                                  ob, me :), 1);
-                     
+
                      //if( !query_temp("yixinghuanyue", me) )
                      //   // me->start_busy(2);
 

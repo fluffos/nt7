@@ -110,8 +110,8 @@ int is_battle_start()
 
 void topten_bunch_add(string bunch_name)
 {
-        int n;
-        string t;
+//      int n;
+//      string t;
 
         ++battle_times;
         bunch_topten += ({
@@ -221,9 +221,9 @@ void init_player(object me)
 // 参与战争
 void join_battle(object me)
 {
-        string where;
-        mapping cnd;
-        string id = me->query_id(1);
+//      string where;
+//      mapping cnd;
+//      string id = me->query_id(1);
 
         /*
         if( battle_start_flag )
@@ -255,7 +255,7 @@ void join_battle(object me)
 void stop_battle()
 {
         object ob;
-        object player;
+//      object player;
 
         set_heart_beat(0);
 
@@ -325,11 +325,11 @@ void start_join()
 
 void start_battle()
 {
-        object *all_player = ({});
+        // object *all_player = ({ });
         object ob;
-        object player;
-        string where;
-        int i;
+//      object player;
+//      string where;
+//      int i;
 
         if( sizeof(total) < 5 )
         {
@@ -404,7 +404,7 @@ public int query_bunch_battle(object me)
 void auto_check()
 {
         object ob;
-        string msg;
+//      string msg;
         string room;
         object *lost;
         int i;
@@ -480,7 +480,7 @@ int check_out(object me)
 
 void create()
 {
-        mapping data;
+//      mapping data;
         string *all_bang;
         string bang;
 

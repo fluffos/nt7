@@ -126,7 +126,7 @@ mixed hit_ob(object me, object victim, int damage_bonus)
 */
 mixed hit_ob(object me, object victim, int damage_bonus)
 {
-        object weapon, weapon1;  object master;
+        object weapon, weapon1;  object /*master*/;
         weapon=query_temp("weapon", me);
         weapon1=query_temp("weapon", victim);
 
