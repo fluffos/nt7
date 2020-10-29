@@ -64,20 +64,21 @@ object connect(int port)
                 destruct(this_object());
         }
 
-        if( port == BIG5_PORT )
-                set_temp("big5", 1, login_ob);
+        if (port == 5555)
+        {
+                set_encoding("GBK");
+        }
 
-        else
-        if( port == TOMUD_PORT )
-                set_temp("tomud", 1, login_ob);
+        // if( port == BIG5_PORT )
+        //         set_temp("big5", 1, login_ob);
+
+        // else
+        // if( port == TOMUD_PORT )
+        //         set_temp("tomud", 1, login_ob);
 
         //else
         //if( port == UTF8_PORT )
         //      set_encoding("utf-8", login_ob);
-#ifdef __USE_ICONV__
-        if( port == UTF8_PORT )
-                set_encoding("UTF-8", login_ob);
-#endif
 
         return login_ob;
 }

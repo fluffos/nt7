@@ -109,7 +109,7 @@ int start_wa(object me)
 
 int valid_leave(object me, string dir)
 {
-        object ob;
+//      object ob;
 
         if (dir == "northeast" && query_temp("job_busy", me) )
                return notify_fail("你正忙着挖矿呢！\n");

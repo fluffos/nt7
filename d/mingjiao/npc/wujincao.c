@@ -79,7 +79,7 @@ string ask_job()
 {
      object player=this_player();
      mapping fam ;
-     object ling,chui,qiao;
+     object /*ling,*/chui,qiao;
 
     if( !(fam=query("family", this_player())) || fam["family_name"] != "明教" )
         return "这位"+RANK_D->query_respect(player)+"并非我教弟兄，那敢在下那敢分派阁下什么任务呢。\n";
@@ -168,7 +168,7 @@ string ask_jingtie_num()
 
 string ask_jingtie()
 {
-        int num;
+//      int num;
         object me=this_player();
         object jingtie,room;
         string job_flg;

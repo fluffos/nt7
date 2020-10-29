@@ -22,7 +22,7 @@ LONG );
 }
 int valid_leave(object me, string dir)
 {
-    mapping myfam;
+//  mapping myfam;
     me = this_player();
     if( (query("gender", me) != "男性") && (dir == "enter") )
       return notify_fail("请你自重，以免不测！\n");

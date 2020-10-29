@@ -75,7 +75,7 @@ string ask_for_join()
 int accept_object(object ob, object obj)
 {
         object me ;
-        string men ;
+//      string men;
         mapping family;
 
         me = this_object ();

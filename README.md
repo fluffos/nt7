@@ -11,4 +11,5 @@ Updated the files to work with FluffOS following the guidelines in the following
 请使用 fluffos v2019 驱动运行
 
     driver config.ini
-    
+
+游戏端口 5555 为GBK，6666 为 utf-8，8888 为WEB访问。

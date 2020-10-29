@@ -26,7 +26,7 @@ void create()
 
 void init()
 {       
-        object ob; 
+//      object ob; 
 
         add_action("do_buy", "buy");
         add_action("do_list", "list");
