@@ -35,7 +35,7 @@ void init()
 
 void do_say(string arg)
 {  
-        string name;
+//      string name;
         object me = this_player();
         
         if (! arg || arg == "") return;

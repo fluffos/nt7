@@ -179,7 +179,7 @@ int recognize_apprentice(object me, string skill)
 
 string ask_yinzhen()
 {
-        mapping fam; 
+//      mapping fam; 
         object ob;
         object me = this_player();
 

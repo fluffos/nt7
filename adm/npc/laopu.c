@@ -148,7 +148,7 @@ void do_wield()
 
 int accept_object(object who, object ob)
 {
-        object obn;
+//      object obn;
 
         if( !query("money_id", ob) )
                 return 0;
@@ -218,4 +218,3 @@ int accept_kill(object ob)
 
         return ::accept_kill(ob);
 }
-

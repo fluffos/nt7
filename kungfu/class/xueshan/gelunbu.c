@@ -185,7 +185,7 @@ string ask_fashi()
 
 int accept_object(object who, object ob)
 {
-        object myenv ;
+//      object myenv;
         if( query("money_id", ob) && ob->value() >= 100 )
         {
                 message_vision("葛伦布笑着对$N说：好！这位"+RANK_D->query_respect(who) + "要见活佛就请进吧。\n", who);

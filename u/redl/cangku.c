@@ -85,7 +85,7 @@ int do_tao()
 
 void do_start_hslj(string arg)
 {
-        int type;
+//      int type;
         object cat;
         DEBUG_CHANNEL("TIME_D调用比武 " +(arg?arg:0)+ "成功。\n");
         if (!arg) {

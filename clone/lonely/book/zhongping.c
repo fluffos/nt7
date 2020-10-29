@@ -37,9 +37,9 @@ int do_yanjiu(string arg)
 {
         object me = this_player();
         object where = environment(me);
-        object ob;
+//      object ob;
         string pfm, book;
-        int lv;
+//      int lv;
 
         if (! arg)
         {

@@ -86,7 +86,7 @@ string ask_job()
 {
      object player=this_player();
      mapping fam ;
-     object ling;
+//   object ling;
 
     if( !(fam=query("family", this_player())) || fam["family_name"] != "明教" )
         return "这位"+RANK_D->query_respect(player)+"并非我教弟兄，那敢在下那敢分派阁下什么任务呢。\n";

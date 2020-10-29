@@ -5,7 +5,7 @@ inherit ROOM;
 
 void create()
 {
-        object ob;
+//      object ob;
         set("short", "铁石山");
         set("long", @LONG
 这里是祁连山以西四十里处，山势峥嶙，通山一色漆黑，光秃秃的
