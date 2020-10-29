@@ -13,3 +13,5 @@ Updated the files to work with FluffOS following the guidelines in the following
     driver config.ini
 
 游戏端口 5555 为GBK，6666 为 utf-8，8888 为WEB访问。
+
+注册ID为 `mudren` 或 `lonely` 的账号为游戏管理员。

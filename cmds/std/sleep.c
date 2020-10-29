@@ -8,9 +8,9 @@ void wakeup(object me);
 
 int main(object me, string arg)
 {
-        object obj, old_target;
+//      object obj,old_target;
         int i;
-        object *inv;
+//      object *inv;
         mapping fam;
         mapping cnd;
         string *kc;

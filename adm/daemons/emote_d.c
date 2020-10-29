@@ -28,14 +28,14 @@ string multi_emote(object me, string arg, int option)
         string verb;
 
         if( option == RAW ) return arg;
-        
+
         verb = arg;
-        
+
         if( sizeof(args = explode(arg, " ")) > 1 )
                 arg = do_emote(me, args[0], implode(args[1..], " "), RAW) || arg;
         else
                 arg = do_emote(me, arg, 0, RAW) || arg;
-        
+
         arg = replace_string(arg, NOR+BLK" * "+verb, "");
         return arg;
 }
@@ -45,7 +45,7 @@ varargs mixed do_emote(object me, string verb, string arg, int option)
         object you;
         string *emotion;
         string emotion_msg, your_name, argument;
-        string en_arg = "";
+        // string en_arg = "";
 
         if( !me || !verb || !(emotion = emotions[verb]) ) return 0;
 
@@ -68,8 +68,8 @@ varargs mixed do_emote(object me, string verb, string arg, int option)
         /* 若将 arg 拆成两部份 */
         else if( sscanf(arg, "%s %s", your_name, argument) == 2 )
         {
-                int which;                
-                
+                int which;
+
                 // 检查复数目标
                 if( sscanf(argument, "%d", which) && which > 1 && objectp(you = present(your_name+" "+which, me) || present(your_name+" "+which, environment(me))) )
                 {

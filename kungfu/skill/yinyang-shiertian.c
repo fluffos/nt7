@@ -193,7 +193,7 @@ int get_ready(object me)
 
 int get_finish(object me)
 {
-        object ob;
+//      object ob;
 
         if( query("int", me)<39 )
         {
@@ -316,7 +316,7 @@ int difficult_level()
 
 mixed hit_ob(object me, object victim, int damage_bonus)
 {
-        string name1, name2, weapon;
+        string name1, name2/*, weapon*/;
         name1 = xue_name[random(sizeof(xue_name))];
         name2 = attack_name[random(sizeof(attack_name))];
 

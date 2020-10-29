@@ -16,7 +16,7 @@ int main(object me, string arg)
         int exercise_cost;
         string force;
         object where;
-        int n;
+//      int n;
 
         seteuid(getuid());
         where = environment(me);

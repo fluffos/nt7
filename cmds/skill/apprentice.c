@@ -7,9 +7,9 @@ inherit F_CLEAN_UP;
 int main(object me, string arg)
 {
         object ob, old_app;
-        mapping family, ob_family, skills;
-        int i;
-        string *skname;
+        mapping family, ob_family/*, skills*/;
+//      int i;
+//      string *skname;
 
         if (me->is_busy())
                 return notify_fail("你现在正忙着呢。\n");

@@ -6,7 +6,7 @@ inherit F_CLEAN_UP;
 
 int main(object me, string arg)
 {
-        object obj, old_target;
+        object obj/*, old_target*/;
 
         if( me->is_chatter() )
                 return 0;
@@ -97,4 +97,3 @@ int help(object me)
 HELP );
         return 1;
 }
-

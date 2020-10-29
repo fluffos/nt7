@@ -33,9 +33,9 @@ varargs mixed set(string idx, mixed para, object who)
         int i, n, s, now_lvl, old_lvl;
         mapping spc_data, my;
         string skill, *files;
-        string *spe_skill = ({
-                "monster", "nopoison", "demon", "ghost", "wisdom", "stealth",
-        });
+        // string *spe_skill = ({
+        //         "monster", "nopoison", "demon", "ghost", "wisdom", "stealth",
+        // });
         string *reborn_skill = ({
                 "sophistry", "capture", "kingkong", "immortal", "musha",
                 "recover", "astral",
@@ -205,7 +205,7 @@ varargs mixed set(string idx, mixed para, object who)
 
 varargs mixed add(string prop, mixed data, object who)
 {
-        string para;
+        // string para;
         int old;
         int level;
 
@@ -566,8 +566,8 @@ varargs public void work_bonus(object who, mapping b, int flag, string type/*任
         int weiwang;            // 奖励的江湖威望
         int gongxian;           // 奖励的门派贡献
         int gold;
-        int pot_limit;          // 潜能的界限
-        int mar_limit;          // 实战体会的界限
+        // int pot_limit;          // 潜能的界限
+        // int mar_limit;          // 实战体会的界限
         int percent;            // 奖励的有效百分比
         string msg;             // 奖励的描述信息
         int yuanshen_exp;
@@ -1156,8 +1156,8 @@ varargs public void war_bonus(object who, mapping b)
         int weiwang;            // 奖励的江湖威望
         int gongxian;           // 奖励的门派贡献
         int gold;
-        int pot_limit;          // 潜能的界限
-        int mar_limit;          // 实战体会的界限
+        // int pot_limit;          // 潜能的界限
+        // int mar_limit;          // 实战体会的界限
         int percent;            // 奖励的有效百分比
         string msg;             // 奖励的描述信息
         int yuanshen_exp;
@@ -1807,8 +1807,8 @@ varargs public void battle_bonus(object who, mapping b)
         int weiwang;            // 奖励的江湖威望
         int gongxian;           // 奖励的门派贡献
         int gold;
-        int pot_limit;          // 潜能的界限
-        int mar_limit;          // 实战体会的界限
+        // int pot_limit;          // 潜能的界限
+        // int mar_limit;          // 实战体会的界限
         int percent;            // 奖励的有效百分比
         string msg;             // 奖励的描述信息
         int yuanshen_exp;
@@ -2012,8 +2012,8 @@ varargs public void event_bonus(object who, mapping b, int flag)
         int weiwang;            // 奖励的江湖威望
         int gongxian;           // 奖励的门派贡献
         int gold;
-        int pot_limit;          // 潜能的界限
-        int mar_limit;          // 实战体会的界限
+        // int pot_limit;          // 潜能的界限
+        // int mar_limit;          // 实战体会的界限
         int percent;            // 奖励的有效百分比
         string msg;             // 奖励的描述信息
         int yuanshen_exp;

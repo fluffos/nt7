@@ -20,12 +20,12 @@ int main(object me, string arg)
 {
         object where = environment(me);
         string *args;
-        string *fams;
-        string skill, teacher, master, skill_name;
+//      string *fams;
+        string skill, teacher/*, master*/, skill_name;
         object ob;
         mixed flag;
         int master_skill, my_skill, jing_cost, times, i;
-        int lvl, neili_cost, t1, t2, t3, t4, exp;
+        int lvl, neili_cost, t1, t2, t3, t4/*, exp*/;
         int rand;
         int diff;
         int c;
@@ -262,9 +262,9 @@ int can_learn(object me, string skill)
 {
         string skill_name;
         mapping skills;
-        string mskill;
-        int tmp;
-        int i;
+//      string mskill;
+//      int tmp;
+//      int i;
         
         /*
         if( stringp(mskill = SKILL_D(skill)->main_skill()) &&

@@ -7,7 +7,7 @@ inherit F_CLEAN_UP;
 int main(object me, string arg)
 {
         object obj;
-        string *killer;
+//      string *killer;
         string callname;
 
         if (me->is_chatter())
