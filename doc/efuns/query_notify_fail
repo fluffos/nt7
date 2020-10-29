@@ -1,0 +1,27 @@
+
+        query_notify_fail()
+
+        名称：
+                query_notify_fail() 判定一个互动物件是否已设定了
+                        待处理的 notify_fail() 信息
+
+        语法：
+                mixed query_notify_fail(void);
+                混合 query_notify_fail(无参数)
+
+        用法：
+                这个函数判断是否 this_player() 的 notify_fail
+                值已经被设定。这个值即可能是一个字符串，也可能
+                是一个函数，取决于对 this_player() 最后一次呼叫
+                notify_fail() 函数所设定的值。
+
+        此函数需要编译 MudOS 时在配置文件里定义了 PACKAGE_CONTRIB。
+        同时 NO_ADD_ACTION 没有被定义。
+
+        参考：
+                add_action,
+                notify_fail
+
+        by 发现号(Find@tx)
+
+

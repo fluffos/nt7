@@ -1,0 +1,16 @@
+名称：
+        lpc_info() - 传回有关 LPC->C 已编译的物件资讯。
+语法：
+        string lpc_info();
+
+        字串 lpc_info();
+用法：
+        lpc_info() 传回一个字串叙述 LPC->C 程式对于其原始码是
+        否 存在/载入/过期 的细目
+参考：
+        
+作者：
+        Tim Hollebeek  Beek@ZorkMUD, Lima Bean, IdeaExchange, and elsewhere
+翻译：
+        clode@RW 翻不太出来:P          2000.Oct.4.    v22 版
+

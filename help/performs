@@ -1,0 +1,285 @@
+varargs string do_damage(object me, object target, mixed type,
+                         int damage, int percent, mixed final)
+{
+        mapping my;
+        object weapon;
+        object cloth;
+        int apply;
+        int armor;
+        int wound;
+        int jiali;
+        int bonus;
+        mixed foo;
+        string msg;
+        string skill;
+        string *limbs;
+        string limb;
+        string damage_type;
+        string result;
+        int str;
+        int damage_bonus;
+        mapping prepare;
+        mapping fight = ([]); 
+        mapping defend = ([]);
+        string attack_skill;
+
+        if (environment(me) != environment(target)) 
+        {
+                me->remove_enemy(target); 
+                target->remove_enemy(me); 
+                return ""; 
+        }
+
+        // Am I use weapon
+        if (type == WEAPON_ATTACK)
+        {
+                apply  = me->query_temp("apply/damage");
+                weapon = me->query_temp("weapon");
+        } else
+        if (type == UNARMED_ATTACK)
+        {
+                apply  = me->query_temp("apply/unarmed_damage");
+                weapon = 0;
+        } else
+        {
+                apply  = 0;
+                weapon = 0;
+        }
+        
+        prepare = me->query_skill_prepare();
+        if (! prepare) prepare = ([]);
+
+        if (weapon)
+                skill = weapon->query("skill_type");
+        else
+        {
+                switch (sizeof(prepare))
+                {
+                case 0: attack_skill = "unarmed"; break;
+                case 1: 
+                case 2: attack_skill = (keys(prepare))[0]; break;
+                }
+        }
+
+        if (skill == "pin") skill = "sword";
+        
+        attack_skill = me->query_skill_mapped(skill);
+        if (SKILLS_D->skill_query_power_point(attack_skill))
+                fight = SKILLS_D->skill_query_power_point(attack_skill);
+                        
+        // Check the target's armor
+        armor = target->query_temp("apply/armor");
+
+        damage += apply;
+        msg = "";
+        foo_after_hit = 0;
+                
+        while (type == UNARMED_ATTACK || type == WEAPON_ATTACK)
+        {
+                // Let parry skill take its special effort
+                if (skill = target->query_skill_mapped("parry"))
+                {                                                                       
+                        if (foo = SKILL_D(skill)->valid_damage(me, target, damage, weapon))
+                        {
+                                if (defend = SKILLS_D->skill_query_power_point(skill))
+                                {
+                                        if (! undefinedp(defend["parry"]) && defend["parry"] > 119)
+                                        {
+                                               if (! fight || fight["attack"] - defend["parry"] < 30)
+                                               {           
+                                                        if (stringp(foo)) msg += foo; else
+                                                        if (intp(foo)) damage += foo; else
+                                                        if (mapp(foo))
+                                                        {
+                                                                msg += foo["msg"];
+                                                                damage += foo["damage"];
+                                                        }
+                                                }
+                                        }
+                                }
+                        }
+                }
+
+                // Let dodge skill take its special effort
+                if (skill = target->query_skill_mapped("dodge"))
+                {
+                        if (foo = SKILL_D(skill)->valid_damage(me, target, damage, weapon))
+                        {
+                                if (defend = SKILLS_D->skill_query_power_point(skill))
+                                {
+                                        if (! undefinedp(defend["dodge"]) && defend["dodge"] > 119)
+                                        {
+                                               if (! fight || fight["attack"] - defend["dodge"] < 30)
+                                               {           
+                                                        if (stringp(foo)) msg += foo; else
+                                                        if (intp(foo)) damage += foo; else
+                                                        if (mapp(foo))
+                                                        {
+                                                                msg += foo["msg"];
+                                                                damage += foo["damage"];
+                                                        }
+                                                }
+                                        }
+                                }
+                        }
+                }
+                
+                if (damage < 1) break;
+                // Let cloth & armor take its special effort
+                if (cloth = target->query_temp("armor/armor"))
+                {
+                        foo = cloth->valid_damage(me, target, damage, weapon);
+                        if (stringp(foo)) msg += foo; else
+                        if (intp(foo)) damage += foo; else
+                        if (mapp(foo))
+                        {
+                                msg += foo["msg"];
+                                damage += foo["damage"];
+                        }
+                } else
+                if (cloth = target->query_temp("armor/cloth"))
+                {
+                        foo = cloth->valid_damage(me, target, damage, weapon);
+                        if (stringp(foo)) msg += foo; else
+                        if (intp(foo)) damage += foo; else
+                        if (mapp(foo))
+                        {
+                                msg += foo["msg"];
+                                damage += foo["damage"];
+                        }
+                }
+
+                // Finish
+                break;
+        }
+
+        while (damage > 0)
+        {
+                if (target->is_busy()) target->interrupt_me(target, 4 + random(4));
+
+                // Let weapon/unarmed attack take its special effort
+                if (type == WEAPON_ATTACK && objectp(weapon))
+                        // weapon attack
+                        foo = weapon->hit_ob(me, target, damage);
+                else
+                if (type == UNARMED_ATTACK)
+                        // unarmed attack
+                        foo = me->hit_ob(me, target, damage);
+                else
+                if (objectp(type))
+                        // special item attack
+                        foo = type->hit_ob(me, target, damage);
+
+                if (stringp(foo)) msg += foo; else
+                if (intp(foo)) damage += foo; else
+                if (mapp(foo))
+                {
+                        msg += foo["msg"];
+                        damage += foo["damage"];
+                }
+
+                // do enforce effect
+                my = me->query_entire_dbase();
+                if ((jiali = my["jiali"]) > 0 && my["neili"] >= jiali)
+                {
+                        // eforced
+                        my["neili"] -= jiali;
+                        if (type == REMOTE_ATTACK)
+                        {
+                                damage_bonus = jiali * damage / 200;
+                        } else
+                        {
+                                damage_bonus = jiali * damage / 300;
+        
+                                // check special force effort
+                                skill = target->query_skill_mapped("force");
+                                if (stringp(skill))
+                                {
+                                        foo = SKILL_D(skill)->valid_damage(me, target, damage_bonus);
+                                        if (stringp(foo)) msg += foo; else
+                                        if (intp(foo)) damage_bonus += foo; else
+                                        if (mapp(foo))
+                                        {
+                                                msg += foo["msg"];
+                                                damage_bonus += foo["damage"];
+                                        }
+                                }
+                                damage += damage_bonus;
+                        }
+                }
+
+                // do str effect
+                str = me->query_str() + me->query_temp("str");
+                if (str < 20)
+                        damage += damage * str / 50;
+                else
+                if (str < 40)
+                        damage += damage * ((str - 20) / 2 + 20) / 50;
+                else
+                        damage += damage * ((str - 40) / 4 + 30) / 50;
+
+                if (damage < 1) break;
+
+                // recalculate damage
+                if (damage > 1500)
+                        damage = (damage - 1500) / 4 + 1000;
+                else
+                if (damage > 500)
+                        damage = (damage - 500) / 2 + 500;
+
+
+                // do damage
+                target->receive_damage("qi", damage, me);
+                wound = (damage - random(armor)) * percent / 100;
+                if (target->query("character") == "光明磊落")
+                        wound -= wound * 20 / 100;
+                if (wound > 0) target->receive_wound("qi", wound, me);
+                if (functionp(final)) final = evaluate(final);
+                if (stringp(final))
+                {
+                        if (sscanf(final, "%s@%s", final, limb) == 2)
+                        {
+                                if (sscanf(final, "%s:%s", result, damage_type) != 2)
+                                {
+                                        result = HIR "这招打了个正中！";
+                                        damage_type = final;
+                                }
+                                if (sscanf(limb, "?%*s"))
+                                {
+                                        // auto select limb
+                                        limbs = target->query("limbs");
+                                        if (! arrayp(limbs))
+                                        {
+                                                limbs = ({ "身体" });
+                                                target->set("limbs", limbs);
+                                        }
+                                        limb = limbs[random(sizeof(limbs))];
+                                }
+
+                                // indicate damage type & limb
+                                final = replace_string(damage_msg(damage, damage_type), "$l", limb);
+                                final = replace_string(final, "$n", "$n" HIR);
+                                final = replace_string(final, "$N", "$N" HIR);
+                                final = replace_string(final, "$p", "$p" HIR);
+                                final = replace_string(final, "$P", "$P" HIR);
+                                if (weapon)
+                                        final = replace_string(final, "$w", weapon->name() + HIR);
+                                final = result + HIR + final + NOR;
+                        }
+
+                        msg += final;
+                        msg += "( $n" + status_msg(target->query("qi") * 100 / target->query("max_qi")) + ")\n";
+                }
+
+                break;
+        }
+
+        if (foo_after_hit) msg += foo_after_hit;
+        if (foo_before_hit) msg = foo_before_hit + msg;
+
+        // Clear the special message info after damage info
+        foo_before_hit = 0;
+        foo_after_hit = 0;
+
+        return msg;
+}

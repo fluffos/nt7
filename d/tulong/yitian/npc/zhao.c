@@ -1,0 +1,187 @@
+#include <ansi.h>
+
+inherit NPC;
+inherit F_UNIQUE;
+
+void create()
+{
+        set_name("赵敏", ({ "zhao min", "min", "zhao"}));
+        set("title", HIY "大元绍敏郡主" NOR);
+        set("long",
+"她脸泛红霞，容色丽都。十分美丽之中，更带着三分英气，三分豪态，同
+时雍容华贵，自有一副端严之姿，令人肃然起敬，不敢逼视。\n");
+        set("gender", "女性");
+        set("age", 15);
+        set("attitude", "peaceful");
+        set("shen_type", 1);
+        set("per", 30);
+        set("str", 15);
+        set("int", 25);
+        set("con", 25);
+        set("dex", 30);
+
+        set("max_qi", 50000000);
+        set("max_jing", 2000000);
+        set("max_neili", 5000000);
+        set("neili", 5000000);
+        set("jiali", 500);
+        set("combat_exp", 5000000+random(10000));
+        set("score", 20000);
+        set("chat_chance_combat", 120);
+        set("chat_msg_combat", ({
+                (: perform_action, "sword.ren" :),
+        }) );
+
+        set_skill("force", 180);
+        set_skill("dodge", 180);
+        set_skill("unarmed", 180);
+        set_skill("sword", 180);
+        set_skill("liangyi-jian", 180);
+        set_skill("huifeng-jian", 180);
+        set_skill("taiji-shengong", 190);
+        set_skill("changquan", 180);
+        set_skill("lingxu-bu", 180);
+        map_skill("dodge", "lingxu-bu");
+        map_skill("parry", "liangyi-jian");
+        map_skill("sword", "liangyi-jian");
+        map_skill("unarmed", "changquan");
+
+        set("inquiry", ([
+            "张无忌" :  "张公子远在昆仑，不知他近来可好？秋冷春寒，可有寒衣？\n",
+            "倚天剑" :  "倚天为天下神兵，怎么，你想要？\n",
+        ]));
+
+        setup();
+        carry_object("/clone/weapon/changjian")->wield();
+        carry_object("/clone/cloth/female2-cloth")->wear();
+}
+void init()
+{       
+        object ob;
+        ob = this_player();
+        ::init();
+
+        add_action("do_get","get");
+        add_action("do_yun","yun");
+        add_action("do_yun","exert");
+
+        remove_call_out("greeting");
+        call_out("greeting", 1, ob);
+}
+
+int do_yun(string arg)
+{
+        object obj;
+
+        obj=this_object();
+        if (arg == "roar" )
+        {
+                message_vision(CYN "\n赵敏喝道：无耻贼子，在我这儿由不得你猖狂！\n" NOR,
+                                   obj);
+                return 1;
+        }
+        return 0;
+
+}
+
+int do_get(string arg)
+{
+        object obj, env, shelf;
+        string what, where;
+
+        if(!arg) 
+        return 0;
+
+        if(sscanf(arg,"%s from %s",what, where) !=2)
+        return 0;
+
+        obj=this_object();
+        if(where == "shelf")
+        {
+                message_vision(CYN "\n赵敏喝道：无耻贼子，休得无理！\n" NOR,
+                                   obj);
+
+                message_vision(CYN "\n赵敏轻声哼了声，道：要想得到倚天剑也可以，但是首先"
+                                   "得比赢(bi)我的手下！\n" NOR,
+                                   obj);
+                return 1;
+        }
+        return 0;
+}
+
+int accept_fight(object who)
+{
+        command("say 欺负一个弱小女子算什么，要比和我的手下比(bi)。");
+        return 0;
+}
+
+int accept_hit(object who)
+{
+        command("say 欺负一个弱小女子算什么，要比和我的手下比(bi)。");
+        return 0;
+}
+
+int accept_kill(object who)
+{
+        mapping ob; //by redl
+        object me, *obs;
+        obs = all_inventory(environment()); 
+        if (sizeof(obs) > 0) 
+        { 
+                obs = filter_array(obs, (: query("id", $1) == "a da" :));
+                if (sizeof(obs) > 0) 
+                { 
+                                        command("say 欺负一个弱小女子算什么，要比和我的手下比(bi)。"); 
+                                        return notify_fail("刹那间你觉得无从下手。\n"); 
+                } 
+        } 
+        me = this_player();
+        command("laugh " + query("id", me));
+        command("say 笑死我了，原来你的来意是这个呀。");
+        tell_object(me, NOR CYN "赵敏从头饰上摘下一支珠花，轻轻一掷，恰好插在你的臀瓣中间..\n" NOR);
+        command("say 你带这个回去凑数，骗骗窗户外那笨女人就行了。");
+        command("xixi");
+        tell_object(me, NOR YEL "语毕，赵敏纵身一跃从窗户上跳出去，消失不见了。\n" NOR);
+        addn_temp("marks/kill_zhaomin", 1, me);
+        destruct(this_object());
+        return 0;
+/*
+        command("say 欺负一个弱小女子算什么，要比和我的手下比(bi)。");
+        return notify_fail("刹那间你觉得无从下手。\n");
+*/
+}
+
+int accept_ansuan(object who)
+{
+        return notify_fail("你刚想暗算，可是只见楼上人影晃动，根本看不清楚。\n");
+}
+
+void receive_damage(string type, int n)
+{
+    return;
+}
+
+void receive_wound(string type, int n)
+{
+    return;
+}
+
+void greeting(object ob)
+{
+        if( !ob || environment(ob) != environment() )
+        return;
+
+        if( !userp(ob))
+        return;
+
+        message_vision( HIW "$N一上楼来，只见一位明艳少女正座中堂，脸泛红霞，容色丽都。十分美丽\n"+
+                            "之中，更带着三分英气，三分豪态，同时雍容华贵，自有一副端严之致，令\n"+
+                            "人肃然起敬，不敢逼视。少女身旁地站着几人，衣着各异，但从几人的神态\n"+
+                            "和气度看来，无一不是武林高手。中堂摆着一个名贵的红木制剑架，剑架上\n"+
+                            "横放着一柄长剑，长剑的剑鞘上赫然写着“" NOR+HIY "倚天" NOR+HIW "”二字。\n" NOR,
+                            ob,this_object());
+
+        command("yi");
+        command("say 哼，今天来我这里添乱的人还真不少！");
+}
+

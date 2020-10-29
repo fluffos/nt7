@@ -1,0 +1,4 @@
+#/adm/daemons/goodsd.c
+dbase (["name":"王者商城",])
+rate 85
+sp_items (["高级清师令":6000,])

@@ -1,0 +1,19 @@
+name=成昆
+id=cheng kun
+gender=男性
+long=这就是「混元霹雳手」成昆，乍看上去宝相庄严，有若大德圣僧，可细看其眉眼，却有股阴寒森冷的气息从中流转。
+family=少林派
+difficult=6
+basic_exp=1000000000
+limit_exp=90000000000
+death_msg=我还不能死，我要亲手覆灭明教，师妹，大仇得报的时候，我就去见你...
+chatmsg=师妹，自你去后，可知我是如何渡过的，不管有多苦，为你，我愿成魔...
+advance_skill=huanyin-zhi
+basic_skill=finger
+stunt_name=一指幻生死
+stunt_msg=$N低垂的眼帘往上扬起，露出一对深邃难测，阴狠冰冷的目光，接著灰色的僧袍往下凹陷，紧贴全身，一指点出。动作行云流水，又若羚羊挂角，玄机暗含。一指汇集了全身的内力，瞬时全身衣衫再次鼓胀，双目放出惊人的光芒，在$n尚自吃惊之际，$N的一指已如流星闪电般袭至，同时伴随的还有刺骨的寒气和无尽的阴毒之风，$n只觉的周围的空气似乎都在霎那间凝固了，浑身似乎有冰蚕在血脉中爬行，甚至发出咝咝的轻声..
+stunt_hit=$n被$N的冰寒指力点中，真气瞬间涣散无法凝聚，全身冰冷入骨，脸色发青，不由得吐出一大口鲜血。
+stunt_fail=$n真气急速运作，游走周天，抗御冰寒之气，同时纵身跃起，半空中身形连连转动，终使$N的幻阴指力全部落空！
+rewards=exp:100000,pot:50000,mar:10000,gold:10
+drops=FI&/clone/tessera/rune20:30,FI&/clone/goods/tianshi-charm:70,FI&/clone/goods/resolve-scroll:100,FI&/clone/misc/baoxiang:100
+

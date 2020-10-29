@@ -1,0 +1,43 @@
+
+     socket_acquire(3)      MudOS (5 Sep 1994)       socket_acquire(3)
+
+     名称：
+          socket_acquire() - 接收一个 socket 的所有权(ownership)
+
+     语法：
+          #include 
+
+          int socket_acquire( int socket, string read_callback,
+                              string write_callback,
+                              string close_callback );
+
+          整数 socket_acquire( 整数 socket, 字串 read_callback,
+                               字串 write_callback,
+                               字串 close_callback );
+
+     用法：
+          呼叫 socket_acquire() 是为了要完成开始自 socket_release()
+          要转移一个 socket 所有权（和控制权）到一个新物件上的握手程
+          序(handshake)。socket_release() 呼叫那个将拥有所有权新物件
+          的释放回呼(callback)函式以通知那个物件说它想要传送这个 socket
+          的控制权过去。那个将拥有所有权的新物件有责任决定它是否接受
+          这个 socket。若它愿意接受的话，则要呼叫 socket_acquire() 以
+          完成这个转移。如果不愿的话，则这个回呼函式不需完成握手程序
+          只需返回即可。
+
+          在前一种情况下，握手程序完成并且新物件变成那个 socket 的拥
+          有者。那些读取、写入和关闭回呼函式参数也将参考这个新物件的
+          函式。这些都需要指定以使 MudOS 驱动程式可以知道要呼叫新物件
+          内的哪些函式。不同意接受这个 socket 将会使 socket_release()
+          传回 EESOCKNOTRLSD 以至於拥有者能进行适当的清除动作。
+
+          socket_acquire() 可以只由释放回呼函式的内部呼叫，并只含有那
+          个指定的 socket。
+
+     参照：
+          socket_release(3)
+
+     翻译：
+          Kenny@Broken.History       97.Jul.27       (printed 3/16/95)
+
+

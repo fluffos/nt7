@@ -1,0 +1,47 @@
+
+
+        author_stats(3)         MudOS v21c2             (5 Sep 1994)
+
+        名称:
+                author_stats() - 传回作者的一些统计资料.
+                domain_stats() - 传回区域的一些统计资料.
+        语法:
+                mapping author_stats( string domain | void );
+                mapping domain_stats( string domain | void );
+
+                映射 author_stats( 字串 domain 或 void );
+                映射 domain_stats( 字串 domain 或 void );
+        用法:
+                author_stats() 和 domain_stats()  都会传回一个储存在
+                映射变数的资料. 如果没有加上参数 (argument) , 就会传
+                回所有作者 (或所有区域) 每个人 (或每个区域) 的映射资
+                料. 每份映射资料包含有: 移动数 (moves), 耗费时间数 
+                (cost), 错误数 (errors),  心跳数 (heart_beats), 价值
+                数 (worth), 阵列数 (array_size),  和 物件数 (objects)
+                . 每一项都是包含在传回的映射变数中的整数值. 移动数是 
+                在指定作者 (或区域) 中, 物件被移动到另一物件中的多寡
+                . 耗费数是所有在指定作者 (或区域) 里的物件所耗费的计
+                算数目 (eval_cost). 错误数是在指定作者 (或区域) 中物
+                件总共发生的系统错误多寡. 心跳数是在指定作者 (或区域
+                ) 中, 所有物件呼叫 heartbeat  的次数. 价值数则是使用
+                add_worth(3)  函数的情形 (这项数值常常用来追踪指定巫
+                师作者所流出和流入的金钱数目) . 阵列数是指定区域中阵
+                列所配置的记忆体位元数. 物件数是指定区域中被创造出来
+                的物件总数. 当这两个函数被呼叫时, 如果没有指定参数, 
+                传回的映射就会像这样:
+
+                ([ domain0 : info0, domain1 : info1, ... ])
+
+                而 info0 的内容格式是:
+
+                ([ "moves" : moves, "cost" : cost, "errors" : errors,
+                   "heart_beats" : heart_beats, "worth" : worth,
+                   "array_size" : array_size, "objects" : objects ])
+
+                有指定参数时, 就会传回像 info0 的格式.
+        参考:
+                domain_file(4), author_file(4), set_author(3)
+        翻译:
+                Spock @ FF   96.Oct.15.                 (printed 3/16/95)
+
+

@@ -1,0 +1,34 @@
+鸳鸯刀
+
+挑战黑风寨 勇救萧中慧
+扬州广场去黑风寨的路径：#8 s;su;se;ne;wu;wu;wd;wu;n;wu;#wa 2000;wu;sw;w;wd;n;w;kill bai;#wa 3000;kill bai;#wa 3000;
+w;sw;w;w;eu;eu;eu;eu;#3 n;ne;nu;nu;yell 黑风神威;#wa 7000;n;n;say over go进黑风寨后，杀掉两个小头目，然后n;climb up
+（隐藏指令）,就可以见到萧中慧了，问萧中慧关于营救，拿到yang dao和奖励
+
+智上常春岛 巧进白云岛
+上长春岛要先去幽冥山庄拿哨子，幽冥山庄在武当大殿，使用隐藏指令（turn 把手）就到幽冥山庄了，口哨在招魂使者地上的石头里
+然后去碧蓝海边，在那里使用隐藏指令blow pipe,等一会会有船过来，down就可以了，等看到提示说到了再up，上岛后s;e;look rock;
+move rock;d就到了铁中棠那里，里面是个迷宫，用drop coin的方法走到夜帝那里，逍遥子就在那等你，杀了他就可以了。出来的方法
+：夜帝处get all from table;d;bomb,就到渡口了，然后blow pipe,等一会会有船过来，down就可以了，等看到提示说到了再up
+白云岛有2种走法，第一种先去沉香镇，进莽林（过莽林的走法风云4有介绍，我小号就是这么去的，这个比较繁琐），另一种走法还是
+去沉香镇,玄武门e走到头，一直se,看见可以s的地方一直s,就到南海了，去买张船票，把船票交给老狐狸，用sail south指令划船，就
+到白云岛了，常长风躲在白云岛最深处，打败他就可以了。
+扬州广场到蝙蝠岛入口的路径：#10 e;s;s;e;e;w;n;e;e;e;e;e;s;w;w;s;s;e
+碧蓝海边:上面的路径w;s
+广场到沉香镇入口路径"#10 e;ne;n;n;se
+
+杀上蝙蝠岛 恶人谷探险
+蝙蝠岛入口处：dash bush，见到魏行龙，ask wei xing long about book,fight win他会给你清风13式(50 level sword)，然后e,见到
+楚留香 ask master about bat island，见到丁枫give book to ding feng他会把你扔到海上，然后就一直look wave,就到蝙蝠岛了，
+然后2e,dash,open rightdoor就进内部了，里面就不说了，花剑影在胡铁花处，打败他就可以了。需要过迷宫，方法还是drop coin.
+广场到恶人谷路径：n;e;e;1s;rideca;1s;ridelanzhou;1s;ridexz;w;n;e;e;n;nu;n;e;ne;ne;ne;nd;e;n;n;e;se;e;e;#wa 2000;nu;nu;su;
+nu;look stone;northdown;nd;nd;e;e;e;e;盖总就在万春流处，4个人中最容易找的一个了。
+
+解秘进萧府 打败四高手 
+萧府在黄河岸边，请从泰山走，从华山那边走是找不到的，门口先杀掉一个，进去后花里拿钗子给张妈，可以进大厅了，再杀了大厅里2
+个拦路的后往北走，第四个卓天雄，先问他钥匙，再杀，杀完拿到奖励
+
+智得红钥匙 挑战袁冠男 
+卓天雄处，jump chi,tao dong就拿到钥匙了，再回到卓天雄处，unlock door;n就到树林，树林中随便走几步，就到后山袁冠男那里了
+，yuan dao就在他身上，杀了他拿yuan dao（袁冠南不是萧半合的女婿么，应该直接要才对啊,sigh),用he blade指令，合成鸳鸯宝刀，
+再回到萧半合处，问箫鸳鸯宝刀的事，就完成鸳鸯刀所有剧情了

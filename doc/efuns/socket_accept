@@ -1,0 +1,81 @@
+
+     socket_accept(3)       MudOS (5 Sep 1994)        socket_accept(3)
+
+     名称：
+          socket_accept() - 接受一个 socket 的连接(connection)
+
+     语法：
+          #include 
+
+          int socket_accept( int s, string read_callback,
+                             string write_callback );
+
+          整数 socket_accept( 整数 s, 字串 read_callback,
+                              字串 write_callback );
+
+     用法：
+          参数 s 是一个已用 socket_create(3) 建立、用 socket_bind(3)
+          指定了一个位址，并且正倾听(listen)在 socket_listen(3) 之後
+          连接的 socket。socket_accept() 从未处理(pending)的连接序列
+          中选取第一个连接，建立一个和 s 相同属性的新 socket 并且配
+          置一个新的描述值(descriptor)。如果在序列中没有未处理的连接
+          ，socket_accept() 会传回如後面会提到的错误值。这个被接受的
+          socket 将被用来从相连的另一端读写资料；它不能用来接受别的
+          连接。原先的 socket s 则保持开启以接受未来的连接。
+
+          read_callback 这个参数是给驱动程式在一个新的 socket（不是正
+          要接受的 socket）接收资料时呼叫的函式名称。这个读取回呼函式
+          (callback)应该是下列格式：
+
+               void read_callback(int fd)
+
+          这里的 fd 是准备接收资料的 socket。
+
+          write_callback 这个参数是给驱动程式在新的 socket（不是正要
+          接受的 socket）准备好写入时呼叫的函式名称。这个写入回呼函式
+          应该是下列格式：
+
+               void write_callback(int fd)
+
+          这里的 fd 是准备好写入的 socket。
+
+          注意：如果新 socket 不正常关闭，譬如和 socket_close(3) 的呼
+          叫结果不同的话，则会呼叫正要接受的 socket（不是新的 socket）
+          的 close_callback。这个关闭回呼函式应该是如下格式：
+
+               void close_callback(int fd)
+
+          这里的 fd 是已关闭的 socket。
+
+     传回值：
+          socket_accept() 在成功时会传回一个对於已接受 socket 的非
+          负数描述值。失败时，它传回一个负值。socket_error(3) 可以
+          用来得到这个错误码的文字叙述。
+
+     错误值：
+          EEFDRANGE      描述值超出□围。
+
+          EEBADF         无效的描述值。
+
+          EESECURITY     企图违反安全。
+
+          EEMODENOTSUPP  不支援此 socket 型态。
+
+          EENOTLISTN     socket 不在倾听中。
+
+          EEWOULDBLOCK   操作将被停滞(block)。
+
+          EEINTR         中断的系统呼叫。
+
+          EEACCEPT       接受问题。
+
+          EENOSOCKS      没有多馀的 efun sockets。
+
+     参照：
+          socket_bind(3), socket_connect(3), socket_create(3),
+          socket_listen(3)
+
+     翻译：
+          Kenny@Broken.History       97.Jul.26       (printed 3/16/95)
+
+

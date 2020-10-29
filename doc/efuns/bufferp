@@ -1,0 +1,20 @@
+
+
+        bufferp(3)              MudOS v21c2             (5 Sep 1994)
+
+        名称:
+                bufferp() - 看一个给定的变数是否为一个暂存区 (buffer).
+        语法:
+                int bufferp( mixed arg );
+
+                整数 bufferp( 混合 arg );
+        用法:
+                如果 arg 是一个暂存区就传回 1, 不是就传回 0.
+        参考:
+                mapp(3), stringp(3), pointerp(3), objectp(3), intp(3),
+                bufferp(3), floatp(3), functionp(3), nullp(3),
+                undefinedp(3), errorp(3)
+        翻译:
+                Spock @ FF   96.Oct.16.                 (printed 3/16/95)
+
+

@@ -1,0 +1,13 @@
+        save_variable(3)        LP MudOSv21c7                (7 Jul 1996)
+        函数名称:
+                save_variable() - 将变数值储存为一个字串 (string).
+        函数语法:
+                string save_variable( mixed var );
+                字串 save_variable( 混合 var );
+        函数用法:
+                把变数值储存成一个字串. 储存变数的格式跟 
+                save/restore_object 函式一样.
+        参考函数:
+                save_object(3)
+        手册翻译:
+                Phoebus@ZH        97.Jul.4.                (Writen 5/23/97)

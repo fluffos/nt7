@@ -1,0 +1,13 @@
+        dumpallobj(3)                LP MudOSv21c7                (7 Jul 1996)
+        函数名称:
+                dumpallobj() - 报告所有载入之物件的一些统计资料.
+        函数语法:
+                void dumpallobj( string | void );
+                无传回值 dumpallobj( 字串 或 无参数 );
+        函数用法:
+                这个函数会印出所有已经载入之物件列表. 如果没有指定
+                参数, 这些资讯会倾印在 /OBJ_DUMP  这个档案里. 如果
+                有指定参数, 则参数就是指定要输出的档案名称.
+        参考函数:
+                mud_status(3), debug_info(3)
+        手册翻译:        Phoebus@ZH        97.Feb.04.                (Writen 5/23/97)

@@ -1,0 +1,38 @@
+
+        replaceable()
+
+        名称：
+                replaceable() 判断是否有在当前的继承等级上
+                        定义的函数。
+
+        语法：
+                int replaceable(object ob);
+                整数 replaceable(物件 ob);
+
+                int replaceable(object ob, string *fnames);
+                整数 replaceable(物件 ob, 字符串阵列 fnames);
+
+        用法：
+                在第二种格式中，在物件 ob 中的所有函数，除了字
+                符串阵列 fnames 中指定函数名的函数以外，如果有
+                任何函数是在物件 ob 中明确定义的而不是继承来的，
+                则返回 0。如果没有这样的函数，则返回 1。
+
+                如果是第一种格式(也就是省略第二个参数)，默认的
+                第二个参数为 ({ "create" })，也就是默认不检查
+                create() 函数。
+
+                这个函数的目的是能够自动判断是否可以 replace_program().
+
+                注意：由于默认是忽略 create() 不检查，只有当你
+                不打算 clone 这个物件时，replaceable() 函数返回
+                TRUE 才可以安全地呼叫 replace_program() 函数。
+
+        参考：
+                replace_program,
+                functions,
+                function_exists,
+                inherit_list
+
+        by 发现号(Find@tx)
+

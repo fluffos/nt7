@@ -1,0 +1,22 @@
+subject : 解·明教之《九阳神功》
+author_name : 如来哥哥
+author_id : zxcvbnm
+time : 1222191305
+board : 如来哥哥的留言板
+file : /data/analecta/2008/27681995.txt
+add_time : 1222201761
+content :
+首先ask zhang wuji about 九阳秘籍
+第2步在明教密道里找到成昆杀之，取其头颅(cut head from corpse)
+第3步在关外胡家附近坐船到冰火岛找到谢逊give head to xie xun，他会给你一束金毛。
+第4步回到明教将金毛交给张无忌，然后再ask zhang 九阳秘籍，此刻他会提示你关于“经在油中”的讯息。
+接着你需要准备一个大米(可以是刚申请的ID)，随同你要学九阳的ID一起rideto kunlun到达昆仑山，
+sw;se;eu;s之后让主ID先昏(#50 d)，接着用大米get你的主ID(这里注意主ID身上负重不要太多，不然大米背不动)，
+然后jump down，随后等主ID醒了zuan cave，进去里面找到一只瘸腿的猴子它会follow你，
+你就带它去找到有树枝的地方，snap 树枝，用树枝给他包扎(指令bandage)，
+之后出于感恩，它会给你一个包裹(bag)，open bag就会得到九阳真经啦！
+
+密道成昆所在：rideto mingjiao;w;w;w;wu;wu;w;w;enter;break men(需要force300级);enter;n;n;w;n;u(如遇无路可用"open 方向"来打通)
+谢逊所在：rideto hujia;s;s;e;ask chuan 出海;give chuan 1 gold;下岸后#6 n;e;enter dong
+学习九阳条件请参照help mingjiao
+[2;37;0m

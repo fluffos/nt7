@@ -1,0 +1,38 @@
+        sort_array()
+
+        名称：
+                sort_array() 排序一个阵列
+
+        语法：
+                mixed *sort_array( mixed *arr, string fun, object ob );
+                混合阵列 sort_array(混合阵列 arr, 字符串 fun, 物件 ob);
+
+                mixed *sort_array( mixed *arr, function f );
+                混合阵列 sort_array(混合阵列 arr, 函数指标 f);
+
+                mixed *sort_array( mixed *arr, int direction );
+                混合阵列 sort_array(混合阵列 arr, 整数 direction)；
+
+        用法：
+                第一种格式返回一个和参数 "arr" 内元素相同的阵列，
+                元素的顺序按攀升的顺序排列，这个顺序依据阵列内每
+                两个元素分别作为参数呼叫物件 ob 内的函数 fun 的
+                返回值来决定，返回值 -1, 0, 或者 1，来说明这两个
+                元素的关系是 小于，等于，或者 大于。
+
+                第二种格式同第一种功能相同，只是用函数指标代替。
+
+                第三种格式返回一个和参数 "arr" 内元素相同的阵列，
+                阵列内元素的顺序由第二个参数 "direction" 来决定，
+                0 或者 1 会按照升序排列，如果是 -1 会按照降序排
+                列。而元素之间的大小关系是由内建的程序来比较，但
+                是内建的比较程序有一个局限，它要求阵列必须是同类
+                的，也就是阵列内的元素类型必须相同，类型只能是
+                字符串，整数，浮点数中的一种。如果阵列内包含阵列，
+                它只会比较子阵列的第一个元素。
+
+        参考：
+                filter_array(3), map_array(3), strcmp(3)
+
+        by 发现号(Find@tx)
+

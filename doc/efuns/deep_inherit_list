@@ -1,0 +1,14 @@
+        deep_inherit_list(3)        LP MudOSv21c7                (7 Jul 1996)
+        函数名称:
+                deep_inherit_list() - 取得一个物件所继承的父物件.
+                                      (parent object)
+        函数语法:
+                string *deep_inherit_list( object obj );
+                字串 *deep_inherit_list( 物件 obj );
+        函数用法:
+                传回一个物件所继承之所有父物件的档案名称, 包括直接继承
+                与间接继承的父物件.
+        参考函数:
+                inherit_list(3), inherits(3)
+        手册翻译:
+                Phoebus@ZH        97.Feb.04.                (Writen 5/23/97)

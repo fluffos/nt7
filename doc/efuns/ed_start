@@ -1,0 +1,19 @@
+        ed_start(3)                LP MudOSv21c7                (7 Jul 1996)
+        函数名称:
+                ed_start() - 开始执行一个 ed 工作.
+        函数语法:
+                string ed_start( string file | void, 
+                        int restricted | void )
+                字串 ed_start( 字串 file 或 无参数, 
+                        整数 restricted 或 无参数 )
+        函数用法:
+                这个函式只有 __OLD_ED__ 不予定义 (define) 时有效.
+                这个函式开始执行内部的文书编辑程式, 可以指定或不指定
+                要予以编辑的档案 file.  函式会传回执行完 ed 的编辑结
+                果. 当 ed 程式仍在执行时, 可以使用 ed_cmd() 执行 ed 
+                的命令.
+                如果 restricted 的值为 1  , 所有更改档案的命令都会被
+                视为无效.
+                一个物件同一时间内只能执行一个 ed 工作.
+        手册翻译:
+                Phoebus@ZH        97.Feb.12.                (Writen 5/23/97)

@@ -1,0 +1,5 @@
+#/adm/npc/obj/xiang.c
+dbase (["value":100,"open":0,"startroom":"/data/room/redl/woshi","shadow_ob":0,"closed":1,"name":"[1;35m聚宝箱[2;37;0m","no_get":1,"owner":"redl","id":"ju baoxiang","long":"[1;37m一个四周边缘环绕着神秘光环的箱子，据说可以将东西无限制的存（store）进去,不会丢失，且无论什么时候都可以取（take）出来，还可以使用密码锁（lock）防盗。[2;37;0m","unit":"个",])
+store ({})
+data_dbase ({})
+temp_dbase ({})

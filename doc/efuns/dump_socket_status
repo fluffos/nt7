@@ -1,0 +1,15 @@
+
+        dump_socket_status()
+
+        名称：
+                dump_socket_status() 显示出每一个 LPC 套接口的状态
+
+        语法：
+                string dump_socket_status();
+                字符串 dump_socket_status()
+
+        说明：
+                此函数已取消，由 socket_status 函数代替。
+
+        by 发现号(Find@tx)
+

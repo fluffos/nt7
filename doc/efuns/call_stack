@@ -1,0 +1,24 @@
+
+        名称:   call_stack()    返回当前函数被呼叫的信息.
+
+        语法:
+                array call_stack(int arg)
+
+        用法:
+
+                如果 arg = 0, 会返回呼叫堆栈中的名称的阵列,其中第一个是
+                        最近的呼叫(如当前正在运行的程序).
+
+                如果 arg = 1, 会返回程式正在其中执行的物件列表.
+
+                如果 arg = 2, 会返回这些函数的名称.
+
+                如果 arg = 3, 会返回那个框架中 origin() 函数的返回值.
+
+
+        See also:
+                previous_object, origin
+
+        翻译:
+                by 发现号(Find@tx)
+

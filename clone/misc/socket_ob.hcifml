@@ -1,0 +1,134 @@
+// socket_ob.c
+// create by yezh 10/01/2005
+// 一个 基于 TCP & ASCII 方式的 SOCKET 物件，
+// 方法：do_open, do_send
+// 事件：on_recv, on_send, on_close
+// 在构造的时候create socket，在析构时close socket
+
+#include <ansi.h>
+#include <net/socket.h>
+#include <net/socket_errors.h>
+
+#define DEBUGGER            "hcifml"
+#define DEBUG(x)            while (0) {}
+// #define DEBUG(x)            tell_object(find_player(DEBUGGER), x)
+
+#define CHECK_FD_VALID();    \
+    if (fd != s_fd) \
+    {   \
+        // 收到了不属于自己的数据包 \
+        evaluate(callback["report"], s_fd   \
+                 sprintf("收到数据包时，套接字号不一致，物件套接字号：%d，" \
+                         "收到套接字号：%d\n", s_fd, fd));  \
+        return; \
+    }   \
+
+int s_fd;
+int get_fd()
+{
+    return s_fd;
+}
+
+mapping callback;
+string  buf;
+
+// 发送是的回调函数
+void on_send(int fd)
+{
+/*
+    CHECK_FD_VALID();
+*/
+    // 如果有缓存的数据，则一起写进去
+    if (strlen(buf) > 0)
+        socket_write(s_fd, buf);
+        
+    if (functionp(callback["on_send"]))
+        // 存在发送数据时的回调函数
+        evaluate(callback["on_send"], fd);
+}
+
+void create()
+{
+    // 创建一个 SOCKET ， 没有指定它的读会调函数，和关闭回调函数
+    s_fd = socket_create(STREAM, "", "on_close");
+    callback = allocate_mapping(0);
+    buf = "";
+}
+
+// 对方主动关闭了 socket 连接
+void on_close(int fd)
+{
+/*
+    CHECK_FD_VALID();
+*/  
+    DEBUG("套接字(" + fd + ")连接被关闭了.\n");
+    if (functionp(callback["on_close"]))
+            evaluate(callback["on_close"], fd);
+}
+
+// 接收到对方的数据
+void on_recv(int fd, string data)
+{
+/*
+    CHECK_FD_VALID();
+*/
+    if (functionp(callback["on_recv"]))
+        // 存在收到数据时的回调函数
+        evaluate(callback["on_recv"], fd, data);
+}
+
+// 打开一个 SOCKET 连接，需要的参数，目标 IP，和目标 PORT，事件的回调通知
+int do_open(string ip, int port, mapping callback_arg)
+{
+    string addr;
+    
+    // 包装目标地址格式
+    addr = sprintf("%s %d", ip, port);
+    
+    // 设定回调通知函数
+    callback = callback_arg;
+    
+    // 连接目标
+    return socket_connect(s_fd, addr, "on_recv", "on_send");
+}
+
+// 发送一个数据给对方
+int do_send(string data)
+{
+    int write_ret;
+    
+    DEBUG("开始写套接字\n");
+    write_ret = socket_write(s_fd, buf + data);
+    switch (write_ret)
+    {
+    case EEWOULDBLOCK:
+        // 程序停滞
+    case EESEND:
+        // 传送资料错误
+    case EEALREADY :
+        // 正在写数据中，所以此次写失败，则缓存数据，之后再写
+        DEBUG("写套接字失败，加入缓存\n");
+        buf += data;
+        call_out("do_send", 1, "");
+        break;
+        
+    case EECALLBACK:
+        // 等待完成
+    case EESUCCESS :
+        // 写成功，则清掉缓存
+        buf = "";
+        break;
+     
+    default :
+        DEBUG(HIR "写套接字失败，" + write_ret + "\n" NOR);
+    }
+    
+    return write_ret;
+}
+
+// 析构函数
+void remove()
+{
+    DEBUG("套接字被关闭了.\n");
+    socket_close(s_fd);
+}

@@ -1,0 +1,18 @@
+        commands(3)                LP MudOSv21c7                (7 Jul 1996)
+        函数名称:
+                commands() - 传回一些关於此使用者可以使用的命令资讯
+        函数语法:
+                mixed *commands( void );
+                混合 *commands( 无参数 );
+        函数用法:
+                传回一个包含四项资料的阵列 (array), 说明 this_object()
+                可以使用的动作 (action) . 第一项资料是命令名称 ( 即
+                add_action()  的命令) ; 而第二项是命令的旗标 (flags)
+                 (即 add_action() 的第三个参数, 预设值为 0  );  第三项
+                资料是定义此动作的物件. 第四项资料是被此动作呼叫的函式
+                (function) (此项资料如果是个函式指标 [function pointer]
+                则传回 "<function>").
+        参考函数:
+                add_action(3), enable_commands(3), disable_commands(3)
+        手册翻译:
+                Phoebus@ZH        97.Jan.27.                (Writen 5/23/97)

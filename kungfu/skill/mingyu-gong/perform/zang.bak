@@ -1,0 +1,86 @@
+ //  rouwanduanyu.c
+#include <ansi.h> 
+inherit F_CLEAN_UP; 
+int exert(object me, object target, int amount)
+{
+        object *enemys;
+        int i, skill, damage,force,extra,extra_enemy,state,base,res_kee,last_damage; 
+        string msg;
+        if( query("class", me) != "yihua" )
+                return notify_fail ("［乱花葬玉］只有移花宫弟子能使用。\n");
+
+        if( !me->is_fighting() )
+                return notify_fail("乱花葬玉只能在战斗中使用。\n"); 
+        force=query("force", me);
+        if( force < 500 )
+                return notify_fail("你的内力不够。\n"); 
+        
+        skill = me->query_skill("mingyu-force",1);
+        extra = me->query_skill("force");
+        if (skill<160) return notify_fail("你的明玉功尚未达到第八重，不能施展乱花葬玉。\n"); 
+        
+
+                if (amount<0) amount=0;
+                if (amount)
+                        force = force /amount;
+
+        addn("force", -force/3, me);
+        
+        //suppose: force: 220,mingyu-force: 180, max_force: 650+220*5=1750
+        //xingxiexuanzhuan最多吸到3倍 max_force = 1750 * 3 =5250
+        //dam_max = 5250 * 9= 47250
+        damage = force*skill/20;
+        damage = damage/2+random(damage/2);
+        
+        //检查敌人中有没有condition/mingyu的
+        state = 0;
+        enemys = me->query_enemy();
+        for (i=0;i<sizeof(enemys);i++)
+                        {
+                                state=query_temp("condition/mingyu", enemys[i]);
+                                if (state) break;
+                                }
+        
+        if (state)
+                {
+                msg = HIW "$N双目微闭，丹田处腾起一个无比刺眼气团，真气漩涡突然消失！\n"NOR;
+                msg += HIW "\n气团爆裂开来，向四周电射而出，光芒足以和日月争辉！\n\n"NOR;
+                }
+        else
+                {
+                msg = HIW "$N一声尖啸，身体猛然旋转不定！\n"NOR;
+                msg += HIW "\n$N从丹田出散出无数气流，犹如千万根银针，向四面八方射去！\n\n"NOR;
+                }
+        
+
+        combat_message_vision(msg,me);
+
+        
+        for (i=0;i<sizeof(enemys);i++)
+        {
+            state=query_temp("condition/mingyu", enemys[i]);
+            extra_enemy = enemys[i]->query_skill("force");
+            last_damage = damage*2/3;
+            if (last_damage<0) last_damage = 100;
+            //write("damage is :"+(string)damage+"\n");
+            if (random(extra+extra_enemy)<extra_enemy)
+            {
+                last_damage = last_damage /2;
+                combat_message_vision(HIR"$N只觉眼前光芒刺眼，周围空气几欲沸腾，大惊之下连忙急运内功，抵御开来。\n"NOR,enemys[i]);
+            }
+            else
+                combat_message_vision(HIR"$N只觉眼前无数寒光闪过，随即全身一阵刺痛，几股血柱自身上射出。\n"NOR,enemys[i]);
+            res_kee = 10+(skill-180)/3;
+                        if(res_kee>40)
+                                res_kee = 40;
+            //write("last_damage is :"+(string)last_damage+"\n");
+            //state = enemys[i]->query_temp("condition/mingyu");
+            //res_kee=enemys[i]->query("resistance/kee");
+            addn_temp("resistance/kee", -res_kee, enemys[i]);
+            enemys[i]->receive_damage("kee", last_damage, me); 
+            addn_temp("resistance/kee", res_kee, enemys[i]);
+            COMBAT_D->report_status(enemys[i]); 
+        }
+        if (me->query_busy()<3) me->start_busy(3);
+            return 1;
+}   

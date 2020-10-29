@@ -1,0 +1,23 @@
+        objects(3)                LP MudOSv21c7                (7 Jul 1996)
+        函数名称:
+                objects - 传回一个已载入之物件的阵列 (array).
+        函数语法:
+                object *objects( string func, object ob ); 
+                object *objects( function f );
+                物件 *objects( 字串 func, 物件 ob );
+                物件 *objects( 函式指标 f );
+        函数用法:
+                objects() 传回 mud  里已经载入之物件的阵列. 请注意, 
+                如果系统设定的最大阵列长度 (maximum array size)太低, 
+                objects() 传回的阵列内容会中断在最大长度的地方. 这样
+                一来, objects() 也就没有什麽用处.
+                如果指定了 func 和 ob 两个参数, 则会呼叫 ob->func(), 
+                并以所有已经载入的物件作为 func() 的参数. 如果函式传
+                回非零值, 此物件就会被 objects()  传回来. 如果是零则
+                不会.
+                如果指定 f, 所有已载入的物件都会呼叫函式指标 f. 例如:
+                objects( (: clonep :) ) 会传回现存全部的复制物件的列表.
+        参考函数:
+                livings(3), users(3)
+        手册翻译:
+                Phoebus@ZH        97.Apr.24.                (Writen 5/23/97)

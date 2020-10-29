@@ -1,0 +1,477 @@
+───────────────────────────────────
+$BBLU$$HIW$                           【各个BOSS路径】                             $NOR$  
+───────────────────────────────────
+
+注：走之前接个宗师任务，以下路径都是接了后走过去的。
+
+『华山叛徒』:do rideto gc,3 n
+
+『朝廷逃犯』:do rideto beijing,6 s
+
+『剑冢刀客』:rideto xiangyang;#6 e;ne;e;n;n;n;e;s;n;n;n;e;s;n;n
+
+『盗墓飞贼』:rideto gumu
+
+『采花大盗』:do rideto emei,wu,se
+
+『杨康』:do rideto jiaxing,e,se,s
+
+『阎基』:do rideto guanwai,n
+
+『田伯光』:do rideto huashan,nw
+
+『五毒圣物』:do rideto wudu,2 w,2 wd,w
+
+『小龙女』:do rideto jueqing,2 s,sw,sd,e,eu
+
+『金轮法王』:do rideto jueqing,enter,2 w,2 n,w,2 nw,nu
+
+『公孙谷主』:do rideto jueqing,enter,2 w,2 n
+
+『扶桑武士』:do rideto nanhai,n
+
+『成昆』:rideto mingjiao
+
+『左冷禅』:do rideto taishan,3 n,4 nu,2 n,2 nu,2 n,2 nu,wu,nu,2 n;#wa 500;do 2 wu,nw,9 nu,u
+
+『柳长街』:rideto zhongzhou,5 s
+
+『夏雪宜』:do rideto jiaxing,s,s,e,ne,nu,n
+
+『西毒欧阳锋』:do rideto kunlun,walk 前厅;kill xi huazi;do 8 n,w,n,open door,out,ne
+
+『苗人凤、胡一刀』:do rideto nanhai,ask bei chou about daojian
+
+『黄金巨龙』:do rideto jiayu,n
+
+『神圣巨龙』:do rideto xueshan,n,2 e,3 n,ed,2 s,sw,2 w
+
+『影魔东方不败』:do rideto nanhai,ask bei chou about dongfang
+
+『剑魔独孤求败』:rideto xiangyang;#6 e;ne;e;n;n;n;e;s;n;n;n;e;s;n;n;n;enter;n
+
+『剑灵』:do rideto nanhai,ask bei chou about jianling
+
+『蚩尤』:do rideto beijing,2 w,2 n,6 w
+
+『白自在』:do rideto lingxiao,w,nu
+
+『蛇精』:需要身上有童男童女符，先上神龙岛:do rideto ruzhou,3 n,e,ask chuanfu 出海，give 1 gold to chuanfu。上了岛后n一步然后一直e到有enter的地方,然后一直s到底，enter,见到赛神龙,6 s,2 e,s,enter就到了,reng tntn fu,然后等九头蛇精出现就可以杀了，血非常多，慢慢杀吧。
+
+『火麒麟』:需要杀了九头蛇精掉落斩妖勋章（几率掉落）,赛神龙处out,n到神秘岩洞冰窖分岔口这个十字路口，e到头，enter就到了。putin zhanyao xunzhang，火麒麟就出来了。
+
+
+
+
+
+
+
+
+
+                   泥潭路径之环游泥潭最新版
+以下路径全部从扬州中央广场n;e;e开始(凡是有rideto的n;e;e后需要ride xxx马厩里有的马
+
+宗师路径:
+独孤求败:rideto huashan;#wa 2000;ne;cross
+葵花太监:rideto beijing;#wa 2000;#7 s;se;se;e;n;nw;nw;ne;wu;nu;wu
+南海神尼:rideto foshan;#wa 2000;#4 s;w;enter
+黄    裳:rideto dali;n;n;n;w;w;wu;wd;wd;s;
+
+各大BOSS路径:
+
+华山叛徒:rideto yangzhou;#wa 3000;#4 3
+
+朝廷钦犯:rideto beijing;#wa 2000;#wa 3000;#6 s
+
+剑冢刀客:rideto xiangyang;#wa 2000;#6 e;ne;e;e;n;e;s;e;n;n
+
+盗墓飞贼:rideto gumu
+
+田伯光:rideto huashan;#wa 2000;nw
+
+五毒圣物:rideto wudu;#wa 2000;w;w;wd;wd;w
+
+小龙女:rideto jueqing;#wa 2000;s;s;sw;sd;e;eu
+
+金轮法王:rideto jueqing;#wa 2000;enter;w;w;n;n;w;w;nw;nw;nu
+
+公孙谷主:rideto jueqing:#wa 2000;enter;w;w;n;n
+
+扶桑武士:rideto nanhai;#wa 2000;n
+
+西毒欧阳锋:nu;eu;#3 nu;#10 n;#wa 1000;n;n;w;n;open door;out;ne
+
+镇海神龙:侠客岛海滨.rideto nanhai;#wa 2000;n;e;n;ask zhang 赏善罚恶令;s;w;w;w;enter boat
+
+黄金巨龙:rideto jiayu;#wa 2000;n
+
+神圣巨龙;rideto xueshan;#wa 2000;n;e;e;#3 n;ed;s;s;w;w;w
+
+
+先天各种增加方法:一吃丹.二解密.三练武功.具体请help add_gift
+
+
+各种书本和解密:
+
+正气诀:rideto huashan;#wa 2000;#2 su;#2 eu;su;eu;eu;#4 su;eu;#3 n;w;s;get all
+
+天魔诀:ringto yangzhou;#wa 2000;#4 w;s;w;ask gui san about 天魔决;然后到扬州东大街--西大街附近找找落魄公子.
+       找到后ask gong zi about 鬼三;kill li;get all from corpse;rideto yangzhou#wa 2000;#4 w;s;w;give gui san xiao;enter
+       进去pull可以拿到一个铁箱子，open xiang;就可以拿到天魔决了
+
+神照经:rideto jingzhou;#wa 2000;#4 e;n;get juhua
+       rideto jingzhou;#wa 2000;w;s;kill ya yi;s;s;kill guan jia;
+       w;give juyou juhua;e;unlock men;e;ask ling about 丁大哥
+       w;s;w;u;e;s;get all;n;w;d;e;n;n;kill ling;open door;e;
+       give ding green flower
+
+
+太监辟辟邪剑法: 
+1去洛阳找到莆田少林寺高手渡元禅师(duyuan chanshi)，问他
+关于辟邪剑谱的事，他会杀你，干掉他，身上就有本袈裟。
+
+2自宫后，去华山玉女祠（镇岳宫eu;w）jump cliff再climb up
+ 是太监的话就会触发对话剧情，情节结束会得到一件袈裟
+
+3去福州福威镖局，找林震南询问“福威镖局、远图公、辟邪
+剑法、铜板”得到密码后到向阳老宅的井中输入数字，进入密室后在
+房梁上就能找到第3件袈裟。(rideto fuzhou;w;w;n;enter;n;ask lin
+about 福威镖局;ask lin about 远图公;ask lin about 辟邪剑法;ask
+lin about 铜板;然后买火折，买卖提和杨永福那里都有。接下来，
+rideto fuzhou;s;s;w;w;n;break men;n;down;use fire;zuan;press xxxx
+(xxxx为林震南告诉你的铜板数);进到密室climb tie xiang;jump liang;
+move jia sha)
+
+全真先天功:
+先天功之纯阳通神功：全真弟子当自身全真技能造诣已经极高时，可
+尝试在王重阳祖师面前行礼（ketou）,如果自身条件达到，将会几率
+性的得到纯阳神通功秘诀(shentong mijue)，按照秘诀要求参悟，即
+可领悟先天功的无上心法--纯阳神通功。
+     
+圆月弯刀解密:
+圆月弯刀学习解密：每年7月15日月夜 到达圆月山庄背后山沟，看到
+洪水后。跳入山沟会立刻昏迷，醒来如果看见被冲入山谷中一个很深
+的洞穴（四面都是山，都是树，雨后的山谷潮湿而新鲜，就像是个初
+浴的处女。洞穴的四壁画满了图画，画的却不是人间，而是天上。）
+在此处自杀(ci hou)（没有武器的话会提示没有武器怎么刺喉）会出
+现一条淡淡的影子，带着种淡淡的香气，从面前飞了过去，忽然又不
+见了。接着手中的武器会消失。然后撞墙(zhuang qiang)会触发青青
+救人的故事，然后青青会带你进入忧愁谷（这里是个幽谷，幽深的山
+谷，四面都是高不可攀的绝壁，好像根本没有出路。山谷并不大，虽
+然也有庭园宫室、亭台楼阁，景象虽然和那洞穴的壁画一样，却只不
+过图画中的一角而已。）向青青要刀，如果先天满足的话青青会给你
+圆月弯刀然后可以向青青学习圆月刀法。
+
+
+金蛇剑;请参考wenxuan 2010 6
+
+灵蛇岛:首先rideto hangzhou;#wa 3000;s;s;s;#2 sw;#3 w;sw;s;s;ed;enter zhou
+       ask yin 冰火岛;decide下船后先到王盘山n;get stone;#5 break boat;s;n;s
+       kill 所有人;s;s;ne;ne;ne;se;l chuan;enter chuan就到了
+       
+
+冰火岛:先参考wenxuan 2010 3 因为里面有些路径不具体,且有的地方有改动所以我在这里补充路径
+       首先rideto hangzhou;#wa 3000;s;s;s;#2 sw;#3 w;sw;s;s;ed;enter zhou
+       ask yin 冰火岛;decide
+       下船后先到王盘山n;get stone;#5 break boat;s;n;s
+       kill 所有人;s;s;ne;ne;ne;se;接下继续参考wenxuan 2010 3
+       (提示：必须有屠龙刀故事触发才能去冰火岛否则不能break boat).
+
+九阳神功:请参考wenxuan 2010 2(提示拿书的小号臂力必须小于20否则拿不到记得带武器)
+         小号拿到后把包裹给大号..大号打开需马上get all
+
+乾坤大挪移:rideto mingjiao;#wa 2000;w;w;w;wu;wu;w;w;enter;break men(需要300基本内功)
+           enter:#4 n;遇门则open door;遇见骸骨请ketou;get all
+
+太玄功:rideto nanhai;#wa 2000;n;e;n;ask zhang 赏善罚恶令(要求200force 200武学 5000内力 10W威望);s;w;w;enter boat
+       到海滩时s;s;s;e;se;w;nw;e;s;s;#5 su;jump pubu;s;s;e;enter;s;think bi(细节请help pub_skill)
+
+百花错拳,庄子舞,战神心经:rideto hangzhou;#wa 3000;s;s;s;#2 sw;#3 w;sw;s;s;wu;enter
+                         kill all;u;一直找到陈家洛.xue chen baihua-cuoquan 来激发
+                         接着可以xue chen zhuangzi-wu 
+                                 xue chen zhanshen-xinjing
+
+九阴真经:屠龙刀拿法：rideto hangzhou;#wa 3000;s;s;s;#2 sw;#3 w;sw;s;s;ed;enter zhou;ask yin 冰火岛;decide
+                     下船后;n;get stone;break boat;s;n;s;kill all;s;s;get all from ding
+
+         倚天剑;rideto beijing;w;w;n;n;#5 w;enter;kill all;enter;进去后.n;n;n;u;一路kill all
+                一直找到赵敏get all from shelf.然后和其手下比划bi一直比完拿剑
+                (提示：可能倚天剑会在阿大的corpse中)
+         两样都拿到后duikan yitian jian则得到武穆遗书 18掌和九阴真经
+
+独孤九剑:rideto huashan;#2 su;#2 eu;su;eu;eu;#4 su;eu;sd;su;su;say 风清扬一直到出现提示寻找玄铁剑
+         接下来nd;nd;nu;n;nw;ne;eu;shout 风老前辈一直到出现田伯光.
+         fight tiao.建议all 200获胜后n一步见到陶谷六仙.
+         全部fight 一遍才可以通过然后ne;enter;xue feng lonely-sword
+
+独孤九剑无招解密:rideto xiangyang;#wa 2000;#5 e;ne;e;e;n;n;n;e;s;n;
+n;n;#wa 1000;enter;n;s;out;n;n;n;wa qingtai;climb bi;enter,
+然后hole1~hole6对应相应的机关，enter hole后move desk;out;
+l door当6把火炬都亮着就可以enter;get canben;rideto huashan;
+ne;cross;give dugu canben
+
+六脉神剑:rideto dali;#4 n;nw;n;ne;e;#3 s;#wa 1000;e;#2 s;w;#6 s;kill kurong(随机出现六脉神剑剑谱.注意需要skills300以上方安全)
+
+唐诗剑法:可以参考wenxuan 2010 4
+
+其余各种解密可以参考help fam_skill help pub_skill
+
+
+taskNPC路径
+                
+任我行位置:rideto beijing;#wa 2000;w;w;n;n;w;w;w;w;w;w;sw;w;w;e;s;e;n;e;w;w;w;sw;w;n;n
+
+霍青桐位置:rideto mingjiao;#wa 2000;e;n;n;s;s;e;e;e;e;e;se;e
+
+宋青书位置:rideto emei:#wa 2000;#4 wu;su;su;su;se;sw;su;se;wu;su;se;enter;w;jump chuang;s;s;se
+
+萧远山位置:rideto ruzhou;#wa 2000;#7 n;ne;nw;ne
+
+玉真子位置:rideto ruzhou;#wa 2000;#7 n;ne;nw;ne;ne;ne;n;n;ne;ne;ne;ne;#4 n
+
+大悲老人位置:扬州中央:#3 s;#4 e;#3 se;e
+
+归云庄主陆冠英:扬州中央;#3 s;#4 e;#3 se;e;s;s
+
+李莫愁位置:扬州中央:n;e;e;goto jiaxing;ne;n;e
+
+谢烟客位置:rideto henyang;#wa 2000;#6 w;s;climb lian
+
+越女位置:rideto hangzhou;#wa 2000;n;w;sw;#2 w;wu
+
+鳌拜;rideto beijing;#wa 2000;#2 w;#7 n;kill shi wei;n;n;
+
+张三丰:rideto wudang;#wa 2000;wu;w;su;su;su;su;sd;su;sd;su;su;su;su;s;s;s;s;s
+
+姚春:rideto beijing;#wa 2000;w;w;n;e;e;n
+
+谢逊:参考help path里的冰火岛就找到了
+
+黄药师:rideto taohua;#wa 2000;ask sha 玩;agree;w;w
+
+黎生:rideto yangzhou;#wa 2000;enter;say 天堂有路你不走呀;d;5;ne;ne
+
+王处一:rideto quanzhen:#wa 2000;knock gate;e
+
+鲁班:rideto yangzhou;#wa 2000;n;n;n;n;n;n;e;
+
+陈有德:rideto yangzhou;#wa 2000;w;w;s
+
+林震南;rideto yangzhou;#wa 2000;w;w;w;s;s
+
+慕容博:rideto murong;#wa 2000;nd;eu;e;e;s;s;w;w;s;s
+
+慕容复:rideto murong;#wa 2000;nd;eu;e;e;s;s;w;w;s;s;e;e;e
+
+阿庆嫂:rideto yangzhou;s;s;w
+
+徐天川:rideto beijing;#wa 2000;#3 w;#5 s;e
+
+接引使;rideto mingjiao;#wa 2000;w;w;w
+
+杨过:rideto xiangyang;#wa 2000;#6 e;ne;e;e;n;e;s;e;n;n;n
+
+胡青牛:rideto mingjiao;#wa 2000;w;w;w;wu;wu;#4 nu;enter;enter
+
+陈家洛:rideto hangzhou;#wa 3000;s;s;s;#2 sw;#3 w;sw;s;s;wu;enter;kill all;up到顶
+
+赌客:rideto beijing;#wa 2000;s;s;e;n
+
+华赫艮:rideto dali;#wa 2000;n;n;e;n;enter;n;n;w需要kill zhu wanli
+
+全冠清:rideto yangzhou;#wa 2000;e;e;e;#3 s
+
+说不得:rideto mingjiao;#wa 2000;w;w;w;wu;wu;#4 nu;enter;#4 nu;n
+
+任盈盈;rideto heimuya;#wa 2000;#6 ed;yell boat;enter boat;下船后;eu;s;#10 e
+
+老先生:rideto xiangyang;#wa 2000;s;e
+
+多隆:rideto beijing;#wa 2000;s;s;w;s;s;s
+
+独臂神尼:rideto beijing;#wa 2000;s;s;w;n;n;e;
+
+买卖提:rideto yili;#wa 2000;w
+
+李可秀:高昌里
+
+采花子:rideto xingxiu;#wa 2000;n;w;w;
+
+彭有敬;rideto yangzhou;#wa 2000;#3 n;e;e;w;w;n;(e n w )不停循环
+
+韦春芳;rideto xiangyang;#wa 2000;s;s;e
+
+张翠山;rideto hangzhou;#wa 3000;s;s;s;#2 sw;#3 w;sw;s;s;ed;enter zhou
+       ask yin 冰火岛;decide下船后n;get stone break boat;s;kill all;s;s
+
+衙役;rideto yangzhou;#wa 2000;w;n
+
+海公公:rideto yangzhou;#wa 2000;#6 e
+
+无名老僧;rideto shaolin;#wa 2000;进去后help here 藏经阁一楼
+
+陈近南:rideto beijing;#wa 2000;w;w;#5 s;e;s
+
+朱熹;rideto yangzhou;e;n
+
+马超兴;rideto yangzhou;#3 n
+
+王五:rideto yangzhou;n;n;e;u
+
+
+
+少量门派路径和奖励路径
+
+神仙姐姐:逍遥子处d;s;e;e;open door;n;n;w
+
+达摩位置: n;sw;sw;n;n;n;n;s;e;e;s;w;n;nw;n;
+
+万劫谷路径:rideto dali;#wa 2000;#7 n;nw;nd;#3 w;wu;su;wu;wd;nd;w;pushaside grass;enter;pull ring;enter;n;out;knock duan;n
+
+大理无量山去法:rideto dali:#wa 2000;#3 n;w;w;s;wu;wu;nu;eu;nu;wd
+
+灵鹫密道:move jiashan;enter;nd;nd;ed;n;n;n;n;n;e;n;w;w
+
+侠客岛:rideto nanhai;#wa 2000;n;e;n;ask zhang 赏善罚恶令(要求200force 200武学 5000内力 10W威望);s;w;w;enter boat
+
+黄果树瀑布:rideto dali;#7 s;se;sw;n;w
+
+少林广场--金刚伏魔圈：e;e;s;e;s;e;n;n;e;w;s
+
+金刚伏魔圈--少林广场：out;sd;w;e;n;e;s;n;e;w;w;w
+
+华山剑宗路径:rideto huashan;#wa 2000;nw;w;w;w;w;w;s;s;s;s;s;s;se;ne;e;e;eu;su;use fire;zuan;wu;su;s;e
+
+桃花岛桃花林迷宫:{n;ne;e;se;s;sw;w;nw},循环走
+
+少林五行洞:s;e;s;;n;w;n;e;s;u;out;e;s;s;sd;s;open gate;s
+金  黄色  生门 north 死门west  其他是闲门
+木  绿色  生门 south 死门west
+水  蓝色  生门 east  死门north
+火  红色  生门 north 死门west
+土  白色  生门 west 死门north
+
+                                      高效率的rideto情况下还是需要城际轻轨来认识路径
+
+                                                  门派路径
+
+扬州-古墓(没拜师) n;e;e;rideto gumu;#wa 2000;move shi;s;s;e;e
+
+扬州-灵鹫：n;e;e;rideto lingjiu;#wa 2000;zou tiesuo;eu;n;n;n
+
+扬州-武当: n;e;e;rideto wudang;#wa 2000;wu;w;#4 su;sd;su;sd;su;#4 su;s
+
+武当三清殿-扬州：n;#4 nd;nu;nd;nu;#4 nd;e;#2 ed;e;e;n;nw;e;ne;e;se;e;#8 n
+
+扬州-逍遥派:#7 s;e;s;s;e;s;w;e;e;s;w
+
+逍遥派林间小道-扬州:e;e;n;w;#8 n
+
+扬州中央--泰山:#6 e;ne;#2 n
+
+泰山--扬州中央:#2 s;sw;#6 w
+
+扬州中央--万绝谷:#8 s;w;nw;w;sw;w;#2 sw;w;s;#4 sw;nw;nd;#3 w;wu;su;wu;wd;nd;w;pushaside grass;enter;#wa 1000;pull ring;enter;n;out;knock 段;n
+
+万绝谷--扬州中央：s;enter;s;out;out;e;su;eu;ed;nd;ed;#3 e;su;se;#4 ne;n;e;#2 ne;e;ne;e;se;e;#8 n
+
+扬州中央--峨嵋:#8 s;w;nw;#wa 1000;w;sw;w;#2 sw;w;s;sw;su;w;s;s;w;#7 wu;w
+
+峨嵋--扬州中央:e;#7 ed;e;n;n;e;nd;ne;n;e;#2 ne;e;ne;e;#wa 1000;se;e;#8 n
+
+扬州中央--唐门:#8 s;w;nw;#wa 1000;w;sw;w;#2 sw;w;s;w;sw;#5 w;#8 s;w;w;nw;#2 nu;w;nw;
+
+唐门--扬州中央:se;e;sd;sd;se;e;e;#8 n;#5 e;ne;e;n;e;#2 ne;e;ne;e;#wa 1000;se;e;#8 n
+
+扬州中央--青城山凌霄城:#8 s;w;nw;#wa 1000;w;sw;w;#2 sw;w;s;w;sw;#7 w;#wa 1000;n;ne;e;#3 n;w;#3 n;nw;#3 wu;nu;#wa 1000;#2 {nu;eu};s;
+
+青城山--扬州中央:n;#2 {wd;sd};sd;#3 ed;se;#3 s;e;#3 s;#wa 1000;w;sw;s;#7 e;ne;e;n;e;#2 ne;e;ne;e;#wa 1000;se;e;#8 n
+
+扬州中央--星宿;n;e;e;goto changan;达到后goto yili;达到后w;#3 s;sw;wu;n;nd
+
+星宿--扬州中央;su;s;ed;ne;n;n;n;e;goto changan;达到后goto yangzhou;w;w;s
+
+扬州中央--血刀门n;e;e;goto changan;到达后goto chengdu;到达后;w;nw;w;s;s;s;#3 w;wu;wu;su;s;sd;enter
+
+血刀门-扬州中央:out;nu;n;nd;ed;ed;#3 e;#3 n;e;se;e;goto changan;到达后;goto yangzhou;w;w;s
+
+扬州中央--雪山派:n;e;e;goto changan;到达后;goto chengdu;w;nw;w;#3 s;w;w;#3 n;#2 w;s;wu
+
+雪山派--扬州中央:ed;n;e;e;#3 s;e;e;#3 n;e;se;e;goto changan;到达后;goto yangzhou;w;w;s
+
+扬州中心--华山山脚:#6 w;nw;#3 w;nw;wu;#14 w;wd;#wa 1000;#3 w;#2 n;nw;#wa 1000;n;nw;#6 n;#5 e
+
+华山山脚--扬州中心;#5 w;#6 s;se;s;se;#2 s;#wa 1000;#3 e;eu;#7 e;#wa 1000;#7 e;ed;se;#3 e;se;#6 e
+
+扬州中心--武当解剑岩:#8 s;w;nw;w;sw;w;se;s;#2 w;#2 wu
+
+武当解剑岩--扬州中心:ed;#2 e;n;nw;e;ne;e;se;e;#8 n
+
+扬州中心--全真教终南山脚:n;e;e;gogo changan;到达后;goto hanzhong;w;s;#3 w;ne;eu;se;eu
+
+全真教终南山脚--扬州中心:wd;nw;wd;sw;#3 e;n;e;goto changan;到达后;goto yangzhou;w;w;s
+
+扬州中心--少林;n;e;e;goto nanyang;w;w;#3 n;ne;#3 n;#4 w;nu;nu;wu;#4 nu;e
+
+少林-扬州中心;w;#4 sd;ed;sd;sd;#4 e;#3 s;sw;#3 s;e;e;goto yangzhou;w;w;s
+
+扬州中心--嵩山;n;e;e;goto nanyang;w;w;#3 n;ne;#3 n;#3 w;#3 n
+
+嵩山--扬州中心:#3 s;#3 e;sw;#3 s;e;e;goto yangzhou;w;w;s
+
+扬州中心--商家堡大门:n;e;e;goto nanyang;达到后;#2 w;#3 n;ne;e;n;
+
+商家堡--扬州中心:s;w;sw;#3 s;e;e;goto yangzhou;到达后;w;w;s
+
+扬州中心--桃花岛:n;e;e;goto jiaxing;ne;n;e;e;ask chuanfu 出海;give 1 gold to chuanfu
+
+扬州中心--圆月山庄:#8 s;w;nw;w;sw;w;#3 n;
+
+圆月山庄--扬州中心:#3 s;e;ne;e;ne;e;#8 n
+
+                                            城市路径
+
+扬州中心-天地会:n;e;e;goto beijing;到达后;e;e;s;s;s;s;s;s
+
+天地会--扬州中心:#6 n;w;w;goto yangzhou;w;w;s
+
+扬州中央-襄阳中央:#8 s;w;#7 n
+
+襄阳中央--扬州中央:#7 s;e;#8 n                                         
+
+扬州中央--成都广场:#8 s;w;nw;#wa 1000;w;sw;w;#2 sw;w;s;w;sw;#5 w
+
+成都广场--扬州中央:#5 e;ne;e;n;e;#2 ne;e;ne;e;#wa 1000;se;e;#8 n
+
+扬州中央-洛阳广场:#6 w;nw;#3 w;nw;wu;#7 w
+
+洛阳广场--扬州中央:#7 e;ed;se;#3 e;se;#6 e
+
+扬州中央--无锡三阳广场:#3 s;#4 e;#3 se;e;s;ne;se;sd;#6 e
+
+无锡三阳广场--扬州中央:#6 w;nu;nw;sw;n;w;#3 nw;#4 w;#3 n
+
+扬州中央--苏州:#3 s;#4 e;#3 se;e;s;ne;se;sd;#6 e;#wa 1000;#7 e;se;#4 s
+
+苏州--扬州中央:#4 n;nw;#7 w;#wa 1000;#6 w;nu;nw;sw;n;w;#3 nw;#4 w;#3 n
+
+扬州中心--嘉兴;n;e;e;goto jiaxing;ne;n
+
+嘉兴--扬州中心;s;sw;goto yangzhou;w;w;s
+
+扬州中心-汝州城:n;e;e;goto nanyang;到达后;w;w;#3 n;ne;#3 n
+
+汝州城--扬州中心:#3 s;sw;#3 s;e;e;goto yangzhou;到达后;w;w;s
+
+扬州中心--福州东街口;n;e;e;goto jiaxing;到达后;goto fuzhou;s;s;w
+
+福州东街口--扬州中心:e;n;n;goto jiaxing;到达后;goto yangzhou;w;w;s
+
+扬州中心--衡阳;#8 s;su;se;sw;sw;s;sw;w;w
+
+衡阳--扬州中心;e;e;ne;n;ne;ne;nw;nd;#8 n
+
+扬州中央--大理中心广场:n;e;e;goto xiangyang;到达后;goto dali;e;n;e;n
+
+大理中心广场--扬州中央:s;w;s;w;goto xiangyang;达到后;goto yangzhou;w;w;s;
+

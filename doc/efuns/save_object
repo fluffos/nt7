@@ -1,0 +1,18 @@
+        save_object(3)                LP MudOSv21c7                (7 Jul 1996)
+        函数名称:
+                save_object() - 将一个物件的变数值储存到一个档案中.
+        函数语法:
+                int save_object( string name, int flag );
+                整数 save_object( 字串 name, 整数 flag );
+        函数用法:
+                把这个物件所有的非静态变数 (non-static variables) 储存
+                到名叫 name 的档案中. 这个储存的动作由主宰物件 (master
+                object) 中的 valid_write() 函式检查是否允许这个物件写入.
+                如果第二个参数指定为 1, 则变数值为零的的变数也会储存进去
+                (一般说来不会是零). 而物件型态的变数则会储存为 0.
+        传回值:                
+                save_object() 成功会传回 1, 失败就传回 0.
+        参考函数:
+                restore_object(3)
+        手册翻译:
+                Phoebus@ZH        97.Jul.4.                (Writen 5/23/97)

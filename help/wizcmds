@@ -1,0 +1,24 @@
+【文件处理】
+cd(目录转移)    ls(列示文件)    more(分页看档)  cat(快速看档)   tail(读文件最未几行)
+mkdir(创建目录) rmdir(删除目录) edit(编辑文件)  cp(复制文件)    rm(删除文件)  
+mv(文件搬移)    xcp(复制多个文件) log(编辑查看修改信息)
+
+【物件处理】
+update(更新)    clone(复制物品) call(修改指令)  dest(清除物体)  localcmds(命令提供)
+ilist(物体继承)
+
+【查询指令】
+where(玩家位置) pwd(显示cwd/f)  ulist(玩家ID)   whoami(自身ID)  info(物体资讯)
+cost(指令时间)  qload(处理负担) mem(占用内存)   ff(查找函数)    status(资料状况)
+config(启动配置)mudlist(国际网路) callouts(显示系统的延时)      checkip(查相同ip的玩家)
+
+【系统管理】
+edemote(维护emote)    chinese(维护字典)    promote(修改权限)    wizlock(限制进入)
+ban(封闭地址)         shutdown(马上重启)   reboot(延时重新启动) snoop(窃听信息)
+possess(附身指令)     rehash(指令更新)     reclaim(清除变数)    cleanup(清除散件)
+callouts(查callout)   dump(备份状态)       profile(命令描述)    purge(清洗资料)  
+
+【其他指令】
+goto(瞬间传送)  home(回工作室)  halt(中止战斗)  summon(捉来生物) kickout(强制离线)
+smash(消灭生物) test(测试技能)  recover(恢复气神)     overview(查看特定的系统状态)
+

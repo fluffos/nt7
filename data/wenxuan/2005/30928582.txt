@@ -1,0 +1,47 @@
+subject : 一个简单的计划例子-供参考
+author_name : 心凝血
+author_id : xnx
+time : 1058496066
+board : 客店留言板
+file : /data/analecta/2003/30928582.txt
+add_time : 1058589250
+content : 
+如果不知道怎么写计划，请看下面这个例子以供参考。
+scheme edit        
+REPEAT            
+dazuo 100:RETRY   
+yun recover
+LOOP
+0
+0
+scheme edit--- 开始制订计划内容。
+0
+REPEAT&LOOP---REPEAT 表示下面的一段一直到 LOOP 之间的指令需要进行循
+环执行，注意：一份计划中所有 REPEAT 命令必须有 LOOP 命令与之匹配，
+REPEAT 命令最多可以嵌套 12 层。(注意大写)
+0
+dazuo 100:RETRY---冒号 : 后面的 RETRY 表示如果失败了就重复尝试，直到成功为止。
+当然你也设定为 dazuo 100:sleep 表示在执行命令失败的时候选择执行 sleep 命令。
+或者，lian dodge 5:lian sword 5，当dodge不能练了以后练习sword。
+0
+ scheme star---展开计划，必须在安全区。一般门派休息室或自己的房子里都可以计划。
+如果像丐帮那样没有房子又没有休息室可以去盘龙计划。
+盘龙-扬州广场开始{#6 n;e;panlong;n;n;push;n;n;n;n;open door;w;}
+0
+halt---中止计划。
+0
+另外，像yun recover,yun regenerate这样的命令可以做成alias,
+避免重复写计划时可能出现的输入错误。
+0
+lian xxx；du xxx；也可以做成alias。
+如:alias dd1 du book 10；alias ll1 lian dodge 10,
+这样，可以直接在alias里修改计划，不用重写计划那么麻烦。
+0
+计划是方便那些不能整天在线练功的玩家，所以计划练功不会很快。
+建议能在线练就不要计划了。hoho
+
+[1;34m            我是一片云，天空是我家。
+[1;31m            朝迎旭日升，幕送夕阳下。
+[1;36m            我是一片云，自在又潇洒。
+[1;33m            身随魂梦飞，来去无挂牵。[2;37;0m
+[2;37;0m

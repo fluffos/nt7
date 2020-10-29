@@ -1,0 +1,44 @@
+
+     socket_release(3)      MudOS (5 Sep 1994)       socket_release(3)
+
+     名称：
+          socket_release() - 释放一个 socket 的所有权(ownership)给另一
+                             物件。
+
+     语法：
+          #include 
+
+          int socket_release( int socket, object ob,
+                              string release_callback );
+
+          整数 socket_release( 整数 socket, 物件 ob,
+                               字串 release_callback );
+
+     用法：
+          socket_release() 是用来改变原先处理连接设定(set-up)之物件的
+          所有权（和控制权）并且转移一个已连接(connected)的 socket 给
+          另一物件以供未来之用。
+
+          socket 所有权的转移包括了一个目前拥有所有权物件和这个物件想
+          转移 socket 的物件间的握手程序(handshake)。这个握手程序是由
+          呼叫 socket_release() 开始的。socket_release() 经过安全性、
+          完整性(integrity)检查後，再呼叫物件 ob 的 release_callback
+          函式。这个函式是用来通知 ob socket 所有权将要转移给它。然後
+          ob 有责任在释放回呼(callback)函式中呼叫 socket_acquire()。如
+          果呼叫了 socket_acquire()，握手程序就完成了，而 socket 所有
+          权就已经成功地转移给 ob。ob 也可以不呼叫 socket_acquire() 而
+          婉谢接受这个 socket 的责任，此时，所有权不会改变，而且原来的
+          socket 所有者必须决定如何回应这个情况。
+
+          如果 socket 所有者成功地转移，则 socket_release() 会传回
+          EESUCCESS。如果 ob 不接受这个 socket 的所有权的话，则会传回
+          EESOCKNOTRLSD。其他基於违反安全、错误的 socket 描述值(descriptor)
+          等的错误码也可能传回。
+
+     参照：
+          socket_acquire(3)
+
+     翻译：
+          Kenny@Broken.History       97.Jul.27       (printed 3/16/95)
+
+

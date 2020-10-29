@@ -1,0 +1,43 @@
+
+
+        call_other(3)           MudOS v21c2             (5 Sep 1994)
+
+        名称:
+                call_other() - 呼叫在另一个物件中的函式.
+        语法:
+                unknown call_other( object ob | object *obs,
+                        string func | mixed *args, ... );
+
+                未知 call_other( 物件 ob 或 物件 *obs,
+                        字串 func 或 混合 *args, ... );
+        用法:
+                用可以选择的参数 (argument) 呼叫另一个物件中的函式.
+                传回值要视被呼叫的函式而定, 所以使用此一函式时最好
+                检查传回值. func  是物件 ob 中被呼叫的函式名称, 而
+                第三个、第四个... 等等的参数, 则会传入 func 中, 当
+                成 func 的第一个、第二个参数. 在 call_other() 中, 
+                如果第一个参数是一个物件阵列, call_other()  就会逐
+                一呼叫它们, 而传回值也会变成一个阵列. 如果第二个参
+                数是一个阵列, 那阵列中的第一个元素 (element)  必须
+                是一个字串 (即要呼叫的函式) , 而其他的元素就会被当
+                成要传入此函式的参数.
+
+                这里有个使用 call_other() 更好的方法:
+
+                        object ob 或 object *obs -> func( ... );
+
+                □例:
+                        call_other( ob, "query", "name" );
+                可以写成
+                        ob->query("name");
+
+                如果 call_other() 的第二的参数是一个阵列, 也可以把
+                上例写成:
+                        call_other( ob, ({ "query", "name" }));
+
+                这里有一个使用阵列的□例:
+                        users()->quit();
+        翻译:
+                Spock @ FF      96.Oct.16.              (printed 3/16/95)
+
+

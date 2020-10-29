@@ -1,0 +1,28 @@
+
+        variables()
+
+        名称：
+                variables() 列出指定物件中的所有变量
+
+        语法：
+                string *variables(object, int default: 0);
+                字符串阵列 variables(物件， 整数 默认为 0)
+
+        用法：
+                variables() 的返回值由两种不同的情况。
+                当第二个参数为零(默认就是 0)，函数返回第一个
+                参数所制定的物件中的所有变量名的一个字符串阵
+                列。
+                当第二个参数为非零值时，会返回更多的信息，
+                每一个阵列元素会像下面这个格式：
+
+                        ({ 变量名, 变量类型 }). 
+
+                其中"变量类型"为变量的 LPC 类型，如 "string"
+                或者 "protected int" 等。
+
+        这个函数需要在 options 文件里定义了 PACKAGE_CONTRIB .
+
+        by 发现号(Find@tx)
+
+

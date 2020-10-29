@@ -1,0 +1,6 @@
+name=秦皇陵墓
+main=maze
+time=1200
+level=200
+enter=maze/entry
+leave=/d/luoyang/wenmiao

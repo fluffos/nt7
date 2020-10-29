@@ -1,0 +1,26 @@
+
+
+        名称:
+                filter() - 选择一组确定的元素
+        语法:
+                mixed filter(mixed x, string fun, object ob, mixed extra, ...);
+                混合型 filter(混合型 x, 字符串 fun, 物件 ob, 混合型 extra, ...);
+
+                mixed filter(mixed x, function f, mixed extra, ...);
+                混合型 filter(混合型 x, 函数 f, 混合型 extra, ...);
+        用法:
+                第一种格式中的 (ob, fun) 语法等同于 (: call_other, ob, fun :)，
+                和第二种格式中的 函数 f 传递方式相同。此函数会返回一个新的结构，
+                这个新的结构只包含 x 中的成员经过函数 f 过滤返回值非零的元素组。
+                此函数一般用于过滤 array 和 mapping 类型。当 x 是 mapping 类型，
+                它的 key 和 value 都会传递给过滤函数。extra 和所有以后的参数都
+                会跟在 x 的成员之后传递给过滤函数。
+                例如：filter(arr, fun, 2, 3) 将会首先呼叫过滤函数 fun(arr[0],2,3)，
+                      然后 fun(arr[1],2,3) 一直到过滤完 arr 中的每一个成员。
+
+        参考:
+                filter_array()  filter_mapping()
+        翻译:
+                发现号(Find)
+
+

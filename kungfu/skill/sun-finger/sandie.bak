@@ -1,0 +1,193 @@
+// sandie.c 阳关三叠
+// looo/2001/6/28/
+#include <ansi.h>
+
+#include <combat.h>
+
+inherit F_SSERVER;
+
+int perform(object me, object target)
+{
+        object weapon;
+        string msg;
+        int damage;
+
+        if( !target ) target = offensive_target(me);
+
+        if( !target || !target->is_character()
+           || !me->is_fighting(target) || !living(target) )
+                return notify_fail("「阳关三叠」只能在战斗中使用。\n");
+
+        if( objectp(query_temp("weapon", me)) )
+                return notify_fail("只有空手才能施展「阳关三叠」。\n");
+
+        if( (int)me->query_skill("sun-finger", 1) < 180 ||
+            (int)me->query_skill("finger", 1) < 180 ||
+            (int)me->query_str() < 25)
+                return notify_fail("你有的功夫还不够娴熟，不会使用「阳关三叠」。\n");
+
+        if( query_temp("weapon", me) )
+                return notify_fail("你不取下兵器，如何使用一阳指？\n");
+
+        if(!me->query_skill("duanshi-xinfa", 1))
+           if(me->query_skill("duanshi-xinfa", 1) <180)
+                return notify_fail("以你现在的段氏心法还使不出「阳关三叠」。\n");
+
+        if ( me->query_skill_mapped("finger") != "sun-finger" )
+                return notify_fail("你现在无法使用「阳关三叠」进行攻击。\n");
+
+            if (me->query_skill_mapped("parry") != "sun-finger")
+                return notify_fail("你所使用的招架不对。\n");
+        if( query("neili", me)<1800 )
+                return notify_fail("你的内力修为太弱，不能使用「阳关三叠」！\n");
+
+        if( query("neili", me)<800 )
+                return notify_fail("你的真气不够！\n");
+
+        if (target->query_skill_mapped("force")=="hamagong")
+        {
+                msg = HIY "\n$N背向$n，凝气于指，一式「阳关三叠」反手缓缓点出，纯阳指力直袭$n胸口！\n" NOR;
+                if (random(me->query_skill("force",1)) > target->query_skill("force",1) /4 || !living(target))
+                {
+                        me->start_busy(1);
+                        target->start_busy(1);
+                        damage = (int)me->query_skill("sun-finger", 1);
+                        damage += (int)me->query_skill("force", 1);
+                        damage += damage/2 + random(damage/2);
+                        target->receive_damage("qi", damage);
+                        target->receive_wound("qi", damage/3);
+                        addn("neili", -300, me);
+                        msg += COMBAT_D->do_damage(me, target, UNARMED_ATTACK, damage, 50,
+                               HIR "$n" HIR "大惊下发现这似乎正是自己的克星，已是躲避不及，给重重点中！\n\n" NOR);
+                if(me->query_skill("sun-finger", 1) > 190)
+                        call_out("perform2", 0, me, target);
+                }
+                else {
+                        me->start_busy(3);
+                        if (target->is_busy()) target->start_busy(1);
+                        addn("neili", -200, me);
+                        msg += HIW"$p见这反手点穴似乎正是蛤蟆功的克星，识得厉害，危及之中一个铁板桥，上身向后一倒，艰难的躲过这一招。\n"NOR;
+                }
+        }
+        else
+        {
+                msg = HIY "\n$N凝气于指，一式「阳关三叠」点出，但听得嗤嗤声响，一股纯阳的内力直袭$n胸口！\n" NOR;
+                if (random(me->query_skill("parry")) > target->query_skill("parry") / 2 || !living(target))
+                {
+                        me->start_busy(1);
+                        if (!target->is_busy())
+                        target->start_busy(1);
+                        damage = (int)me->query_skill("sun-finger", 1);
+                        damage += (int)me->query_skill("force", 1) ;
+                        damage += random(damage/2);
+                        msg += COMBAT_D->do_damage(me, target, UNARMED_ATTACK, damage, 50,
+                               HIR "$n" HIR "一阵闷哼，全身血气倒流，连退数步！！！\n" NOR);
+                        if(me->query_skill("sun-finger", 1) > 190)
+                                call_out("perform2", 0, me, target);
+                }
+                else
+                {
+                        me->start_busy(3);
+                        if (!target->is_busy()) target->start_busy(1);
+                        addn("neili", -100, me);
+                        msg += HIW"可是$p一个巧云翻身，远远的躲了开去。\n"NOR;
+                }
+        }
+        message_vision(msg, me, target);
+        return 1;
+}
+
+int perform2(object me, object target)
+{
+        int i;
+        string msg;
+
+        if (!me || !target) return 0;
+        if(!living(target))
+        return notify_fail("对手已经不能再战斗了。\n");
+
+        if( query("neili",1, me)<600 )
+        return notify_fail("你待要再出第二指，却发现自己的内力不够了！\n");
+
+        if (target->query_skill_mapped("force")=="hamagong")
+                i = 4;
+        else
+                i = 2;
+
+        msg = HIY "\n接着$N踏前一步，出第二指隔空点向$n胸前“玉堂穴”，认穴竟无厘毫之差！\n"NOR;
+
+        if (random(me->query_skill("dodge")) > target->query_skill("dodge") / i)
+        {
+                msg += HIR "结果一指点中，$n只觉得全身气脉通道阻塞，真气立受干挠！\n"NOR;
+                me->start_busy(2);
+                if (!target->is_busy())
+                target->start_busy(me->query_skill("force",1)/30);
+                addn("neili", -(me->query_skill("force",1)/2), me);
+                if((int)me->query_skill("sun-finger", 1) > 230)
+                call_out("perform3", 0, me, target);
+        }
+        else
+        {
+                me->start_busy(4);
+                if (!target->is_busy()) target->start_busy(1);
+                addn("neili", -150, me);
+                addn("neili", -50, target);
+                msg += HIW"\n$p眼看避无可避，便也一指点去，两根指尖相碰，$p顺势跳了开去。\n" NOR;
+        }
+        message_vision(msg, me, target);
+        return 1;
+}
+
+int perform3(object me, object target)
+{
+        int i;
+        int skill;
+        string msg;
+        skill = (int)me->query_skill("sun-finger", 1);
+        skill = skill/10;
+
+        if(!living(target))
+                return notify_fail("对手已经不能再战斗了。\n");
+
+        if( query("neili",1, me)<400 )
+                return notify_fail("你待要再出第三指，却发现自己的内力不够了！\n");
+
+        if (target->query_skill_mapped("force")=="hamagong")
+                i = 4;
+        else
+                i = 2;
+
+        msg = HIY "\n紧跟着$N一阳指第三次点出，以纯阳内力，同时透入$n体内任脉紫宫穴、
+阴维脉大横穴、冲脉幽门穴、带脉章门穴和阴跤脉晴明穴！\n"NOR;
+
+        if (random(me->query_skill("force")) > target->query_skill("force") / i)
+        {
+                addn("neili", -200, me);
+                msg += HIR "$n只觉体内奇经八脉中内息为之一怠，全身气力竟然提不起来了！\n" NOR;
+                addn_temp("apply/attack", -200, target);
+                addn_temp("apply/dodge", -200, target);
+                addn_temp("apply/parry", -200, target);
+                me->start_busy(3);
+            if (target->is_busy()) target->start_busy(1+random(2));
+                addn("neili", -700, target);
+                call_out("back", 4 + skill, target);
+        }
+        else
+        {
+                me->start_busy(target->query_skill("force",1)/30);
+                addn("neili", -200, me);
+                if( !target->is_busy() )
+                target->start_busy(1);
+                msg += HIW"\n$p喘息未定，见$P指力如狂风般点来，连忙又跃开数尺，狼狈地避开。\n" NOR;
+        }
+        message_vision(msg, me, target);
+        return 1;
+}
+
+void back(object target)
+{
+    if (!target) return;
+        addn_temp("apply/attack", 200, target);
+        addn_temp("apply/dodge", 200, target);
+        addn_temp("apply/parry", 200, target);
+}

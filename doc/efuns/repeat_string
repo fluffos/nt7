@@ -1,0 +1,24 @@
+
+
+        repeat_string()           MudOS v22
+
+        名称:
+                repeat_string() - 以一定的次数重复一个字符串,
+                                        生成一个新的字符串.
+
+        语法:
+                string repeat_string(string str , int times);
+
+                字符串 repeat_string(字符串 str , 正整数 times);
+
+        用法:
+                把字符串 str 重复 times 次连接返回一个新的字符串.
+                例如:
+                        repeat_string("ab",5)
+                        返回: "ababababab" 这个字符串.
+
+
+        这个函数需要在 options 文件里定义了 PACKAGE_CONTRIB .
+
+        by 发现号(Find@tx)
+

@@ -1,0 +1,769 @@
+
+
+   〖泥潭III公共武功解密大全〗
+
+   泥潭III也开了好久了，许多新人还是不太了解有哪些公共技能可以学习或如何去学
+习，我在此做一收集，如有疏漏之处，还望大家指出,另外因为技能繁多，关于各门派需
+解密的武功就不在讨论了。另外，这些全部是自己试过的。
+ 
+   〖内功类 - force〗
+
+   1.战神心经 (zhanshen-xinjing) 
+
+   要求：无，正神者可学。
+
+   路径:rideto hangzhou;#3 s;#3 sw;#2 wu;#2 wd;w;#2 s;wu;enter(杀上六和塔
+       顶层即可，300技能足矣，然后xue chen baihua-cuoquan触发故事学习）。
+
+   注：可学400级。
+
+
+   2.易筋经神功 (yijinjing)
+
+   要求：男性（太监不可学）；先天根骨大于20。
+
+   路径:少林藏经阁二楼jump fangliang;zou mu ban;jump shujia;clear
+
+   注：新人非少林ID在空见处没法过去，可找人帮忙杀空见或少林ID问清乐比丘要手谕
+      进去。可学380级。
+
+
+   3.玄冥神功 (xuanming-shengong)
+  
+   要求：30先天根骨,用xue daoren xuanming-zhang激发故事，再学玄冥神功即可。
+
+   路径：rideto lingzhou;e;e;ne
+
+   注：可学400级。光明磊落者不可学玄冥掌，却可学玄冥神功，而且正神也可学，疑
+      为bug。 
+
+
+   4.易筋锻骨 (yijin-duangu)
+
+   要求：200梵文读书即可。
+
+   方法：有九阴真经，yanjiu yijin-duangu from zhenjing
+
+   注：真经极难读，建议最多读到180研究，或者直接吃露增长吧，当然有上古兵器读一
+       下就好。读书无先天要求（疑为bug），研究需30先天根骨。 
+
+
+   5.混元一气功 (hunyuan-yiqi) 
+
+   要求：男ID,正负神皆可，force > 30,必须有佛法，佛法等级大于混元一气即可。
+
+   路径：rideto beijing;#3 w;#5 s;e;xue xu hunyuan-yiqi
+
+   注：不用加入天地会，正负神即可直接学习，疑为bug。加入天地会后史松见了就
+   自动跟随且叫杀，会干扰机器的，建议学完后找陈家洛ask chen 退会,没有任何副
+   作用。
+
+
+   6.罗汉伏魔神功 (luohan-fumogong)
+   
+   要求：先天根骨大于30,force > 100,exp > 500000；
+            心狠手辣、阴险奸诈者不可学；太监不可学。
+
+   路径：rideto suzhou;#4 n;nw;sw;n;kill dabei;get niou from corpse;
+        nie niou;study muou
+
+   注: 可读180级。大悲200多技能,200级skill有pf足够杀大悲的,100多也可以。
+       方法kill dabei;perform xxx;#wa 500;#dis，如此多试几次，很好杀的。
+
+
+   7.明玉神功 (mingyu-gong) 
+
+   要求:女性ID，先天悟性>=30，exp > 10W,武学修养大于100。
+   
+   路径：rideto yangzhou;e;s;fire;n;w;#2 n;w;ask nan about 比武;#wa 1000;
+        sd;s;su;su;wu;wu;jump down;yun recover;d;#2 w;#3 nu;jump down;s;
+        后面一直s走出花阵(阵里会减少气血）;出阵后yun heal;移花宫宫门处#3 s;
+        e;sw;#8 push bed left;#5 push bed right;down;use fire;zou;
+        pick book;w}
+
+
+   8.太玄功 (taixuan-gong) 
+
+   要求：str、int、con、dex均大于等于27，max_neili > 5000侠客岛面壁时没有读
+        书写字技能。force > 200、武学修养大于200，威望大于10W，shen > -10W
+        者可在南海渔村小屋处ask zhang 赏善罚恶令;s;w;w;enter boat就去侠客岛
+        了。或者满足技能、内力和先天属性要求后利用pk规则让人砍去侠客岛亦可。
+  
+   路径:拿到赏善罚恶令后s;w;w;enter boat;到达侠客岛海滩s;s;s;e;se;w;nw;e;s;
+        s;#5 su;jump pubu;s;s;e;enter;s;think bi，此处可领悟至60级；然后e;
+        s处领悟至120级;然后w;n;out;w;s;s;think bi可至180级。因为think实在太
+        慢，推荐随便think几十级然后吃露加等级至180研究吧，如果有上古武器，参悟
+        1级就闪人研究了，别再浪费时间。
+
+   注:a.参悟太玄至180级之处可用canwu weapon from bi来领悟驾驭兵器。领悟此项后太
+      玄sword或blade必须大于太玄等级才能被激发。
+
+      b.太玄功pf参悟处:侠客岛海滩s;s;s;e;se;w;nw;e;s;s;#5 su;plump down;swim 
+      water(一直到看到一道石门(men),若没有就继续swim water);push men;#2 w;l 
+      bi。此处用canwu 混天一气 from bi、canwu 太玄激劲 from bi、canwu 乘风破浪
+      from bi、(龙岛主处)canwu 白首太玄经 from bi来学会4个pf。
+
+      c.参悟pf需要太玄功和force大于等于240级，max_neili > 6000且过程很漫长，干
+      粮水袋无比带齐。其中hun120太玄级可用，xuan240级,po260级,jing到340级方可使
+      用。
+
+      d.学太玄用太玄都不能有读书写字，学了太玄后再学读书技能太玄自动变为知识技能，
+      也不可使用了，放弃读书技能后，太玄恢复成武学技能，照常使用。
+
+   9.九阴、南海、不败、葵花四项超级武功学习简单，成为宗师后向相应性格的宗师学习即可
+     ，pf是技能等级到了自动获得，最高要求是九阴的摄心，也不过才280等级即可使用。
+
+  
+   公共内功技能共计12种。
+
+
+   〖拳脚类 - unarmed〗
+
+   1.百花错拳 (baihua-cuoquan)
+   
+   要求：悟性28，身法23，正神5W可问完pf。
+
+   路径：rideto hangzhou;#3 s;#3 sw;#2 wu;#2 wd;w;#2 s;wu;enter(杀上六和塔
+       顶层即可，300技能足矣）。
+
+   注：可学400级，正神大于6.8W可学全部pf。
+
+ 
+   2.旋风腿 (xuanfeng-tui)
+
+   要求：桃花ID ask黄药师可得。
+   注：只能读30级，然后自己练习。可激发unarmed、dodge。
+
+
+   3.摧心掌 (cuixin-zhang)
+
+   要求:200梵文读九阴，force > 100,max_neili > 1200。
+
+   途径：yanjiu cuixin-zhang from zhenjing
+
+   注：可激发unarmed、strike，同时等级受两者限制。
+
+
+   4.猴拳 (houquan)
+   
+   要求：force > 30,max_neili > 1200,这简直是没要求。
+
+   路径：rideto beijing;#3 w;#5 s;e;xue xu houquan
+
+   注：可激发为hand。依然不用加入天地会，正负神皆可（还是疑为bug）。加入天
+   地会后史松见了就自动跟随且叫杀，会干扰机器的，建议学完后找陈家洛ask chen 退会
+   ,没有任何副作用。
+
+  
+
+   5.醉拳三打 (zui-quan)
+
+   要求：exp > 10000读少林武技可得。
+
+   途径：少林藏经阁二楼，随机三本武技,study wuji获得。
+
+   注：去藏经阁杀了尊者即可拿书。拿到武技后（大金刚拳法 、罗汉拳法、醉拳、般若掌法
+   、散花掌法、如来千叶手手法、风云手手法这几本任意武技在当铺pawn wuji;redeem wuji
+   随机可换得其它武技）.
+   可激发unarmed、cuff，不受cuff等级限制（好东西）。
+
+
+   6.其余内功类公共技能含有unarmed的有
+
+   a.九阴神功（需光芒磊落性格）;
+
+   b.明玉功（需女ID先天悟性30）;
+
+   c.太玄功（见内功类解密）
+
+
+  公共拳脚类技能共计8种。
+
+
+  〖剑法类 - sword〗
+
+  
+   1.祝融剑 (zhurong-jian)
+
+   要求:进入山洞要求200内力。
+  
+   路径：wield sword;rideto huashan;#2 su;#2 eu;su;#2 eu;#4 su;#wa 1000;eu;sd;
+        #2 su;enter;break wall;enter;nd;mianbi,可得10级祝融剑。
+   
+   注：在此还可以领悟祝融剑的pf万剑焚云，指令：think 万剑焚云 from wall需要祝融剑
+      140级，force220级。
+
+
+   2.紫盖剑法 (zigai-jian)
+
+   要求：exp > 10000可读紫盖剑谱。紫盖洞内解密需要max_neili > 1500,unarmed > 80。
+  
+   路径：rideto yangzhou;e;s;buy fire;n;rideto henyang;#wa 1000;#9 n;nu;nw;nu;
+        ed;e;eu;jump pubu;#wa 1000;enter;nw;use fire;w;w;zou w;climb stone;push bi
+        ;move desk;pick book。
+
+   注：山洞内有眼镜蛇，可以用连续指令走过去，无须战斗。
+
+
+   3.芙蓉剑法 (furong-jian)
+   
+   要求:sword > 30,
+   路径：rideto yangzhou;e;s;buy fire;n;rideto henyang;#wa 1000;#9 n;nu;nw;nu;
+        ed;e;eu;jump pubu;#wa 1000;enter;ne;use fire;zou;#wa 5000;enter;look wall;
+        pull net;think wall;可领悟芙蓉剑法至120级。
+
+  
+   4.天柱剑法 (tianzhu-jian) 
+  
+   要求：无要求。
+   路径：rideto henyang;#9 n;nu;nw;#wa 1000;nu;nd;nw;nu;nw;#3 w;sd;#2 wu;think feng。
+
+
+   5.石廪剑法 (shilin-jian) 
+
+   要求：无。
+   路径：rideto henyang;#9 n;nu;nw;#wa 1000;nu;nd;nw;nu;nw;#2 w;nw;ne;#2 eu;think feng。
+
+   
+   6.衡山五神剑(wushen-jian)
+
+   要求：祝融、紫盖、芙蓉、天柱、石廪五种剑法180级，先天悟性30，先天身法28，武学修养150级，
+   max_neili > 3200,满足这些条件wield sword;yanlian wushen-jian，几率性成功。
+
+   注：演练成功五神剑后，除紫盖剑法不能再次学习，其余剑法均可再次解密习得，其中祝融剑法无法
+   练习，只能在华山石洞中mianbi到10级了。
+
+
+   7.破阳冷光剑 (poyang-jian) 
+   
+   要求：exp > 100W
+
+   路径：wield sword;rideto huashan;#2 su;#2 eu;su;#2 eu;#4 su;#wa 1000;eu;sd;#2 su;
+        enter;break wall;enter;nd;nd;mianbi
+
+   注：pf 天外玉龙不用领悟，条件够了就可施展。
+      a.天外玉龙long:force > 200、poyang-jian > 180、dodge > 200、,max_neili > 2700;
+      b.神光再现xian:poyang-jian > 120、force > 200。
+
+
+   8.达摩剑 (damo-jian)
+
+   要求：exp > 10000读少林武技可得。
+
+   途径：少林藏经阁二楼，随机三本武技,study wuji获得。
+
+   注：去藏经阁杀了尊者即可拿书。拿到武技后（韦陀棍法、醉棍棍法、无常杖法、普渡杖法、达摩剑法
+   、伏魔剑法这几本任意武技在当铺pawn wuji;redeem wuji随机可换得其它武技）.
+   达摩剑等级过100攻击中有自动pf。
+
+
+   9.伏魔剑 (fumo-jian) 
+
+   要求：exp > 10000读少林武技可得。
+
+   途径同达摩剑。
+
+
+   10.金蛇剑法(jinshe-jian)
+
+   要求：性格狡黠多变、先天身法大于等于28、先天臂力大于等于28，max_neili > 4000,force > 200,
+   dodge > 240,sword > 220,exp > 80W。
+
+   途径：rideto huashan;#2 su;#2 eu;su;#2 eu;#4 su;eu;n;nw;ne;eu;#wa 1000;l ya;l teng;
+   la teng(注意在此处好多MUD要求保持空手，装备武器即使la teng了下去也会死，泥潭没试呢，安全起
+   见，还是unwield weapon吧);jump ya;wa,得到金蛇秘笈三册，其中book1是金蛇剑法。climb teng离
+   开金蛇洞
+
+   注：金蛇洞后天臂力大于40，ba sword可得金蛇剑，与金蛇剑法搭配有特殊攻击效果。金蛇秘笈二册是
+   学习金蛇锥法，三册为金蛇游身掌。
+
+
+  11.越女剑术(yuenv-jian)
+  
+  要求：女性ID,先天身法 > 13(不知道设置这个干吗，能小于13吗！）dodge、sword均大于200，
+       max_neili > 1200。
+
+  途径:rideto hangzhou;n;w;sw;#2 w;wu;xue yuenv yuenv-jian
+
+  注：可在越女处学到270级，如果容貌大于等于30，就没法学到pf西子捧心了。越女剑有自动pf,是前期及
+  好用的剑法。
+
+
+  12.其余内功类公共技能含有sword的有:
+
+  a.不败神功 (never-defeated) 成为宗师后向独孤求败学习，可学180级。
+    rideto huashan;ne;cross;xue dugu never-defeated
+
+  b.葵花魔功 (kuihua-mogong) 成为宗师后向葵花太监学习，可学180级。 
+    rideto beijing;#7 s;se;se;e;n;nw;nw;ne;wu;nu;wu;xue taijian kuihua-mogong
+
+  c.明玉神功 (mingyu-gong) 
+
+   要求:女性ID，先天悟性>=30，exp > 10W,武学修养大于100。
+   
+   路径：rideto yangzhou;e;s;fire;n;w;#2 n;w;ask nan about 比武;#wa 1000;
+        sd;s;su;su;wu;wu;jump down;yun recover;d;#2 w;#3 nu;jump down;s;
+        后面一直s走出花阵(阵里会减少气血）;出阵后yun heal;移花宫宫门处#3 s;
+        e;sw;#8 push bed left;#5 push bed right;down;use fire;zou;
+        pick book;w}
+
+  d.太玄功（见内功类解密）。
+
+  13.三分剑术(sanfen-jianshu)
+
+   要求：exp > 250W,sword > 100,成为宗师后几率性中故事学得50级。
+
+
+
+  公共剑法类技能共计16种。
+
+
+
+  〖轻功类 - dodge〗
+
+
+  1.旋风腿 (xuanfeng-tui)
+
+   要求：桃花ID ask黄药师可得。
+   注：只能读30级，然后自己练习。可激发unarmed、dodge。
+
+
+  2.庄子舞 (zhuangzi-wu)
+  
+   要求：先天身法 > 26，正神者可学。
+
+   路径:rideto hangzhou;#3 s;#3 sw;#2 wu;#2 wd;w;#2 s;wu;enter(杀上六和塔
+       顶层即可，300技能足矣，然后xue chen baihua-cuoquan触发故事学习）。
+
+   注：可学400级，正神大于4W可学pf 化蝶（hua）。max_neili须大于2400 + 庄子舞
+   等级乘以15。
+
+
+  3.蛇行狸翻 (shexing-lifan)
+
+   要求：200梵文读书即可。
+
+   方法：有九阴真经，yanjiu shexing-lifan from zhenjing
+
+   注：真经极难读，随便读几级练习吧，当然有上古兵器读一下就好,直接研究即可。等
+   级150可直接使用pf九阴归元。属于特效轻功，感觉比庄子舞好，任何ID都可学习，属
+   于必备极品。 
+
+
+  4.少林身法 (shaolin-shenfa)
+
+   要求：没有任何要求，正负神均可，不用加入天地会，直接找徐天川学习（疑为bug）。
+  
+   路径：rideto beijing;#3 w;#5 s;e;xue xu shaolin-shenfa
+
+   注：少林真可怜，内功，武技，轻功都让外派人员学完了。男ID还可以入少林学pf脱离，
+   sigh~
+
+
+  5.云龙身法 (yunlong-shenfa)
+
+  要求：加入天地会,找李力世学习即可。
+
+  途径：rideto yangzhou;n;n;n;join tiandihui;rideto beijing;#2 e;n;w;
+       xue li yunlong-shenfa
+
+  注：可学60级，然后自己练习了。加入天地会后史松见了就   自动跟随且叫杀，会干扰机
+  器的，建议学完后找陈家洛ask chen 退会,没有任何副作用。
+
+
+
+  6.神行百变 (shenxing-baibian) 
+
+  要求：解密即可，无其它要求。
+
+  途径：rideto beijing;#2 s;w;#2 n;e;kill lama;之后w;e;xue dubi shexing-baibian
+
+  注：简单易学，有特效，同样属于必备品。
+
+
+  7.其余内功类公共技能含有dodge的有:
+
+  a.葵花魔功 (kuihua-mogong) 阴险狡诈者成为宗师后向葵花太监学习，可学180级。 
+
+    rideto beijing;#7 s;se;se;e;n;nw;nw;ne;wu;nu;wu;xue taijian kuihua-mogong
+
+   注：轻功特效除凌波微步外第一，可抵御伤害,极品轻功。
+ 
+  b.明玉神功 (mingyu-gong) 
+
+   女ID方可使用，纯属凑研究dodge的数字用，轻功绝不用他,首选蛇形。
+
+  c.不败神功 (never-defeated) 狡黠多变者成为宗师后向独孤求败学习，可学180级。
+
+    rideto huashan;ne;cross;xue dugu never-defeated
+
+  d.九阴神功 (jiuyin-shengong) 光明磊落者成为宗师后向黄裳学习，可学180级。
+
+    rideto dali;n;n;n;w;w;wu;wu;wd;wd;w;s;xue huang jiuyin-shengong
+  
+  e.南海玄功 (bluesea-force) 心狠手辣者成为宗师后向南海神尼学习，可学180级。
+
+    rideto foshan;#4 s;w;enter;xue shenni bluesea-force
+
+  f.太玄功(见内功类解密）
+  
+  公共轻功类技能共有12种。
+
+
+
+ 〖刀法类 - blade〗
+
+
+  1.修罗刀 (xiuluo-dao) 
+ 
+  要求：exp > 10000,force > 30读少林武技可得。
+
+  途径：少林藏经阁二楼，随机三本武技,study wuji获得。
+
+  注：去藏经阁杀了尊者即可拿书。拿到武技后（慈悲刀法、修罗刀法、拈花指法、一
+  指禅功、龙爪功法、鹰爪功法这几本任意武技在当铺pawn wuji;redeem wuji随机可
+  换得其它武技）。
+
+
+  2.慈悲刀 (cibei-dao) 同修罗刀一样。
+
+  
+  3.五虎断门刀 (wuhu-duanmendao)
+
+  要求：加入天地会,找李力世学习即可。
+
+  途径：rideto yangzhou;n;n;n;join tiandihui;rideto beijing;#2 e;n;w;
+       xue li yunlong-shenfa
+
+  备注：加入天地会后史松见了就自动跟随且叫杀，会干扰机器的，建议学完后找陈家洛
+  ask chen 退会,没有任何副作用。
+
+
+  4.不败神功 (never-defeated) 狡黠多变者成为宗师后向独孤求败学习，可学180级。
+
+    rideto huashan;ne;cross;xue dugu never-defeated
+
+  5.太玄功（见内功类解密）
+
+  6.紫金八卦刀(zijinbagua-dao)
+
+  要求：blade > 120,sword > 100,貌似只有胡家宗师可以中故事得到50级，不知道血
+  刀是否可得到,刀法个人不太喜欢，因此没练啊。
+
+
+  公共刀法类技能共有6种。
+
+
+ 〖掌法类 - strike〗
+
+  1.神掌八打(shenzhang-bada) 
+
+  途径：少林藏经阁二楼，随机三本武技,study wuji获得。
+
+  注：去藏经阁杀了尊者即可拿书。拿到武技后（修罗指法、无相指法、多罗叶指、神掌八打
+  、一拍两散这几本任意武技在当铺pawn wuji;redeem wuji随机可换得其它武技）。
+
+  2.一拍两散(yipai-liangsan)  同上。
+
+  3.般若掌(banruo-zhang) 同大力金刚拳法。
+
+  注：般若掌pf封魔不入少林一样使用（疑为bug）。
+
+  4.散花掌(sanhua-zhang) 同上。
+
+  5.金蛇游身掌(jinshe-zhang) 同金蛇剑法，秘笈3读取,无先天要求。
+
+  6.玄冥神掌(xuanming-zhang)
+
+  要求：除光明磊落外所有性格，先天根骨大于等于30，force > 200,max_neili > 2000。
+
+  路径：rideto lingzhou;e;e;ne;xue daoren xuanming-zhang
+
+  注：负神6.8W可学全部pf。
+
+  7.铁掌掌法(tie-zhang)
+
+  要求：阴险狡诈或心狠手辣性格,先天臂力、先天根骨均大于等于32，force > 230,
+       strike > 150,max_neili > 2000,负神。
+
+  路径：rideto xiangyang;#6 s;w;sw;s;xue qiu tie-zhang
+
+  注：负神9.5W可学全pf。
+
+  8.南海玄功(bluesea-force)  心狠手辣者宗师后向南海神尼学得。
+
+  9.九阴神功(jiuyin-shengong) 光明磊落者宗师后向黄裳学得。
+
+  10.碧针清掌(bizhen-qingzhang) 
+
+  要求：有玄铁令（exp > 1000000，宗师故事概率性获得）,force > 250,strike > 180,
+  max_neili > 2500,去摩天崖，给谢烟客玄铁令学得。
+
+  途径：rideto henyang;#6 w;s;climb lian;give xie xuantie ling;xue xie bizhen-qingzhang
+
+  注：180等级可向谢学pf澎湃。
+
+
+  公共掌法技能共10个。
+
+
+ 〖指法类 - finger〗
+
+  1.一指禅(yizhi-chan) 必练武功，与般若掌一起加先天根骨，且方法得当可加2，见修罗刀法。
+    解法同修罗刀。
+
+  2.拈花指 (nianhua-zhi) 解法同修罗刀。
+
+  3.无相指法 (wuxiang-zhi) 少林藏经阁，解法同神掌八打。
+
+  4.多罗叶指 (duoluoye-zhi) 同上。
+
+  5.修罗指 (xiuluo-zhi) 同上。
+
+  6.天竺拂指 (tianzhu-fuzhi) 
+
+  要求：force > 30,finger > 10,max_neili > 300。
+
+  途径：rideto yanziwu;e;kill gongye(会招来慕容复和包不同）;e;#3 s;e;knock penjing;
+  whisper 光复大燕;会进到还施水阁，此时move jia,会几率性的得到天竺拂指，修罗指，多罗
+  叶指这三种指法之一。
+
+  注：如果move jia没有书，等更新再去。
+
+  7.幽冥指 (youming-zhi) 
+
+  要求：杀岭南幽冥道人，1/10几率得，难啊。
+
+  路径：rideto foshan;#5 w
+
+  注：幽冥道人幽冥指320，其余都是280。
+
+  8.七星指 (qixing-zhi)
+
+  要求：杀南海孙玉溪，1/10几率得。
+
+  路径：rideto nanhai
+
+  注：七星指320，其余280.
+
+  9.祁连五绝指 (qilian-zhi) 
+
+  要求：杀祁连山无洞上人，1/10几率得。
+
+  路径：rideto lanzhou;n;n;n;n;n;nw;nw;n;cross river;n;e;ne;n
+
+  注：祁连五绝指320，其余280。
+
+  10.关冲剑(guanchong-sword)
+     少泽剑(shaoze-sword)
+     少商剑(shaoshang-sword)
+     商阳剑(shangyang-sword)
+     中冲剑(zhongchong-sword)
+     少冲剑(shaochong-sword)
+
+  要求：exp > 500000,force > 300,max_neili > 2250,去天龙寺杀杀枯荣,
+        1/10几率的六脉剑谱，可学得。
+
+  路径：rideto dali;#4 n;nw;n;ne;e;#3 s;#wa 1000;e;#2 s;w;#6 s;kill kurong
+
+  注：枯荣最高300技能,还有本字辈四僧。
+
+  11.幻阴指(huanyin-zhi) 
+
+  要求：宗师故事几率性获得10级幻阴指。
+
+  12.九阴神功(jiuyin-shengong)
+
+  13.葵花魔功(kuihua-mogong) 
+
+  14.南海玄功(bluesea-force) 
+
+
+  指法类公共技能共19种。
+ 
+
+
+  
+ 〖爪法类 - claw〗
+
+  1.鹰爪功(yingzhua-gong) 少林藏经阁，同慈悲刀法。
+
+  2.龙爪功(longzhua-gong) 同上。
+
+  3.九阴白骨爪(jiuyin-baiguzhao)
+
+  要求：200梵文读书即可。
+
+  方法：有九阴真经，yanjiu jiuyin-baiguzhao from zhenjing（非常难读）
+       有九阴真经下册，杀梅超风可得，下册可读100级(容易读）。
+
+  注：真经极难读，随便读几级练习吧，当然有上古兵器读一下就好,直接研究即可。
+     白骨爪练习困难，需要身边有尸体或人头，而且只能连一回，坚持到180研究吧。
+
+  4.凝血神爪(ningxue-shenzhao)
+
+  要求：正神，后天身法大于45，宗师后几率性系统故事得到10级。
+
+  5.九阴神功(jiuyin-shengong) 
+ 
+
+  爪法类公共技能共有5种。
+
+
+
+
+ 〖拳法类 - cuff〗
+
+
+  1.罗汉拳(luohan-quan) 少林藏经阁,wuji同醉拳。
+
+  2.大金刚拳(jingang-quan) 同上，必学技能，150奖赏一个先天臂力。
+
+  3.胡家拳法(hujia-quan) 
+
+  要求：exp > 10000,shen > 10000,hujia-quan < 120,胡家ID去问胡斐处
+  ask hu 胡家拳经
+
+  注：可读120级。
+
+  4.七伤拳(qishang-quan)
+ 
+  要求：exp > 250W,exp < 30000000,max_neili > 5500,宗师故事几率性获取。
+
+  注：明教ID可解密在冰火岛谢逊处直接学习。
+
+  5.九阴神功(jiuyin-shengong) 
+
+
+  公共拳法类技能共5种。
+
+
+
+  〖手法类 - hand〗
+
+  1.风云手(fengyun-shou) 同大力金刚拳法。
+
+  2.如来千叶手(qianye-shou) 同上。
+
+  3.猴拳(houquan) 同unarmed类猴拳。
+  注：不受hand等级限制。
+
+  4.九阴神功(jiuyin-shengong) 
+
+
+  公共手法类技能共4种。
+ 
+
+  〖鞭法类 - whip〗
+
+  
+  1.银龙鞭法 (yinlong-bian) 
+
+  要求：200梵文读书即可。
+
+  方法：有九阴真经，yanjiu yinlong-bian from zhenjing
+
+   注：真经极难读，随便读几级练习吧，当然有上古兵器读一下就好,直接研究即可。等
+   级150可直接使用2个pf,不过估计也没人用，whip的存在就是给不败神功垫底的。
+
+
+  2.秋风拂尘 (qiufeng-chenfa)
+ 
+  要求：解密即可，无其它要求。
+
+  途径：rideto beijing;#2 s;w;#2 n;e;kill lama;之后w;e;xue dubi shexing-baibian
+
+  注：不学不败的压根没必要学这个。
+
+ 
+  3.不败神功 (never-defeated) 不介绍了，雷同。
+
+
+  公共鞭法类技能共计区区3种，poor...cry...
+
+
+  
+ 〖棍法类 - club〗
+
+
+  1.韦驮棍 (weituo-gun) 
+ 
+  要求:exp > 10000,force > 50,max_neili > 250(分明是骂人么）
+  
+  途径：少林藏经阁二楼，随机三本武技,study wuji获得。
+
+  注：去藏经阁杀了尊者即可拿书。拿到武技后（韦陀棍法、醉棍棍法、无常杖法、普渡
+  杖法、达摩剑法、伏魔剑法这几本任意武技在当铺pawn wuji;redeem wuji随机可换得
+  其它武技）。
+
+
+  2.少林醉棍 (zui-gun) 这个不用多说，每个人都只学到200，多了没用，男ID可学的
+  pf加强的也有限，学多了没什么意义。
+
+
+  3.中平枪法 (zhongping-qiang)
+
+  要求：exp > 10W,max_neili > 1000,force > 100,club > 80,得到中平枪谱。
+
+  途径：rideto xuedao;wu;get qiangpu from mash
+
+  注：可阅读到150级，yanjiu 定岳七方 from qiangpu可学得pf。
+
+
+  4.不败神功 (never-defeated)  不再说了。
+
+
+  公共棍法技能共计4个，刚够自创的，不过创来干什么！？
+
+
+ 
+ 〖杖法类 - staff〗
+
+
+ 1.无常杖 (wuchang-zhang)  
+
+ 要求：force > 80,max_neili > 500。
+
+ 途径：少林藏经阁二楼，随机三本武技,study wuji获得。
+
+ 注：去藏经阁杀了尊者即可拿书。拿到武技后（韦陀棍法、醉棍棍法、无常杖法、普渡
+ 杖法、达摩剑法、伏魔剑法这几本任意武技在当铺pawn wuji;redeem wuji随机可换得
+ 其它武技）。同醉棍一样，学到200加一身法，使命完成。
+
+
+ 2.普渡杖 (pudu-zhang) 学法同上。却是完全没用的技能之一。 
+
+
+ 3.不败神功 (never-defeated) 
+
+
+ 公共杖法类技能共3种。
+
+
+ 〖公共暗器 -throwing〗类技能仅2种，金蛇锥法（解法见金蛇剑）,不败神功(never-defeated)。
+
+  不学不败神功的也压根别学暗器了，当然唐门除外。
+
+
+ 〖公共锤法 - hammer〗类技能仅可悲可泣的一种，依然是不败神功 (never-defeated)。
+
+ 〖辅助技能〗
+
+  辅助技能涵盖了好多方面，乐器、讨价、镶嵌、赶车类的就不说了，这里只说一个又重要又有趣的技能。
+
+  易容术 (pretending) 
+
+  要求：取得百变神通学了易容术，得到面具，在60岁前就可以随意变身了，如果有天颜永驻的special
+  ,易容将不受年龄限制。
+  
+  途径：rideto changan;#5 n;e;s;kill da shou;s;u;u;kill da shou;push bed;enter;
+  kill da shou;kill huang yi;kill bao biao;ask xiangxiang about letter;s;w;#2 d;
+  #2 n;#3 e;#6 s;#2 e;#wa 6000;#2 w;#6 n;#3 w;#2 s;#2 u;e;push bed;enter;#wa 5000;
+  s;w;#2 d;#2 n;#3 e;#6 s;#2 e;#wa 2000. 至此萧员外拿出〖百变神通〗(book)给你。可学易容术200。
+
+  面具：rideto wudang;ed;e;e;su;s;kill zhang san;get all from corpse,现在就大功告成了。
+
+  全文完
+
+
+                                                                             toxin  

@@ -1,0 +1,16 @@
+        reload_object(3)        LP MudOSv21c7                (7 Jul 1996)
+        函数名称:
+                reload_object - 把一个物件还原成刚刚载入的状态.
+        函数语法:
+                void reload_object( object ob );
+                无传回值 reload_object( 物件 ob );
+        函数用法:
+                对 ob 呼叫 reload_object() 时, 所有由驱动程式管理的物件
+                特性 (心跳 heart_beat,  外部呼叫 call_outs,  光线 light, 
+                阴影 shadow 等) 和内部变数都会重新初始化 (re-initialized),
+                然後呼叫  create(). 这个函式的效果相当於先摧毁再载入物件,
+                用不著存取磁碟.
+        参考函数:
+                export_uid(3), new(3), clone_object(3), destruct(3)
+        手册翻译:
+                Phoebus@ZH        97.May.26.                (Writen 5/23/97)

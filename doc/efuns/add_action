@@ -1,0 +1,41 @@
+
+
+        add_action(3)           MudOS v21c2             (5 Sep 1994)
+
+        名称:
+                add_action() - 把区域函式 (local function) 加进
+                               玩家可用的命令动词 (command verb).
+        语法:
+                void add_action( string | function fun, string | string
+                        *cmd, int flag );
+
+                无回传值 add_action( 字串 或 函数 fun, 字串 或 字串
+                        *cmd, 整数 flag );
+        用法:
+                当玩家键入与   符合的命令时, 呼叫区域函数 
+                (local function) fun. 玩家命令中所打的参数 (argument), 
+                会以字串传入被呼叫到的函式. 如果命令错误, 则传回 0, 
+                没错则必须传回 1. 
+
+                如果第二个参数是一个阵列, 则所有在阵列中的命令会呼叫
+                第二个函式. 你可以用 query_verb() 找出呼叫函式的命令.
+
+                如果是错误的命令, 则会继续搜寻其他的命令, 直到找到相
+                符的命令、参数或传回错误讯息给玩家.
+
+                通常 add_action() 只会被 init() 的程序呼叫. 有定义附
+                加命令的物件必须是玩家可以接触到的: 玩家物件本身、被
+                玩家携带、玩家所处的房间、或是与玩家处於同一个房间的
+                物件.
+
+                如果参数  是 1  , 只要参数前面的字元 (leading
+                characters) 符合动作命令   即可, 而整个动作命令
+                的字元 (entire verb) 会由 query_verb()  传回. 如果参
+                数是 2 , 结果同前, 但是 query_verb()  只会传回   
+                後面的字元 (characters following ).
+        参考:
+                query_verb(3), remove_action(3), init(4)
+        翻译:
+                Spock @ FF      96.Oct.11.              (printed 3/16/95)
+
+

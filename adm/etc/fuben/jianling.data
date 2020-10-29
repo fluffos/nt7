@@ -1,0 +1,7 @@
+name=剑灵
+main=fightroom
+time=1800 
+level=50
+enter=fightroom
+leave=/d/city/wumiao 
+interval=14400

@@ -1,0 +1,75 @@
+□ efun_main.c 
+
+让 efun match_path() 具有 '/' 路径搜寻功能
+―――――――――――――――――――――――――――――――――――――――
+#ifdef F_MATCH_PATH
+void f_match_path PROT((void))
+{
+    svalue_t *value;
+    register char *src, *dst;
+    svalue_t *nvalue;
+    mapping_t *map;
+    char *tmpstr;
+
+    value = &const0u;
+
+    tmpstr = DMALLOC(SVALUE_STRLEN(sp) + 1, TAG_STRING, "match_path");
+
+    src = sp->u.string;
+    dst = tmpstr;
+    map = (sp - 1)->u.map;
+
+    while (*src != '\0') {
+        while (*src != '/' && *src != '\0')
+            *dst++ = *src++;
+        if (*src == '/') {
+            while (*++src == '/');
+            if( dst == tmpstr ) continue;
+        }
+        *dst = '\0';
+        nvalue = find_string_in_mapping(map, tmpstr);
+        value = nvalue;
+
+        if( value == &const0u ) break;
+        if( value->type != T_MAPPING ) {
+            if( *src != '\0' ) value = &const0u;
+            break;
+        }
+        map = value->u.map;
+        dst = tmpstr;
+    }
+
+    FREE(tmpstr);
+    // Don't free mapping first, in case sometimes one uses a ref 1 mapping
+    // Randor - 5/29/94
+    free_string_svalue(sp--);
+    map = sp->u.map;
+    assign_svalue_no_free(sp, value);
+    free_mapping(map);
+}
+#endif                          /* F_MATCH_PATH */
+―――――――――――――――――――――――――――――――――――――――
+
+让 efun this_player() 可回传 call_out() 的 command_giver
+―――――――――――――――――――――――――――――――――――――――
+#ifdef F_THIS_PLAYER
+void
+f_this_player PROT((void))
+{
+    if (sp->u.number) {
+        if (current_interactive)
+            put_unrefed_object(current_interactive, "this_player(1)");
+        else if (command_giver)
+            put_unrefed_object(command_giver, "this_player(1)");
+        else sp->u.number = 0;
+    } else {
+        if (command_giver)
+            put_unrefed_object(command_giver, "this_player(0)");
+        /* else zero is on stack already */
+    }
+}
+#endif
+―――――――――――――――――――――――――――――――――――――――
+
+By Clode@RW on 2002/6/3 04:01下午
+

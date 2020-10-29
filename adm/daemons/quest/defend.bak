@@ -1,0 +1,101 @@
+// 玩家任务守护进程：defend.c
+
+#include <ansi.h>
+
+#define MAX_NUM         15
+
+void startup();
+void start_quest();
+
+array familys = ({ 
+        "武当派", "华山气宗", "全真教", "古墓派",
+        "灵鹫宫", "桃花岛", "关外胡家", "段氏皇族", 
+        "峨嵋派", "丐帮", "少林派", "逍遥派", 
+        "明教", "华山剑宗","唐门世家",
+        "星宿派", "血刀门", "大轮寺", "欧阳世家", 
+        "神龙教", "慕容世家", "日月神教", });
+        
+// 任务对象创建
+void create()
+{
+        seteuid(getuid());
+        if (! clonep() && find_object(QUEST_D)) startup();
+}
+
+void heart_beat()
+{
+        if (! find_object(QUEST_D))
+                return;
+
+        // 如果可以，每次心跳(4分钟)产生一个QUEST
+        start_quest();
+}
+
+
+// 任务守护进程唤醒这个进程
+void startup()
+{
+        // 启动
+        if (! find_object(QUEST_D))
+                return;
+
+        if (! query_heart_beat())
+                CHANNEL_D->do_channel(find_object(QUEST_D),
+                                      "sys", "进程(DEFEND)启动了。");
+
+        // 平均每四分钟产生一个任务
+        set_heart_beat(40 + random(20));
+}
+
+// 停止这个任务进程
+void stop()
+{
+        set_heart_beat(0);
+}
+
+void start_quest()
+{
+        int i, num; 
+        object *users;          // 目前在做这个任务的玩家
+        object *obs;            // 目前所有的DEFEND任务
+        string family_name;     // 被攻击的门派名称
+        object qob;             // 任务对象
+
+        // 生成所有可能被攻打的门派（去掉目前被攻打的）
+        obs = children("/clone/quest/defend");
+        if (arrayp(obs) && sizeof(obs) > 0)
+                familys-=query("quest_dfamily", obs);
+
+        // 选取一个当前准备攻打的门派
+        if (sizeof(familys) < 1)
+                return;               
+                
+        family_name = familys[random(sizeof(familys))];
+        
+        // 获取攻打的人数（根据当时门派在做此任务人数）
+        users = filter_array(users(), (: interactive($1) 
+                                          && stringp(query("family/family_name", $1) )
+                                          && query("family/family_name", $1) == $(family_name):));
+                                         /* 
+                                          && mapp(query_temp("defend_quest", $1) )
+                                          && !query_temp("defend_quest/finish", $1):));
+                                         */
+        // 数量为做此任务的人数的 1-2 倍
+        num = sizeof(users) * (2 + random(2));
+        
+        // 如果超出了最大敌人数量（防止满山遍野的敌人）
+        if (num > MAX_NUM) num = MAX_NUM;
+        // 如果一个都找不到
+        if (num <= 0) return;
+        
+        // 初始化任务的一些信息（启动地点）
+        qob = new("/clone/quest/defend");
+        set("quest_dfamily", family_name, qob);
+
+        CHANNEL_D->do_channel(find_object(QUEST_D),
+                              "sys", "进程(DEFEND)在" + family_name +
+                              HIR "利用" + num + HIR "个敌人创建了一个任务。");
+
+        // 交由任务自己进行初始化
+        qob->init_quest(num, family_name);
+}

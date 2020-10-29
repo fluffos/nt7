@@ -1,0 +1,19 @@
+name=$HIB$夏雪宜$NOR$
+id=xia xueyi
+gender=男性
+long=$HIB$他的表情看上去冷若冰霜,深情凝重,尽管如此也无法摆脱他那放浪不羁的姿态,这就是传说中奇美男子[金蛇郎君]夏雪宜。$NOR$
+family=华山派
+difficult=10
+basic_exp=1000000000
+limit_exp=90000000000
+death_msg=小怡，我对不起你，但是杀父之仇不共戴天，我一定要亲手杀了温氏兄弟已祭我家人在天之灵！
+chatmsg=如今我得到五毒教三宝，并且习得绝世武功，温氏兄弟我一定会找你们报仇的！
+advance_skill=jinshe-jian
+basic_skill=sword
+stunt_name=$HIY$金蛇$HIR$化龙$NOR$
+stunt_msg=$HIY$$N$HIY$将其手中长剑抛向空中，大喝一声，一跃浮在空中，口中念着金蛇剑法口诀，突然电闪雷鸣，万道金光幻化成金龙从天而降，直射向$n！$NOR$
+stunt_hit=$HIC$$n不知如何应对，被飞来的金芒穿过身体，鲜血从全身洞口喷射而出！$NOR$
+stunt_fail=$HIC$$n急忙运起全部功力，奋力避让开这招攻势！
+rewards=exp:100000,pot:50000,mar:10000,gold:10
+drops=FI&/clone/tessera/rune20:30,FI&/clone/goods/enchant-scroll:70,FI&/clone/misc/baoxiang:100
+

@@ -1,0 +1,39 @@
+
+        db_connect()
+
+        名称：
+                db_connect() 进行数据库连接
+
+        语法：
+                mixed db_connect(string host, string database,
+                        string user, int type|void)
+                混合型 db_connect(字符串 host, 字符串 database,
+                        字符串 user, 整数 type|空)
+
+        说明：
+                进行数据库连接。
+
+                host 为要连接的数据库所在的主机名，
+                例如："127.0.0.1"  "localhost" 等
+
+                database 为操作的数据库名称。
+
+                user 操作数据库账号的用户名。
+
+                type 数据库服务器的类型
+                在你编译 driver 的时候如果定义了
+                多种数据库支持，例如：
+                        #define USE_MSQL 1
+                        #undef USE_MYSQL 2
+                在这里就可以选择：1 或者 2。
+                如果不传入此参数，默认的是你定义
+                的 DEFAULT_DB。
+
+                返回值：1 连接成功，0 连接失败，
+                        如果返回值为字符串类型，则是数据库服务
+                        器提供的错误信息。
+
+        by 发现号(Find@tx)
+
+
+

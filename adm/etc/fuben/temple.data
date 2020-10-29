@@ -1,0 +1,5 @@
+name=失落神庙
+main=maze
+time=3600
+level=150
+enter=maze/entry

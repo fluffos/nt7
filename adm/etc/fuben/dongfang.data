@@ -1,0 +1,7 @@
+name=东方不败
+main=fightroom
+time=1800 
+level=40
+enter=fightroom
+leave=/d/city/wumiao 
+interval=10800

@@ -1,0 +1,68 @@
+backend.c
+
+让 efun query_load_av() 可提供中文资料显示
+―――――――――――――――――――――――――――――――――――――――
+static double load_av = 0.0;
+static int load_now = 0;
+
+void update_load_av()
+{
+    static int last_time;
+    int n;
+    double c;
+    static int acc = 0;
+
+    acc++;
+    if (current_time == last_time)
+        return;
+    n = current_time - last_time;
+    
+    load_now = acc / n;
+    
+    if (n < NUM_CONSTS)
+        c = consts[n];
+    else
+        c = exp(-n / 900.0);
+    load_av = c * load_av + acc * (1 - c) / n;
+    last_time = current_time;
+    acc = 0;
+}                               /* update_load_av() */
+
+static double compile_av = 0.0;
+static int compile_now = 0;
+
+void
+update_compile_av P1(int, lines)
+{
+    static int last_time;
+    int n;
+    double c;
+    static int acc = 0;
+
+    acc += lines;
+    if (current_time == last_time)
+        return;
+    n = current_time - last_time;
+    
+    compile_now = acc / n;
+    
+    if (n < NUM_CONSTS)
+        c = consts[n];
+    else
+        c = exp(-n / 900.0);
+    compile_av = c * compile_av + acc * (1 - c) / n;
+    last_time = current_time;
+    acc = 0;
+}                               /* update_compile_av() */
+
+char *query_load_av()
+{
+    static char buff[100];
+
+    sprintf(buff, "%.2f(%d)指令下达/秒，%.2f(%d)编译行数/秒", load_av, load_now, compile_av, compile_now);
+    return (buff);
+}                               /* query_load_av() */
+―――――――――――――――――――――――――――――――――――――――
+
+By Clode@RW on 2002/6/3 04:01下午
+

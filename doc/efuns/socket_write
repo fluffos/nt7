@@ -1,0 +1,64 @@
+
+     socket_write(3)        MudOS (5 Sep 1994)         socket_write(3)
+
+     名称：
+          socket_write() - 透过一个 socket 传送资料
+
+     语法：
+          #include 
+
+          int socket_write( int s, mixed message,
+                            void | string address );
+
+          整数 socket_write( 整数 s, 混合 message,
+                             无参数 | 字串 address );
+
+     用法：
+          socket_write() 用一个 socket s 来传送资料。如果 socket s 是
+          STREAM 或是 MUD 型态，这个 socket 就必须是已连接的(connected)
+          而且不能指定位址。如果 socket 是 DATAGRAM 型态，就必须指定位
+          址。位址的格式是 "127.0.0.1 23"。
+
+     传回值：
+          socket_write() 传回：
+
+               成功时是 EESUCCESS。
+
+               失败时是一个含有下述意义的负值。
+
+     错误值：
+          EEFDRANGE      描述值(descriptor)超出□围。
+
+          EEBADF         无效的描述值。
+
+          EESECURITY     企图违反安全。
+
+          EENOADDR       socket 未指定位址。
+
+          EEBADADDR      位址格式问题。
+
+          EENOTCONN      socket 尚未连接。
+
+          EEALREADY      操作已在进行中。
+
+          EETYPENOTSUPP  不支援此物件型态。
+
+          EEBADDATA      传送资料含有太多层次。
+
+          EESENDTO       sendto 问题。
+
+          EEMODENOTSUPP  不支援此 socket 型态。
+
+          EEWOULDBLOCK   操作将会停滞(blocked)。
+
+          EESEND         传送问题。
+
+          EECALLBACK     等待回呼(callback)中。
+
+     参照：
+          socket_connect(3), socket_create(3)
+
+     翻译：
+          Kenny@Broken.History       97.Jul.27       (printed 3/16/95)
+
+

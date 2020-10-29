@@ -1,0 +1,54 @@
+
+     reg_assoc(3)           MudOS (26 Dec 1994)           reg_assoc(3)
+
+     名称：
+          reg_assoc() - 一个正规样式(regular pattern)子字串撷取器(extractor)
+
+     语法：
+          mixed *reg_assoc(string str, string *pat_arr, mixed
+          *tok_arr, void | mixed def);
+
+          混合 *reg_assoc(字串 str, 字串 *pat_arr, 混合 *tok_arr,
+                          无参数 | 混合 def);
+
+     用法：
+          reg_assoc 将一个字串扩展(explode)为一些符合给定 pat_arr 正规
+          表示(regular expression)样式字串的子字串，并且和给定的剖析单
+          元(token) tok_arr 相联结。如果 def（预设值 0）有指定的话，它
+          则会和一个未配对者相联结。传回值是含有二个子阵列的阵列，第一
+          个是一个如下格式的阵列
+
+               ({ 未配对 1, 配对 1, 未配对 2, 配对 2, ...,
+                  未配对 n, 配对 n, 未配对 n+1 })
+
+          而第二个则含有依序对应於配对者的剖析单元：
+
+               ({ def, 相对於配对 1 的剖析单元, ...,
+                  def, 相对於配对 n 的剖析单元, def })。
+                 
+          pat_arr 和 tok_arr 必须一样大小，tok_arr 的第 i 个元素是对
+          应於 pat_arr 的第 i 个元素。pat_arr 可以只含有字串。
+
+          如果 pat_arr（或 tok_arr）的大小是零的话，则只会传回
+          ({ ({ str }), ({ def }) })。
+
+     例子：
+          #define STRING_PAT "\"(\\\\.|[^\\\"])*\""
+          #define NUM_PAT "[0-9]+"
+
+          #define F_STRING 1
+          #define F_NUM 2
+
+          reg_assoc("Blah \"blah\" test 203 hhh j 308 \"bacdcd\b\"acb",
+            ({ STRING_PAT, NUM_PAT }), ({ F_STRING, F_NUM }), "no-match")
+
+          将会传回
+          ({ ({ "Blah ", "\"blah\"", " test ", "203", " hhh j ", "308", " ",
+                "\"bacdcd\b\"", "acb" }),
+             ({ "no-match", F_STRING, "no-match", F_NUM, "no-match", F_NUM,
+                "no-match", F_STRING, "no-match" }) })
+
+     翻译：
+          Kenny@Broken.History       97.Jul.26       (printed 3/16/95)
+
+

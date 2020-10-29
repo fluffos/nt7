@@ -1,0 +1,17 @@
+
+        chinese_number()
+
+        名称:
+                chinese_number() - 将整数转化为中文大写。
+        语法:
+                string chinese_number( int n );
+
+                字符串 chinese_number( 整数 n );
+        用法:
+                将参数 n 转化为中文大写。
+                例如：
+                        48612180
+                返回：
+                        四千八百六十一万两千一百八十
+        by 发现号(Find@tx)
+

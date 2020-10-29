@@ -1,0 +1,278 @@
+// story:familywar 门派挑畔
+
+#include <ansi.h>
+#include "/adm/etc/teamquest/faminfo.c" // 包含被攻打门派的所有信息
+
+#define FAM                      fam_info[family]
+#define WAITING                  1
+#define ATTACKING                2
+#define OVER                     3
+
+string family;
+string last_family;
+int now_status                 = 2;
+int stop                       = 0;
+
+int no_clean_up() { return 1; }
+void notify_npc();
+
+public int change_status(int status) // 改变当前状态
+{
+      if (status > 3 || status < 0)
+               status = 3;
+
+      return (now_status = status);
+}
+
+public int query_status() // 获取当前状态。外部quest.c调用
+{
+      return now_status;
+}
+
+public string set_family(string fam)
+{
+      
+      return (family = fam);
+}
+
+void select_family()
+{
+        string* fams;
+        string fam;        
+        fams = keys(fam_info);
+        
+        // 保证不是上次出现过的门派
+        while(1)
+        {
+              fam = fams[random(sizeof(fams))];
+              if (fam != family)
+              {
+                     family = fam;
+                     break;    
+              }
+        }
+}       
+
+string show_time()
+{
+        select_family();
+        change_status(WAITING); // 等待调遣，暂不进攻和QUEST
+        return "纷乱江湖，群雄逐鹿。武林中人都欲一统中原武林，成就一番霸业。";
+}
+
+string show_info(int i)
+{
+        string* msg = ({
+             "神秘组织首领：听说" + family + "在中原声名显赫，门徒众多，" + FAM["master_name"] +
+             "武功超卓，\n而" + FAM["skill"] + "更是威力惊人，不可小觑。",
+
+             "神秘组织护法：看来" + family + "不除，始终是我们统一中原武林的心腹大患。",
+
+             "神秘组织首领：就依你的计策行事，立即召集人手到" HIR + FAM["fir_room_nm"] + NOR + WHT "集合。",
+
+             "神秘组织护法：是！一柱香后属下召集人手在" HIR + FAM["fir_room_nm"] + NOR + WHT "听候首领调遣！",
+
+             family + "弟子：禀告" + FAM["master_rank"] + "，有一群不明身份的江湖人氏聚集在"HIR + 
+             FAM["fir_room_nm"] + NOR + WHT "，扬言要铲平我们" + family + "！",
+    
+             FAM["master_name"] + "怒道：“岂有此理，我堂堂" + family + "岂能容他们撒野！"
+             "你立即传令下去，召集\n本门弟子在" HIY + FAM["guard_room_nm"] + NOR + WHT "集合。”",
+             
+             family + "弟子：“是！”",                 // i == 6
+
+             "神秘组织护法：启禀首领，" + family + "门下弟子已经聚集在" HIY + FAM["guard_room_nm"] +
+             NOR + WHT "，看来他们要反抗到底！",
+
+             FAM["master_name"] + "：" + family + "弟子听命，誓死保卫" + family + "，别让那些狂妄小人得逞！", 
+
+             family + "众弟子：是！", 
+
+        });
+
+        if (i == 6)notify_npc(); // 初始化所有相关NPC和通知相关player
+
+        if (i == 9)
+        {
+               call_out("show_info", 10, 99);
+               call_out("start_attack", 180);
+        }
+
+        if (i == 99)
+        {
+              CHANNEL_D->do_channel(this_object(), "rumor", 
+                                    "听说神秘组织决定在三分钟后进攻" HIW + family  + HIM + "！\n");
+
+              return "";
+        }
+        return msg[i];
+}
+
+int filter_listener(object ob)
+{
+        if( query("env/no_story", ob))return 0;
+        return 1;
+}
+
+void start_attack()
+{
+       object *listeners;
+       listeners = filter_array(users(), (: filter_listener :));
+       message("story",  NOR + WHT "\n【帮派挑畔】神秘组织首领：时辰已到，开始行动！" + "\n" NOR, listeners);
+       CHANNEL_D->do_channel(this_object(), "rumor", "听说神秘组织开始攻打" HIW + family + HIM "！\n");
+       change_status(ATTACKING);
+       return;
+}
+
+// 初始化所有相关NPC和通知相关player
+void notify_npc()
+{
+        object *obs;
+        object fam_ob, war_ob, master_ob;
+        int i;
+        string* fam_npc;
+     
+        obs = filter_array(all_interactive(), (: ! wizardp($1) &&
+                                              environment($1) &&
+                                              !query("doing", $1):));
+  
+        if (sizeof(obs) <= 0)
+        {
+                CHANNEL_D->do_channel(this_object(), "rumor", 
+                                      "听说神秘组织行迹败露，被官府剿灭了。\n");
+
+                change_status(OVER);
+                stop = 1;
+        }
+
+        // 首先通知本门玩家
+        for (i = 0; i < sizeof(obs); i ++)
+        {
+               if (! objectp(obs[i]) || 
+                   query("family/family_name", obs[i]) != family )
+                         continue;
+
+               tell_object(obs[i], HIG + family + "弟子告诉你：师们有难，火速到" + HIR +
+                           FAM["guard_room_nm"] + HIG " 集合，等候调遣！\n");
+               tell_object(obs[i], BEEP);
+        }
+
+        if (! objectp(master_ob = find_living(FAM["master_id"])))
+                     master_ob = new(FAM["master_file"]);
+        
+        if (objectp(master_ob))master_ob->move(FAM["master_room"]);
+
+        // 初始化本门NPC并移动到guard_room_fi
+        fam_npc = FAM["npc_list"];
+        for (i = 0; i < sizeof(fam_npc); i ++)
+        {
+               if (! objectp(fam_ob = find_living(fam_npc[i])))
+                         continue;
+
+               if (! objectp(fam_ob))continue;
+               if (! living(fam_ob))fam_ob->revive();
+
+               if (environment(fam_ob))
+               {
+                       message("vision", HIW + fam_ob->name() + "慌慌张张地说道：师们有事，恕"
+                               "不奉陪，我先走一步了！\n" NOR,
+                               environment(fam_ob));
+               }
+               fam_ob->move(FAM["guard_room_fi"]);
+        }
+
+        // 初始化挑畔者
+        // 移动挑畔者到fir_room_fi
+        if (objectp(master_ob))
+        {
+                string title;
+                int para;
+
+                // 先初始化神秘组织首领
+                for (i = 0; i < 11; i ++)
+                {
+                      war_ob = new(CLASS_D("generate") + "/spekilled.c");
+
+                      if (i == 0) // 首领
+                      {
+                             title = HIR "神秘组织·首领" NOR;
+                             set("is_leader", 1, war_ob);
+                             para = 5;
+                      }
+                      else if (i > 0 && i < 5) // 护法
+                      {
+                             title = HIW "神秘组织·护法" NOR;
+                             para = 3;
+                      }
+                      else 
+                      {
+                             title = HIC "神秘组织·高手" NOR;
+                             para = 2;
+                      }
+
+                      NPC_D->set_from_me(war_ob, master_ob, 120);
+                      addn_temp("apply/attack", master_ob->query_skill("force")*para/20, war_ob);
+                      addn_temp("apply/dodge", master_ob->query_skill("force")*para/20, war_ob);
+                      addn_temp("apply/parry", master_ob->query_skill("force")*para/20, war_ob);
+                      addn_temp("apply/damage", para*30, war_ob);
+                      addn_temp("apply/unarmed_damage", para*30, war_ob);
+                      addn_temp("apply/armor", para*500, war_ob);//很高的防御
+                      set("fam_info", FAM, war_ob);//记录攻打门派信息
+                      set_temp("move", 0, war_ob);//记录移动次数
+                      set("title", title, war_ob);
+                      set("team_num", 1, war_ob);//设置team_num以便任何一个NPC受到攻击
+                                                  // 时所有有team_num标志的NPC都会参与反击
+                                                  // 还可以保证入侵者不攻击带有team_num标志
+                                                  // 的同伴
+                      set("shen", 0, war_ob);
+
+                      // 移动到fir_room_fi
+                      war_ob->move(FAM["fir_room_fi"]);
+               }
+       }
+       else
+       {
+                     CHANNEL_D->do_channel(this_object(), "rumor", 
+                                           "听说神秘组织被官府剿灭了。\n");
+                     
+                     change_status(OVER);
+                     stop = 1;
+       }
+}
+
+nosave mixed *story = ({
+        (: show_time :),
+        "一个神秘的组织悄然壮大，出现在中原。",
+        (: show_info, 0 :),
+        (: show_info, 1 :),
+        "神秘组织首领：的确如此，那你有何高见？",
+        "神秘组织护法：尽快召集人手，攻它个措手不及，斩草除根，否则后患无穷！",
+        (: show_info, 2 :),
+        (: show_info, 3 :),
+        "一柱香后　……",
+        (: show_info, 4 :),
+        (: show_info, 5 :),
+        (: show_info, 6 :),
+        "一柱香后 ……",
+        (: show_info, 7 :),
+        "神秘组织首领：很好！那就等他们全到到齐了，我们来个一网打尽，斩草除根！",
+        "神秘组织护法：哈哈！首领真是深谋远虑，中原武林必将是首领的囊中之物！",
+        (: show_info, 8 :),
+        (: show_info, 9 :),
+        "神秘组织首领：左右护法听命！",
+        "神秘组织左右护法：属下在！",       
+        "神秘组织首领：传我号令，一柱香后开始行动！",
+        "神秘组织左右护法：是！",       
+});
+
+void create()
+{
+        seteuid(getuid());
+}
+
+string prompt() { return HIR "【挑畔】" NOR; }
+
+mixed query_story_message(int step)
+{
+        if (stop)return 0;
+        return step < sizeof(story) ? story[step] : 0;
+}

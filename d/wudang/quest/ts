@@ -1,0 +1,253 @@
+// tianshi.c 李天师
+// Modified by haiyan
+
+#include <ansi.h>
+inherit NPC;
+
+mixed ask_ghost();
+string ask_fail();
+int accept_object(object me, object ob);
+
+void create()
+{
+        set_name("李天师", ({ "li tianshi", "li", "tianshi" }));
+        set("long", "这是一位仙风道骨的法师，身上的道袍上画着一些符号。\n");
+        set("nickname", HIY"镇妖真人"NOR);
+        set("gender", "男性");
+        set("age", 30);
+        set("attitude", "peaceful");
+        set("shen_type", 1);
+
+        set("str", 20);
+        set("int", 20);
+        set("con", 25);
+        set("dex", 20);
+        
+        set("max_qi", 5000);
+        set("max_jing", 500);
+        set("neili", 3000);
+        set("max_neili", 3000);
+
+        set("combat_exp", 800000);
+        set("score", 1000);
+
+        set_skill("force", 200);
+        set_skill("wudang-xinfa", 200);
+        set_skill("dodge", 200);
+        set_skill("strike", 200);
+        set_skill("wudang-zhang", 200);
+        set_skill("parry", 200);
+        set_skill("sword", 200);
+        set_skill("wudang-jian", 200);
+        set_skill("taoism", 300);
+
+        map_skill("parry", "wudang-jian");
+        map_skill("sword", "wudang-jian");
+        map_skill("strike", "wudang-zhang");
+
+        prepare_skill("strike", "wudang-zhang");
+
+        set("inquiry", ([ 
+                "job"   : (: ask_ghost :),
+                "捉鬼"  : (: ask_ghost :),
+                "失败"  : (: ask_fail :),
+                "fail"  : (: ask_fail :),
+                "桃木剑": "桃木剑是捉鬼的必备之物，自己去做一把好了。",
+        ])); 
+
+        setup();
+        carry_object("/clone/cloth/dao-cloth")->wear();
+        carry_object("/d/taohua/obj/taojian")->wield();
+}
+
+#include "dirs.h"
+#include "gui.h"
+
+mixed ask_ghost()
+{ 
+      string *kp, p, room;
+      object me, ob, ghost;
+      int t, dam;
+      me = this_player(); 
+
+      if (me->query("family/family_name") != "武当派" &&
+          me->query("family/family_name") != "全真教") 
+           return "这位" + RANK_D->query_respect(me) + "也有捉鬼的本事吗？"; 
+
+      if (me->query_skill("taoism", 1) < 100) 
+           return "还是算了吧！你这点道行只怕给鬼捉了。"; 
+
+      if (me->query_skill("taoism", 1) >= 500) 
+           return "你的修为已经太高了！捉鬼的事还是让小辈们去吧。"; 
+
+      if (me->query("combat_exp") > 10000000) 
+           return "你武功高强，捉鬼的事就不劳你费心了！"; 
+
+      if (me->query_temp("gui/shougui"))
+           return "刚才不是让你去捉鬼了嘛？怎么又回来了？"; 
+
+      if (me->query_skill("taoism", 1) < 500)  t = 500;
+      if (me->query_skill("taoism", 1) < 400)  t = 400;
+      if (me->query_skill("taoism", 1) < 300)  t = 300;
+      if (me->query_skill("taoism", 1) < 200)  t = 200;
+
+      kp = keys(dirs); 
+      p = kp[random(sizeof(kp))]; 
+      room = dirs[p][random(sizeof(dirs[p]))];
+      if( wizardp(me) )  tell_object(me,sprintf("<鬼出现在 %s 地点>\n",room)); 
+
+      dam = t + (me->query_temp("gui/count") % 5) * 10;
+      ghost = new(gui[random(sizeof(gui))] );
+      ghost->move(room);
+      ghost->set_temp("player", me->query("id"));
+      ghost->set_temp("born_time", time());
+      ghost->set_temp("damage", dam);
+      ghost->set_skill("claw", me->query_skill("taoism", 1) +
+                      (me->query_temp("gui/count") % 5) * 10);
+
+      tell_object(me, this_object()->name() + "对你道：据说最近" +
+                  p + "常有" + ghost->name() + "出没，附近居民"
+                  "深受其害。你去把它收了吧。\n");
+      message("vision", this_object()->name() + "在" + me->name() + "耳边吩咐着什么，" +
+              me->name() + "一边听，一边不住地点头。\n", environment(me), me);
+      ob = new("/d/wudang/quest/obj/fuzhi"); 
+      ob->move(this_object());
+      command("give fu zhi to " + me->query("id"));
+      tell_object(me, this_object()->name() + "继续道：" + ob->name() +
+                  "可以让鬼魂现身，可别弄丢了。\n");
+      message_vision("$n对$N说道：快动身吧，多加小心。\n", me, this_object()); 
+      me->set_temp("gui/shougui", 1);
+      return 1; 
+} 
+
+string ask_fail() 
+{ 
+      object me = this_player(); 
+
+      if (! me->query_temp("gui/shougui")) 
+           return "我没有给你什么任务啊？"; 
+
+      if (present("fu zhi", me)) 
+          destruct(present("fu zhi", me));
+      me->delete_temp("gui/shougui"); 
+      me->delete_temp("gui/base");
+      me->delete_temp("gui/count");
+      command("sigh " + me->query("id"));
+      me->add("weiwang", -random(20));
+      if (me->query("weiwang") < 0) me->set("weiwang", 0);
+      tell_object(me, HIR"你的江湖威望降低了！\n"NOR);
+      return "你不能干，我只好请别人去了！";
+}
+
+
+int accept_object(object me, object ob) 
+{ 
+    int base, exp, pot, count;
+    object gift;
+    string msg;
+    if( !me || environment(me) != environment() ) return 0; 
+    if ( !objectp(ob) ) return 0;  
+    if ( !present(ob, me) ) return notify_fail("你身上没有这样东西。"); 
+    if ( (string)ob->query("id") == "fu zhi") 
+    {
+         if (! me->query_temp("gui/finish"))
+         {
+             command("sneer " + me->query("id")); 
+             command("say 想蒙骗本天师吗？");
+             me->add("weiwang", -random(50));
+             if (me->query("weiwang") < 0) me->set("weiwang", 0);
+             tell_object(me, HIR"你的威望降低了！\n"NOR);
+             return 1;
+         }
+
+         base = me->query_temp("gui/base");
+         exp = random(base/3) + base/2; 
+         pot = exp/2 + random(exp/3); 
+         me->add_temp("gui/count", 1); 
+         count = me->query_temp("gui/count", 1);
+         if (me->query("potential") >= me->query_potential_limit())  pot = 1; 
+         if (count % 10 == 0)
+         {
+            message_vision("$n拍了拍$N的肩膀：好家伙，居然连着" + chinese_number(count) +
+                  "次都没有失手，干得好！\n", me, this_object());
+
+            if (count == 50)
+            {
+               message_vision("$n对$N说道：这东西是奖给你的，好好跟我干，" +
+                              "本天师不会亏待你！\n", me, this_object());
+               switch(random(20))
+               {
+                  case 0:
+                     gift = new("/clone/gift/xiandan");
+                     msg = "一颗";
+                     break;
+                  case 1:
+                     gift = new("/clone/gift/xisuidan");
+                     msg = "一颗";
+                     break;
+                  case 2:
+                     gift = new("/clone/gift/shenliwan");
+                     msg = "一颗";
+                     break;
+                  case 3:
+                     gift = new("/clone/gift/unknowdan");
+                     msg = "一颗";
+                     break;
+                  default:
+                     gift = new("/clone/gift/jinkuai");
+                     msg = "一锭";
+                     break;
+               }
+               gift->move(me);
+               tell_object(me, "你获得了" + msg + gift->name() + "。\n");
+            }
+
+            if (count == 100 || count == 200)
+            {
+               message_vision("$n对$N说道：这东西是奖给你的，好好跟我干，" +
+                              "本天师不会亏待你！\n", me, this_object());
+               msg = "一颗";
+               gift = new("/d/shaolin/obj/puti-zi");
+               gift->move(me);
+               tell_object(me, "你获得了" + msg + gift->name() + "。\n");
+            }
+
+            if (count == 300 || count == 400)
+            {
+               message_vision("$n对$N说道：这东西是奖给你的，好好跟我干，" +
+                              "本天师不会亏待你！\n", me, this_object());
+               msg = "一滴";
+               gift = new("/clone/misc/tianxiang");
+               gift->move(me);
+               tell_object(me, "你获得了" + msg + gift->name() + "。\n");
+            }
+
+            if (count == 500)
+            {
+               message_vision("$n对$N说道：这东西是奖给你的，好好跟我干，" +
+                              "本天师不会亏待你！\n", me, this_object());
+               msg = "一颗";
+               gift = new("/clone/gift/jiuzhuan");
+               gift->move(me);
+               tell_object(me, "你获得了" + msg + gift->name() + "。\n");
+            }
+         }
+         else  message_vision("$n对$N点了点头：不错，不错。\n", me, this_object()); 
+
+         tell_object(me, HIG "通过这次煅炼，你获得了" + chinese_number(exp) + 
+                     "点经验和" + chinese_number(pot) + "点潜能。\n" NOR); 
+         me->add("combat_exp", exp); 
+         me->add("shen", random(exp)); 
+         me->add("potential", pot); 
+         me->delete_temp("gui/shougui"); 
+         me->delete_temp("gui/finish"); 
+         destruct(ob); 
+         return 1; 
+    }
+    else
+    {
+        command("say 你给我这种东西干什么？"); 
+        return 0;
+    }
+} 
+

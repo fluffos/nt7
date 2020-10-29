@@ -1,0 +1,13 @@
+        test_bit(3)                LP MudOSv21c7                (7 Jul 1996)
+        函数名称:
+                test_bit() - 检查一个位元字串 (bitstring) 中某一个位元
+                            (bit)  的值.
+        函数语法:
+                int test_bit( string str, int n );
+                整数 test_bit( 字串 str, 整数 n );
+        函数用法:
+                传回字串 str 中, 第 n  个位元是 0  或 1.
+        参数:
+                set_bit(3), clear_bit(3)
+        手册翻译:
+                Phoebus@ZH        97.Jul.24.                (Writen 5/23/97)

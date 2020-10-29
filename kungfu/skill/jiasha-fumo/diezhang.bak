@@ -1,0 +1,69 @@
+// diezhang.c (昆仑掌法)  perform 昆山叠掌
+// cck 21/8/97
+
+#include <ansi.h>
+#include <combat.h>
+
+inherit F_SSERVER;
+int perform(object me, object target)
+{
+        string msg, *limbs;
+        int count, damage = 0;
+        int arg=(int)(me->query_skill("kunlun-zhang", 1) / 30);
+
+        if( !target ) target = offensive_target(me);
+
+        if( !target || !target->is_character() || !me->is_fighting(target) )
+                return notify_fail("「昆山叠掌」只能在战斗中对对手使用。\n");
+
+        if( objectp(query_temp("weapon", me)) )
+                return notify_fail("只有空手才能施展「昆山叠掌」。\n");
+
+        if( (int)me->query_skill("kunlun-zhang", 1) < 90 )
+                return notify_fail("你的昆仑掌法不够娴熟，不会使用「昆山叠掌」。\n");
+
+        if( (int)me->query_skill("xuantian-wuji", 1) < 90 )
+                return notify_fail("你的玄天无极功等级不够，不能使用「昆山叠掌」。\n");
+
+        if( (int)me->query_str() < 25 )
+                return notify_fail("你的膂力不够强，不能使用「昆山叠掌」。\n");
+
+        if( arg <= 1 )
+                return notify_fail("至少要有两招才可组成「昆山叠掌」。\n");
+
+        if( query("neili",1, me)<200 )
+                return notify_fail("你现在内力太弱，不能使用「昆山叠掌」。\n");
+
+        if( query("neili",1, me)<100*arg )
+                return notify_fail("你现在的内力施展不了那么多招。\n");
+
+//        if( (int)me->query_skill("kunlun-zhang", 1) < arg * 30 )
+//                return notify_fail("你的昆仑掌法还没有修练到那种境界！\n");
+
+        message_vision(HIG"$N连续击出"+ chinese_number(arg) +"掌，后招推着前招，掌力叠合在一起扑向$n！\n\n"NOR,  
+                      me, target);
+
+        limbs=query("limbs", target);
+        for(count = 0; count < arg; count++)
+        {
+          message_vision(
+                replace_string(
+          SKILL_D("kunlun-zhang")->query_action(me,query_temp("weapon", me))["action"],
+                "$l", limbs[random(sizeof(limbs))]) + "！\n\n", me, target);
+          damage = damage+250+random(250);
+        }    
+
+        damage=(1+query("jiali", me)/250)*damage/2;
+        if( arg*(random(query("combat_exp", me)))>query("combat_exp", target) )
+        {
+                target->receive_damage("qi", damage);
+                target->receive_wound("qi", damage/3);
+                COMBAT_D->report_status(target, 1);
+                COMBAT_D->report_status(target, 0);
+        }
+
+        addn("neili", -100*arg, me);
+        me->start_busy(4);
+
+        return 1;
+}

@@ -1,0 +1,32 @@
+
+        memory_summary
+
+        名称：
+                memory_summary() 传回内存使用情况的概要
+
+        语法：
+                mapping memory_summary();
+                映射 memory_summary();
+
+        用法：
+                memory_summary() 返回一个以下格式的阵列：
+
+                PRE(
+                ([ 
+                  程序名 : ([
+                    变量名 : 占用的内存,
+                    ...
+                  ])
+                  ...
+                ])
+                )
+
+                变量占用的内存是指存储数值所需要的总内存除以
+                特定变量的数目的到的，精确的统计一个变量所占
+                用的内存是不可能的。
+
+        此函数需要编译 MudOS 时在配置文件里定义了 PACKAGE_CONTRIB。
+
+        by 发现号(Find@tx)
+
+

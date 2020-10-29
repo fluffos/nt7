@@ -1,0 +1,6 @@
+name=小型迷宫
+main=maze
+time=1800 
+level=100
+enter=maze/entry
+leave=/d/city/wumiao

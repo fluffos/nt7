@@ -1,0 +1,12 @@
+void die()
+{
+        set("eff_jing",query("max_jing"));
+        set("jing",query("max_jing"));
+        set("eff_qi",query("max_qi"));
+        set("qi",query("max_qi")); 
+        remove_all_killer();   
+        command("shzi");
+        command("sing3");
+        random_move(); 
+        return;
+}

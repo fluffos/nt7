@@ -1,0 +1,28 @@
+
+
+        call_out(3)             MudOS v21c2             (5 Sep 1994)
+
+        名称:
+                call_out() - 延迟呼叫同一个物件中的函式.
+        语法:
+                int call_out( string | function fun, int delay, 
+                        mixed arg );
+
+                传回值 call_out( 字串 或 函式 fun, 整数 delay,
+                        混合 arg );
+        用法:
+                设定在 this_object() 中, 延迟 delay 秒呼叫函式 fun.
+                而 arg 当作参数传入 fun 中.
+
+                请注意, 你不能在 fun 中呼叫 write() 或 say(), 因为
+                this_player() 被设定成 0. 你可以用 tell_object()
+                代替.
+
+                如果在 driver 的 options.h 中定义 
+                THIS_PLAYER_IN_CALL_OUT, 就可以解决这个问题.
+        参考:
+                remove_call_out(3), call_out_info(3)
+        翻译:
+                Spock @ FF      96.Oct.16.              (printed 3/16/95)
+
+

@@ -1,0 +1,20 @@
+
+        db_close()
+
+        名称：
+                db_close 关闭一个已经打开的数据库连接
+
+        语法：
+                int db_close(int handle)
+                整数 db_close(整数 handle)
+
+        用法：
+                关闭一个已经打开的数据库，参数 handle 是一个已经
+                打开的数据库的句柄。
+
+                返回值：0 关闭失败； 1 关闭成功
+
+        by 发现号(Find@tx)
+
+
+

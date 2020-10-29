@@ -1,0 +1,132 @@
+2,3,5,10
+// 所有属性
+mapping value_2_props = ([
+        "consistence"   : "耐久度",     // 基本属性           a
+        "damage"        : "兵器伤害力", // 基本属性           a
+        "unarmed_damage": "空手伤害力", // 基本属性           a
+        "armor"         : "保护力",     // 基本属性           a
+        "damage1"       : "附加伤害",   // weapon             a
+        "armor1"        : "附加保护",   // armor              a
+       
+        "str"           : "臂力",       // weapon/armor/rings a
+        "int"           : "悟性",       // weapon/armor/rings a
+        "con"           : "根骨",       // weapon/armor/rings a
+        "dex"           : "身法",       // weapon/armor/rings a
+        "kar"           : "福缘",       // weapon/armor/rings a
+        "per"           : "容貌",       // rings              a
+        "gold_find"     : "获取黄金几率",     // weapon/rings a
+        
+
+        "max_jingli"    : "精力最大值", // weapon/armor/rings a
+        "max_jing"      : "精气最大值", // weapon/armor/rings a
+        "max_potential" : "潜能上限",   // weapon/armor/rings a
+        "max_experience": "体会上限",   // weapon/armor/rings a
+
+        "sword"         : "剑法",       // weapon             a
+        "blade"         : "刀法",       // weapon             a
+        "club"          : "棍法",       // weapon             a
+        "hammer"        : "锤法",       // weapon             a
+        "staff"         : "杖法",       // weapon             a
+        "whip"          : "鞭法",       // weapon             a
+        "unarmed"       : "拳脚",       // weapon             a
+        "strike"        : "掌法",       // weapon             a
+        "cuff"          : "拳法",       // weapon             a
+        "hand"          : "手法",       // weapon             a
+        "finger"        : "指法",       // weapon             a
+        "claw"          : "爪法",       // weapon             a
+
+        "attack"        : "攻击",       // weapon             a
+        "parry"         : "招架",       // armor              a
+        "dodge"         : "躲闪",       // armor              a
+        "defense"       : "防御",       // armor              a
+
+        "research_times": "研究次数",   // weapon/armor/rings a
+        "learn_times"   : "学习次数",   // weapon/armor/rings a
+        "practice_times": "练习次数",   // weapon/armor/rings a
+        "study_times"   : "读书次数",   // weapon/armor/rings a
+]);        
+        
+mapping value_3_props = ([        
+        "attribute"     : "所有属性",   // rings              b
+        "max_neili"     : "内力最大值", // weapon/armor/rings b
+        "max_qi"        : "气血最大值", // weapon/armor/rings b
+        "ref_neili"     : "内力恢复",   // armor/rings        b
+        "ref_qi"        : "生命恢复",   // armor/rings        b
+        "ref_jing"      : "精气恢复",   // armor/rings        b
+
+        "add_poison"    : "毒伤害",     // weapon                           b
+        "add_metal"     : "金伤害",     // weapon                           b
+        "add_wood"      : "木伤害",     // weapon                           b
+        "add_water"     : "水伤害",     // weapon                           b
+        "add_fire"      : "火伤害",     // weapon                           b
+        "add_earth"     : "土伤害",     // weapon                           b
+        "reduce_metal"  : "抗金",       // armor                            b
+        "reduce_wood"   : "抗木",       // armor                            b
+        "reduce_water"  : "抗水",       // armor                            b
+        "reduce_fire"   : "抗火",       // armor                            b
+        "reduce_earth"  : "抗土",       // armor                            b
+        "reduce_poison" : "抗毒",       // armor                            b
+        "avoid_poison"  : "忽视中毒",   // armor/rings                      b
+
+        "research_effect"       : "研究效果",   // weapon/armor/rings       b
+        "practice_effect"       : "练习效果",   // weapon/armor/rings       b
+        "study_effect"          : "读书效果",   // weapon/armor/rings       b
+        "learn_effect"          : "学习效果",   // weapon/armor/rings       b
+        "derive_effect"         : "汲取效果",   // weapon/armor/rings       b
+        "derive_times"          : "汲取消耗",   // weapon/armor/rings       b
+
+        "add_pot"       : "获取额外潜能",       // weapon/rings   b
+        "add_mar"       : "获取额外体会",       // weapon/rings   b
+]);    
+
+mapping value_5_props = ([             
+        "magic_find"    : "寻宝率(MF值)",       // weapon/rings             c
+        "ap_power"      : "绝招攻击力",         // weapon/rings             c
+        "dp_power"      : "绝招防御力",         // armor                    c
+        "da_power"      : "绝招伤害力",         // weapon/rings             c
+        "avoid_defense" : "攻击无视目标防御",   // weapon/rings             c
+        "avoid_parry"   : "攻击无视目标招架",   // weapon/rings             c
+        "avoid_dodge"   : "攻击无视目标躲闪",   // weapon/rings             c
+        "avoid_force"   : "攻击无视内功防御",   // weapon/rings             c
+        "avoid_attack"  : "无视目标特殊攻击",   // armor                    c
+        "suck_neili"    : "偷取内力",           // weapon 命中偷取内力几率：命中敌人时按伤害值的10%率回复内力   c
+        "suck_qi"       : "偷取生命",           // weapon 命中偷取生命几率：命中敌人时按伤害值的10%比率回复生命 c
+        "double_damage" : "双倍伤害",           // weapon/rings 增加杀气：加一点杀气，暴击（双倍伤害）的概率增加1%  c
+        "through_armor" : "破甲",               // weapon/rings 破甲-攻击时无视目标防具的保护力through_armor        c        
+        "qi_vs_neili"   : "受损的生命转为内力", // rings 30%的机会受损的生命x%转换为内力  c   
+        "absorb_blood"  : "天魔附体",           // weapon/rings 提高自身战斗力30%         c
+
+        "add_reward"    : "获取额外奖励",       // weapon/rings   c
+        "add_exp"       : "获取额外经验",       // weapon/rings   c
+        "add_force"     : "获取额外先天真气",   // weapon/rings   c        
+        "add_blind"     : "致盲",               // weapon 终极兵器 致盲-让对手失明 c
+        "avoid_blind"   : "忽视致盲",           // armor/rings 终极防具            c
+]);
+
+mapping value_10_props = ([          
+        "clear_force"   : "破气",                       // weapon 破除对手所有内力，让对手内力为0 d       
+        "add_freeze"    : "冰冻",                       // weapon 终极兵器 冰冻-迟缓，减缓对方攻击，攻击pfm速度降低，无任何防御，无躲闪，无招架，就是挨打 d
+        "add_dizziness" : "眩晕",                       // weapon 终极兵器 眩晕，不能进行任何行动，受到攻击会醒来，否则5秒内一直不动，解除战斗状态 d
+        "add_forget"    : "遗忘",                       // weapon 终极防具 遗忘-使对方忘记所有技能的绝招add_oblivion    d
+        "add_weak"      : "虚弱",                       // weapon 终极兵器 让对手攻防伤害减半，包括绝招                 d
+        "add_busy"      : "忙乱",                       // weapon 终极兵器                                              d
+
+        "avoid_freeze"  : "忽视冰冻",                   // armor/rings 终极防具 d
+        "avoid_dizziness": "忽视眩晕",                  // armor/rings 终极防具 d
+        "avoid_forget"  : "忽视遗忘",                   // armor/rings 终极兵器 d
+        "avoid_weak"    : "忽视虚弱",                   // armor/rings 终极防具 d
+        "avoid_busy"    : "忽视忙乱",                   // armor/rings 终极防具 d
+        "reduce_busy"   : "化解忙乱",                   // armor/rings 终极防具 d
+
+        "fatal_blow"    : "必杀率",                     // weapon 终极兵器 必杀率-拥有20%的几率损伤目标的生命x%     d
+        "slaughter"     : "杀戮",                       // weapon 杀戮-攻击时有几率对当前房间所有敌人进行一次攻击   d  
+        "add_skill"     : "提升技能",                   // weapon/rings 终极兵器                                    d
+        "add_damage"    : "追加伤害",                   // weapon 终极兵器                                          d
+        "reduce_damage" : "化解伤害",                   // armor 终极防具                                           d
+        "full_self"     : "战神附体",                   // armor 终极防具 战神附体-气血内力自动恢复                 d
+        "avoid_die"     : "浴血重生",                   // armor/ring 凤凰涅槃，浴血重生，忽视死亡                  d
+        "counter_damage": "伤害反射",                   // armor 终极防具 伤害反射受到伤害时30%几率的伤害x%反射给对方 d
+]);
+
+以上属性，玩家在商城里购买属性元素时候，对应此表
+

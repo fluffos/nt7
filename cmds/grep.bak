@@ -1,0 +1,137 @@
+/* This program is a part of RW mudlib
+ * See /doc/help/copyright for more info
+ -----------------------------------------
+ * File   : grep.c
+ * Author : Cookys@RevivalWorld
+ * Date   : 2001-07-11
+ * Note   : grep 指令。
+ * Update :
+ *  o 2001-07-30 Cookys 修复一些小 bug
+ *
+ -----------------------------------------
+ */
+
+#include <feature.h>
+#include <ansi.h>
+#include <message.h>
+
+inherit COMMAND;
+
+string help = @HELP
+        标准 grep 指令。
+HELP;
+
+private void command(object me, string arg)
+{
+        int line,str_len,flag,deep;
+        string str,src,dir,*files,return_str="",file_data;
+        
+        if( !is_command() ) return;
+        
+        if( !arg )        
+                return tell(me, help, CMDMSG);
+                
+        if( sscanf(arg,"-d %s",arg))
+                deep=1;
+        if( sscanf(arg,"\"%s\" %s",str,src)!=2 && sscanf(arg,"'%s' %s",str,src)!=2 && sscanf(arg,"%s %s",str,src)!=2 )
+        {
+                src=".";
+                str=arg;
+        }
+        /*
+        if( src=="." )
+                dir=resolve_path(me,src);         
+        else 
+        {
+                dir=resolve_path(me);
+                files=({src});
+        }
+        */
+        if( src && src!="." )
+        {
+                dir=resolve_path(me,src); 
+                if( file_size(dir)==-2 )
+                {
+                        dir+="/";
+                        files=get_dir(dir);
+                }
+                else if (file_size(dir)!=-1) files=({""});
+        } else dir=resolve_path(me);
+        if(!files) files=({});
+        //printf("Curr DIR:%s\nFILES:%O\n",dir,files);
+                
+        if( src=="." && !sizeof(files = get_dir(dir)) )
+        {
+                if (file_size(dir)==-2)    
+                        tell(me, "此目录内无任何档案。\n", CMDMSG);
+                else           
+                        tell(me, "没有这个档案。\n", CMDMSG);
+                
+                return;
+        }
+        
+        files-=({".",".."});
+        tell(me, sprintf("从 %s 中寻找 %s 字串：\n",dir,str), CMDMSG);
+        str_len=strlen(str);
+        if( !deep )
+        foreach( string file in files)
+        {
+                file_data=read_file(dir+file);
+                if( file_data && strsrch(file_data,str)!=-1 )
+                {
+                        return_str+=sprintf(HIY"\n在档案 %s 中含有 %s 字串：\n"NOR,dir+file,str);
+                        foreach(string file_entry in explode(file_data,"\n"))
+                        {
+                                line++;
+                                if( (flag=strsrch(file_entry,str))!=-1 )
+                                        return_str+=sprintf("%4d：%s\n",line,file_entry[0..flag-1]+HIG HBMAG+file_entry[flag..flag+str_len-1]+NOR+file_entry[flag+str_len..<1]);
+                        }
+                        line=0;
+                }
+                //if(return_str)         tell(me, return_str, CMDMSG);
+                //        else tell(me, "没有符合的资料！！\n", CMDMSG);
+                //return;
+        } else for(int j=0;j<sizeof(files);j++ )
+        {
+                file_data=read_file(dir+files[j]);
+                //return_str+=sprintf(HIC"含子目录深层搜寻...\n\n"NOR);
+                if( !file_data )
+                {
+                        if( file_size(dir+files[j])==-2 )
+                        {
+                                //files+=get_dir(dir+files[j]+"/")-({".",".."});
+                                foreach(string tmp in get_dir(dir+files[j]+"/")-({".",".."}))
+                                {
+                                        files+=({files[j]+"/"+tmp});
+                                
+                                //printf("directory added : %O\n",files[j]+"/"+tmp);
+                                }
+                        }
+                        //printf("i cant read_file:\t%O\n",dir+files[j]);
+                }
+                
+                else        if( strsrch(file_data,str)!=-1 )
+                {
+                        return_str+=sprintf(HIY"\n在档案 %s 中含有 %s 字串：\n"NOR,dir+files[j],str);
+                        
+                        foreach(string file_entry in explode(file_data,"\n"))
+                        {
+                                line++;
+                                if( (flag=strsrch(file_entry,str))!=-1 )
+                                        return_str+=sprintf("%4d：%s\n",line,file_entry[0..flag-1]+HIG HBMAG+file_entry[flag..flag+str_len-1]+NOR+file_entry[flag+str_len..<1]);
+                        }
+                        line=0;
+                }
+                //printf("getdir:%O\ndir:%O\n",get_dir(dir+files[j]),dir+files[j]+"/");
+                
+                  //tell(me, return_str, CMDMSG);
+                //        else tell(me, "没有符合的资料！！\n", CMDMSG);                
+                if(return_str!="")         tell(me, return_str, CMDMSG);
+                        else tell(me, "没有符合的资料！！\n", CMDMSG);
+        }
+        if(return_str!="")         
+                tell(me, return_str, CMDMSG);
+        else 
+                tell(me, "没有符合的资料！！\n", CMDMSG);
+        //tell(me, return_str, CMDMSG);
+}

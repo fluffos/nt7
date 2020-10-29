@@ -1,0 +1,18 @@
+
+
+        all_inventory(3)        MudOS v21c2             (5 Sep 1994)
+
+        名称:
+                all_inventory() - 传回一个物件的内容物品.
+        语法:
+                object *all_inventory( object ob );
+
+                物件 *all_inventory( 物件 ob );
+        用法:
+                传回一个阵列, 此阵列为物件 ob 的内容物品.
+        参考:
+                first_inventory(3), next_inventory(3), deep_inventory(3)
+        翻译:
+                Spock @ FF      96.Oct.12.              (printed 3/16/95)
+
+

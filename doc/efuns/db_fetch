@@ -1,0 +1,20 @@
+
+        db_fetch()
+
+        名称：
+                db_fetch() 返回最后一次 db_exec 函数操作的返回值
+                        的阵列。
+
+        语法：
+                array db_fetch(int db_handle, int row)
+                阵列 db_fetch(整数 handle, 整数 row)
+
+        用法：
+                此函数返回最后一次 db_exec 函数操作的返回值的阵列。
+                handle 为进行操作的数据库的句柄。
+                row 行数。结果的总行数为 db_exec 的返回值。
+
+        by 发现号(Find@tx)
+
+
+

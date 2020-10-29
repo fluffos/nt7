@@ -1,0 +1,17 @@
+
+        db_commit()
+
+        名称：
+                db_commit()
+
+        语法：
+                int db_commit(int handle)
+                整数 db_commit(整数 handle)
+
+        用法：
+                MySQL 不支持 commit
+
+        by 发现号(Find@tx)
+
+
+

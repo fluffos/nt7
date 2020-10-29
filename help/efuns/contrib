@@ -1,0 +1,23 @@
+修改 Package contrib:
+
+    新增 void remove_input_to(void | object);
+         用来取消物件的 input_to 状态
+         
+    修改 void store_variable(string, mixed , void | object);
+         可输入对象物件
+         
+    修改 mixed fetch_variable(string,void | object);
+         可输入对象物件
+         
+    新增 object find_player(string);
+         代替 #define NO_ADD_ACTION 后之 efun find_player();
+         
+    新增 string remove_fringe_blanks(string);
+         去除一字串前后之空白字元
+         
+    新增 string base_name(object);
+         取代 simul_efun base_name()
+
+By Clode@RW on 2002/6/3 04:02下午
+最近更新 -06/04/2005 17:54-
+

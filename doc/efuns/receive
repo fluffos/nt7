@@ -1,0 +1,16 @@
+        receive(3)                LP MudOSv21c7                (7 Jul 1996)
+        函数名称:
+                receive() - 对目前的物件显示一段讯息.
+        函数语法:
+                int receive( string message );
+                整数 receive( 字串 message );
+        函数用法:
+                这个超越函式 (efun) 是作为 mud  驱动程式 (driver) 的
+                add_message() 函式的介面. 这个函式设计的目的是对目前
+                物件显示讯息. 如果目前的物件是「可互动的」则传回 1.
+                不是则传回 0. receive() 应被 catch_tell(4) 或是
+                receive_message(4) 呼叫.
+        参考函数:
+                catch_tell(4), receive_message(4), message(3)
+        手册翻译:
+                Phoebus@ZH        97.May.24.                (Writen 5/23/97)

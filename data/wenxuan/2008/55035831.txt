@@ -1,0 +1,17 @@
+subject : 解·明教之《乾坤大挪移》
+author_name : 如来哥哥
+author_id : zxcvbnm
+time : 1222193594
+board : 如来哥哥的留言板
+file : /data/analecta/2008/55035831.txt
+add_time : 1222201768
+content :
+首先ask zhang 乾坤大挪移
+rideto mingjiao;w;w;w;wu;wu;w;w;enter进入密道入口
+此时需要基本内功300级以上，break men;enter;#4 n(如遇无路用"open north"来打通)
+看到两具骸骨，使用ketou指令就会掉出一封阳教主的遗信和一张羊皮(乾坤大挪移心法)。
+
+读乾坤大挪移需有450以上的jifa内功等级，具体请参照help mingjiao。
+还有要注意的是最好有11000以上的内力去读，并且在jifa了qk之后jifa的招架等级不要超过内功等级的2/3，
+否则要中毒，此毒甚是难解，切记！
+[2;37;0m

@@ -1,0 +1,18 @@
+        geteuid(3)        LP MudOSv21c7        (7 Jul 1996)        geteuid(3)
+        函数名称:
+                geteuid() - 传回一个物件或是一个函式的有效使用者识别
+                            名称 (effective user id, euid)
+        函数语法:
+                string geteuid( object | function );
+                字串 geteuid( 物件 或 函式指标 );
+        函数用法:
+                如果参数是一个物件, geteuid 会传回物件的有效使用者识别
+                名称 (euid) . 如果指定的参数是一个函式指标 (function
+                pointer,  变数型态为 function), 则会传回创造这个函式指
+                标之物件的 euid . 如果这个函式指标的变数, 在此物件创造
+                时没有 euid,  则会使用物件的使用者识别名称
+                 (user id, uid) 代替.
+        参考函数:
+                seteuid(3), getuid(3), functionp(3), export_uid(3),
+                previous_object(3), this_object(3), valid_seteuid(4)
+        手册翻译:        Phoebus@ZH        97.Feb.14.                (Writen 5/23/97)

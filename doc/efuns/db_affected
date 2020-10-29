@@ -1,0 +1,20 @@
+
+        db_affected()
+
+        名称：
+                db_affected() 返回最后发生改变的行的数量
+
+        语法：
+                int db_affected(int handle)
+                整数 db_affected(整数 handle)
+
+        用法：
+                参数 handle 是一个已经打开的数据库的句柄。
+
+                返回值：这个函数返回最后一次 INSERT、UPDATE 或者
+                DELETE 语句所影响的行的数目
+
+        by 发现号(Find@tx)
+
+
+

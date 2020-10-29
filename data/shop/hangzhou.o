@@ -1,0 +1,3 @@
+#/clone/shop/hangzhou_shop.c
+dbase (["objects":(["/clone/shop/waiter":1,]),"no_fight":1,"no_steal":1,"shop_type":0,"no_clean_up":0,"no_beg":1,"exits":(["down":"/d/hangzhou/majiu",]),"owner":"VOID_SHOP","open_long":"玉皇阁乃是由杭州城郊的玉皇山而得名，所谓「上有天堂下有苏杭」，杭州城建筑别具一格，这家店铺也不例外。店堂装潢得典雅精致，伙计正彬彬有礼的招呼着客人。","long":"玉皇阁乃是由杭州城郊的玉皇山而得名，所谓「上有天堂下有苏杭」，杭州城建筑别具一格，这家店铺也不例外。不过货柜上却空无一物，看样子已很久没人来打理了。","short":"玉皇阁",])
+all_goods ({})

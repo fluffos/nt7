@@ -1,0 +1,12 @@
+     apply(3)               MudOS (5 Sep 1994)                apply(3)
+        函数名称:
+                apply() - 处理函数指标 (function pointer).
+        函数语法:
+                mixed apply( mixed f, mixed *args )
+                混合 apply( 混合 f, 混合 *args )
+        函数用法:
+                如果 f 是一个函式, 就会呼叫 f 并用阵列 args 当作 f
+                的参数 (argument).
+                □例:
+                        apply( f, ({ 1, 2, 3 }) ); 与
+                        evaluate( f, 1, 2, 3 ); 是相同的.

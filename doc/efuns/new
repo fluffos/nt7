@@ -1,0 +1,14 @@
+        new(3)                        LP MudOSv21c7                (7 Jul 1996)
+        函数名称:
+                new() - 载入并复制一个物件.
+        函数语法:
+                object new( string name );
+                物件 new( 字串 name );
+        用法;
+                以 name 定义的档案名称载入一个新的物件, 并且给此物件一个
+                独特的名称. 此函式传回这个新的物件. 一个 environment()
+                为非零值的物件无法复制. 
+        参考函数:
+                clone_object(3), destruct(3), move_object(3)
+        手册翻译:
+                Phoebus@ZH        97.Apr.24.                (Writen 5/23/97)

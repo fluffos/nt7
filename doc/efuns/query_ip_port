@@ -1,0 +1,29 @@
+
+        query_ip_port()
+
+        名称：
+                query_ip_port() 返回指定玩家物件的连接端口
+
+        语法：
+                int query_ip_port(object | void);
+                整数 query_ip_port(物件 | 无参数)
+
+        说明：
+                返回参数中指定的玩家物件所连接的 MUD 本地
+                端口，如果不指定参数，默认为 this_player()，
+                如果参数指定的物件为非互动物件，则传回零。
+
+                对于开放多个端口接受玩家连接的游戏，在一些
+                统计方面可能会用到此函数。
+
+        此函数需要编译 MudOS 时在配置文件里定义了 PACKAGE_CONTRIB。
+
+        参考：
+                query_ip_name,
+                query_host_name,
+                resolve,
+                socket_address
+
+        by 发现号(Find@tx)
+
+

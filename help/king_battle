@@ -1,0 +1,191 @@
+──────────────────────────────
+$BBLU$$HIW$                        【王朝战争】                        $NOR$
+──────────────────────────────
+                          
+该任务与郭靖任务有一定的继承关系，任务选用的仍然是以宋朝末年
+蒙古入侵为任务时代背景。该任务一改以往任务之单调机械的固有模
+式，采取了更为智能化的玩家和NPC的互动方式进行运作,并且集军事
+指挥、后群保障、征兵练兵、阵地防御、阵仗交锋、攻城破敌等一系
+列战斗场景为一体，任务规模宏大，方式灵活多变，是一个可以充分
+发挥玩家自身能动性的大型集团任务。
+
+$HIR$任务要求：$NOR$
+
+$HIY$统帅$NOR$——要求$HIY$军功大于6400$NOR$，官拜提督或更高，并且阵法修养和兵法
+修养必须达到120 级的等级，本任务只有具备统帅资格玩家才可以要
+到，领任务的具体方法是从襄阳一直向西走，然后北走进皇宫，进承
+德殿内，里面有个太监，可以($HIC$ask liu about 出兵$NOR$)来开启战争任务，
+刘公公还有个用处，($HIC$ask liu about 策封$NOR$)，这个是用来升官的，当
+然要你军功够了才可以。在击败或击退蒙古军队后所有参与战斗的玩
+家都可以获得相应奖励，奖励按你在战争中的战果或贡献来分配的。
+
+$HIY$统领$NOR$——要求$HIY$军功大于1600$NOR$，官至裨将或更高(已取消要求)，当战争
+任务系统被统帅开启后，具备统领资格的玩家可以到襄阳的郭靖那里，
+($HIC$ask guo about 参军$NOR$)，就可以参加战争了，然后你会立刻被送往到
+元帅大营报到，可以通过元帅或者监军太监给你派遣差使和担任军职。
+
+$HIR$战争指令：$NOR$
+
+$HIY$统帅$NOR$——统帅指令有两类：一类是帅营内使用的指令，另一类是兵符
+使用指令，帅营指令必须在帅营才能使用，其他地方无效，兵符指令
+可以在任何地点使用，但是$HIY$ xunlian $NOR$和$HIY$ yaliang $NOR$指令必须在帅营才
+可以生效。
+
+$CYN$帅营指令有：$NOR$
+
+    $HIC$paiqian sb to yayun-liangcao$NOR$      派人押运粮草        
+    $HIC$paiqian sb. to xunlian-bubing$NOR$     派人训练步兵         
+    $HIC$paiqian sb. to xunlian-qibing$NOR$     派人训练骑兵        
+    $HIC$paiqian sb. to xunlian-gongnu$NOR$     派人训练弓弩兵        
+    $HIC$paiqian sb. to gouzhi-bingjia$NOR$     派人购置兵甲
+    $HIC$paiqian sb. to gouzhi-zhanma$NOR$      派人购置战马
+    $HIC$paiqian sb. to gouzhi-shimu$NOR$       派人购置石木
+    $HIC$paiqian sb. to gouzhi-yujian$NOR$      派人购置羽箭
+    $HIC$paiqian sb. to zhaomu-xinbin$NOR$      派人招募新兵
+    $HIC$paiqian sb. to shouwei-xiangyang$NOR$  派人守卫襄阳
+    $HIC$dianjiang$NOR$                         紧急召集所有将领（但在
+                                      押运粮草的除外）
+                                                      
+$CYN$兵符指令有：$NOR$
+
+    $HIC$order sb to follow$NOR$                命令将领跟随        
+    $HIC$order sb to guard$NOR$                 命令将领坚守此处        
+    $HIC$order sb to < 方向 >$NOR$              命令将领朝某方向移动        
+    $HIC$order sb to move < 方向 >$NOR$         命令将领朝某个方向持续
+                                      移动                                                       
+    $HIC$order sb to stop$NOR$                  命令将领停止移动          
+    $HIC$move < 方向 >$NOR$                     指挥队伍朝某个方向持续
+                                      移动                                                       
+    $HIC$move stop$NOR$                         停止移动         
+    $HIC$inquiry$NOR$                           查看军队具体情况        
+    $HIC$yaliang$NOR$                           亲自压运粮草        
+    $HIC$tuji sb [on < 方向 >]$NOR$             指挥队伍攻击某个目标
+        
+$HIY$统领$NOR$——统领指令主要是令箭指令，具体如下：
+
+    $HIC$order sb to follow$NOR$                命令将领跟随        
+    $HIC$order sb to guard$NOR$                 命令将领坚守此处        
+    $HIC$order sb to < 方向 >$NOR$              命令将领朝某方向移动        
+    $HIC$order sb to move < 方向 >$NOR$         命令将领朝某个方向持续
+                                      移动                                                     
+    $HIC$order sb to stop$NOR$                  命令将领停止移动        
+    $HIC$move < 方向 >$NOR$                     指挥队伍朝某个方向持续
+                                      移动                                                      
+    $HIC$move stop$NOR$                         停止移动            
+    $HIC$inquiry$NOR$                           查看自己所带队伍情况        
+    $HIC$xunlian$NOR$                           训练自己的队伍        
+    $HIC$tuji sb [on < 方向 >]$NOR$             指挥队伍攻击某个目标骑
+                                      兵和弓弩兵指定方向
+
+由于有的时候元帅在前线打仗无法回来派遣玩家去做任务，所以在元
+帅帐营处有一监军太监，从他这里还可以领取各种任务，具体命令是
+ 
+    $HIC$lingming houqin-baozhang$NOR$          领取后勤保障任务
+    $HIC$lingming xunlian-bubing$NOR$           领取训练步兵任务         
+    $HIC$lingming xunlian-qibing$NOR$           领取训练骑兵任务        
+    $HIC$lingming xunlian-gongnu$NOR$           领取训练弓弩兵任务    
+                                                              
+令箭指令可以在任何地点使用，但是如果是$HIY$ order $NOR$指令,必须是军衔
+低于自己的将领，同样$HIY$ xunlian $NOR$和$HIY$ yaliang $NOR$指令必须在帅营才可以
+生效。另外在辕门可以用$HIY$ repair $NOR$来修复防御工事，在蒙古军辕门则
+可用$HIY$ break $NOR$来攻击辕门防御工事。
+
+$HIR$完成方式：$NOR$
+
+任务完成有两种方式，一种是死守，守住等蒙古兵的粮草耗尽，自动
+撤退，此时任务完成；另一种是训练强大的军队，全歼来犯蒙军，这
+种方式难度当然更大，需更高的军事才能，但是奖励也更为丰厚，而
+且可能用奇兵的话，任务将更加惊险刺激。
+
+$HIR$特别注意：$NOR$
+
+任务运作过程种两军明刀明枪，不许使用$HIY$ powerup 、roar $NOR$但是可以
+使用$HIY$recover $NOR$和$HIY$ regenerate $NOR$。在任务过程中如果你脱离了战场范围
+并且不在压粮途中，那么系统自动判定你是$HIY$逃兵$NOR$，你将不会得到任何
+封赏，在战争中你可以使用$HIY$ quit $NOR$指令来逃离战场直接到扬州中心广
+场，不过这个指令再万不得以的情况下使用，因为如果使用了算逃兵
+处理，在任务中，你只有压粮或者参加过战斗方有奖励，参加战斗的
+时间越长或杀的敌人越多，奖励越多，当你率领的军队被消灭只剩下
+你一个人时候，你可能会自动逃跑到元帅营中（不算逃兵），你需要
+重新训练军队去参战。任务完成后，你会得到相应的封赏。一旦死亡
+则无任何奖励，如死亡后参加同一场战争的话，奖励会从头开始计算。
+
+阵型相克关系
+
+阵形名 普通阵 鱼鳞阵 锋矢阵 鹤翼阵 偃月阵 方圆阵 雁行阵 长蛇阵 云龙阵
+普通阵   0     -5%     5%    -5%     5%    -5%     5%    -5%     5%
+鱼鳞阵   5%     0     10%   -10%    -5%    10%    -5%     5%   -10%
+锋矢阵  -5%   -10%     0     10%     5%    -5%    10%   -10%     5%
+鹤翼阵   5%    10%   -10%     0     -5%    -5%   -10%    10%     5%
+偃月阵  -5%     5%    -5%     5%     0    -10%   -10%    10%    10%
+方圆阵   5%   -10%     5%     5%    10%     0     -5%    -5%    -5%
+雁行阵  -5%     5%   -10%    10%    10%     5%     0    -10%    -5%
+长蛇阵   5%    -5%    10%   -10%   -10%     5%    10%     0     -5%
+云龙阵  -5%    10%    -5%    -5%   -10%     5%     5%     5%     0
+
+兵法：步兵有奋战(fenzhan)、奋斗(fendou)和奋迅(fenxun) 
+      骑兵有突破(tupo)、突进(tujin)和突击(tuji)
+      弓兵有骑射(qishe)、奔射(benshe)和飞射(feishe)
+
+攻击方式，指步兵、骑兵、弓兵、射台、城楼的不同攻击方式：
+
+        步兵攻击方式：
+        gongji <目标> with <阵法> & <兵法>
+        gongji menggu junguan with yanyue & fenzhan
+
+        骑兵攻击方式：
+        gongji <目标> on <方向> with <阵法> & <兵法>
+        gongji menggu junguan on north with yanyue & tuji
+    
+        弓兵攻击方式：
+        gongji <目标> on <方向> with <阵法> & <兵法>
+        gongji menggu junguan on north with fengshi & feishe
+
+        射台攻击方式(在辕门open west w 处)：
+        shoot <军队> on <方向>
+        shoot menggu junguan on east
+
+        城楼攻击方式(在辕门u处)
+        touzhi <军队> on <方向>
+        touzhi menggu junguan on down
+
+如果嫌攻击方式太麻烦，则可以选择设置环境($HIC$set auto_war 1$NOR$)则可
+让系统自动攻击，但射台和城楼的不会自动攻击，效果也差些。
+
+──────────────────────────────
+$BBLU$$HIW$                       【流程与心得】                       $NOR$
+──────────────────────────────
+
+1、 首先做守城任务
+    参加王朝战争后在监军那输入lingming shouwei-xiangyang，然
+后在襄阳郭靖处 ask guo jing about 守城，然后郭靖会告诉你去那
+个城门协助守军守城，总共有青龙门、白虎门、朱雀门、玄武门。注
+意四个门分内门和外门，领取任务后去的是内门，完成任务后看到提
+示，回到郭靖处 ask guo jing about 复命，就会获得相应军功，失
+败后也可到郭靖处 ask guo jing about 撤退，没有惩罚，但是必须
+过一定的时间才能继续领取任务。做此任务军功累积至6400( quest5
+命令可查看当前军功)后并且官职为提督(ask guo about 策封) 后可
+开始做王朝战争。
+
+2、 将官职升至最大
+    官职超过提督后，如想继续升官只能到刘太监处(ask liu about
+策封) 才能继续提升。据说现在可以至兵部尚书处买官，据说价格相
+当便宜。
+
+3、 杀敌技巧
+    王朝战争最高难度时，第七分钟开始出现蒙古人，并且来的全部
+都是万夫长，前六分钟,元帅可以凭着初始的8营兵去修理(repair)辕
+门，然后在回来训练。最好在每次杀完蒙古人后再去修理下，这样才
+保险。不过也可以采用取巧的方式，比如说采用组队的方式来杀蒙古
+人，因为组队时可以直接下kill 命令，当然组队时用的是team kill
+sb，或者也可以采用暗算的方式来杀敌人，不过暗算的成功率和你的
+exp 有关系，exp越高，成功率越低。
+
+4、 其他相关
+    阵法和兵法最好是读$CYN$武穆遗书$NOR$到400的时候再去,据说这两样都到
+400后做王朝战争会提高30%的攻击和15%的防御。指令wartime可查看
+战争进行的时间，每场战争进行时间为1个小时。
+时间。
+
+──────────────────────────────
+                                               Write by Alon

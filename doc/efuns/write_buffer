@@ -1,0 +1,22 @@
+        write_buffer(3)                LP MudOSv21c7                (7 Jul 1996)
+        函数名称:
+                write_buffer() - 将一个暂存区 (buffer) 写入一个档案,
+                                 或从某个资料来源读进一个暂存区. 
+        函数语法:
+                int write_buffer( string | buffer dest, int start,
+                        mixed source );
+                整数 write_buffer( 字串 或 暂存区 dest, 整数 start,
+                        混合 source );
+        函数用法:
+                如果 dest 是一个档案, 则 source 必须为一个整数 (并以
+                network-byte-order  写入档案) 、一个暂存区、或一个字串,
+                而从档案 dest 的第 start  位元组开始写入 source 的内容.
+                如果 dest 是一个暂存区, 则 source 会从第 start  位元组
+                开始写入暂存区. 如果 source 是整数, 则会以 
+                network-byte-order  的格式写入.
+        参考函数:
+                read_buffer(3), allocate_buffer(3)
+        作者:                
+                Truilkan
+        手册翻译:
+                Phoebus@ZH        97.jul.25.                (Writen 5/23/97)

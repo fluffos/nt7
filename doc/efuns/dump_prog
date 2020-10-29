@@ -1,0 +1,28 @@
+
+     dump_prog(3)           MudOS (5 Sep 1994)            dump_prog(3)
+
+     名称：
+          dump_prog() - 倾印/反组译一个 LPC 物件
+
+     语法：
+          void dump_prog( object ob, int flags default: 0, string file
+          );
+
+          无传回值 dump_prog( 物件 ob, 整数 flags 预设值: 0, 字串 file
+          );
+
+     用法：
+          dump_prog() 倾印关於程式 obj 的资讯到某个档案 `file'，若没
+          有指定 `file' 的话，则内定是 "/PROG_DUMP"。若呼叫这个函式的
+          物件没有这个档案之写入权限的话，它将会失败。
+
+          flags 可以是下列数值的组合：1 - 包含 i-code 的反组译；2 -
+          包含行号资讯。
+
+     参考：
+          debug_info(3), dumpallobj(3)
+
+     翻译：
+          Kenny@Broken.History       97.Jul.26       (printed 3/16/95)
+
+

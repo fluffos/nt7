@@ -1,0 +1,160 @@
+// Code of ShenZhou
+// where.c
+// 06-14-95
+// naihe 淇姝ゆ寚浠ゃ€?05-5-18 15:27
+// naihe 05-8-18 21:24 鍐嶆淇锛岃兘澶熷熀鏈‘鍒囨弿杩扮墿浠舵墍鍦ㄧ殑鎯呭喌銆?
+#include <ansi.h>
+inherit F_CLEAN_UP;
+#include "/d/REGIONS.h"
+
+// 鑾峰緱涓€涓墿浠舵墍鍦ㄥ湴鐐圭殑淇℃伅
+string get_env_msg( object ob )
+{
+     object env, env_living, env_real;
+     string t, msg;
+     int i;
+
+        if (! SECURITY_D->valid_grant(me, "(wizard)"))
+                return 0;
+                
+     if( !objectp(ob) )
+           return "check target \"ob\" loss.";
+     env = environment(ob); // 璇ョ墿浠跺綋鍓嶆墍鍦?     if( !env )
+           return "铏氱┖(no environment)";
+     msg = get_area_name( env ) + "鐨?,
+     env_real = env; // 璇ョ墿浠剁湡姝ｆ墍鍦?     if( living( env_real ) )
+           env_living = env_real;
+     while ( environment(env_real) ) // 濡傛灉澶栧眰杩樻湁 env, 鍒欏啀鍙栧灞?     {
+           env_real = environment(env_real);
+           if( living( env_real ) )
+                 env_living = env_real;
+     }
+     // 鍙栧緱 ob 鎵€鍦ㄦ渶澶栭潰 env 鐨勪俊鎭厛銆?     msg += sprintf( "%s(%s)",
+                 (t=env_real->query("short")) ? t : (t=env_real->query("name")) ? t : "_noname_",
+                 (t=env_real->query("id")) ? t : base_name(env_real),
+     );
+     // 濡傛灉鏈€澶栬竟鐨?env 鍜屽畠鐩存帴鎵€鍦ㄧ殑 env 涓嶅悓锛岄偅涔堝氨鏄湪鏌愪釜 room 鎴栨煇涓墿浠躲€佷汉鐗╅噷
+     if( env != env_real )
+     {
+           // 棣栧厛锛岀湅鐪嬪畠鐨勫灞?env 閲屾湁娌℃湁涓€涓槸 living 鐨勩€傝繖涓?living 鏄渶澶栧眰鐨?living
+           if( env_living )
+                 msg += sprintf( " 鐨?%s(%s) 韬笂",
+                       (t=env_living->query("short")) ? t : (t=env_living->query("name")) ? t : "_noname_",
+                       (t=env_living->query("id")) ? t : base_name(env_living),
+                 );
+           // 濂斤紝鍐嶇湅鐪嬪畠鐪熸鎵€鍦?env 鏄笉鏄繖涓?living 銆?           // 濡傛灉涓嶆槸锛屽垯璇存槑瀹冩槸鍦ㄨ繖涓?living 閲岀殑鏌愪釜(鎴栨洿娣卞眰)鐗╀欢閲?鎴栨檿鎺夌殑浜虹墿绛夌瓑)
+           if( env != env_living )
+           {
+                 if( env_living )
+                       msg += "甯︾潃";
+                 msg += sprintf("鐨?%s(%s) 閲岄潰",
+                       (t=env->query("short")) ? t : (t=env->query("name")) ? t : "_noname_",
+                       (t=env->query("id")) ? t : base_name(env),
+                 );
+           }
+     }
+     return msg + "銆?;
+}
+
+// 鐢?me 璋冪敤鏌ユ壘 ob 鐨勪綅缃?string where_is( object ob, object me )
+{
+     if( !me || !ob || !me->visible(ob) )
+           return "";
+     return sprintf( "%s%-20s %s\n",
+                 !userp(ob) ? "*" : "",
+                 ob->name(1) + "("+ob->query("id")+")锛?,
+                 get_env_msg(ob),
+     );
+}
+
+int sort_ob( object ob, string bn )
+{
+     if( !ob || base_name(ob) != bn )
+           return 0;
+     return 1;
+}
+
+int tell_err( object me, string msg )
+{
+     if( me && msg )
+           tell_object( me, msg );
+     return 1;
+}
+
+int main(object me, string str)
+{
+     object ob, where, *ob_list;
+     int i;
+     string bn, msg;
+
+     if (!str)
+     {
+           ob_list = users();
+           msg = HIC"鎵€鏈夌帺瀹跺叡 "+sizeof(ob_list)+" 浣嶏紝浠栦滑鐜板湪鎵€鍦ㄧ殑鏂逛綅濡備笅锛歕n"NOR;
+           foreach( ob in ob_list )
+           {
+                 msg += where_is( ob, me );
+           }
+           me->start_more( msg );
+           return 1;
+     }
+
+     if( sscanf( str, "-bn %s", bn ) == 1 )
+     {
+           bn = resolve_path(me->query("cwd"), bn );
+           if( bn[<2..<1] == ".c" )
+                 bn = bn[0..<3];
+           ob_list = filter_array( objects(), "sort_ob", this_object(), bn );
+           if( !ob_list || sizeof(ob_list) < 1 )
+                 return tell_err(me, "鐜板湪鏃犳硶鎵惧埌姝ゆ枃浠跺悕鐨勪换浣曠墿浠讹細"+bn + "\n");
+           msg = HIM"鍏卞彂鐜?"+sizeof(ob_list)+" 涓墿浠讹紝鏂囦欢鍚嶏細" + bn + "\n"NOR;
+           for(i=sizeof(ob_list)-1;i>=0;i-- )
+           {
+                 msg+= where_is( ob_list, me );
+           }
+           return tell_err(me, msg );
+     }
+
+     if( sscanf( str, "-ob %s", bn ) == 1 )
+     {
+           if( environment(me) )
+                 ob = present( bn, environment(me) );
+           if( !ob )
+                 ob = present( bn, me );
+           if( !ob )
+                 return tell_err(me, "浣犺韩涓婃病鏈夎繖涓猧d鐨勭墿浠讹紝闄勮繎涔熸病鏈夛細"+bn+"\n");
+           ob_list = children( base_name(ob) );
+           if( !ob_list || sizeof(ob_list) < 1 )
+                 return tell_err(me, "鐜板湪鏃犳硶鎵惧埌姝ょ墿浠剁殑浠讳綍澶嶅埗浠讹細"+bn + "\n");
+           msg = HIG"鍏卞彂鐜?"+sizeof(ob_list)+" 涓?id 涓?"+bn+" 鐨勭墿浠讹紝鏂囦欢鍚嶏細" + base_name(ob)+ "\n"NOR;
+           for(i=sizeof(ob_list)-1;i>=0;i-- )
+           {
+                 msg+= where_is( ob_list, me );
+           }
+           return tell_err(me, msg );
+     }
+     // 鍚﹀垯鏌ユ壘 player 銆?     ob = find_player(str);
+     if( !ob || !me->visible(ob))
+           return tell_err(me, "鐜板湪鎵句笉鍒拌繖涓帺瀹躲€俓n");
+     for(i=sizeof(ob_list)-1;i>=0;i--)
+     {
+           msg += where_is( ob_list, me );
+     }
+     tell_object( me, where_is( ob, me ) );
+     return 1;
+}
+
+int help(object me)
+{
+     write(@HELP
+鎸囦护鏍煎紡: where <鐜╁鐨?ID>
+
+杩欎釜鎸囦护鏄敤鏉ュ緱鐭ョ帺瀹剁洰鍓嶆墍鍦ㄧ殑浣嶇疆銆?鑻ョ渷鐣?"ID"锛屽垯浼氬垪鍑烘墍鏈夌帺瀹剁殑鎵€鍦ㄤ綅缃€?
+浣犱篃鍙互鏌ユ壘涓€涓狽PC鎴栬€呬竴涓狾BJ鐨勬墍鏈夊鍒朵欢鎵€鍦ㄧ殑浣嶇疆锛?浣嗘槸浣犲繀椤昏韩鍦ㄦ NPC 鎴?OBJ 鐨勫悓涓€鐜涓紝鍙堟垨鑰呮妸瀹冧滑甯﹀湪韬笂銆?鍔犱笂鍙傛暟锛?-ob 鏉ユ墽琛屾鍔熻兘锛屼緥濡傦細 where -ob liu mang
+
+姝ゅ锛屼綘鍙互鍔犱笂鍙傛暟 -bn 鏉ヨ繘琛屽鎵€鏈夌墿浠剁殑杩囨护鏌ユ壘锛?渚嬪锛?where -bn /d/city/npc/liumang
+閭ｄ箞灏嗕細鎶婃墍鏈変笌杩欎釜鍚嶅瓧鐩稿悓鐨勭墿浠堕兘鎵惧嚭鏉ャ€?
+HELP
+     );
+     return 1;
+}

@@ -1,0 +1,19 @@
+name=$HIW$白自在$NOR$
+id=bai zizai
+gender=男性
+long=$HIW$他就是凌宵城城主，雪山剑派的掌门人，江湖人称威德先生的百自在。相传他年轻时巧逢灵药，因而功力大增。后来习武成性，自认为天下武功第一。$NOR$
+family=凌霄城
+difficult=13
+basic_exp=1000000000
+limit_exp=90000000000
+death_msg=若不是我身体抱恙，你怎能胜过我威德先生。此次且罢，待我病好，再来指点你！
+chatmsg=什么四大宗师，什么天下五绝，要真有那么厉害，怎么又不敢来凌霄城挑战我威德先生。哼，徒具虚名而已，多少年前，我已是天下第一了...！
+advance_skill=xueshan-jian
+basic_skill=sword
+stunt_name=$HIR$千变万化$NOR$
+stunt_msg=$HIW$$N$HIW$手中长剑发出尖锐的破空啸声，在头上画出一个又一个的圈子，每个旋圈，剑身所附的真气均会随之增聚。$N$HIW$两眼则一瞬不瞬的瞧看$n$HIW$，神情傲视天下。随着剑身的真气快速的聚集，忽然整柄长剑诡异的发出“嗡”的一声，$n$HIW$不由全身一震,就在此时，剑身再次左右晃动，忽然化作一道变幻莫测的光束，破空而去，此一剑乃$N$HIW$全身功力所聚，不但手、眼、步配合得天衣无缝，且令人感到此招意透神聚，无法可挡。令人生出玄之又玄的感觉，尚未来得及看清剑招所指，$N$HIW$已人剑合一的笔直朝$n$HIW$射去！$NOR$
+stunt_hit=$HIR$$n$HIR$看不透剑招变化，眨眼间只觉心口一凉，却是剑气已然入体，瞬间重伤。$NOR$
+stunt_fail=$HIC$$n$HIC$气凝丹田，灵觉大生，收摄心神，小心应对，竟将此招化解与无形。$NOR$
+rewards=exp:100000,pot:50000,mar:10000,gold:10
+drops=FI&/clone/tessera/rune21:30,FI&/clone/goods/enchant-scroll:70,FI&/clone/misc/baoxiang:100
+

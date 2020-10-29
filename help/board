@@ -1,0 +1,24 @@
+$HIY$【留言版】$NOR$
+
+泥潭中有许多地方都会有一些供人留言的留言版，这些留言版的使用方法都大同
+小异，基本上都提供下列指令：
+
+$HIC$post$NOR$    <标题> 开始进行留言，你必须指定一个标题才能留言。
+$HIC$re$NOR$      <编号> 回复指定帖子。
+$HIC$re$NOR$      <last> 回复最后一个帖子。
+
+$HIC$from$NOR$    [编号] 列表显示从指定编号开始五十个留言的标题。
+$HIC$read$NOR$    <编号> 阅读指定编号留言。
+$HIC$read$NOR$    <next> 阅读您第一未读过的留言。
+$HIC$read$NOR$    <new>  同上。
+$HIC$read$NOR$    <old>  阅读留言板保存的旧帖。
+
+$HIC$hold$NOR$  +|- <id> 设置留言板禁止某人留言。
+$HIC$banzhu$NOR$ +|- <id>设置留言板的斑竹。
+$HIC$mark$NOR$    <编号> 设置指定帖子不被系统删除。
+
+$HIC$discard$NOR$ <编号> 删除指定编号的留言，除了神以外，你只能删除自己写的留言。
+
+$HIC$search$NOR$ <title|author|document> <关键字|关键词>
+根据标题、作者、内容搜索包含指定关键字或者关键词的留言。
+比如：search document nitan 将返回所有内容含有 nitan 的留言标题列表。

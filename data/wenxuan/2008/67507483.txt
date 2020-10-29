@@ -1,0 +1,15 @@
+subject : 五虎断门刀
+author_name : 薇大呆
+author_id : vivi
+time : 1207567206
+board : 薇大呆的留言板
+file : /data/analecta/2008/67507483.txt
+add_time : 1211023033
+content :
+茅十八是五虎断门刀的后人，要学五虎断门刀，就要向他学。茅十八怎榣样才会教你呢，
+想想茅十八的仇人是谁？对了，是史松！
+
+在扬州南门处找到史松，Kill之，几招就可以把他给打趴下(注意要有些武功)get all from corpse，
+得到黑龙鞭，再来到丽春院（或北京韦府？）找到茅十八，give bian to mao，
+把黑龙鞭交给茅十八，就可以向茅十八学五虎断门刀了，xue mao wuhu-duanmendao
+[2;37;0m

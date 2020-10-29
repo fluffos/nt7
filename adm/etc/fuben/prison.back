@@ -1,0 +1,6 @@
+name=地下天牢
+main=maze
+time=1800
+level=40
+enter=enter
+difficult=3

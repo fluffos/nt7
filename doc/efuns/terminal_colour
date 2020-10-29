@@ -1,0 +1,28 @@
+
+        terminal_colour()
+
+        名称：
+                terminal_colour() 在字符串中替换一段编码
+
+        语法：
+                string terminal_colour(string str, mapping m,
+                        int wrap, int indent);
+                字符串 terminal_colour(字符串 str，映射 m,
+                        整数 wrap, 整数 indent )
+
+        用法：
+                terminal_colour() 将字符串 str 中所有匹配 %^key%^
+                的地方替换为 value，其中 key 和 value 为映射参数
+                m 中的索引和数值。
+
+                下面这段话不好翻译：
+                'wrap' is the optional column number to wrap at,
+                and 'indent' is the amount to indent the second
+                and following lines.  Codes are assumed to change
+                the mode of the terminal and not generate any
+                printable characters for the purposes of wrapping.
+
+        这个函数需要在 options 文件里定义了 PACKAGE_CONTRIB .
+
+        by 发现号(Find@tx)
+

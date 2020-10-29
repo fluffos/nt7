@@ -1,0 +1,76 @@
+pf定位：仅为被华山完克的一种自保手段，不算变态，有卸兵器忙乱功能即可。
+combat:技能名称                      命中  躲闪  招架  伤害  内功  难度  级别  门派
+       无影穿心掌(wuying-zhang)      140    0    140   140    0    100   超级  唐门   
+备注： 唐门就一个终极，其余高级，多一个超级不过分么，还有命中方面算法稍微高点，因为不是终极技能
+，而且现在都是打塔用，命中不高出来了也是一点用都没的。
+
+
+
+#include <ansi.h>
+#include <combat.h>
+
+inherit F_SSERVER;
+
+string name() { return HIR "散花落叶" NOR; }
+
+int perform(object me)
+{
+        string msg;
+        object weapon, target;
+        int skill, ap, dp;
+
+        if (! target) target = offensive_target(me);
+
+        if (! target || ! me->is_fighting(target))
+                return notify_fail(name() + "只能对战斗中的对手使用。\n");
+
+        if( query_temp("weapon", me) || query_temp("secondary_weapon", me) )
+                return notify_fail(name() + "只能空手使用。\n");
+
+        if( !objectp(weapon=query_temp("weapon", target)) )
+                return notify_fail("对方没有使用兵器，难以施展" + name() + "。\n");
+
+        if ((int)me->query_skill("force") < 260)
+                return notify_fail("你内功修为不够，难以施展" + name() + "。\n");
+
+        if( query("max_neili", me)<3000 )
+                return notify_fail("你内力修为不够，难以施展" + name() + "。\n");
+
+        if ((int)me->query_skill("wuying-zhang", 1) < 180)
+                return notify_fail("你无影穿心掌火候不够，难以施展" + name() + "。\n");
+
+        if (me->query_skill_mapped("strike") != "wuying-zhang")
+                return notify_fail("你没有激发无影穿心掌，难以施展" + name() + "。\n");
+
+        if( query("neili", me)<400 )
+                return notify_fail("你现在真气不够，难以施展" + name() + "。\n");
+
+        if (! living(target))
+                return notify_fail("对方都已经这样了，用不着这么费力吧？\n");
+
+        ap = attack_power(me, "strike") + attack_power(me, "force-cognize");
+        dp = defense_power(target, "force") + defense_power(target, "force-cognize");
+        if( objectp(weapon=query_temp("weapon", target)) )
+                msg = HBYEL "$N" HBYEL "双手翻转，如蝶入花丛，翩然飞舞，同时目射奇芒，摄人心魄。左手却在对方目眩之际，划出一道曼妙的弧线，轻拍在"weapon->name()"上,一股内劲骤然涌出，袭向"$n"周身经脉。
+        if (ap * 3 / 2) > dp)                {
+                        addn("neili", -300, me);
+                       
+                msg += HIR "$n" HIR "心中大凛，连忙运起内力相抗，却为时已晚，虎口剧痛，手中" + weapon->name() 已无法掌控，脱手而出，同时身躯巨震，被一股沛然浑厚的内劲侵入气海，惊惧下运功抵挡，却已无法行动半分。
+                me->start_busy(1);      
+                target->start_busy(ap / 30 + 1);
+                weapon->move(environment(me));
+
+        对方手中没有兵器:
+                msg = HBYEL "$N" HBYEL "双手翻转，如蝶入花丛，翩然飞舞，同时目射奇芒，摄人心魄。左手却在对方目眩之际，划出一道曼妙的弧线，轻拍在"$n"身上,一股内劲骤然涌出，袭向"$n"周身经脉。
+        if (ap * 3 / 2) > dp)                {
+                        addn("neili", -300, me);
+                       
+        msg += HIR "$n" HIR "心中大凛，连忙运起内力相抗，却为时已晚，身躯巨震，被一股沛然浑厚的内劲侵入气海，惊惧下运功抵挡，却已无法行动半分。
+                me->start_busy(1);      
+        target->start_busy(ap / 30 + 1);
+
+        else                      addn("neili", -200, me);
+        msg += CYN "$n" CYN "不慌不忙，内功瞬间运布全身，神智已复，气劲到处，已然将$N" CYN "的左掌震开，轻易的化解了此招。
+        me->start_busy(3);
+                addn("neili", -300, me);
+        target->start_busy(1);

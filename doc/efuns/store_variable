@@ -1,0 +1,26 @@
+
+        store_variable()
+
+        名称
+                store_variable() 设定指定变量的值
+
+        语法：
+                
+                void store_variable(string, mixed);
+                无传回值 store_variable( 字符串 , 混合 )
+
+        说明：
+                设定第一个参数所指定的变量的值。
+                注意：此变量必须已经定义，并且是在 this_object()
+                中定义的。
+
+        此函数需要编译 MudOS 时在配置文件里定义了 PACKAGE_CONTRIB。
+
+        参考：
+                restore_variable,
+                fetch_variable,
+                save_object
+
+        by 发现号(Find@tx)
+
+

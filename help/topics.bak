@@ -1,0 +1,32 @@
+【游戏概况介绍】
+$BLINK$$WHT$〖feature    〗$NOR$$BLINK$$HIY$ 游戏亮点总汇  $NOR$$BLINK$$WHT$〖member     〗$NOR$$BLINK$$HIY$ 会员制度说明  $NOR$$WHT$〖skills     〗$NOR$$HIY$ 武功说明总汇$NOR$
+$WHT$〖reborn     〗$NOR$$HIY$ 转世重生综述  $NOR$$WHT$〖weapon     〗$NOR$$HIY$ 炼制武器说明  $NOR$$WHT$〖enchase    〗$NOR$$HIY$ 镶嵌系统说明$NOR$
+$WHT$〖module_eq  〗$NOR$$HIY$ 套装系统说明  $NOR$$WHT$〖myskill    〗$NOR$$HIY$ 自创武功说明  $NOR$$WHT$〖combatd    〗$NOR$$HIY$ 战斗系统详析$NOR$
+$WHT$〖random_eq  〗$NOR$$HIY$ 动态装备系统  $NOR$$WHT$〖skill_mix  〗$NOR$$HIY$ 技能组合特效  $NOR$
+
+$WHT$〖intro      〗$NOR$ 泥潭总体简介  $NOR$$WHT$〖cmds       〗$NOR$ 泥潭常用指令  $NOR$$WHT$〖maps       〗$NOR$ 泥潭地图总册
+$WHT$〖schedule   〗$NOR$ 计划练功说明  $NOR$$WHT$〖poison     〗$NOR$ 泥潭毒功说明  $NOR$$WHT$〖closed     〗$NOR$ 宗师闭关说明
+$WHT$〖event      〗$NOR$ 特殊事件说明  $NOR$$WHT$〖league.2   〗$NOR$ 结义联盟说明  $NOR$$WHT$〖bunch.2    〗$NOR$ 帮派系统说明
+$WHT$〖trade      〗$NOR$ 商业系统说明  $NOR$$WHT$〖gift       〗$NOR$ 天赋加权说明  $NOR$$WHT$〖contest    〗$NOR$ 演武系统说明
+$WHT$〖marry      〗$NOR$ 婚姻系统说明  $NOR$$WHT$〖room       〗$NOR$ 住房系统说明  $NOR$$WHT$〖baby       〗$NOR$ 生儿育女说明
+$WHT$〖beast      〗$NOR$ 幻兽系统介绍  $NOR$$WHT$〖rules      〗$NOR$ 玩家规则列表  $NOR$$WHT$〖newbie     〗$NOR$ 泥潭新手指南
+$WHT$〖protect    〗$NOR$ $HIC$死亡保护介绍$NOR$
+
+$WHT$〖family     〗$NOR$$HIY$ 江湖门派介绍  $NOR$$WHT$〖fam_feature〗$NOR$$HIY$ 门派特点介绍  $NOR$$WHT$〖fam_stunt  〗$NOR$$HIY$ 门派特技介绍$NOR$
+$WHT$〖work       〗$NOR$ 简单工作介绍  $NOR$$WHT$〖free_quest 〗$NOR$ 公众任务介绍  $NOR$$WHT$〖quest      〗$NOR$ 门派任务介绍
+$WHT$〖party_quest〗$NOR$ 帮派任务介绍  $NOR$$WHT$〖ultra_quest〗$NOR$ 宗师任务介绍  $NOR$$WHT$〖group_quest〗$NOR$ 群组任务介绍
+$WHT$〖kingwar    〗$NOR$ 王朝战争介绍  $NOR$$WHT$〖task       〗$NOR$ 江湖使命介绍  $NOR$$WHT$〖instance   〗$NOR$$HIC$ 副本任务介绍$NOR$
+$WHT$〖boss       〗$NOR$$HIC$ 挑战BOSS介绍$NOR$
+
+$WHT$〖quest_step 〗$NOR$$HIR$ 任务流程介绍  $NOR$$WHT$〖fam_skill  〗$NOR$$HIR$ 门派技能解密  $NOR$$WHT$〖pub_skill  〗$NOR$$HIR$ 公共技能解密$NOR$
+$WHT$〖skill_gift 〗$NOR$$HIR$ 技能天赋说明  $NOR$$WHT$〖fam_gift   〗$NOR$$HIR$ 门派天赋指南  $NOR$$WHT$〖path       〗$NOR$$HIR$ 泥潭路径帮助  $NOR$
+$WHT$〖add_gift   〗$NOR$$HIR$ 加先天的迷题  $NOR$$WHT$〖start      〗$NOR$$HIR$ 王者新手指北  $NOR$$WHT$〖continue   〗$NOR$$HIR$ 王者新手进阶  $NOR$
+$WHT$〖advance    〗$NOR$$HIR$ 王者新手深入  $NOR$$WHT$〖wash_equip 〗$NOR$$HIR$ 老鸟装备指南  $NOR$$WHT$〖item       〗$NOR$$HIR$ 物品功效一览  $NOR$
+
+【附属游戏介绍】
+$WHT$〖pig_game   〗$NOR$ 拱猪游戏说明  $NOR$$WHT$〖huanjing   〗$NOR$ 幻境游戏说明  $NOR$$WHT$〖hanghai    〗$NOR$ 航海时代说明
+$WHT$〖sjszhuang  〗$NOR$ 试剑山庄说明
+
+ 你可以用：$HIC$help $NOR$$HIR$<主题>$NOR$ 得到更进一步的说明，以上是说明文件的主题。
+ 你可以用：$HIC$grep <help/news/all> 查找内容$NOR$ 搜索指定查找的内容的文件。
+

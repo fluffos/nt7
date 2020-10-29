@@ -1,0 +1,13 @@
+        users(3)                LP MudOSv21c7                (7 Jul 1996)
+        函数名称:
+                users() - 传回一个包含所有可互动 (interactive) 玩家
+                          的阵列.
+        函数语法:
+                object *users( void );
+                物件 *users( 无参数 );
+        函数用法:
+                传回一个物件阵列, 此阵列包括所有的可互动玩家.
+        参考函数:
+                livings(3), children(3), objects(3)
+        手册翻译:
+                Phoebus@ZH        97.jul.25.                (Writen 5/23/97)

@@ -1,0 +1,6 @@
+name=无尽大漠
+main=maze
+time=1800
+level=50
+enter=maze/entry
+leave=/d/changan/ca10

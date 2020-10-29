@@ -1,0 +1,69 @@
+#
+#  The definition of dynamic questing system
+#  Format:
+#       file_name       the filename points to this object      
+#       owner_name      give this obj back to whom      
+#       fin_func        once finished this obj, what's the extra reward
+#
+file_name:owner_name:fin_func
+%s:%s:%s
+
+# The following lines are data, each non-blank line will fill in each field
+# in each record sequently.
+
+/questobj/1ngjiapu
+/d/city/npc/tang
+NULL
+
+/questobj/afrji
+/kungfu/class/ouyang/ouyangke
+NULL
+
+/questobj/biaoqi
+/d/city/npc/aqingsao
+NULL
+
+/questobj/bingqipu
+/d/city/npc/shisong
+NULL
+
+/questobj/bstu
+/kungfu/class/yunlong/ma
+NULL
+
+/questobj/caipi
+/d/city/npc/xian
+NULL
+
+/questobj/csl
+/kungfu/class/gaibang/quan
+NULL
+
+/questobj/cxpifeng
+/d/city/npc/liususu
+NULL
+
+/questobj/daopao
+/kungfu/class/shenlong/pang
+NULL
+
+/questobj/dingdan
+/d/city/npc/wei
+NULL
+
+/questobj/kw
+/kungfu/class/taohua/huang
+NULL
+
+/questobj/lindao
+/d/beijing/npc/haigonggong
+NULL
+
+/questobj/jiledan
+/d/fuzhou/npc/linzhennan
+NULL
+
+/questobj/kaoti
+/kungfu/class/emei/miejue
+NULL
+

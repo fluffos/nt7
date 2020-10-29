@@ -1,0 +1,14 @@
+        cp(3)                        LP MudOSv21c7                (7 Jul 1996)
+        函数名称:
+                cp() - 复制一个档案
+        函数语法:
+                int cp( string src, string dst );
+                整数 cp( 字串 src, 字串 dst );
+        函数用法:
+                复制档案 src 为档案 dst.
+        传回值:
+                如果复制成功就传回 1, 失败则传回负值.
+        参考函数:
+                rm(3), rmdir(3), rename(3), link(3)
+        手册翻译:
+                Phoebus@ZH        97.Jan.27.                (Writen 5/23/97)

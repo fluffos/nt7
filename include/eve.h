@@ -1,0 +1,187 @@
+// armor.h
+
+
+#ifndef	__EVE__
+#define	__EVE__
+#define SPREAD_SIZE 100//怪物分布密度
+#define L_SIZE 600
+#define S_SIZE 100
+mapping	ZONE_RANGE=	
+//ACT1
+(["roger":	
+(["act":"act1","name":"罗格营地","x1":-100,"x2":300,"y1":160,"y2":-120,"z1":0,"z2":0,]),
+	"blood":	
+(["act":"act1","name":"鲜血荒地","bandit":RED"僵尸"NOR,"boss":HIG"僵尸王"NOR,"level":200,"item":"boots","connect":(["num":4,"y_1":40,"y_2":-40,"next":"ice",]),
+	"x1":380,"x2":860,"y1":400,"y2":-400,"z1":0,"z2":0,]),
+	"ice":
+	(["act":"act1","name":"冰冻之原","bandit":RED"骷髅"NOR,"boss":HIG"骷髅王"NOR,"level":220,"item":"cloth","connect":(["num":5,"x_1":1460,"x_2":1540,"next":"stone",]),
+		"x1":940,"x2":1900,"y1":400,"y2":-400,"z1":0,"z2":0,]),
+	"stone":
+	(["act":"act1","name":"石块旷野","bandit":RED"吸血鬼"NOR,"boss":HIG"吸血鬼王"NOR,"level":240,"item":"surcoat","connect":(["num":9,"y_1":880,"y_2":800,"next":"wood",]),
+		"x1":940,"x2":1900,"y1":1020,"y2":400,"z1":0,"z2":0,]),
+	"wood":
+	(["act":"act1","name":"黑色森林","bandit":RED"幽灵"NOR,"boss":HIG"幽灵王"NOR,"level":260,"item":"hat","connect":([ "num":10,"y_1":880,"y_2":800,"next":"ground",]),
+		"x1":380,"x2":860,"y1":1020,"y2":400,"z1":0,"z2":0,]),
+	"ground":
+	(["act":"act1","name":"黑色荒地","bandit":RED"蝙蝠"NOR,"boss":HIG"蝙蝠王"NOR,"level":280,"item":"neck","connect":(["num":11,"y_1":880,"y_2":800,"next":"outroom",]),
+		"x1":-180,"x2":300,"y1":1020,"y2":280,"z1":0,"z2":0,]),
+	"outroom":
+	(["act":"act1","name":"外侧回廊","bandit":RED"尸煞"NOR,"boss":HIG"尸煞王"NOR,"level":300,"item":"bracelet","connect":(["num":13,"x_1":-540,"x_2":-460,"next":"imprison",]),
+		"x1":-920,"x2":-180,"y1":1020,"y2":480,"z1":0,"z2":0,]),
+		"imprison":
+	(["act":"act1","name":"监牢","bandit":RED"食人魔"NOR,"boss":HIG"食人魔王"NOR,"level":320,"item":"shield","connect":(["num":14,"x_1":-540,"x_2":-460,"next":"indoor",]),
+		"x1":-920,"x2":-180,"y1":400,"y2":80,"z1":0,"z2":0,]),
+		"indoor":
+	(["act":"act1","name":"内侧回廊","bandit":RED"妖巫"NOR,"boss":HIG"妖巫王"NOR,"level":320,"item":"weapon","connect":(["num":15,"x_1":-780,"x_2":-700,"next":"tomb",]),
+		"x1":-920,"x2":-180,"y1":0,"y2":-400,"z1":0,"z2":0,]),
+		"tomb":
+	(["act":"act1","name":"墓穴","bandit":RED"骨龙"NOR,"boss":HIG"骨龙王"NOR,"level":340,"item":"weapon","connect":(["num":17,"y_1":-600,"y_2":-680,"next":"rogoin",]),
+		"x1":-920,"x2":-180,"y1":-480,"y2":-920,"z1":0,"z2":0,]),
+					//ACT2
+		"rogoin":	
+	(["act":"act2","name":"鲁高因","x1":-100,"x2":300,"y1":-480,"y2":-920,"z1":0,"z2":0,]),
+	
+	"kennel":	
+	(["act":"act2","name":"地下水道","bandit":RED"老鼠"NOR,"boss":HIG"老鼠王"NOR,"level":360,"item":"boots","connect":(["num":21,"y_1":-920,"y_2":-1000,"next":"dryhill",]),
+	"x1":380,"x2":1120,"y1":-480,"y2":-1400,"z1":0,"z2":0,]),
+	"dryhill":	
+		(["act":"act2","name":"干燥高地","bandit":RED"金枪虫"NOR,"boss":HIG"金枪虫王"NOR,"level":380,"item":"cloth","connect":(["num":20,"x_1":1520,"x_2":1600,"next":"deathroom",]),
+	"x1":1200,"x2":1820,"y1":-480,"y2":-1400,"z1":0,"z2":0,]),
+	"deathroom":	
+		(["act":"act2","name":"死亡之殿","bandit":RED"蜘蛛"NOR,"boss":HIG"蜘蛛王"NOR,"level":400,"item":"surcoat","connect":(["num":23,"y_1":-1920,"y_2":-2000,"next":"greenland",]),
+	"x1":1200,"x2":1820,"y1":-1480,"y2":-2500,"z1":0,"z2":0,]),
+	"greenland":	
+		(["act":"act2","name":"遥远绿洲","bandit":RED"秃鹰"NOR,"boss":HIG"秃鹰王"NOR,"level":420,"item":"hat","connect":(["num":24,"y_1":-1920,"y_2":-2000,"next":"losttown",]),
+	"x1":380,"x2":1120,"y1":-1480,"y2":-2500,"z1":0,"z2":0,]),
+	"losttown":	
+		(["act":"act2","name":"失落城市","bandit":RED"甲壳虫"NOR,"boss":HIG"甲壳虫王"NOR,"level":440,"item":"neck","connect":(["num":25,"x_1":-40,"x_2":40,"next":"palace",]),
+	"x1":-200,"x2":300,"y1":-1700,"y2":-2420,"z1":0,"z2":0,]),
+	"palace":	
+		(["act":"act2","name":"皇宫监牢","bandit":RED"豹女"NOR,"boss":HIG"豹女王"NOR,"level":460,"item":"bracelet","connect":(["num":26,"y_1":-1220,"y_2":-1300,"next":"shelter",]),
+	"x1":-200,"x2":300,"y1":-1000,"y2":-1620,"z1":0,"z2":0,]),
+	"shelter":	
+		(["act":"act2","name":"庇护之所","bandit":RED"刺爪蛇妖"NOR,"boss":HIG"刺爪蛇妖王"NOR,"level":480,"item":"shield","connect":(["num":27,"x_1":-650,"x_2":-570,"next":"gorge",]),
+	"x1":-920,"x2":-280,"y1":-1000,"y2":-1620,"z1":0,"z2":0,]),
+		"gorge":	
+		(["act":"act2","name":"术士峡谷","bandit":RED"堕落射手"NOR,"boss":HIG"堕落射手王"NOR,"level":500,"item":"weapon","connect":(["num":12,"y_1":-2220,"y_2":-2300,"next":"durui",]),
+	"x1":-920,"x2":-280,"y1":-1700,"y2":-2420,"z1":0,"z2":0,]),
+	"durui":	
+		(["act":"act2","name":"督瑞尔","bandit":RED"蜥蜴"NOR,"boss":HIG"督瑞尔"NOR,"level":520,"item":"weapon","connect":(["num":29,"x_1":-1300,"x_2":-1220,"next":"dock",]),
+	"x1":-1600,"x2":-1000,"y1":-2080,"y2":-2420,"z1":0,"z2":0,]),
+		//ACT3
+	"dock":		
+	(["act":"act3","name":"库拉海港","x1":-1600,"x2":-1000,"y1":-1700,"y2":-2000,"z1":0,"z2":0,]),
+	"forest":	
+		(["act":"act3","name":"蜘蛛森林","bandit":RED"邪恶蜘蛛"NOR,"boss":HIG"邪恶蜘蛛王"NOR,"level":540,"item":"boots","connect":(["num":30,"y_1":-2000,"y_2":-2080,"next":"wetland",]),
+	"x1":-2400,"x2":-1680,"y1":-1700,"y2":-2420,"z1":0,"z2":0,]),
+	"wetland":	
+		(["act":"act3","name":"庞大湿地","bandit":RED"堕落猎犬"NOR,"boss":HIG"堕落猎犬王"NOR,"level":560,"item":"cloth","connect":(["num":31,"y_1":-2000,"y_2":-2080,"next":"skin",]),
+	"x1":-3100,"x2":-2480,"y1":-1700,"y2":-2420,"z1":0,"z2":0,]),
+	"skin":	
+		(["act":"act3","name":"剥皮丛林","bandit":RED"疯恶魔"NOR,"boss":HIG"疯恶魔王"NOR,"level":580,"item":"surcoat","connect":(["num":32,"x_1":-3680,"x_2":-3600,"next":"kuraup",]),
+	"x1":-3800,"x2":-3180,"y1":-1700,"y2":-2420,"z1":0,"z2":0,]),
+		"kuraup":	
+		(["act":"act3","name":"库拉上层","bandit":RED"狂战士"NOR,"boss":HIG"狂战士王"NOR,"level":600,"item":"hat","connect":(["num":35,"y_1":-1200,"y_2":-1280,"next":"kurashop",]),
+	"x1":-3800,"x2":-3180,"y1":-1000,"y2":-1620,"z1":0,"z2":0,]),
+		"kurashop":	
+		(["act":"act3","name":"库拉商场","bandit":RED"祭祀怪"NOR,"boss":HIG"祭祀怪王"NOR,"level":620,"item":"neck","connect":(["num":36,"y_1":-1200,"y_2":-1280,"next":"kuradown",]),
+	"x1":-3100,"x2":-2480,"y1":-1000,"y2":-1620,"z1":0,"z2":0,]),
+		"kuradown":	
+		(["act":"act3","name":"库拉下层","bandit":RED"信徒"NOR,"boss":HIG"信徒王"NOR,"level":620,"item":"bracelet","connect":(["num":37,"y_1":-1200,"y_2":-1280,"next":"cuifanke",]),
+	"x1":-2400,"x2":-1680,"y1":-1000,"y2":-1620,"z1":0,"z2":0,]),
+	"cuifanke":	
+		(["act":"act3","name":"崔凡克","bandit":RED"僧侣"NOR,"boss":HIG"僧侣王"NOR,"level":620,"item":"shield","connect":(["num":34,"x_1":-1200,"x_2":-1120,"next":"hatred",]),
+	"x1":-1600,"x2":-1000,"y1":-1000,"y2":-1620,"z1":0,"z2":0,]),
+	"hatred":	
+		(["act":"act3","name":"憎恨囚牢","bandit":RED"美杜莎"NOR,"boss":HIG"墨菲斯托"NOR,"level":640,"item":"weapon","connect":(["num":39,"x_1":-1200,"x_2":-1120,"next":"bastion",]),
+	"x1":-1600,"x2":-1000,"y1":-480,"y2":-920,"z1":0,"z2":0,]),
+		//ACT4
+		"bastion":		
+	(["act":"act4","name":"群魔堡垒","x1":-1600,"x2":-1000,"y1":0,"y2":-400,"z1":0,"z2":0,]),
+			"godtown":	
+		(["act":"act4","name":"神罚之城","bandit":RED"黑暗魔"NOR,"boss":HIG"黑暗魔王"NOR,"level":660,"item":"boots","connect":(["num":43,"y_1":-480,"y_2":-520,"next":"river",]),
+	"x1":-2400,"x2":-1680,"y1":0,"y2":-920,"z1":0,"z2":0,]),
+	"river":	
+		(["act":"act4","name":"火焰之河","bandit":RED"冰冻法师"NOR,"boss":HIG"冰冻法王"NOR,"level":680,"item":"cloth","connect":(["num":42,"y_1":-700,"y_2":-780,"next":"island",]),
+	"x1":-3100,"x2":-2480,"y1":0,"y2":-920,"z1":0,"z2":0,]),
+	"island":	
+		(["act":"act4","name":"罗格之岛","bandit":RED"骨夺者"NOR,"boss":HIG"骨夺者王"NOR,"level":720,"item":"surcoat","connect":(["num":44,"x_1":-3660,"x_2":-3600,"next":"tower",]),
+	"x1":-3800,"x2":-3180,"y1":-280,"y2":-920,"z1":0,"z2":0,]),
+		"tower":	
+		(["act":"act4","name":"九龙之塔","bandit":RED"畸形怪"NOR,"boss":HIG"畸形怪王"NOR,"level":740,"item":"hat","connect":(["num":45,"x_1":-3660,"x_2":-3600,"next":"sky",]),
+	"x1":-3800,"x2":-3180,"y1":320,"y2":-200,"z1":0,"z2":0,]),
+		"sky":	
+		(["act":"act4","name":"天囚之城","bandit":RED"毒素法师"NOR,"boss":HIG"毒素法王"NOR,"level":760,"item":"neck","connect":(["num":46,"y_1":900,"y_2":820,"next":"swamp",]),
+	"x1":-3800,"x2":-3180,"y1":1020,"y2":400,"z1":0,"z2":0,]),
+		"swamp":	
+		(["act":"act4","name":"迷雾沼泽","bandit":RED"八目鳗"NOR,"boss":HIG"八目鳗王"NOR,"level":780,"item":"bracelet","connect":(["num":47,"y_1":300,"y_2":220,"next":"garuit",]),
+	"x1":-3100,"x2":-2480,"y1":1020,"y2":80,"z1":0,"z2":0,]),
+	"garuit":	
+		(["act":"act4","name":"格拉瑞特","bandit":RED"羊头人"NOR,"boss":HIG"羊头人王"NOR,"level":800,"item":"shield","connect":(["num":48,"y_1":300,"y_2":220,"next":"wind",]),
+	"x1":-2400,"x2":-1680,"y1":1020,"y2":80,"z1":0,"z2":0,]),
+	"wind":	
+		(["act":"act4","name":"飓风极地","bandit":RED"悲惨僵尸"NOR,"boss":HIG"大菠萝"NOR,"level":820,"item":"weapon","connect":(["num":49,"x_1":-1200,"x_2":-1120,"next":"harlow",]),
+	"x1":-1600,"x2":-1000,"y1":520,"y2":80,"z1":0,"z2":0,]),
+	//ACT5
+	"harlow":	
+		(["act":"act5","name":"哈洛加斯","x1":-1600,"x2":-1000,"y1":1020,"y2":600,"z1":0,"z2":0,]),
+	"iceplate":	
+		(["act":"act5","name":"冰冻高原","bandit":RED"厄运骑士"NOR,"boss":HIG"厄运骑士王"NOR,"level":840,"item":"boots","connect":(["num":53,"y_1":1780,"y_2":1700,"next":"yaruit",]),
+	"x1":-1600,"x2":-1000,"y1":1920,"y2":1100,"z1":0,"z2":0,]),
+	"yaruit":	
+		(["act":"act5","name":"亚瑞特","bandit":RED"剃刀野兽"NOR,"boss":HIG"剃刀野兽王"NOR,"level":860,"item":"cloth","connect":(["num":54,"y_1":1380,"y_2":1300,"next":"crystal",]),
+	"x1":-2400,"x2":-1680,"y1":1920,"y2":1100,"z1":0,"z2":0,]),
+	"crystal":	
+		(["act":"act5","name":"水晶通道","bandit":RED"羽熊怪"NOR,"boss":HIG"羽熊怪王"NOR,"level":880,"item":"surcoat","connect":(["num":55,"y_1":1580,"y_2":1500,"next":"iceriver",]),
+	"x1":-3100,"x2":-2480,"y1":1920,"y2":1100,"z1":0,"z2":0,]),
+		"iceriver":	
+		(["act":"act5","name":"冰河之路","bandit":RED"痴肥怪"NOR,"boss":HIG"痴肥怪王"NOR,"level":900,"item":"hat","connect":(["num":52,"x_1":-3500,"x_2":-3420,"next":"pain",]),
+	"x1":-3800,"x2":-3180,"y1":1920,"y2":1100,"z1":0,"z2":0,]),
+		"pain":	
+		(["act":"act5","name":"痛苦之厅","bandit":RED"遗忘骑士"NOR,"boss":HIG"遗忘骑士王"NOR,"level":920,"item":"neck","connect":(["num":56,"y_1":2580,"y_2":2500,"next":"tundra",]),
+	"x1":-3800,"x2":-3180,"y1":3020,"y2":2000,"z1":0,"z2":0,]),
+		"tundra":	
+		(["act":"act5","name":"冰冻苔原","bandit":RED"灵魂杀手"NOR,"boss":HIG"灵魂杀手王"NOR,"level":940,"item":"bracelet","connect":(["num":57,"y_1":2580,"y_2":2500,"next":"ancient",]),
+	"x1":-3100,"x2":-2480,"y1":3020,"y2":2000,"z1":0,"z2":0,]),
+	"ancient":	
+		(["act":"act5","name":"远古之路","bandit":RED"血飘者"NOR,"boss":HIG"血飘者王"NOR,"level":960,"item":"shield","connect":(["num":58,"y_1":2580,"y_2":2500,"next":"fortress",]),
+	"x1":-2400,"x2":-1680,"y1":3020,"y2":2000,"z1":0,"z2":0,]),
+	"fortress":	
+		(["act":"act5","name":"要塞","bandit":RED"重压兽"NOR,"boss":HIG"巴尔"NOR,"level":980,"item":"weapon","connect":(["num":51,"y_1":2900,"y_2":2820,"next":"terob",]),
+	"x1":-1600,"x2":-1000,"y1":3020,"y2":2000,"z1":0,"z2":0,]),
+			//ACT6
+	"terob":	
+		(["act":"act6","name":"特罗巴岛","x1":-920,"x2":-180,"y1":3020,"y2":2680,"z1":0,"z2":0,]),
+	"roba":	
+		(["act":"act6","name":"罗巴山脉","bandit":RED"天使"NOR,"boss":HIG"大天使"NOR,"level":1000,"item":"boots","connect":(["num":60,"x_1":-680,"x_2":-600,"next":"12island",]),
+	"x1":-920,"x2":-180,"y1":2600,"y2":2000,"z1":0,"z2":0,]),
+	"12island":	
+		(["act":"act6","name":"十二列岛","bandit":RED"泰坦"NOR,"boss":HIG"泰坦巨人"NOR,"level":1020,"item":"cloth","connect":(["num":61,"y_1":1380,"y_2":1300,"next":"bridge",]),
+	"x1":-920,"x2":-180,"y1":1920,"y2":1100,"z1":0,"z2":0,]),
+	"bridge":	
+		(["act":"act6","name":"远古员峤","bandit":RED"比蒙巨兽"NOR,"boss":HIG"比蒙巨兽王"NOR,"level":1040,"item":"surcoat","connect":(["num":62,"x_1":100,"x_2":180,"next":"losthill",]),
+	"x1":-100,"x2":420,"y1":1920,"y2":1100,"z1":0,"z2":0,]),
+		"losthill":	
+		(["act":"act6","name":"失落岱兴","bandit":RED"红龙"NOR,"boss":HIG"黑龙"NOR,"level":1060,"item":"hat","connect":(["num":63,"y_1":2800,"y_2":2720,"next":"maya",]),
+	"x1":-100,"x2":420,"y1":3020,"y2":2000,"z1":0,"z2":0,]),
+		"maya":	
+		(["act":"act6","name":"玛雅部落","bandit":RED"恶魔"NOR,"boss":HIG"大恶魔"NOR,"level":1080,"item":"neck","connect":(["num":64,"x_1":720,"x_2":800,"next":"leize",]),
+	"x1":500,"x2":1120,"y1":3020,"y2":2000,"z1":0,"z2":0,]),
+		"leize":	
+		(["act":"act6","name":"雷泽国度","bandit":RED"凤凰"NOR,"boss":HIG"火凤凰"NOR,"level":1100,"item":"bracelet","connect":(["num":65,"y_1":1300,"y_2":1220,"next":"valley",]),
+	"x1":500,"x2":1120,"y1":1920,"y2":1100,"z1":0,"z2":0,]),
+	"valley":	
+		(["act":"act6","name":"东海汤谷","bandit":RED"九头怪"NOR,"boss":HIG"终极九头怪"NOR,"level":1120,"item":"shield","connect":(["num":66,"x_1":1600,"x_2":1680,"next":"hero",]),
+	"x1":1200,"x2":1820,"y1":1920,"y2":1100,"z1":0,"z2":0,]),
+	"hero":	
+		(["act":"act6","name":"荣耀之路","bandit":RED"圣龙"NOR,"boss":HIG"玉罗刹"NOR,"level":1140,"item":"weapon",
+	"x1":1200,"x2":1820,"y1":3020,"y2":2000,"z1":0,"z2":0,]),
+	]);	
+string *commonskill=
+({"force","unarmed","literate","magic","dodge","parry",});
+string *elements=
+({"earth","fire","water","light"});
+
+
+
+#endif

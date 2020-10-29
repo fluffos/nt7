@@ -1,0 +1,20 @@
+        process_value(3)        LP MudOSv21c7                (7 Jul 1996)
+        函数名称:
+                process_value() - 以指定的函式呼叫取得函式的传回值.
+        函数语法:
+                mixed process_value( string calldescription );
+                混合 process_value( 字串 calldescription );
+        函数用法:
+                以指定的格式取得函式的传回值, 格式如下:
+                  "函式名称[:档案名称][ | 参数 1 | 参数 2.... | 参数 N]"
+                传回值可能是任何型态的值.
+                请注意, 物件的档案名称、参数都以表示可有可无的 [] 中括号
+                框起来. 请勿把这些括号也写进字串里.
+        参考函数:
+                process_string(3)
+        警告:
+                在 mud  函式库 (mudlib) 中, 常常使用函式呼叫的传回值.
+                最好能在使用 process_string() 之前, 设定物件的有效使
+                用者辨识名称 (effuserid, euid)  为 0  . 
+        手册翻译:
+                Phoebus@ZH        97.Apr.25.                (Writen 5/23/97)

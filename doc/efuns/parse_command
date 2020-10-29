@@ -1,0 +1,172 @@
+
+     parse_command(3)       MudOS (5 Sep 1994)        parse_command(3)
+
+     名称：
+          parse_command() - 尝试以给定样式(pattern)来配对一个字串
+
+     语法：
+          int parse_command( string command, object env|object *oblist,
+                             string pattern, mixed arg, ... );
+
+          整数 parse_command( 字串 command, 物件 env|物件 *oblist,
+                              字串 pattern, 混合 arg, ... );
+
+     用法：
+          parse_command() 是透过操作在字串上 sscanf(3) 的。它的运作类
+          似於有一个样式和一个目的参数之变数集合的 sscanf(3)。它以传递
+          其他变数的参照(refence)和阵列的方式，结合唯一的超越函式(efun)
+          sscanf(3)。因此，parse_command() 将传回值置於它的参数上。
+
+          若 'command' 配对成功，parse_command() 会传回 1。
+
+          参数 'env' 或是 'oblist' 不是一个物件就会是一个物件阵列。如
+          果它是单一物件的话，它将会以增加此物件的 deep_inventory 方式
+          来自动建立一个物件阵列，例如下面这二个函式是等效的：
+
+             parse_command(cmd, environment(), pattern, arg)
+
+          和
+
+             parse_command( cmd, ({ environment() }) +
+                            deep_inventory(environment()), pattern, arg)
+
+             假设有一个字串是 " 'get' / 'take' %i "
+                  语法：
+                          'word'          必备的文字(text)
+                          [word]          可省略的文字
+                          /               选择性的记号(marker)
+                          %o              单一项目(item), 物件
+                          %l              生物(living object)
+                          %s              任何文字
+                          %w              任何单字(word)
+                          %p              串列(list) (介系词)
+                          %i              任何项目
+                          %d              数字 0- 或是 tx(0-99)
+
+          'arg' 串列可以是零个或是多个参数。这些是如同 sscanf 内的结果
+          变数。注意到每一个变数都需要一个 %。
+
+          不同 %_ 的传回型态是：
+                          %o      传回一个物件
+                          %s      传回单字的字串
+                          %w      传回单一单字的字串
+                          %p      可以是一个含有单字串列的阵列或是一个
+                                  空变数
+                                  传回：
+                                     如果是空变数：一个字串
+                                     如果是阵列：array[0] 就是配对的单字
+                          %i      传回一个下列格式的特定阵列：
+                                  [0] = (int) +(wanted) -(order) 0(all)
+                                  [1..n] (object) 物件指标(objectpointers)
+                          %l      传回一个下列格式的特定阵列：
+                                  [0] = (int) +(wanted) -(order) 0(all)
+                                  [1..n] (object) 物件指标
+                                                  这些都是生物。
+                          %d      传回一个数值
+
+          用到所有已载入资讯的 % 型态只有 %i 和 %l。事实上，除了 %l 在
+          尝试剖析(parse)前会从所有物件串列中过滤掉非生物外，这些都是
+          一样的。
+
+          %i 和 %l 的传回值也是最复杂的。他们传回一个由数字带头，接著
+          是所有可能配对之物件组成的阵列。一个典型由 %i、%l 配对的字串
+          看来像是 'three red roses'，在这之中有数个构造可以被配对：
+
+             如果 numeral>0 则 tree, four, five 等会被配对；
+             如果 numeral<0 则 second, twentyfirst 等会被配对；
+             如果 numeral==0 则 'all' 或是一般的复数形式如 'apples'会
+                             被配对。
+
+          注意！
+                   这个超越函式(efun)不管给定数值的隐含语意。若给予
+               'all apples' 或是 'second apple'，它都不会关心的。%i
+               将会传回所有阵列内可以配对的物件。它留给呼叫者来决定
+               'second' 在给定内容的意思。并且，当给定一个物件而非
+               一个外显的(explicit)物件阵列时，整个给定物件的递回内
+               容将会被搜寻。它也留给呼叫者来决定实际上可看到的物件
+               中，哪个是 'second' ，而不是传回之物件阵列中第二个物
+               件。
+
+     警告：
+          "%s %w %i" 这些型态的样式可能不如预期的有用。%w 将总会成功，
+          以至於相对於 %s 的参数将总会是空的。
+
+     问题：
+          'word' 和 [word] 这型态的样式中，'word' 不能包含空白。它必须
+          是单一单字。这是因为样式会以 " " (空白) 来剖析，所以一个样式
+          单元(element)不能含有空白。
+
+          以空白来剖析的另一个影响是，用来分隔一个样式的部份(piece)必须
+          是以空白隔开，例如不能是 " 'word'/%i " 而须是 " 'word' / %i"。
+
+          例子：
+               if (parse_command("spray car",environment(this_player()),
+                                 " 'spray' / 'paint' [paint] %i ",items))
+                   {
+                      /*
+                        如果这个样式被配对的话，则 items 会传回在 'destargs'
+                        之後如同上述 %i 的阵列。
+                      */
+                   }
+
+          MUDLIB 之支援：
+
+          为了使这个超越函式有用，它必须有来自 mudlib 的支援，它需要一
+          组函式让它在判断机制(sensible manner)内进行剖析前呼叫，以取
+          得相关资讯。
+
+          在早期的版本中，它使用在 LPC 物件中一般的 id() lfun 以找到一
+          个特定字串所指定的物件。由於它在剖析非常长的指令时，会产生数
+          百甚至数千个呼叫，所以十分没有效率。
+
+          新的版本则依赖著提供这三个 'names' 串列的 LPC 物件。
+
+             1 - 一般单一的名字；
+             2 - 复数格式的名字；
+             3 - 公认的物件形容词。
+
+          以上可以由呼叫下列函式得到：
+
+             1 - string *parse_command_id_list();
+             2 - string *parse_command_plural_id_list();
+             3 - string *parse_command_adjectiv_id_list();
+
+          真正唯一需要的串列是第一个。如果第二个不存在的话，这个超越函
+          式将会试著由单一串列建立出来。因为文法上的因素，它并不是完美
+          到总是会成功。尤其当 'names' 不是单一单字而是片语时，更是如
+          此。
+
+          The third is very nice to have because it makes constructs
+          like
+          （译注：无法翻译此原文。）
+
+          除了这些函式应该存在於所有物件外，最好它们能置於基本的 mudlib
+          物件内，当中也有一些函式是母物件(master object) 所需要的。
+          这些虽不是绝对必须的，但它们真的给了这个超越函式额外的能力。
+
+          基本上，这些母物件的 lfuns 需要设定由每个物件得到之名称串列
+          的预设值。
+
+          这些串列上的名字可应用於任何所有的物件上。在这些物件里的前
+          三个对这些 lfuns 是一样的：
+
+             string *parse_command_id_list()
+                - 一般会传回: ({ "one", "thing" })
+
+             string *parse_command_plural_id_list()
+                - 一般会传回: ({ "ones", "things", "them" })
+
+             string *parse_command_adjectiv_id_list()
+                - 一般会传回: ({ "iffish" })
+
+          最後二个是介系词的内定串列，所以：
+             string *parse_command_prepos_list()
+                - 一般会传回: ({ "in", "on", "under" })
+
+             string parse_command_all_word()
+                - 一般会传回: "all"
+
+     翻译：
+          Kenny@Broken.History       97.Jul.26       (printed 3/16/95)
+
+

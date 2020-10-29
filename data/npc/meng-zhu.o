@@ -1,0 +1,9 @@
+#/adm/npc/meng-zhu.c
+killer ({})
+want_kills ({})
+weak 1414
+freeze 934
+dbase (["qi":900000180424,"per":14,"shen":0,"generation":37,"my_armor":0,"str":27,"jiali":7500,"kar":27,"startroom":"/d/taishan/fengchan","auto_perform":1,"shen_type":0,"max_jingli":800000016734,"no_get":1,"con":28,"recover":1440414183,"eff_qi":900000180424,"long":"他就是雄踞武林，号召天下，威风赫赫的当今武林盟主。","unit":"位","max_qi":900000181855,"backup":(["condition":0,]),"winner":"mudlet","int":28,"can_speak":1,"race":"人类","no_suck":1,"jingli":800000016734,"name":"沐大哥","dex":27,"eff_jing":800000022032,"limbs":({"头部","颈部","胸口","后心","左肩","右肩","左臂","右臂","左手","右手","两肋","左脸","腰间","小腹","左腿","右腿","右脸","左脚","右脚","左耳","右耳",}),"actions":0,"default_actions":,"id":"wulin mengzhu","short":"[33m第三十七代武林盟主[2;37;0m沐大哥(Wulinmengzhu)","jing":800000022032,"gender":"男性","combat_exp":630000,"max_jing":800000022032,"attitude":"heroism","my_weapon":0,"neili":0,"birthday":1547113913,"max_neili":800000027919,"age":11,"second_actions":0,])
+mail_log ({})
+skills (["sword":50000,"riding":100,"martial-cognize":50000,"parry":10000,"kuihua-mogong":50000,"training":100,"certosina":50000,"force":10000,"lunhui-sword":10000,"tangshi-jian":50000,"blade":159,"yinyang-shiertian":10000,"tianjian":50000,"enchanting":50000,"buddhism":10000,"dodge":212,"unarmed":1000,])
+skill_map (["force":"yinyang-shiertian","sword":"lunhui-sword","dodge":"yinyang-shiertian","parry":"tianjian","unarmed":"yinyang-shiertian",])

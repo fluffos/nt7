@@ -1,0 +1,7 @@
+name=刀剑
+main=fightroom
+time=2700
+level=150
+enter=fightroom
+leave=/d/city/wumiao 
+interval=3600

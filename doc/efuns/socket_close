@@ -1,0 +1,38 @@
+
+     socket_close(3)        MudOS (5 Sep 1994)         socket_close(3)
+
+     名称：
+          socket_close() - 关闭一个 socket
+
+     语法：
+          #include 
+
+          int socket_close( int s );
+
+          整数 socket_close( 整数 s );
+
+     用法：
+          socket_close() 会关闭 socket s。这会释放出一个被使用的 socket
+          efun 插槽(slot)。
+
+     传回值：
+          socket_close() 传回：
+
+               成功时是 EESUCCESS。
+
+               失败时是含如下意义的负值。
+
+     错误值：
+          EEFDRANGE      描述值(descriptor)超出□围。
+
+          EEBADF         无效的描述值。
+
+          EESECURITY     企图违反安全。
+
+     参照：
+          socket_accept(3), socket_create(3)
+
+     翻译：
+          Kenny@Broken.History       97.Jul.27       (printed 3/16/95)
+
+

@@ -1,0 +1,16 @@
+subject : 衡山紫盖剑法，可以读到140。
+author_name : 薇大呆
+author_id : vivi
+time : 1206624335
+board : 薇大呆的留言板
+file : /data/analecta/2008/75526972.txt
+add_time : 1211022915
+content :
+1、买个火折
+2、"rideto henyang;#9 n;nu;nw;nu;ed;e;eu"
+3、"jump pubu;enter;nw;use fire;w;w"
+   注意必须有一定的dodge,还要能杀眼镜蛇，
+   后面两个w的路径上全有眼睛蛇。
+4、"zou;climb stone;push bi;enter;move desk;pick book"
+5、"n;l xuanya;climb teng" 然后召唤宠物回去。
+[2;37;0m

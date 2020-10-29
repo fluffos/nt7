@@ -1,0 +1,76 @@
+牌桌(v0.6)使用方法:
+——[游戏前]——————————————————————————
+帮助命令：helppai        重置命令：reset pai
+重新开始命令：restart        加入命令：join
+开始命令：start 开始以后不能再加入。
+
+——[通用游戏指令]——————————————————————————
+洗牌命令：xipai [容器ID]
+        容器ID没有的话为"DESK"
+        
+看牌命令：view [容器ID] 
+        容器ID没有的话为自己手上的牌
+                
+整理命令：sort [容器ID] [/c]
+        容器ID没有的话为自己手上的牌
+        /c 表示以色排列，没有的话表示以点数排列
+        
+移动牌命令：move which[+which2...] from where1 to where2 [/h]
+        which 牌的ID。如：方块D3 中的 D3 (必须大写)
+              或者序号。如： 3表示第三张牌
+        where1 表示来源容器
+        where2 表示目的容器
+                [/h]  表示是否隐藏牌
+                
+派牌命令：pai [数目]
+        每人派牌的数量，没有表示全部派完
+
+摸牌命令：mopai
+        摸一张牌
+        
+出牌命令：play which[+which2+...]
+
+显示牌命令：show which[+which2+...]
+
+隐藏牌命令：hide which[+which2+...]
+
+取回牌命令：takeback which[+which2+...] [from where]
+        where没有的话表示从out处取
+
+确定顺序命令：order who1->who2->who3->...
+            该命令用于确定顺序，使用next命令提醒下一个人
+
+催促命令：next
+
+确定准备出牌人命令：now who
+            
+取去鬼牌：removej
+
+PASS命令：pass
+
+出完牌命令：finish 当手上的牌出完的时候使用
+
+——[游戏模式]——————————————————————————
+setmode 设置游戏模式
+1. setmode 8  8张
+2. setmode 21 21点
+*. setmode auto|man 设置自动模式或者手动模式
+各种模式下的帮助命令为: helppai2 模式; 如 helppai2 8
+
+——[计数牌使用]——————————————————————————
+显示: showc
+记录: press id number
+重置: reset counter
+删除: removec id
+
+——[游戏知识]——————————————————————————
+牌桌容器说明
+牌盒(desk) 存放使用的的牌
+副牌盒(desk2) 存放不使用的的牌
+玩家的牌(玩家ID hand) 玩家手上的牌。如catyboy hand
+玩家出的牌(玩家ID out) 玩家打出的牌。如catyboy out
+玩家保存的牌(玩家ID save) 玩家保存的牌。如catyboy save
+玩家隐藏的牌(玩家ID hide) 玩家保存的牌。如catyboy hide
+
+—————————————————————————————————
+                                make by 猫部猫(Catyboy)

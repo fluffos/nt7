@@ -1,0 +1,85 @@
+# 发布版本的服务器地址(local表示本地)
+release server : local
+
+# 版本服务器接收的可同步服务器地址
+# 127.0.0.1 3000 : valid
+# 113.31.21.157 8000 : valid
+# 219.150.131.179 3000 : valid
+# 61.158.198.165 3000 : valid
+
+# 本地能够接纳的最大用户数目
+max users : 1500
+
+# 本地限制巫师登录的等级
+wiz lock : 0
+
+# MUDLIB版本相关资讯
+mudlib name : NT
+mudlib version : ULTIMATE
+mudlib version number : 7.1g
+
+# INTERNET互连网络中MUD的名字
+internet mud name : NT.ULTIMATE
+
+# MUD HOSTNAME
+hostname : muds.cn
+
+# MUD LOCATION
+location : china
+
+# MUD GROUP
+group : NT.WIZARD.GROUP
+
+# MUDOS
+mudos : NTOS 3.0
+
+# 编码方式
+encoding : GB
+
+# 类型
+type : NT.ULTIMATE
+
+# 天神
+admin : lonely
+
+# 主页
+# web : http://www.muds.cn
+
+# SMTP服务器地址/端口号
+# smtp server : 123.125.50.135 25
+
+# SMTP服务器的名字
+# smtp domain : smtp
+
+# 系统使用SMTP服务器时填写的发送者
+# smtp sender : lonely21@me.com
+
+# SMTP认证信息
+# smtp auth user : lonely21
+# smtp auth password : abcdefg123456
+
+# 和本系统相联系的MUD服务器
+# mudlist1 : 222.210.127.125 2004              # 电信
+# mudlist2 : 61.139.77.195 3004                # yh
+
+# 本站信息
+zone : 总站
+
+# PK 限制
+max pk perday : 8
+max pk perman : 3
+
+# 玩家数据错误时是否要求重新创建玩家
+ask_recreate : 0
+
+# 数据库MYSQL所在的服务器地址
+mysql host : localhost
+mysql user : lonely
+mysql database : nitan
+
+# 本地服务器的地址用来漫游确定玩家数据位置
+# local host : 219.150.131.179
+
+# 设置了手工同步版本的标志
+# manual_synchronize : 1
+

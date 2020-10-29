@@ -1,0 +1,109 @@
+// Written by Lonely@chinamud.cn
+
+#include <ansi.h>
+
+inherit F_CLEAN_UP;
+
+void create() { seteuid(getuid()); }
+int main(object me, string arg)
+{
+        string what, bname;
+        string *item_list;
+        object *ob_list;
+        object obj;
+        int i, f, flag;
+
+        if( !arg || sscanf(arg,"%s with %s", what, arg) != 2 )
+                return notify_fail("指令格式：extract <装备> with <物品> & <物品> & ……\n");
+
+        if( me->is_busy() )
+                return notify_fail("先忙完了你的事情再做这件事情吧！\n");
+
+        if( me->is_fighting() )
+                return notify_fail("你现在正在打架，没时间做这些事情。\n");
+
+        if( query("max_jingli", me)<300 )
+                return notify_fail("你现在的精力修为有限，无法抽取物品。\n");
+
+        if( query("jingli", me)<300 )
+                return notify_fail("你现在精力不济，无法抽取物品。\n");
+
+        if( !objectp(obj = present(what, me)) )
+                return notify_fail("你身上没有这样物品。\n");
+
+        if( query("equipped", obj) )
+                return notify_fail("你先卸除他先。\n");
+
+        if( !query("enchase", obj) || !query("enchase/apply_prop", obj) )
+                return notify_fail("这个物品上面没有可用来抽取的属性。\n");
+
+        if( query("maze_item", obj) )
+                return notify_fail("这个物品来历不明，不可被抽取属性。\n");
+
+        if( query("enchase/increase", obj) )
+                return notify_fail("改造过的装备不可以被抽取属性。\n");
+
+        item_list = explode(arg, "&");
+        ob_list   = allocate(sizeof(item_list));
+
+        for( i=0; i<sizeof(item_list); i++ ) {
+                bname = item_list[i];
+                if( !bname ) return notify_fail("格式错误。\n");
+                while( bname[0] == ' ' ) bname = bname[1..<0];
+                while( bname[strlen(bname) - 1] == ' ' ) bname = bname[0..<2];
+                ob_list[i] = present(bname, me);
+
+                if( !objectp(ob_list[i]) )
+                        return notify_fail("你身上没有 " + bname + " 这种物品啊。\n");
+
+                if( !query("can_extract", ob_list[i]) )
+                        return notify_fail("只有黑水晶或超级黑水晶才可以用来附魔装备属性。\n");
+
+                if( i > 0 && member_array(ob_list[i], ob_list[0..i - 1]) != -1 )
+                        return notify_fail("抽取物品需要指明不同的物品，不要重复指"
+                                           "明一件物品。\n");
+        }
+
+        tell_object(me, HIW "\n你双目微闭，将数样物品凝于身前，运转内劲迫"
+                        "使它们空中旋转交融。\n" NOR);
+
+        me->start_busy(1);
+        addn("jingli", -200, me);
+
+        flag = 0;
+        for( i=0; i<sizeof(ob_list); i++ ) {
+                if( !objectp(obj) ) break;
+
+                f = ob_list[i]->do_extract(obj);
+                if( f ) flag = f;
+                if( objectp(ob_list[i]) && query("id", ob_list[i]) == "blackcrystal"){
+                        if( sizeof(ob_list) == 1 || i == sizeof(ob_list)-1 ) {
+                                destruct(obj);
+                                break;
+                        }
+
+                        if( random(100) < 50 ) {
+                                destruct(obj);
+                                break;
+                        }
+                }
+        }
+
+        if( flag ) {
+                message("vision", HIW "\n霎时间只见" + me->name() + HIW "身前一道"
+                        "光华闪过，但转瞬即逝，似乎发生了什么不同寻常的"
+                        "事情。\n\n" NOR, environment(me), ({me}));
+
+                tell_object(me, HIW "霎时间只见万道光华疾闪而过，你急忙伸出双手将黑水接住，"
+                        "发现掌心\n黑水蕴漾着七色霞光。\n\n" NOR);
+
+                addn("max_jingli", -1, me);
+
+                return 1;
+
+        }
+        tell_object(me, HIR "可是过了半天，似乎没有任何变化，你不禁一声"
+                        "长叹。\n" NOR);
+
+        return 1;
+}

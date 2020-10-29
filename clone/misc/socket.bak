@@ -1,0 +1,124 @@
+// socket.c
+
+#define DEBUGER         "hcifml"
+#define DEBUG(x)        tell_object(find_player(DEBUGER), x)
+#define RECEIVE         0
+#define STATUS          1
+#define CLODE           2
+#define TIMEOUT         120
+
+nosave int socket_fd;
+function *callback;
+
+mapping dn2ip_tab = ([
+        "news.sina.com.cn"      :   "61.135.152.78",
+        "ent.sina.com.cn"       :   "61.135.152.80",
+        "tech.sina.com.cn"      :   "61.135.152.85",
+        "finance.sina.com.cn"   :   "61.135.153.184",
+        "sports.sina.com.cn"    :   "61.135.153.179",
+]);
+
+private string DN2IP(string host)
+{
+        if (undefinedp(dn2ip_tab[host]))
+                return "";
+                
+        return dn2ip_tab[host];
+}
+
+private int is_url(string fmt)
+{
+        string *each_field = explode(fmt, ".");
+        
+        if (sizeof(each_field) < 4) 
+                return 0;
+                
+        foreach (string field in each_field) 
+        {
+                foreach (int char in field)
+                {
+                        if (char < 'A' || char > 'z' || 
+                            (char > 'Z' && char < 'a'))
+                                return 0;
+                }
+        }
+        return 1;
+}
+
+private int is_ip(string fmt)
+{
+        string *each_field = explode(fmt, ".");
+        
+        if (sizeof(each_field) < 4) 
+                return 0;
+                
+        foreach (string field in each_field) 
+        {
+                foreach (int char in field)
+                {
+                        if (char < '0' || char > '9')
+                                return 0;
+                }
+        }
+        return 1;
+}
+
+void create()
+{
+        socket_fd = 0;
+}
+
+void receive(mixed data)
+{
+        if (sizeof(callback) > RECEIVE)
+                evaluate(callback[RECEIVE], data, socket_fd);
+}
+
+void status(string msg)
+{
+        DEBUG(sprintf("socket ob %d status %s\n", socket_fd, msg));
+    
+        if (sizeof(callback) > STATUS)
+                evaluate(callback[STATUS], msg, socket_fd);
+}
+
+void time_out()
+{
+        SOCKET_D->socket_close(socket_fd);
+}
+
+void close()
+{
+        if (sizeof(callback) > CLODE)
+                evaluate(callback[CLODE], socket_fd);
+        else 
+        {
+                efun::socket_close(socket_fd);
+                destruct(this_object());
+        }
+}
+
+int open(string host, int port, int mode, function *cb)
+{
+        if (! host || ! port || ! cb)
+                return 0;
+                
+        if (! is_ip(host))
+                host = DN2IP(host);
+    
+        callback = cb;
+        socket_fd = SOCKET_D->socket_open(host, port, mode, (: receive :), (: status :), (: close :));
+        
+        // call_out((: time_out :), TIMEOUT);
+        return socket_fd;
+}
+
+void send(mixed data)
+{
+        SOCKET_D->socket_send(socket_fd, data);
+}
+
+void remove()
+{
+        callback = 0;
+}

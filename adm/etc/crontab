@@ -1,0 +1,140 @@
+# falg 为 0 说明以下定时是依照现实生活中的时间
+# falg 为 1 说明以下定时是依照游戏中的时间
+#
+# day_in_month 一个月中的第几天，范围 1-31
+#
+# day_in_week  星期几 范围 0-6 ( 0 为星期日 )
+#
+# month_in_year 月份 范围 0-11
+#
+# hour  小时    范围 0-23
+#
+# minute 分钟   范围 0-59
+#
+# object、function 是条件满足时触发 object->function
+#
+# 没有用的项用 '*' 星号 填补
+# 每一项中可以用 ',' 逗号来分割多条件
+#
+# 以下是格式：
+#flag:minute:hour:day_in_week:day_in_month:month_in_year:year object function string *args
+#
+
+
+#每分钟检测排程心跳情况
+0:*:*:*:*:*:* /adm/daemons/scheduled start_events
+
+#每10分钟清理系统内存
+0:*/30:*:*:*:*:* /adm/daemons/timed auto_relaim
+
+#每 30 分钟更新 MUDLIST 纪录
+# 0:*/30:*:*:*:*:* /adm/daemons/mudlistd distributed_connect
+# 0:0:*:*:*:*:* /adm/daemons/mudlistd reset_maxuser
+# 0:*/18:*:*:*:*:* /adm/daemons/mysql_schedule_d refresh_mudlist
+
+#开放战场报名
+#0:20:14:*:*:*:* /adm/daemons/battlefieldd start_join battle1
+#0:10:15:*:*:*:* /adm/daemons/battlefieldd start_join battle2
+0:50:15:*:*:*:* /adm/daemons/battlefieldd2 start_join
+#0:20:19:*:*:*:* /adm/daemons/battlefieldd start_join battle1
+#0:20:21:*:*:*:* /adm/daemons/battlefieldd start_join battle2
+0:10:22:*:*:*:* /adm/daemons/battlefieldd2 start_join
+#0:50:22:*:*:*:* /adm/daemons/battlefieldd start_join battle1
+#0:40:23:*:*:*:* /adm/daemons/battlefieldd start_join battle2
+
+#门派仇杀每个小时一次
+0:1:10:*:*:*:* /adm/daemons/battlefieldd3 start_join
+0:1:13:*:*:*:* /adm/daemons/battlefieldd3 start_join
+0:1:16:*:*:*:* /adm/daemons/battlefieldd3 start_join
+0:1:20:*:*:*:* /adm/daemons/battlefieldd3 start_join
+0:1:23:*:*:*:* /adm/daemons/battlefieldd3 start_join
+# 天下第一大帮争斗战
+0:10:20:*:*:*:* /adm/daemons/bunchd start_join
+
+# 游戏时间每月1日帮派盘点
+1:11:11:*:1:*:* /adm/daemons/bunchd manage_areas
+
+#定时出现的BOSS
+0:1:*:*:*:*:* /adm/daemons/boss_d place_boss huashan-pantu
+0:6:*:*:*:*:* /adm/daemons/boss_d place_boss chaoting-taofan
+0:8:*/3:*:*:*:* /adm/daemons/boss_d place_boss god_dragon 1
+0:9:*:*:*:*:* /adm/daemons/boss_d place_boss yan-ji
+0:11:*:*:*:*:* /adm/daemons/boss_d place_boss tian-boguang
+0:13:*:*:*:*:* /adm/daemons/boss_d place_boss caihua-dadao.data
+0:16:*:*:*:*:* /adm/daemons/boss_d place_boss jianzhong-daoke
+0:18:*:*:*:*:* /adm/daemons/boss_d place_boss yang-kang
+0:21:*:*:*:*:* /adm/daemons/boss_d place_boss daomu-feizei
+0:25:*:*:*:*:* /adm/daemons/boss_d place_boss chi-you
+0:32:*:*:*:*:* /adm/daemons/boss_d place_boss cheng-kun.data
+0:36:*:*:*:*:* /adm/daemons/boss_d place_boss sea_dragon 1
+0:58:*/2:*:*:*:* /adm/daemons/boss_d place_boss golden_dragon 1
+0:41:*:*:*:*:* /adm/daemons/boss_d place_boss wudu-shengwu
+0:43:*:*:*:*:* /adm/daemons/boss_d place_boss liu-changjie
+0:46:*:*:*:*:* /adm/daemons/boss_d place_boss dugu-qiubai
+0:48:*:*:*:*:* /adm/daemons/boss_d place_boss bai-zizai.data
+0:50:*/2:*:*:*:* /adm/daemons/boss_d place_boss jinlun-fawang
+0:51:*:*:*:*:* /adm/daemons/boss_d place_boss xiao-longnv
+0:53:*:*:*:*:* /adm/daemons/boss_d place_boss zuo-lengchan
+0:56:*:*:*:*:* /adm/daemons/boss_d place_boss gongsun-zhi
+0:28:*:*:*:*:* /adm/daemons/boss_d place_boss jiangshi-daozhang
+0:30:*:*:*:*:* /adm/daemons/boss_d place_boss xia-xueyi.data
+0:35:*/2:*:*:*:* /adm/daemons/boss_d place_boss fusang-wushi
+0:38:*:*:*:*:* /adm/daemons/boss_d place_boss qicai-liulishou
+
+#开放蓬莱岛
+0:15:20:0:*:*:* /adm/daemons/timed alloate_boat 1
+0:15:20:5:*:*:* /adm/daemons/timed alloate_boat 1
+0:15:20:6:*:*:* /adm/daemons/timed alloate_boat 1
+0:15:20:1:*:*:* /adm/daemons/timed alloate_boat 1
+0:15:20:2:*:*:* /adm/daemons/timed alloate_boat 1
+0:15:20:3:*:*:* /adm/daemons/timed alloate_boat 1
+0:15:20:4:*:*:* /adm/daemons/timed alloate_boat 1
+
+#持续馈赠nt
+0:1:20:*:*:*:* /adm/daemons/timed give_money 3
+0:1:21:*:*:*:* /adm/daemons/timed give_money 3
+0:1:22:*:*:*:* /adm/daemons/timed give_money 3
+0:0:*:*:31:1:2015 /adm/daemons/timed give_money 10
+
+#新手导师薪水
+0:1:23:6:*:*:* /adm/daemons/timed pay_tutor_money 300
+
+#灵感塔开启
+0:1:12:*:*:*:* /d/kaifeng/linggt/lgtd set_can_up
+
+#每周末商城打折
+#0:1:*:6:*:*:* /adm/daemons/goodsd set_rate 90
+#0:1:*:0:*:*:* /adm/daemons/goodsd set_rate 90
+#0:1:*:1:*:*:* /adm/daemons/goodsd set_rate 100
+0:1:8:*:*:*:* /adm/daemons/goodsd init_actions
+
+#每60分钟开启和移动一个洞天
+0:35:*:*:*:*:* /d/dongtian/create_d start
+
+#福利彩票
+#0:0:8:*:*:*:* /adm/daemons/caipiaod do_run start
+#0:0:17:*:*:*:* /adm/daemons/caipiaod do_run end
+#0:0:18:*:*:*:* /adm/daemons/caipiaod do_run kaijiang
+
+#华山论剑，新人场每月2次，老鸟场每月1次
+0:1:18:*:*:*:* /u/redl/cangku do_start_hslj 
+0:2:19:*:*:*:* /u/redl/cangku do_start_hslj 
+0:3:20:*:5,20:*:* /u/redl/cangku do_start_hslj 1
+0:3:22:*:5,20:*:* /u/redl/cangku do_start_hslj 2
+0:4:20:*:6:*:* /u/redl/cangku do_start_hslj 3
+0:4:22:*:6:*:* /u/redl/cangku do_start_hslj 5
+
+# 现实时间每月1日下午14点重启
+#0:59:13:*:1:*:* /cmds/arch/reboot aboot
+
+#牛人三部曲
+0:25:19:*:*:*:* /u/redl/teleport/18niuren set_pkd
+0:25:21:*:*:*:* /u/redl/teleport/18niuren set_pkd
+0:25:10:6:*:*:* /u/redl/teleport/18niuren set_pkd
+0:25:10:0:*:*:* /u/redl/teleport/18niuren set_pkd
+0:25:15:6:*:*:* /u/redl/teleport/18niuren set_pkd
+0:25:15:0:*:*:* /u/redl/teleport/18niuren set_pkd
+0:45:*:*:*:*:* /u/redl/teleport/18niuren set23
+
+#元江宝船
+0:01:20:*:*:*:* /u/redl/teleport/ailao deploy

@@ -1,0 +1,253 @@
+// written by super@mudbuilder.net
+#include "gls.h"
+#include <socket_err.h>
+
+#include <net/config.h>
+
+#include <net/daemons.h>
+
+#include <net/dns.h>
+
+#include <net/socket.h>
+
+#include <net/services.h>
+
+#include <net/macros.h>
+
+protected object* find_path(object ob,object* rooms);
+protected void clean_path(object* rooms);
+mapping all_rooms;
+mixed map;
+int total;
+protected void build_matrix(object room, string t, int x, int y, string direction);
+int max_x,max_y,min_x,min_y,udp_socket;
+protected void check_x_y(int x, int y);
+protected mapping draw_map(object ob);
+protected int send_msg(string msg);
+protected mixed drawing(mapping a);
+protected int abs(int a) { return a>0?a:-a; }
+void out(mapping a);
+
+void create()
+{
+   mixed result;
+   object center;
+total = 0;
+   center = find_object(CENTER_OB)?
+       find_object(CENTER_OB):
+       load_object(CENTER_OB);
+all_rooms = ([]);
+max_x = max_y = 0;
+   result = draw_map(center);
+   map = drawing(result);
+out(map);
+}
+
+void out(mixed matrix)
+{
+string result;
+result = "";
+for(int j = 0;j<max_y - min_y+1;j++)
+   {
+       for(int i = 0;i<max_x - min_x+1;i++)
+if( matrix[i][j] == 0) result += "  ";
+else result += sprintf("%s ",matrix[i][j]);
+write("\n"+replace_string(result,"0"," "));
+       result = "";
+   }
+//write("\n"+replace_string(result,"0"," "));
+write(sprintf("\nTotal rooms: %d ",total));
+}
+
+protected mixed drawing(mapping a)
+{
+   mixed *matrix;
+   string *kid;
+   string result;
+   kid = keys(a);
+   result = "";
+   matrix = allocate(max_x - min_x +1 );
+   for(int i = 0;i<sizeof(matrix);i++)
+       matrix[i] = allocate(max_y - min_y + 1);
+   foreach( string name in kid )
+   {
+       int t1,t2;
+       t1 = a[name][X] + abs(min_x);
+       t2 = abs(a[name][Y] - max_y);
+       matrix[t1][t2] = "O";
+       for(int i = 0;i<a[name][EXIT_SIZE];i++)
+       {
+           switch(a[name][EXIT(i)])
+           {
+               case "south" : 
+                   if(!matrix[t1][t2+1]) matrix[t1][t2+1] = "|";
+break;
+               case "north" :
+                   if(!matrix[t1][t2-1]) matrix[t1][t2-1] = "|";
+                   break;
+               case "west" :
+                   if(!matrix[t1-1][t2]) matrix[t1-1][t2] = "-";
+                   break;
+               case "east" :
+                   if(!matrix[t1+1][t2]) matrix[t1+1][t2] = "-";
+                   break;
+           }
+       }
+   }
+   return matrix;
+}
+
+protected mapping draw_map(object ob)
+{
+   object env,*temp,*temp1,*bak_room,*temp2;
+   mapping exits;
+   mixed n;
+   int t,x,y;
+   int a = 0;
+   t = 0;
+   env = ob;
+   set_temp("x", 0, env);
+   set_temp("y", 0, env);
+   x = y = 0;
+   temp = ({env});
+   temp1 = ({});
+   exits=query("exits", env);
+   bak_room = ({env});
+
+   while ( sizeof(temp) ) 
+   {
+       reset_eval_cost();
+       temp2 = copy(temp);
+       temp = ({});
+
+       foreach(object room in temp2)
+       {
+           int size;
+           exits=query("exits", room);
+           x=query_temp("x", room);
+           y=query_temp("y", room);
+
+           foreach(string key in keys(exits))
+           {
+               object _temp;
+               _temp = find_object(exits[key])?
+                   find_object(exits[key]):
+                   load_object(exits[key]);
+
+               build_matrix(_temp, file_name(_temp), x, y, key);
+               total ++;
+temp1 += ({ _temp });
+           }
+           size = sizeof(temp1);
+           for(int i=0;i<size;i++)
+           {
+               object* new_temp = copy(temp1[i]);
+               if ( sizeof(({new_temp}) & bak_room) ) {
+                   temp1[i] = 0;
+               }
+           }
+   temp1 = filter(temp1,(: $1 != 0 :));
+           bak_room += temp1;
+           temp += temp1;
+temp1 = ({});
+       } 
+       a++;
+   } 
+   return all_rooms;
+}
+
+protected void build_matrix(object room, string t, int x, int y, string direction)
+{
+   int exit_size,num_players,buf_size;
+   object *players;
+
+   switch (direction)
+   {
+       case "north"    : y += 2;           break;
+       case "south"    : y -= 2;           break;
+       case "west"    : x -= 2;           break;
+       case "east"    : x += 2;           break;
+       case "northwest": y += 1;x -= 1;    break;
+       case "northeast": y += 1;x += 1;    break;
+       case "southwest": y -= 1;x -= 1;    break;
+       case "southeast": y -= 1;x += 1;    break;
+       default : ;
+   }
+   check_x_y(x,y);
+   set_temp("x", x, room);
+   set_temp("y", y, room);
+   exit_size=sizeof(query("exits", room));
+   players = filter(all_inventory(room),(: interactive($1) :));
+   num_players = sizeof(players);
+
+   buf_size = exit_size + num_players + 4;
+   all_rooms[t] = allocate(buf_size);
+
+   all_rooms[t][X]= x;
+   all_rooms[t][Y]= y;
+   all_rooms[t][EXIT_SIZE] = exit_size;
+
+   for(int i = 0;i<all_rooms[t][EXIT_SIZE];i++)
+       all_rooms[t][EXIT(i)]=keys(query("exits", room))[i];
+
+   all_rooms[t][NUM_PLAYER(t)] = num_players;
+   for(int i = 0;i<all_rooms[t][NUM_PLAYER(t)];i++)
+       all_rooms[t][PLAYER(t,i)] = players[i];
+}
+
+protected object* find_path(object ob,object* rooms)
+{
+   object *temp1;
+   object temp = copy(ob);
+   temp1 = ({});
+
+   while(temp)
+   {
+       object _temp;
+       temp1 += ({temp});
+       _temp = temp;
+       temp=query_temp("father", temp);
+       delete_temp("father", _temp);
+   }
+
+   clean_path(rooms);
+   return temp1;
+}
+
+protected void clean_path(object* rooms)
+{
+   foreach(object room in rooms)
+       delete_temp("father", room);
+}
+
+protected void check_x_y(int a,int b)
+{
+   if(a > max_x) max_x = a;
+   if(b > max_y) max_y = b;
+   if(a < min_x) min_x = a;
+   if(b < min_y) min_y = b;
+}
+
+
+//gls.h
+#ifndef _H_GLS_
+#define _H_GLS_
+#endif
+
+//#define NAME          0
+#define X               0
+#define Y               1
+#define EXIT_SIZE       2
+#define LEN(n)        all_rooms[n][2]
+#define EXIT(n)        n + EXIT_SIZE + 1
+#define NUM_PLAYER(n)   LEN(n) + EXIT_SIZE + 1
+#define PLAYER(n,m)     m + NUM_PLAYER(n) + 1
+
+#define INTERRUPTION    ","
+#define CENTER_OB       "/d/city/guangchang"
+#define GLS_HOST        "localhost 8589"
+
+#define COMBINE(n,m)    n + INTERRUPTION + implode(m,INTERRUPTION)
+
+#define TYPE_MAP        0x6F //111
+#define TYPE_GET        OxDE //222

@@ -1,0 +1,233 @@
+mapping familys = ([
+
+        "武当派" : ([
+                "place" : ({ "/d/wudang/shijie1", "/d/wudang/shibapan","/d/wudang/haohanpo", 
+                             "/d/wudang/guangchang", "/d/wudang/tynroad", "/d/wudang/mozhenjing",
+                             "/d/wudang/fuzhenguan", "/d/wudang/shiliang", "/d/wudang/yuzhengong",
+                             "/d/wudang/zixiaogate", "/d/wudang/shijie2", "/d/wudang/wulaofeng",
+                             "/d/wudang/shanlu2", "/d/wudang/shibapan", "/d/wudang/tygate1", 
+                             "/d/wudang/shanlu4", "/d/wudang/shanlu3", "/d/wudang/tysroad", 
+                             "/d/wudang/shanlu1", "/d/wudang/taiziyan", }),
+                "generation" : 3,
+                "master_id" : "zhang sanfeng",
+                "master_place" : "/d/wudang/xiaoyuan",
+        ]),
+
+        "少林派" : ([
+                "place" : ({ "/d/shaolin/xiaojing1", "/d/shaolin/xiaojing2", "/d/shaolin/shijie1",
+                             "/d/shaolin/shijie2", "/d/shaolin/shijie3", "/d/shaolin/shijie4",
+                             "/d/shaolin/guangchang1", "/d/shaolin/shijie5", "/d/shaolin/shijie6", 
+                             "/d/shaolin/gulou", "/d/shaolin/smdian", 
+                             "/d/shaolin/hsyuan2", "/d/shaolin/hsyuan3", "/d/shaolin/hsyuan1", }),
+                "generation" : 37,
+                "master_id" : "xuanci dashi",
+                "master_place" : "/d/shaolin/fzlou2",
+        ]),
+
+        "丐帮" : ([
+                "place" : ({ "/d/city/ml1", "/d/city/ml2",
+                             "/d/city/ml3", "/d/city/pomiao", 
+                             "/d/gaibang/shoushe", "/d/gaibang/inhole",
+                             "/d/city/ml4", "/d/gaibang/slandao1",
+                             "/d/gaibang/slandao2", }),                 
+                "generation" : 37,
+                "master_id" : "hong qigong",
+                "master_place" : "/d/city/gbxiaowu",            
+        ]),
+        
+        "峨嵋派" : ([
+                "place" : ({ "/d/emei/qianfoan", "/d/emei/qingyinge", 
+                             "/d/emei/yunufeng", "/d/emei/woyunan", 
+                             "/d/emei/shierpan3", "/d/emei/qsjie1", 
+                             "/d/emei/xiaolu1",
+                             "/d/emei/wanxingan", }),
+                "generation" : 37,
+                "master_id" : "miejue shitai", 
+                "master_place" : "/d/emei/hcahoudian",
+        ]),
+
+        "星宿派" : ([
+                "place" : ({ "/d/xingxiu/xxroad1", "/d/xingxiu/riyuedong", 
+                             "/d/xingxiu/xxh6", "/d/xingxiu/xxh5", "/d/xingxiu/xxh4", 
+                             "/d/xingxiu/xxh1", "/d/xingxiu/xxh2", "/d/xingxiu/xxh3", 
+                             "/d/xingxiu/xxh4", "/d/xingxiu/shanjiao", }),
+                "generation" : 3,
+                "master_id" : "ding chunqiu", 
+                "master_place" : "/d/xingxiu/riyuedong",
+        ]),
+        
+        "华山派" : ([
+                "place" : ({ "/d/huashan/yunu", "/d/huashan/square", 
+                             "/d/huashan/zhenyue", "/d/huashan/pingxinshi",
+                             "/d/huashan/yuquan", "/d/huashan/chaoyang", 
+                             "/d/huashan/husun", "/d/huashan/shaluo", 
+                             "/d/huashan/pingdi", "/d/huashan/canglong", }),
+                "generation" : 14,
+                "master_id" : "yue buqun", 
+                "master_place" : "/d/huashan/qunxianguan",
+        ]),
+
+        "段氏皇族" : ([
+                "place" : ({ "/d/dali/shilin1", "/d/dali/shilin2", "/d/dali/gudao",
+                             "/d/dali/road3", "/d/dali/road4", "/d/dali/road5",
+                             "/d/dali/dalinorth", "/d/dali/ershuiqiao", "/d/dali/gaolishan2", 
+                             "/d/dali/shanlu1", "/d/dali/shanlu2",
+                             "/d/dali/zoulang3", "/d/dali/zoulang4", "/d/dali/zoulang1",
+                             "/d/dali/shilin1", "/d/dali/shilin2", "/d/dali/zoulang2", }),
+                "generation" : 13,
+                "master_id" : "duan zhengming", 
+                "master_place" : "/d/dali/qiandian",
+        ]),
+        
+        "明教" : ([
+                "place" : ({ "/d/mingjiao/shanlu1", "/d/mingjiao/bshantan", "/d/mingjiao/cangshui", 
+                             "/d/mingjiao/dadian", "/d/mingjiao/eastdian", "/d/mingjiao/fangtang", 
+                             "/d/mingjiao/hsqchanglang", "/d/mingjiao/hsqdating", "/d/mingjiao/hsqmen", 
+                             "/d/mingjiao/htqdating", "/d/mingjiao/htqmen", "/d/mingjiao/jmqdating", 
+                             "/d/mingjiao/lhqdating", "/d/mingjiao/lhqlwch", "/d/mingjiao/ziweitang", 
+                             "/d/mingjiao/xingtang", "/d/mingjiao/tianweitang", "/d/mingjiao/shanlu2",}),
+                "generation" : 35,
+                "master_id" : "zhang wuji", 
+                "master_place" : "/d/mingjiao/dadian",
+        ]),
+
+        "大轮寺" : ([
+                "place" : ({ "/d/xueshan/shanjiao", "/d/xueshan/cangjing", "/d/xueshan/cangjingge",
+                             "/d/xueshan/caoyuan", "/d/xueshan/cedian1", "/d/xueshan/cedian2", 
+                             "/d/xueshan/chang", "/d/xueshan/chanshi", "/d/xueshan/dadian",  
+                             "/d/xueshan/dilao", 
+                             "/d/xueshan/hubian1", "/d/xueshan/hubian2", "/d/xueshan/hubian3", 
+                             "/d/xueshan/kufang", "/d/xueshan/midao", "/d/xueshan/mishi", }),
+                "generation" : 3,
+                "master_id" : "jinlun fawang", 
+                "master_place" : "/d/xueshan/neidian",                
+        ]),
+
+        "全真教" : ([
+                "place" : ({ "/d/quanzhen/cetang", "/d/quanzhen/huizhentang", "/d/quanzhen/shijianyan",
+                             "/d/quanzhen/damen", "/d/quanzhen/guozhendian", "/d/quanzhen/xianzhentang",
+                             "/d/quanzhen/datang1", "/d/quanzhen/datang2", "/d/quanzhen/datang3",
+                             "/d/quanzhen/houtang1", "/d/quanzhen/houtang2", "/d/quanzhen/houtang3", 
+                             "/d/quanzhen/houshan", "/d/quanzhen/xiaolu1", "/d/quanzhen/xiaolu2",}),
+                "generation" : 6, 
+                "master_id" : "wang chongyang", 
+                "master_place" : "/d/quanzhen/shandong",
+        ]),
+
+        "古墓派" : ([ 
+                "place" : ({ "/d/gumu/liangong3", "/d/gumu/liangong2", "/d/gumu/liangong",
+                             "/d/gumu/zhengting", "/d/gumu/houting", "/d/gumu/xiaoting",
+                             "/d/gumu/qianting", "/d/gumu/xiaoting", "/d/gumu/mumen", 
+                             "/d/gumu/mumen", "/d/gumu/caodi", "/d/gumu/caodi2", }),
+                "generation" : 5, 
+                "master_id" : "xiao longnv", 
+                "master_place" : "/d/gumu/zhengting",
+        ]),
+
+        "灵鹫宫" : ([
+                "place" : ({ "/d/lingjiu/xianchou", "/d/lingjiu/dadao1", "/d/lingjiu/dadao2",
+                             "/d/lingjiu/changl15", "/d/lingjiu/changl6", "/d/lingjiu/dating",
+                             "/d/lingjiu/changl7", "/d/lingjiu/changl8", "/d/lingjiu/changl4",
+                             "/d/lingjiu/changl3", "/d/lingjiu/daban", "/d/lingjiu/men2",
+                             "/d/lingjiu/changl9", "/d/lingjiu/men1", "/d/lingjiu/changl1",
+                             "/d/lingjiu/huayuan", "/d/lingjiu/xiaodao1", "/d/lingjiu/xiaodao2",}),
+                "generation" : 5, 
+                "master_id" : "xuzhu zi", 
+                "master_place" : "/d/lingjiu/dating",
+        ]), 
+
+        "欧阳世家" : ([
+                "place" : ({ "/d/baituo/houyuan", "/d/baituo/tuyuan", "/d/baituo/zhuyuan",
+                             "/d/baituo/shoushe", "/d/baituo/menlang", "/d/baituo/huayuan",
+                             "/d/baituo/damen", "/d/baituo/yuanzi", "/d/baituo/dating", 
+                             "/d/baituo/liangong", "/d/baituo/ximen", "/d/baituo/guangchang",}), 
+                "generation" : 3, 
+                "master_id" : "ouyang feng", 
+                "master_place" : "/d/baituo/dating",
+        ]), 
+
+        "桃花岛" : ([
+                "place" : ({ "/d/taohua/wofang", "/d/taohua/hyjuchu", "/d/taohua/changlang2", 
+                             "/d/taohua/changlang", "/d/taohua/shuilong", "/d/taohua/jingshe",
+                             "/d/taohua/haitan", "/d/taohua/tuqiu", "/d/taohua/zhulin",
+                             "/d/taohua/road1", "/d/taohua/xiangzhong", "/d/taohua/taolin",
+                             "/d/taohua/road2", "/d/taohua/road3", "/d/taohua/road4",}),
+                "generation" : 10,
+                "master_id" : "huang yaoshi", 
+                "master_place" : "/d/taohua/dating",
+        ]),
+
+        "血刀门" : ([
+                "place" : ({ "/d/xuedao/sroad7", "/d/xuedao/sroad8", "/d/xuedao/shandong1", 
+                             "/d/xuedao/wangyougu", "/d/xuedao/sroad9", "/d/xuedao/shandong2",
+                             "/d/xuedao/shandong3", }),
+                "generation" : 3,
+                "master_id" : "xuedao laozu", 
+                "master_place" : "/d/xuedao/shandong3",
+        ]),
+
+        "关外胡家" : ([
+                "place" : ({ "/d/guanwai/caoguduo", "/d/guanwai/baihe", "/d/guanwai/xiaoyuan", 
+                             "/d/guanwai/milin1", "/d/guanwai/xiaowu", "d/guanwai/houyuan",
+                             "/d/guanwai/liangonge", "/d/guanwai/liangong", "/d/guanwai/jingxiu",}),
+                "generation" : 4,
+                "master_id" : "hu fei", 
+                "master_place" : "/d/guanwai/xiaowu",
+        ]),
+
+        "神龙教" : ([
+                "place" : ({ "/d/shenlong/zoulang", "/d/shenlong/zhulin", "/d/shenlong/jushi", 
+                             "/d/shenlong/road2", "/d/shenlong/road", "/d/shenlong/kongdi",
+                             "/d/shenlong/xiaowu", "/d/shenlong/caodi", "/d/shenlong/haitan",}),
+                "generation" : 3,
+                "master_id" : "hong antong", 
+                "master_place" : "/d/shenlong/dating",
+        ]),
+
+        "慕容世家" : ([
+                "place" : ({ "/d/yanziwu/shuwu", "/d/yanziwu/lanyue", "/d/yanziwu/shuwu", 
+                             "/d/yanziwu/zuijing", "/d/yanziwu/canheju", "/d/yanziwu/qiushuan",
+                             "/d/yanziwu/huayuan", "/d/yanziwu/jiashan", "/d/yanziwu/jiashan",
+                             "/d/yanziwu/longfeng", "/d/yanziwu/yimen", "/d/yanziwu/dannuo",
+                             "/d/yanziwu/cuixia", "/d/yanziwu/chuantang", "/d/yanziwu/lixiang",}),
+                "generation" : 8,
+                "master_id" : "murong bo", 
+                "master_place" : "/d/yanziwu/canheju",
+        ]),
+
+        "逍遥派" : ([
+                "place" : ({ "/d/xiaoyao/mubanlu", "/d/xiaoyao/liangong", "/d/xiaoyao/xiaodao4", 
+                             "/d/xiaoyao/muwu1", "/d/xiaoyao/xiaodao5", "/d/xiaoyao/qingcaop",
+                             "/d/xiaoyao/muwu2", "/d/xiaoyao/xiaodao3", "/d/xiaoyao/xiaodao1",
+                             "/d/xiaoyao/xiaodao2", "/d/xiaoyao/wuchang2", "/d/xiaoyao/bingqif",}),
+                "generation" : 10,
+                "master_id" : "su xinghe", 
+                "master_place" : "/d/xiaoyao/qingcaop",
+        ]),
+
+        "华山剑宗" : ([ 
+                "place" : ({ "/d/huashan/jzroad1", "/d/village/hsroad2", "/d/huashan/jzroad1", 
+                             "/d/huashan/jzroad2", "/d/huashan/jzroad3", "/d/huashan/jzroad4",  
+                             "/d/huashan/jzroad5", "/d/huashan/jzroad6", "/d/huashan/shangu",}),  
+                "generation" : 3, 
+                "master_id" : "feng buping", 
+                "master_place" : "/d/huashan/xiaowu",
+        ]),
+        "唐门世家" : ([ 
+                "place" : ({ "/d/tangmen/ximen", "/d/tangmen/xdajie", "/d/tangmen/zhongxin", 
+                             "/d/tangmen/bdajie1", "/d/tangmen/bdajie2", "/d/tangmen/ndajie",  
+                             "/d/tangmen/edajie",}),  
+                "generation" : 3, 
+                "master_id" : "tang laotai", 
+                "master_place" : "/d/tangmen/tangltt",
+        ]),
+        
+        "日月神教" : ([ 
+                "place" : ({ "/d/heimuya/linjxd1", "/d/heimuya/guang", "/d/heimuya/linjxd2", 
+                             "/d/heimuya/shidao1", "/d/heimuya/shidao2", "/d/heimuya/xingxingtan",  
+                             "/d/heimuya/changtan",}),  
+                "generation" : 3, 
+                "master_id" : "dongfang bubai", 
+                "master_place" : "/d/heimuya/neishi",
+        ]),        
+]);

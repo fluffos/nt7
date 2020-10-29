@@ -1,0 +1,22 @@
+
+        upper_case()
+
+        名称：
+                upper_case() 返回将字符串转换为大写
+
+        语法：
+                string upper_case(string);
+                字符串 upper_case(字符串)
+
+        用法：
+                返回将参数字符串转换为大写后的字符串。
+                （原字符串没有改变）
+
+        这个函数需要在 options 文件里定义了 PACKAGE_CONTRIB .
+
+        参考：
+                capitalize,
+                lower_case
+
+        by 发现号(Find@tx)
+

@@ -1,0 +1,16 @@
+subject : 面具（易容术）
+author_name : 薇大呆
+author_id : vivi
+time : 1207566930
+board : 薇大呆的留言板
+file : /data/analecta/2008/94423833.txt
+add_time : 1211023015
+content :
+从襄阳南边的青石大道开始走｛nw;w;sw;w;se;s;su;s｝就来到林中小路，
+注意路上有土匪和喽罗会自动kill的，百变道人张三就在这□，
+kill zhang san，get all from corpse
+就可以得到面具和几两黄金，当然要一些武功才能把他杀死，
+请注意，张三会四处走动的，拿到面具后如果会易容术100级以上就可以易容了，
+命令是pretend 物件。
+没有"驻棭"这个特殊技能的人到了60岁就不能用面具来易容了
+[2;37;0m

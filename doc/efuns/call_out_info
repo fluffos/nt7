@@ -1,0 +1,19 @@
+
+
+        call_out_info(3)        MudOS v21c2             (5 Sep 1994)
+
+        名称:
+                call_out_info() - 取得延迟中的 call_out() 资讯.
+        语法:
+                mixed *call_out_info( void );
+        用法:
+                取得所有使用 call_out() 呼叫而延迟中的函式呼叫资讯.
+                这会传回一个阵列, 每一项有四个元素 (element):
+                物件 (object), 函数 (function), 延迟时间 (the delay
+                to go), 选择的参数 (the optional argument).
+        参考:
+                call_out(3), remove_call_out(3)
+        翻译:
+                Spock @ FF      96.Oct.16.              (printed 3/16/95)
+
+

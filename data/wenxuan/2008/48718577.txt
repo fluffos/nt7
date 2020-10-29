@@ -1,0 +1,16 @@
+subject : 独孤剑冢
+author_name : 薇大呆
+author_id : vivi
+time : 1206624626
+board : 薇大呆的留言板
+file : /data/analecta/2008/48718577.txt
+add_time : 1211022923
+content :
+第一段：
+rideto xiangyang;#2 e;#3 n;#2 w;#3 n;w;#3 s;#6 wu;#4 {ed;wu}
+
+有时候最后的ed,wu可能要多重复几次，所以在此分段。
+
+第二段：
+l xiaowu;enter muwu;zhao 枯树枝;out;l shanlu;climb shanlu;sw;nw;e;sw;#2 se;ne;#wa 2000;n;sw;w;s;n;sw;se;w;#2 nw;enter;use huoshi;l tai;ca qingtai;l bi;l mu;#wa 2000;kneel mu;move stone;zuan shifeng;n;#10 l shitai;#4 climb shitai;move stone;get all
+[2;37;0m

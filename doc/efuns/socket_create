@@ -1,0 +1,69 @@
+
+     socket_create(3)       MudOS (5 Sep 1994)        socket_create(3)
+
+     名称：
+          socket_create() - 建立一个 efun socket
+
+     语法：
+          #include 
+
+          int socket_create( int mode, string read_callback,
+                             void | string close_callback );
+
+          整数 socket_create( 整数 mode, 字串 read_callback,
+                              无参数 | 字串 close_callback );
+
+     用法：
+          socket_create() 建立一个 efun socket。mode 决定了要建立哪种
+          型态的 socket。目前支援的 socket 型态有：
+
+          MUD         以 TCP 协定传送 LPC 资料。
+
+          STREAM      以 TCP 协定传送原始资料。
+
+          DATAGRAM    以 UDP 协定传送资料。
+
+          read_callback 这个参数是给驱动程式在 socket 由对方接到资料时
+          呼叫用的函式名称。这个读取回呼(callback)函式应该是如下格式：
+
+               void read_callback(int fd, mixed message)
+
+          这里的 fd 是接收资料的 socket，而 message 是接收到的资料。
+
+          close_callback 这个参数是给驱动程式在 socket 不正常关闭时
+          呼叫的函式名称，如不同於 socket_close() 的呼叫结果。这个关
+          闭回呼函式应该是如下格式：
+
+               void close_callback(int fd)
+
+          这里的 fd 是已被开闭的 socket。注意：close_callback 不能用
+          在 DATAGRAM 型态的 socket 上。
+
+     传回值：
+          socket_create() 传回：
+
+               成功时是一个非负的描述值(descriptor)。
+
+               失败时是一个下列意义的负值。
+
+     错误值：
+          EEMODENOTSUPP  不支援此 socket 型态。
+
+          EESOCKET       建立 socket 的问题。
+
+          EESETSOCKOPT   setsockopt 的问题。
+
+          EENONBLOCK     设定非停滞(non-blocking)模式的问题。
+
+          EENOSOCKS      没有多馀的 efun sockets。
+
+          EESECURITY     企图违反安全。
+
+     参照：
+          socket_accept(3), socket_bind(3), socket_close(3),
+          socket_connect(3), socket_listen(3), socket_write(3)
+
+     翻译：
+          Kenny@Broken.History       97.Jul.26       (printed 3/16/95)
+
+

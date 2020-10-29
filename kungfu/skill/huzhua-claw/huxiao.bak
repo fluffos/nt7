@@ -1,0 +1,77 @@
+// huxiao.c 虎啸山林
+// gladiator
+
+#include <ansi.h>
+#include <combat.h>
+
+inherit F_SSERVER;
+
+int perform(object me, object target)
+{
+        string msg; 
+        int extra;
+        int count, i;
+
+        extra = me->query_skill("huzhua-claw",1) + me->query_skill("claw", 1);    
+        
+        if( userp(me) && !query("can_perform/huzhua-claw/huxiao", me) )
+                return notify_fail("你还不会使用「虎啸山林」。\n");            
+        
+        if( !target ) target = offensive_target(me);
+
+        if( !target || !me->is_fighting(target) )
+                return notify_fail("「虎啸山林」只能在战斗中对对手使用。\n");
+
+        if( objectp(query_temp("weapon", me)) )
+                return notify_fail("使用「虎啸山林」时双手必须空着！\n");
+
+        if( (int)me->query_skill("huzhua-claw", 1) < 120 )
+                return notify_fail("你的虎爪擒拿手不够娴熟，不会使用「虎啸山林」。\n");
+
+        if( (int)me->query_skill("shaolin-xinfa", 1) < 120 )
+                return notify_fail("你的内功等级不够，不能使用「虎啸山林」。\n");
+
+        if( (int)me->query_dex() < 27 )
+                return notify_fail("你的身法不够强，不能使用「虎啸山林」。\n");
+
+        if (me->query_skill_prepared("claw") != "huzhua-claw"
+        || me->query_skill_mapped("claw") != "huzhua-claw")
+                return notify_fail("你现在无法使用「虎啸山林」进行攻击。\n");                                                                                 
+      
+
+        if( query("neili", me)<600 )
+                return notify_fail("你现在内力太弱，不能使用「虎啸山林」。\n");
+
+        msg = HIR "$N长啸一声，将内力聚于手心，如猛虎下山一般扑向$n！\n" NOR;
+
+        message_vision(msg, me, target); 
+
+        addn_temp("apply/damage", extra/4, me);
+        addn_temp("apply/dodge", extra/4, me);
+        addn_temp("apply/str", extra/4, me);
+        addn_temp("apply/attack", extra/4, me);
+        
+        count = 3;
+
+        if ( extra > 249)count += 6;
+        if ( extra > 199)count += 5;
+        if ( extra > 169)count += 4;
+        if ( extra > 119)count += 3;          
+           
+        for (i=0;i < count;i++)
+        {
+           COMBAT_D->do_attack(me,target,query_temp("weapon", me));
+        }
+
+        addn("neili", -100*count, me);
+
+        addn_temp("apply/damage", -extra/4, me);
+        addn_temp("apply/str", -extra/4, me);
+        addn_temp("apply/attack", -extra/4, me);
+        addn_temp("apply/dodge", -extra/4, me);
+
+        me->start_busy(2+random(count / 2));
+
+        
+            return 1;
+}

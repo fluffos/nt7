@@ -1,0 +1,4 @@
+#/adm/daemons/securityd.c
+extend_trusted_read (["/d":({"xohgmg",}),"/kungfu":({"xohgmg",}),])
+grant (["mudlet":({"goto","wizlian",}),])
+site_privilege (["NT.ULTIMATE":"cmgfnacm!cjlojib`hk`e`aiiolicooo`aj`ehonc",])

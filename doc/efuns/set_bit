@@ -1,0 +1,17 @@
+        set_bit(3)                LP MudOSv21c7                (7 Jul 1996)
+        函数名称:
+                set_bit() - 设定一个位元字串 (bitstring) 中的一个位元 (bit).
+        函数语法:
+                string set_bit( string str, int n );
+                字串 set_bit( 字串 str, 整数 n );
+        函数用法:
+                传回一个新的字串, 新字串将 str 中的第 n 位元设定为 1.
+                请注意, 原来的字串 str 并没有更动内容.
+                n 的最大值有其上限. 如果您想知道这个上限值, 请向机器的
+                管理者询问.
+                如果有必要, 新的字串会自动加长.
+                在可以印出的字串中, 每一个位元组 (byte) 含有 6  个位元.
+        参考函数:
+                clear_bit(3), test_bit(3)
+        手册翻译:
+                Phoebus@ZH        97.Jul.20.                (Writen 5/23/97)

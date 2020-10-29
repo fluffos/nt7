@@ -1,0 +1,18 @@
+
+名称：
+        fetch_variable() - 传回一个变数的值。
+语法：
+        mixed fetch_variable( string arg, object ob );
+
+        混合 fetch_variable( 字串 变数, 物件 );
+用法：
+        传回变数 arg 的值，注意变数 arg 必须已被定义在该 ob 上。
+        
+        注意：使用此 efun 必需在 options file 中先定义 PACKAGE_CONTRIB。
+参考：
+        restore_variable, store_variable, restore_object
+作者：
+        Tim Hollebeek  Beek@ZorkMUD, Lima Bean, IdeaExchange, and elsewhere
+翻译：
+        lonely@muds.cn 翻译          2011.Oct.2.    v22 版
+

@@ -1,0 +1,10 @@
+# quest list
+supply                  # 提供武器/防具的任务
+explore                 # 搜寻宝物的任务
+search                  # 待NPC找物品的任务
+judge                   # 单正排解纠纷的任务
+shen                    # 杀人加神的任务
+deliver                 # 寻人的任务
+trace                   # 送货的任务
+capture                 # 六大门派的任务
+# defend                  # 六大门派的任务

@@ -1,0 +1,72 @@
+#  Spring rainny day phase
+#  The definition of day phase
+#  Format:
+#       length          length of the phase in seconds
+#       time_msg        msg sent to outdoors user at phase starts
+#       desc_msg        desc looked during the period before next phase
+#       event_fun       the function is called in NATURE_D at the phase starts
+#
+#  Phase starts at 0:00 every day
+#
+#  Note the length of a phase is in minutes of a day.
+#
+
+# The two lines defines the data format in 2 lines as
+#
+#  field1:field2:field3....
+#  format1:format2:format3....
+#
+
+hour:time_msg:desc_msg:event_fun:outcolor
+%d:%s:%s:%s:%s
+
+# The following lines are data, each non-blank line will fill in each field
+# in each record sequently.
+
+0
+已经是午夜了，星星眨着眼，万籁俱寂。四处不知名的虫鸣时而响起。
+夜幕低垂，天上飘着如絮的云朵
+event_midnight
+$BLU$
+
+3
+东方发白了，浓浓的云层就压在东方地平线上。
+东方的天空飘着灰蒙蒙的云层
+event_dawn
+$HIC$
+
+6
+太阳升起来了，躲在云层后面呼呼地喘着气。
+太阳从东方升起来了
+event_sunrise
+$HIW$
+
+9
+天黑了下来，乌云在你头顶上翻滚着。
+乌云压日，一场暴雨就要来了
+event_morning
+$HIB$
+
+12
+一道电光撕裂了长空，狂风暴雨一下倾泻如注，你一时成了落汤鸡。
+雷鸣电闪，狂风骤雨无情地抽打着大地
+event_noon
+$HIW$
+
+15
+风停雨住，太阳重新露出了笑脸，在西边的天空中发射着金色的光芒。
+太阳正高挂在西方的天空中
+event_afternoon
+$HIY$
+
+18
+傍晚了，西方的云朵火红一片，点缀在如洗的天空上。
+一轮火红的夕阳正徘徊在西方的地平线上
+event_evening
+$HIR$
+
+21
+夜幕振翼而来，顷刻铺天盖地降临了。
+夜幕笼罩著大地
+event_night
+$HIB$

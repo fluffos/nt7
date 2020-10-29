@@ -1,0 +1,19 @@
+id=wang chongyang
+gender=男性
+long=他就是全真教的开山祖师、首代掌教王重阳王真人。他白须飘飘，宽袍缓袖，眉目清癯，颇有些仙风道骨的味道。他本来一腔热血欲报效国家力抗金兵，可惜朝廷腐败，于是便心灰意冷，兼此时又从道德经中悟得了天地万物滋生的大道，从而一心向武，全力开创全真教。
+family=全真教
+difficult=16
+basic_exp=3000000000
+limit_exp=27000000000
+death_msg=得道之人，身在凡而心在圣境矣！今之人，欲永不死，而离凡世者，大愚不达道理也！
+chatmsg=儒门释户道相通，三教从来一祖风。吾虽归于，道已随风，不虚此生了。
+advance_skill=xiantian-gong
+basic_skill=unarmed
+stunt_name=先天功乾阳剑气
+stunt_msg=霎时只见$N" HIY "逆运" HIW "先天真气" HIY "，化为" HIR 纯阳内劲" HIY "聚于指尖，以一阳指诀手法疾点$n" HIY "全身诸多要穴。\n" NOR
+stunt_hit=HIR "$n" HIR "只觉全身一热，$P" HIR "「" HIW "先天功" HIR "乾阳" HIY "剑气" HIR "」顿时破体而入，便似身置洪炉，喷出一口鲜血。\n" NOR 
+stunt_fail=CYN "$n" CYN "见$N" CYN "这指来势汹涌，不敢轻易招架，当即飞身纵跃闪开。\n" NOR
+rewards=exp:120000,pot:24000,mar:1200,gold:20
+drops=/clone/tessera/rune27:30,/clone/goods/tianshi-charm:70,/clone/book/xiantian-miyao:10
+
+先天功秘要(xiantian-miyao):中神通王重阳在弥留之际，携师弟周伯通造访天南，名为与南帝段智兴切磋技艺，实则是传授其先天功，为克制欧阳峰，使西毒不得独尊。为顾全南帝身份，方言及以一阳指诀交换。可在王重阳仙逝之前，已发现一阳指的莫大威力隐与先天功有相互印证之处，遂以当时极高的武道修养，创出此招“先天功乾阳剑气”，此招威力巨大，留待后世全真和南帝一脉参悟。

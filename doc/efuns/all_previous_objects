@@ -1,0 +1,10 @@
+        函数名称:
+                all_previous_objects() - 传回所有呼叫目前函式的物件阵列.
+        函数语法:
+                object *all_previous_objects();
+        函数用法:
+                传回一个所有呼叫目前函式的物件阵列 (an array of object).
+                注意, 区域函式 (local function) 的呼叫不会更动目前的物件
+                (current object) previous_object()  的内容.
+        参考函数:
+                call_other(3), call_out(3), origin(3), previous_object(3)

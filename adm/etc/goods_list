@@ -1,0 +1,226 @@
+天师护身符:tianshi:3:object:/clone/goods/tianshi-charm:带在身上可以让死亡无损失，红名状态除外，消耗品
+魔法面具:mask:300:object:/clone/goods/mask:戴上它别人无法对你下任何指令，起到保护自己的作用
+寰宇天晶:tianjing:40:object:/clone/goods/tianjing:启灵装备或打造装备的材料
+无名之物:noname:60:object:/clone/goods/noname:启灵装备或打造装备的材料
+无名之物加强型:noname2:80:object:/clone/goods/noname2:打造装备的顶级材料，已经注入了3000级有效内功的功力，所以不需要再HELP铸造
+欧冶子圣符:ouyezi:90:object:/clone/goods/ouyezi-charm:欧冶子圣符可以将普通自造装备升级(upd)为准10LV状态(包括兵器和防具)
+紫金勋章箱子:xunzhang:30:object:/clone/goods/xunzhang_xiang:可以随机开出紫金学习勋章、紫金汲取勋章、紫金练习勋章、紫金研究勋章以及钻石研究勋章中一个
+紫金读书勋章:study:20:medal:/clone/medal/study-emblem:提升每次读书次数300
+紫金学习勋章:learn:40:medal:/clone/medal/learn-emblem:提升每次学习次数300
+紫金汲取勋章:derive:50:medal:/clone/medal/derive-emblem:提升每次汲取一倍速度
+紫金练习勋章:practice:50:medal:/clone/medal/practice-emblem:提升每次练习次数300
+紫金研究勋章:research:60:medal:/clone/medal/research-emblem:提升每次研究次数300
+钻石研究勋章:research2:98:medal:/clone/medal/research-emblem2:提升每次研究次数500
+下线保留物品:quitsave:10:srv:/clone/goods/service:三个月内对所有物品都允许下线保留(包括包裹里物品)
+离线原地登陆:startroom:10:srv:/clone/goods/service:半年内从离线原地登陆，副本迷宫区域除外
+如意乾坤袋增容:qiankun:30:srv:/clone/goods/service:如意乾坤袋增容200个格子，可购买3个，超过3个购买无效
+九头蛇领地权4小时:jiutoushe_4:6:srv:/clone/goods/service:购买4小时的时间可自由进入神龙岛南部九头蛇领地或九头蛇副本
+九头蛇领地权12小时:jiutoushe_12:18:srv:/clone/goods/service:购买12小时的时间可自由进入神龙岛南部九头蛇领地或九头蛇副本
+九头蛇领地权:jiutoushe:218:srv:/clone/goods/service:购买一周时间可自由进入神龙岛南部九头蛇领地或九头蛇副本
+电击成功:lighting:20:story:con:加先天根骨的故事,只可购买一次
+凤舞成功:feng:20:story:dex:加先天身法的故事,只可购买一次
+日炽成功:sun:20:story:str:加先天臂力的故事,只可购买一次
+圣沐成功:water:20:story:int:加先天悟性的故事,只可购买一次
+干将圣符:ganjiang:1:symbol:/adm/npc/obj/ganjiang-symbol:可将装备及勋章设置为可SUMMON属性
+莫邪圣符:moye:1:symbol:/clone/goods/moye-symbol:可将普通道具设置为下线不掉属性
+如鬼似魅:agile:10:special:/kungfu/special/accuracy:先天技能，最多可购买八个
+杀气冲霄:hatred:10:special:/kungfu/special/hatred:先天技能，最多可购买八个
+玄黄聚纳:mystery:10:special:/kungfu/special/mystery:先天技能，最多可购买八个
+天神降世:power:10:special:/kungfu/special/power:先天技能，最多可购买八个
+小周天运转:self:10:special:/kungfu/special/self:先天技能，最多可购买八个
+鬼话连篇:trick:10:special:/kungfu/special/trick:先天技能，最多可购买八个
+天颜永驻:youth:10:special:/kungfu/special/youth:先天技能，最多可购买八个
+狂暴之力:might:10:special:/kungfu/special/might:先天技能，最多可购买八个
+八面玲珑:cunning:10:special:/kungfu/special/cunning:先天技能，最多可购买八个
+天赋聪颖:clever:10:special:/kungfu/special/clever:先天技能，最多可购买八个
+铜皮铁骨:ironskin:10:special:/kungfu/special/ironskin:先天技能，最多可购买八个
+新人大礼包:newbie:15:package:/clone/goods/package:礼包里有玄黄20、九转20、天香20、菩提子50、玉清散1000、三丹各20个、双倍经验6小时和1万两黄金等
+文曲星礼包:wisdom:180:package:/clone/goods/package:礼包里有文曲星7件套装，+240%的学习、研究等效果，同时加200后天悟性
+月度会员:monthcard:12:card:/clone/goods/card:会员月卡，不可转让给其他的角色
+季度会员:seasoncard:30:card:/clone/goods/card:会员季卡，不可转让给其他的角色
+年度会员:yearcard:100:card:/clone/goods/card:会员年卡，不可转让给其他的角色
+#终身会员:forevercard:280:card:/clone/goods/card:会员终身卡，不可转让让给其他的角色
+更名卷轴:changeid:20:object:/adm/npc/obj/idname-scroll:可以使自造装备改变代号(id)和中文名(name)的更名卷轴
+上古·太虚:taixu:10:enchase:/clone/goods/taixu:金属性终极镶嵌10LV物品
+上古·虎魄:hupo:10:enchase:/clone/goods/hupo:木属性终极镶嵌10LV物品
+玄冰·寒铁:hantie:10:enchase:/clone/goods/hantie:水属性终极镶嵌10LV物品
+地心·噬魂:shihun:10:enchase:/clone/goods/shihun:火属性终极镶嵌10LV物品
+九地·玄玉:xuanyu:10:enchase:/clone/goods/xuanyu:土属性终极镶嵌10LV物品
+九幽·神魔:shenmo:10:enchase:/clone/goods/shenmo:魔属性终极镶嵌10LV物品
+菩提子:putizi:1:object:/clone/gift/puti-zi:可增加最大内力100-129点，数量20个
+九转金丹:jiuzhuan:1:object:/clone/gift/jiuzhuan:可增加所有先天前4点丹，数量10个,
+玉清散:yuqingsan:1:object:/clone/medicine/yuqing:可增加最大精力5-6点，数量120包
+天香玉露:tianxiang:1:object:/clone/gift/tianxiang:参考help item，数量10个
+玄黄紫清丹:xuanhuang:1:object:/clone/gift/xuanhuang:参考help item，数量5个
+#召神香:xiang:10:object:/d/reborn/obj/xiang:转世时召唤五岳府君用的
+日魂:rihun:1:object:/clone/goods/sun:用来附魔属性镶嵌自造兵器类和空手兵器类的宝石
+月魄:yuepo:1:object:/clone/goods/moon:用来附魔属性镶嵌自造防具类的宝石
+附魔卷轴:enchant:1:object:/clone/goods/enchant-scroll:用来附魔时候防止普通装备的破裂，消耗品
+符文箱子:fuwen:8:object:/clone/goods/fuwen_xiang:可以随机开出rune01到rune20中的一个
+太皇黄曾符:rune01:5:symbol:/clone/tessera/rune01:可镶嵌在装备上,详细参考help rune
+太明玉完符:rune02:5:symbol:/clone/tessera/rune02:可镶嵌在装备上,详细参考help rune
+清明何童符:rune03:5:symbol:/clone/tessera/rune03:可镶嵌在装备上,详细参考help rune
+玄胎平育符:rune04:5:symbol:/clone/tessera/rune04:可镶嵌在装备上,详细参考help rune
+元明文举符:rune05:5:symbol:/clone/tessera/rune05:可镶嵌在装备上,详细参考help rune
+七曜摩夷符:rune06:10:symbol:/clone/tessera/rune06:可镶嵌在装备上,详细参考help rune
+虚无越衡符:rune07:10:symbol:/clone/tessera/rune07:可镶嵌在装备上,详细参考help rune
+太极蒙翳符:rune08:10:symbol:/clone/tessera/rune08:可镶嵌在装备上,详细参考help rune
+赤明和阳符:rune09:10:symbol:/clone/tessera/rune09:可镶嵌在装备上,详细参考help rune
+玄明恭华符:rune10:10:symbol:/clone/tessera/rune10:可镶嵌在装备上,详细参考help rune 
+耀明宗飘符:rune11:10:symbol:/clone/tessera/rune11:可镶嵌在装备上,详细参考help rune
+竺落皇笳符:rune12:10:symbol:/clone/tessera/rune12:可镶嵌在装备上,详细参考help rune
+虚明堂曜符:rune13:10:symbol:/clone/tessera/rune13:可镶嵌在装备上,详细参考help rune
+观明端靖符:rune14:10:symbol:/clone/tessera/rune14:可镶嵌在装备上,详细参考help rune
+玄明恭庆符:rune15:15:symbol:/clone/tessera/rune15:可镶嵌在装备上,详细参考help rune
+太焕极瑶符:rune16:15:symbol:/clone/tessera/rune16:可镶嵌在装备上,详细参考help rune
+元载孔升符:rune17:15:symbol:/clone/tessera/rune17:可镶嵌在装备上,详细参考help rune
+太安皇崖符:rune18:15:symbol:/clone/tessera/rune18:可镶嵌在装备上,详细参考help rune
+显定极风符:rune19:15:symbol:/clone/tessera/rune19:可镶嵌在装备上,详细参考help rune
+始黄孝芒符:rune20:20:symbol:/clone/tessera/rune20:可镶嵌在装备上,详细参考help rune
+太黄翁重符:rune21:20:symbol:/clone/tessera/rune21:可镶嵌在装备上,详细参考help rune
+无思江由符:rune22:20:symbol:/clone/tessera/rune22:可镶嵌在装备上,详细参考help rune
+上揲阮乐符:rune23:20:symbol:/clone/tessera/rune23:可镶嵌在装备上,详细参考help rune
+无极昙誓符:rune24:20:symbol:/clone/tessera/rune24:可镶嵌在装备上,详细参考help rune
+皓庭霄度符:rune25:20:symbol:/clone/tessera/rune25:可镶嵌在装备上,详细参考help rune
+渊通元洞符:rune26:20:symbol:/clone/tessera/rune26:可镶嵌在装备上,详细参考help rune
+翰宠妙成符:rune27:20:symbol:/clone/tessera/rune27:可镶嵌在装备上,详细参考help rune
+秀乐禁上符:rune28:20:symbol:/clone/tessera/rune28:可镶嵌在装备上,详细参考help rune
+无上常融符:rune29:20:symbol:/clone/tessera/rune29:可镶嵌在装备上,详细参考help rune
+玉隆腾胜符:rune30:25:symbol:/clone/tessera/rune30:可镶嵌在装备上,详细参考help rune
+龙变梵度符:rune31:25:symbol:/clone/tessera/rune31:可镶嵌在装备上,详细参考help rune
+平育贾奕符:rune32:25:symbol:/clone/tessera/rune32:可镶嵌在装备上,详细参考help rune
+太清大赤符:rune33:25:symbol:/clone/tessera/rune33:可镶嵌在装备上,详细参考help rune
+无名小铜人:tongrenx:3:object:/clone/tongren/tongren1:可鉴定为小周天穴位铜人
+无名大铜人:tongrend:3:object:/clone/tongren/tongren2:可鉴定为大周天穴位铜人
+指定冲穴铜人:tongren:4:other:/clone/tongren/tongren:可购买指定的冲穴铜人
+研究日魂包:yj-sword:6:package:/clone/goods/sun_sword:包含3个附魔了研究效果,汲取效果,练习效果都为3%的日魂sword包
+研究日魂包:yj-blade:6:package:/clone/goods/sun_blade:包含3个附魔了研究效果,汲取效果,练习效果都为3%的日魂blade包
+研究日魂包:yj-hammer:6:package:/clone/goods/sun_hammer:包含3个附魔了研究效果,汲取效果,练习效果都为3%的日魂hammer包
+研究日魂包:yj-staff:6:package:/clone/goods/sun_staff:包含3个附魔了研究效果,汲取效果,练习效果都为3%的日魂staff包
+研究日魂包:yj-club:6:package:/clone/goods/sun_club:包含3个附魔了研究效果,汲取效果,练习效果都为3%的日魂club包
+研究日魂包:yj-whip:6:package:/clone/goods/sun_whip:包含3个附魔了研究效果,汲取效果,练习效果都为3%的日魂whip包
+研究日魂包:yj-finger:6:package:/clone/goods/sun_finger:包含3个附魔了研究效果,汲取效果,练习效果都为3%的日魂finger包
+研究日魂包:yj-hands:6:package:/clone/goods/sun_hands:包含3个附魔了研究效果,汲取效果,练习效果都为3%的日魂hands包
+研究月魄包:yj-armor:6:package:/clone/goods/moon_armor:包含3个附魔了研究效果,汲取效果,练习效果都为3%的月魄armor包
+研究月魄包:yj-boots:6:package:/clone/goods/moon_boots:包含3个附魔了研究效果,汲取效果,练习效果都为3%的月魄boots包
+研究月魄包:yj-head:6:package:/clone/goods/moon_head:包含3个附魔了研究效果,汲取效果,练习效果都为3%的月魄head包
+研究月魄包:yj-cloth:6:package:/clone/goods/moon_cloth:包含3个附魔了研究效果,汲取效果,练习效果都为3%的月魄cloth包
+研究月魄包:yj-waist:6:package:/clone/goods/moon_waist:包含3个附魔了研究效果,汲取效果,练习效果都为3%的月魄waist包
+研究月魄包:yj-wrists:6:package:/clone/goods/moon_wrists:包含3个附魔了研究效果,汲取效果,练习效果都为3%的月魄wrists包
+研究月魄包:yj-surcoat:6:package:/clone/goods/moon_surcoat:包含3个附魔了研究效果,汲取效果,练习效果都为3%的月魄surcoat包
+研究月魄包:yj-ring:6:package:/clone/goods/moon_ring:包含3个附魔了研究效果,汲取效果,练习效果都为3%的月魄ring包
+研究月魄包:yj-neck:6:package:/clone/goods/moon_neck:包含3个附魔了研究效果,汲取效果,练习效果都为3%的月魄neck包
+研究月魄包:yj-charm:6:package:/clone/goods/moon_charm:包含3个附魔了研究效果,汲取效果,练习效果都为3%的月魄charm包
+#黄梁枕:hlzhen:10:object:/d/reborn/obj/zhen:转世用于恢复前世记忆的物品
+#消戾丹:xiaolidan:5:pill:/clone/goods/xiaolidan:用于消除戾气的丹药
+双倍奖励3小时:srv01:1:srv:/clone/goods/service:增加3小时的双倍奖励时间
+双倍奖励1周时:srv02:50:srv:/clone/goods/service:增加1周时的双倍奖励时间
+高效练功3小时:srv03:1:srv:/clone/goods/service:增加3小时的高效练功时间，包括研究、汲取和练习等
+高效练功1周时:srv04:50:srv:/clone/goods/service:增加1周时的高效练功时间，包括研究、汲取和练习等
+清除死亡记录:cleardie:1:other:/clone/goods/cleardie:清除角色的死亡记录
+清除洗点记录:washgift:398:other:/clone/goods/washgift:清除洗点记录，重新获得三次洗点机会
+潜能上限:addpot:100:other:/clone/goods/addpot:增加潜能上限10000万
+体会上限:addmar:100:other:/clone/goods/addmar:增加体会上限10000万
+诡辩奇学:sophistry:100:special2:/kungfu/special/sophistry:元神技能,最多限购四个
+遁影擒踪:capture:100:special2:/kungfu/special/capture:元神技能,最多限购四个
+大力金刚:kingkong:100:special2:/kungfu/special/kingkong:元神技能,最多限购四个
+不死金身:immortal:100:special2:/kungfu/special/immortal:元神技能,最多限购四个
+武星转世:musha:100:special2:/kungfu/special/musha:元神技能,最多限购四个
+破元大法:recover:100:special2:/kungfu/special/recover:元神技能,最多限购四个
+破妄神瞳:astral:100:special2:/kungfu/special/astral:元神技能,最多限购四个
+九龙神火炉:jiulonglu:200:object:/clone/goods/jiulonglu:炼药师用来炼制丹药的顶级神器
+册马石:cemashi:20:object:/clone/goods/cemashi:可使你增加一条骑马记录点
+王者之心:wangzhe:50:object:/clone/goods/wangzhe-zhixin:用来绿化套装的必需物品
+血之禁忌:blood:1:object:/adm/npc/obj/blood-taboo:用来解除你与魔幻兽之间签订的血之盟约
+分解卷轴:resolve:1:object:/clone/goods/resolve-scroll:用来分解动态装备属性成元素粉末
+武器之魂:weapon-soul:5:object:/clone/enchase/weapon_soul6:一个完美的武器之魂，可用来启灵兵器。
+铁掌之魂:hands-soul:5:object:/clone/enchase/hands_soul6:一个完美的铁掌之魂，可用来启灵铁掌。
+指套之魂:finger-soul:5:object:/clone/enchase/finger_soul6:一个完美的指套之魂，可用来启灵指套。
+头盔之魂:head-soul:5:object:/clone/enchase/head_soul6:一个完美的头盔之魂，可用来启灵头盔。
+战甲之魂:armor-soul:5:object:/clone/enchase/armor_soul6:一个完美的战甲之魂，可用来启灵战甲。
+战衣之魂:cloth-soul:5:object:/clone/enchase/cloth_soul6:一个完美的战衣之魂，可用来启灵战衣。
+披风之魂:surcoat-soul:5:object:/clone/enchase/surcoat_soul6:一个完美的披风之魂，可用来启灵披风。
+护腕之魂:wrists-soul:5:object:/clone/enchase/wrists_soul6:一个完美的护腕之魂，可用来启灵护腕。
+腰带之魂:waist-soul:5:object:/clone/enchase/waist_soul6:一个完美的腰带之魂，可用来启灵腰带。
+战靴之魂:boots-soul:5:object:/clone/enchase/boots_soul6:一个完美的战靴之魂，可用来启灵战靴。
+项链之魂:neck-soul:5:object:/clone/enchase/neck_soul6:一个完美的项链之魂，可用来启灵项链。
+戒指之魂:ring-soul:5:object:/clone/enchase/rings_soul6:一个完美的戒指之魂，可用来启灵戒指。
+护身符之魂:charm-soul:5:object:/clone/enchase/charm_soul6:一个完美的护身符之魂，可用来启灵护身符。
+童男童女符:tntn_fu:1:symbol:/clone/fam/item/tntn_fu:一个童男童女符，用来打蛇精用的。
+指定属性元素2:element2:2:element:/inherit/template/element/element:可购买指定help element中value_2_props中包含的属性元素
+指定属性元素3:element3:3:element:/inherit/template/element/element:可购买指定help element中value_3_props中包含的属性元素
+指定属性元素5:element5:5:element:/inherit/template/element/element:可购买指定help element中value_5_props中包含的属性元素
+指定属性元素10:element10:10:element:/inherit/template/element/element:可购买指定help element中value_10_props中包含的属性元素
+能力水晶:ab-crystal:30:object:/clone/goods/ability_crystal:可将装备的镶嵌宝石属性及强化效果储存(store)起来，无损失注入(infuse)到新的装备上。
+乾坤圣水:bless_water:1:object:/clone/goods/bless_water:强化装备时候需要的物品
+鸿蒙灵气:hongmeng:80:object:/clone/goods/hongmeng-lingqi:用来提高套装等级的必需物品
+强化水晶:qianghua:200:object:/clone/goods/qianghua_crystal:装备在6星之前使用（不包括6星），可以100%强化成功，qianghua xxx with crystal
+圣灵水晶:shengling:200:object:/clone/goods/shengling_crystal:可以保证在强化装备失败时候不掉星级，带在身上即可，属于消耗品。
+绑定符:bind:10:object:/clone/goods/bind-symbol:可以用来将物品绑定自己
+解除绑定符:unbind:10:object:/clone/goods/unbind-symbol:解除物品的绑定属性
+朱雀重生:zhuque:380:special3:/kungfu/special/zhuque:图腾技能(help tuteng)，只能购买一个
+真龙天神:tianshen:380:special3:/kungfu/special/tianshen:图腾技能(help tuteng)，只能购买一个
+踏雪无痕:taxue:380:special3:/kungfu/special/taxue:图腾技能(help tuteng)，只能购买一个
+奇筋异骨:qijin:380:special3:/kungfu/special/qijin:图腾技能(help tuteng)，只能购买一个
+帝王之星:diwang:380:special3:/kungfu/special/diwang:图腾技能(help tuteng)，只能购买一个
+指定图腾碎片:tuteng:20:other:/clone/tuteng/diwang-suipian:可购买指定图腾碎片，完成南贤的图腾任务
+龙晶:longjing:18:object:/clone/goods/dragon_soul:用来重置能力点（ability）
+龙元:longyuan:30:object:/clone/goods/dragon_soul2:用来重置天赋点（talent）
+真武宝石:zhenwu:98:enchase:/clone/fam/enchase/zhenwu-baoshi2:用来镶嵌兵器包括空手武器启灵时候多出的一个槽的物品
+赤炼虎胆:hudan:98:enchase:/clone/fam/enchase/chilian-hudan2:用来镶嵌兵器包括空手武器启灵时候多出的一个槽的物品
+圣龙之魂:shenglong:98:enchase:/clone/fam/enchase/shenglong-zhihun2:用来镶嵌头盔启灵时候多出的一个槽的物品
+孔雀圣石:kongque:98:enchase:/clone/fam/enchase/kongque-shengshi2:用来镶嵌披风启灵时候多出的一个槽的物品
+碧海残镢:bihai:98:enchase:/clone/fam/enchase/bihai-canjue2:用来镶嵌腰带启灵时候多出的一个槽的物品
+流星赶月:liuxing:98:enchase:/clone/fam/enchase/liuxing-ganyue2:用来镶嵌靴子启灵时候多出的一个槽的物品
+麒麟圣火:qilin:98:enchase:/clone/fam/enchase/qilin-shenghuo2:用来镶嵌护腕启灵时候多出的一个槽的物品
+玄武圣石:xuanwu:98:enchase:/clone/fam/enchase/xuanwu-shengshi2:用来镶嵌盔甲启灵时候多出的一个槽的物品
+雪地圣音:xuedi:98:enchase:/clone/fam/enchase/xuedi-shengyin2:用来镶嵌衣服启灵时候多出的一个槽的物品
+天地日月灵珠:riyue:98:enchase:/clone/fam/enchase/tiandiriyue-zhu2:用来镶嵌盔甲启灵时候多出的一个槽的物品
+帝王符图碎片-50:futu50:198:object:/clone/goods/diwang-suipian50:用来重置你的图腾技能，指令reset <旧的> to <新的>
+紫烟锄:ziyanchu:3:object:/u/redl/obj/chutou3:大相国寺的菜地里偷菜用的工具
+金刚琉璃锄:jingangchu:6:object:/u/redl/obj/chutou4:大相国寺的菜地里偷菜用的工具
+飞刀灵符:feidao:2:object:/d/kaifeng/linggt/npc/obj/feidao:灵感塔闯关道具，多一次失败机会，三支装
+塔灵水晶:talingshuijing:1:object:/d/kaifeng/linggt/npc/obj/tlcrystal:灵感塔闯关道具，多30秒闯关时间
+芳华木:fanghuamu:30:object:/u/redl/obj/fanghuamu:一次青春靓丽的十八岁，或者30次原地复活状态全满的道具
+刑天防具套装:xt-armor7:14:module:/clone/goods/xingtian_armor:刑天9件套装中的必须部件中7件防具，刑天套装极品上古套装效果，2个小时使用权限
+刑天魔剑:xsword:2:module:/clone/goods/xingtian_sword:刑天9件套装中的选择部件之一（右手剑），刑天套装极品上古套装效果，2个小时使用权限
+刑天魔剑:xsword2:2:module:/clone/goods/xingtian_sword2:刑天9件套装中的选择部件之一（左手剑），刑天套装极品上古套装效果，2个小时使用权限
+刑天魔刀:xblade:2:module:/clone/goods/xingtian_blade:刑天9件套装中的选择部件之一（右手刀），刑天套装极品上古套装效果，2个小时使用权限
+刑天魔刀:xblade2:2:module:/clone/goods/xingtian_blade2:刑天9件套装中的选择部件之一（左手刀），刑天套装极品上古套装效果，2个小时使用权限
+刑天魔掌:xhand:2:module:/clone/goods/xingtian_hand:刑天9件套装中的选择部件之一，刑天套装极品上古套装效果，2个小时使用权限
+刑天魔指:xfinger:2:module:/clone/goods/xingtian_finger:刑天9件套装中的选择部件之一，刑天套装极品上古套装效果，2个小时使用权限
+吸灵壶:xlhu:1:object:/clone/fam/item/xiling-hu:可以吸收蓬莱仙果中蕴涵的神力
+一品血脉丹:xuemai1:1:pill:/clone/medicine/xuemai1:用来修炼提升血脉品级的血脉丹
+二品血脉丹:xuemai2:2:pill:/clone/medicine/xuemai2:用来修炼提升血脉品级的血脉丹
+三品血脉丹:xuemai3:3:pill:/clone/medicine/xuemai3:用来修炼提升血脉品级的血脉丹
+四品血脉丹:xuemai4:4:pill:/clone/medicine/xuemai4:用来修炼提升血脉品级的血脉丹
+五品血脉丹:xuemai5:5:pill:/clone/medicine/xuemai5:用来修炼提升血脉品级的血脉丹
+六品血脉丹:xuemai6:6:pill:/clone/medicine/xuemai6:用来修炼提升血脉品级的血脉丹
+七品血脉丹:xuemai7:7:pill:/clone/medicine/xuemai7:用来修炼提升血脉品级的血脉丹
+八品血脉丹:xuemai8:8:pill:/clone/medicine/xuemai8:用来修炼提升血脉品级的血脉丹
+九品血脉丹:xuemai9:9:pill:/clone/medicine/xuemai9:用来修炼提升血脉品级的血脉丹
+十品血脉丹:xuemai10:10:pill:/clone/medicine/xuemai10:用来修炼提升血脉品级的血脉丹
+日月镜:riyuejing:98:object:/clone/goods/riyue-jing:可以随时查看到游戏中的生物、玩家及NPC的位置，每次使用消耗黄金一两
+武器兑换券:tweapon:6000:srv:/clone/goods/service:从飞星阵去往天宫宝楼后，在那里可以挑选一件神器武器
+防具兑换券:tarmor:4500:srv:/clone/goods/service:从飞星阵去往天宫宝楼后，在那里可以挑选一件神器防具
+飞鸽传书:questletter:118:srv:/clone/goods/questletter:购买一周时间通过飞鸽传书，可以远程接受和放弃任务
+六帝币:liudibi:60:object:/d/dongtian/obj/liudibi:升级洞天里的阵图时，直接代替一次upg的材料。
+白玉笏:baiyuhu:200:object:/d/dongtian/obj/baiyuhu:记载洞天中水晶头颅所授的玄奥意恉。
+清师令:qingshiling:498:object:/clone/goods/qingshiling:可以清除脱离师门记录一个
+高级清师令:qingshiling2:8888:object:/clone/goods/qingshiling2:增加无损脱离门派一次机会，基本技能和公共技能不降级，内力和精力降到75%。
+盗墓勋章:daomu:398:object:/clone/medal/daomu_xunzhang:可以在秦皇陵墓里免疫被怪物busy效果。
+肉身菩提:roushen:15:object:/clone/goods/moon_hp:武器和防具的镶嵌物（无SN），增幅气血精力，提高技能等等。 
+接龙手术:mgenital:500:srv:/clone/goods/service:变成男性从此意气风发。（伴侣小孩全丢失，可能丢失特殊武功比如辟邪剑、明玉功）
+除根手术:fgenital:300:srv:/clone/goods/service:变成女性从此轻松愉快。（伴侣小孩全丢失，可能丢失特殊武功比如辟邪剑、明玉功）
+天乙神酒:tianyishenjiu:24:object:/kungfu/class/sky/obj/shenjiu:诗仙李白身上的好酒。 
+蟠桃:pantao:6:object:/d/emei/obj/pantao:据说是猴子从王母娘娘那里偷来的，增加5000的额外最大内力。
+万象天书:wanxiang:5:object:/d/dongtian/obj/wanxiangbook:包罗万象，天下武学尽在其中。
+秘魔邪眼:mimo:20:object:/clone/goods/moon_mf:武器和防具的镶嵌物（无SN），增加寻宝率、抵抗BUSY等负面状态。 
+重置最大内力:resetneili:30:srv:/clone/goods/service:最大内力重置为100。
+重置最大精力:resetjingli:30:srv:/clone/goods/service:最大精力重置为100。
+洞天元晶:dtyj:200:object:/d/dongtian/obj/yuanjing:80枚洞天元气凝结成的晶体，可以熔炼成洞天仙府令（至少能卖当铺）。
+仙隐符叶:xyfuye:15:object:/d/dongtian/obj/leaf:可以隐身2分钟的符宝，能欺骗洞天里的傀儡将等NPC。
+天地洪炉:tiandilu:800:object:/clone/goods/tiandilu:炼丹圣器，可以用菜地挖出来的低级丹药替代药材，并有几率提纯低级丹药。
+玉清丸盒装:yuqingwan:60:package:/clone/goods/package:内含一个疗程的玉清丸，二十颗，精品盒装
+金蛛:jinzhu:120:object:/u/redl/teleport/yuanjiang/npc/obj/jinzhu:私人去元江金船夺宝的钥匙。
+乾坤棋子:qiankunqi:600:srv:/clone/goods/service:每颗白棋子可以多邀请一位客人，黑棋子可以布置棋盘的down出口位置。

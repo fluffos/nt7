@@ -1,0 +1,200 @@
+天师护身符:tianshi:3:object:/clone/goods/tianshi-charm:带在身上可以让死亡无损失，红名状态除外，消耗品
+魔法面具:mask:30:object:/clone/goods/mask:戴上它别人无法对你下任何指令，起到保护自己的作用
+寰宇天晶:tianjing:60:object:/clone/goods/tianjing:打造装备材料，且提高极品几率
+无名之物:noname:98:object:/clone/goods/noname:最强的打造装备材料，且提高极品几率大
+无极圣水:wuji:50:object:/clone/goods/wuji-water:可将自造装备直接扩展为最大孔数即防具7孔兵器9孔
+玄兵圣水:bored:10:object:/clone/goods/bored-water:可将装备最大化打孔辅助物品，在打孔的时候带在身上即可
+#地藏之石:dizangshi:10:object:/clone/goods/dizangshi:制作如意乾坤袋的材料
+紫金读书勋章:study:20:object:/clone/goods/study-emblem:提升每次读书次数300
+紫金学习勋章:learn:40:object:/clone/goods/learn-emblem:提升每次学习次数300
+紫金汲取勋章:derive:50:object:/clone/goods/derive-emblem:提升每次汲取一倍速度
+紫金练习勋章:practice:50:object:/clone/goods/practice-emblem:提升每次练习次数300
+紫金研究勋章:research:60:object:/clone/goods/research-emblem:提升每次研究次数300
+钻石研究勋章:research2:98:object:/clone/goods/research-emblem2:提升每次研究次数500
+下线保留物品:quitsave:10:srv:/clone/goods/service:三个月内对所有物品都允许下线保留(包括包裹里物品)
+离线原地登陆:startroom:10:srv:/clone/goods/service:半年内从离线原地登陆，副本迷宫区域除外
+九头蛇领地权:jiutoushe:140:srv:/clone/goods/service:购买一周时间可自由进入神龙岛南部九头蛇领地
+电击成功:lighting:20:story:con:加先天根骨的故事,只可购买一次
+凤舞成功:feng:20:story:dex:加先天身法的故事,只可购买一次
+日炽成功:sun:20:story:str:加先天臂力的故事,只可购买一次
+圣沐成功:water:20:story:int:加先天悟性的故事,只可购买一次
+欧冶子圣符:ouyezi:60:symbol:/clone/goods/ouyezi-symbol:可将自造兵器设置为准10LV状态
+欧冶子金符:ouyezi-metal:15:symbol:/clone/goods/ouyezi-metal:可将自造防具设置为准开孔状态，并拥有金属性
+欧冶子木符:ouyezi-wood:15:symbol:/clone/goods/ouyezi-wood:可将自造防具设置为准开孔状态，并拥有木属性
+欧冶子水符:ouyezi-water:15:symbol:/clone/goods/ouyezi-water:可将自造防具设置为准开孔状态，并拥有水属性
+欧冶子火符:ouyezi-fire:15:symbol:/clone/goods/ouyezi-fire:可将自造防具设置为准开孔状态，并拥有火属性
+欧冶子土符:ouyezi-earth:15:symbol:/clone/goods/ouyezi-earth:可将自造防具设置为准开孔状态，并拥有土属性
+干将圣符:ganjiang:10:symbol:/adm/npc/obj/ganjiang-symbol:可将装备及勋章设置为可SUMMON属性
+如鬼似魅:agile:10:special:/kungfu/special/accuracy:先天技能，最多可拥有四个
+杀气冲霄:hatred:10:special:/kungfu/special/hatred:先天技能，最多可拥有四个
+玄黄聚纳:mystery:10:special:/kungfu/special/mystery:先天技能，最多可拥有四个
+天神降世:power:10:special:/kungfu/special/power:先天技能，最多可拥有四个
+小周天运转:self:10:special:/kungfu/special/self:先天技能，最多可拥有四个
+鬼话连篇:trick:10:special:/kungfu/special/trick:先天技能，最多可拥有四个
+天颜永驻:youth:10:special:/kungfu/special/youth:先天技能，最多可拥有四个
+新人大礼包:newbie:60:package:/clone/goods/package:礼包里有玄黄、九转、天香以及加属性的丹药和1万两黄金等
+文曲星礼包:wisdom:180:package:/clone/goods/package:礼包里有文曲星6件套装，+200%的学习、研究等效果，同时加200后天悟性
+月度会员:monthcard:12:card:/clone/goods/card:会员月卡，不可转让给其他的角色
+季度会员:seasoncard:30:card:/clone/goods/card:会员季卡，不可转让给其他的角色
+年度会员:yearcard:100:card:/clone/goods/card:会员年卡，不可转让给其他的角色
+终身会员:forevercard:280:card:/clone/goods/card:会员终身卡，不可转让让给其他的角色
+金砖:gold:1:gold:/clone/money/gold:银行存款增加10000两黄金
+金10LV兵器包:10LVmetal:150:package:/clone/goods/taixu:金属性终极10LV包，包含无名打造材料以及200级镶嵌技艺
+木10LV兵器包:10LVwood:150:package:/clone/goods/hupo:木属性终极10LV包，包含无名打造材料以及200级镶嵌技艺
+水10LV兵器包:10LVwater:150:package:/clone/goods/hantie:水属性终极10LV包，包含无名打造材料以及200级镶嵌技艺
+火10LV兵器包:10LVfire:150:package:/clone/goods/shihun:火属性终极10LV包，包含无名打造材料以及200级镶嵌技艺
+土10LV兵器包:10LVearth:150:package:/clone/goods/xuanyu:土属性终极10LV包，包含无名打造材料以及200级镶嵌技艺
+更名卷轴:changeid:20:object:/adm/npc/obj/idname-scroll:可以使自造装备改变代号(id)和中文名(name)的更名卷轴
+绑定圣符:bind:1:symbol:/clone/goods/bind-symbol:可将装备及勋章等绑定主人，死亡及下线都不掉，但是也不能给任何人了，转世会丢失
+上古·太虚:taixu:10:enchase:/clone/goods/taixu:金属性终极10LV镶嵌材料
+上古·虎魄:hupo:10:enchase:/clone/goods/hupo:木属性终极10LV镶嵌材料
+玄冰·寒铁:hantie:10:enchase:/clone/goods/hantie:水属性终极10LV镶嵌材料
+地心·噬魂:shihun:10:enchase:/clone/goods/shihun:火属性终极10LV镶嵌材料
+九地·玄玉:xuanyu:10:enchase:/clone/goods/xuanyu:土属性终极10LV镶嵌材料
+菩提子:putizi:1:object:/clone/gift/puti-zi:可增加最大内力100-129点，数量20个
+九转金丹:jiuzhuan:1:object:/clone/gift/jiuzhuan:可增加所有先天前4点丹，数量10个,
+玉清散:yuqingsan:1:object:/clone/medicine/yuqing:可增加最大精力10-11点，数量120包
+天香玉露:tianxiang:1:object:/clone/gift/tianxiang:参考help item，数量10个
+玄黄紫清丹:xuanhuang:1:object:/clone/gift/xuanhuang:参考help item，数量5个
+召神香:xiang:10:object:/d/reborn/obj/xiang:转世时召唤五岳府君用的
+镇狱惊天丸:zhenyu:15:object:/clone/fam/max/zhenyu:参考help item，只能吃一次
+子午龙甲丹:longjia:10:object:/clone/fam/max/longjia:参考help item，只能吃一次
+玄黄紫箐丹:xuanhuang2:10:object:/clone/fam/max/xuanhuang:参考help item，只能吃一次
+日魂:rihun:1:object:/clone/goods/sun:用来附魔属性镶嵌自造兵器类和空手兵器类的宝石
+月魄:yuepo:1:object:/clone/goods/moon:用来附魔属性镶嵌自造防具类的宝石
+附魔卷轴:enchant:1:object:/clone/goods/enchant-scroll:用来附魔时候防止普通装备的破裂，消耗品
+太皇黄曾符:rune01:5:symbol:/clone/tessera/rune01:可镶嵌在装备上,详细参考help rune
+太明玉完符:rune02:5:symbol:/clone/tessera/rune02:可镶嵌在装备上,详细参考help rune
+清明何童符:rune03:5:symbol:/clone/tessera/rune03:可镶嵌在装备上,详细参考help rune
+玄胎平育符:rune04:5:symbol:/clone/tessera/rune04:可镶嵌在装备上,详细参考help rune
+元明文举符:rune05:5:symbol:/clone/tessera/rune05:可镶嵌在装备上,详细参考help rune
+七曜摩夷符:rune06:10:symbol:/clone/tessera/rune06:可镶嵌在装备上,详细参考help rune
+虚无越衡符:rune07:10:symbol:/clone/tessera/rune07:可镶嵌在装备上,详细参考help rune
+太极蒙翳符:rune08:10:symbol:/clone/tessera/rune08:可镶嵌在装备上,详细参考help rune
+赤明和阳符:rune09:10:symbol:/clone/tessera/rune09:可镶嵌在装备上,详细参考help rune
+玄明恭华符:rune10:10:symbol:/clone/tessera/rune10:可镶嵌在装备上,详细参考help rune
+耀明宗飘符:rune11:10:symbol:/clone/tessera/rune11:可镶嵌在装备上,详细参考help rune
+竺落皇笳符:rune12:10:symbol:/clone/tessera/rune12:可镶嵌在装备上,详细参考help rune
+虚明堂曜符:rune13:10:symbol:/clone/tessera/rune13:可镶嵌在装备上,详细参考help rune
+观明端靖符:rune14:10:symbol:/clone/tessera/rune14:可镶嵌在装备上,详细参考help rune
+玄明恭庆符:rune15:10:symbol:/clone/tessera/rune15:可镶嵌在装备上,详细参考help rune
+太焕极瑶符:rune16:10:symbol:/clone/tessera/rune16:可镶嵌在装备上,详细参考help rune
+元载孔升符:rune17:10:symbol:/clone/tessera/rune17:可镶嵌在装备上,详细参考help rune
+太安皇崖符:rune18:10:symbol:/clone/tessera/rune18:可镶嵌在装备上,详细参考help rune
+显定极风符:rune19:10:symbol:/clone/tessera/rune19:可镶嵌在装备上,详细参考help rune
+始黄孝芒符:rune20:20:symbol:/clone/tessera/rune20:可镶嵌在装备上,详细参考help rune
+太黄翁重符:rune21:20:symbol:/clone/tessera/rune21:可镶嵌在装备上,详细参考help rune
+无思江由符:rune22:20:symbol:/clone/tessera/rune22:可镶嵌在装备上,详细参考help rune
+上揲阮乐符:rune23:20:symbol:/clone/tessera/rune23:可镶嵌在装备上,详细参考help rune
+无极昙誓符:rune24:20:symbol:/clone/tessera/rune24:可镶嵌在装备上,详细参考help rune
+皓庭霄度符:rune25:20:symbol:/clone/tessera/rune25:可镶嵌在装备上,详细参考help rune
+渊通元洞符:rune26:20:symbol:/clone/tessera/rune26:可镶嵌在装备上,详细参考help rune
+翰宠妙成符:rune27:20:symbol:/clone/tessera/rune27:可镶嵌在装备上,详细参考help rune
+秀乐禁上符:rune28:20:symbol:/clone/tessera/rune28:可镶嵌在装备上,详细参考help rune
+无上常融符:rune29:20:symbol:/clone/tessera/rune29:可镶嵌在装备上,详细参考help rune
+玉隆腾胜符:rune30:25:symbol:/clone/tessera/rune30:可镶嵌在装备上,详细参考help rune
+龙变梵度符:rune31:25:symbol:/clone/tessera/rune31:可镶嵌在装备上,详细参考help rune
+平育贾奕符:rune32:25:symbol:/clone/tessera/rune32:可镶嵌在装备上,详细参考help rune
+太清大赤符:rune33:25:symbol:/clone/tessera/rune33:可镶嵌在装备上,详细参考help rune
+上清禹余符:rune34:30:symbol:/clone/tessera/rune34:可镶嵌在装备上,详细参考help rune
+玉清清微符:rune35:30:symbol:/clone/tessera/rune35:可镶嵌在装备上,详细参考help rune
+无极大罗符:rune36:30:symbol:/clone/tessera/rune36:可镶嵌在装备上,详细参考help rune
+研究符文包:yj-rune:140:package:/clone/goods/package:包含7个rune31和7个rune33
+符文伊司特包:rune24-eq:70:package:/clone/goods/package:包含7个rune24
+符文贝包:rune30-eq:100:package:/clone/goods/package:包含10个rune30
+符文乔包:rune31-eq:100:package:/clone/goods/package:包含10个rune31
+符文查姆包:rune32-eq:100:package:/clone/goods/package:包含10个rune32
+符文萨德包:rune33-eq:100:package:/clone/goods/package:包含10个rune33
+无名小铜人:tongrenx:3:object:/clone/tongren/tongren1:可鉴定为小周天穴位铜人
+无名大铜人:tongrend:3:object:/clone/tongren/tongren2:可鉴定为大周天穴位铜人
+指定冲穴铜人:tongren:4:other:/clone/tongren/tongren:可购买指定的冲穴铜人
+研究日魂包:yj-sword:20:package:/clone/goods/sun_sword:包含10个附魔了研究效果,汲取效果,练习效果都为3%的日魂sword包,等级=购买者等级/10*10
+研究日魂包:yj-blade:20:package:/clone/goods/sun_blade:包含10个附魔了研究效果,汲取效果,练习效果都为3%的日魂blade包,等级=购买者等级/10*10
+研究日魂包:yj-hammer:20:package:/clone/goods/sun_hammer:包含10个附魔了研究效果,汲取效果,练习效果都为3%的日魂hammer包,等级=购买者等级/10*10
+研究日魂包:yj-staff:20:package:/clone/goods/sun_staff:包含10个附魔了研究效果,汲取效果,练习效果都为3%的日魂staff包,等级=购买者等级/10*10
+研究日魂包:yj-club:20:package:/clone/goods/sun_club:包含10个附魔了研究效果,汲取效果,练习效果都为3%的日魂club包,等级=购买者等级/10*10
+研究日魂包:yj-whip:20:package:/clone/goods/sun_whip:包含10个附魔了研究效果,汲取效果,练习效果都为3%的日魂whip包,等级=购买者等级/10*10
+研究日魂包:yj-finger:20:package:/clone/goods/sun_finger:包含10个附魔了研究效果,汲取效果,练习效果都为3%的日魂finger包,等级=购买者等级/10*10
+研究日魂包:yj-hands:20:package:/clone/goods/sun_hands:包含10个附魔了研究效果,汲取效果,练习效果都为3%的日魂hands包,等级=购买者等级/10*10
+研究月魄包:yj-armor:20:package:/clone/goods/moon_armor:包含10个附魔了研究效果,汲取效果,练习效果都为3%的月魄armor包,等级=购买者等级/10*10
+研究月魄包:yj-boots:20:package:/clone/goods/moon_boots:包含10个附魔了研究效果,汲取效果,练习效果都为3%的月魄boots包,等级=购买者等级/10*10
+研究月魄包:yj-head:20:package:/clone/goods/moon_head:包含10个附魔了研究效果,汲取效果,练习效果都为3%的月魄head包,等级=购买者等级/10*10
+研究月魄包:yj-cloth:20:package:/clone/goods/moon_cloth:包含10个附魔了研究效果,汲取效果,练习效果都为3%的月魄cloth包,等级=购买者等级/10*10
+研究月魄包:yj-waist:20:package:/clone/goods/moon_waist:包含10个附魔了研究效果,汲取效果,练习效果都为3%的月魄waist包,等级=购买者等级/10*10
+研究月魄包:yj-wrists:20:package:/clone/goods/moon_wrists:包含10个附魔了研究效果,汲取效果,练习效果都为3%的月魄wrists包,等级=购买者等级/10*10
+黄梁枕:hlzhen:10:object:/d/reborn/obj/zhen:转世用于恢复前世记忆的物品
+消戾丹:xiaolidan:5:pill:/clone/goods/xiaolidan:用于消除戾气的丹药
+消慧丹:xiaohuidan:25:pill:/clone/fam/gift/cint:用于降低int
+化骨丹:huagudan:25:pill:/clone/fam/gift/ccon:用于降低con
+落凤丹:luofengdan:25:pill:/clone/fam/gift/cdex:用于降低dex   
+阴虚丹:yinxudan:25:pill:/clone/fam/gift/cstr:用于降低str
+双倍奖励3小时:srv01:1:srv:/clone/goods/service:增加3小时的双倍奖励时间
+双倍奖励1周时:srv02:50:srv:/clone/goods/service:增加1周时的双倍奖励时间
+战场传送卷轴:arena:1:object:/clone/goods/arena-scroll:包含5个卷轴，可将自己重新传送到战场中
+清除死亡记录:cleardie:1:other:/clone/goods/cleardie:清除角色的死亡记录
+诡辩奇学:sophistry:100:special2:/kungfu/special/sophistry:转世技能,最多限购四个
+遁影擒踪:capture:100:special2:/kungfu/special/capture:转世技能,最多限购四个
+大力金刚:kingkong:100:special2:/kungfu/special/kingkong:转世技能,最多限购四个
+不死金身:immortal:100:special2:/kungfu/special/immortal:转世技能,最多限购四个
+武星转世:musha:100:special2:/kungfu/special/musha:转世技能,最多限购四个
+破元大法:recover:100:special2:/kungfu/special/recover:转世技能,最多限购四个
+破妄神瞳:astral:100:special2:/kungfu/special/astral:转世技能,最多限购四个
+九龙神火炉:jiulonglu:200:object:/clone/goods/jiulonglu:炼药师用来炼制丹药的顶级神器
+辟谷符:bigufu:50:object:/clone/goods/bigu-fu:带在身上可以停止日常消耗食物饮水,非消耗品
+册马石:cemashi:20:object:/clone/goods/cemashi:可使你增加一条骑马记录点
+王者之心:wangzhe:50:object:/clone/goods/wangzhe-zhixin:用来绿化套装的必需物品
+血之禁忌:blood:50:object:/clone/goods/blood-taboo:用来解除你与魔幻兽之间签订的血之盟约
+分解卷轴:resolve:1:object:/clone/goods/resolve-scroll:用来分解动态装备属性成元素粉末
+锻造石:forging:1:object:/clone/goods/forging-stone:一块拥有神秘魔力的锻造石，和装备一起锻造可升级装备。
+轮回·重生:lunhuics:118:enchase:/clone/fam/enchase/lunhui-chongsheng:可镶嵌在装备上,详细参考help enchase
+泥潭之星:ntzhixing:128:enchase:/clone/fam/enchase/yanhuang-zhixing:可镶嵌在装备上,详细参考help enchase
+龙女之泪:longnv:128:enchase:/clone/fam/enchase/longnv-zhilei:可镶嵌在装备上,详细参考help enchase                                               
+泥潭·君临天下:tianxia2:128:enchase:/clone/fam/enchase/yanhuang-tianxia2:可镶嵌在装备上,详细参考help enchase                                           
+泥潭·国色天香:guose2:128:enchase:/clone/fam/enchase/yanhuang-guose2:可镶嵌在装备上,详细参考help enchase                                                
+泥潭·战神:zhanshen2:128:enchase:/clone/fam/enchase/yanhuang-zhanshen2:可镶嵌在装备上,详细参考help enchase                                                   
+龙女·碧海神龙:bihai2:128:enchase:/clone/fam/enchase/longnv-bihai2:可镶嵌在装备上,详细参考help enchase	 
+龙女·曙光:shuguang2:128:enchase:/clone/fam/enchase/longnv-shuguang2:可镶嵌在装备上,详细参考help enchase		                                               
+龙女·蚀:shi2:128:enchase:/clone/fam/enchase/longnv-shi2:可镶嵌在装备上,详细参考help enchase        
+蓝宝石:lanbaoshi2:128:enchase:/clone/fam/enchase/lan-baoshi2:可镶嵌在装备上,详细参考help enchase	           
+红宝石:hongbaoshi2:128:enchase:/clone/fam/enchase/hong-baoshi2:可镶嵌在装备上,详细参考help enchase                                                        
+圣龙之眼:zhiyan2:128:enchase:/clone/fam/enchase/shenglong-zhiyan2:可镶嵌在装备上,详细参考help enchase                                                
+圣龙之魂:zhihun2:128:enchase:/clone/fam/enchase/shenglong-zhihun2:可镶嵌在装备上,详细参考help enchase         
+神龙梦幻:menghuan2:128:enchase:/clone/fam/enchase/shenlong-menghuan2:可镶嵌在装备上,详细参考help enchase	          
+神龙无边:wubian2:128:enchase:/clone/fam/enchase/shenlong-wubian2:可镶嵌在装备上,详细参考help enchase	          
+妖灵·魂:hun2:128:enchase:/clone/fam/enchase/yaoling-hun2:可镶嵌在装备上,详细参考help enchase                                                       
+妖灵·魄:po2:128:enchase:/clone/fam/enchase/yaoling-po2:可镶嵌在装备上,详细参考help enchase          
+虎牙:huya2:128:enchase:/clone/fam/enchase/huya2:可镶嵌在装备上,详细参考help enchase          
+鹰眼:yingyan2:128:enchase:/clone/fam/enchase/yingyan2:可镶嵌在装备上,详细参考help enchase          
+雪精灵:jingling2:128:enchase:/clone/fam/enchase/xue-jingling2:可镶嵌在装备上,详细参考help enchase          
+碧水融华:ronghua2:128:enchase:/clone/fam/enchase/bishui-ronghua2:可镶嵌在装备上,详细参考help enchase                                                       
+黑水晶:shuijing2:288:enchase:/clone/fam/enchase/hei-shuijing2:可镶嵌在装备上,详细参考help enchase
+紫霹雳:pili2:288:enchase:/clone/fam/enchase/zi-pili2:可镶嵌在装备上,详细参考help enchase
+猫妖石:maoyao2:168:enchase:/clone/fam/enchase/maoyao-shi2:可镶嵌在装备上,详细参考help enchase
+孔雀石:kongque2:168:enchase:/clone/fam/enchase/kongque-shi2:可镶嵌在装备上,详细参考help enchase
+赤炼龙胆:longdan2:168:enchase:/clone/fam/enchase/chilian-longdan2:可镶嵌在装备上,详细参考help enchase
+真武宝石:zhenwu2:168:enchase:/clone/fam/enchase/zhenwu-baoshi2:可镶嵌在装备上,详细参考help enchase          
+碧海残镢:canjue2:128:enchase:/clone/fam/enchase/bihai-canjue2:可镶嵌在装备上,详细参考help enchase
+麒麟火:huo2:128:enchase:/clone/fam/enchase/qilin-huo2:可镶嵌在装备上,详细参考help enchase         
+帝王之心:diwang2:128:enchase:/clone/fam/enchase/diwang-zhixin2:可镶嵌在装备上,详细参考help enchase          
+幕天石:mutian2:188:enchase:/clone/fam/enchase/mutian-shi2:可镶嵌在装备上,详细参考help enchase
+龙凰紫珠:zhizhu2:188:enchase:/clone/fam/enchase/longhuang-zhizhu2:可镶嵌在装备上,详细参考help enchase
+古松残镢:gusong2:188:enchase:/clone/fam/enchase/gusong-canjue2:可镶嵌在装备上,详细参考help enchase	  	  	  	  
+流星赶月:ganyue2:288:enchase:/clone/fam/enchase/liuxing-ganyue2:可镶嵌在装备上,详细参考help enchase	
+九天玲珑珠:jiutian2:288:enchase:/clone/fam/enchase/jiutian-linglongzhu2:可镶嵌在装备上,详细参考help enchase		    
+海蓝石:hailanshi2:228:enchase:/clone/fam/enchase/hailan-shi:可镶嵌在装备上,详细参考help enchase
+红眼恶魔:hongyan2:228:enchase:/clone/fam/enchase/hongyan-emo:可镶嵌在装备上,详细参考help enchase
+邪帝舍利:xiedi2:228:enchase:/clone/fam/enchase/xiedi-sheli:可镶嵌在装备上,详细参考help enchase
+天地日月珠:riyuezhu2:228:enchase:/clone/fam/enchase/tiandiriyue-zhu:可镶嵌在装备上,详细参考help enchase
+圣石:shengshi2:228:enchase:/clone/fam/enchase/shengshi2:可镶嵌在装备上,详细参考help enchase
+水灵:shuiling2:228:enchase:/clone/fam/enchase/shuiling2:可镶嵌在装备上,详细参考help enchase
+百炼寒精:hanjing2:228:enchase:/clone/fam/enchase/bailian-hanjing2:可镶嵌在装备上,详细参考help enchase
+妖灵之翼:yaoling2:228:enchase:/clone/fam/enchase/yaoling-zhiyi2:可镶嵌在装备上,详细参考help enchase
+七彩神珠:shenzhu2:228:enchase:/clone/fam/enchase/qicai-shenzhu:可镶嵌在装备上,详细参考help enchase
+无名古玉:guyu2:88:enchase:/clone/fam/enchase/wuming-guyu:可镶嵌在装备上,详细参考help enchase 
+露华之晶:luhua2:688:enchase:/clone/fam/enchase/luhua-zhijing:可镶嵌在装备上,详细参考help enchase 
+麒麟之魂:qilin2:128:enchase:/clone/fam/enchase/qilin-zhihun:可镶嵌在装备上,详细参考help enchase
+人书宝灵:baoling:128:enchase:/clone/fam/enchase/renshu-baoling:可镶嵌在装备上,详细参考help enchase
+镇魂之精:zhenhun:228:enchase:/clone/fam/enchase/zhenhun-zhijing:可镶嵌在装备上,详细参考help enchase
+地书宝灵:dishu:228:enchase:/clone/fam/enchase/dishu-baoling:可镶嵌在装备上,详细参考help enchase      
+地灵石:dilingshi:328:enchase:/clone/fam/enchase/diling-shi:可镶嵌在装备上,详细参考help enchase
+天书宝灵:tianshu:388:enchase:/clone/fam/enchase/tianshu-baoling:可镶嵌在装备上,详细参考help enchase   

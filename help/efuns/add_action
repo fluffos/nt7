@@ -1,0 +1,29 @@
+□ add_action.c
+
+增加指令可容许字数    
+---------------------------------------
+void f_command PROT((void))
+{
+    int rc = 0;
+
+    if (current_object && !(current_object->flags & O_DESTRUCTED))
+    {
+        char buff[100000]; // 将 char buff[改大]
+        int save_eval_cost = eval_cost;
+
+        if (SVALUE_STRLEN(sp) > sizeof(buff) - 1)
+            error("Too long command.\n");
+
+        strncpy(buff, sp->u.string, sizeof(buff));
+        buff[sizeof(buff) - 1] = 0;
+
+        if (parse_command(buff, current_object))
+            rc = save_eval_cost - eval_cost;
+    }
+
+    free_string_svalue(sp);
+    put_number(rc);
+}
+#endif
+---------------------------------------
+

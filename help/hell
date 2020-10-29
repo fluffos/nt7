@@ -1,0 +1,42 @@
+$WHT$【本游戏的说明文件】                                                   $NOR$
+
+以下是说明文件，你可以用 help <主题> 得到更进一步的说明。 如
+果你有疑问，可以先阅读常见问题解答 help faq 来获得一些信息。
+在提问之前最好先阅读这份文件。
+
+$WHT$【游戏概况】                                                           $NOR$
+$HIC$〖feature    〗  本泥潭与其他侠客行类MUD的不同之处。$NOR$
+$HIC$〖skills     〗  本泥潭武功的说明，练功者务必先看再练。$NOR$
+
+$WHT$【游戏介绍】                                                           $NOR$
+〖intro      〗  泥潭简介              〖cmds       〗  泥潭常用指令
+〖maps       〗  泥潭地图册            〖newbie     〗  泥潭新手指南
+〖rules      〗  玩家规则              〖wiz_rules  〗  巫师规则
+〖settings   〗  环境变量设置          〖channels   〗  交流和聊天频道
+〖cmdaction  〗  冒险命令详析          〖cmdsystem  〗  系统命令详析
+〖cmdskill   〗  武功命令详析          〖cmdspecial 〗  特殊命令详析
+〖cmdtalk    〗  聊天命令详析          〖transport  〗  交通工具
+〖quest      〗  任务说明              〖challenge  〗  挑战说明
+〖weapon     〗  炼制武器防具说明      〖room       〗  住房系统说明
+〖marry      〗  婚姻说明              〖league.2   〗  结义、联盟说明
+〖work       〗  简单工作说明          〖product    〗  生产系统说明
+〖event      〗  特殊事件说明          〖backup     〗  备份系统说明
+〖closed     〗  闭关说明              〖schedule   〗  计划说明
+〖poison     〗  本泥潭毒功的说明      〖sites      〗  本游戏分站的说明
+
+$WHT$【门派介绍】                                                           $NOR$
+〖shaolin    〗  少林派介绍            〖wudang     〗  武当派介绍
+〖emei       〗  峨嵋派介绍            〖huashan    〗  华山派介绍
+〖gaibang    〗  丐帮介绍              〖taohua     〗  桃花岛介绍
+〖xingxiu    〗  星宿派介绍            〖xiaoyao    〗  逍遥派介绍
+〖gumu       〗  古墓派介绍            〖quanzhen   〗  全真派介绍
+〖shenlong   〗  神龙教介绍            〖mizong     〗  密宗介绍
+〖xueshan    〗  雪山派介绍            〖xuedao     〗  血刀派介绍
+〖lingjiu    〗  灵鹫宫介绍            〖wuguan     〗  武馆介绍
+
+$WHT$【世家介绍】                                                           $NOR$
+〖ouyang     〗  欧阳世家介绍          〖hu         〗  关外胡家介绍
+〖murong     〗  慕容世家介绍          〖duan       〗  段氏皇族介绍
+
+$WHT$【附属游戏介绍】                                                       $NOR$
+〖pig_cmds   〗  拱猪的有关命令        〖pig_rules  〗  拱猪规则

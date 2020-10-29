@@ -1,0 +1,12 @@
+subject : 天魔决拿的方法
+author_name : 高处不胜寒
+author_id : lonely
+time : 1225106174
+board : 榕树下的留言板
+file : /data/analecta/2008/79067695.txt
+add_time : 1225106216
+content :
+ringto yangzhou;#4 w;s;w;ask gui san about 天魔决;
+e;n;e;ask gong zi about 鬼三;kill li;get all from corpse;w;s;w;give gui san xiao;enter;
+进去就可以拿到一个铁箱子，open xiang;就可以拿到天魔决了
+[2;37;0m

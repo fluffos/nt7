@@ -1,0 +1,32 @@
+
+
+        query_shadowed()
+
+        名称:
+                query_shadowed( object ob | void)
+                查找阻隔物件。
+
+        语法:
+                object query_shadowed( object ob | void);
+                物件 query_shadowed( 物件 ob 或者 无参数);
+
+        用法:
+                如果没有参数，则会传回 this_object() 的阻隔
+                物件，否则会传回物件 ob 的阻隔物件。
+
+                如果物件 ob (参数为 ob)或者 this_object() (无
+                参数)没有设定过阻隔物件或者阻隔物件已被摧毁，
+                则传回 0。
+
+        说明：
+                由于原 MudOS 的 shadow 部分有些不合理，使用不
+                方便，而且存在安全隐患，因此这部分的程序重新写
+                过，shadow 部分的函数的使用和原 MudOS 提供的函
+                数有很大的不同，如要在其它 MudOS 支持的游戏中
+                使用 shadow 请参考它的 MudOS 的说明。
+
+        参考:
+                shadow(), query_shadowing()
+
+        by 发现号(Find@tx)
+

@@ -1,0 +1,29 @@
+#include <room.h>
+inherit TRANS_ROOM;
+
+void create()
+{
+        set("short","马厩");
+        set("long", @LONG
+这是顺风客栈后的马厩，常年供应新鲜草料。兰州民风淳朴，马
+夫们会把马牵到马厩好生照看，将它们喂饱饮足，再洗刷得干乾净净，
+一直伺候到客人上路。马厩雨檐下的烂木柱上钉着一块破木牌 (paiz
+i)。马厩中堆放著几堆草料，正中有一口泔槽。
+LONG );
+        set("outdoors", "lanzhou");
+        set("no_fight", 1);
+        set("objects", ([
+                "/clone/horse/zaohongma": 1,
+                "/clone/horse/huangbiaoma": 1,
+                "/clone/horse/ziliuma": 1,
+                "/clone/npc/mafu": 1,
+        ]));
+        set("exits",([
+                "north"  : __DIR__"kedian",
+        ]));
+	set("coor/x", -15740);
+	set("coor/y", 3790);
+	set("coor/z", 0);
+	setup();
+        replace_program(TRANS_ROOM);
+}

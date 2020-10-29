@@ -1,0 +1,3 @@
+#/clone/shop/hengyang_shop.c
+dbase (["objects":(["/clone/shop/waiter":1,]),"no_fight":1,"no_steal":1,"shop_type":0,"no_clean_up":0,"no_beg":1,"exits":(["down":"/d/henshan/majiu",]),"owner":"VOID_SHOP","open_long":"这里是衡阳城内的一家店铺，衡阳城虽小，南岳衡山却尤为著名。店铺由衡山五峰之一的祝融峰而得名。从红木雕窗放眼望去，整个衡阳古城熙熙攘攘的街道尽收眼底。","long":"这里是衡阳城内的一家店铺，衡阳城虽小，南岳衡山却尤为著名。店铺由衡山五峰之一的祝融峰而得名。从红木雕窗放眼望去，整个衡阳古城熙熙攘攘的街道尽收眼底。","short":"祝融居",])
+all_goods ({})

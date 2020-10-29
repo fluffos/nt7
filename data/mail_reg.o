@@ -1,0 +1,8 @@
+#/adm/daemons/smtpd.c
+mail_reg ({})
+user_unreg ([])
+mailname "lonely-21"
+mailpasswd "921121"
+content ([])
+domain_name "smtp.163.com"
+address "123.125.50.135"

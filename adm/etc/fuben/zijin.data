@@ -1,0 +1,5 @@
+name=紫禁地宫
+main=maze
+time=1800
+level=40
+enter=maze/entry

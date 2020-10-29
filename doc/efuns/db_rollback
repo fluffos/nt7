@@ -1,0 +1,17 @@
+
+        db_rollback()
+
+        名称：
+                db_rollback()
+
+        语法：
+                int db_rollback(int handle)
+                整数 db_rollback(整数 handle)
+
+        用法：
+                MySQL 不支持 rollback
+
+        by 发现号(Find@tx)
+
+
+

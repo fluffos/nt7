@@ -1,0 +1,10 @@
+新增 Package arith_operator:
+    
+    新增 mixed count(mixed, string, mixed);
+         用于(string)大数运算与大数数值比较
+         
+         coutn (1, "<", 2)
+
+
+By Clode@RW on 2002/6/3 04:01下午
+

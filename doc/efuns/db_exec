@@ -1,0 +1,22 @@
+
+        db_exec()
+
+        名称：
+                db_exec() 向数据库发送一条 SQL 查询语句
+
+        语法：
+                mixed db_exec(int handle, string sql)
+                混合型 db_exec(整数 handle, 字符串 sql)
+
+        用法：
+                handle 是已打开的数据库的句柄
+                sql 是向数据库发送的查询语句。
+
+        返回值：
+                整数，为返回值的行数。
+                字符串类型，为错误信息。
+
+        by 发现号(Find@tx)
+
+
+

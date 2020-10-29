@@ -1,0 +1,26 @@
+        get_dir(3)                LP MudOSv21c7                (7 Jul 1996)
+        函数名称:
+                get_dir() - 传回有关一个档案系统目录 (filesystem
+                            directory)  的资讯.
+        函数语法:
+                mixed *get_dir( string dir, int default: 0 );
+                混合 *get_dir( 字串 dir, 整数 预设值: 0 );
+        函数用法:
+                如果 dir  是一个档案名称 (可以使用 *  或是 ?  号这种
+                通用字元 (wildcards) ), 则传回一个符合指定名称的字串
+                阵列 (array of strings) . 如果 dir  是一个目录名称 (
+                名称以一个 /  结束, 例如: "/u/", "/adm/"  等等) , 则
+                会传回目录中所有的档案名称.
+                如果第二的参数为 -1 , get_dir 会传回一个子阵列的阵列
+                ( array of subarrays) , 子阵列的格式为:
+                ({ filename, size_of_file, last_time_file_touched })
+                ({  档案名称, 档案大小, 最後一次的档案修改日期 })
+                档案名称为一个字串, 而最後一次的档案修改日期是一个整
+                数, 为自从 1970 年 1  月 1  日起算的秒数.  (格式与 
+                time(3) 函式一样) . 档案大小的值与 file_size(3) 函式
+                传回的值相同; 档案大小的单位为位元 (bytes)  , 如果档
+                案大小为 -2 , 表示档案为一个目录.
+        参考函数:
+                file_size(3), stat(3), time(3)
+        手册翻译:
+                Phoebus@ZH        97.Feb.14.                (Writen 5/23/97)

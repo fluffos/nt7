@@ -1,0 +1,13 @@
+subject : 明玉功(int30，武修100，女性)
+author_name : 薇大呆
+author_id : vivi
+time : 1206624311
+board : 薇大呆的留言板
+file : /data/analecta/2008/13647554.txt
+add_time : 1211022901
+content :
+{带上fire,华山舍身崖jump down,yun recover,
+有路就走，然后jump down,走到移花宫卧室;
+{#8 push bed left,#5 push bed right,down};
+use fire,zou,pick book,is ok}
+[2;37;0m

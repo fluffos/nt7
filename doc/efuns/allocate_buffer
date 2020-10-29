@@ -1,0 +1,21 @@
+        allocate_buffer(3)      MudOS v21c2             (5 Sep 1994)
+
+        名称:
+                allocate_buffer() - 配置记忆体给一个暂存区 (buffer).
+        语法:
+                buffer allocate_buffer( int size );
+
+                暂存区 allocate_buffer( 整数 size );
+        用法:
+                配置一块有 size 个元素 (elements) 的暂存区. 元素
+                的数目必须大於 0, 而且不可超过系统设定的上限值 
+                (通常是 10000 左右) . 所有阵列元素的初始值
+                (initialized) 均为 0.
+        参考:
+                bufferp(3), read_buffer(3), write_buffer(3), sizeof(3),
+                to_int(3)
+        原著:
+                Truilkan
+        翻译:
+                Spock @ FF      96.Oct.12.              (printed 3/16/95)
+

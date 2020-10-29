@@ -1,0 +1,24 @@
+//绝招组合特效 combatd.c 调用，skillsd.c 实现
+//额外效果标记set_temp("bonus/")
+//一旦进入非战斗状态，绝招组合效果立刻解除
+//p1,p2,p3是出招的顺序，排序是倒着来的，p3代表最后一招，当然最多可以是4招组合，那么p4就是最后一招，绝招组合可以是不同技能之间的组合
+//func是调用skillsd.c里的附加攻击，有三种分别是1致命一击、2和3没有想好，先随便用上
+<P0000>
+<name>$CYNGRN$绝招组合-圆月弯刀.致命一击$NOR$</name>
+<p1>moon-blade.dao</p1>
+<p2>moon-blade.ting</p2>
+<p3>moon-blade.yue</p3>
+<need>
+moon-blade:300
+force:300
+martial-cognize:300
+</need>
+<stats>
+add_damage:50
+busy:20
+</stats>
+<func>1</func>
+</P0000>
+<P0001>
+补充内容
+</P0001>

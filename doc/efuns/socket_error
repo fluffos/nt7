@@ -1,0 +1,31 @@
+
+     socket_error(3)        MudOS (5 Sep 1994)         socket_error(3)
+
+     名称：
+          socket_error() - 传回一个 socket 错误码的文字叙述
+
+     语法：
+          #include 
+
+          string socket_error( int error );
+
+          字串 socket_error( 整数 error );
+
+     用法：
+          socket_error() 传回一个描述所产生之错误的字串。
+
+     传回值：
+          socket_error() 传回：
+
+               成功时是一个描述错误码的字串。
+
+               错误的输入值时是 "socket_error: invalid error number"。
+               （译注："socket_error: 无效的错误码"）
+
+     参照：
+          socket_create(3), socket_connect(3)
+
+     翻译：
+          Kenny@Broken.History       97.Jul.27       (printed 3/16/95)
+
+

@@ -1,0 +1,22 @@
+
+        function_owner()
+
+        名称：
+                function_owner() 传回函数的宿主物件
+
+        语法：
+                object function_owner(function f)
+                物件 function_owner(函数指标 f)
+
+        用法：
+                传回函数指标 f 的宿主物件
+
+        此函数需要编译 MudOS 时在配置文件里定义了 PACKAGE_CONTRIB。
+
+        参看：
+                bind
+
+        by 发现号(Find@tx)
+
+
+

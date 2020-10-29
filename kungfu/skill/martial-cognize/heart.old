@@ -1,0 +1,262 @@
+// heart.c
+
+#include <ansi.h>
+
+inherit F_SSERVER;
+inherit F_CLEAN_UP;
+
+string *know_ledge = ({
+        "chuancai-jiyi",
+        "chuixiao-jifa",
+        "cooking",
+        "count",
+        "buddhism",
+        "certosina",
+        "craft-cognize",
+        "drawing",
+        "feed-power",
+        "mahayana",
+        "guzheng-jifa",
+        "idle-force",
+        "lamaism",
+        "liandan-shu",
+        "necromancy",
+        "persuading",
+        "pretending",
+        "qimen-wuxing",
+        "qufeng",
+        "shaolin-yishu",
+        "xiaoyao-qixue",
+        "tanqin-jifa",
+        "taohua-yaoli",
+        "taohua-yuan",
+        "taoism",
+        "xiyu-tiezheng",
+        "yunlong-xinfa",
+        "yunv-xinjing",
+        "medical",
+});
+
+string *valid_types = ({
+        "force",
+        "unarmed",
+        "strike",
+        "cuff",
+        "hand",
+        "finger",
+        "claw",
+        "sword",
+        "blade",
+        "staff",
+        "hammer",
+        "club",
+        "whip",
+        "dagger",
+        "throwing",
+        "dodge",
+        "medical",
+        "poison",
+        "array",
+        "chuixiao-jifa",
+        "guzheng-jifa",
+        "tanqin-jifa",
+        "parry",
+});
+
+private int copy_skill(object me, object ob);
+void remove_effect(object me);
+
+int perform(object me, object target)
+{
+        int lvl;
+        string *can_perform;
+
+
+        if( query("on_dragon_heart", me) )
+                return notify_fail("你正在运行天龙之心中！\n");
+
+        if (me->is_busy())
+                return notify_fail("你上一个动作还没有完成，无法使用天龙之心。\n");
+
+        can_perform=query("can_perform/martial-cognize", me);
+
+        if(!can_perform || 
+          !arrayp(can_perform) || 
+          !sizeof(can_perform) || 
+          member_array("heart",can_perform) == -1
+          )
+                return notify_fail("你还没有学会使用［天龙之心］！\n");
+
+
+        lvl = (int)me->query_skill("martial-cognize",1);
+
+        if(lvl < 300)
+                return notify_fail("你的武学修养不够高深！\n");
+
+        if( query("jingli", me)<1500 )
+                return notify_fail("你的精力不够！\n");
+
+        if( query("max_jingli", me)<1500 )
+                return notify_fail("你的精力还没有达到足够的层次！\n");
+
+        if( query("jing", me) <= 500 )
+                return notify_fail("你的精神状态不好！\n");
+
+        if( !target )
+                return notify_fail("你要对谁使用［天龙之心］？\n");
+
+        if( !userp(target) )
+                return notify_fail("对方没有独立的思维，你对其用天龙之心有何效果？\n");
+
+        if( wizardp(target) || query("tianmo_jieti/times", target) == 5 )
+                return notify_fail("你没法看透对方的思想。\n");
+
+        if( target == me )
+                return notify_fail("对自己用天龙之心？人贵自查！继续！继续！加油！加油！\n");
+
+        if( time()-query("last_dragon_heart", me)<900 )
+                return notify_fail("频繁的使用天龙之心，就是神仙都受不了啊！\n");
+
+        addn("jingli", -1000, me);
+        me->receive_damage("jing", 300);
+
+        message("vision",HIY + me->name() + HIY +"浑身金光流转，目光深深注入" + 
+                         target->name() + HIY + "眼中，虽只轻轻一瞥，却令人感觉" + 
+                         "仿佛已过了千万年。\n" NOR, environment(me), ({me, target}));
+
+        tell_object(me, HIY "你运转天龙之心，思感蔓延至四周空间，集中注入" + target->name() + 
+                        HIY + "眼中，顷刻游走于" + target->name() + HIY + "体内。\n" + 
+                        "一阵奇妙的感觉拥来，你似乎看透了" + target->name() + HIY + 
+                        "的全部记忆，脑海中豁然一亮！\n");
+        tell_object(target, HIY+me->name()+HIY+"目芒闪烁，深邃无比，直直的看入你心底深处！\n" +
+                            "你感觉头脑一阵晕眩，在"+me->name()+HIY+
+                            "目光注视下有种赤裸裸的感觉。\n");
+
+        copy_skill(me,target);
+
+        me->start_call_out( (: call_other, __FILE__, "remove_effect", me:), 900); 
+
+        return 1;
+}
+
+private int copy_skill(object me, object ob)
+{
+        mapping my_status, ob_status, knowledge_status, my;
+        string *obname, the_skill, *old_skills, *knowledge_skills;
+        string *ob_knowledge;
+        int i, j, obnum, my_wxxy, oblvl,melvl, can_copy;
+        mixed *can_perform1,*can_perform2;
+
+        if (!mapp(my_status = me->query_skills()))
+                return 1;
+
+        if (!mapp(ob_status = ob->query_skills()))
+                return 1;
+
+        can_perform1=query("can_perform", me);
+        can_perform2=query("can_perform", ob);
+
+        old_skills = keys(my_status);
+        knowledge_skills = filter_array(old_skills, (: member_array($1, $2) != -1 :), know_ledge);
+        if (!arrayp(knowledge_skills) || !sizeof(knowledge_skills)) knowledge_skills = ({});
+        old_skills -= knowledge_skills;
+        knowledge_status = ([]);
+        for ( i = 0;i < sizeof(knowledge_skills);i ++)
+                knowledge_status[knowledge_skills[i]] = my_status[knowledge_skills[i]];
+
+        set("old_skills", old_skills, me);
+        set("old_knowledge", knowledge_status, me);
+              
+        obname = keys(ob_status);
+        ob_knowledge = filter_array(obname, (: member_array($1, $2) != -1 :), know_ledge);
+        if (!arrayp(ob_knowledge) || !sizeof(ob_knowledge)) ob_knowledge = ({});
+        obname -= ob_knowledge;
+        obnum = sizeof(obname);
+
+        for (i = 0; i < sizeof(ob_knowledge); i++)
+                if (me->query_skill(ob_knowledge[i],1) < ob_status[ob_knowledge[i]])
+                        me->set_skill(ob_knowledge[i],ob_status[ob_knowledge[i]]);
+
+        my_wxxy = me->query_skill("martial-cognize",1);
+
+        for (i = 0; i < obnum; i++)
+        {
+                the_skill = obname[i];
+                if (!undefinedp(my_status[the_skill])) continue;
+
+                oblvl = ob_status[the_skill];
+
+                if (oblvl > my_wxxy)
+                        oblvl = my_wxxy;
+
+                if (member_array(the_skill,valid_types) != -1)
+                        continue;
+
+                can_copy = 1;
+
+                for (j = 0;j < sizeof(valid_types);j++)
+                {
+                        if (SKILL_D(the_skill)->valid_enable(valid_types[j]))
+                        {
+                                melvl = (int)me->query_skill(valid_types[j],1);
+                                if (melvl < 1) 
+                                        can_copy = 0;
+                                else 
+                                        if (oblvl > melvl) oblvl = melvl;
+                                break;
+                        }
+                }
+                if (!can_copy) continue;
+                me->set_skill(the_skill, oblvl);
+        }
+        
+        set("old_canperform", can_perform1, me);
+        if (mapp(can_perform1) && mapp(can_perform2))
+                set("can_perform", can_perform2+can_perform1, me);
+
+        me->reset_action();
+
+        set("on_dragon_heart", 1, me);
+        set("last_dragon_heart", time(), me);
+
+        return 1;
+}
+
+void remove_effect(object me)
+{
+        mapping now_status,old_knowledge;
+        string *old_skills,*now_skills,*knowledge_skills;
+        int i,nownum;
+        mixed *can_perform;
+
+        if( !me || !query("on_dragon_heart", me) )
+                return;
+
+        old_skills=query("old_skills", me);
+        old_knowledge=query("old_knowledge", me);
+        can_perform=query("old_canperform", me);
+
+        now_status = me->query_skills();
+        now_skills = keys(now_status);
+        nownum = sizeof(now_skills);
+
+        for (i = 0;i < nownum;i ++)
+                if (member_array(now_skills[i],old_skills) == -1)
+                        me->delete_skill(now_skills[i]);
+        
+        knowledge_skills = keys(old_knowledge);
+        if (!arrayp(knowledge_skills) || !sizeof(knowledge_skills))
+                knowledge_skills = ({});
+
+        for (i = 0;i < sizeof(knowledge_skills);i++)
+                me->set_skill(knowledge_skills[i],old_knowledge[knowledge_skills[i]]);
+
+        set("can_perform", can_perform, me);
+        delete("on_dragon_heart", me);
+        delete("old_skills", me);
+        delete("old_knowledge", me);
+        delete("old_canperform", me);
+
+        tell_object(me, HIY"你的天龙之心运转良久，渐渐感觉有些疲乏，只能将心神收敛回来！\n");
+        return;
+}

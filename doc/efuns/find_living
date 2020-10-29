@@ -1,0 +1,18 @@
+        find_living(3)                LP MudOSv21c7                (7 Jul 1996)
+        函数名称:
+                find_living() - 找出一个指定识别名称 (id) 的活
+                                (living)  物件
+        函数语法:
+                object find_living( string str );
+                物件 find_living( 字串 str );
+        函数用法:
+                首先找标记为活著的 (living) , 并符合识别名称 (id) 为
+                str 的物件. 已经呼叫过 enable_commands()  的物件才被
+                视为活著的物件. 并且此物件必须以 set_living_name()
+                设定名称, 此一名称才会放进搜寻表 (hash table) 中以提
+                升寻找活物件的速度.
+        参考函数:
+                living(3), livings(3), find_player(3), users(3),
+                enable_commands(3), set_living_name(3)
+        手册翻译:
+                Phoebus@ZH        97.Feb.12.                (Writen 5/23/97)
