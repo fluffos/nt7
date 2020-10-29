@@ -537,9 +537,9 @@ int do_read(string arg)
 
         msg = sprintf(  CYN "----------------------------------------------------------------------\n"
                         BWHT BLU " 标 题 " BBLU WHT " %-62s\n"
-                        BWHT BLU " 作 者 " BBLU WHT " %-19s   ╭══════════════════╮\n"
+                        BWHT BLU " 作 者 " BBLU WHT " %-19s   ╭====================================╮\n"
                         BWHT BLU " 篇 数 " BBLU WHT " %-11d           ║"HIR"请文明使用，否则"HIY"你"HIR"或"HIY"帖子"HIR"可能会被删除"NOR BBLU WHT"║\n"
-                        BWHT BLU " 时 间 " BBLU WHT " %-19s   ╰══════════════════╯\n" NOR
+                        BWHT BLU " 时 间 " BBLU WHT " %-19s   ╰====================================╯\n" NOR
                         CYN "----------------------------------------------------------------------\n\n" NOR "%s\n",
                         notes[num]["title"], notes[num]["author"] + "(" + notes[num]["owner"] + ")", num + 1, TIME_D->replace_ctime(notes[num]["time"]),
                         notes[num]["msg"]);
