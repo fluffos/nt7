@@ -240,11 +240,9 @@ string up_case(string arg)
 // raw = 2, include blink & others
 string trans_color(string arg, int raw)
 {
-/*
-#ifdef LONELY_IMPROVED
+#ifdef __PACKAGE_ANSI__
         return efun::ansi(arg);
 #else
-*/
         // forecolor
         arg = replace_string(arg, "$BLK$", BLK);
         arg = replace_string(arg, "$RED$", RED);
@@ -346,9 +344,7 @@ string trans_color(string arg, int raw)
 
         arg += NOR;
         return arg;
-/*
 #endif
-*/
 }
 
 // append color after the $N、$n、$w for the string color won't be

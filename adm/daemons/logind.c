@@ -229,17 +229,18 @@ void logon(object ob)
                 input_to("get_version", ob);
         }
 
-        if( !query_temp("big5", ob)){
-                write(HIC "ヘ玡才栋琌虏砰叫块GB/BIG5э跑才栋┪钡祅魁ノめ\n" NOR
-                      "目前的字符集是简体，请输入GB/BIG5改变字符集，或直接登录用户。\n"
-                      "请输入您的英文名字(" CYN "忘记密码请输入「pass」" NOR ")：\n");
-        } else {
-                delete_temp("big5", ob);
-                write(HIC "目前的字符集是繁体，请输入GB/BIG5改变字符集，或直接登录用户。\n" NOR);
-                set_temp("big5", 1, ob);
-                write("目前的字符集是繁体，请输入GB/BIG5改变字符集，或直接登录用户。\n");
-                write("请输入您的英文名字(" CYN "忘记密码请输入「pass」" NOR ")：\n");
-        }
+        // if( !query_temp("big5", ob)){
+        //         write(HIC "ヘ玡才栋琌虏砰叫块GB/BIG5э跑才栋┪钡祅魁ノめ\n" NOR
+        //               "目前的字符集是简体，请输入GB/BIG5改变字符集，或直接登录用户。\n"
+        //               "请输入您的英文名字(" CYN "忘记密码请输入「pass」" NOR ")：\n");
+        // } else {
+        //         delete_temp("big5", ob);
+        //         write(HIC "目前的字符集是繁体，请输入GB/BIG5改变字符集，或直接登录用户。\n" NOR);
+        //         set_temp("big5", 1, ob);
+        //         write("目前的字符集是繁体，请输入GB/BIG5改变字符集，或直接登录用户。\n");
+        //         write("请输入您的英文名字(" CYN "忘记密码请输入「pass」" NOR ")：\n");
+        // }
+        write(HIC "请输入您的英文名字(" CYN "忘记密码请输入「pass」" NOR ")：\n");
         input_to( (: get_id :), ob );
 }
 

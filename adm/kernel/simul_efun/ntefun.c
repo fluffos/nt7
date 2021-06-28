@@ -5,6 +5,7 @@
 
 int mapping_eqv(mapping m1, mapping m2);
 
+#ifndef __PACKAGE_DBASE__
 varargs mixed query(string prop, object ob)
 {
     // debug_message("ob = " + ob);
@@ -18,7 +19,7 @@ varargs mixed query(string prop, object ob)
     return ob->query_db(prop);
 }
 
-varargs mixed delete (string prop, object ob)
+varargs mixed delete(string prop, object ob)
 {
     if (!objectp(ob))
     {
@@ -87,6 +88,7 @@ varargs mixed addn_temp(string prop, string msg, object ob)
 
     return ob->add_temp_db(prop, msg);
 }
+#endif
 
 mixed f_rmtree(string dir)
 {

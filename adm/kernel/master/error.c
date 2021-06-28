@@ -134,7 +134,7 @@ void error_handler(mapping error, int caught)
         }
 
         msg = tracert_error(error, caught);
-        efun::write_file(LOG_DIR + "debug.full", msg);
+        efun::write_file(LOG_DIR + "error_handler", msg);
 
         if( objectp(user) && userp(user) )
         {
@@ -176,8 +176,6 @@ void log_error(string file, string message)
         string error_type;
         // string name, home;
         object user;
-
-
         /*
         user = this_player(1);
         if( !objectp(user) ) user = this_player();
@@ -189,18 +187,20 @@ void log_error(string file, string message)
 
         if( objectp(user) && userp(user) )
         {
-                if( !wizardp(user) )
-                {
-                        if( find_object(CHANNEL_D) )
-                                CHANNEL_D->channel_broadcast("debug", user->query_idname()+"编译时段"+error_type+"："+message);
-                }
-                else
-                        tell_object(user, "\n编译时段"+error_type+"：" + message);
+                if (find_object(CHANNEL_D))
+                        CHANNEL_D->channel_broadcast("debug", user->query_idname() + "编译时段" + error_type + "：" + message);
         }
         else
         {
                 if( find_object(CHANNEL_D) )
                         CHANNEL_D->channel_broadcast("debug", (objectp(user) ? base_name(user)+" " : "")+"编译时段"+error_type+"："+message);
         }
-        efun::write_file(LOG_DIR + "log", message);
+        if (error_type == "错误")
+        {
+                efun::write_file(LOG_DIR + "log_error", message);
+        }
+        else
+        {
+                efun::write_file(LOG_DIR + "log", message);
+        }
 }
