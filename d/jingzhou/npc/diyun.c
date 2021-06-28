@@ -51,7 +51,7 @@ void create ()
 string ask_me()
 {
         mapping fam; 
-        object ob;
+//      object ob;
         
         if (query("wucan_count") < 1)
                 return "水笙姑娘？她在雪域等着我？";

@@ -1,7 +1,7 @@
-inherit F_DEALER; 
+// inherit F_DEALER;
 inherit SMITH;
 
-#include <ansi.h> 
+#include <ansi.h>
 
 
 void create()

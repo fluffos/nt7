@@ -55,8 +55,8 @@ string to_chinese(string str)
 
 string extra_long()
 {
-        int i, level;
-        string *apply, str, msg, type;
+        int i/*, level*/;
+        string *apply, str/*, msg*/, type;
         mapping data;
         int value;
 

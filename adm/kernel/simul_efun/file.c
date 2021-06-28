@@ -256,7 +256,7 @@ varargs string filter_color(string arg, int raw)
 {
         if (!arg)
                 return "";
-#ifdef LONELY_IMPROVED
+#ifdef __PACKAGE_ANSI__
         return efun::remove_ansi(arg);
 #else
         arg = replace_string(arg, BLK, "");
@@ -347,9 +347,11 @@ int noansi_strlen(string arg)
         return strlen(filter_color(arg, 1));
 }
 // 清理ansi色彩
-string
-remove_ansi(string arg)
+string remove_ansi(string arg)
 {
+#ifdef __PACKAGE_ANSI__
+        return efun::remove_ansi(arg);
+#else
         arg = replace_string(arg, BLK, "");
         arg = replace_string(arg, RED, "");
         arg = replace_string(arg, GRN, "");
@@ -383,6 +385,7 @@ remove_ansi(string arg)
         arg = replace_string(arg, HBCYN, "");
         arg = replace_string(arg, HBWHT, "");
         return arg;
+#endif
 }
 
 int file_lines(string file)

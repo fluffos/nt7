@@ -151,7 +151,7 @@ nomask void enable_player()
 
         if( stringp(query("id")) )
                 set_living_name(query("id"));
-        else
+        else if (stringp(query("name")))
                 set_living_name(query("name"));
 
         /*

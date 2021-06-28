@@ -81,7 +81,7 @@ mixed add(string prop, mixed data)
 {
     mixed old;
 
-    if (!mapp(dbase) || !(old = query(prop, 1)))
+    if (!mapp(dbase) || !(old = query_db(prop, 1)))
         return set(prop, data);
 
     if (functionp(old))
@@ -93,6 +93,17 @@ mixed add(string prop, mixed data)
 mapping query_entire_dbase()
 {
     return dbase;
+}
+
+nomask void set_dbase(mapping data)
+{
+    if (!is_root(previous_object()))
+        return;
+
+    if (!mapp(data))
+        return;
+
+    dbase = data;
 }
 
 mixed set_temp_db(string prop, mixed data)
@@ -142,7 +153,7 @@ mixed add_temp(string prop, mixed data)
 {
     mixed old;
 
-    if (!mapp(tmp_dbase) || !(old = query_temp(prop, 1)))
+    if (!mapp(tmp_dbase) || !(old = query_temp_db(prop, 1)))
         return set_temp(prop, data);
 
     if (functionp(old))
@@ -159,17 +170,6 @@ mixed add_temp_array(string prop, string data)
 mapping query_entire_temp_dbase()
 {
     return tmp_dbase;
-}
-
-nomask void set_dbase(mapping data)
-{
-    if (!is_root(previous_object()))
-        return;
-
-    if (!mapp(data))
-        return;
-
-    dbase = data;
 }
 
 nomask void set_temp_dbase(mapping data)

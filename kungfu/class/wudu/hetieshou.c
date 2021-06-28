@@ -799,7 +799,7 @@ int do_show(string arg)
 {
         object ob;
         object me;
-        int n;
+//      int n;
 
         if (! arg)
                 return notify_fail("你要亮出什么东西？\n");
@@ -836,7 +836,7 @@ string ask_ling()
 {
         mapping fam;
         object *allob,env,ob,me=this_player();
-        string *sname;
+//      string *sname;
         int i, count, here = 0;
 
         if (query("ling_count") < 1)

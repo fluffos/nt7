@@ -34,7 +34,7 @@ void init()
 
 int do_dian(string arg)
 {
-        string dir;
+//      string dir;
         object me = this_player();
 
         if( !arg || arg=="" ) return 0;

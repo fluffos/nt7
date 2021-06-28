@@ -77,7 +77,7 @@ void unconcious()
 
 int give_ling()
 {
-        object ling;
+//      object ling;
         object me;
 
         me = this_player();

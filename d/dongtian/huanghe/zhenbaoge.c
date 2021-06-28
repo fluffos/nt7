@@ -58,7 +58,7 @@ void init()
 {
         int rnd;
         object ob;
-        object room;
+//      object room;
         string obname;
         object me = this_player();
         object gcroom = get_object(__DIR__"guangchang.c");
@@ -136,4 +136,3 @@ void init()
         
         ::init();
 }
-

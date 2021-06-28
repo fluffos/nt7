@@ -31,9 +31,9 @@ void init()
 
 int do_break(string arg)
 {
-        int n;
+//      int n;
         object weapon,me=this_player();
-        mapping fam;
+//      mapping fam;
 
         if( !objectp(weapon=query_temp("weapon", me)) )
                 return notify_fail("你一掌打在石壁，满手都是鲜血。\n");

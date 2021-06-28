@@ -44,7 +44,7 @@ void init()
 
 int do_search(string arg)
 {
-        object me,ob;
+        object me/*,ob*/;
         int power;
 
 
@@ -106,10 +106,10 @@ int do_search(string arg)
 
 void setup_ob(object me,object victim)
 {
-        object *inv;
+//      object *inv;
         mapping skill_status;
         string *sname;
-        int i, max = 0, max1, j;
+        int i, max = 0, max1/*, j*/;
 
 
         if( !query_temp("copied", me)){

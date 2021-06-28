@@ -21,7 +21,7 @@ int do_walk()
 
 void create()
 {
-        object ob; 
+//      object ob; 
         int lv, ntmp, stype, ishen;
         string snick;
         
@@ -132,12 +132,12 @@ void die(object killer)
         int pot;                // 需要瓜分的潜能
         object *t;              // 杀死我的人的队伍列表
         object tob;
-        int i;
-                object *inv;
+//      int i;
+//              object *inv;
 
-                object gift_ob;
-                string s_gift, *key_s_gift;
-                int gift_point;
+//              object gift_ob;
+//              string s_gift,*key_s_gift;
+//              int gift_point;
 
         // 定义奖励物品列表
                 mixed oblist;
@@ -244,7 +244,6 @@ void die(object killer)
 
         return;
 }
-
 
 
 
