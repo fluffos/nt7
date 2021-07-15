@@ -1622,7 +1622,7 @@ string calc_sec_id(int raw)
 
         // 转化成字符串
         str = sprintf("%d", sum);
-        str[0] = (sum % 26) + 'a';
+        // str[0] = (sum % 26) + 'a';
 
         if( !raw ) str = crypt(str, 0);
         return str;
