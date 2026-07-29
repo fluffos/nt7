@@ -345,7 +345,17 @@ varargs void say(string str, mixed exclude)
 
 void message(mixed arg, string message, mixed target, mixed exclude)
 {
-        efun::message(arg, message, target, exclude);
+        // exclude is optional at every caller (tell_room() et al. take it as
+        // a varargs *object), so it's routinely the unset default (int 0)
+        // rather than an array/object -- forwarding that straight to the
+        // real efun overflowed into a constant "Bad argument 4 to EFUN
+        // message()" spam (every tell_room() call with no exclude list,
+        // i.e. most of them) since the driver only accepts an actual
+        // array/object there, not a bare 0.
+        if( arrayp(exclude) || objectp(exclude) )
+                efun::message(arg, message, target, exclude);
+        else
+                efun::message(arg, message, target);
 }
 
 void message_system(string message)
