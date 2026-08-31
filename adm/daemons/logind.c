@@ -171,7 +171,21 @@ void logon(object ob)
         ips  = ({});
         vips = ({});
 
+        // db_count_user() calls DATABASE_D->connect_to_database(), a real
+        // MySQL db_connect() -- this is purely cosmetic (the "N registered
+        // players" banner line) and every OTHER DATABASE_D-> call in this
+        // file is already gated on DB_SAVE (see include/unixconf.h --
+        // disabled by default), so match that convention instead of
+        // reaching for MySQL every single connection. Also protects WASM
+        // builds (PACKAGE_DB isn't compiled in there at all): unlike a real
+        // connection-refused failure natively (fast), db_connect() just
+        // blocks forever under WASM's absent socket layer -- catch()
+        // alone can't rescue a blocking call, so skip it outright here.
+#ifdef DB_SAVE
         reg_usr = DATABASE_D->db_count_user();
+#else
+        reg_usr = 0;
+#endif
         args1 = explode(read_file(CONFIG_DIR + "max_online", 1), ":");
         args2 = explode(read_file(CONFIG_DIR + "max_ips", 1), ":");
         time1 = to_int(args1[1]);
@@ -196,6 +210,16 @@ void logon(object ob)
 
         //write(sprintf("目前注册玩家" HIW "%d" NOR "位，最高在线人数" HIC "%d" NOR "人(" CYN "%s" NOR ")，最高在线IP数" HIY "%d" NOR "个(" CYN "%s" NOR ")\n" NOR,
                 //reg_usr, max_usr, TIME_D->replace_ctime(time1), max_ips, TIME_D->replace_ctime(time2)));
+        // TIME_D (timed.lpc) is preload-listed but, at least under the WASM
+        // build, isn't actually resident by the time the FIRST connection
+        // reaches this line -- a bare call_other() to it here silently
+        // fails logon() entirely (safe_apply() returns null, driver logs
+        // "logon() ... has failed, the user is disconnected", no LPC-level
+        // error/trace at all) instead of the usual transparent auto-load a
+        // call_other() to a not-yet-loaded object gets natively. Force the
+        // load explicitly first; this is a no-op (already loaded) natively
+        // and everywhere after the first WASM connection too.
+        if( !find_object(TIME_D) ) catch(load_object(TIME_D));
         write(sprintf("目前注册玩家" HIC "%s" NOR "位，最高同时在线人数" HIW "%s" NOR "人(" CYN "%s" NOR ")\n" NOR,
                 chinese_number(reg_usr), chinese_number(max_usr), TIME_D->replace_ctime(time1)));
 
