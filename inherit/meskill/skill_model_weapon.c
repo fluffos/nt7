@@ -22,7 +22,7 @@ int valid_enable(string usage)
 int practice_skill(object me)
 {
         object weapon; 
-        string skname=explode(__FILE__,"/")[<1][0..<3];
+        string skname=explode(__FILE__,"/")[<1][0..<5];
         int lvl = me->query_skill(skname,1);
         int i=sizeof(action);
         int qicost;

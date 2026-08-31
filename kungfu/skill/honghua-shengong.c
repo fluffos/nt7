@@ -20,7 +20,7 @@ int valid_learn(object me)
 {
         mapping skl = me->query_skills();
         string *sk;
-        string skl_name = explode(__FILE__, "/")[<1][0..<3];
+        string skl_name = explode(__FILE__, "/")[<1][0..<5];
         int i = (int)me->query_skill("honghua-shengong", 1);
         int t = 1, j;
 

@@ -20,7 +20,7 @@ void create()
         CHANNEL_D->do_channel(this_object(), "sys", "事件系统已经启动。");
 
         event_name = get_dir(EVENT_DIR + "*.c");
-        event_name = map_array(event_name, (: $1[0..<3] :));
+        event_name = map_array(event_name, (: $1[0..<5] :));
 
         // 析构所有的事件
         foreach (event in event_name)

@@ -13,7 +13,7 @@ int perform(object me, object target)
         string fskill,sskill,bskill,pfname,pskill;
 
         sskill = explode(__FILE__,"/")[<2];
-        pfname = explode(__FILE__,"/")[<1][0..<3];
+        pfname = explode(__FILE__,"/")[<1][0..<5];
 /*
   if (userp(me) && !wizardp(me) &&
    !query("perform/"+pfname, me) && 
