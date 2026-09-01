@@ -5,7 +5,7 @@ varargs int valid_public(object me,mixed comb)
         mapping skl = me->query_skills();
         string *sk;
         int i;
-        string skl_name = explode(__FILE__, "/")[<1][0..<3];
+        string skl_name = explode(__FILE__, "/")[<1][0..<5];
   string* can_skill;
   
   can_skill = ({ "shenzhao-jing" , "taixuan-gong" });
