@@ -37,7 +37,11 @@ void create()
         ob = new("/clone/money/thousand-gold");
         ob->move(this_object());
         ob->set_amount(10000);
-        while (i--) {EQUIPMENT_D->create_dynamic("", 60, 600)->move(this_object());}
+        while (i--) {
+                ob = EQUIPMENT_D->create_dynamic("", 60, 600);
+                if( objectp(ob) )
+                        ob->move(this_object());
+        }
 }
 
 

@@ -1366,6 +1366,12 @@ public varargs object create_dynamic(string obj_type, int ilvl, int mf, int flag
                 }
 
                 ob = TEMPLATE_D->create_object(filename, obj_type, temp_status);
+                // TEMPLATE_D->create_object() returns 0 when filename doesn't
+                // resolve to a real template (e.g. a missing equipment file
+                // for this obj_type/base_type combination) -- degrade
+                // gracefully instead of crashing on the call_other() below.
+                if( !objectp(ob) )
+                        return 0;
                 set("quality_level", qlvl, ob); // 品质
                 set("can_sign", 1, ob); // 装备签名
                 set("auto_load", 1, ob); // 下线不掉
