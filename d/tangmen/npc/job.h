@@ -81,8 +81,8 @@ int putting(object me)
                        });
         wh1 = str[random(sizeof(str))];
         wh2 = str[random(sizeof(str))];
-        ob1 =new("/d/tangmen/npc/askdizi1.c");
-        ob2 =new("/d/tangmen/npc/askdizi2.c");
+        ob1 =new("/d/tangmen/npc/askdizi1.lpc");
+        ob2 =new("/d/tangmen/npc/askdizi2.lpc");
         set("dname",query("id",  me), ob2);
         set("dname",query("id",  me), ob1);
         ob1->apply_condition("tmjob1", 10);

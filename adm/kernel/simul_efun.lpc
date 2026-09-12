@@ -1,0 +1,28 @@
+// #pragma optimize
+// #pragma save_binary
+
+#include <ansi.h>
+
+private inherit __DIR__ "check_config";
+
+#include "/adm/kernel/simul_efun/atoi.lpc"
+#include "/adm/kernel/simul_efun/object.lpc"
+#include "/adm/kernel/simul_efun/file.lpc"
+#include "/adm/kernel/simul_efun/ntefun.lpc"
+#include "/adm/kernel/simul_efun/chinese.lpc"
+#include "/adm/kernel/simul_efun/gender.lpc"
+#include "/adm/kernel/simul_efun/override.lpc"
+#include "/adm/kernel/simul_efun/path.lpc"
+#include "/adm/kernel/simul_efun/wizard.lpc"
+#include "/adm/kernel/simul_efun/user.lpc"
+
+// This must be after gender.c
+#include "/adm/kernel/simul_efun/message.lpc"
+
+// This is the utilitis
+#include "/adm/kernel/simul_efun/util.lpc"
+
+void create() {
+  seteuid(getuid());
+  write("simul_efun loaded successfully.\n");
+}

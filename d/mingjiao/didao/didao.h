@@ -18,8 +18,8 @@ int get_room(string dir)
         object center;
         int num;
 
-        if (!(center=find_object("/d/mingjiao/mj_center.c")))
-                center=load_object("/d/mingjiao/mj_center.c");
+        if (!(center=find_object("/d/mingjiao/mj_center.lpc")))
+                center=load_object("/d/mingjiao/mj_center.lpc");
 
         num=query("didao/"+dir, center);
 
@@ -68,8 +68,8 @@ int do_dig(string dir)
                 addn("improved",1);
                 if (query("improved") >= 5)
                 {
-                        if (!(center=find_object("/d/mingjiao/mj_center.c")))
-                                center=load_object("/d/mingjiao/mj_center.c");
+                        if (!(center=find_object("/d/mingjiao/mj_center.lpc")))
+                                center=load_object("/d/mingjiao/mj_center.lpc");
                         addn("didao/"+dir, 1, center);
                         tell_object(me,HIG"恭喜！你又挖通了一段地道。\n"NOR);
                         addn("combat_exp", 200, me);

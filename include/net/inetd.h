@@ -1,7 +1,7 @@
 #ifndef __NET_INETD_H
 #define __NET_INETD_H
 #ifndef DNS_MASTER
-#include <net/daemons.h>
+#include "net/daemons.h"
 #endif
 // #define INETD_ADDRESS  -100
 // #define INETD_PORT     -200

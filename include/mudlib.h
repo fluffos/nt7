@@ -1,7 +1,7 @@
 #ifndef __MUDLIB__
 #define __MUDLIB__
 
-#include <getconfig.h>
+#include "getconfig.h"
 
 //  The base distribution mudlib name.
 

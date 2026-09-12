@@ -187,8 +187,8 @@ int do_look(string arg)
                     obj=get_item(ob,place);
                     if (objectp(obj)) {
                             if (obj->query("changed")) 
-                                    "/cmds/std/ll.c"->look_item(0,obj);
-                            else "cmds/std/look.c"->look_item(this_player(),obj);
+                                    "/cmds/std/ll.lpc"->look_item(0,obj);
+                            else "cmds/std/look.lpc"->look_item(this_player(),obj);
                             destruct(obj);
                             return 1;
                     }

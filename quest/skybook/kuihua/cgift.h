@@ -211,7 +211,7 @@ private void confirm_passwd(string pass, object me, string from, string to, int 
 	me->setup();
 	me->save();
 	write(HIY"你将"+num+"点"+gift_desc[from]+"调整到"+gift_desc[to]+"上。\n"NOR, me);
-	log_file("nosave/ADJUST",
+	log_file("static/ADJUST",
 		me->query("name")+"("+capitalize(geteuid(me))+")"
 		+"调整"+num+"点"+gift_desc[from]
 		+"到"+gift_desc[to]+"上，扣除 "+tmpexp+" 点经验，剩余"+newexp+"\n",

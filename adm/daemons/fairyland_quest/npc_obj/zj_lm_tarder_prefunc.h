@@ -1,4 +1,4 @@
-// for this dir "hj_npc_tarder.c", "hj_npc_zhujian.c", "hj_npc_lianmo.c"
+// for this dir "hj_npc_tarder.lpc", "hj_npc_zhujian.lpc", "hj_npc_lianmo.lpc"
 // #include .  by naihe 2:16 03-11-5
 
 int me_ok( object me )

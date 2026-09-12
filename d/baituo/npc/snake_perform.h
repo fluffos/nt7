@@ -64,7 +64,7 @@ int auto_perform_chan()
         set_temp("try_chan", 1, me);
         set("default_actions", (:call_other,__FILE__,"query_action":), me);
         COMBAT_D->do_attack(me,target,query_temp("weapon", me));
-        set("default_actions", (:call_other,"/adm/daemons/race/snake.c","query_action":), me);
+        set("default_actions", (:call_other,"/adm/daemons/race/snake.lpc","query_action":), me);
         delete_temp("try_chan", me);
         return 1;
 }
@@ -82,7 +82,7 @@ int auto_perform_double()
         set_temp("double_hit", 2, me);
         COMBAT_D->do_attack(me,target,query_temp("weapon", me));
         delete_temp("double_hit", me);
-        set("default_actions", (:call_other,"/adm/daemons/race/snake.c","query_action":), me);
+        set("default_actions", (:call_other,"/adm/daemons/race/snake.lpc","query_action":), me);
 
         return 1;
 }

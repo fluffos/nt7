@@ -328,7 +328,7 @@ int store_item(object me, object ob, int amount)
                 return 0;
         }
 
-        if( file_size(base_name(ob) + ".c") < 0 )
+        if( file_size(base_name(ob) + ".lpc") < 0 )
                 return 0;
 
         if( inherits(F_SILENTDEST, ob) ) {
@@ -336,8 +336,8 @@ int store_item(object me, object ob, int amount)
                 return 0;
         }
 
-        if( member_array(ITEM + ".c", deep_inherit_list(ob)) == -1 &&
-            member_array(COMBINED_ITEM + ".c", deep_inherit_list(ob)) == -1 ) {
+        if( member_array(ITEM + ".lpc", deep_inherit_list(ob)) == -1 &&
+            member_array(COMBINED_ITEM + ".lpc", deep_inherit_list(ob)) == -1 ) {
                 tell_object(me,"如意乾坤袋不保存"+query("name", ob)+"，请你自己妥善处理。\n");
                 return 0;
         }

@@ -119,6 +119,6 @@ array common_rate_table = ({ "weapon", "potion", "armor", "helmet", "shield",
 　　　　　　　　　　　　　　　 "key", "gloves", "boots", "belt", "ring", "amulet",
 　　　　　　　　　　　　　　　 "charm", "jewel", });
 
-static int max_rate;
+nosave int max_rate;
 
 int *common_rate_list = ({ 120, 100, 100, 80, 80, 70, 60, 60, 60, 20, 20, 20, 10, });

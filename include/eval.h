@@ -1,5 +1,5 @@
 
-#include <location.h>
+#include "location.h"
 
 #define PRINT(x)        printf("%O\n", x)
 #define write(x)        PRINT(x)

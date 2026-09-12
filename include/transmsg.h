@@ -1,6 +1,6 @@
 // This program is a part of NITAN MudLIB 
 // redl 2013/9
-#include <ansi.h>
+#include "ansi.h"
 
 void trans_message(string msgclass, string msg)
 {

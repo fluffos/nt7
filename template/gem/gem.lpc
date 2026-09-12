@@ -1,0 +1,170 @@
+// jewel.c
+#include <ansi.h>
+#include <template.h>
+
+inherit TEMPLATE_OB;
+
+mixed *dbase_format = ({ "long", "value", "enchase", });
+
+// 模板数据
+mapping template_data = ([
+  "red gem1": ({ ({ RED "一片宝石碎片。\n" NOR, 80000,
+    ([ "SN": random(9) + 1, "level": 1, "consistence": 70 + random(31), ]),
+  }), ([]), BASIC_OB_DIR + "gem/redgem1.lpc"
+  }),
+  "red gem2": ({ ({ RED "一块金光闪闪的精美宝石，华丽异常。\n" NOR, 10000,
+    ([ "SN": random(9) + 1, "level": 2, "consistence": 70 + random(31), ]),
+  }), ([]), BASIC_OB_DIR + "gem/redgem2.lpc"
+  }),
+  "red gem3": ({ ({ RED "一块金光闪闪的精美宝石，给人以不同寻常的感觉。\n" NOR, 12000,
+    ([ "SN": random(9) + 1, "level": 3, "consistence": 70 + random(31), ]),
+  }), ([]), BASIC_OB_DIR + "gem/redgem3.lpc"
+  }),
+  "red gem4": ({ ({ RED "一块闪烁这奇异光芒的宝石，让人感到一阵阵的心悸。\n" NOR, 14000,
+    ([ "SN": random(9) + 1, "level": 4, "consistence": 80 + random(21), ]),
+  }), ([]), BASIC_OB_DIR + "gem/redgem4.lpc"
+  }),
+  "red gem5": ({ ({ RED "一块闪烁这奇异光芒的宝石，让人感到一阵阵的心悸。\n" NOR, 16000,
+    ([ "SN": random(9) + 1, "level": 5, "consistence": 80 + random(21), ]),
+  }), ([]), BASIC_OB_DIR + "gem/redgem5.lpc"
+  }),
+  "red gem6": ({ ({ RED "一块闪烁这奇异光芒的宝石，让人感到一阵阵的心悸。\n" NOR, 18000,
+    ([ "SN": random(9) + 1, "level": 6, "consistence": 80 + random(21), ]),
+  }), ([]), BASIC_OB_DIR + "gem/redgem6.lpc"
+  }),
+  "red gem7": ({ ({ RED "一块闪烁这奇异光芒的宝石，让人感到一阵阵的心悸。\n" NOR, 20000,
+    ([ "SN": random(9) + 1, "level": 7, "consistence": 80 + random(21), ]),
+  }), ([]), BASIC_OB_DIR + "gem/redgem7.lpc"
+  }),
+  "grn gem1": ({ ({ GRN "一片宝石碎片。\n" NOR, 80000,
+    ([ "SN": random(9) + 1, "level": 1, "consistence": 70 + random(31), ]),
+  }), ([]), BASIC_OB_DIR + "gem/grngem1.lpc"
+  }),
+  "grn gem2": ({ ({ GRN "一块金光闪闪的精美宝石，华丽异常。\n" NOR, 10000,
+    ([ "SN": random(9) + 1, "level": 2, "consistence": 70 + random(31), ]),
+  }), ([]), BASIC_OB_DIR + "gem/grngem2.lpc"
+  }),
+  "grn gem3": ({ ({ GRN "一块金光闪闪的精美宝石，给人以不同寻常的感觉。\n" NOR, 12000,
+    ([ "SN": random(9) + 1, "level": 3, "consistence": 70 + random(31), ]),
+  }), ([]), BASIC_OB_DIR + "gem/grngem3.lpc"
+  }),
+  "grn gem4": ({ ({ GRN "一块闪烁这奇异光芒的宝石，让人感到一阵阵的心悸。\n" NOR, 14000,
+    ([ "SN": random(9) + 1, "level": 4, "consistence": 80 + random(21), ]),
+  }), ([]), BASIC_OB_DIR + "gem/grngem4.lpc"
+  }),
+  "grn gem5": ({ ({ GRN "一块闪烁这奇异光芒的宝石，让人感到一阵阵的心悸。\n" NOR, 16000,
+    ([ "SN": random(9) + 1, "level": 5, "consistence": 80 + random(21), ]),
+  }), ([]), BASIC_OB_DIR + "gem/grngem5.lpc"
+  }),
+  "grn gem6": ({ ({ GRN "一块闪烁这奇异光芒的宝石，让人感到一阵阵的心悸。\n" NOR, 18000,
+    ([ "SN": random(9) + 1, "level": 6, "consistence": 80 + random(21), ]),
+  }), ([]), BASIC_OB_DIR + "gem/grngem6.lpc"
+  }),
+  "grn gem7": ({ ({ GRN "一块闪烁这奇异光芒的宝石，让人感到一阵阵的心悸。\n" NOR, 20000,
+    ([ "SN": random(9) + 1, "level": 7, "consistence": 80 + random(21), ]),
+  }), ([]), BASIC_OB_DIR + "gem/grngem7.lpc"
+  }),
+  "yel gem1": ({ ({ YEL "一片宝石碎片。\n" NOR, 80000,
+    ([ "SN": random(9) + 1, "level": 1, "consistence": 70 + random(31), ]),
+  }), ([]), BASIC_OB_DIR + "gem/yelgem1.lpc"
+  }),
+  "yel gem2": ({ ({ YEL "一块金光闪闪的精美宝石，华丽异常。\n" NOR, 10000,
+    ([ "SN": random(9) + 1, "level": 2, "consistence": 70 + random(31), ]),
+  }), ([]), BASIC_OB_DIR + "gem/yelgem2.lpc"
+  }),
+  "yel gem3": ({ ({ YEL "一块金光闪闪的精美宝石，给人以不同寻常的感觉。\n" NOR, 12000,
+    ([ "SN": random(9) + 1, "level": 3, "consistence": 70 + random(31), ]),
+  }), ([]), BASIC_OB_DIR + "gem/yelgem3.lpc"
+  }),
+  "yel gem4": ({ ({ YEL "一块闪烁这奇异光芒的宝石，让人感到一阵阵的心悸。\n" NOR, 14000,
+    ([ "SN": random(9) + 1, "level": 4, "consistence": 80 + random(21), ]),
+  }), ([]), BASIC_OB_DIR + "gem/yelgem4.lpc"
+  }),
+  "yel gem5": ({ ({ YEL "一块闪烁这奇异光芒的宝石，让人感到一阵阵的心悸。\n" NOR, 16000,
+    ([ "SN": random(9) + 1, "level": 5, "consistence": 80 + random(21), ]),
+  }), ([]), BASIC_OB_DIR + "gem/yelgem5.lpc"
+  }),
+  "yel gem6": ({ ({ YEL "一块闪烁这奇异光芒的宝石，让人感到一阵阵的心悸。\n" NOR, 18000,
+    ([ "SN": random(9) + 1, "level": 6, "consistence": 80 + random(21), ]),
+  }), ([]), BASIC_OB_DIR + "gem/yelgem6.lpc"
+  }),
+  "yel gem7": ({ ({ YEL "一块闪烁这奇异光芒的宝石，让人感到一阵阵的心悸。\n" NOR, 20000,
+    ([ "SN": random(9) + 1, "level": 7, "consistence": 80 + random(21), ]),
+  }), ([]), BASIC_OB_DIR + "gem/yelgem7.lpc"
+  }),
+  "blu gem1": ({ ({ BLU "一片宝石碎片。\n" NOR, 80000,
+    ([ "SN": random(9) + 1, "level": 1, "consistence": 70 + random(31), ]),
+  }), ([]), BASIC_OB_DIR + "gem/blugem1.lpc"
+  }),
+  "blu gem2": ({ ({ BLU "一块金光闪闪的精美宝石，华丽异常。\n" NOR, 10000,
+    ([ "SN": random(9) + 1, "level": 2, "consistence": 70 + random(31), ]),
+  }), ([]), BASIC_OB_DIR + "gem/blugem2.lpc"
+  }),
+  "blu gem3": ({ ({ BLU "一块金光闪闪的精美宝石，给人以不同寻常的感觉。\n" NOR, 12000,
+    ([ "SN": random(9) + 1, "level": 3, "consistence": 70 + random(31), ]),
+  }), ([]), BASIC_OB_DIR + "gem/blugem3.lpc"
+  }),
+  "blu gem4": ({ ({ BLU "一块闪烁这奇异光芒的宝石，让人感到一阵阵的心悸。\n" NOR, 14000,
+    ([ "SN": random(9) + 1, "level": 4, "consistence": 80 + random(21), ]),
+  }), ([]), BASIC_OB_DIR + "gem/blugem4.lpc"
+  }),
+  "blu gem5": ({ ({ BLU "一块闪烁这奇异光芒的宝石，让人感到一阵阵的心悸。\n" NOR, 16000,
+    ([ "SN": random(9) + 1, "level": 5, "consistence": 80 + random(21), ]),
+  }), ([]), BASIC_OB_DIR + "gem/blugem5.lpc"
+  }),
+  "blu gem6": ({ ({ BLU "一块闪烁这奇异光芒的宝石，让人感到一阵阵的心悸。\n" NOR, 18000,
+    ([ "SN": random(9) + 1, "level": 6, "consistence": 80 + random(21), ]),
+  }), ([]), BASIC_OB_DIR + "gem/blugem6.lpc"
+  }),
+  "blu gem7": ({ ({ BLU "一块闪烁这奇异光芒的宝石，让人感到一阵阵的心悸。\n" NOR, 20000,
+    ([ "SN": random(9) + 1, "level": 7, "consistence": 80 + random(21), ]),
+  }), ([]), BASIC_OB_DIR + "gem/blugem7.lpc"
+  }),
+  "mag gem1": ({ ({ MAG "一片宝石碎片。\n" NOR, 80000,
+    ([ "SN": random(9) + 1, "level": 1, "consistence": 70 + random(31), ]),
+  }), ([]), BASIC_OB_DIR + "gem/maggem1.lpc"
+  }),
+  "mag gem2": ({ ({ MAG "一块金光闪闪的精美宝石，华丽异常。\n" NOR, 10000,
+    ([ "SN": random(9) + 1, "level": 2, "consistence": 70 + random(31), ]),
+  }), ([]), BASIC_OB_DIR + "gem/maggem2.lpc"
+  }),
+  "mag gem3": ({ ({ MAG "一块金光闪闪的精美宝石，给人以不同寻常的感觉。\n" NOR, 12000,
+    ([ "SN": random(9) + 1, "level": 3, "consistence": 70 + random(31), ]),
+  }), ([]), BASIC_OB_DIR + "gem/maggem3.lpc"
+  }),
+  "mag gem4": ({ ({ MAG "一块闪烁这奇异光芒的宝石，让人感到一阵阵的心悸。\n" NOR, 14000,
+    ([ "SN": random(9) + 1, "level": 4, "consistence": 80 + random(21), ]),
+  }), ([]), BASIC_OB_DIR + "gem/maggem4.lpc"
+  }),
+  "mag gem5": ({ ({ MAG "一块闪烁这奇异光芒的宝石，让人感到一阵阵的心悸。\n" NOR, 16000,
+    ([ "SN": random(9) + 1, "level": 5, "consistence": 80 + random(21), ]),
+  }), ([]), BASIC_OB_DIR + "gem/maggem5.lpc"
+  }),
+  "mag gem6": ({ ({ MAG "一块闪烁这奇异光芒的宝石，让人感到一阵阵的心悸。\n" NOR, 18000,
+    ([ "SN": random(9) + 1, "level": 6, "consistence": 80 + random(21), ]),
+  }), ([]), BASIC_OB_DIR + "gem/maggem6.lpc"
+  }),
+  "mag gem7": ({ ({ MAG "一块闪烁这奇异光芒的宝石，让人感到一阵阵的心悸。\n" NOR, 20000,
+    ([ "SN": random(9) + 1, "level": 7, "consistence": 80 + random(21), ]),
+  }), ([]), BASIC_OB_DIR + "gem/maggem7.lpc"
+  }),
+]);
+
+// 初始化模板
+void create() {
+  setup();
+}
+
+// 在这里配置是否使用全格式模式或格式对应模式
+void setup() {
+  // 即基准文件为 "/inherit/template/gem/gem.lpc"。
+  set_base_file("gem/gem");
+
+  // 设置 dbase 格式
+  set_dbase_format(dbase_format);
+
+  // 设置模板数据
+  set_template_data(template_data);
+
+  ::setup();
+}
