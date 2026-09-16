@@ -63,7 +63,10 @@ object connect(int port) {
   }
 
   if (port == 5555) {
-    set_encoding("GBK");
+    // Catalog WASM ICU may lack GBK; never hard-error on connect.
+    // Museum config uses port 40211 so this branch is idle there.
+    if (catch(set_encoding("GBK")))
+      set_encoding("utf-8");
   }
 
   // if( port == BIG5_PORT )
