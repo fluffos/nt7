@@ -198,7 +198,7 @@ int check_site(string who, int fd) {
             sites = explode(arg, "\n");
             sites = regexp(sites, "^sitecheck ");
             if (sites && sizeof(sites)) {
-                arg = sites[0][10..-1];
+                arg = sites[0][10..<1];
                 
                 /*
                  * parse command line args
@@ -263,8 +263,8 @@ int check_site(string who, int fd) {
                                 l2 = strlen(sites[i]) - 1;
                                 if (l2 > 1 && l1 > l2 &&
                                       sites[i][0..1] == "*." &&
-                                      strcmp(site[l1-l2..-1],
-                                      sites[i][1..-1]) == 0)
+                                      strcmp(site[l1-l2..<1],
+                                      sites[i][1..<1]) == 0)
                                     return 1;
                             }
 
@@ -276,7 +276,7 @@ int check_site(string who, int fd) {
                                  while (i--) {
                                      l2 = strlen(sites[i]) - 2;
                                      if (l2 > 0 && l1 > l2 &&
-                                          sites[i][l2..-1] == ".*" &&
+                                          sites[i][l2..<1] == ".*" &&
                                           strcmp(site[0..l2],
                                           sites[i][0..l2]) == 0)
                                         return 1;
