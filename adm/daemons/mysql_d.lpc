@@ -8,7 +8,8 @@ mapping mysql;
 #define DEFAULT_USERNAME        "xkx"
 
 //#define MSG(x, y)               CHANNEL_D->channel_broadcast("nch", "MYSQL_D["+x+"]: "+y)
-#define MSG(x, y)
+// MSG used to be an empty #define, which left `if (v) ;` behind; put the channel_broadcast above back in here to trace.
+void MSG(mixed x, mixed y) {}
 
 varargs mixed exec(int handle, string sql);
 

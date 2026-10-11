@@ -597,7 +597,7 @@ int do_inquiry() {
     query("combat_exp", me));
   n = 0;
   for (i = 0; i < sizeof(jiang); i++) {
-    obb = query_temp("jun_quest/jiang/jiang" + (i + 1, me));
+    obb = query_temp("jun_quest/jiang/jiang" + (i + 1), me);
     if (objectp(obb)) {
       str += obb->short(1) + HIW "\n        统军： " + chinese_number(query_temp(
         "jun_quest/group",

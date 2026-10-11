@@ -3,7 +3,7 @@
 
 inherit F_SSERVER;
 
-string name() { HIW "云边摘月" NOR; }
+string name() { return HIW "云边摘月" NOR; }
 
 int perform(object me, object target) {
   object weapon;
