@@ -445,12 +445,12 @@ int do_eat(string arg) {
       me
     );
     for (; i < count - 1; i++) {
-      set_temp("cai_" + i + "/name", query_temp("cai_" + (i + 1, me) + "/name"), me);
-      set_temp("cai_" + i + "/short", query_temp("cai_" + (i + 1, me) + "/short"), me);
-      set_temp("cai_" + i + "/unit", query_temp("cai_" + (i + 1, me) + "/unit"), me);
-      set_temp("cai_" + i + "/remaining", query_temp("cai_" + (i + 1, me) + "/remaining"), me);
-      set_temp("cai_" + i + "/supply", query_temp("cai_" + (i + 1, me) + "/supply"), me);
-      set_temp("cai_" + i + "/type", query_temp("cai_" + (i + 1, me) + "/type"), me);
+      set_temp("cai_" + i + "/name", query_temp("cai_" + (i + 1) + "/name", me), me);
+      set_temp("cai_" + i + "/short", query_temp("cai_" + (i + 1) + "/short", me), me);
+      set_temp("cai_" + i + "/unit", query_temp("cai_" + (i + 1) + "/unit", me), me);
+      set_temp("cai_" + i + "/remaining", query_temp("cai_" + (i + 1) + "/remaining", me), me);
+      set_temp("cai_" + i + "/supply", query_temp("cai_" + (i + 1) + "/supply", me), me);
+      set_temp("cai_" + i + "/type", query_temp("cai_" + (i + 1) + "/type", me), me);
     }
     addn_temp("cai_count", -1, me);
   } else
@@ -505,12 +505,12 @@ int do_drink(string arg) {
       me
     );
     for (; i < count - 1; i++) {
-      set_temp("cai_" + i + "/name", query_temp("cai_" + (i + 1, me) + "/name"), me);
-      set_temp("cai_" + i + "/short", query_temp("cai_" + (i + 1, me) + "/short"), me);
-      set_temp("cai_" + i + "/unit", query_temp("cai_" + (i + 1, me) + "/unit"), me);
-      set_temp("cai_" + i + "/remaining", query_temp("cai_" + (i + 1, me) + "/remaining"), me);
-      set_temp("cai_" + i + "/supply", query_temp("cai_" + (i + 1, me) + "/supply"), me);
-      set_temp("cai_" + i + "/type", query_temp("cai_" + (i + 1, me) + "/type"), me);
+      set_temp("cai_" + i + "/name", query_temp("cai_" + (i + 1) + "/name", me), me);
+      set_temp("cai_" + i + "/short", query_temp("cai_" + (i + 1) + "/short", me), me);
+      set_temp("cai_" + i + "/unit", query_temp("cai_" + (i + 1) + "/unit", me), me);
+      set_temp("cai_" + i + "/remaining", query_temp("cai_" + (i + 1) + "/remaining", me), me);
+      set_temp("cai_" + i + "/supply", query_temp("cai_" + (i + 1) + "/supply", me), me);
+      set_temp("cai_" + i + "/type", query_temp("cai_" + (i + 1) + "/type", me), me);
     }
     addn_temp("cai_count", -1, me);
   } else set_temp("cai_" + i + "/remaining", remaining, me);

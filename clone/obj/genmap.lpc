@@ -22,7 +22,8 @@ mapping map;     // The real map.  see enter_map for its format
 object cur_room;
 object loading_room;
 
-#define DEBUG
+// DEBUG used to be an empty #define, which left `("text");` statements behind; put printf(fmt, arg) here to trace.
+varargs void DEBUG(string fmt, mixed arg) {}
 // #define DEBUG printf
 #define STATUS printf
 

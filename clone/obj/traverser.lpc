@@ -14,7 +14,8 @@ nosave mapping visited;
 nosave object mapdb;
 int visit(string room, mapping info, mixed args);
 
-#define DEBUG
+// DEBUG used to be an empty #define, which left `("text");` statements behind; put printf(fmt, arg) here to trace.
+varargs void DEBUG(string fmt, mixed arg) {}
 // #define DEBUG printf
 
 void create() {
