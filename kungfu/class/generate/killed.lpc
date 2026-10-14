@@ -677,10 +677,10 @@ void die(object killer) {
     // 打晕我的人分两份经验，所以是n + 1，再加上
     // 领任务的这个人算1，那么就是n + 2。
     if (n > 1) {
-      exp *= 1.2;
-      pot *= 1.2;
-      weiwang *= 1.2;
-      score *= 1.2;
+      exp = to_int(exp * (1.2));
+      pot = to_int(pot * (1.2));
+      weiwang = to_int(weiwang * (1.2));
+      score = to_int(score * (1.2));
     }
     exp = exp / (n + 2) + 1;
     pot = pot / (n + 2) + 1;

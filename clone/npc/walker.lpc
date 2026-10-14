@@ -194,8 +194,8 @@ int accept_object(object who, object ob) {
 
   // 如果拾荒技能超过60级则奖励加倍
   if (who->query_skill("gleaning", 1) >= 60) {
-    pot *= 1.5;
-    score *= 2.5;
+    pot = to_int(pot * (1.5));
+    score = to_int(score * (2.5));
     exp *= 2;
   }
   GIFT_D->work_bonus(who, ([ "exp": exp, "pot": pot, "score": score ]));

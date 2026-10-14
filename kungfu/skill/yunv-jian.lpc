@@ -216,7 +216,7 @@ string perform_action_file(string action) {
 int learn_bonus() { return 5; }
 int practice_bonus() { return 5; }
 int success() { return 5; }
-int power_point(object me) {
+float power_point(object me) {
   if (me->query("gender") == "女性")
     return 1.0;
   else

@@ -308,9 +308,9 @@ int xiuxi(object me) {
     else xj_gain = to_int(pow(force_lvl / 4 + 1, 1.1) * 1.2);
 
     if (me->is_spouse_of(target)) {
-      xj_gain *= 1.5;
+      xj_gain = to_int(xj_gain * (1.5));
       love_gain = xj_gain * 2;
-    } else if (query("gender", me) != query("gender", target)) xj_gain *= 1.2;
+    } else if (query("gender", me) != query("gender", target)) xj_gain = to_int(xj_gain * (1.2));
     me->improve_skill("yunu-xinjing", xj_gain, 0);
     write(phases_me[random(6)]);
     me->receive_damage("qi", qi_cost, "练内功走火入魔死了");

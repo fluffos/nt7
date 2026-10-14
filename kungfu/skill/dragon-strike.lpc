@@ -351,7 +351,7 @@ int query_effect_parry(object attacker, object me) {
 int learn_bonus() { return 0; }
 int practice_bonus() { return 0; }
 int success() { return 5; }
-int power_point(object me) {
+float power_point(object me) {
   if (me->query_skill("huntian-qigong", 1) >= 10) return 0.8;
   else return 1.0;
 }

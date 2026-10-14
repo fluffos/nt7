@@ -450,7 +450,7 @@ int do_list(string arg) {
     value = query("value", items[i]);
     if (!value)
       value = items[i]->value();
-    value = value * rate / 100 * 9 / 10;
+    value = to_int(value * rate / 100 * 9 / 10);
     msg += sprintf(" %-26s%-10s%s\n", clr_ansi(items[i]->short()),
       sprintf("%-3d%s", pawned_objects[items[i]], query("unit", items[i])),
       chinese_value(value));

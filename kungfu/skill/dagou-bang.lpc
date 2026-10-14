@@ -159,7 +159,7 @@ mixed hit_ob(object me, object victim, int damage) {
   if (!objectp(weapon = query_temp("weapon", me)))
     return 0;
 
-  zhencost = sqrt(weapon->weight() / 10) + 10;
+  zhencost = to_int(sqrt(weapon->weight() / 10) + 10);
   if (query("neili", me) < zhencost || query("jing", me) < zhencost)
     return 0;
 

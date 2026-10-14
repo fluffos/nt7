@@ -115,7 +115,7 @@ int perform(object me, object target) {
           me
         ) / 1000 + me->query_skill("mahayana") + me->query_all_buff("damage");
         damage = damage + damage * i / 18;
-        att = pow(sklv, 1.5);
+        att = to_int(pow(sklv, 1.5));
         att += att * query("can_perform/yitian-jian/zhen", me) / 100;
         addn_temp("apply/attack", att, me);
         addn_temp("apply/damage", damage, me);

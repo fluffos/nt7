@@ -224,7 +224,7 @@ string ask_job() {
   }
 
   ob->start_busy(random(4));
-  good_skill = to_int(pow(to_float(query("combat_exp", ob) / 100), 1.0 / 3)) * 10 * 0.7 * 3 / 2;
+  good_skill = to_int(to_int(pow(to_float(query("combat_exp", ob) / 100), 1.0 / 3)) * 10 * 0.7 * 3 / 2);
 
   if (query(
     "combat_exp",
