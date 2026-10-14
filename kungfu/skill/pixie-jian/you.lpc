@@ -9,7 +9,7 @@ string name() { return "幽冥一击"; }
 
 int perform(object me, object target) {
   string msg;
-  int ap, dp, bs;
+  int ap, dp;
   int damage;
   object weapon;
   int delta;

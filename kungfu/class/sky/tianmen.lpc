@@ -19,7 +19,6 @@ LONG NOR);
 }
 
 int valid_leave(object me, string dir) {
-  object ob;
 
   if (dir == "enter" && objectp(present("li xunhuan", environment(me)))
     && me->query("sky12/floor") < 1) {

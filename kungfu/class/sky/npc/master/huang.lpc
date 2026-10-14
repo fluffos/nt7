@@ -3,7 +3,6 @@
 inherit NPC;
 
 void create() {
-  object ob;
   set_name("黄药师", ({ "huang yaoshi", "huang", "yaoshi" }));
   set("title", "东海桃花岛岛主");
   set("nickname", HIC "东邪" NOR);

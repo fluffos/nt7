@@ -41,7 +41,6 @@ void create() {
 void do_stun() {
   object *enemies, enemy;
   string msg;
-  int be_damaged;
 
   enemies = query_enemy();
   if (!enemies || sizeof(enemies) == 0)
@@ -56,7 +55,7 @@ void do_stun() {
 void do_attack() {
   object *enemies, enemy;
   string msg;
-  int be_damaged, i;
+  int i;
 
   enemies = query_enemy();
   if (!enemies || sizeof(enemies) == 0)

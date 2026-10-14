@@ -29,7 +29,6 @@ void init() {
 }
 
 int do_caiqi(string arg) {
-  mapping fam;
   object me;
   me = this_player();
 

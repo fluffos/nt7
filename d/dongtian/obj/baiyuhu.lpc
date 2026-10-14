@@ -3,7 +3,6 @@
 #include <ansi.h>
 
 inherit ITEM;
-inherit F_CLEAN_UP;
 
 void create() {
   set_name(NOR HIW "白玉" HIC "笏" NOR, ({ "baiyu hu", "hu" }));

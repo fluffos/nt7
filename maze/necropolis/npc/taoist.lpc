@@ -390,7 +390,7 @@ int count_undead(object env) {
 
 
 void summon_undead(object env, object mazeobj) {
-  object *obs, ob;
+  object ob;
   int i, j;
   string file;
 
@@ -541,7 +541,7 @@ void give_reward_necropolis(object *ob, object reward_giver) {
   int score = 500;
   int exp, pot, mar;
   object *team, member;
-  string reward_msg, mazedir;
+  string mazedir;
 
   if (!ob || sizeof(ob) == 0 || !reward_giver)
     return;

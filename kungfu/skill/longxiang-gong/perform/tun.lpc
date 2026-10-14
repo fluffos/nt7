@@ -12,7 +12,6 @@ inherit F_CLEAN_UP;
 void remove_effect(object me);
 
 int perform(object me, object target) {
-  object weapon;
   int ap, dp, foc, damage;
   string msg;
   int fmsk = me->query_skill("mizong-zhenyan", 1);

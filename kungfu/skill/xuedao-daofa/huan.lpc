@@ -8,7 +8,7 @@ string name() { return HIR "我必还之" NOR; }
 inherit F_SSERVER;
 
 int perform(object me, object target) {
-  mapping buff, data;
+  mapping buff;
   object weapon;
   string msg;
   int ap, dp, damage;

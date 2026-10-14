@@ -310,7 +310,7 @@ int do_game(string arg) {
 
 int do_go(string arg) {
   object me = this_player(), who;
-  int x, y, old_x, old_y, i;
+  int x, y, old_x, old_y;
 
   string *dirs = ({
     "north", "south", "west", "east", "northwest", "northeast", "southwest", "southeast", });

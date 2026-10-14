@@ -6,7 +6,6 @@
 inherit ROOM;
 
 void create() {
-  object ob;
 
   set("short", "石阵中枢");
   set("long", @LONG
@@ -91,10 +90,7 @@ int do_thinking() {
 }
 
 int do_sit(string arg) {
-  mapping skl;
   object me = this_player();
-  string *sname;
-  int i, j;
 
   if (!arg || arg != "yin") return 0;
 
@@ -128,10 +124,7 @@ int do_sit(string arg) {
 }
 
 int do_stand(string arg) {
-  mapping skl;
   object me = this_player();
-  string *sname;
-  int i, j;
 
   if (!arg || arg != "yang") return 0;
 

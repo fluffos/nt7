@@ -87,7 +87,6 @@ void create() {
 }
 
 string ask_shedong() {
-  string msg;
 
   command("say 这蛇精洞内满布毒蛇，地形错综复杂，一不小心就会迷路。");
   command("say 如果要进蛇洞还是先熟悉下蛇精洞的地图吧：");
@@ -197,8 +196,6 @@ string give_lhd() {
 
 string ask_renjiandao() {
   object me;
-  object ob_hlp;
-  int i;
 
   me = this_player();
 

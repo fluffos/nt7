@@ -43,7 +43,7 @@ int room_path(object me, object ob) {
   mapping skills, meskills;
   object *inv;
   string *str, *ids;
-  string id, name, tmp;
+  string id, tmp;
   int i, my_skill;
 
   if (!objectp(ob)) return 1;

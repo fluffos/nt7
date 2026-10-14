@@ -44,13 +44,11 @@ void init() {
 
 
 int do_washto(string arg) {
-  int i, j, points;
+  int points;
   int tmpstr, tmpint, tmpcon, tmpdex;
   int str, wux, con, dex;
-  object me, weapon;
+  object me;
   mapping my;
-  string *sname;
-  mixed skill_status;
 
   me = this_player();
 

@@ -1,5 +1,6 @@
 #include <ansi.h>
 
+#undef BOOK_DIR
 #define BOOK_DIR "/clone/lonely/book/"
 int get_book();
 
@@ -39,7 +40,7 @@ mixed query_story_message(int step) {
 }
 
 int get_book() {
-  object ob, book, owner;
+  object ob, owner;
   int i = sizeof(books);
   string temp, *find_book = ({});
 

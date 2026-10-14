@@ -55,7 +55,6 @@ void init() {
 }
 
 int valid_leave(object me, string dir) {
-  object guarder;
 
   if (dir == "south") {
     if (!MEMBER_D->is_valid_member(query("id", me)))

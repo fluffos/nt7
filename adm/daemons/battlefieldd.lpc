@@ -166,7 +166,6 @@ void init_player(object me) {
 // 参与战争
 void join_battle(object me) {
   string where;
-  mapping cnd;
   string id = me->query_id(1);
 
   if (battle_start_flag)
@@ -295,7 +294,6 @@ varargs int receive_damage(object me, string type, int damage, object who) {
 
 void auto_check() {
   object ob;
-  string msg;
   string room;
   object *lost;
   int i;
@@ -597,7 +595,6 @@ void win_battle(string name) {
 
 void stop_battle() {
   object ob;
-  object player;
 
   set_heart_beat(0);
 
@@ -647,8 +644,7 @@ void calculate_score() {
   string name;
   string msg;
   int rank;
-  object home, player;
-  string file;
+  object player;
   object insigne;
   int insigne_count;
   string *member;
@@ -818,7 +814,6 @@ void calculate_score() {
 
 string do_score() {
   string desc, desc_temp;
-  object player;
   int i, j, n;
   string *member;
   object ob;

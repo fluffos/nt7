@@ -6,7 +6,6 @@
 inherit F_CLEAN_UP;
 
 int exert(object me, object target) {
-  object weapon;
   int skill;
   string msg;
   mapping buff, data;

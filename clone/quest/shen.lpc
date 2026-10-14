@@ -24,7 +24,6 @@ void create() {
 // 杀一个人即可获得神的奖励。
 void init_quest() {
   string name;
-  object qob;
   string place;
   object npc;
   mapping my;
@@ -80,7 +79,6 @@ void init_quest() {
 // 任务终止
 void cancel_quest() {
   mapping my = query_entire_dbase();
-  object env;
 
   if (!mapp(my))
     return;

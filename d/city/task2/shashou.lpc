@@ -19,7 +19,7 @@ void create() {
       set("gender", "男性");
       break;
   }
-  set_name(name["name"], ({ name["id"] }));
+  set_name(name["name"], name["id"]);
   set("title", "一品堂杀手");
   set("long",
     "这是一位满身黑衣的人，跟普通人完全没什么两样。\n");

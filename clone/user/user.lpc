@@ -169,9 +169,6 @@ varargs mixed set(string idx, mixed para, object ob) {
   int i, n, s, now_lvl, old_lvl;
   mapping spc_data, my;
   string skill, *files;
-  string *spe_skill = ({
-    "monster", "nopoison", "demon", "ghost", "wisdom", "stealth",
-  });
   string *reborn_skill = ({
     "sophistry", "capture", "kingkong", "immortal", "musha",
     "recover", "astral",
@@ -353,7 +350,6 @@ varargs int delete(string prop, object ob) {
 
 // override add function by Lonely
 mixed add(string prop, mixed data) {
-  string para;
   mixed old;
   int level;
 
@@ -423,7 +419,6 @@ int save() {
 
 int restore() {
   int res;
-  string sec_id;
 
 #ifdef DB_SAVE
   res = DATABASE_D->db_restore_all(this_object());
@@ -1487,11 +1482,9 @@ int query_vipscore() {
 // 计算完整性数据和
 string calc_sec_id(int raw) {
   mapping my;
-  string *list;
   string key;
   int sum;
   string str;
-  int i;
 
   sum = 0;
 

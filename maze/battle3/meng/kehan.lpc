@@ -134,7 +134,6 @@ void new_life() {
   return;
 }
 varargs void die(object killer) {
-  int i;
   object ob, obj;
 
   if (!objectp(ob = query_last_damage_from())) return;

@@ -1,6 +1,6 @@
 void main(string idx) {
   object tree = find_object("/u/redl/obj/luckytree#" + idx);
-  mapping tob, gob, *gls = ({});
+  mapping tob, *gls = ({});
   string tname;
   set("send_items_count", 0, tree);
   tob = ([

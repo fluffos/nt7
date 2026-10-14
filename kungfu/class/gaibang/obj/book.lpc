@@ -29,7 +29,6 @@ void init() {
 }
 int do_lingwu(string arg) {
   object me;
-  int cost;
   object *ob;
   object weapon;
   int i;

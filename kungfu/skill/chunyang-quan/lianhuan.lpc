@@ -19,9 +19,8 @@ inherit F_SSERVER;
 
 int perform(object me, object target) {
   int skill;
-  string weapon;
   int damage;
-  string *limb, type, result, str;
+  string *limb, type, str;
 
   if (!target) target = offensive_target(me);
 

@@ -67,9 +67,9 @@ int addn_c(int a, int b, int c)  //max,current,add
 }
 
 void addn_p(object me) {
-  int dam, i, qy = 10000 + copy(query("level", me) * 100000);
+  int i, qy = 10000 + copy(query("level", me) * 100000);
   mapping my;
-  string fmsg, msg = NOR + "$N头发上戴着的" + query("name") + NOR + "散发着芬芳，";
+  string msg = NOR + "$N头发上戴着的" + query("name") + NOR + "散发着芬芳，";
   string *cmsg = ({});
 
   if (query("recover_time") > time()) return;

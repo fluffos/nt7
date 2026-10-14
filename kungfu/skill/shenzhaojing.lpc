@@ -127,7 +127,7 @@ mapping query_action(object me, object weapon) {
 }
 
 
-mixed hit_ob(object me, object victim, int damage_bonus) {
+varargs mixed hit_ob(object me, object victim, int damage_bonus) {
   int lvl;
 
   lvl = me->query_skill("shenzhaojing", 1);

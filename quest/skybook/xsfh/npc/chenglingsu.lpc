@@ -127,7 +127,7 @@ int do_no() {
 
   return 1;
 }
-int accept_object(object who, object ob, object me) {
+varargs int accept_object(object who, object ob, object me) {
   if (who->query_condition("killer")) {
     command("shake " + who->query("id"));
     command("say 你目前被官府通缉，我如何敢受" + ob->name() + "！");

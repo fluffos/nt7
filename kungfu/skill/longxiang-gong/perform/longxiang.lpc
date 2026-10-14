@@ -14,7 +14,7 @@ string final4(object me, object target, int ap);
 void tian_end(object me, object target);
 
 int perform(object me, object target) {
-  mapping buff, data;
+  mapping buff;
   int damage;
   string msg;
   int ap, dp;
@@ -280,7 +280,7 @@ int perform(object me, object target) {
   return 1;
 }
 
-string final1(object me, object target, int damage, int lvl) {
+varargs string final1(object me, object target, int damage, int lvl) {
   addn("neili", -(lvl + random(lvl)), target);
 
   return HIY "$n" HIY "却觉$N" HIY "这招气势恢弘，于是运力奋力抵挡。但是无奈这"
@@ -296,7 +296,7 @@ string final2(object me, object target, int damage) {
     "身无力。\n" NOR;
 }
 
-string final3(object me, object target, int damage, int lvl) {
+varargs string final3(object me, object target, int damage, int lvl) {
 
   target->start_busy(4 + random(3));
 

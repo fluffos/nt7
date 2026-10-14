@@ -12,7 +12,7 @@ protected string *deep_file_list(string dir);
 protected int help(object me);
 
 int main(object me, string arg) {
-  string dir, flag;
+  string dir;
   mixed *file;
   int i, len, total = 0;
 

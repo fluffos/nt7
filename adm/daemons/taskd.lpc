@@ -77,7 +77,6 @@ nosave string *symbol = ({
 nosave string *colors = ({ RED, GRN, YEL, BLU, MAG, CYN, WHT, HIR, HIG, HIY, HIB, HIM, HIC, HIW });
 
 void remove() {
-  string task_ob;
   mapping stat;
 
   remove_call_out("delay_init_task");

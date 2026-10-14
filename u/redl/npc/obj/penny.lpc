@@ -17,7 +17,7 @@ void create() {
 }
 
 int do_exchange(string arg) {
-  object ob, me = this_player();
+  object me = this_player();
   string target = query("id", me);
 
   if (!arg || (arg != "penny" && arg != "gang beng")) {

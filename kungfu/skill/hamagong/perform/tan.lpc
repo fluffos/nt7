@@ -7,7 +7,7 @@ inherit F_SSERVER;
 
 int perform(object me, object target) {
   object du;
-  int lvl, lvp, damage, pos;
+  int lvl, lvp, damage;
   int an, dn, ap, dp;
   string name, msg;
 

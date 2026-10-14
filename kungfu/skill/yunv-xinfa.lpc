@@ -48,7 +48,7 @@ int valid_learn(object me) {
 int practice_skill(object me) {
   return notify_fail("玉女心法只能用学(learn)来增加熟练度。\n");
 }
-mixed hit_ob(object me, object victim) {
+varargs mixed hit_ob(object me, object victim) {
   int lvl;
   int damage_bonus;
   string wn;

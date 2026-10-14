@@ -73,9 +73,8 @@ int do_check(string arg) {
 }
 int do_tongji(string arg) {
   object player;
-  string msg, skname, sk;
+  string skname, sk;
   int sklv, sklvmax, sklvmax2;
-  object me = this_player();
 
   if (!arg || arg == "")
     return notify_fail("请输入玩家ID！\n");
@@ -134,9 +133,8 @@ int throwing(object me, int i, string bmsg) {
 int auto_check() {
 
   object player;
-  string msg, skname, sk;
+  string skname, sk;
   int sklv, sklvmax, sklvmax2;
-  object me = this_player();
 
   object *users;
 

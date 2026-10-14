@@ -8,7 +8,6 @@ int main(object me, string arg) {
   string target;
   object obj;
   object *obs;
-  string ob_name;
   int remove_flag;
 
   if (!SECURITY_D->valid_grant(me, "(admin)"))

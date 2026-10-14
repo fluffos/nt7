@@ -39,7 +39,7 @@ void init() {
     call_out("kill_ob", 1, ob);
   }
 }
-void die() {
+varargs void die() {
   object ob;
   ob = new(__DIR__ "obj/shedan");
   ob->move(environment(this_object()));
@@ -47,7 +47,7 @@ void die() {
 }
 
 
-mixed hit_ob(object me, object victim, int damage_bonus, int factor) {
+varargs mixed hit_ob(object me, object victim, int damage_bonus, int factor) {
   int poison;
   poison = query("snake_poison", me);
 

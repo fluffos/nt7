@@ -3,7 +3,6 @@
 int do_who_in_hj()
 {
     object rooms;
-    mapping info;
 
     rooms = find_object( HJ_DIR+ "room_door_hj" );
     if( !rooms ) rooms = load_object( HJ_DIR + "room_door_hj" );
@@ -493,7 +492,7 @@ int do_gyun( string arg )
     // 这个指令的扩展不好，不管了，就这样罢。
     // 实在需要扩充时，再改为好扩充的方式。
     object me = this_player();
-    string *sp_sks = ({ "xk", "cm", "ll", "gm", "kz", "sh", "rq", "xs" }), find_name;
+    string *sp_sks = ({ "xk", "cm", "ll", "gm", "kz", "sh", "rq", "xs" });
     int HpNeed = 50, hpneed, del_time;
     // HpNeed 可能浮动增加 20%
     mapping sks_sks = ([

@@ -160,7 +160,7 @@ mixed hit_ob(object me, object ob, int damage_bouns) {
 
 int random_move() {
   mapping exits;
-  string *dirs, direction, to_go_place, my_birth_place;
+  string *dirs, direction, to_go_place;
   object env;
   string userid, mazeobj;
   int x, y;
@@ -182,9 +182,8 @@ int random_move() {
 }
 
 varargs void die(object killer) {
-  object *obs, env;
+  object env;
   object me, ob, mazeobj;
-  int exp, pot, mar;
   int count, finished;
   string owner;
   int password;

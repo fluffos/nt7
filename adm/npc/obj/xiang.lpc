@@ -118,9 +118,7 @@ void init() {
 }
 
 int do_open(string arg) {
-  string f, pass, new_pass, st_pass;
   object me;
-  int st_stat;
 
   me = this_player();
 
@@ -154,9 +152,7 @@ int get_passwd(string pass, object ob) {
 }
 
 int do_lock(string arg) {
-  string f, pass, new_pass, st_pass;
   object me;
-  int st_stat;
 
   me = this_player();
 
@@ -553,7 +549,10 @@ int store_data(object me, object ob, int sn) {
   return 1;
 }
 
-int remove() { save(); }
+varargs void remove(string euid) {
+  save();
+  ::remove(euid);
+}
 
 string query_save_file() {
   string id;

@@ -40,7 +40,6 @@ void end_reflect(object me) {
 }
 
 int main(object me) {
-  object ob;
 
 
   if (me->is_busy() || me->is_fighting())

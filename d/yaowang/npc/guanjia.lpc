@@ -33,15 +33,13 @@ LONG);
 }
 
 void init() {
-  object ob;
   seteuid(geteuid());
   add_action("do_xxx", "xxx");
 
 }
 
 int do_xxx(string str) {
-  object me, ob, obj, *ob_list;
-  int i;
+  object me, ob;
 
   if (!str)
     return notify_fail("什么？\n");

@@ -26,7 +26,6 @@ mapping family_punishers = ([
 ]);
 
 void create() {
-  object ob;
   set_name(HIC "燕非" NOR, ({ "yan fei", "yan", "fei" }));
   set("long", "他就是堕落的武林大侠。\n");
   set("title", HIB "堕落的武林大侠" NOR);

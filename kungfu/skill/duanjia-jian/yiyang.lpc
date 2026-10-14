@@ -10,7 +10,7 @@ private int remove_effect(object me, object weapon);
 
 int perform(object me, object target) {
   object weapon;
-  int skill, skill1, damage;
+  int skill, damage;
 
   if (me->query_skill_mapped("force") != "kurong-changong" &&
     me->query_skill_mapped("force") != "duanshi-xinfa")

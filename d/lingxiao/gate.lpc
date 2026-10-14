@@ -92,7 +92,7 @@ int do_open(string arg) {
 
 int valid_leave(object me, string dir) {
   object *inv;
-  mapping myfam, mygen;
+  mapping myfam;
   int i;
 
   myfam = query("family", me);

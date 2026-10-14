@@ -191,11 +191,9 @@ void imbue_event(object me) {
 }
 
 int do_give(string arg) {
-  object ob, me, obj, rune;
-  int i, j;
-  string longarg, acceptor, objectname;
-  mapping data, data2, spe_data, ench;
-  string *apply;
+  object ob, me, obj;
+  int i;
+  string acceptor, objectname;
 
   obj = this_object();
   me = this_player();

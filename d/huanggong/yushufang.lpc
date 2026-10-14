@@ -37,7 +37,7 @@ void init() {
   add_action("do_open", "open");
 }
 
-int close_gate() {
+void close_gate() {
   object room;
 
   if (!(room = find_object(__DIR__ "mishi")))
@@ -54,7 +54,7 @@ int close_gate() {
 
 
 int do_open(string arg) {
-  object ob, room;
+  object room;
   if (query("exits/north"))
     return notify_fail("暗门已经是打开的。\n");
   if (!arg || (arg != "bian"))

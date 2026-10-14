@@ -26,7 +26,6 @@ void init() {
 
 int do_search(string arg) {
   object who = this_player();
-  object where = this_object();
   object hook;
 
   if (present("hook", who)) {

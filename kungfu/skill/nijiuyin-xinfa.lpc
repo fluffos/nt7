@@ -62,7 +62,7 @@ mapping query_action(object me, object weapon) {
 }
 
 int practice_skill(object me) {
-  int i, skill, damage, lvl;
+  int skill;
 
   skill = me->query_skill("nijiuyin-xinfa", 1);
   if (query("jing", me) < 60)

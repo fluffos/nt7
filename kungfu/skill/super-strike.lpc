@@ -134,7 +134,7 @@ int valid_learn(object me) {
 
 int ob_hit(object ob, object me, int damage) {
   string msg;
-  int i, neili, p, j, skill, neili1;
+  int neili, j, skill, neili1;
   skill = me->query_skill("super-strike", 1);
   neili = me->query("neili");
   neili1 = ob->query("neili");

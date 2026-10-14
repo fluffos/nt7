@@ -69,7 +69,7 @@ string get_prize_name( string n, string id )
 
 int prize(string arg)
 {
-    object me = this_player(), temp_obj;
+    object me = this_player();
     int amount, temp_int, my_score, i;
     string msg, *key, temp_str;
     mapping award_all, temp_map;

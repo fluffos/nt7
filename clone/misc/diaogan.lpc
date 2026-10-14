@@ -28,7 +28,6 @@ void create() {
 
 int do_fish() {
   object yr;
-  object ob;
   object me = this_player();
 
   if (!arrayp(query("resource/fish", environment(me))))

@@ -87,9 +87,9 @@ void create() {
 
 void heart_beat() {
   object me;
-  object *obs, ob, room, owner, enemy;
+  object *obs, room, owner, enemy;
   int damage, i, ap, dp, kn, kn2;
-  string snum, msg;
+  string snum;
 
   //if (!environment()) return;
   if (!reset_wield()) return;

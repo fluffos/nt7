@@ -175,9 +175,8 @@ void death_msg() {
 
 void smart_fight() {
   object ob, me;
-  mapping buff;
   object target, *enemy, weapon;
-  int f, i;
+  int i;
   string msg;
 
   enemy = query_enemy();

@@ -246,7 +246,7 @@ int main(object me, string arg) {
 }
 
 int do_ride(object me, object obj) {
-  object old_env, *guard;
+  object *guard;
 
   if (!obj) return 0;
 

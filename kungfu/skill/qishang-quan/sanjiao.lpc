@@ -13,7 +13,7 @@ int perform(object me, object target) {
   int skill, ap, dp, neili_wound, qi_wound;
   int flag;
   int damage;
-  string fskill, bskill, pskill, sskill;
+  string fskill, bskill, sskill;
 
 
   if (!objectp(target)) {

@@ -152,12 +152,11 @@ void die(object killer) {
   int exp;                // 需要瓜分的经验
   int pot;                // 需要瓜分的潜能
   int tihui;              // 需要瓜分的体会
-  int weiwang;            // 需要瓜分的威望
-  int score;              // 需要瓜分的阅历
+            // 需要瓜分的威望
+              // 需要瓜分的阅历
 
   object *t;              // 杀死我的人的队伍列表
   object tob;
-  int i;
 
   // 防止直接call_die()
   if (query("qi") > 300000) {
@@ -279,11 +278,6 @@ void shot_arrow() {
 }
 
 void random_move() {
-  string dir;
-  string route;
-  object master;
-  object *listeners;
-  object env;
 
   if (query_temp("dest_now")) {
     destruct(this_object());

@@ -379,7 +379,6 @@ void die(object killer) {
   object *t;              // 杀死我的人的队伍列表
   object tob;
   int mar;                //  需要瓜分的体会
-  int i;
   object ob_yuanbao;      // 金元宝
   string prop, name;
   mapping data;

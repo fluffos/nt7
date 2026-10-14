@@ -285,7 +285,7 @@ mixed ask_music_book() {
 }
 
 mixed ask_shegu() {
-  object me, staff;
+  object me;
   object owner;
   object ob;
   int lv, cost;
@@ -376,7 +376,6 @@ mixed ask_shegu() {
 
 
 string ask_lingshe() {
-  mapping fam;
   object obj, me;
 
   me = this_player();

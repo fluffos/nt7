@@ -36,7 +36,6 @@ void init() {
 int do_kick(string arg) {
 
   object ob, me, armor, temp_ob;
-  mapping myfam;
   int exp1, exp2, damage;
   me = this_player();
   if (!arg || me != this_player(1)) return 0;

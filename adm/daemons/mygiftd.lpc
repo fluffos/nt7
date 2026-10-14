@@ -550,7 +550,6 @@ string sub_gift_desc(string arg) {
 // 格式化后的奖励描述
 // exp:10000000_pot:10000000_mar:10000000_/clone/armor/zhanyao-xunzhang:1
 string gift_desc(string arg) {
-  object ob;
   string sdesc, *keys_list;
   int i;
 
@@ -575,7 +574,7 @@ string gift_desc(string arg) {
 
 // 显示任务描述
 string mygift_string(mapping mygift_map) {
-  string squest, sgift_desc;
+  string squest;
 
   squest = HIC + LINE + "\n";
 
@@ -620,7 +619,7 @@ string sub_gift_send(object me, string arg) {
     if (!ob) {
       write(HIR + sgift + "读取错误！\n");
       log_file("mygiftd", "来自mygiftd：" + sgift + "物品错误！\n");
-      return;
+      return 0;
     }
 
     // 给予物品。。。
@@ -629,7 +628,7 @@ string sub_gift_send(object me, string arg) {
     if (!objectp(ob)) {
       write(HIR + sgift + "读取错误-2！\n");
       log_file("mygiftd", "来自mygiftd：" + sgift + "复制物品错误！\n");
-      return;
+      return 0;
     }
     if (!ob->query_amount()) {
       for (i = 1; i <= ncount; i++) {
@@ -736,7 +735,7 @@ string sub_gift_send(object me, string arg) {
 
       default:
         write("类型错误。\n");
-        return;
+        return 0;
         break;
     }
 
@@ -748,9 +747,8 @@ string sub_gift_send(object me, string arg) {
 
 // 给予奖励
 void give_gift(object me, string arg) {
-  int i, count;
-  object ob;
-  string *keys_list, sgift, sdesc;
+  int i;
+  string *keys_list, sdesc;
 
 
   set("newbie_mygift/is_running_gift_list_send", 1, me);

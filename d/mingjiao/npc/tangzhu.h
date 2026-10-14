@@ -108,7 +108,7 @@ void attempt_apprentice(object ob)
         mapping ob_fam;
         mapping my_fam=query("family", me);
 
-        string name, new_name;
+        string name;
 
         if (! permit_recruit(ob) )
                 return;

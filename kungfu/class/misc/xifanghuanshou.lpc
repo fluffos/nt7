@@ -103,21 +103,15 @@ void die(object killer) {
   int exp;                // 需要瓜分的经验
   int pot;                // 需要瓜分的潜能
   int tihui;              // 需要瓜分的体会
-  int weiwang;            // 需要瓜分的威望
-  int score;              // 需要瓜分的阅历
+  // 需要瓜分的威望
+  // 需要瓜分的阅历
   object *t;              // 杀死我的人的队伍列表
   object tob;
-  int i;
 
   // 定义奖励物品列表
   // 几率  X / 万分之一
-  mixed oblist = ([
-
-  ]);
 
   object gift_ob;
-  string s_gift, *key_s_gift;
-  int gift_point;
 
   // 防止直接call_die()
   if (query("qi") > 100000) {

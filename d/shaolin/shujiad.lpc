@@ -1,7 +1,6 @@
 #include <ansi.h>
 inherit ROOM;
 void create() {
-  int i;
   set("short", "书架顶");
   set("long", @LONG
 书架顶上积满了厚厚的一层灰尘，书架顶和房梁还有三尺多高的
@@ -23,7 +22,7 @@ void init() {
 }
 
 int do_pull() {
-  object ob, *obs, me = this_player();
+  object ob, me = this_player();
 
   if (me->is_busy())
     return notify_fail("你正忙着呢！\n");

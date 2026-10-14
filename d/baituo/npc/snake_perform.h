@@ -52,9 +52,6 @@ int auto_perform_chan()
 {
         object me = this_object();
         object target = me->select_opponent();
-        object owner;
-        object here = environment(me);
-        int damage;
 
         if( query("jingli", me)<500)return 0;
 
@@ -87,7 +84,7 @@ int auto_perform_double()
         return 1;
 }
 
-mapping query_action()
+varargs mapping query_action()
 {
        object me = this_object();
         string msg1, msg2;

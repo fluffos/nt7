@@ -7,8 +7,6 @@
 int help(object me);
 int main(object me, string arg) {
   string str1, str2;
-  object tar;
-  string me_id, tar_id;
   int amount;
 
   MYGIFT_D->check_mygift(me, "newbie_mygift/jgstore");

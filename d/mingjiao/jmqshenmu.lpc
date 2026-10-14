@@ -23,7 +23,6 @@ void init() {
 
 int do_climb() {
   object me = this_player();
-  mapping mypar = query("party", me);
   me->receive_damage("qi", 15);
   me->receive_wound("qi", 15);
 

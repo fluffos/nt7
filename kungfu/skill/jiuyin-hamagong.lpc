@@ -117,7 +117,6 @@ int valid_learn(object me) {
 }
 
 int get_finish(object me) {
-  object ob;
 
   if (query("gender", me) == "无性") {
     tell_object(me, "你演练完毕，只感气血上涌，看来自己阴阳不调，无法演练九阴蛤蟆功。\n" NOR);
@@ -189,7 +188,7 @@ int practice_skill(object me) {
   return notify_fail("九阴蛤蟆功只能用学(learn)的来增加熟练度。\n");
 }
 
-mixed hit_ob(object me, object victim, int damage_bonus) {
+varargs mixed hit_ob(object me, object victim, int damage_bonus) {
   int lvl;
 
   lvl = me->query_skill("jiuyin-hamagong", 1);

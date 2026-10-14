@@ -92,7 +92,6 @@ void init_quest() {
 // 任务终止
 void cancel_quest() {
   mapping my = query_entire_dbase();
-  object env;
 
   if (!mapp(my))
     return;
@@ -127,7 +126,6 @@ string ask_1_for_2() {
 // 询问NPC2有关NPC1的事情
 mixed ask_2_for_1(object npc2, object npc1, string npc1_name) {
   object me, follow;
-  string msg;
 
   me = this_player();
 

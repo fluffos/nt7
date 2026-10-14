@@ -87,9 +87,9 @@ int receive_damage(string type, int n, object who) {
   object ob;
   string unit;
   n = n / 100000000;
-  if (!who) return;
-  if (!userp(who) && !objectp(who = (query("owner")))) return;
-  if (!who || !userp(who)) return;
+  if (!who) return 0;
+  if (!userp(who) && !objectp(who = (query("owner")))) return 0;
+  if (!who || !userp(who)) return 0;
   if (n > 1000) n = 1000;
   if (query_temp("qingniu2/time", who) < time() && random(3000) < n) {
     set_temp("qingniu2/time", time(), who);
@@ -111,7 +111,7 @@ int receive_damage(string type, int n, object who) {
 }
 
 int receive_wound(string type, int n) {
-  return;
+  return 0;
 }
 
 int accept_kill(object who) {
@@ -140,11 +140,9 @@ int accept_hit(object who) {
 }
 
 void die(object killer) {
-  string prop, name;
-  mapping data;
-  object *obs, ob, where;
-  object *enemies, *enemies2, enemy, enemy2;
-  int num, radd;
+  object ob;
+  object enemy;
+  int radd;
   enemy = query("killer");
   if (objectp(enemy) &&
     environment(this_object()) == environment(enemy)) {

@@ -10,7 +10,6 @@ mixed ask_skill();
 mixed ask_skill1();
 
 void create() {
-  object ob;
   set_name("梅超风", ({ "mei chaofeng", "mei", "chaofeng" }));
   set("title", "黑风双煞");
   set("nickname", WHT "铁尸" NOR);
@@ -250,7 +249,7 @@ int accept_object(object me, object ob) {
 
 void die() {
   object obj, me;
-  int i, flag;
+  int flag;
 
   flag = 0;
 

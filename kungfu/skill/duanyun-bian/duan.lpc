@@ -9,8 +9,6 @@ int duo2(object me, object target);
 string name() { return "断云助日"; }
 
 int perform(object me, object target) {
-  object weapon;
-  mapping myfam;
 
   if (!target) target = offensive_target(me);
 

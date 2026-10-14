@@ -44,14 +44,12 @@ void do_trap2(object me) {
   call_out("do_trap2", random(3) + 1, me);
 }
 void do_trap3(object me) {
-  int dmg = 150000 + random(50000);
   if (!environment(me) || environment(me) != environment(this_object())) return;
   message_vision(NOR + HIB ".陷阱." HIK "嘣地一跳，地板上伸出一排铁签刺穿了$N的脚掌。\n" NOR, me);
   if (!me->is_busy()) me->start_busy(random(6) + 12);
   call_out("do_trap3", random(36) + 1, me);
 }
 void do_trap4(object me) {
-  int dmg = 150000 + random(50000);
   if (!environment(me) || environment(me) != environment(this_object())) return;
   message_vision(NOR + HIB ".陷阱." HIK "嘣地一跳，墙上一根铁管喷出一阵玄霜，把$N冻了起来。\n" NOR, me);
   me->set_freeze(45, 0);

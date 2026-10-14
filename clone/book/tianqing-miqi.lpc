@@ -22,11 +22,8 @@ void init() {
 
 int do_du(string arg) {
   object me = this_player();
-  object where = environment(me);
-  object ob;
 
-  string skill, book, msg;
-  int lv;
+  string msg;
 
   if (me->is_busy()) {
     write("你现在正忙着呢。\n");

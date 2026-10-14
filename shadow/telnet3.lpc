@@ -23,7 +23,6 @@ int is_telneting() { return 1; }
 string query_dest_addr() { return sprintf("%s %d", dest_addr, port); }
 
 void telnet_input(string str) {
-  object sob;
 
   if (str == "CLOSE") {
     write("用户断开了连接。\n");

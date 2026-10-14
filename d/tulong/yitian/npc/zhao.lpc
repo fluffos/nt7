@@ -81,7 +81,7 @@ int do_yun(string arg) {
 }
 
 int do_get(string arg) {
-  object obj, env, shelf;
+  object obj;
   string what, where;
 
   if (!arg)
@@ -114,7 +114,7 @@ int accept_hit(object who) {
 }
 
 int accept_kill(object who) {
-  mapping ob;  //by redl
+  //by redl
   object me, *obs;
   obs = all_inventory(environment());
   if (sizeof(obs) > 0) {

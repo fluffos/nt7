@@ -68,7 +68,6 @@ int main(object me, string arg) {
   }
 
   if (query("equipped", dest) == "worn") {
-    function f;
 
     if (!REMOVE_CMD->do_remove(me, dest))
       return 0;

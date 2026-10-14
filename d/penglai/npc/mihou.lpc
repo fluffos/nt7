@@ -4,7 +4,6 @@ inherit __DIR__ "pld_npc.lpc";
 int is_pld_npc() { return 1; }
 
 void create() {
-  object ob;
 
   set_name(HIY "猕猴" NOR, ({ "mi hou", "mi", "hou" }));
   set("long", HIY "这是一只猕猴，正盯着你看，似乎存有戒心。\n" NOR);

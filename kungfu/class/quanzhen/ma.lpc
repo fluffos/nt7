@@ -159,7 +159,7 @@ string ask_shu() {
 }
 string ask_miji() {
   mapping fam;
-  object ob, *obs, ob2;
+  object ob, *obs;
 
   if (!(fam = query("family", this_player())) || fam["family_name"] != "全真教")
     return RANK_D->query_respect(this_player()) + "与本派素无来往，不知此话从何谈起？";
@@ -270,7 +270,7 @@ mixed ask_skill2() {
   return 1;
 }
 string ask_array() {
-  object room, qizi, obj, ob = this_player(), me = this_object();
+  object room, obj, ob = this_player(), me = this_object();
   mapping ob_fam, skl;
   string *skillname;
   int i;

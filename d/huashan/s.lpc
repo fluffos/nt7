@@ -3,10 +3,9 @@
 inherit ROOM;
 #define TSROB __DIR__"tsr_dugu-jiujian"
 
-string look_door();
+varargs string look_door();
 
 void create() {
-  string msg;
 
   set("short", "峭壁");
   set("exits", ([
@@ -41,7 +40,7 @@ void init() {
 
 }
 
-string look_door() {
+varargs string look_door() {
   object ob;
   int n;
   string opened, msg, temp;

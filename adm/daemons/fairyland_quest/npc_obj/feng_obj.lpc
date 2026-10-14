@@ -46,7 +46,6 @@ string *units = ({
   "个",
 });
 
-string my_mark, my_color, my_msg,
-  my_mark = "feng", my_color = "" HIW "", my_msg = "风之国度";
+string my_mark = "feng", my_color = "" HIW "", my_msg = "风之国度";
 
 #include "fyld_obj.h"

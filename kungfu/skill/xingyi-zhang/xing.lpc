@@ -8,7 +8,7 @@ string name() { return "星光点点"; }
 
 int perform(object me, object target) {
   string msg;
-  int i, ap, dp;
+  int i;
 
   i = me->query_skill("xingyi-zhang", 1) / 5;
   if (!target) target = offensive_target(me);

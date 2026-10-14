@@ -185,7 +185,6 @@ int recognize_apprentice(object ob, string skill) {
 
 mixed ask_blade() {
   object ob, owner;
-  object gift;
   object me;
 
   int cost;

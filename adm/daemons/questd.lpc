@@ -1241,7 +1241,7 @@ int accept_object(object me, object who, object ob) {
 int remote_bonus(object me) {
   mapping q;              // WHO的任务
   string msg;             // 掌门说的消息
-  object dob;             // 打晕敌人的人
+             // 打晕敌人的人
   object who;
   int bonus;              // 奖励(正整数，1是正常)
   int t;                  // 用来计算时间的变量

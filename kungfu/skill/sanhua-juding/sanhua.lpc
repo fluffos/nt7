@@ -5,8 +5,8 @@ inherit F_SSERVER;
 int perform(object me, object target) {
   mapping buff, data;
   object weapon;
-  int damage, skill, wap, wdp;
-  string *limb, result, str, msg;
+  int skill, wap, wdp;
+  string msg;
 
   if (!target) target = offensive_target(me);
 

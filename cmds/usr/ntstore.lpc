@@ -7,9 +7,6 @@
 int help(object me);
 int main(object me, string arg) {
   string str1, str2;
-  object tar;
-  string me_id, tar_id;
-  int amount;
   mapping buy_list;
   string *str_buy_list;
   int i;

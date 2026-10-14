@@ -32,8 +32,7 @@ void init() {
 
 
 string long_desc() {
-  string desc, temp;
-  int nRank, i, j;
+  string desc;
 
   if (!query("flag"))
     desc = HIW "

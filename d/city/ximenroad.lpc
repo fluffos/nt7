@@ -29,7 +29,6 @@ LONG);
 }
 
 int valid_leave(object me, string dir) {
-  object obj;
   if (dir == "south") set_temp("view_leitai", 1, me);
   return ::valid_leave(me, dir);
 }

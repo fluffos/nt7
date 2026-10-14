@@ -8,8 +8,7 @@ string name() { return HIY "无影针" NOR; }
 #include "/kungfu/skill/eff_msg.h";
 
 int perform(object me, object target) {
-  int skill, i;
-  int n;
+  int skill;
   int my_exp, ob_exp, p, damage;
   string pmsg;
   string msg;

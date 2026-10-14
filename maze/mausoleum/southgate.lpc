@@ -1,7 +1,7 @@
 #include <ansi.h>
 inherit ROOM;
 
-string look_door();
+varargs string look_door();
 void create() {
   set("short", HIR "秦陵内宫南门" NOR);
   set("long", @LONG
@@ -42,7 +42,7 @@ LONG);
   setup();
 }
 
-string look_door() {
+varargs string look_door() {
   object ob, me;
   int n;
   string opened, msg, temp;

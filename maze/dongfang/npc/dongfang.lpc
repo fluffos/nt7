@@ -5,7 +5,6 @@ int checking(object me, object ob);
 inherit BOSS;
 
 void create() {
-  object ob;
   set_name("东方不败", ({ "dongfang bubai", "dongfang", "bubai", "dong" }));
   set("long", "他就是日月神教教主。据传武功天下第一，因此大号就是「东方不败」。\n");
   set("nickname", HIY "武功天下第一" NOR);

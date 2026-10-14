@@ -33,7 +33,6 @@ void init() {
   }
 }
 void die() {
-  object ob;
   message_vision("$N啪的一声断成两截！$N死了。\n", this_object());
   //      ob = new(__DIR__"obj/shedan");
   //      ob->move(environment(this_object()));

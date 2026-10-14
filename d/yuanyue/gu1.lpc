@@ -4,8 +4,6 @@ inherit ROOM;
 #include <room.h>
 
 void create() {
-  int i;
-  object girl;
   set("short", "谷中");
   set("long", @LONG
 溪流蜿蜒如带，朱栏横跨水上，几只乳燕在花林中飞旋来去。草

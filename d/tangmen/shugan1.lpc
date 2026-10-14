@@ -20,7 +20,7 @@ void init() {
 }
 
 int do_climb(string arg) {
-  object ob, room;
+  object ob;
 
   ob = this_player();
 

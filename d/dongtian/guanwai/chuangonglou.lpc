@@ -32,7 +32,7 @@ void create() {
 }
 
 int valid_leave(object me, string dir) {
-  object gcroom = get_object(__DIR__ "guangchang.lpc");
+  get_object(__DIR__ "guangchang.lpc");
 
   if (query("dongtian/chuangong/visit_time", me) > time() && wiz_level(me) < 5 && dir == "up") {
     tell_object(me, NOR "你等一段时间才能再上去。\n" NOR);

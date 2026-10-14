@@ -1,6 +1,6 @@
 string test() {
   string result, passwd1, passwd2, passwd;
-  int i, x, y, a, b, r;
+  int x, y, a, b, r;
   string str1, str2, str3, str4;
   mixed all = ({ ({ 2, 7, 8, 1, 0, 3, 6, 5, 4, 9 }),
     ({ 9, 4, 6, 0, 2, 7, 1, 8, 5, 3 }),

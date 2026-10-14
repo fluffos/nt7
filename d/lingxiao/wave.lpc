@@ -54,7 +54,7 @@ void close(object room) {
   delete("exits/enter", room);
 }
 
-int valid_leave(object me) {
+varargs int valid_leave(object me) {
   if (objectp(present("xuanbing chimang", environment(me))))
     return notify_fail(HIY "你正欲离开此地，却只见" NOR + HIW "玄冰" NOR +
       HIR "赤" NOR + HIW "蟒" NOR + HIY "一个盘旋，顿时将"

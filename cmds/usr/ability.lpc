@@ -7,7 +7,7 @@
 
 inherit F_ABILITY;
 int main(object me, string arg) {
-  string *lists, temp, id;
+  string id;
   int ab, n;
   int i, a_num, learned_ability;
   object ob;

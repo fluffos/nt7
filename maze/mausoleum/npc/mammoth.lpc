@@ -110,7 +110,7 @@ void do_swing() {
 
 int random_move() {
   mapping exits;
-  string *dirs, direction, to_go_place, my_birth_place;
+  string *dirs, direction, to_go_place;
   object env;
   string userid, mazeobj;
   int x, y;

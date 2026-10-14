@@ -81,7 +81,6 @@ public void init_data(string arg) {
 public string openlock(string lock) {
   string opened, str_want_open;
   mixed result;
-  int i;
   object s;
 
   if (!stringp(query("lock/opened")) ||

@@ -5,7 +5,7 @@
 inherit F_CLEAN_UP;
 
 int main(object me, string arg) {
-  string str, *astr, type;
+  string str, type;
   int i;
   mapping paiming;
 

@@ -4,6 +4,7 @@
 #define DIALOG_D      "/adm/daemons/dialogd"
 #define SUICONG_D     "/adm/daemons/suicongd"
 #define SKYBOOK_D     "/adm/daemons/skybookd"
+#undef FUBEN_D
 #define FUBEN_D       "/adm/daemons/fuben_daemonsd"
 
 #define DEBOOKS "笑傲江湖"
@@ -241,7 +242,6 @@ void dialog_end(object me, int flag) {
 void startbook(object me, string sBook) {
   string sQuest;  // 当前任务编号
   string sZhangjie;  // 当前章节
-  object ob, ob2;
 
   sZhangjie = me->query("skybook14/" + sBook + "/当前章节");
   sQuest = me->query("skybook14/" + sBook + "/任务编号");  // 表示还没有完成的任务编号

@@ -271,7 +271,6 @@ int do_zhan(string arg) {
 
 int do_drink(string arg) {
   object me = this_player();
-  string id = query("id", me);
   int lv;
 
   if (!arg || (arg != "wine" && arg != "pot"))

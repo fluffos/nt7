@@ -6,7 +6,6 @@
 #include <ansi.h>
 
 inherit NPC;
-inherit F_CLEAN_UP;
 inherit F_UNIQUE;
 
 void create() {
@@ -91,7 +90,7 @@ int do_hit(string arg) {
 void die() {
   object ob = this_object();
   object me, fme;
-  int pot, exp, level, score;
+  int pot, exp, score;
   me = query_temp("last_damage_from", ob);
   fme = query_temp("last_opponent", ob);
   if (fme && query("id", me) == query("id", fme)) {

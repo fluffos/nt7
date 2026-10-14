@@ -51,9 +51,8 @@ int do_blow(string arg) {
   return 1;
 }
 int do_put(string arg) {
-  object ob, obj, me = this_player();
+  object obj, me = this_player();
   string item, target;
-  int amount;
 
   if (!arg || sscanf(arg, "%s in %s", item, target) != 2)
     return notify_fail("你要将什么东西放进哪里？\n");

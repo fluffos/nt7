@@ -91,7 +91,7 @@ string user_list(object *ob, int flag) {
 
 varargs string finger_all(int idle) {
   object *ob, *login_ob;
-  string msg, fip;
+  string msg;
   int i;
   int admin;
   object me;
@@ -167,19 +167,13 @@ string resolve_ip_number(string ip_number) {
 
 varargs string finger_user(string name, mixed me) {
   object ob, body;
-  string msg, mud, where;
+  string msg, mud;
   int public_flag;
   string cname;
-  string email, *ret;
-  string sql, ip_number;
-  string info;
-  string addr;
-  string *res;
-  int flag;
+  string email;
   int admin;
   object *uob;
   int same;
-  int i;
 
   if (!me) me = this_player();
   if (sscanf(name, "%s@%s", name, mud) == 2)
@@ -258,6 +252,10 @@ varargs string finger_user(string name, mixed me) {
 #ifdef DB_SAVE
           ip_number = resolve_ip_number(query_ip_number(body));
           sql = sprintf("SELECT place,address FROM %s WHERE ipstart <= \"%s\" AND"
+  string addr;
+  string sql, ip_number;
+  string where;
+  string *ret;
             " ipend >= \"%s\" ORDER BY ipend LIMIT 1", IP_TABLE,
             ip_number, ip_number);
           if (sizeof(ret = DATABASE_D->db_fetch_row(sql))) {
@@ -294,6 +292,8 @@ varargs string finger_user(string name, mixed me) {
   }
 
 #ifdef DB_SAVE
+  int flag;
+  string *res;
   res = DATABASE_D->do_sql("select online, last_station from users where id = '" + name + "'");
   flag = arrayp(res);
   if (flag && MESSAGE_D->visible(me, name)) {
@@ -340,7 +340,6 @@ string get_killer() {
 varargs string remote_finger_user(string name, int chinese_flag) {
   object ob, body;
   string msg;
-  mapping conn;
   int public_flag;
   string cname, email;
 

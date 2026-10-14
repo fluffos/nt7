@@ -27,9 +27,9 @@ mixed names = ({
 
 // names need modify
 string ask_job() {
-  object ob, me, gift, *team;
-  int exp, position;
-  string target, myfam, obfam, job_type;
+  object ob, me;
+  int exp;
+  string target, job_type;
   ob = this_player();
   me = this_object();
   exp = query("combat_exp", ob);

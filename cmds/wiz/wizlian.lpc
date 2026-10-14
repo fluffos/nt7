@@ -87,11 +87,8 @@ mapping attrib = ([
 ]);
 
 int main(object me, string arg) {
-  object ob;
-  mapping learned;
   string pack, argn, argm;        // 属性/武功  参数1  参数2:暂时不用
   int argnum;                     // 参数的个数 (包括属性)
-  int i;
   string attrs;
 
   if (!SECURITY_D->valid_grant(me, "(apprentice)"))

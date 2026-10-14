@@ -131,7 +131,7 @@ void init_npc(object me) {
 }
 
 void heart_beat() {
-  object ob, env, owner, obtar;
+  object env, owner, obtar;
   object *obs;
 
   keep_heart_beat();

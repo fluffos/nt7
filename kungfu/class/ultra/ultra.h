@@ -22,7 +22,6 @@ mapping opinions_rank = ([
 // generate opinion
 void check_opinion(object me)
 {
-        string msg;
         string rank;
         int *ks;
         int lvl;

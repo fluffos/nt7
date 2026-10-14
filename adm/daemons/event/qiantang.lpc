@@ -18,7 +18,6 @@ void create_event() {
 private void do_bonus(object room) {
   object *obs;
   string msg;
-  int r;
 
   obs = all_inventory(room);
   obs = filter_array(obs, (: playerp($1) && living($1) :));

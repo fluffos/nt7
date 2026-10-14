@@ -307,7 +307,7 @@ mixed ask_skill3() {
 }
 
 string ask_book() {
-  object me, ob;
+  object ob;
   mapping fam;
 
   ob = this_player();
@@ -320,7 +320,7 @@ string ask_book() {
   return "本派的武功秘籍藏在一个很秘密的地方，我也没去过。";
 }
 string ask_me() {
-  object me, ob;
+  object ob;
   mapping fam;
 
   ob = this_player();
@@ -339,7 +339,7 @@ int ask_job() {
   object ob;
   mapping quest;
   mapping skl;
-  string *sname, place;
+  string *sname;
   int i, skill = 0;
   quest = ("/d/xiaoyao/npc/lagjob")->query_quest();
 
@@ -458,7 +458,6 @@ int accept_object(object me, object obj) {
 }
 
 void destroying(object obj, object ob, object me) {
-  object n_money;
   int kar, exp, pot, gj;
   kar = random(query("kar", me)) * 15;
   exp = 100 + kar;

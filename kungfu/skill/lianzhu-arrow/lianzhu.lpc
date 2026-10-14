@@ -78,7 +78,7 @@ int perform(object me, object target) {
 
 
 int do_she(string arg, object me, object bow, int num) {
-  object ob, room;
+  object room;
   int i, n, m;
   string what;
   mapping exits;

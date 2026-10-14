@@ -8,7 +8,7 @@ string name() { return HIR "擒龙手" NOR; }
 int perform(object me) {
   string msg;
   object weapon, target;
-  int skill, ap, dp;
+  int ap, dp;
 
   if (!target) target = offensive_target(me);
 

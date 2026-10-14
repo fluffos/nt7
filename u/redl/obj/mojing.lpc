@@ -5,7 +5,6 @@
 #include <command.h>
 
 inherit ITEM;
-inherit F_CLEAN_UP;
 
 void create() {
   set_name(HIK "魔晶石" NOR, ({ "stone" }));
@@ -85,7 +84,7 @@ int do_unhide() {
 }
 
 int do_where(string str) {
-  object own, me, ob, where, *ob_list;
+  object own, me, ob, where;
   me = this_player();
   if (query("id", me) != query("me_id")) return notify_fail("这魔晶石是你可以使用的吗？\n");
 
@@ -129,7 +128,7 @@ int do_where(string str) {
 
 int do_goto(string arg) {
   int goto_inventory = 0;
-  object own, me, obj, env;
+  object me, obj, env;
   string msg;
   me = this_player();
   if (query("id", me) != query("me_id")) return notify_fail("这魔晶石是你可以使用的吗？\n");
@@ -188,7 +187,7 @@ int do_goto(string arg) {
 }
 
 int do_home(string arg) {
-  object where, own, me, obj, env;
+  object where, own, me;
   string msg;
   me = this_player();
   if (query("id", me) != query("me_id")) return notify_fail("这魔晶石是你可以使用的吗？\n");
@@ -240,7 +239,7 @@ int do_recover() {
 }
 
 int do_callgold(string arg) {
-  object where, own, me, ob, env;
+  object own, me, ob;
   string msg;
   int amount = 100;
 
@@ -276,7 +275,7 @@ int do_callgold(string arg) {
 }
 
 int do_calldan(string arg) {
-  object where, own, me, ob, env;
+  object own, me, ob;
   string msg;
   int amount = 100;
 
@@ -312,7 +311,7 @@ int do_calldan(string arg) {
 }
 
 int do_callwan(string arg) {
-  object where, own, me, ob, env;
+  object own, me, ob;
   string msg;
   int amount = 100;
 
@@ -353,7 +352,7 @@ int do_sb_reply(object me, string targetname) {
 }
 
 int do_sb(string arg) {
-  object where, own, me, ob, env, target;
+  object own, me, ob, target;
   string msg, targetstr;
   int amount;
 

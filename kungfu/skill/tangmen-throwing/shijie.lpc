@@ -6,9 +6,9 @@ string name() { return HIM "一花一世界" NOR; }
 inherit F_SSERVER;
 
 int perform(object me, object target) {
-  mapping buff, data;
-  int skill, i, p, n;
-  int ap, dp, damage;
+  mapping buff;
+  int skill;
+  int ap, dp;
   string msg;
   object weapon;
   int delta;

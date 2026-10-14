@@ -35,10 +35,8 @@ void create() {
 int do_du(string arg) {
   object me = this_player();
   object where = environment(me);
-  object ob;
 
   string skill, book, msg;
-  int lv;
 
   if (!arg) {
     write("研读金蛇秘芨指令格式：read <技能> from <金蛇秘芨>\n");

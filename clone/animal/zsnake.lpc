@@ -48,14 +48,13 @@ void die() {
 }
 
 
-mixed hit_ob(object me, object victim, int damage_bonus, int factor) {
+varargs mixed hit_ob(object me, object victim, int damage_bonus, int factor) {
   victim->apply_condition("snake_poison", 20 +
     victim->query_condition("snake_poison"));
 }
 
 int convert(string arg) {
   object me = this_player();
-  object ob;
 
   if (arg != "snake" && arg != "zhuye qing") return 0;
   if (query("family/family_name", me) != "白驼山")

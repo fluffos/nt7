@@ -705,7 +705,7 @@ int main(object me, string arg) {
     text += WHT "--------------------------------------------------------------------------\n" NOR;
     me->more(text);
 
-    return;
+    return 0;
   } else if (sscanf(arg, "listen %s", arg) == 1) {
     if (arg == "-d") {
       BASEBALL_D->set_listener(myid, 0);
@@ -819,7 +819,7 @@ int main(object me, string arg) {
       tell(me, pnoun(2, me) + "这场球赛剩下 " + setup["hinttimes"] + " 次下达暗号的机会。\n");
 
     BASEBALL_D->set_setup(myid, setup);
-    return;
+    return 0;
   }
 
   return tell(me, "请输入正确的指令格式(help baseball)。\n");

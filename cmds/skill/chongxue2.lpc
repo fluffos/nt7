@@ -7,7 +7,6 @@ inherit F_CLEAN_UP;
 
 int main(object me, string arg) {
   int force;
-  object ob;
 
   if (me->is_busy() || me->is_fighting())
     return notify_fail("等你忙完再说吧！\n");

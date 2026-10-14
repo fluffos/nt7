@@ -1115,12 +1115,11 @@ public varargs object create_dynamic(string obj_type, int ilvl, int mf, int flag
   string *gems5 = ({ "mruby", "mtopaz", "msapphire", "memerald", "mdiamond" });
   string *all_id, *types;
   string id;
-  string *file;
   string color, filename;
   string base_type;
   object ob;
   int qlvl;
-  int rate, rate2, n, uf, sf, rf;
+  int rate, n, uf, sf, rf;
   string prop, *props;
 
   if (!ilvl || ilvl < 1)

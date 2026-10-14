@@ -25,8 +25,7 @@ void init() {
 }
 
 int do_break(string arg) {
-  object *ob, me = this_player();
-  int i;
+  object me = this_player();
 
   if (arg != "men")
     return notify_fail("你在干吗? \n");

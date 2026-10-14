@@ -166,19 +166,19 @@ int do_divorce(object me) {
   return 1;
 }
 
-int accept_fight() {
+varargs int accept_fight() {
   command("shake");
   command("say 我来中国不是打架来的，如果你有兴趣可以找我们的大力士。");
   return notify_fail("你还是算了吧！\n");
 }
 
-int accept_hit() {
+varargs int accept_hit() {
   command("fear");
   command("say 你怎么能随便打人？");
   return notify_fail("你还是算了吧！\n");
 }
 
-int accept_kill() {
+varargs int accept_kill() {
   command("say 中国人好野蛮啊！你怎么能这样？");
   return 1;
 }

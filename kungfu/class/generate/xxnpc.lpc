@@ -67,7 +67,7 @@ void set_from_me(object me) {
     set("combat_exp", exp);
 }
 
-int accept_fight() {
+varargs int accept_fight() {
   object npc = this_object();
   object me = this_player();
 

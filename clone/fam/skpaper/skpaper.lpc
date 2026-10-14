@@ -44,7 +44,6 @@ string long() {
 
 int do_read(string arg) {
   object me = this_player();
-  mapping my = me->query_entire_dbase();
 
   int na = this_object()->name();
   string booksk = query("skill_type", this_object());

@@ -247,8 +247,6 @@ int get_exp_rate() {
 
 void change_ob() {
   int jungong;
-  string temp;
-  object ling;
 
   jungong = 4 + random(query("combat_exp") / 5000000 + 1);
   if (jungong > 12) jungong = 12;
@@ -280,7 +278,7 @@ void die() {
 
 void check_me(object me) {
   object *ob, obb, env, room;
-  string *dirs, dir, temp;
+  string *dirs, dir;
   mapping exits;
   int group, i;
 

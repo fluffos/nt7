@@ -12,7 +12,7 @@ void remove_effect(object me, int amount, int amount1);
 
 int perform(object me, object target) {
   string msg;
-  int level, ap, dp, count;
+  int level, ap, dp;
 
   if (!target) target = offensive_target(me);
   if (!target || !target->is_character() || !me->is_fighting(target))

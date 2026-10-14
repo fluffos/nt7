@@ -8,7 +8,6 @@ string name() { return HIG "封闭手" NOR; }
 inherit F_SSERVER;
 
 int perform(object me, object target) {
-  object weapon;
   string msg;
   int ap, dp;
 

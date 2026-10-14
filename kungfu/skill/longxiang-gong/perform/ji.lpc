@@ -8,8 +8,7 @@ string name() { return HIY "般若极" NOR; }
 inherit F_SSERVER;
 
 int perform(object me, object target) {
-  object weapon;
-  int ap, dp, shd, jia, layer, damage;
+  int ap, dp, jia, layer, damage;
   string msg;
   int fmsk = me->query_skill("mizong-zhenyan", 1);
 

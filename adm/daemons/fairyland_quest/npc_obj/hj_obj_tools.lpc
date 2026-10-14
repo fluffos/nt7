@@ -277,7 +277,7 @@ int do_tuoli() {
 }
 
 int do_huigui() {
-  object me = this_player(), ob = this_object(), rooms, qxd;
+  object me = this_player(), ob = this_object(), qxd;
 
   // 已优化的判断句
   if (!can_use("hg zhijing", me))
@@ -420,7 +420,7 @@ void fadai(object target, int time) {
   }
 }
 int do_fadai(string arg) {
-  object *inv_here, target, me = this_player(), ob = this_object(), srl;
+  object *inv_here, target, me = this_player(), ob = this_object();
   int time, human_amount, i;
 
   if (!can_use("fd zhiqi", me))

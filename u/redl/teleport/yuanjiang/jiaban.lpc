@@ -34,7 +34,6 @@ int discmds() {
 
 void init() {
   int xqkf = 2;
-  object room = this_object();
   add_action("discmds", ({
     "steal", "cast", "conjure", "array", "fight", "hit",
     "home", "ansuan", "touxi", "ride", "qi", "stab", "fbattle",

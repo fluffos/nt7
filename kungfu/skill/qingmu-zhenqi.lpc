@@ -5,7 +5,6 @@
 inherit SKILL;
 string type() { return "martial"; }
 string martialtype() { return "skill"; }
-inherit SKILL;
 //青木白金离火玄水厚土
 string name() { return HIG "青木真气" NOR; }
 

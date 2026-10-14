@@ -21,8 +21,6 @@ int sort_areas(string f1, string f2, mapping fame) {
 void create() { seteuid(getuid()); }
 
 int main(object me, string arg) {
-  object *obs;
-  string fname;
   string *args;
 
   if (!arg) arg = "all";

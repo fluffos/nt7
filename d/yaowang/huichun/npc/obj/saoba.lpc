@@ -27,7 +27,7 @@ void init() {
 int do_job(string arg) {
   object me;
   object weapon;
-  int i, j;
+  int j;
   me = this_player();
   j = (random(query("str", me)) / 3);
   if (j <= 0)

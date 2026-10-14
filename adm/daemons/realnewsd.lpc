@@ -455,18 +455,12 @@ void get_group_list_close(int fd) {
 void parse_news_list() {
   mapping group_list = allocate_mapping(0);
   string temp;
-  string group_part;
   string group_name;
   string body_part;
   string a_news_page_url;
-  string a_news_title;
-  string a_news_from;
-  string a_news_time;
-  int i;
-  string page_url, purl;
+  string page_url;
   string host, hostip;
   int socket_ob_fd;
-  mixed socket_data;
 
   // 将获取的主页内容进行筛选归类存放到news_data[group_name][title]
   // if (! (temp = news_data["temp"]["list"]))

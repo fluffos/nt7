@@ -7,9 +7,6 @@ inherit F_CLEAN_UP;
 int main(object me, string arg) {
   object ob, old_rec;
   mapping family;
-  int i;
-  string temp;
-  int student_num;
 
   if (!arg) return notify_fail("指令格式：recruit|shou [cancel]|<对象>\n");
 

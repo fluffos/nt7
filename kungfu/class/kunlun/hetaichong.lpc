@@ -505,7 +505,6 @@ string ask_ding() {
 }
 string ask_su() {
   mapping fam;
-  object ob;
 
   if (!(fam = query("family", this_player()))
     || fam["family_name"] != "昆仑派")

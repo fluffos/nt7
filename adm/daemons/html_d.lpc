@@ -304,7 +304,7 @@ void create_mudlist_html() {
     msg += "<A href='telnet://" + ip + ":" + port + "/'><FONT color=#000000>" + ip + "</FONT></A></TD>";
     msg += "<TD style='BORDER-BOTTOM: #fff 1px solid' " + str + " align=center>" + port + "</TD>";
     msg += "<TD style='BORDER-BOTTOM: #fff 1px solid; " + (status ? "COLOR: #5f5' bgColor=#005f00" : "COLOR: #f55' bgColor=#5f0000") + " align=center>" + (status ? "○" : "╳") + "</TD>";
-    msg += "<TD style='BORDER-BOTTOM: #fff 1px solid' " + str + " align=center>" + (users < 0 ? "<FONT color=#aaaaaa>N/A</FONT>" : users) + "</TD>";
+    msg += "<TD style='BORDER-BOTTOM: #fff 1px solid' " + str + " align=center>" + (users < 0 ? "<FONT color=#aaaaaa>N/A</FONT>" : "" + users) + "</TD>";
     msg += "<TD style='BORDER-BOTTOM: #fff 1px solid' " + str + " align=center>" + lasttime + "</TD></TR>";
 
     text += msg;

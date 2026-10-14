@@ -75,7 +75,7 @@ void setup() {
 void heart_beat() {
   int wimpy_ratio, cnd_flag;
   mapping my;
-  object me, ob;
+  object me;
   string prompt;
   int is_player;
   object room;
@@ -406,7 +406,7 @@ string set_short_desc(string desc) {
 }
 
 varargs string short(int raw) {
-  string title, nick, str, str1, *mask;
+  string title, nick, str, *mask;
   string party_title;
   string bname;
   object me, obj;

@@ -128,7 +128,6 @@ void create() {
   add_money("gold", 2);
 }
 void init() {
-  object ob = this_player();
 
   ::init();
 

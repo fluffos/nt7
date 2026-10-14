@@ -203,7 +203,6 @@ void delete_equipping(object ob) {
 }
 
 int valid_equip(object user) {
-  mapping require;
   mixed no_wield;
 
   if (query("no_identify"))
@@ -233,7 +232,7 @@ int valid_unequip(object user) {
 }
 
 int wear() {
-  object owner, weapon;
+  object owner;
   string type;
   int status;
 
@@ -287,8 +286,7 @@ int wear() {
 }
 
 int wield() {
-  object owner, weapon, old_weapon;
-  int flag;
+  object owner;
   int status;
 
   if (!objectp(this_object())) return 0;
@@ -344,7 +342,7 @@ int wield() {
 }
 
 int unequip() {
-  object owner, weapon;
+  object owner;
   string equipped;
   int status;
 

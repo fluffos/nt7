@@ -6,7 +6,7 @@
 inherit F_SSERVER;
 
 int perform(object me, object target) {
-  int skill, ap, dp, damage;
+  int skill, damage;
   string msg;
 
   if (userp(me) && !query("can_perform/xuangong-quan/xuan", me))

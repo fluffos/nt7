@@ -10,9 +10,9 @@ string name() { return "驱蛇咬人"; }
 //void remove_bite(object);
 
 int perform(object me, object target) {
-  string type, snake_path, msg;
+  string type, snake_path;
   object weapon, snake;
-  int t, lv, poison, poi_amount, train_lv, snake_lv, damage, dp, i;
+  int t, lv, poison, poi_amount, train_lv, snake_lv, damage, dp;
 
   t = query_temp("baituo/bite", me);
   lv = (int)me->query_skill("lingshe-zhangfa", 1);

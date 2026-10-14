@@ -98,7 +98,7 @@ int making(object me) {
   string msg;
   object target = query_temp("jsfan/target", me);
   object fan = query_temp("jsfan/fan", me);
-  int i, oblv = query("ob_lv", fan), damage;
+  int oblv = query("ob_lv", fan), damage;
   mapping fclists;
 
   if (!fan || environment(me) != environment(fan)) {

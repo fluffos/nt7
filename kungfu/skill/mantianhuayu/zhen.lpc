@@ -9,7 +9,7 @@ inherit F_SSERVER;
 string name() { return "掷金针"; }
 
 int perform(object me, object target) {
-  int skill, i;
+  int skill;
   int n;
   int my_exp, ob_exp;
   string pmsg;

@@ -12,7 +12,6 @@ void remove_effect(object me, object target, int lvl);
 void msg_display(object me, object target, int lvl);
 
 int perform(object me, object target) {
-  object armor;
   int lvl;
   /*
         mixed my_exp;
@@ -114,9 +113,9 @@ void msg_display(object me, object target, int lvl) {
 }
 
 void remove_effect(object me, object target, int lvl) {
-  int jiali, jianu, ap, dp, pp, dmg, damage;
+  int jiali, jianu, ap, dp, pp, dmg;
   object weapon;
-  string *limbs, limb, result, str, type;
+  string *limbs, result, str, type;
 
   if (!me) return;
 

@@ -10,7 +10,6 @@ string name() { return "雷动九天"; }
 int perform(object me, object target) {
   string msg;
   int improve, skill;
-  object weapon = query("weapon", me);
   mapping buff, data;
 
   if (!target) target = offensive_target(me);

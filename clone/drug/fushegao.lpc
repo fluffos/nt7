@@ -31,8 +31,8 @@ void create() {
 }
 
 int do_use(string arg) {
-  object me, target, *ob, *enemy;
-  int i, skill, damage, exp1, exp2;
+  object me, *enemy;
+  int i, skill, exp1;
   me = this_player();
 
   skill = me->query_skill("force");
@@ -152,7 +152,6 @@ int do_use(string arg) {
 }
 
 int do_eat(string arg) {
-  object me = this_player();
 
   if (!id(arg))
     return notify_fail("你要吃什么？\n");

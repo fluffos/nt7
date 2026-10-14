@@ -113,9 +113,8 @@ int evil_level(object ob) {
 
 void heart_beat() {
   object me;
-  object *obs, ob, room, owner;
+  object *obs, room, owner;
   int dtmp, damage, i, ap, dp, elv;
-  string msg;
 
   //if (!environment()) return;
   if (!reset_wield()) return;
@@ -172,7 +171,7 @@ void heart_beat() {
 }
 
 mixed hit_ob(object me, object victim, int damage_bonus) {
-  int i, elv = evil_level(victim);
+  int elv = evil_level(victim);
   if (elv > 1) {
     if (playerp(victim))
       //return damage_bonus * 2;

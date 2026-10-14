@@ -116,10 +116,9 @@ LONG);
 }
 
 // 外部调用此函数传递参数lock为: "A"-"D"
-string openlock(object me, string lock) {
+varargs string openlock(object me, string lock) {
   string opened, str_want_open;
   mixed result;
-  int i;
   object s;
   string file;
 

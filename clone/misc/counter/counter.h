@@ -49,11 +49,11 @@ int save()
 
 int do_sell(string arg)  
 {  
-        object obj,newobj;  
+        object obj;
         object me= this_player();  
         object ob= this_object();  
-        string thing,str;  
-        int place,price,j;  
+        string thing;
+        int place,price;
 
         if(!arg)  
                 return notify_fail("你准备卖什么东西？<指令>:sell <物品ID> at <位置号> for <单价>\n");  
@@ -107,8 +107,7 @@ int do_buy(string arg)
         object newobj;  
         object me= this_player();  
         object ob= this_object(); 
-        mapping attribute;  
-        int place,afford,price;  
+        int place,price;
         if(!arg)  
                 return notify_fail("你要买什么？<指令>:buy <序号> from counter\n");  
 
@@ -200,11 +199,9 @@ int do_look(string arg)
 
 int do_qu(string arg)  
 {  
-        object obj,newobj;  
-        object me= this_player();  
+        object  me= this_player();
         object ob= this_object();  
-        string thing,str;  
-        int place,price,j; 
+        int price;
          
         if(ob->query("owner_id")!=me->query("id")) 
                 return notify_fail("你想当小偷？？\n");        

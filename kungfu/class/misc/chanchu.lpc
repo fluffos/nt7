@@ -104,7 +104,6 @@ void die(object killer) {
   int score;              // 需要瓜分的阅历
   object *t;              // 杀死我的人的队伍列表
   object tob;
-  int i;
 
   // 定义奖励物品列表
   // 几率  X / 万分之一

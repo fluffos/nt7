@@ -35,7 +35,7 @@ void init() {
 
 int do_qingjiao(string arg) {
   object me, ob;
-  int jing_cost, grade;
+  int jing_cost;
 
   me = this_player();
   jing_cost = 150 / query("int", me) + 1;

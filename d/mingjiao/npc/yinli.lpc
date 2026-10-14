@@ -88,7 +88,7 @@ void create() {
 }
 
 mixed ask_qianzhu() {
-  object he, player = this_player(), me = this_object();
+  object player = this_player(), me = this_object();
   int flags, level, idx;
 
   if (player->is_busy()) {

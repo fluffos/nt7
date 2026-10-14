@@ -10,8 +10,7 @@ void remove_effect(object me, int amount);
 int perform(object me, object target) {
   int skill, count;
   object weapon;
-  int flag;
-  string fskill, sskill, bskill, pfname, pskill;
+  string fskill, sskill, bskill, pfname;
 
   sskill = explode(__FILE__, "/")[<2];
   pfname = explode(__FILE__, "/")[<1][0..<5];
@@ -70,7 +69,6 @@ int perform(object me, object target) {
 }
 
 void remove_effect(object me, int amount) {
-  int dmount;
   if (query_temp("xianglong", me)) {
     addn_temp("apply/str", -amount, me);
     delete_temp("xianglong", me);

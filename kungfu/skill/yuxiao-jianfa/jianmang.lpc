@@ -36,7 +36,6 @@ void remove_effect1(object me, object weapon, int damage);
 
 int perform(object me, object target) {
   mapping buff, data;
-  string msg;
   int skill;
   object weapon;
   int i, damage, sword, jianyi;

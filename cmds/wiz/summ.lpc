@@ -7,7 +7,6 @@ inherit F_CLEAN_UP;
 int main(object me, string arg) {
   object ob;
   string str;
-  int i;
 
   if (wiz_level(me) < 1 ||
     !SECURITY_D->valid_grant(me, "(wizard)"))

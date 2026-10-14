@@ -254,7 +254,7 @@ int *petcps = ({
   15,
   5
 });
-int *weight = ({
+int *pet_weights = ({
   90,
   10,
   50,
@@ -469,8 +469,8 @@ int do_goumai(string arg) {
   set("obe", 1, pet);  //初始驯服度
   set("age", 1, pet);  //年龄
   // 重量决定食量
-  set("weight", weight[num] * 1000, pet);
-  pet->set_weight(weight[num] * 1000);
+  set("weight", pet_weights[num] * 1000, pet);
+  pet->set_weight(pet_weights[num] * 1000);
   if (random(10) > 4) set("gender", "雌性", pet);
   else set("gender", "雄性", pet);
   gold->add_amount(-value[num]);
@@ -529,7 +529,7 @@ int do_goumai(string arg) {
 
 int do_return() {
   object me = this_player(), *ob;
-  string file, id;
+  string  id;
   int i;
 
   if (!query("Pet", me))
@@ -641,7 +641,7 @@ int do_lingqu() {
 
 int do_zancun() {
   object me = this_player(), *ob;
-  string file, id;
+  string  id;
   int i;
 
   if (!query("Pet", me))

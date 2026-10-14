@@ -124,8 +124,7 @@ public int db_make_card(object me, int amount, int ctype) {
   string strtmpSn, strtmpPass;
   string strQZ, strPS;           //  卡号前缀，用以表示卡的类别面额
   int nCount, i;
-  mixed res, ret;
-  string sql;
+  mixed res;
 
   // 注册码组合序列
   string *codes = ({

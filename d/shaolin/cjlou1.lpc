@@ -49,7 +49,6 @@ int do_hit(string arg) {
 }
 
 int do_jump(string arg) {
-  string dir;
   object me = this_player();
 
   if (!arg || arg == "") {

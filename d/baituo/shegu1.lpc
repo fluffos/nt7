@@ -64,7 +64,6 @@ string look_mist() {
 }
 
 int valid_leave(object me, string dir) {
-  int i, w;
 
   if (dir == "northdown") {
     if (me->query_skill("poison", 1) < 100)

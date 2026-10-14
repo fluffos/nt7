@@ -8,7 +8,7 @@ inherit F_SSERVER;
 int exert(object me) {
   string msg;
   object target;
-  int skill, ap, dp, attack_decrease, dodge_decrease;
+  int skill, ap, dp;
   mapping buff, data;
   int delta;
 

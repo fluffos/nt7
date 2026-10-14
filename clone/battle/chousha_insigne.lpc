@@ -29,7 +29,6 @@ void init() {
 
 int do_use(string arg) {
   object me;
-  object env;
 
   me = this_player();
 

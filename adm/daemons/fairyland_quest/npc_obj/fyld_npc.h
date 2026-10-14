@@ -173,7 +173,7 @@ void delete_me()
 
 int ask_baowu()
 {
-    object me,tianma_zhishen,ob,obj1,obj2,gem_npc,my_gem,gem_rooms;
+    object me, ob, obj1, obj2, gem_npc, my_gem, gem_rooms;
     int temp_i;
     string gem_name,gem_id;
 

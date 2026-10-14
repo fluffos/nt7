@@ -24,10 +24,7 @@ void create() {
 }
 
 int main(object me, string arg) {
-  int i;
-  int find;
-  int doing;
-  object *inv, link_ob;
+  object link_ob;
   object *users;
 
   if (LOGIN_D->get_madlock())
@@ -130,6 +127,8 @@ int main(object me, string arg) {
 #else  // 如果不丢物品则必须判断某些物品是必须摧毁的
 */
 #ifdef NO_QUIT_DROP
+  int i;
+  object *inv;
   inv = all_inventory(me);
   for (i = 0; i < sizeof(inv); i++)
     if (userp(inv[i]) || inv[i]->query_unique() ||
@@ -181,7 +180,6 @@ int main(object me, string arg) {
 }
 
 int force_quit(object me) {
-  int find;
   object *users;
   object link_ob;
 

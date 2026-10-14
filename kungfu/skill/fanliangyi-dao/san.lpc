@@ -10,7 +10,7 @@ string name() { return HIG "华岳三神峰" NOR; }
 int perform(object me, object target) {
   object weapon;
   string msg;
-  int i, damage;
+  int damage;
   int ap, dp;
 
   if (!target) target = offensive_target(me);

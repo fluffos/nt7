@@ -33,7 +33,7 @@ void init() {
 
 int do_za(string arg) {
   object weapon, me = this_player();
-  int ging_cost, qi_cost, jingli_cost;
+  int ging_cost, qi_cost;
   weapon = query_temp("weapon", me);
   ging_cost = 150 / query("int", me);
   qi_cost = 200 / query("con", me);

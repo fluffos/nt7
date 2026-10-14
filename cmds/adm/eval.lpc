@@ -36,7 +36,6 @@ int main(object me, string arg) {
 #include <room.h>
 #include <type.h>
 #include <user.h>
-#include <dbase.h>
 
 inherit F_CLEAN_UP;
 

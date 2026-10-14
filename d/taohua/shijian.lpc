@@ -62,7 +62,7 @@ int do_jump(string arg) {
 int do_lian(string arg) {
   object me;
   string skillarg, skillname, skillzhao, multiple;
-  int times, shijian, skill, skill_basic, qi;
+  int times, shijian, skill, skill_basic;
 
   me = this_player();
   seteuid(getuid());
@@ -114,7 +114,7 @@ int do_lian(string arg) {
 
   notify_fail("你试着练习" + to_chinese(skillname) + "，但是并没有任何进步。\n");
 
-  for (times; times > 0; times--) {
+  for (; times > 0; times--) {
     if (SKILL_D(skillname)->practice_skill(me))
       me->improve_skill(skillname, skill_basic / 3 + 1, skill_basic > skill ? 0 : 1);
     else return 0;

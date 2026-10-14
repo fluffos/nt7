@@ -100,8 +100,7 @@ void destruct_me(object me) {
 }
 
 void you_out() {
-  object ob1, ob2, player;
-  object me = this_object();
+  object ob1;
   ob1 = present("you tanzhi");
   if (!ob1) {
     seteuid(getuid());

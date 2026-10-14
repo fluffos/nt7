@@ -4,7 +4,6 @@ inherit F_GUARDER;
 #include <ansi.h>
 
 void create() {
-  object ob;
 
   set_name("乌旺阿普", ({ "wuwang apu", "wuwang", "apu" }));
   set("gender", "男性");

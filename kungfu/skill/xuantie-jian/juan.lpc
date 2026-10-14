@@ -9,7 +9,6 @@ string name() { return "卷字诀"; }
 
 int perform(object me, object target) {
   object weapon;
-  int damage;
   int ap, dp;
   string msg;
 

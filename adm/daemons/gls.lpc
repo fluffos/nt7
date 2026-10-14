@@ -90,7 +90,6 @@ private mixed drawing(mapping a) {
 private mapping draw_map(object ob) {
   object env, *temp, *temp1, *bak_room, *temp2;
   mapping exits;
-  mixed n;
   int t, x, y;
   int a = 0;
   t = 0;

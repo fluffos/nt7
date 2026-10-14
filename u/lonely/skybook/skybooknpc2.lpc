@@ -244,7 +244,6 @@ void create() {
 }
 
 void heart_beat() {
-  object ob;
   int nRan;
 
   keep_heart_beat();
@@ -378,9 +377,7 @@ void new_life() {
 }
 
 int receive_wound(string type, int damage, object who) {
-  object ob, landie;
 
-  object me = this_object();
 
   if (!who) return 0;
 
@@ -389,10 +386,8 @@ int receive_wound(string type, int damage, object who) {
 }
 
 int receive_damage(string type, int damage, object who) {
-  object ob, landie;
   int tzlv;
 
-  object me = this_object();
 
   if (!who) return 0;
 

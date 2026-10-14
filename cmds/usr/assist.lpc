@@ -9,8 +9,6 @@ void create() { seteuid(getuid()); }
 int main(object me, string arg) {
   object ob;
   object *team;
-  object *assistors;
-  mapping q;
 
   if (!arg) {
     if (objectp(ob = query_temp("quest/assist", me)))
@@ -159,7 +157,6 @@ int do_right(object me, object ob) {
 
 // 拒绝对方加入
 int do_refuse(object me, object ob) {
-  object *ob_team;
 
   if (query_temp("pending/assist", ob) != me) {
     // 对方还没有说愿意你帮助你呢，你干什么呢？

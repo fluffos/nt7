@@ -8,7 +8,7 @@
 inherit F_CLEAN_UP;
 
 int exert(object me, object target) {
-  int skill, time;
+  int time;
   string msg;
   mapping my;
   int rp;

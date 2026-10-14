@@ -51,8 +51,8 @@ int do_use(string arg) {
 }
 
 int do_tanzhi() {
-  object me, ob, *inv;
-  int check, i;
+  object me, ob;
+  int check;
 
   me = this_player();
 

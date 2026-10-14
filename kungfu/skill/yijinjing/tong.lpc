@@ -6,7 +6,7 @@
 inherit F_CLEAN_UP;
 
 int exert(object me, object target) {
-  int skill, qi, maxqi;
+  int skill;
 
 
   if (query("family/family_name", me) != "少林派")

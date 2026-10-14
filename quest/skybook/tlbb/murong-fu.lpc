@@ -670,8 +670,6 @@ string ask_learn() {
 
 int ask_fuming(string arg) {
   object me, ob;
-  int bouns, My_exp, Target_exp, pot;
-  float rate;
 
   me = this_player();
   ob = this_object();

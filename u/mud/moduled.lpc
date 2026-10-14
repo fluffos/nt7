@@ -131,7 +131,7 @@ string module_stats(object ob, object owner) {
   string modlevel, modname, *apply, *eq_files, *key;
   mapping modparts, data;
   mapping stats;
-  int i, j, n, bas, num, len = 0;
+  int i, bas, num, len = 0;
   string msg, str, eq_str;
 
   // 初始化资料
@@ -268,7 +268,6 @@ int valid_module(class eqmodule mod_stats) {
 // 根据序号查找套装数据
 class eqmodule load_module(string modlevel) {
   string filename, this_file, temp_str;
-  object ob;
   class eqmodule item;
   string *field;
   string modname, names, bas_prop, adv_prop;
@@ -534,13 +533,12 @@ void equip_module(object ob, object owner) {
 void unequip_module(object ob, object owner) {
   class eqmodule mod_stats;
   class eqmodule tmp_stats;
-  mapping data, stats, prop, applied_prop;
+  mapping data;
   mapping modparts;
-  string *apply;
   string modname;
   string modlevel, file, name;
   object *inv, *obs;
-  int i, j, n, flag = 0;
+  int i, n;
   int bas, num;
 
   if (ob->is_item_make()) {

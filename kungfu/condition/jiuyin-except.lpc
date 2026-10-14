@@ -5,7 +5,6 @@
 inherit F_CLEAN_UP;
 
 int update_condition(object me, int duration) {
-  int limit;
 
   if (!living(me) && (query("eff_qi", me) < 100 || query("eff_jing", me) < 50)) {
     set_temp("die_reason", "因为强自修炼逆九阴心法，走火入魔而死", me);

@@ -6,7 +6,7 @@ int main(object me, string arg) {
   int x, y;
   string pname;
   string content, file, str;
-  string filename, dir;
+  string filename;
 
   if (me->is_busy())
     return notify_fail("你现在正忙。\n");

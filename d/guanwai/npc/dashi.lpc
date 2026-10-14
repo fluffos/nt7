@@ -97,7 +97,6 @@ int do_guard(string arg) {
 }
 
 void leavet() {
-  object ob = this_object();
   destruct(this_object());
 }
 

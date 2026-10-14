@@ -6,7 +6,7 @@ inherit ITEM;
 
 #define TONGREN_D        "/adm/daemons/tongrend2"
 
-int is_wmtongren() { return 1; };
+int is_wmtongren() { return 1; }
 
 void create() {
   set_name(HIY "大周天铜人" NOR, ({ "dazhoutian tongren" }));

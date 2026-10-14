@@ -5,9 +5,6 @@ inherit F_CLEAN_UP;
 #include <equipment.h>
 
 int main(object me, string arg) {
-  string *partset;
-  string partid;
-  string type;
   int status;
   object ob, *obs;
   int equip_from_environment;

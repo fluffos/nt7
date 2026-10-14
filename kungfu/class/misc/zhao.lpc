@@ -89,7 +89,6 @@ void create() {
 
 void die() {
   object who = query_max_damage_from();
-  object lotus;
 
   if (random(2)) {
     //lotus = new(AREA_XINJIANG"obj/lotus");
@@ -110,7 +109,7 @@ void smart_fight() {
   object ob;
   mapping data, buff;
   object target, *enemy;
-  int f, i;
+  int i;
 
   enemy = query_enemy();
 

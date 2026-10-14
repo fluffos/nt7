@@ -59,7 +59,7 @@ void init() {
   add_action("do_knock", "knock");
 }
 
-int close_gate() {
+void close_gate() {
   object room;
 
   if (!(room = find_object(__DIR__ "smdian")))

@@ -30,7 +30,6 @@ void init() {
 
 int valid_leave(object me, string dir) {
   object room;
-  int i, w;
 
   room = load_object(__DIR__ "shegu1");
 

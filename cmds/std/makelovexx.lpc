@@ -16,10 +16,8 @@ void do_loving(object me, object target, int n);
 void create() { seteuid(getuid()); }
 
 int main(object me, string arg) {
-  string no_tell, can_tell;
-  object target, *ob;
+  object target;
   object where = environment(me);
-  int i;
 
   seteuid(getuid());
 

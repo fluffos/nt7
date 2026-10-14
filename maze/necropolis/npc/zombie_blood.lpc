@@ -65,7 +65,6 @@ int is_zombie() {
 
 void do_bite() {
   object *enemies, enemy;
-  string msg;
 
   enemies = query_enemy();
 

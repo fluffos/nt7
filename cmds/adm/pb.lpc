@@ -161,7 +161,7 @@ int do_format(string file, int n) {
     if (strsrch(tempstr, "set(\"long\",") != -1) {
       begin1 = i;
     }
-    if (strsrch(tempstr, "\);") != -1 && begin1) {
+    if (strsrch(tempstr, ");") != -1 && begin1) {
       begin2 = i;
       break;
     }
@@ -172,8 +172,8 @@ int do_format(string file, int n) {
     return 0;
   }
 
-  str1 = "        set\(\"long\", @LONG\n";
-  str2 = "LONG \);\n";
+  str1 = "        set(\"long\", @LONG\n";
+  str2 = "LONG );\n";
   rm(file);
 
   for (i = 0; i < begin1; i++)

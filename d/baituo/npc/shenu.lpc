@@ -62,7 +62,7 @@ void init() {
 }
 
 int ask_snake() {
-  object me, snake;
+  object me;
   int time, poison, breed, new_breed;
 
   me = this_player();

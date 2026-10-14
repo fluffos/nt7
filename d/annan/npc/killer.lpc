@@ -23,7 +23,7 @@ void create() {
 }
 
 void die() {
-  object ob; object here;
+  object ob;
   ob = query_temp("last_damage_from", this_object());
   if (query_temp("butou_job/1", ob))
     set_temp("butou_job_ok", 1, ob);

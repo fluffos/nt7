@@ -9,8 +9,7 @@
 inherit F_CLEAN_UP;
 
 int main(object me, string str) {
-  object ob, where, *ob_list;
-  int i;
+  object ob, where;
 
   if (!SECURITY_D->valid_grant(me, "(wizard)"))
     return 0;

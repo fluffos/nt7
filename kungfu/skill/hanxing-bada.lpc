@@ -83,7 +83,6 @@ mapping *action = ({
 
 int valid_enable(string usage) { return usage == "throwing" || usage == "parry"; }
 int valid_learn(object me) {
-  object ob;
 
   if (query("max_neili", me) < 200)
     return notify_fail("你的内力不够，没有办法练寒星八打。\n");
@@ -94,7 +93,6 @@ int valid_learn(object me) {
   return 1;
 }
 int practice_skill(object me) {
-  object weapon;
 
   /*
         if( !objectp(weapon=query_temp("weapon", me) )

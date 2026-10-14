@@ -26,7 +26,6 @@ void eat_decayed(object me) {
   return;
 }
 int do_eat(string arg) {
-  int foo;
   /*
    foo=::do_eat(arg);
    if (!foo) return foo;

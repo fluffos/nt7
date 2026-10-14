@@ -12,7 +12,6 @@ int perform(object me, object target) {
   string msg;
   int i;
   int time;
-  int count;
   int skill;
 
   if (!target) {

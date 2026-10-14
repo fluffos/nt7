@@ -17,7 +17,6 @@ string prompt() { return HIR "【外敌】" NOR; }
 
 int select_quest() {
   object *all_user;
-  object ob;
 
   all_user = users();
   all_user = filter_array(all_user, (: query("combat_exp", $1) > 200000 :));

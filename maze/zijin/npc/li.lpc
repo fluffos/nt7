@@ -3,7 +3,6 @@
 inherit BOSS;
 
 void create() {
-  object ob;
   set_name(HIW "李莲英" NOR, ({ "li lianying", "li", "lianying" }));
   set("long", "他就是大内太监总管。\n");
   set("title", HIB "太监总管" NOR);

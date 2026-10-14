@@ -7,7 +7,6 @@ inherit F_CLEAN_UP;
 void show_effect(object me, int a_amount);
 
 int exert(object me, object target) {
-  object weapon;
   int skill;
   string msg;
   int delta;

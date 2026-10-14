@@ -8,7 +8,6 @@ inherit F_SSERVER;
 string name() { return "菩提寂灭"; }
 
 int perform(object me, object target) {
-  object weapon;
   string msg;
   int ap, dp;
   int damage;

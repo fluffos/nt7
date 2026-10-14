@@ -25,6 +25,6 @@ string die_msg_others() {
     "发出一股恶臭。\n" NOR;
 }
 
-string die_reason() {
+varargs string die_reason() {
   return "腐尸毒发作生亡了";
 }

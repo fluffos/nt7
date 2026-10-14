@@ -217,7 +217,7 @@ void reset() {
   delete("memory");
 }
 
-int accept_object() {
+varargs int accept_object() {
   return 1;
 }
 void init() {

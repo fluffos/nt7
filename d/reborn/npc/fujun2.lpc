@@ -158,9 +158,7 @@ int do_answer(string arg) {
 }
 
 int do_wager(string arg) {
-  object me, ob;
-  string skill;
-  int level;
+  object me;
 
   me = this_player();
 

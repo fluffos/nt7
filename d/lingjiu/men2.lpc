@@ -51,7 +51,6 @@ string look_bian() {
     "               ####    任    我    逍    遥    ####\n"
     "               ####                            ####\n"
     "               ####################################\n\n\n\n\n\n\n" NOR;
-  "\n";
 }
 
 int valid_leave(object me, string dir) {

@@ -9,7 +9,6 @@ inherit F_SSERVER;
 string name() { return HIW "六脉剑气" NOR; }
 
 int perform(object me, object target) {
-  mapping prepare;
   string msg;
   int skill;
   int delta;

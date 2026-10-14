@@ -9,7 +9,7 @@ inherit F_SSERVER;
 string name() { return "风雷四神剑"; }
 
 int perform(object me, object target) {
-  string msg, msg1;
+  string msg;
   int i, count;
   object weapon;
 

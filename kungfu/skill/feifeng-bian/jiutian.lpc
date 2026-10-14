@@ -13,8 +13,7 @@ void remove_effect(object me, object target, int dodge, int damage, int parry);
 
 int perform(object me, object target) {
   object weapon, weapon1;
-  string msg;
-  int extra, dodge, speed, parry, damage;
+  int extra, dodge, parry, damage;
 
   if (!target) target = offensive_target(me);
 

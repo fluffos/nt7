@@ -48,7 +48,6 @@ mixed hit_ob(object me, object victim, int damage_bonus) {
 void do_attack() {
   object *enemies, enemy;
   string msg;
-  int be_damaged, i;
   enemies = query_enemy();
   if (!enemies || sizeof(enemies) == 0)
     return;

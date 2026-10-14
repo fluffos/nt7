@@ -45,8 +45,8 @@ void greeting(object ob) {
 
 int do_yang(string arg) {
   string ctype, cname, ccolor, cid;
-  object ob, me, gold;
-  string id, filename;
+  object me, gold;
+  string id;
   object newpet;
   me = this_player();
   id = query("id", me);

@@ -128,7 +128,6 @@ void init_quest(string qob_name, int amount) {
 // 任务终止
 void cancel_quest() {
   mapping my = query_entire_dbase();
-  object env;
 
   if (!mapp(my))
     return;
@@ -149,7 +148,6 @@ void cancel_quest() {
 // user ask npc2 for quest ob
 mixed ask_for_qob(object npc2, object qob, string qob_name) {
   object me;
-  object ob;
 
   me = this_player();
 

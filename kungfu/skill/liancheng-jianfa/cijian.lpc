@@ -21,7 +21,7 @@ int perform(object me, object target) {
 
   int damage, p, ap, dp;
   object weapon;
-  string msg, dodge_skill;
+  string msg;
 
   if (!target) target = offensive_target(me);
 

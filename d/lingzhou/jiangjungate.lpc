@@ -26,7 +26,6 @@ LONG);
 }
 
 int valid_leave(object me, string dir) {
-  int i;
   object wei;
 
   wei = present("xiao wei", environment(me));

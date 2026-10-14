@@ -41,7 +41,6 @@ int do_quit ()
 */
 
 int valid_leave(object me, string dir) {
-  object cao;
   int i;
 
   // me->set("startroom",base_name(environment(me)));

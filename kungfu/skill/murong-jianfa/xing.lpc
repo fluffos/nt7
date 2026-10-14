@@ -10,7 +10,7 @@ inherit F_SSERVER;
 int perform(object me, object target) {
   object weapon;
   string msg;
-  int ap, dp, i;
+  int i;
 
   if (!target) target = offensive_target(me);
 

@@ -224,10 +224,9 @@ void die(object killer) {
   int exp;                // 需要瓜分的经验
   int pot;                // 需要瓜分的潜能
   int mar;                //  需要瓜分的体会
-  int i;
-  object gift_ob, gift_ob2, gift_ob3, ob_tys;
+  object gift_ob, gift_ob2, ob_tys;
   string s_gift, *key_s_gift;
-  int gift_point, ran;
+  int gift_point;
 
   // 定义奖励物品列表
   // 几率  X / 百分之

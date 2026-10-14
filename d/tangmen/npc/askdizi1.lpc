@@ -34,7 +34,6 @@ void init() {
 int do_dating(string arg) {
   object me = this_player();
   object ob = this_object();
-  string str = query("id", me);
 
   if (!arg || arg != "wenzi")
     return notify_fail("你想打听什么，你倒是说啊！\n");

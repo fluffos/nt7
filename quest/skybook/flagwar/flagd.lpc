@@ -250,7 +250,7 @@ void auto_check() {
   }
 }
 void leave_player(string id) {
-  object me, room;
+  object me;
   if (!id) return;
   if (find_player(id)) if (member_array(
     find_player(id),
@@ -447,7 +447,6 @@ void end_flag_war() {
 }
 
 void end_flag_war_count(int num) {
-  object be, re;
   if (num <= 1) {
     startnow = 0;
     message_flag("本场抢旗战结束，正在统计结果。");
@@ -757,7 +756,7 @@ string query_party_score(string party) {
     partys = red;
   }
   result += sprintf(
-    " " + party_str[party] + "： 队伍人数 %d 人、目前积分 %d 分、插旗成功\ %d 次。\n",
+    " " + party_str[party] + "： 队伍人数 %d 人、目前积分 %d 分、插旗成功 %d 次。\n",
     sizeof(partys),
     scs,
     scs2

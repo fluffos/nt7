@@ -5,7 +5,7 @@
 inherit F_CLEAN_UP;
 
 int main(object me, string arg) {
-  string what, who;
+  string who;
   object ob, victim;
   int sp, dp;
 
@@ -68,8 +68,6 @@ int main(object me, string arg) {
 }
 
 protected void compelete_dushi(object me, object victim, object ob, int sp, int dp) {
-  int amount;
-  object ob1;
 
   if (objectp(me))
     delete_temp("dushi", me);

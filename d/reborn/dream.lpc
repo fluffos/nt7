@@ -31,7 +31,7 @@ void init() {
 }
 
 int do_wake() {
-  object room, me = this_player();
+  object me = this_player();
 
   message_vision("$N忽然轻飘飘地飞了起来，一下就飞走了。\n", me);
 

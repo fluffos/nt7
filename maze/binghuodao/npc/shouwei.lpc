@@ -113,7 +113,6 @@ void create() {
 }
 
 void heart_beat() {
-  object ob;
 
   keep_heart_beat();
   if (!environment(this_object())) return;

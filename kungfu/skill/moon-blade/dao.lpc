@@ -12,7 +12,6 @@ int perform(object me) {
   int dt;
   string msg;
   object weapon, target, weapon2;
-  mixed res;
   int ap, dp, count;
   int i, damage;
   int time;

@@ -15,7 +15,6 @@ int show_league_hatred(object me, string arg);
 int dismiss_league(object me, string arg);
 
 int main(object me, string arg) {
-  object *obs;
   string fname;
   string *args;
 
@@ -254,10 +253,6 @@ int show_league_info(object me, string arg) {
 // 显示某一个同盟中的人员
 int dismiss_league(object me, string arg) {
   string *member;
-  string id;
-  object user;
-  string msg;
-  int n;
 
   if (wiz_level(me) < wiz_level("(arch)"))
     return notify_fail("你的权限不够，不能强行解散同盟。\n");

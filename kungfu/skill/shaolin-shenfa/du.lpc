@@ -8,7 +8,6 @@ void remove_effect(object me, int amount, int amount1);
 
 int perform(object me, object target) {
   mapping buff, data;
-  object weapon;
   string msg;
   int count, skill;
 

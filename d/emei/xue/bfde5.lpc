@@ -189,7 +189,7 @@ int pour_in(string arg) {
   object enemy;
   object *enemies, *obs;
   object ob, me = this_player();
-  string msg, myname = query("name", me);
+  string myname = query("name", me);
 
   if (!arg || arg != "god blood in pool") {
     tell_object(me, NOR "你要往池子里倒什么？" HIK "(pour god blood in pool)\n" NOR);
@@ -290,8 +290,6 @@ void init() {
 }
 
 void kick_out_all() {
-  object enemy;
-  object *enemies;
   if (!query("kickout_time")) {
     set("kickout_time", 31);
   }

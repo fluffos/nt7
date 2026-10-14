@@ -8,7 +8,6 @@ inherit F_SSERVER;
 string name() { return MAG "一怒杀佛" NOR; }
 
 int perform(object me, object target) {
-  object weapon;
   int damage;
   string msg;
   int ap, dp;

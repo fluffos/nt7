@@ -215,7 +215,7 @@ object move_to_room(object me, int flag, int obx) {
       me->move(obroom);
       break;
 
-    default: return;
+    default: return 0;
   }
 
   switch (obx) {
@@ -314,7 +314,7 @@ void dialog_end(object me, int flag) {
 void startbook(object me, string sBook) {
   int nQuest;  // 当前任务编号
   string sZhangjie;  // 当前章节
-  object ob, ob2;
+  object ob;
 
   sZhangjie = me->query("skybook14/" + sBook + "/当前章节");
   nQuest = me->query("skybook14/" + sBook + "/任务编号");

@@ -82,8 +82,6 @@ void init() {
 }
 
 void death_stage(object ob, int stage) {
-  int i;
-  object *inv, mailbox;
   if (!ob || !present(ob)) return;
 
   tell_object(ob, death_msg[stage]);
@@ -115,8 +113,6 @@ void death_stage(object ob, int stage) {
 
 string ask_diyudao() {
   object me;
-  object ob_hlp;
-  int i;
 
   me = this_player();
 

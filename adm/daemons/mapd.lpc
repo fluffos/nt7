@@ -627,9 +627,9 @@ string *dirs = ({
 
 public string show_map(object env) {
   int i, j, jj = 0, k, kk = 0;
-  string file, map, name, dest, *search;
+  string file, map, name, dest;
   mapping exit1, exit2, exit3;
-  object room1, room2, room3, room4;
+  object room2, room3, room4;
 
   if (!(file = query("region", env)) && !(file = query("outdoors", env))) {
     if (mapp(exit1 = query("exits", env))) {
@@ -899,7 +899,6 @@ mapping get_trans2() {
 mapping show_trans2 = get_trans2();
 
 string get_trans_path(string s) {
-  string st;
 
   // 同时兼容中文和英文
   if (member_array(s, keys(trans)) == -1) {
@@ -986,8 +985,7 @@ int show_trans(object me) {
 int move_to(object me, string place) {
   object running, horse, follower;
   string trans_path;
-  int trans_times, sk_riding, level;
-  string temp, temp2;
+  int trans_times, sk_riding;
   object trans_target, me_env;
 
   // 检查是否骑马
@@ -1129,7 +1127,6 @@ int move_to(object me, string place) {
 }
 
 int arrived_dest(object me, mixed follower, object running, object horse, string trans_path) {
-  object ob, ob2;
 
   if (!objectp(me)) return 0;
   if (objectp(horse))

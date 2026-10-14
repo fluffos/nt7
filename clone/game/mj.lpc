@@ -692,7 +692,7 @@ varargs int do_win(string str, object me) {
 }
 int do_check_win(string str) {
   int size = strlen(str), i, check;
-  int t, k, W, T, S, Sp;
+  int t, W, T, S, Sp;
   string tempW = "", tempT = "", tempS = "", tempB = "";
   string Special = "1w9w1s9s1t9teasowenojofaba";
 
@@ -797,7 +797,7 @@ int do_check_win(string str) {
 }
 int check_hu(string strW) {
   int i, j, check;
-  int k, t;
+  int t;
   int A, B, C, D, E, F;
   for (i = 0; i < sizeof(strW); i += 2) {  //再把顺子删掉
     A = do_check_num(strW[i..i + 1], 2);
@@ -1319,7 +1319,7 @@ int do_check_eat(string num1, string num2, string LastDump) {
 }
 string show_mj(string str, int flag) {
   string Mj = "", Mj1 = "";
-  int size = strlen(str) + 2, a, b;
+  int size = strlen(str) + 2, a;
   if (!str || str == "") return "";
   if (flag != 3) {
     while (size--) {
@@ -1536,8 +1536,8 @@ mixed do_check_num(string str, int flag) {
   else return number;
 }
 void check_flower(mapping who) {
-  string newstr = "", str = who["Mj"], temp, temp1;
-  int i = strlen(str), j;
+  string newstr = "", str = who["Mj"], temp;
+  int i = strlen(str);
 
   while (i--) {
     i--;
@@ -1574,7 +1574,7 @@ int do_check_Mj(string datastr, string str) {
 }
 string do_delete_Mj(string datastr, string str, int amount)  //把某牌去掉
 {
-  int size = strlen(datastr), check;
+  int size = strlen(datastr);
   string temp = "";
 
   while (size--) {
@@ -1594,7 +1594,7 @@ string do_delete_Mj(string datastr, string str, int amount)  //把某牌去掉
 string sort_data(string str) {
   int i = strlen(str), a, b, c, d;
 
-  string newstr = "", temp = "";
+  string temp = "";
   for (a = -1; a < i; a++) {
     a++;
     for (b = a + 2; b < i; b++) {
@@ -1647,7 +1647,7 @@ int do_look(string arg) {
       Mj += who["Id"] + ":手中的牌有:\n";
       Mj += show_mj(who["Mj"], i);
     }
-    Mj += who["Id"] + ":摆\在外面的牌有:\n";
+    Mj += who["Id"] + ":摆在外面的牌有:\n";
     Mj += show_mj(who["Out"] + who["OutPon"] + who["OutFlower"], i + 1);
     Mj += who["Id"] + ":打过的牌:\n";
     Mj += show_mj(who["Dump"], 2);
@@ -1659,7 +1659,7 @@ int do_look(string arg) {
     }
     if (who["Show"] == "代码") i = 3;
     if (who["Show"] == "color") i = 5;
-    Mj += "你摆\在外面的牌有:\n";
+    Mj += "你摆在外面的牌有:\n";
     Mj += show_mj(who["Out"] + who["OutPon"] + who["OutFlower"], i + 1);
     Mj += "你手中的牌有:\n";
     Mj += show_mj(who["Mj"], i);
@@ -1668,19 +1668,19 @@ int do_look(string arg) {
     i = 0;
     if (who["Show"] == "代码") i = 3;
     if (who["Show"] == "color") i = 5;
-    Mj += P1Data["Id"] + ":摆\在外面的牌有:\n";
+    Mj += P1Data["Id"] + ":摆在外面的牌有:\n";
     Mj += show_mj(P1Data["Out"] + P1Data["OutPon"] + P1Data["OutFlower"], i + 1);
     Mj += P1Data["Id"] + ":打过的牌有:\n";
     Mj += show_mj(P1Data["Dump"], 2) + "\n";
-    Mj += P2Data["Id"] + ":摆\在外面的牌有:\n";
+    Mj += P2Data["Id"] + ":摆在外面的牌有:\n";
     Mj += show_mj(P2Data["Out"] + P2Data["OutPon"] + P2Data["OutFlower"], i + 1);
     Mj += P2Data["Id"] + ":打过的牌有:\n";
     Mj += show_mj(P2Data["Dump"], 2) + "\n";
-    Mj += P3Data["Id"] + ":摆\在外面的牌有:\n";
+    Mj += P3Data["Id"] + ":摆在外面的牌有:\n";
     Mj += show_mj(P3Data["Out"] + P3Data["OutPon"] + P3Data["OutFlower"], i + 1);
     Mj += P3Data["Id"] + ":打过的牌有:\n";
     Mj += show_mj(P3Data["Dump"], 2) + "\n";
-    Mj += P4Data["Id"] + ":摆\在外面的牌有:\n";
+    Mj += P4Data["Id"] + ":摆在外面的牌有:\n";
     Mj += show_mj(P4Data["Out"] + P4Data["OutPon"] + P4Data["OutFlower"], i + 1);
     Mj += P4Data["Id"] + ":打过的牌有:\n";
     Mj += show_mj(P4Data["Dump"], 2) + "\n";
@@ -1879,7 +1879,6 @@ int set_mjdata(object me, int *winner) {
 }
 int *get_mjdata(string Id) {
   int i, check, *winner = ({ 0, 0, 0, 0 });
-  string str = "";
   mixed *MjData;
 
   if (!Id) return 0;

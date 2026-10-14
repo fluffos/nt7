@@ -4,7 +4,8 @@
 
 inherit "/clone/misc/muding";
 
-mapping insects = ([
+// 神木王鼎自己的虫表，create() 里交给木鼎的 insects
+mapping sw_insects = ([
   "zhizhu": 10000,
   "chanchu": 10000,
   "xiezi": 10000,
@@ -28,5 +29,6 @@ void create() {
   set("value", 50);
   set("no_sell", 1);
   set_max_encumbrance(1000);
+  insects = sw_insects;
   setup();
 }

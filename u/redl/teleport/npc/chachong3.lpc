@@ -26,7 +26,6 @@ int wieldweapon() {
 }
 
 string query_save_file() {
-  object env;
   return sprintf("/temp/qroom/%s/cc%d.o", query("owner_id"), query("idx"));
 }
 int restore() {
@@ -77,7 +76,7 @@ void create() {
 
 int do_copy(object ob, object own, int idx) {
   object me, weapon;
-  string wname, widname, wlong, weaponstr;
+  string weaponstr;
   mapping hp_status, skill_status, map_status, prepare_status;
   mapping my;
   string *sname;
@@ -268,18 +267,18 @@ int auto_exert(object me) {
 }
 
 
-int init() {
+void init() {
   int idx;
   string ownid;
   object me, ob;
   me = this_player();
   ob = this_object();
-  if (!environment(ob)) return 1;
+  if (!environment(ob)) return;
   if (!query("idx")) {
     if (!sscanf(base_name(ob), "%*s/npc/chachong%d", idx)) idx = 1;
     if (!sscanf(base_name(environment(ob)), "%*s/qroom/%s", ownid)) {
       destruct(this_object());
-      return 1;
+      return;
     }
     set("idx", idx);
     set("owner_id", ownid);
@@ -289,17 +288,17 @@ int init() {
       ob->not_keep_heart_beat();
       set_heart_beat(3);
       ob->reset_action();
-      return 1;
+      return;
     }
     destruct(this_object());
-    return 1;
+    return;
   }
-  return 1;
+  return;
 }
 
 
 int receive_wound(string type, int n) {
-  return;
+  return 0;
 }
 
 varargs void die(object killer) {
@@ -373,20 +372,20 @@ int do_helpkill(object own, object me) {
   return 1;
 }
 
-int heart_beat() {
-  object own, *enemies;
+void heart_beat() {
+  object own;
   int htime = query("helpkill_time");
-  if (!environment()) return 1;
+  if (!environment()) return;
   own = query("owner");
   if (!own) {
     tell_object(environment(), this_object()->name() + "匆匆忙忙的走了。\n");
     destruct(this_object());
-    return 1;
+    return;
   }
   if (htime > 0 && htime < time()) {
     delete("helpkill_time");
     do_backhome();
   }
   //      command("say " + (string)time());
-  return ::heart_beat();
+  ::heart_beat();
 }

@@ -14,7 +14,7 @@ void create() {
 
 //数字点阵图生成函数
 string make_msg(mapping num) {
-  int q, q_size, i1 = random(2), i2 = random(2), i3 = random(2), i4 = random(2), i5 = random(2);
+  int q_size, i1 = random(2), i2 = random(2), i3 = random(2), i4 = random(2), i5 = random(2);
   int *i_num = ({ i1, i2, i3, i4, i5 });
   int beg;
   string msg = "\n";
@@ -43,7 +43,7 @@ string make_msg(mapping num) {
 
 //汉字点阵图生成函数
 string make_chn_msg(mapping num) {
-  int q, q_size, i1 = random(2), i2 = random(2), i3 = random(2), i4 = random(2);
+  int i1 = random(2), i2 = random(2), i3 = random(2), i4 = random(2);
   int *i_num = ({ i1, i2, i3, i4 });
   string msg = "\n";
   string get_msg1, get_msg2;
@@ -88,7 +88,7 @@ string make_chn_msg(mapping num) {
 //获取宗师whisper任务
 mapping get_question() {
   int the_num, i, j, chinese_num;
-  string answer, question, str, *str1, the_zhiku;
+  string answer, question, str, the_zhiku;
   mapping num = ([]);
   mapping quest;
   quest = allocate_mapping(2);
@@ -133,7 +133,7 @@ mapping get_question() {
 
 //汉字点阵图干扰象素添加函数
 string *trouble(string *str_point) {
-  int i, j, random_col, random_line, get_it;
+  int i, random_col, random_line, get_it;
   string the_line;
   int *int_line = ({ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 });
   int *int_col = ({ 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17 });

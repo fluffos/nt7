@@ -114,10 +114,7 @@ int weapon_level() {
 
 // 防御装备的等级
 int armor_level() {
-  mapping o;
-  string *ks;
   mixed lvl;
-  int p;
 
   lvl = query("forge");
   lvl /= 10;
@@ -133,7 +130,6 @@ int armor_level() {
 // 武器装备的长描述
 string weapon_long() {
   string n;
-  mapping need;
   mapping c;
   int type;
   int k;
@@ -340,10 +336,8 @@ string weapon_long() {
 
 // 防具装备的长描述
 string armor_long() {
-  mapping need;
   string result = "";
   string tessera_name;
-  int n;
 
   defense_lvl = armor_level();
 
@@ -563,7 +557,6 @@ int restore() {
 
 // 保存数据
 int save() {
-  int res;
 
   if (base_name(this_object()) + ".lpc" == __FILE__)
     return 0;
@@ -573,9 +566,6 @@ int save() {
 
 // 9/10级兵器攻击对手
 mixed weapon_hit_ob(object me, object victim, int damage_bonus) {
-  int ap;
-  int dp;
-  int damage;
 
   if (attack_lvl < MAX_LEVEL ||
     query("owner/" + query("id", me)) < MAX_LEVEL * 80)
@@ -664,9 +654,13 @@ int do_forge(object me) {
   return ITEM_D->do_forge(me, this_object());
 }
 
-mixed query_autoload() { return (query("equipped") ? query("equipped") : "kept"); }
+// 自制道具的 autoload：由 ITEM / COMBINED_ITEM 的 query_autoload() / autoload() 调用。
+// The base class (inherit/item/item.lpc, combined.lpc) owns query_autoload()/autoload() and
+// hands over to these when the object is a player-made item, so the leaf (WEAPON + F_ITEMMAKE)
+// no longer inherits two definitions of the pair.  The item itself is saved by F_OBSAVE.
+mixed query_itemmake_autoload() { return (query("equipped") ? query("equipped") : "kept"); }
 
-void autoload(string parameter) {
+void itemmake_autoload(string parameter) {
   switch (parameter) {
     case "worn":
       this_object()->wear();

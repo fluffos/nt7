@@ -35,7 +35,6 @@ void init() {
 
 int do_enter(string arg) {
   object ob, lingpai;
-  string dir;
 
   if (arg != "boat")
     return notify_fail("你要去哪儿？\n");

@@ -118,7 +118,7 @@ void msgcanup() {
 }
 
 int addexp(int n) {
-  object own, me = this_object();
+  object own;
   if (query("levelp") >= 99) return 1;
   if (is_worm2()) {
     own = owner();
@@ -458,7 +458,7 @@ int receive_damage(string type, int n) {
 }
 
 int receive_wound(string type, int n) {
-  return;
+  return 0;
 }
 
 varargs void die(object killer) {

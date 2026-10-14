@@ -44,7 +44,7 @@ int main(object me, string arg) {
     return 1;
   }
 
-  if (menu_list) arg == menu_list[0];
+  if (menu_list) arg = menu_list[0];
 
   if ((int)me->query_skill(skill, 1) < 50) {
     write("你这点" + to_chinese(skill) + "还是不要浪费菜料了。\n");

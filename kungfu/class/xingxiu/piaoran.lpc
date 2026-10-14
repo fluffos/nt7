@@ -125,7 +125,7 @@ void kicking(object who) {
   who->receive_wound("qi", 250);
   who->start_busy(5);
 }
-int accept_object(object who, object ob, object me) {
+varargs int accept_object(object who, object ob, object me) {
   object obj;
   if (!objectp(obj = present("shi guan", environment()))) return 0;
   if (query_temp("liandu", obj)) {

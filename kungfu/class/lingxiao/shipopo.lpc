@@ -217,7 +217,6 @@ int accept_object(object who, object ob) {
 }
 
 string ask_skill() {
-  object me = this_object();
   object ob = this_player();
 
   if (query("can_perform/jinwu-blade/jinwu", ob))

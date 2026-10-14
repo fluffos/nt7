@@ -690,7 +690,7 @@ int do_glist()
 // naihe 05-9-12 8:15 gmai 时偶尔让NPC“无端端”地 say 出一句话来，除了购买时的玩家，别人会感到迷惑滴~~
 int do_gmai(string arg)
 {
-    object money,gem,goods,me=this_player();  // goods  n.商品;货物
+    object gem, goods, me=this_player();  // goods  n.商品;货物
     string goods_name,have_gem="yes";
     int temp_set,temp_value;
 

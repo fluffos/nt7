@@ -155,7 +155,7 @@ mixed ask_skill1() {
 
 string ask_me() {
   mapping fam;
-  object ob, *obs, ob2;
+  object ob, *obs;
 
   if (!(fam = query("family", this_player())) || fam["family_name"] != "全真教")
     return RANK_D->query_respect(this_player()) + "与本派素无来往，不知此话从何谈起？";

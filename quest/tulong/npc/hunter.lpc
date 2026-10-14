@@ -55,7 +55,6 @@ void init() {
 }
 
 void greeting(object ob) {
-  int change = 0;
   if (!ob || environment(ob) != environment()) return;
   message_vision("\n$N微笑道：这位" + RANK_D->query_respect(ob) + "，来到这里一定很辛苦，歇歇再走吧。\n", this_object());
 }

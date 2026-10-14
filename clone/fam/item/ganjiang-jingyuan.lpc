@@ -32,7 +32,6 @@ int do_use(string arg) {
   object me;
   object weapon;
 
-  string result;
 
   me = this_player();
 

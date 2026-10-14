@@ -20,7 +20,7 @@ int tower_type() { return 2; }
 
 int clean_up() { return 1; }
 
-void pass(object me);
+int pass(object me);
 
 object objboss;
 
@@ -30,7 +30,6 @@ void remove_no_fight() {
 
 void fullnow(object me) {
   mapping my;
-  object boss;
 
   me->remove_call_out("revive");
   me->remove_call_out("unconcious");
@@ -313,7 +312,7 @@ void do_beep() {
 
 int do_passnext()  //切换对手
 {
-  object me, obb;
+  object me;
   me = this_player();
 
   if (me->is_fighting()) return notify_fail("你还是先解决目前的敌人吧！\n");
@@ -483,7 +482,7 @@ int do_use(string arg) {
 }
 
 int do_knock(string arg) {
-  object me, obb;
+  object me;
   //        int i, blv;
   me = this_player();
 

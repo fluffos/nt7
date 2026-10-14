@@ -304,7 +304,7 @@ mixed ask_skill3() {
 }
 
 string ask_book() {
-  object me, ob;
+  object ob;
   mapping fam;
 
   ob = this_player();
@@ -317,7 +317,7 @@ string ask_book() {
   return "本派的武功秘籍藏在一个很秘密的地方，我也没去过。";
 }
 string ask_me() {
-  object me, ob;
+  object ob;
   mapping fam;
 
   ob = this_player();

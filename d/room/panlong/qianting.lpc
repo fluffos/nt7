@@ -4,7 +4,6 @@
 inherit ROOM;                                   /* EXAMPLE */
 
 void create() {
-  object ob;
 
   set("short", "前庭");             /* EXAMPLE */  //**    set("short", "ROOM_NAME前庭");
   set("long", @LONG

@@ -32,7 +32,6 @@ LONG
 
 void init() {
   object me = this_player();
-  int age = query("age", me);
 
   /*
         if (! wizardp(me) && age < 40)

@@ -8,7 +8,6 @@ void create() {
 }
 
 string zm_apply() {
-  object ob = this_player();
   /*
         if (query("gender", ob) != "女性")
         {

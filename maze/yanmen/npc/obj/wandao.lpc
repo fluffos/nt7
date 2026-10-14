@@ -22,7 +22,7 @@ void create() {
   setup();
 }
 
-mixed hit_ob(object me, object victim, int damage_bonus, int factor) {
+varargs mixed hit_ob(object me, object victim, int damage_bonus, int factor) {
   object weapon = this_object();
   int dam;
 

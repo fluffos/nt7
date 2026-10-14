@@ -34,7 +34,6 @@ void create() {
 }
 
 int start_check(object ob) {
-  object me = this_object();
   call_out("leave", 1, ob);
 }
 

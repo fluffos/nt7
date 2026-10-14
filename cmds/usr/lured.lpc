@@ -41,7 +41,6 @@ int main(object me, string arg) {
 void do_hunt(object me, object env, object ob) {
   object obq;
   string *temp;
-  string str;
   mapping quarry;
   int i, point;
 

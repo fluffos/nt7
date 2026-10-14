@@ -38,7 +38,6 @@ int drop_ob(object me, object ob)  //不重要的，可能超重的东西扔地�
 
 int do_open(string arg) {
   object ob, me = this_player();
-  int lv = query("level", me);
   string file = "/temp/qroom/" + query("id", me) + ".lpc";
 
   if (!arg || arg != "box") return 0;

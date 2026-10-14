@@ -370,9 +370,7 @@ int ask_finish(object ob, object me) {
 }
 
 void die(object ob) {
-  int percent;
   object me;
-  string *pills, pill;
   int amount = 300 + random(300);
   string *condition = ({
     "气喘吁吁，就要不支", "头重脚轻，马上就倒",

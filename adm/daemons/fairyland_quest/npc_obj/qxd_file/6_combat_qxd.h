@@ -73,7 +73,6 @@ int do_gk(string arg)
     //    string tools_name,target_name,do_att="no",color_name,temp,skills_name,skills_name2;
 
     object me = this_player(), target;
-    string target_id;
 
     if( !me_ok(me) ) return 0;
 
@@ -151,8 +150,8 @@ void do_attack( object me, object target, int damages )
 
 void fighting()
 {
-    object me = query("my_master"), inv_me, inv_target, target, use_tools, srl;
-    string figh_type, fight_use, use_skills, color_name, skills_name, describe, temp;
+    object me = query("my_master"), inv_target, target, use_tools, srl;
+    string figh_type, fight_use, use_skills, color_name, skills_name, temp;
     int damages, me_busy, me_power, target_busy;
 
     mapping pfm_info;

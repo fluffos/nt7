@@ -8,7 +8,7 @@ inherit F_SSERVER;
 string final(object me, object target, int damage);
 
 int perform(object me, object target) {
-  object weapon, weapon2;
+  object weapon;
   int skill, ap, dp, damage;
   string wn, msg;
 

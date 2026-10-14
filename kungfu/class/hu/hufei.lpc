@@ -898,7 +898,6 @@ mixed ask_daopu() {
 }
 
 int accept_object(object me, object ob) {
-  int i;
   int r;
   if (r = ::accept_object(me, ob))
     return r;

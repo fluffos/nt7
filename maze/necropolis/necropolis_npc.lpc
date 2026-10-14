@@ -8,7 +8,6 @@ int is_undead() {
 void die() {
   object killer, *inv, item, mazeobj;
   int count, finished;
-  string name;
   //death_msg
   if (query("death_msg"))
     message_vision(query("death_msg"), this_object());

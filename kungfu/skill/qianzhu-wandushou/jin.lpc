@@ -7,10 +7,8 @@ inherit F_SSERVER;
 string name() { return YEL "百毒金蚕蛊" NOR; }
 
 int perform(object me, object target) {
-  mapping prepare;
   string msg;
   int skill;
-  int i;
   int addhp;
   int maxnum, cnum, cdtime, time;
   mapping buff;

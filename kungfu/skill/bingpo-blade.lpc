@@ -58,7 +58,6 @@ int practice_skill(object me) {
 int valid_effect(object me, object weapon, string name, int skill) {}
 
 mixed hit_ob(object me, object victim, int damage_bonus) {
-  object weapon = query_temp("weapon", me);
   string msg;
 
   if ((damage_bonus > 250) && (!userp(me)))

@@ -6,7 +6,6 @@ string name() { return HIG "剑指南山" NOR; }
 inherit F_SSERVER;
 
 int perform(object me, object target) {
-  object weapon;
   int damage, ap, dp;
   string msg;
 

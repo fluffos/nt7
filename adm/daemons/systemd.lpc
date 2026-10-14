@@ -169,7 +169,7 @@ string query_network_volume_stats() {
 
 string query_total_system_info() {
   mapping rusage = rusage();
-  int module_room, module_npc, module_product;
+  int module_room;
   string msg = "";
   float cpuload = (rusage["stime"] + rusage["utime"]) / 10. / to_float(uptime());
 

@@ -309,9 +309,6 @@ void refresh_database() {
   string *list;
   string boot_addr;
   int boot_port;
-  string *mud_names;
-  mapping sm;
-  string message;
 
   while (find_call_out("refresh_database") != -1)
     remove_call_out("refresh_database");
@@ -364,8 +361,6 @@ void do_pings() {
 // also query the muds services
 void set_mud_info(string name, mapping junk) {
   string tcp;
-  int new_mud;
-  int svc;
 
   if (!(ACCESS_CHECK(previous_object())) &&
     file_name(previous_object())[0..strlen(AUX_PATH) - 1] != AUX_PATH)
@@ -621,8 +616,6 @@ mapping current_mud_info() {
 }
 
 mapping query_mud_info(string name) {
-  mapping m;
-  string str;
 
   name = htonn(name);
   if (name == mud_nname())
@@ -727,7 +720,6 @@ void dump_svc_keys() {
 }
 
 void set_monitor(object ob) {
-  string euid;
 
   /*
         euid = geteuid(previous_object());
@@ -769,7 +761,6 @@ void aux_warning(string warning) {
 
 // This is for internal use
 protected void log(string entry) {
-  string temp;
   log_file(MY_LOG_FILE, sprintf("%s: %s\n", ctime(time()), entry));
 }
 
@@ -783,9 +774,6 @@ void resolve_callback(string address, string my_ip, int key) {
 // This starts us all off
 // ----------------------------------------------------------------------------
 void create() {
-  mapping static_db;
-  int i;
-  string *strs;
 
   restore_euid();
 

@@ -10,7 +10,7 @@ int perform(object me, object target) {
   string msg;
   int ap, dp, damage;
   int i, count;
-  int delta, delta2;
+  int delta;
 
   if (userp(me) && !query("can_perform/xuedao-dafa/shi", me))
     return notify_fail("你所使用的外功中没有这种功能。\n");

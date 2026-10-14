@@ -6,9 +6,6 @@ inherit F_CLEAN_UP;
 
 int main(object me, string arg) {
   object ob;
-  mapping family, skills;
-  int i;
-  string *skname;
   int lvl = 0;
 
   if (me->is_busy())

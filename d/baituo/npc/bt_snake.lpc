@@ -112,7 +112,7 @@ void init() {
   }
 }
 
-void die() {
+varargs void die() {
   object ob;
   message_vision("$N全身扭曲，翻腾挥舞，全身软软地散了开来。\n", this_object());
   ob = new(DRUG_D("shedan"));
@@ -120,7 +120,7 @@ void die() {
   destruct(this_object());
 }
 
-mixed hit_ob(object me, object victim, int damage_bonus, int factor) {
+varargs mixed hit_ob(object me, object victim, int damage_bonus, int factor) {
   mixed poison;
   poison = query("snake_poison", me);
 

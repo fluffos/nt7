@@ -108,9 +108,7 @@ void uncoucious() {
 }
 
 void random_move() {
-  string dir;
   string route;
-  object env;
 
   if (query_temp("dest_now")) {
     XYWAR_D->soldier_die("xiangyang");

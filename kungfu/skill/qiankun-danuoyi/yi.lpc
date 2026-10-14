@@ -9,7 +9,6 @@ inherit F_SSERVER;
 string name() { return "大挪移"; }
 
 int perform(object me, object target) {
-  object weapon;
   object *obs;
   object der;
   string msg;

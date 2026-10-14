@@ -8,8 +8,7 @@ string *commonskill = ({ "force", "unarmed", "literate", "dodge", "parry", });
 void smart_fight();
 void smart_fight1();
 void setup() {
-  int i, hp, level;
-  mapping coor, connect;
+  int i, level;
 
   level = query("skill_level") + 50;
 
@@ -56,8 +55,6 @@ int is_undead() { return 1; }
 
 
 void smart_fight() {
-  object ob;
-  mapping buff;
   object target;
   string msg;
   object me = this_object();
@@ -86,13 +83,10 @@ void smart_fight() {
 }
 
 void smart_fight1() {
-  object ob;
-  mapping buff;
   object target;
   string msg;
   object me = this_object();
-  object *enemy;
-  int i, skill, damage;
+  int skill, damage;
 
   target = me->query_max_hate();
   if (!target || !objectp(target))
@@ -117,7 +111,7 @@ void smart_fight1() {
 
 void die() {
   mapping *walls;
-  object ob, killer, owner, item, member, *bandit1;
+  object ob, killer, *bandit1;
   string *ks, *ks1;
   int i, next_flag;
   mapping coor, connect;

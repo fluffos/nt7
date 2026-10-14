@@ -10,7 +10,7 @@ string name() { return "开天辟地"; }
 int perform(object me, object target) {
   object weapon, weapon2;
   int damage, i;
-  string msg, str;
+  string msg;
   int ap, dp;
   int n;
   int delta;

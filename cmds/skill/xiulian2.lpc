@@ -128,7 +128,6 @@ private void stop_outing(object me) {
 
 int outing(object me, string FLAG_ID, string FLAG_NAME, int DIFF) {
   string msg;
-  int cost_lunhui_point;
 
   if (me->query("potential") <= me->query("learned_points")) {
     tell_object(me, "你潜能耗尽，没有办法继续下去了。\n");

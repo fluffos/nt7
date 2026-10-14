@@ -29,8 +29,6 @@ void init() {
 }
 
 int do_open(string arg) {
-  object me = this_player();
-  object ob;
 
   if (!arg || arg != "chest")
     return notify_fail("你要做什么？\n");

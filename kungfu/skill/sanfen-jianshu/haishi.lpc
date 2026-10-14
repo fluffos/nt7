@@ -10,7 +10,6 @@ int perform(object me, object target) {
   string msg;
   int ap, dp;
   int damage;
-  int delta;
 
   if (!target) {
     me->clean_up_enemy();

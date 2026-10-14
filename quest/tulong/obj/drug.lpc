@@ -26,14 +26,14 @@ void init()
 */
 
 int boost_skill() {
-  int force_limit, neili_limit, force_skill, add_skill, improve;
+  int force_limit, neili_limit, force_skill;
 
-  object ob, *list, couple_ob;
+  object ob;
   string theskill;
   int thelevel = 0;
   mapping skl, lrn, map;
-  string *sname, *mapped, target, cardname;
-  int i, marry_flag;
+  string *sname, *mapped;
+  int i;
   ob = this_player();
   skl = ob->query_skills();
 

@@ -14,7 +14,6 @@ int perform(object me, object target) {
   int amount;
   int exp;
   int lvl;
-  int sk;
 
   if (!target)
     return notify_fail("你要取哪条蛇的毒液练药？\n");

@@ -165,7 +165,7 @@ string *do_format(object me, mixed flist, int len) {
       if (strsrch(tempstr, "set(\"long\",") != -1) {
         begin1 = j;
       }
-      if (strsrch(tempstr, "\);") != -1 && begin1) {
+      if (strsrch(tempstr, ");") != -1 && begin1) {
         begin2 = j;
         break;
       }
@@ -176,8 +176,8 @@ string *do_format(object me, mixed flist, int len) {
       continue;
     }
 
-    str1 = "        set\(\"long\", @LONG\n";
-    str2 = "LONG \);\n";
+    str1 = "        set(\"long\", @LONG\n";
+    str2 = "LONG );\n";
     rm(flist[i]);
 
     for (j = 0; j < begin1; j++)

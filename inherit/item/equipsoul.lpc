@@ -15,10 +15,7 @@ string chinese_s(int arg) {
 }
 
 string extra_long() {
-  int i, level;
-  string *apply, str, msg, type;
-  mapping data;
-  int value;
+  string str;
 
   str = sprintf(WHT "\n魂魄属性 : 装备之魂<%s" NOR + WHT ">，重量%d克，下线%s丢失\n" NOR,
     this_object()->name(), this_object()->query_weight(),

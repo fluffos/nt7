@@ -72,8 +72,7 @@ int do_pfset(string arg) {
   return 1;
 }
 
-int init() {
-  object me = this_player();
+void init() {
   /*
                 if (playerp(me) && !wizardp(me)) {
                         message_vision(YEL "一阵狂风将$N吹往西方。\n" NOR, me);
@@ -83,5 +82,5 @@ int init() {
 */
   add_action("do_reset", "reset");
   add_action("do_pfset", "pfset");
-  return 1;
+  return;
 }

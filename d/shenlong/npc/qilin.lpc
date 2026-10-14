@@ -296,7 +296,6 @@ void new_life() {
 }
 
 int receive_damage(string type, int damage, object who) {
-  object ob;
 
   object me = this_object();
 
@@ -348,7 +347,6 @@ void die(object killer) {
   object *t;              // 杀死我的人的队伍列表
   object tob;
   int mar;                //  需要瓜分的体会
-  int i;
   string prop, name;
   mapping data;
   object ob, where;

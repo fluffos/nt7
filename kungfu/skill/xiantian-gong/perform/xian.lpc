@@ -18,10 +18,9 @@ string *hbmsg = ({
 });
 
 int perform(object me, object target) {
-  mapping buff, data;
-  object weapon;
+  mapping buff;
   int ap, dp, damage;
-  string msg, myfam;
+  string msg;
   int delta, delta2, time;
   int taoism, fmsk, xiantian, hb;
 

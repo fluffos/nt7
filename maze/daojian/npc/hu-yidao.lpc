@@ -149,7 +149,6 @@ void create() {
 }
 
 void heart_beat() {
-  object ob;
 
   if (!clonep(this_object())) return;
   // 解除不能perform yun的限制
@@ -314,7 +313,6 @@ void new_life() {
 }
 
 int receive_damage(string type, int damage, object who) {
-  object ob;
 
   object me = this_object();
 

@@ -73,7 +73,7 @@ int add_degree(object ob, int lv) {
   string degree, old_degree;
   degree = degree_desc[lv - 9];
 
-  if (!ob) return;
+  if (!ob) return 0;
 
   if (query("degree", ob)) old_degree = query("degree", ob);
   else old_degree = "";

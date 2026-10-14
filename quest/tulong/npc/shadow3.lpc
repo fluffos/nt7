@@ -61,7 +61,7 @@ void create() {
 }
 
 int ask_bijian() {
-  object obj, me = this_player(), ob = this_object();
+  object me = this_player(), ob = this_object();
   object room;
   message_vision("$N躬身说道：“晚辈想解开封印，领教了。”\n
 $n笑道：“不用客气，你接得下我数招，我自然放你过关。”\n", me, ob);

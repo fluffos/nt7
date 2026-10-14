@@ -20,7 +20,6 @@ void create() {
 }
 
 int do_wayao(string arg) {
-  object ob;
   object me = this_player();
   if (me->is_busy() || query_temp("pending/exercising", me)) return notify_fail("你现在正忙着呢。\n");
   if (!arg || arg != "yao") return notify_fail("你要挖什么呢？！\n");

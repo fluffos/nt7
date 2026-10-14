@@ -87,7 +87,7 @@ int do_suit(string arg) {
   mapping map_status;
   string *mname;
 
-  int i, suitlvl, skill, temp;
+  int i, skill, temp;
   object me = this_player();
   /*
         并额外附加套装特技 星辰之力(stars)。施展(special stars <项目>)

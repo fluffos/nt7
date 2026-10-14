@@ -59,7 +59,7 @@ void create() {
   carry_object("/obj/money/tenthousand-cash");
 }
 int askward() {
-  object me, item;
+  object me;
   int lvl;
   me = this_player();
   lvl = me->query("for_modao_num") / 10000;

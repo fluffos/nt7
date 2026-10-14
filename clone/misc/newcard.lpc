@@ -24,8 +24,6 @@ void init() {
 }
 int do_dakai(string arg) {
   object me = this_player();
-  string message;
-  int col;
   if (arg == "card") {
     tell_object(me,
       HIW "\n" +

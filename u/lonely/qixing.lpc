@@ -4,7 +4,7 @@ inherit F_SSERVER;
 int perform(object me, object target) {
   string msg, name;
   mapping buff;
-  int extra, level, mod, count, amount, duration;
+  int extra, level, count, amount, duration;
   object weapon;
 
   if (me->query("class") != "moon")

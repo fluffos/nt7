@@ -39,7 +39,7 @@ int init() {
 
 int do_canwu(string arg) {
   object player = this_player();
-  object target, obj = this_object(), env = environment(player);
+  object target, env = environment(player);
   string my_skill, your_skill;
   int my_lvl, your_lvl;
 

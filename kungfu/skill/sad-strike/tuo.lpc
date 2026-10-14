@@ -12,8 +12,6 @@ int perform(object me, object target) {
   int damage;
   string msg;
   int ap, dp;
-  string couple;
-  object cob;
   int adp = 0;
   int delta;
   int time;
@@ -89,8 +87,8 @@ int perform(object me, object target) {
   damage *= 2;
 
   flagremote = UNARMED_ATTACK;
-  if (ngxy > 8000 & fmsk > 1000) flagremote = SPECIAL_ATTACK;
-  if (ngxy > 15000 & fmsk > 1800) flagremote = REMOTE_ATTACK;
+  if (ngxy > 8000 && fmsk > 1000) flagremote = SPECIAL_ATTACK;
+  if (ngxy > 15000 && fmsk > 1800) flagremote = REMOTE_ATTACK;
 
   delta = ABILITY_D->check_ability(me, "da_power-arxhz-tuo");  // 门派ab
   if (delta) damage += damage * delta / 100;

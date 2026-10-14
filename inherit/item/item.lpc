@@ -130,6 +130,10 @@ mixed query_autoload() {
   string param;
   mapping data;
 
+  // 自制道具（F_ITEMMAKE）由 obsave 存盘，这里只记装备状态
+  if (function_exists("query_itemmake_autoload", this_object()))
+    return this_object()->query_itemmake_autoload();
+
   if (!query("auto_load"))
     return 0;
 
@@ -147,6 +151,11 @@ mixed query_autoload() {
 
 void autoload(string param) {
   object shadow_ob;
+
+  if (function_exists("itemmake_autoload", this_object())) {
+    this_object()->itemmake_autoload(param);
+    return;
+  }
 
 #ifdef NO_QUIT_DROP
   if (param == "1")

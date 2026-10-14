@@ -164,10 +164,9 @@ int do_infuse(string arg) {
   mapping data, prop, magic, enchase, qianghua;
   mapping *insert;
   mixed qiling;
-  string *key, *apply;
+  string *apply;
   string type;
-  int i, flute;
-  int status;
+  int i;
 
   me = this_player();
 

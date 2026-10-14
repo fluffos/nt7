@@ -13,7 +13,6 @@ int auto_perform();
 string do_huqi();
 
 void create() {
-  object zhenwu;
 
   set_name("武士", ({ "wu shi", "shi" }));
   set("long", "这是位武士，身披钢甲，手执长剑，双目精光炯炯，警惕地巡视着四周的情形。\n");
@@ -82,9 +81,6 @@ void attempt_apprentice(object ob) {
 
 int accept_kill(object obj) {
   object me = this_object();
-  mapping skill_status;
-  string *sname;
-  int i, max = 200;
 
   command("say " + RANK_D->query_rude(obj) + "居然还想杀死我！看招！");
 
@@ -122,7 +118,6 @@ string do_huqi() {
 
 varargs void die(object killer) {
   object me;
-  int i;
 
   me = this_object();
 

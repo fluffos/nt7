@@ -2,7 +2,7 @@
 
 int accept_fight(object ob)
 {
-        object obj, me = this_object();
+        object me = this_object();
         int my_max_qi=query("max_qi", me);
 
         if( query("qi", me)*100/my_max_qi <= 80 )

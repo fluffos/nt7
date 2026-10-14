@@ -28,7 +28,7 @@ int main(object me, string arg) {
   string file;
   string str;
   object *obs, cha;
-  int tmpi, r_type = 0;
+  int r_type = 0;
 
   if (!arg) return help(me);
   room = environment(me);

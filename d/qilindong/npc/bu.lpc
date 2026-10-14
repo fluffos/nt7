@@ -85,7 +85,7 @@ int accept_object(object who, object ob) {
 }
 
 int ask_baojian() {
-  int p1, p2;
+  int p1;
   if ((int)this_player()->query("_passwd")) {
     say("步惊云不悦地说道：我不是都告诉你了吗？我不知道。\n");
   }
@@ -111,7 +111,7 @@ int ask_baojian() {
 
 int ask_jian() {
   int p1, p2;
-  object me, obj;
+  object me;
   me = this_player();
   if (me->query("tmark/ling")) {
     say("步惊云一脸讥笑的样子，说：我凭什么告诉你？\n");

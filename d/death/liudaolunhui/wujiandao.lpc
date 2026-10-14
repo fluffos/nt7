@@ -35,7 +35,6 @@ void init() {
 }
 
 int do_say(string arg) {
-  string dir;
   object ob;
 
   if (!arg || arg == "") return 0;

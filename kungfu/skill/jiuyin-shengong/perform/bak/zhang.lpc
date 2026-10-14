@@ -9,7 +9,7 @@ inherit F_SSERVER;
 int perform(object me, object target) {
   string msg;
   int ap, dp;
-  int i, times, count;
+  int i, count;
 
   if (userp(me) && !query("can_perform/jiuyin-shengong/zhang", me))
     return notify_fail("你所使用的外功中没有这种功能。\n");

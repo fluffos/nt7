@@ -13,9 +13,7 @@ void create_event() {
 // 奖励
 private void do_bonus(object room) {
   object *obs;
-  object ob;
   string msg;
-  int lvl;
   int r;
 
   obs = all_inventory(room);

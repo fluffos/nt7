@@ -51,7 +51,7 @@ void enough_rest() {
 }
 
 int do_ya(int arg) {
-  object me, ob, caipiao;
+  object me, caipiao;
   mapping biao;
   string str;
   int i;
@@ -117,7 +117,7 @@ int do_ya(int arg) {
 
 void touzhu_1(string num, object me) {
   int i, z, j = 0;
-  int h, k, p = 0;
+  int p = 0;
   int *jieguo = ({});
   string str;
   int *tmp = ({});
@@ -194,7 +194,6 @@ void yn(string yn, object me) {
 //void check(string yn,object me)
 void check(object me) {
   int money = 0;
-  int i;
   /*query_temp("check", if( oldcrypt(me),yn) != yn){
                 write("对不起，您输入的校验码有误，不能给您发奖。\n");
                 delete_temp("check", me);
@@ -240,10 +239,7 @@ void check(object me) {
 }
 
 int do_read(string arg) {
-  int i, j, k;
   object me;
-  string name, str, str1, str2;
-  mapping biao;
 
   me = this_player();
 
@@ -382,7 +378,7 @@ string show_player() {
 
 int do_duijiang()  //兑奖指令
 {
-  int i, j, k, m, n, money;
+  int i, j, k, m, n;
   object me;
 
   me = this_player();

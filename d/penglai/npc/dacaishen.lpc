@@ -44,7 +44,7 @@ void create() {
   setup();
   add_money("gold", 30 + random(31));
 }
-void die() {
+varargs void die() {
   if (query("qi") > 200000) {
     revive();
     return;

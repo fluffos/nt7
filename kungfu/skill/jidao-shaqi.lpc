@@ -8,7 +8,6 @@ int valid_enable(string usage) {
 }
 
 int valid_learn(object me) {
-  int lvl = (int)me->query_skill("jidao-shaqi", 1);
 
   if ((int)me->query_skill("force", 1) < 30)
     return notify_fail("你的基本内功火候还不够，还不能学习极道煞气。\n");

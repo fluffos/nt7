@@ -22,7 +22,8 @@ mixed query_effect() {
   return func;
 }
 
-void do_effect() {
+// drink/eat 对 only_do_effect 的物品用返回值做命令结果，和重载它的物品同型
+varargs int do_effect(object me) {
   int i;
 
   if (functionp(func))
@@ -30,6 +31,7 @@ void do_effect() {
   if (arrayp(func))
     for (i = 0; i < sizeof(func); i++)
       evaluate(func[i]);
+  return 1;
 }
 
 string extra_long() {

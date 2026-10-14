@@ -345,7 +345,7 @@ void checking_job2( object me, string id )
 int do_lvup(string arg)
 {
     object me = this_player(), rooms;
-    int next_lv, score_need, skills_need, power_need, f_sks_need, y_sks_need, l_sks_need, d_sks_need, heal_sks_need, dh_sks_need, fh_sks_need, gs_sks_need;
+    int next_lv, score_need, power_need, f_sks_need, y_sks_need, l_sks_need, d_sks_need, heal_sks_need, dh_sks_need, fh_sks_need, gs_sks_need;
     string msg;
 
     int t;

@@ -105,7 +105,6 @@ mixed ask_wldh() {
 }
 
 int say_msg(object me, int index) {
-  object ob;
 
   if (environment() != environment(me))
     return 0;

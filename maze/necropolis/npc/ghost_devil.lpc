@@ -63,7 +63,7 @@ int is_undead() {
 
 void do_transfer() {
   object *enemies, enemy, env;
-  mixed yourexp, myexp, no_busy;
+  mixed yourexp, myexp;
   mapping exits;
   string *keys, direction;
   enemies = query_enemy();

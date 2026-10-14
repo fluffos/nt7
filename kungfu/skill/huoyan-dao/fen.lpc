@@ -9,7 +9,7 @@ inherit F_SSERVER;
 string name() { return "焚身"; }
 int perform(object me) {
   string msg;
-  object weapon, target;
+  object target;
   int skill, ap, dp;
   int damage;
 

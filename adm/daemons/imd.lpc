@@ -97,7 +97,7 @@ void login_irc(object user) {
   err = socket_connect(fd, BITLBEE_SERVER, "read_callback", "write_callback");
   if (err == EESUCCESS) {
 #ifdef DEBUG
-    TELL(sprintf("[%s] %s 成功\启动 Socket ,开始准备登入 irc.fd = %d",
+    TELL(sprintf("[%s] %s 成功启动 Socket ,开始准备登入 irc.fd = %d",
       TIME_D->replace_ctime(time()), id, fd));
 #endif
   } else {

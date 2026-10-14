@@ -8,8 +8,8 @@
 
 inherit F_SSERVER;
 int perform(object me, object target) {
-  string msg, type;
-  int duration, extra, add, skill, num, amount;
+  string msg;
+  int duration, extra, add, skill, amount;
   mapping buff, data;
   object weapon;
 

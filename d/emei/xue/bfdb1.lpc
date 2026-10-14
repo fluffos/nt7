@@ -2,7 +2,6 @@
 inherit __DIR__ "normal.lpc";
 
 void create() {
-  int rnd = random(100);
   set("short", "九老洞");
   set("long", @LONG
 这就是峨嵋第一大洞，洞内深窈无比，神秘难测。你一走进来，

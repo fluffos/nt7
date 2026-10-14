@@ -62,7 +62,7 @@ void create() {
   add_money("silver", 12 + random(20));
 }
 
-void die() {
+varargs void die() {
   if (query("qi") > 50000) {
     revive();
     return;

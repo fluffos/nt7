@@ -7,7 +7,6 @@ void create() { seteuid(getuid()); }
 int main(object me, string arg) {
   mapping my;
   object ob;
-  function f;
 
   if (!arg)
     return notify_fail("你要往什么东西里面灌？\n");

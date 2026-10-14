@@ -167,7 +167,6 @@ int grow_f(object me) {
 }
 
 int grow_g(object me) {
-  int i = 2000 + random(1000);
   tell_room(environment(me), me->name() + "慢慢地长出了一个小叶。\n", ({ me, me }));
   tell_room(environment(me), me->name() + "周围渐渐笼起一股红光。\n", ({ me, me }));
   set_name(RED "七叶琼芝草" NOR, ({ "qiong cao", "cao" }));

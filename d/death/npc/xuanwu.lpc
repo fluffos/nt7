@@ -48,7 +48,7 @@ void create() {
 }
 
 void init() {
-  object me, ob;
+  object me;
 
   if (interactive(me = this_player())) {
     remove_call_out("kill_ob");

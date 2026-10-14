@@ -13,7 +13,7 @@ int perform(object me, object target) {
   string type;
   mapping prepare;
   int n;
-  int skill, ap, dp, damage, ss;
+  int skill, ap, dp, ss;
 
   me->clean_up_enemy();
   if (!target) target = me->select_opponent();

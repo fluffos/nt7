@@ -10,7 +10,7 @@ string name() { return "万事如意"; }
 int perform(object me, object target) {
   object weapon;
   string msg;
-  int i, ap, dp, level, damage;
+  int ap, dp, level, damage;
 
   if (!target) {
     me->clean_up_enemy();

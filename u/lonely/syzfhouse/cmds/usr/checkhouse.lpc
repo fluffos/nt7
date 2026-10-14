@@ -6,9 +6,9 @@
 inherit F_CLEAN_UP;
 
 int main(object me, string arg) {
-  int i, value;
+  int i;
   object ob;
-  string type, msg, pass, *key;
+  string type, msg, *key;
   mapping house, build;
 
   seteuid(getuid());

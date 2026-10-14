@@ -5,9 +5,8 @@
 void show_result(object ob, int p_skill, int p_id);
 string p_name;
 void main(object ob) {
-  int i, p_skill, p_id;
+  int p_skill, p_id;
   object env;
-  string where;
 
   env = environment(ob);
   p_id = TROOP_D->get_char_troop(this_body()->query_id()[0]);

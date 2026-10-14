@@ -8,9 +8,8 @@ void show_result(object ob, int p_id, int p_skill);
 string p_name;
 
 void main(object ob) {
-  int i, p_id, p_skill;
+  int p_id, p_skill;
   object env;
-  string where;
 
   env = environment(ob);
   p_id = TROOP_D->get_char_troop(this_body()->query_id()[0]);
@@ -38,7 +37,6 @@ void main(object ob) {
 void show_result(object ob, int p_id, int p_skill) {
   int mora;
   int kill;
-  int damage;
   int *task;
 
   kill = p_skill;

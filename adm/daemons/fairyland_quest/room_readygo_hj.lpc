@@ -42,8 +42,7 @@ string *context = ({
 string singing = "no";
 string look_shuijing();
 
-string pler1, pler2, pler3, pler4, id1, id2, id3, id4,
-  pler1 = "风翔", pler2 = "雨洒", pler3 = "雷鸣", pler4 = "电闪",
+string pler1 = "风翔", pler2 = "雨洒", pler3 = "雷鸣", pler4 = "电闪",
   id1 = "aa", id2 = "bb", id3 = "cc", id4 = "dd";
 
 int *pler_data1 = ({
@@ -169,7 +168,7 @@ void sing_song(int i) {
 // 美丽 = 容貌per   善良 = 神shen(shen_type=-1为负神)   年纪 = 年龄age   富有 = 存款balance
 
 int do_xuanze(string arg) {
-  object *all_mine, old_obj, qx_deng, me = this_player();
+  object *all_mine, qx_deng, me = this_player();
   int i, temp;
   mapping xuanze_arg;
 

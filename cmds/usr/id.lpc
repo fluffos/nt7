@@ -3,11 +3,10 @@
 inherit F_CLEAN_UP;
 
 int main(object me, string arg) {
-  object obj, *inv;
-  string *id;
+  object *inv;
   string cname;
   string name;
-  int i, j;
+  int i;
   int l = 20;
 
   if (!arg) {

@@ -30,9 +30,7 @@ void init() {
 
 int do_touch(string arg) {
   object me, obj;
-  int i;
-  mapping trans, coor;
-  string *ks, msg;
+  mapping coor;
   me = this_player();
 
   //trans=query("trans_"+query("act"),me);

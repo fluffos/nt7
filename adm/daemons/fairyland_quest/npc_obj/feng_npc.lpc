@@ -37,8 +37,7 @@ string *songs2 = ({
   "风之国度的君主  风翔。",
 });
 
-string me_guodu, ask_arg, baowu_name, baowu_dir, baowu_other1, baowu_other2,
-  me_guodu = "" HIW "风之国度" NOR "", baowu_name = "天马之身", baowu_other1 = "伸展之左翼",
+string me_guodu = "" HIW "风之国度" NOR "", baowu_name = "天马之身", baowu_other1 = "伸展之左翼",
   baowu_other2 = "伸展之右翼", ask_arg = baowu_name, baowu_dir = __DIR__ "feng_obj";
 
 string *me_mark = ({ "feng", "sz zuoyi", "sz youyi" });

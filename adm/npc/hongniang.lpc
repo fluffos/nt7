@@ -622,18 +622,18 @@ int do_divorce(object me) {
   return 1;
 }
 
-int accept_fight() {
+varargs int accept_fight() {
   command("fear");
   command("say 别来，我好怕怕的。");
   return notify_fail("你还是算了吧！\n");
 }
 
-int accept_hit() {
+varargs int accept_hit() {
   command("say 不要啊！不要乱动手！");
   return notify_fail("你还是算了吧！\n");
 }
 
-int accept_kill() {
+varargs int accept_kill() {
   command("say 呀！你想干什么？");
   return 1;
 }

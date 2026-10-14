@@ -264,7 +264,6 @@ protected void in_server() {
 
 // 在本机上生成版本
 int generate_version() {
-  mapping dbase;
   string file;
   mapping store;
 
@@ -606,7 +605,6 @@ protected void build_version(string path, mapping here) {
 
 // 是否需要发布源程序
 int is_need_release_source(string path) {
-  string *files;
   string match;
 
   foreach (match in release_src)
@@ -851,7 +849,6 @@ protected int connect_server() {
 
 // 清除同步信息
 int clear_syn_info() {
-  int result;
   int fd;
 
   if (previous_object() && !is_root(previous_object()))
@@ -1518,8 +1515,6 @@ protected void syn_reboot_mud() {
 protected void syn_read_callback(int fd, buffer buf) {
   string str;
   int len;
-  int ver;
-  string msg;
 
   if (fd != vfd || !bufferp(buf)) return;
 
@@ -1704,7 +1699,6 @@ protected void in_read_callback(int fd, mixed mess) {
 void check_alow() {
   object ob;
   string ad_pass, wiz_pass;
-  int flag = 0;
 
   seteuid(getuid());
 
@@ -2054,7 +2048,6 @@ protected void cmd_getver(int fd, string arg) {
 
 // 读取某一个文件
 protected void cmd_get(int fd, string arg) {
-  string ban;
   int last;
 
   // 查看文件
@@ -2180,7 +2173,6 @@ protected int send_error_msg(int fd, string msg) {
 // 向某一个接入请求发送版本号
 protected void send_version(int fd) {
   int ver;
-  string msg;
 
   if (!intp(ver = query("VERSION_NO")) || !ver) {
     // 还没有版本？

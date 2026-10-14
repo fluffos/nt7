@@ -1685,7 +1685,6 @@ int do_wearall(object obj) {
 }
 
 int accept_object(object me, object obj) {
-  int amount;
   object ob;
 
   if (base_name(obj) == __DIR__ "obj/anklechains" || base_name(obj) == __DIR__ "obj/earrings") {

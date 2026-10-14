@@ -4,7 +4,6 @@ inherit BOSS;
 void check_weapon();
 
 void create() {
-  object staff;
 
   set_name("蚩尤巨像", ({ "chi you", "chiyou" }));
   set("race", "人类");
@@ -139,7 +138,7 @@ string staff() {
 }
 
 int do_pull(string arg) {
-  object me, staff;
+  object me;
   int damage;
   me = this_player();
 
@@ -172,7 +171,7 @@ int do_pull(string arg) {
 }
 
 void stone_fall(object me) {
-  object *all, *inv, room, obj;
+  object *all, *inv;
   int i;
 
   all = all_inventory(environment(this_object()));
@@ -336,12 +335,7 @@ void new_life() {
 }
 
 void die(object killer) {
-  string prop, name;
-  mapping data;
-  object ob, where;
-  string *apply = ({ "reduce_busy", "avoid_busy", "def_damage", "avoid_weak",
-    "add_locked", "reduce_damage", "add_busy", "add_weak", "avoid_locked",
-    "add_damage", "add_skill" });
+  object ob;
 
   if (objectp(ob = previous_object(0)) && sscanf(base_name(ob), "/kungfu/skill/%*s")) {
     full_self();

@@ -59,7 +59,7 @@ int is_undead() {
 
 void do_bone_spirit() {
   object *enemies, enemy;
-  int i, no_busy;
+  int i;
   if (!this_object()) return;
 
   message_vision(BLU "\n$N沙哑的声音念诵着咒语，周身凝聚了一个个散发着死亡气息的光球！\n\n" NOR, this_object());

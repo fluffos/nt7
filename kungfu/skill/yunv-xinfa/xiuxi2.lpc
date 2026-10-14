@@ -29,7 +29,7 @@ int exert(object me, object target) {
   int force_lvl_me = (int)me->query_skill("force", 1);                //基本内功等级me
   int xj_lvl_target;         //玉女心经等级target
   int force_lvl_target;                //基本内功等级target
-  int v, i, j, k;                // 临时变量
+  int v, i, k;                // 临时变量
   string *sname;        // skill名字
   object *inv;        // 身上带的东西
   mapping skl;        // 所有skill
@@ -217,9 +217,9 @@ int xiuxi(object me) {
   int love_gain;        //lovingness报酬
   int xj_lvl = (int)me->query_skill("yunu-xinjing", 1);        //心经级别
   int force_lvl = (int)me->query_skill("force", 1);        //基本内功级别
-  float f, g, h;        //可变参数
+  //可变参数
   string wiz_report;        //巫师报告
-  object where = environment(me);        //地理环境
+  //地理环境
   object target = query_temp("pending/target", me);  //伙伴
   int xj_lvl_target = (int)target->query_skill("yunu-xinjing", 1);        //伙伴心经级别
   object *inv;

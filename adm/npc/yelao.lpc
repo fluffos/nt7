@@ -120,7 +120,6 @@ void create() {
 }
 
 void init() {
-  object ob = this_object();
 
   /*
         if( interactive (ob) )
@@ -146,8 +145,7 @@ void init() {
 
 int check_time() {
   object *ulist;
-  int num, n, chousha_count;
-  object me = this_object();
+  int num, chousha_count;
   string temp;
 
   ulist = users();

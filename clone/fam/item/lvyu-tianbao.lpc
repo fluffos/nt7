@@ -29,7 +29,6 @@ int do_up9lv(string arg) {
   object me;
   object weapon;
 
-  string result;
 
   me = this_player();
 

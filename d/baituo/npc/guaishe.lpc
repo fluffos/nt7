@@ -44,7 +44,6 @@ void setup_skill(object me, object obj);
 string long_desc();
 
 void create() {
-  int max, max1;
 
   set_name(HIW "怪蛇" NOR, ({ "guai she", "she", "snake" }));
   set("unit", "条");
@@ -126,7 +125,7 @@ void auto_check() {
 
 
 void init() {
-  object ob, me = this_object();
+  object me = this_object();
 
   if (query("id", me) != "guaishe")
     me = present("guai she", environment(this_player()));
@@ -153,7 +152,6 @@ void init() {
 
 void set_owner(object owner) {
   int max, max1;
-  object me = this_object();
   if (!owner) return;
   set("owner", query("id", owner));
   set("combat_exp", query("combat_exp", owner));
@@ -456,9 +454,8 @@ int do_drive(string arg) {
 }
 
 int do_yao(string arg) {
-  object env, obj, ob, me = this_player(), snake;
-  string target_dir, dir, dest, victim;
-  mapping exit;
+  object ob, me = this_player(), snake;
+  string victim;
 
   if (!arg) return notify_fail("你要驱赶什么？\n");
 
@@ -518,9 +515,8 @@ int do_yao(string arg) {
 }
 
 int do_stop(string arg) {
-  object env, obj, ob, me = this_player();
-  string target_dir, dir, dest, victim;
-  mapping exit;
+  object ob, me = this_player();
+  string victim;
 
   if (!arg) return notify_fail("你要驱赶什么？\n");
 
@@ -594,8 +590,6 @@ int random_walk() {
   mapping exits, doors;
   string *dirs, dir, last_room, this_room;
   object there, here = environment(), snake = this_object();
-  object env, ob, me = this_player();
-  string dest, victim;
   mapping exit;
 
 
@@ -655,7 +649,7 @@ int random_walk() {
   return 1;
 }
 
-mixed hit_ob(object me, object victim, int damage_bonus, int factor) {
+varargs mixed hit_ob(object me, object victim, int damage_bonus, int factor) {
   object owner;
   object here = environment(me);
   int exp, pot, lvl;
@@ -690,8 +684,7 @@ mixed hit_ob(object me, object victim, int damage_bonus, int factor) {
       "duration": 20 ]));
 }
 
-void die() {
-  object corpse, ling;
+varargs void die() {
   mixed killer;
 
   remove_call_out("checking");

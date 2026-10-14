@@ -339,7 +339,7 @@ mapping query_action(object me, object weapon) {
     "damage_type": random(2) ? "内伤" : "瘀伤",
   ]);
 }
-mixed hit_ob(object me, object victim, int damage_bonus) {
+varargs mixed hit_ob(object me, object victim, int damage_bonus) {
   int lvl;
 
   lvl = me->query_skill("hamagong", 1);

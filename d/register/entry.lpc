@@ -53,9 +53,6 @@ mapping born = ([
 ]);
 
 void create() {
-  int i, k;
-  string desc;
-  string *position;
 
   set("short", HIR "生命之谷" NOR);
   set("long",

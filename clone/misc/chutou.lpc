@@ -35,7 +35,7 @@ void init() {
 
 int do_wajue() {
   int t, time;
-  string *dir, target;
+  string *dir;
   object ob, me = this_player(), where = environment(me), obj;
   //        return 1;
   t = time() - query_temp("wajue", where);

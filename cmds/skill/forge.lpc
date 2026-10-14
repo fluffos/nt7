@@ -7,7 +7,7 @@ inherit F_CLEAN_UP;
 void create() { seteuid(getuid()); }
 
 int main(object me, string arg) {
-  object obj, item;
+  object item;
 
   if (!arg)
     return notify_fail("你要锻造什么物品？\n");

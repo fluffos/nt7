@@ -787,7 +787,6 @@ void receive_ping_request(mapping info) {
 
 // 收到 PING 回应
 void receive_ping_answer(mapping info) {
-  int status;
 
   string mudname = get_mud_name(info);
   // 有要求对方回 ping 吗?

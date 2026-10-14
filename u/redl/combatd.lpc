@@ -403,10 +403,9 @@ varargs string status_msg(int ratio, int dam_type) {
 varargs mixed report_status(object ob, int effective) {
   int eff_ratio = 100;
   int ratio = 100;
-  int k_stat, g_stat, s_stat;
+  int k_stat, g_stat;
   int d_type = 1;
   int e_type = 1;
-  string *msg = ({ RED, HIR, HIY, HIG, HIG });
   string str;
 
   if (!ob || !query("max_qi", ob) || !query("max_jing", ob)) return;
@@ -1172,16 +1171,12 @@ varargs mixed inflict_damage(
 ) {
   string martial_skill;
   string damage_info;
-  object *eqs;
   object ob;
   mixed result = ([]);
   int armor, wounded;
-  int factor;
   int avoid;
   int has_weapon;
   int hjs;
-  int i, n;
-  mapping my = copy(me->query_entire_dbase());
   mapping your = copy(victim->query_entire_dbase());
 
   hjs = me->query_skill("huajia-su", 1);
@@ -1558,21 +1553,21 @@ varargs int do_attack(object me, object victim, object weapon, int attack_type) 
   mapping my_temp, your_temp;
   mapping fight;
   mapping prepare, action;
-  mapping shield;
   string limb, *limbs;
-  string attack_skill, martial_skill, force_skill, defense_skill;
+  string attack_skill, martial_skill, defense_skill;
   string parry_msg;
   mixed res, foo;
 
   int has_weapon;
   int delta;
   int ap, dp, pp;
-  int damage, damage_bonus;
+  int damage;
+#ifdef USE_SKILLS_SPECIAL
   int armor;
+#endif
   int wounded;
   int array_flag;
   int attack;
-  int avoid;
   int att_back;
   int n;
 
@@ -1583,7 +1578,10 @@ varargs int do_attack(object me, object victim, object weapon, int attack_type) 
 
   string result;
   string damage_info;
-  string *att, *def;
+  string *att;
+#ifdef USE_SKILLS_COMBAT
+  string *def;
+#endif
   int hjs;
 
   if (!me || !victim) return 1;
@@ -2159,7 +2157,7 @@ varargs int do_attack(object me, object victim, object weapon, int attack_type) 
         message_combatd(query_temp("buff/berserk_attack_msg", victim), victim, me);
         do_attack(victim, me, your["weapon"], TYPE_QUICK);
       } else
-        return;
+        return 0;
     }
     //return;         // Here we return, fixed n hits is good enough.
   }
@@ -2214,7 +2212,6 @@ varargs string do_damage(object me, object target, mixed type,
   int armor;
   int wound;
   int jiali;
-  int bonus;
   mixed foo;
   string msg;
   string skill;
@@ -2228,7 +2225,6 @@ varargs string do_damage(object me, object target, mixed type,
   mapping shield;
   string attack_skill;
   int avoid;
-  int def_exp, att_exp;
   int hjs;
   int i, n;
   string s_type, s_msg;
@@ -2875,13 +2871,10 @@ int auto_perform(object me, object target, string skill) {
 //  in the heart_beat() of all livings. Be sure to optimize it carefully.
 //
 void fight(object me, object victim) {
-  object ob;
-  string skill_name;
-  object weapon, weapon2;
+  object weapon;
   string attack_skill;
   int double_attack;
   mapping prepare;
-  string result;
   mapping my_temp;
   int i, auto_pf, pf_flag;
   string pf_skill, pf_skill1, pf_skill2;
@@ -3103,7 +3096,6 @@ void start_aggressive(object me, object obj) {
 }
 
 int player_escape(object killer, object ob) {
-  object iob;
   string msg;
 
   if (!objectp(ob)) return 0;
@@ -3234,8 +3226,6 @@ int player_escape(object killer, object ob) {
 // This function is to announce the special events of the combat.
 // This should be moved to another daemon in the future.
 void announce(object ob, string event) {
-  object *target;
-  int i;
 
   switch (event) {
     case "dead":
@@ -3390,12 +3380,11 @@ void killer_reward(object killer, object victim) {
   string msg = "莫名其妙地死了";
   string follow_msg = 0;
   object weapon, *weapons;
-  mapping actions, quest, bonus;
+  mapping actions;
   int shen_delta, exp_damage;
   mixed exp_lost;
   mapping ks, vs, kcombat;
   int flag, no_loss = 0;
-  int exp, pot, score;
   int kill_bonus;
 
   if (!objectp(victim))

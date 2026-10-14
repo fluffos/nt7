@@ -12,7 +12,7 @@ int perform(object me, object target) {
   int damage;
   string msg;
   int ap, dp;
-  int lvl, p;
+  int lvl;
 
   if (!target) target = offensive_target(me);
 

@@ -92,7 +92,7 @@ void attempt_apprentice(object me) {
   command("recruit " + query("id", me));
 }
 
-void hit_ob(object ob) {
+varargs void hit_ob(object ob) {
   object me = this_object();
   object where = environment(me);
   object guard1 = present("yang chengxie", where);

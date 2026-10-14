@@ -19,7 +19,7 @@ int exert(object me) {
   object where = environment(me);
   int xj_lvl = (int)me->query_skill("yunv-xinfa", 1);        //玉女心经等级
   int force_lvl = (int)me->query_skill("force", 1);                //基本内功等级
-  int v, i, j, k;                // 临时变量
+  int v, i, k;                // 临时变量
   string *sname;        // skill名字
   object *inv;
   mapping skl;        // 所有skill
@@ -136,7 +136,6 @@ int xiuxi(object me) {
   int sx_gain;        //素心诀报酬
   int xj_lvl = (int)me->query_skill("yunv-xinfa", 1);        //心经级别
   int force_lvl = (int)me->query_skill("force", 1);        //基本内功级别
-  object where = environment(me);
   object *inv;
   int i;
 

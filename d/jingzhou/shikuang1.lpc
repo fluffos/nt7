@@ -63,7 +63,7 @@ int valid_leave(object me, string dir) {
 }
 
 void bao() {
-  object ob, me, obj, cor, cps, dex, guan;
+  object me, obj, cor, cps, dex, guan;
   me = this_player();
   guan = present("lei guan", me);
   cor = query("cor", me);

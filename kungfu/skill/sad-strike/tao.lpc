@@ -7,12 +7,9 @@ inherit F_SSERVER;
 string name() { return "怒海惊涛"; }
 
 int perform(object me, object target) {
-  object weapon;
-  int myexp, targexp, damage, skill, merand, targrand, targneili, time, i;
-  string str, *limb, type;
+  int damage, skill;
   mapping myfam;
-  int tmp_jiali, dmg;
-  int num, ap, dp;
+  int ap, dp;
 
   if (!target) target = offensive_target(me);
 

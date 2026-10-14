@@ -76,13 +76,12 @@ void die(object killer) {
   int n;                  // 可以奖励的人的数目
   int exp;                // 需要瓜分的经验
   int pot;                // 需要瓜分的潜能
-  int weiwang;            // 需要瓜分的威望
-  int gongxian;           // 贡献
+            // 需要瓜分的威望
+           // 贡献
   int tihui;              // 体会
-  int score;              // 需要瓜分的阅历
+              // 需要瓜分的阅历
   object *t;              // 杀死我的人的队伍列表
   object tob;
-  int ysg;
   int i;
   object *inv;
 

@@ -3,7 +3,6 @@
 #include <room.h>
 inherit ROOM;
 void create() {
-  object con, item;
   set("short", "练功场");
   set("long", @LONG
  这个练武场比起其他的要大了几倍，细纱铺成的场地在

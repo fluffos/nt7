@@ -810,7 +810,7 @@ int ask_tian() {
   return 1;
 }
 
-int accept_object(object who, object ob, object me) {
+varargs int accept_object(object who, object ob, object me) {
   if (ob->query("id") == "liangye daofa") {
     command("ah " + (string)who->query("id"));
     if (who->query_temp(QUESTDIR1 + "liangye") && who->query(QUESTDIR1 + "start")) {

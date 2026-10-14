@@ -11,13 +11,9 @@ string name() { return HIW "极境" NOR; }
 
 int perform(object me, object target) {
   mapping buff;
-  object *obs;
   string msg;
   int damage;
   int ap, dp;
-  int flag;
-  int i;
-  int p;
   int delta;
   int time;
   int fmsk = me->query_skill("guangming-jing", 1);

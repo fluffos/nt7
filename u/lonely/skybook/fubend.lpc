@@ -35,7 +35,7 @@ int move_new_fb(
 ) {
   object *t;
   object ob;
-  object ob_shensheng, ob_huoyan;
+  object ob_huoyan;
 
   if (!objectp(me)) return 0;
   if (!objectp(ob_room)) return 0;
@@ -462,7 +462,6 @@ int move_lonely_fb_room(
   string into_msg_team,
   string fb_name
 ) {
-  object ob;
 
   if (!objectp(me)) return 0;
   if (!objectp(ob_room)) return 0;

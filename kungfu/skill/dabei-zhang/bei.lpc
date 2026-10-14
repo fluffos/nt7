@@ -9,7 +9,6 @@ int perform(object me, object target) {
   int damage;
   string msg;
   int i, ap, dp;
-  object weapon;
 
   if (!target) target = offensive_target(me);
 

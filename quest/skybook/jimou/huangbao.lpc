@@ -82,7 +82,7 @@ void show_result(object ob, string who, int p_skill, int p_id, int e_id) {
   int kill, kill1, mora, mora1;
   int e_skill;
   int *task;
-  int damage, p_num, e_num;
+  int damage;
   float rate;
 
   if (!(CHAR_D->get_char(who, "skills")))

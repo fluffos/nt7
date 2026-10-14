@@ -65,14 +65,14 @@ int do_pfset(string arg) {
   return 1;
 }
 
-int init() {
+void init() {
   object me = this_player();
   if (playerp(me) && !wizardp(me)) {
     message_vision(YEL "一阵狂风将$N吹往东方。\n" NOR, me);
     me->move("/d/wizard/debug_room");
-    return 1;
+    return;
   }
   add_action("do_reset", "reset");
   add_action("do_pfset", "pfset");
-  return 1;
+  return;
 }

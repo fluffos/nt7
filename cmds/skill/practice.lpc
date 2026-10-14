@@ -11,10 +11,10 @@ int main(object me, string arg) {
   object where = environment(me);
   string skillname;
   string base_skname;
-  int skill, skill_basic, times, i;
+  int skill, skill_basic, times;
   int c, r;
   int difficult, diff, improve;
-  int neili_cost, qi_cost, qi;
+  int neili_cost, qi_cost;
   int t1, t2, t3, t4;
   int t = time();
   int n;

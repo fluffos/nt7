@@ -8,7 +8,6 @@ string name() { return "解生死符"; }
 
 int perform(object me, object target) {
   object obj;
-  string msg;
 
   if (!target) target = offensive_target(me);
 

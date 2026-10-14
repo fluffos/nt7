@@ -94,7 +94,6 @@ int do_flick(string arg) {
 
 int blow() {
   object *inv = all_inventory(find_object("/d/xingxiu/icecave1"));
-  object ob, me = this_player();
   int i;
 
   if (!this_player() || !environment(this_player())) return 1;
@@ -118,7 +117,7 @@ int blow() {
 
 private int blow_result(object victim) {
   object me, fighter, room;
-  int skill, exp;
+  int exp;
   mapping fam;
 
   fam = query("family", this_player());

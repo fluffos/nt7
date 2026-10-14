@@ -128,7 +128,7 @@ void do_open_hs(string arg) {
 int do_close_hs() {
   object room, me = this_object();
   room = load_object("/d/huashan/houzhiwangyu.lpc");
-  if (!room || !room->is_room()) return;
+  if (!room || !room->is_room()) return 0;
   me->move(room);
   msg_tele();
   me->command("close");
@@ -276,7 +276,7 @@ int do_action(string arg) {
 }
 
 int do_ceat(string arg) {
-  object *obs, ob, where;
+  object *obs, ob;
 
   if (!arg) {  //eat all
     return notify_fail("功能：把在同一个房间的对象吞到肚子里关起来，再用 cpuke 指令一次吐到另个房间去。\n"

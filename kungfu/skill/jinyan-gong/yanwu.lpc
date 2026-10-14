@@ -9,7 +9,7 @@ string name() { return "鹰飞雁舞"; }
 
 int perform(object me, object target) {
   string msg;
-  int lvl1, amount;
+  int lvl1;
   mapping buff, data;
 
   if (!target) target = offensive_target(me);

@@ -517,7 +517,7 @@ void die(object killer) {
   object dob;             // 打晕这个NPC的人
   object hob;             // 协助者
   object aob;             // 被协助者
-  int qlevel;             // 本次任务的等级
+             // 本次任务的等级
   int lvl;                // NPC的等级
   int scale;              // NPC呼叫的帮手和逃跑的次数
   int n;                  // 可以奖励的人的数目

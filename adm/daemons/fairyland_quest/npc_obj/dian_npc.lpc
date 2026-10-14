@@ -41,8 +41,7 @@ string *songs2 = ({
   "这个让电之国度走向辉煌的人。",
 });
 
-string me_guodu, ask_arg, baowu_name, baowu_dir, baowu_other1, baowu_other2,
-  me_guodu = "" HIG "电之国度" NOR "", baowu_name = "绿色宝石", baowu_other1 = "红色宝石",
+string me_guodu = "" HIG "电之国度" NOR "", baowu_name = "绿色宝石", baowu_other1 = "红色宝石",
   baowu_other2 = "蓝色宝石", ask_arg = baowu_name, baowu_dir = __DIR__ "dian_obj";
 
 string *me_mark = ({ "dian", "hongse baoshi", "lanse baoshi" });

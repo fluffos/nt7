@@ -115,7 +115,7 @@ void init() {
 }
 
 int life_warcraft() {
-  object me, ob;
+  object me;
 
   me = this_player();
 
@@ -178,12 +178,9 @@ int do_summon(string arg) {
 }
 
 int do_show(string arg) {
-  object money;
   object ob;
   mixed obj;
   object me;
-  string fn, filename;
-  int n, d;
 
   if (!arg)
     return notify_fail("你要亮出什么东西？\n");
