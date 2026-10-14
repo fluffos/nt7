@@ -6,6 +6,7 @@
 inherit NPC;
 
 #define MEMBER_D   "/adm/daemons/memberd"
+#undef FUBEN_D
 #define FUBEN_D    "/adm/daemons/fuben_daemonsd"
 
 mixed start_thborn();

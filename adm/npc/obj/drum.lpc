@@ -245,31 +245,31 @@ void de_group(object *fighters) {
       arena = query("arena");
       list = sort_array(keys(arena), "sort_winner", this_object());
       i = 0;
-      for (i; i < sizeof(list); i++)
+      for (; i < sizeof(list); i++)
         if (!undefinedp(list[i])) {
           no1 = list[i];
           break;
         }
       i++;
-      for (i; i < sizeof(list); i++)
+      for (; i < sizeof(list); i++)
         if (!undefinedp(list[i])) {
           no2 = list[i];
           break;
         }
       i++;
-      for (i; i < sizeof(list); i++)
+      for (; i < sizeof(list); i++)
         if (!undefinedp(list[i])) {
           no3 = list[i];
           break;
         }
       i++;
-      for (i; i < sizeof(list); i++)
+      for (; i < sizeof(list); i++)
         if (!undefinedp(list[i])) {
           no4 = list[i];
           break;
         }
       i++;
-      for (i; i < sizeof(list); i++)
+      for (; i < sizeof(list); i++)
         if (!undefinedp(list[i])) {
           no5 = list[i];
           break;
@@ -442,12 +442,12 @@ void de_group(object *fighters) {
 
     }
     if (i == 1)
-      for (i; i <= (sizeof(list)) / 2; i++) {
+      for (; i <= (sizeof(list)) / 2; i++) {
         set("group" + i, ([ list[i]: list[sizeof(list) / 2 + i] ]));
         msg += (query("name", list[i]) + HIC + "--V.S.--" + NOR +
           (string)query("name", list[sizeof(list) / 2 + i]) + (i % 3 == 2 ? "\n\n" : "\t"));
       } else
-        for (i; i < (sizeof(list)) / 2; i++) {
+        for (; i < (sizeof(list)) / 2; i++) {
           set("group" + i, ([ list[i]: list[sizeof(list) / 2 + i] ]));
           msg += (query("name", list[i]) + HIC + "--V.S.--" + NOR +
             (string)query("name", list[sizeof(list) / 2 + i]) + (i % 3 == 2 ? "\n\n" : "\t"));

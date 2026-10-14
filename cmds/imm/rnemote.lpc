@@ -9,8 +9,6 @@ int main(object me, string arg) {
   string from, to;
   mapping emote;
   mapping toemote;
-  int i;
-  string *ks;
 
   if (!SECURITY_D->valid_grant(me, "(wizard)"))
     return 0;

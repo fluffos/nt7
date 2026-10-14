@@ -22,7 +22,6 @@ LONG
 }
 int valid_leave(object me, string dir) {
   object *inv, obj;
-  int ret;
   if (dir == "out") {
     me->check_team();
     tell_object(me, "check!\n");

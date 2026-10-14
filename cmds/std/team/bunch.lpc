@@ -9,7 +9,6 @@ int main(object me, string arg) {
   object env;
   object tob;
   string msg;
-  object bei;
 
   string pure_name, id;
 
@@ -209,8 +208,8 @@ int do_right(object me, object ob) {
     foreach (tob in t) {
       if (!objectp(tob) || environment(tob) != environment(me)) {
         fail = "虽然大家都同意"
-          "了，可惜现在有人不在，$N";
-        "的提议只好作罢。\n";
+          "了，可惜现在有人不在，$N"
+          "的提议只好作罢。\n";
         break;
       }
 
@@ -274,7 +273,6 @@ int do_right(object me, object ob) {
 
 int do_refuse(object me, object ob) {
   object *t;
-  string msg;
 
   if (!ob || environment(ob) != environment(me))
     return notify_fail("可惜啊，人家已经不在这儿了。\n");

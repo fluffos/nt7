@@ -67,9 +67,8 @@ void init() {
 }
 
 int do_load(string arg) {
-  object ob = this_object(), huoyao, dantou;
+  object huoyao, dantou;
   object me = this_player();
-  int exp_time;
 
   if (!arg || (arg != "powder" && arg != "huo yao" && arg != "dan tou"))
     return notify_fail("你想要加载什么？\n");
@@ -210,11 +209,10 @@ int do_aim(string arg) {
 int do_fire(string arg) {
   object ob = this_object();
   object me = this_player();
-  int exp_time;
 
   if (query_temp("fired", ob)) return notify_fail("你一拉才发现此炮已被引燃了，就快发射了！\n");
   if (query_temp("dan_loaded", ob) <= 0) return notify_fail("炮还没有上弹头呢！\n");
-  if (query_temp("yao_loaded", ob) < 3) return notify_fail("炮还没装满\弹药呢！\n");
+  if (query_temp("yao_loaded", ob) < 3) return notify_fail("炮还没装满弹药呢！\n");
 
   message_vision("$N伸手用力一拉，拉开了$n导火索。\n", me, ob);
   set_temp("fired", 1, ob);

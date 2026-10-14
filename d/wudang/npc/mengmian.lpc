@@ -52,8 +52,7 @@ void init() {
 }
 
 void greeting(object ob) {
-  object *guard, me;
-  int i;
+  object me;
   me = this_object();
   /*
         guard = all_inventory(environment(me));

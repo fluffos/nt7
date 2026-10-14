@@ -13,7 +13,6 @@ string QueryEquipProp(object, mapping);
 
 int main(object me, string arg) {
   string path, var;
-  string *filename;
 
   if (!SECURITY_D->valid_grant(me, "(admin)"))
     return 0;
@@ -166,10 +165,8 @@ void QueryItemInfo(string path) {
   string filename;
   string *file;
   object obj;
-  mapping prop;
   object me = this_player();
   int num = 0;
-  int flag = 0;
 
   filename = path + "文档归类之ITEM篇";
 
@@ -219,7 +216,7 @@ void QueryItemInfo(string path) {
 
 string QueryAction(object ob, object finder) {
   mixed *cmds;
-  string msg = "", *str, name;
+  string msg = "", name;
   int count = 0;
 
   if (stringp(query("short", ob)))
@@ -248,7 +245,7 @@ string QueryAction(object ob, object finder) {
 string QuerySkill(object ob) {
   mapping m_skills, m_enable;
   string *sname;
-  int i, jibie, lingwu, jilei, xiuwei, opt_all;
+  int i;
   string msg = "";
 
   m_skills = ob->query_skills();
@@ -275,8 +272,7 @@ string QuerySkill(object ob) {
 
 string QueryEquipProp(object equip, mixed props) {
   string type, msg = "";
-  int *special_props, i;
-  int count = 0;
+  int i;
   string *prop;
 
   if (stringp(type = query("skill_type", equip)))

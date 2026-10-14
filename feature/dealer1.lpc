@@ -126,7 +126,7 @@ protected int add_one_good(mixed obj, int price, int amount) {
     name = obj->query("name");
     data = obj->query_entire_dbase();
     catch(obn = new(file));
-    if (!obn) return;
+    if (!obn) return 0;
     temp = obn->query_entire_dbase();
     destruct(obn);
 

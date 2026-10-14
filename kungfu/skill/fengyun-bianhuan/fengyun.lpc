@@ -7,7 +7,6 @@ inherit F_SSERVER;
 string name() { return "风起云涌"; }
 int perform(object me, object target) {
   string msg;
-  object weapon;
   int i;
   int skill;
   int count;

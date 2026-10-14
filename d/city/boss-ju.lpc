@@ -292,7 +292,7 @@ int do_giveup() {
   return 1;
 }
 
-int accept_object(object who, object me, object ob) {
+varargs int accept_object(object who, object me, object ob) {
   int exp, pot, score, weiwang;
   mapping bang_quest, bonus;
   object env;

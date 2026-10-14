@@ -5,7 +5,7 @@ inherit F_SSERVER;
 #include "/kungfu/skill/eff_msg.h";
 
 int perform(object me, object target) {
-  string msg, dodge_skill;
+  string msg;
   int extra, skill, at, df, i, lmt, damage, p;
   object weapon;
   extra = me->query_skill("leiming-bian", 1);

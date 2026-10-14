@@ -31,7 +31,6 @@ int hit_ob(object me, object ob, int damage) {
 }
 
 void die() {
-  object ob;
   message_vision("$N尾巴“啪”的一声折断，冒出一股汁液，死了。\n", this_object());
   //        ob = new(__DIR__"xiezike");
   //        ob->move(environment(this_object()));

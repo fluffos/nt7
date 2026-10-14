@@ -22,9 +22,6 @@ void start_heart_beat() {
 }
 
 void setup() {
-  mapping product;
-  string mine;
-  int count;
 
   set("no_clean_up", 1);
   set("no_roar", 1);

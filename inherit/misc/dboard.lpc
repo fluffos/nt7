@@ -152,7 +152,6 @@ string long() {
 // 这将被玩家物件中的 F_EDIT 呼叫
 void done_post(object me, string title, string text) {
   int i;
-  mapping *notes;
   array lines;
   int topic_id;
   int mode;

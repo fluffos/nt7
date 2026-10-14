@@ -40,8 +40,7 @@ void init() {
 int do_du(string arg) {
   object me = this_player();
   object where = environment(me);
-  mapping skill;
-  int plvl, con, improve;
+  int plvl, con;
   int neili_lost;
 
   if (!arg || !id(arg))
@@ -202,9 +201,7 @@ int do_du(string arg) {
 int do_yanjiu(string arg) {
   object me = this_player();
   object where = environment(me);
-  object ob;
   string pfm, jiasha;
-  int lv;
 
   if (!arg) {
     write("研究葵花宝典指令格式：research|yanjiu <绝招> from <葵花宝典>\n");

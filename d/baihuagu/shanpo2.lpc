@@ -54,7 +54,6 @@ void init() {
 }
 int do_dig(string arg) {
   object me;
-  object food;
   me = this_player();
   if (query("food", me) >= me->max_food_capacity()) {
     message_vision(

@@ -52,7 +52,6 @@ int ta_skills(object gcroom, object me) {
   mapping newpfms, pfms = query("can_perform", me);
   mapping teacher;
   string *vskls = ({});
-  int flag = 1;
 
   if (undefinedp(skls) || !mapp(skls) || !sizeof(skls))
     return 0;
@@ -366,7 +365,7 @@ int push_down(object me) {
 
 void init() {
   object gcroom = get_object(__DIR__ "guangchang.lpc");
-  object ob, *obs, me = this_player();
+  object *obs, me = this_player();
 
   if (!playerp(me)) return;
 

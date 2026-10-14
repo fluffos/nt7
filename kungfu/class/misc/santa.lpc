@@ -175,7 +175,6 @@ int accept_fight(object me) {
 }
 
 int accept_kill(object victim) {
-  object me = this_object();
   object player = this_player();
   int flag;
 

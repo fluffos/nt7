@@ -9,10 +9,9 @@ string name() { return HIR "化妖功" NOR; }
 inherit F_SSERVER;
 
 int perform(object me, object target) {
-  object weapon;
   int damage;
   string msg;
-  int ap, dp, p;
+  int ap, dp;
   int lv, cost_neili;
   int delta;
   int fmsk = me->query_skill("fanlao-huantong", 1) + me->query_skill("xiaoyao-you", 1);

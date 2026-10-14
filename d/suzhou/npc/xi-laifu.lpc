@@ -258,7 +258,7 @@ void finish_party(object me, object ob) {
 }
 
 int give_money(object me, object ob) {
-  int money, v;
+  int money;
 
   delete("no_fight", environment());
   if (!me || environment(me) != environment(ob)) {

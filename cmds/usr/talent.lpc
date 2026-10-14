@@ -7,11 +7,11 @@
 
 inherit F_ABILITY;
 int main(object me, string arg) {
-  string *lists, temp, id;
+  string id;
   int ab;
   int i, a_num, learned_energy;
   object ob;
-  string arg1, myclass;
+  string arg1;
   int level;
 
   MYGIFT_D->check_mygift(me, "newbie_mygift/talent");

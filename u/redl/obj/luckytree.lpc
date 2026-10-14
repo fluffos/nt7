@@ -717,7 +717,6 @@ void init() {
 
 void heart_beat() {
   object where = environment();
-  object me = this_object();
   int fstart, ct, start_time = query("start_at_time");
   int yjtime;
 

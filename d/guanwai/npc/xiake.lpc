@@ -151,7 +151,6 @@ int checking(object ob, object me) {
 }
 
 int do_copy(object me) {
-  int i;
   object ob;
   ob = this_object();
 

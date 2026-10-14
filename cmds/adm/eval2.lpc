@@ -62,7 +62,7 @@ EndText
   err = catch(ret = call_other(filename, "eval", geteuid(this_player(1))));
   cost -= eval_cost();
   if (!err) {
-    write(sprintf("传回值为: %O\n执行指令数：%d\n执行成功\。\n", ret, cost));
+    write(sprintf("传回值为: %O\n执行指令数：%d\n执行成功。\n", ret, cost));
     rm(filename);
     if (ret = find_object(filename)) destruct(ret);
     set("channel_id", sprintf("%s(%s)", me->name(),

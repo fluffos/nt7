@@ -38,8 +38,6 @@ void init() {
 
 int do_qiuqian() {
   object me, ob, qian;
-  int i;
-  string str;
 
   me = this_player();
   ob = this_object();
@@ -146,7 +144,7 @@ int do_answer(string arg) {
 int accept_object(object me, object ob) {
   int i;
   mapping qianwen;
-  string str, document, file;
+  string str, file;
 
   if (query("money_id", ob)) {
     if (!query_temp("have_gived", me)) {

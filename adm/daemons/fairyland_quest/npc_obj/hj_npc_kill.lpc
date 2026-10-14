@@ -401,7 +401,6 @@ void checking() {
 }
 
 void att_target(object target) {
-  object temp;
   string temp_msg, color_name, id;
   int power = query("mepower") * 4 / 5 + random(query("mepower") / 5) + 1;
 

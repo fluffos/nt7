@@ -8,7 +8,7 @@ string name() { return YEL "金针渡劫" NOR; }
 #include "/kungfu/skill/eff_msg.h";
 
 int perform(object me, object target) {
-  int skill, i, p;
+  int skill, p;
   int n;
   int my_exp, ob_exp;
   string pmsg;

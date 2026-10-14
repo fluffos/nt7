@@ -50,7 +50,6 @@ void create() {
 int main(object me, string arg) {
   string sBook, msg, sDiff, sJindu, sNandu, ssk;
   int i;
-  mixed *mFile;
 
   if (!arg) return help(me);
 

@@ -1249,7 +1249,7 @@ public string list_invite(object ob, object me) {
 
 public string do_invite(object ob, object me, string arg) {
   int num;
-  object body, room;
+  object room;
 
   room = environment(ob);
 
@@ -1344,7 +1344,6 @@ public string do_ban(object ob, object me, string arg) {
 
 public string do_order(object ob, object me, string arg) {
   object room;
-  string str;
   string ab;
   string buyer, obname;
   string *clist;
@@ -1456,9 +1455,9 @@ public string do_list_all(object me, string arg) {
   mapping goods, goods_num;
   string *gks;
   string name;
-  object *obs, *inv, ob, obj, *all_user;
+  object ob, obj, *all_user;
   string msg, err;
-  int i, j, have_vendor = 0;
+  int i, j;
   int is_ok = 0;
   int have_it = 0;
 

@@ -13,10 +13,9 @@ string attack5(object me, object target, int damage);
 string attack6(object me, object target, int damage);
 
 int perform(object me, object target) {
-  mapping buff, data;
+  mapping buff;
   object weapon;
   string wn, msg;
-  object sroom, room;
   int ap, dp, damage, wound;
   int delta, delta2;
   int time;
@@ -394,7 +393,6 @@ string attack2(object me, object target, int damage) {
 }
 
 string attack3(object me, object target, int damage) {
-  int shd;
   string msg;
 
   int p;

@@ -3,8 +3,8 @@
 #include <combat.h>
 inherit F_SSERVER;
 int perform(object me, object target) {
-  string dodskill, msg;
-  int extra, step, bonus, lvl, str;
+  string msg;
+  int extra, bonus, lvl, str;
   object weapon;
   weapon = me->query_temp("weapon");
   lvl = me->query_skill("tianya-blade", 1);

@@ -376,7 +376,7 @@ protected void add_to_top_rich(object ply) {
 
   gold = bank["gold"] + bank["silver"] / 100 + bank["coin"] / 10000;
   if (gold < MIN_GOLD)
-    return;
+    return 0;
 
   if (sizeof(top_rich) < top_number) {
     if (!top_rich || !sizeof(top_rich))
@@ -389,7 +389,7 @@ protected void add_to_top_rich(object ply) {
     tmp->gold = gold;
     top_rich += ({ tmp });
     top_rich = sort_array(top_rich, (: sort_top_rich :));
-    return;
+    return 0;
   }
 
   if (gold > top_rich[top_number - 1]->gold) {
@@ -400,7 +400,7 @@ protected void add_to_top_rich(object ply) {
     tmp->gold = gold;
     top_rich[top_number - 1] = tmp;
     top_rich = sort_array(top_rich, (: sort_top_rich :));
-    return;
+    return 0;
   }
 }
 

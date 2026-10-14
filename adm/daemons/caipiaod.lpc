@@ -8,7 +8,7 @@ void create() {
 }
 
 string record_time(int time) {
-  int t, y, mo, d, h, m, s;
+  int mo, d, h, m, s;
   mixed *ltime;
   string ctime;
 

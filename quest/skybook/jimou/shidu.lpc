@@ -61,9 +61,9 @@ void main(object ob, string who) {
   call_out("show_result", 5 + random(5), ob, who, p_skill, p_id, e_id);
 }
 void show_result(object ob, string who, int p_skill, int p_id, int e_id) {
-  int kill, kill1, mora, mora1;
+  int kill, mora, mora1;
   int e_skill;
-  int rate, damage, p_num, e_num;
+  int damage;
 
   if (!(CHAR_D->get_char(who, "skills")))
     e_skill = 0;

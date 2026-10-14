@@ -104,8 +104,7 @@ void create() {
 
 string ask_me1() {
   mapping fam;
-  object ob, *clone;
-  int i, j;
+  object ob;
 
   if (!(fam = query("family", this_player())) || fam["family_name"] != "明教")
     return RANK_D->query_respect(this_player()) + "与本派素无来往，不知此话从何谈起？";

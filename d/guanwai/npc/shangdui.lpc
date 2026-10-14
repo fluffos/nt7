@@ -24,7 +24,7 @@ void init() {
 int do_rob() {
   object me, ob;
   string arg;
-  int stage, i;
+  int stage;
   me = this_player();
   ob = this_object();
   stage = 0;

@@ -75,9 +75,8 @@ string ask_jianxi() {
 
 
 void job(object ob, string where, int maxpot, int ckiller) {
-  object *team, obj, gift;
+  object obj, gift;
 
-  int i = 0;
   // team=ob->query_team();
   //for(i=0;i<sizeof(team);i++)
   if (query("short", environment(ob)) == where && ob->query_condition("zzz_busy")) {

@@ -130,10 +130,10 @@ string clear_degree(string arg) {
 }
 
 string ask_chubing() {
-  object me = this_player(), ob = this_object();
+  object me = this_player();
   object bingfu, kaijia;
   string temp;
-  int liangcao, i, reward;
+  int liangcao, reward;
 
   if (me->query_condition("junquest_fail"))
     return "大人尚是待罪之身，轻言出兵，恐性命难保啊，还是请回吧！\n";

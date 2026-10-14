@@ -150,9 +150,8 @@ void change_ob() {
 
 void move_me(object me) {
   mapping move_way;
-  string site, temp, tmp;
+  string site;
   object room;
-  int liangcao;
 
   move_way = way;
   room = environment(me);
@@ -219,10 +218,10 @@ void move_me(object me) {
 }
 
 void check_me(object me) {
-  object *ob, obb, env, room, jiang;
-  string *dirs, dir, temp, tmp;
+  object *ob, obb, env, room;
+  string *dirs, dir;
   mapping exits;
-  int group, i, num;
+  int group, i;
 
   if (!objectp(me)) return;
 

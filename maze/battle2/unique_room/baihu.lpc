@@ -32,7 +32,6 @@ string show_jiqi() {
   int i;
   string *key;
   string str;
-  object me = this_player();
   object ob;
   string team_name;
 

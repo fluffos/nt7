@@ -6,7 +6,6 @@ inherit NPC;
 int ask_aoyao();
 
 void create() {
-  object bj;
 
   set_name("白衣少女", ({ "baiyi girl", "girl" }));
   set("long",
@@ -80,7 +79,6 @@ void create() {
 }
 
 void init() {
-  object ob;
 
   ::init();
   return;

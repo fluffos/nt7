@@ -122,7 +122,6 @@ void init_quest(string qob_name) {
 // 任务终止
 void cancel_quest() {
   mapping my = query_entire_dbase();
-  object env;
 
   if (!mapp(my))
     return;
@@ -140,7 +139,6 @@ void cancel_quest() {
 // user ask npc2 for quest ob
 mixed ask_for_qob(object npc2, object qob, string qob_name) {
   object me;
-  string msg;
 
   me = this_player();
   if (query("special_skill/trick", me)) {
@@ -255,7 +253,6 @@ int npc_accept_object(object me, object who, object ob) {
   mapping my = query_entire_dbase();
   object reward;
   int percent;
-  string msg;
 
   if (ob != QOB) {
     message_vision(CYN "$N" CYN "瞪着$n" CYN "，看了半天"

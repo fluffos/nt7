@@ -10,8 +10,7 @@ void del_busy();
 int hand_throw();
 
 int accept_object(object me, object obj) {
-  int amount;
-  object sword, ob = this_object();
+  object ob = this_object();
 
   if (ob->is_fighting() || ob->is_busy()) {
     tell_object(me, CYN + query("name") + NOR + CYN + "慢悠悠地对你说道：没见我正在忙吗？\n" + NOR);
@@ -201,7 +200,7 @@ int hand_throw() {
 }
 
 void heart_beat() {
-  object sword, me = this_object();
+  object me = this_object();
   if (query("n_flee") < 1) {
     message_vision(CYN + query("name") + NOR + CYN + "仰天长叹：看来此番峨眉气数未尽，罢了，罢了...\n" + NOR +
       query("name") + NOR + YEL + "说完掐了个口诀一顿足，乘着滚滚黑烟破空而去。\n" + NOR, me);
@@ -274,7 +273,7 @@ int receive_damage(string type, int damage, object who) {
   object *ppl;
 
   if (!who) who = this_object()->query_last_damage_from();
-  if (!who) return;
+  if (!who) return 0;
   ppl = query_temp("damage_from");
   if (!arrayp(ppl) || !sizeof(ppl)) ppl = ({});
   if (userp(who) && member_array(who, ppl) == -1) {
@@ -291,9 +290,7 @@ int receive_damage(string type, int damage, object who) {
 }
 
 void die(object killer) {
-  string prop, name;
-  mapping data;
-  object sword, ob, where;
+  object sword, ob;
   /*        string *apply = ({ "reduce_busy", "avoid_busy", "def_damage", "avoid_weak",
                 "add_locked", "reduce_damage", "add_busy", "add_weak", "avoid_locked",
                 "add_damage", "add_skill" });*/

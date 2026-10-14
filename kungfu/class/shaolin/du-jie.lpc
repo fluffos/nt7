@@ -100,7 +100,6 @@ void create() {
 }
 
 mixed ask_me() {
-  mapping fam;
   object ob;
 
   if (!query_temp("valid_in_fumoquan", this_player())) {

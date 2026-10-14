@@ -23,7 +23,6 @@ void create() {
 }
 
 void die() {
-  object ob;
   message_vision("$N凄惨的嚎了几声，死了。\n", this_object());
   /*        if( random(3) >1 )
         {

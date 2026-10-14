@@ -110,7 +110,6 @@ int get_level(mixed exp) {
 }
 void seek_ob(object me) {
   int step, i, num;
-  string site_name;
   object bow, killer, room;
 
   killer = find_player(query("killer", me));

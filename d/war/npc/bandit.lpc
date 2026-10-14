@@ -3,9 +3,7 @@
 inherit __DIR__ "diablo_npc";
 
 void setup() {
-  int i, hp, level;
-  mapping coor, connect;
-  string num_desc;
+  int i, level;
   string *commonskill = ({ "force", "unarmed", "literate", "dodge", "parry", });
   level = query("skill_level");
   for (i = 0; i < sizeof(commonskill); i++)
@@ -58,11 +56,9 @@ void create() {
 
 
 void die() {
-  mapping *walls;
-  object ob, killer, owner, *inv, *team;
-  string *ks, *ks1;
-  int level, j, bonus, num;
-  mapping coor, connect, employ;
+  object ob, killer, owner, *team;
+  int bonus, num;
+  mapping employ;
   int d_bonus;
 
   bonus = query("skill_level") * 10;

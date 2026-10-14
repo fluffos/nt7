@@ -7,9 +7,9 @@ inherit F_CLEAN_UP;
 string time_period(int timep);
 
 int main(object who, string arg) {
-  object me, ob;
+  object me;
   mapping q, quest;
-  string master, msg;
+  string msg;
   int tag_fam = 0;
   int flag_zs = 0;
   int flag_bh = 0;

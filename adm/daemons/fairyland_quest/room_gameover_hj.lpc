@@ -450,9 +450,8 @@ void score_sp_tools_go(object me, int score, int hj_obj_amount) {
 
 
 void score_all(object me) {
-  object *inv_me, temp;
-  int i, hj_obj_amount, score, temp_score, e_time, o_time, g_time, xiaolv;
-  string temp_id, temp_msg, msg = "";
+  int score, temp_score, e_time, o_time, g_time, xiaolv;
+  string msg = "";
 
   if (!me || !me_ok(me)) {
     delete("is_checking");

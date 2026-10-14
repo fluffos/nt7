@@ -7,9 +7,8 @@ string name() { return HIG "碧焰滔天" NOR; }
 string attack(object me, object target, int damage);
 
 int perform(object me, object target) {
-  object du;
   int damage;
-  string msg, msg1;
+  string msg;
   int ap, dp, lvl, fmsk;
   int delta;
 

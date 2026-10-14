@@ -53,7 +53,6 @@ string look_bi(object me, string msg) {
 void init() {
   object me = this_player();
   object here;
-  string msg;
 
   if (!here = find_object(__DIR__ "outzigai1"))
     here = load_object(__DIR__ "outzigai1");
@@ -152,7 +151,7 @@ LONG);
 }
 
 void auto_close() {
-  object obin, obout, me = this_player();
+  object obin, obout;
 
   if (!obin = find_object(__DIR__ "zigaihole"))
     obin = load_object(__DIR__ "zigaihole");

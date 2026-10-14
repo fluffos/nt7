@@ -7,7 +7,6 @@ string *deep_file_list(string dir, string opt);
 
 int main(object me, string arg) {
   string file, opt;
-  string sname;
   mixed *dir;
   int i, total;
 

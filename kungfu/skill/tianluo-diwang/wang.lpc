@@ -11,7 +11,6 @@ string name() { return HIW "天罗地网" NOR; }
 int perform(object me, object target) {
   mapping buff, data;
   string msg;
-  object weapon;
   int skill, ap, dp;
 
   skill = me->query_skill("tianluo-diwang", 1);

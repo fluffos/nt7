@@ -119,7 +119,6 @@ void socket_rece(int fd, mixed msg) {
 
   string target;
   int flower;
-  object ob;
 
 
   if (socket_fd < 0)
@@ -331,8 +330,7 @@ int can_ask() {
 }
 
 int get_reward() {
-  int amount;
-  object me = this_player(), obj;
+  object me = this_player();
   mapping gfl = query("btc/giftlist", me);
 
   tell_object(me, HIG + filter_color(query_name()) + "告诉你：此服务已经关闭。\n" + NOR);

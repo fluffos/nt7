@@ -36,7 +36,7 @@ int user_cant_unconcious(object me) {
 
 int escboat(object me) {
   string msg;
-  object usr, *usrs;
+  object *usrs;
 
   if (!me || !objectp(me)) return 1;
   if (!environment(me) || environment(me) != this_object()) return 1;

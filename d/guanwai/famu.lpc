@@ -83,7 +83,6 @@ int do_famu(string arg) {
   object me;
   object ob;
   object old;
-  object weapon;
 
   me = this_player();
 

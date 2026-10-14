@@ -42,8 +42,7 @@ string *songs2 = ({
   "惊人之光？",
 });
 
-string me_guodu, ask_arg, baowu_name, baowu_dir, baowu_other1, baowu_other2,
-  me_guodu = "" MAG "雨之国度" NOR "", baowu_name = "晶莹之泪", baowu_other1 = "敏慧之心",
+string me_guodu = "" MAG "雨之国度" NOR "", baowu_name = "晶莹之泪", baowu_other1 = "敏慧之心",
   baowu_other2 = "灵巧之手", ask_arg = baowu_name, baowu_dir = __DIR__ "yu_obj";
 
 string *me_mark = ({ "yu", "mh xin", "lq shou" });

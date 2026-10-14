@@ -10,7 +10,6 @@ int perform(object me, object target) {
   object weapon, ob;
   string msg;
   int i, j, times, n;
-  int delta;
 
   i = me->query_skill("wuming-jianfa", 1) / 60;
   j = me->query_skill("sword") / 10;

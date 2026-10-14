@@ -75,10 +75,10 @@ void greeting(object me) {
   }
 }
 
-int attempt_apprentice(object ob) {
+void attempt_apprentice(object ob) {
   if (!query("born", ob)) {
     command("say 你快投胎去，在这里瞎搅和什么？");
-    return 0;
+    return;
   }
 
   command("say 滚！给我一边儿去！");

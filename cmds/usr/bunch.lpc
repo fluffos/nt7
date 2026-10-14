@@ -64,7 +64,6 @@ mapping citys = ([
 ]);
 
 int main(object me, string arg) {
-  object *obs;
   string fname;
   string *args;
 
@@ -370,10 +369,8 @@ int show_bunch_all(object me, string arg) {
 // 显示同盟中的信息
 int show_bunch_info(object me, string arg) {
   string fam;
-  object ob;
   string msg;
   string *member;
-  string id;
   int i;
 
   if (!stringp(fam = select_bunch(me, arg)))
@@ -508,10 +505,6 @@ int show_bunch_area(object me, string arg) {
 // 显示某一个同盟中的人员
 int dismiss_bunch(object me, string arg) {
   string *member;
-  string id;
-  object user;
-  string msg;
-  int n;
 
   if (wiz_level(me) < wiz_level("(arch)"))
     return notify_fail("你的权限不够，不能强行解散帮派。\n");
@@ -581,7 +574,6 @@ int expell_bunch_member(object me, string arg) {
 
 int bunch_efficient(object me, string arg) {
   string fname;
-  object ob;
 
   if (!stringp(fname = query("bunch/bunch_name", me))) {
     write("你现在还没有加入任何帮派呢。\n");
@@ -654,7 +646,7 @@ int bunch_efficient(object me, string arg) {
 
 int appoint_bunch_member(object me, string arg) {
   object ob;
-  string name, item, zhiwei, id, n1, n2;
+  string name, item, zhiwei, id;
   string banghui;
   int lvl, flag;
 
@@ -887,7 +879,6 @@ string show_ally(object me, string id) {
 int show_bunch_league(object me, string arg) {
   object ob;
   string bname, tname;
-  int flag, i, j;
 
   seteuid(getuid());
 
@@ -1076,7 +1067,7 @@ int bunch_arrest(object me, string arg) {
 int bunch_invite(object me, string arg) {
   object ob, *target;
   string bunch;
-  int money, i, flag;
+  int money, flag;
   mapping data;
   string *what;
   string stuffid, stuffname;

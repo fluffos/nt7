@@ -55,7 +55,6 @@ int do_move(string arg) {
 }
 
 void close_passage() {
-  object room;
 
   if (!query("exits/enter"))
     return;
@@ -87,5 +86,4 @@ string look_bei() {
     "    ##   立          ##\n"
     "    ##               ##\n"
     "    ###################\n\n" NOR;
-  "\n";
 }

@@ -154,7 +154,6 @@ void attempt_apprentice(object ob) {
 }
 
 void init() {
-  object ob = this_player();
 
   add_action("do_answer", "answer");
   add_action("do_answer", "huida");
@@ -181,7 +180,6 @@ void init() {
 int do_kill(string arg) {
   object ob;
   object me = this_player();
-  int perform, payed;
 
   if (!arg) return 0;
   ob = present(arg, environment(me));

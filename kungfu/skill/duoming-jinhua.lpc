@@ -36,7 +36,6 @@ mapping *action = ({
 });
 
 int valid_learn(object me) {
-  object ob;
 
   if ((int)query("max_neili", me) < 500)
     return notify_fail("你的内力不够，没有办法练夺命金花。\n");
@@ -60,7 +59,6 @@ string query_skill_name(int level) {
 }
 
 int practice_skill(object me) {
-  object weapon;
 
   if ((int)query("qi", me) < 30 || (int)query("neili", me) < 30)
     return notify_fail("你的内力或气不够，没有办法练习夺命金花。\n");
@@ -78,8 +76,6 @@ mapping query_action(object me, object weapon) {
   int p_e2 = 0;
   int f_e1 = 20;
   int f_e2 = 200;
-  int m_e1 = 70;
-  int m_e2 = 550;
   int i, lvl, seq, ttl = sizeof(action);
 
   lvl = (int)me->query_skill("duoming-jinhua", 1);

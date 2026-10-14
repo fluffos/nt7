@@ -4,7 +4,6 @@
 #include <skill.h>
 
 inherit ITEM;
-inherit F_CLEAN_UP;
 
 mapping *booklists = ({
   ([ "id": "baijin-jianqi",
@@ -700,7 +699,6 @@ int do_open(string arg) {
   int i, k, rate, *rates = ({}), totalrate = 0, rndrate;
   string oldname, pfmpath, *pfmfs = ({}), rndpfm, *tname = ({}), *skid = ({});
   mixed *pfmfiles;
-  mapping b;
   object me = this_player();
 
   if (!arg || (arg != query("id") && arg != "book")) return 0;
@@ -799,7 +797,6 @@ int do_read(string arg) {
   object me = this_player();
   string sks, pfm;
   int flagused = 0, diff, improve = 3000000;
-  int pot = 100000;
 
   if (!arg || (arg != query("id") && arg != "book")) return 0;
 

@@ -5,6 +5,9 @@
 
 #include <ansi.h>
 #include <command.h>
+#undef SKILL_MODEL_UNARMED
+#undef SKILL_MODEL_WEAPON
+#undef SKILL_MODEL_DEFAULT
 #define SKILL_MODEL_UNARMED    "/clone/meskill/skill_model_unarmed.h"
 #define SKILL_MODEL_WEAPON     "/clone/meskill/skill_model_weapon.h"
 #define SKILL_MODEL_DEFAULT    "/clone/meskill/skill_model_default.h"
@@ -323,8 +326,7 @@ int main(object me, string arg) {
 int inventing(object me) {
   int max, i;
   string pot;
-  string skill, *mut_skills, *skills_tmp, skills,
-    skill_name, msg = "", *msgs = ({});
+  string skill, *mut_skills, *skills_tmp, skills, msg = "", *msgs = ({});
   mapping temp, s_skill;
 
   temp = me->query_entire_temp_dbase();
@@ -499,7 +501,6 @@ int skill_t_number(string e_name) {
 void input_skill_name(string arg, object me) {
   string c_name, e_name, skill;
   int i;
-  object invent;
   mapping temp, s_skill;
 
   temp = me->query_entire_temp_dbase();
@@ -938,7 +939,6 @@ void finish_write_skill(object ob, string skill) {
   string header2;
   string result;
   string skill_type;
-  string dir;
 
   temp = ob->query_entire_temp_dbase();
   s_skill = temp["invent"]["spe_skill"];

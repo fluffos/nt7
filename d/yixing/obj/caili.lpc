@@ -36,7 +36,7 @@ void create() {
 // then will save source
 
 void do_check() {
-  object owner, room;
+  object owner;
 
   if (!(owner = query("owner"))) {
     destruct(this_object());

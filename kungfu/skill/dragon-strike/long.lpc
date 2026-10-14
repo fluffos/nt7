@@ -7,7 +7,7 @@
 inherit F_SSERVER;
 
 int perform(object me, object target) {
-  mapping buff, data;
+  mapping buff;
   int damage;
   string msg;
   int ap, dp, i;

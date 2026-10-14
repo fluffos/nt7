@@ -35,13 +35,12 @@ void init() {
 }
 
 void die() {
-  object ob;
 
   message_vision("\n$N终于都死了，地上白茫茫一片。\n", this_object());
   destruct(this_object());
 }
 
-mixed hit_ob(object me, object victim, int damage_bonus, int factor) {
+varargs mixed hit_ob(object me, object victim, int damage_bonus, int factor) {
   object owner;
   object here = environment(me);
 
@@ -57,9 +56,8 @@ mixed hit_ob(object me, object victim, int damage_bonus, int factor) {
 }
 
 int do_attack(string arg) {
-  object env, obj, ob, me = this_player(), bees;
-  string target_dir, dir, dest, victim;
-  mapping exit;
+  object ob, me = this_player(), bees;
+  string victim;
 
   if (!arg) return 0;
 

@@ -5,7 +5,7 @@
 string name() { return MAG "挪转乾坤" NOR; }
 
 int perform(object me, object target) {
-  mapping buff, data;
+  mapping buff;
   string msg;
   int level;
   int time;

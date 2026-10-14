@@ -31,7 +31,6 @@ mapping *action = ({
 
 int valid_enable(string usage) { return usage == "throwing"; }
 int valid_learn(object me) {
-  object ob;
 
   if (query("max_neili", me) < 500)
     return notify_fail("你的内力不够，没有办法练金蛇锥法。\n");
@@ -48,7 +47,6 @@ mapping query_action(object me, object weapon) {
   return action[random(sizeof(action))];
 }
 int practice_skill(object me) {
-  object weapon;
 
   /*
         if( !objectp(weapon=query_temp("weapon", me) )

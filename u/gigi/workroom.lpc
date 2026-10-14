@@ -33,7 +33,6 @@ int valid_leave(object me, string dir) {
 }
 
 void init() {
-  object me = this_player();
   /*
 	if ( query("id", me) != "gigi" && query("couple/couple_id", me) != "gigi" )
 {		message_vision(YEL "一股微风吹过，把$N吹到了室外。\n" NOR, me);

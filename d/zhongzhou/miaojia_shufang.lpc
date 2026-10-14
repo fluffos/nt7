@@ -31,7 +31,6 @@ void init() {
 
 int do_think(string arg) {
   object me;
-  object weapon;
   me = this_player();
 
   if (!living(me)) return 0;
@@ -75,8 +74,6 @@ int do_think(string arg) {
 
 int do_canwu(string arg) {
   object me = this_player();
-  object ob;
-  object ob1;
 
   if (arg != "wall" && arg != "shu")
     return notify_fail("你要参悟什么？\n");

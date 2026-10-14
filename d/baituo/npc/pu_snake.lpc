@@ -67,7 +67,7 @@ void unconcious() {
   }
 }
 
-void die() {
+varargs void die() {
   object ob;
   message_vision("$N全身扭曲，翻腾挥舞一阵，慢慢僵直而死。\n", this_object());
   ob = new(__DIR__ "obj/mangshe-dan");

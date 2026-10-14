@@ -49,7 +49,6 @@ int do_throw(string arg) {
 
 int blow() {
   object *inv = all_inventory(find_object("d/zhongnan/fengdong"));
-  object ob, me = this_player();
   int i;
 
   if (!this_player()) return 1;
@@ -71,8 +70,8 @@ int blow() {
 
 private int blow_result(object victim) {
   object ob2, ob;
-  string *limbs, str, dodge_skill, limb, result;
-  int ap, dp, damage;
+  string *limbs, dodge_skill;
+  int ap, dp;
 
   if (random(100) == 1) {
     ob2 = new("/d/zhongnan/npc/bigbear");
@@ -123,10 +122,9 @@ private int blow_result(object victim) {
 }
 
 void setup_ob(object me, object victim) {
-  object *inv;
   mapping skill_status;
   string *sname;
-  int i, max = 0, max1, j;
+  int i, max = 0, max1;
 
 
   if (!query_temp("copied", me)) {
@@ -141,7 +139,7 @@ void setup_ob(object me, object victim) {
 
       max1 = (int)max + random(max);
 
-      if (query("combat_exp", 1, victim) < 10000) max1 / 2;
+      if (query("combat_exp", 1, victim) < 10000) max1 /= 2;
       me->set_skill("dodge", max1);
       me->set_skill("parry", max1);
       me->set_skill("force", max1);

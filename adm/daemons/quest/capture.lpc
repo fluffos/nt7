@@ -10,8 +10,6 @@ void create() {
 
 void start_quest() {
   object qob;
-  string qob_name;
-  string *ob_names;
 
   if (sizeof(children("/clone/quest/capture")) > 150)
     // 系统中最?个追杀的任务

@@ -47,7 +47,7 @@ void create() {
   carry_object("/clone/weapon/changjian")->wield();
   carry_object("/d/city/obj/cloth")->wear();
 }
-int init() {
+void init() {
   add_action("do_attack", "attack");
   add_action("do_stop", "stop");
   add_action("do_send", "sendto");

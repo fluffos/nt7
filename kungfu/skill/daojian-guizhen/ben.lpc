@@ -13,9 +13,6 @@ int perform(object me, object target) {
   int ap, dp, lvl;
   object weapon1, weapon2;
   int attack_type;
-  mapping prepare;
-  int i;
-  string *key_pre;
 
   if (!target) target = offensive_target(me);
 

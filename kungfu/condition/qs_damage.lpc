@@ -6,7 +6,6 @@ inherit F_CLEAN_UP;
 int update_condition(object me, int duration) {
   object *ob;
   int i;
-  string msg;
 
   if (!living(me)) {
     message("vision", me->name() + "痛苦地呻吟了一声。\n", environment(me), me);

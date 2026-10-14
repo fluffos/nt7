@@ -46,8 +46,6 @@ void init() {
 }
 
 int valid_leave(object me, string dir) {
-  object room, *inv;
-  int countp;
 
   if (wiz_level(me) < 2 && dir != "down") {
     tell_object(me, NOR "那不是你可以进去的地方。\n" NOR);

@@ -321,7 +321,7 @@ int query_effect_parry(object attacker, object me) {
 }
 
 
-mixed hit_ob(object me, object victim, int damage_bonus) {
+varargs mixed hit_ob(object me, object victim, int damage_bonus) {
 
   string *desc;
   object weapon;

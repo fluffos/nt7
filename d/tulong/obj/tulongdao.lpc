@@ -40,7 +40,6 @@ void create() {
   check_clone();
 }
 mixed hit_ob(object me, object victim, int damage_bonus) {
-  int pro;
   int dam;
   dam = me->query_str() * 100;
   victim->receive_damage("jing", dam * 2);

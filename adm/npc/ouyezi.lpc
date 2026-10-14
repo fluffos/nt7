@@ -77,12 +77,11 @@ int ask_qiling() {
 }
 
 int do_qiling(string arg) {
-  mapping props, data = ([]);
+  mapping data = ([]);
   object me;
   object ob, ob1, ob2;
   string item, what, type;
-  string *apply;
-  int i, status, qlvl, success, value;
+  int status, qlvl, success;
 
   me = this_player();
 

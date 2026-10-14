@@ -75,7 +75,6 @@ string memory_expression(int m) {
 }
 
 int check_ob(object ob) {
-  int i;
   int mem;
   string bn;
 

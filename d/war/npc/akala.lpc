@@ -106,13 +106,12 @@ int difficult() {
 }
 
 int do_task() {
-  object *list, *ob, ob1;
   object me = this_player();
-  object npcs, obj, room, *team, member;
+  object npcs, obj, room;
 
-  int level, i, t, lv, just;
+  int level, i, t;
   string *ks;
-  string kind, where, msg;
+  string kind, msg;
   mapping trans;
 
   trans = query("trans_act1", me);

@@ -18,7 +18,6 @@ mapping vip_levelup = ([
 ]);
 
 int main(object me, string arg) {
-  string arg1, arg2;
   int n, level, score;
   object ob;
 

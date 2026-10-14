@@ -10,7 +10,6 @@ int perform(object me, object target) {
   string msg;
   int ap, dp;
   int damage, ran, ndam;
-  string sexs;
 
   if (!target) target = offensive_target(me);
 

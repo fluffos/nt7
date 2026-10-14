@@ -45,7 +45,7 @@ int get_help8() {
 
 int get_reward() {
   int amount;
-  object room, me, obj, *inv;
+  object room, me;
   me = this_player();
 
   if (me->is_busy()) {
@@ -164,7 +164,6 @@ int push_down(object me) {
 }
 
 void init() {
-  object me = this_player();
 
   //remove_call_out("push_down");
   //call_out("push_down", 60, me);

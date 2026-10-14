@@ -46,7 +46,7 @@ int close_door(object me) {
 int do_biguan(string arg) {
   object me = this_player();
   int bili, wuxing, gengu, shenfa;
-  int sum, num1, num2, num3, num4;
+  int sum;
 
   if (!arg) return notify_fail("你还是再看看紫霞遗页吧，小心别把功法搞错了才来遗憾！\n");
 
@@ -94,7 +94,7 @@ int stage2(object me, int bili, int wuxing, int gengu, int shenfa) {
 }
 
 int stage3(object me, int bili, int wuxing, int gengu, int shenfa) {
-  object env, link_ob, obj, place;
+  object obj, place;
 
   if (!me->query_skill("ziyin-yin") || !me->query_skill("zhengqi-jue") || !me->query_skill("zixia-gong")) {
     tell_object(me, "突然一股真气冲抵心口，似乎砰上了阻扰，你连连加力，却三番四次都冲不过去。\n");

@@ -90,7 +90,6 @@ int singing(object ob) {
 }
 
 int ask_me() {
-  object me = this_player();
   remove_call_out("ask_for_help");
 
   command("say 你要见精灵之王？");

@@ -470,7 +470,7 @@ public void confirm_build(string yn) {
 private int do_rebuild(string arg) {
   int i, vips;
   object me, ob, room, huyuan;
-  string name, type, tag, *key, msg;
+  string name, type, *key;
   mapping build, house, base, old_vip;
 
   if (!arg || arg == "")
@@ -887,7 +887,7 @@ private int add_vip_count(string arg) {
   int i, how;
   object me, ob, room, huyuan;
   mapping build, house;
-  string *key, msg;
+  string *key;
 
   if (!arg || arg == "")
     return notify_fail(HIW "指令格式：addvips <屋宅名称>\n" NOR);

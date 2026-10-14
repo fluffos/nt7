@@ -143,7 +143,7 @@ void hunting(object me, object ob) {
 
 
 void chaning(object me, object ob) {
-  int ap, dp, pp, jingli, damage;
+  int ap, pp, jingli, damage;
 
   string *chan_msg = ({
     HIR "\n$n暗运劲力，想将缠在身上的$N崩断。但$N身子可伸可缩，只略加延伸，并不会断。\n" NOR,
@@ -248,7 +248,6 @@ void chaning(object me, object ob) {
 
 int convert(string arg) {
   object me = this_player();
-  object ob;
 
   if (arg != "snake" && arg != "she") return 0;
   if (query("family/family_name", me) != "欧阳世家")

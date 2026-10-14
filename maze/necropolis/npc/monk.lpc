@@ -126,7 +126,6 @@ void unconcious() {
 varargs void die(object killer) {
   object *inv, item, mazeobj;
   int count, finished;
-  string name;
   object me, ob;
   me = this_object();
 

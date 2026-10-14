@@ -41,7 +41,7 @@ int exert(object me, object target) {
 
 void hitself(object me, object *bad_guys, int degree) {
   int i, a0, a1, b0, b1;
-  object killer, room;
+  object killer;
 
   for (i = 0; i < sizeof(bad_guys); i++) {
     killer = bad_guys[i];

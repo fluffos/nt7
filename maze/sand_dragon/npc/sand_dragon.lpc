@@ -86,7 +86,7 @@ int dragonblow() {}
 
 
 int dragonstun() {
-  int i, dam;
+  int i;
   object *inv;
   message_vision(HIW "\n\n$N忽直立而起，又重重跃下，天摇地动，沙穴震颤。。。。\n\n" NOR, this_object());
   inv = all_inventory(environment(this_object()));
@@ -105,7 +105,6 @@ int dragonstun() {
 
 int dragonclaw() {
   object ob, me, *enemy;
-  int i;
 
   ob = this_object();
   ob->set("bite_time", time());
@@ -119,7 +118,7 @@ int dragonclaw() {
 
 
 void die() {
-  object rstone, me, owner, money_reward, skin;
+  object rstone, me, owner;
   mapping hate;
   object *ppl, *ppl_present;
   int i;

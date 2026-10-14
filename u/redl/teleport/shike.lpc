@@ -43,15 +43,15 @@ int discmds() {
   return 1;
 }
 
-int init() {
+void init() {
   object me = this_player();
-  if (!interactive(me) || !playerp(me)) return 1;
-  if (wiz_level(me) > 5) return 1;
+  if (!interactive(me) || !playerp(me)) return;
+  if (wiz_level(me) > 5) return;
 
   add_action("discmds", ({
     "steal", "cast", "conjure", "array", "fight",
     "quit", "exit", "recall", "kill", "ansuan", "touxi",
     "surrender", "team", "chatroom", "rideto",
   }));
-  return 1;
+  return;
 }

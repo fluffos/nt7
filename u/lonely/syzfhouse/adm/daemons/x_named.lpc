@@ -11,7 +11,7 @@
 #define RATE_X      1000    //多色出现机率（中、前缀齐全）
 
 varargs int x_name(object obj, string arg) {
-  int i, j;
+  int i;
   string x_id, x_id_a, x_id_b, *key;
   string x_name, x_name_a, x_name_b, x_color;
   mapping name;

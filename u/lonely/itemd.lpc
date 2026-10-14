@@ -549,9 +549,9 @@ int do_enchase(object me, object item, object tessera) {
   mapping *ins;
   mapping data, enchase_prop, temp;
   string *apply;
-  string str, type;
+  string type;
   object obj;
-  int i, n, level, wash, addsn;
+  int i, level, wash, addsn;
 
   if (query("equipped", item))
     return notify_fail("你先解除" + item->name() + "的装备再说！\n");
@@ -771,10 +771,9 @@ int do_enchase(object me, object item, object tessera) {
 
 // 用内力将镶嵌物品溶化掉 melt
 int do_wash(object me, object item) {
-  mapping enchase, insert, applied_prop;
+  mapping applied_prop;
   mapping mod_prop;
-  string *apply, *ks;
-  int i, j, f, n;
+  int f, n;
 
   if (query("neili", me) < query("max_neili", me) * 9 / 10)
     return notify_fail("你现在内力并不充沛，怎敢贸然运用？\n");
@@ -1354,8 +1353,6 @@ mixed weapon10lv_hit_ob(object me, object victim, object weapon, int damage_bonu
 
 // 9级兵器攻击对手
 mixed weapon_hit_ob(object me, object victim, object weapon, int damage_bonus) {
-  int ap;
-  int dp;
   int damage;
   string msg;
 
@@ -1596,12 +1593,9 @@ void equip_setup(object item) {
 void enchase_attack(object item, object me, object victim, int damage) {
   mapping enchase, buff;
   string *apply;
-  string msg, desc;
-  object *inv;
+  string msg;
   object shenlong;
-  int a1, a2, a3, a4;
-  int extra, avoid, i, j, n;
-  int dam;
+  int extra, avoid, i, n;
 
   if (!me || !victim) return;
 

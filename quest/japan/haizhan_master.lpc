@@ -26,7 +26,6 @@ void be_attack();
 void target_check_hp();
 
 int finded_baowu(int which, string name) {
-  int score;
   object me = get_me();
 
   if (!me) return 0;
@@ -219,7 +218,7 @@ int do_game(string arg) {
 }
 
 int do_go(string arg) {
-  int x, y, old_x, old_y, i;
+  int x, y, old_x, old_y;
   string *dirs = ({
     "north",
     "south",

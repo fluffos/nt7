@@ -84,13 +84,13 @@ int query_lianxitimes(object me)  //获取lian次数，/cmds/skill/practice.c
 string query_canyanjiuskills(object me)  // enable.c
 {
   mapping map;
-  string *types, *skill;
+  string *skill;
   string msg = "";
   string *skyj = ({});
   string *sklx = ({});
   string *sklxb = ({});
 
-  int i, modify;
+  int i;
 
   msg += HIG + "  当前福地加成后，" + sprintf(
     "研究次数:(%d)，",

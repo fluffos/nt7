@@ -7,7 +7,6 @@ inherit F_SSERVER;
 string name() { return "空手夺白刃"; }
 
 int perform(object me, object target) {
-  string msg;
   object weapon, weapon2;
   int skill;
   int comb1, comb2;

@@ -62,7 +62,6 @@ string ask_jiu() {
   object me = this_player();
   object ob_xy, ob_xnj, ob_hbk, ob_qmj;
   object ob_xy2;
-  int i;
 
   // 需要材料
   /*

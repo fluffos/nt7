@@ -3,7 +3,7 @@
 inherit ROOM;
 
 string look_hua();
-int valid_leave();
+varargs int valid_leave();
 
 void create() {
   set("short", "鳌拜书房");
@@ -61,7 +61,7 @@ int do_xian(string arg) {
 }
 
 int do_turn(string arg) {
-  object ob, me = this_player();
+  object me = this_player();
 
   if (!arg || arg != "bashou")
     return 0;

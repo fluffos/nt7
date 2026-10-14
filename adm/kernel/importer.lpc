@@ -353,7 +353,6 @@ int do_batch() {
 int transfer_user(string arg) {
   object user;
   object link;
-  object card_ob;
 
   string login_from;
   string user_from;

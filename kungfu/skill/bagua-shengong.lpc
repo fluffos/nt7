@@ -78,8 +78,7 @@ string query_dodge_msg(string limb) {
   return dodge_msg[random(sizeof(dodge_msg))];
 }
 
-mixed hit_ob(object me, object victim, int damage_bonus) {
-  object ob;
+varargs mixed hit_ob(object me, object victim, int damage_bonus) {
   int lvl;
 
   lvl = me->query_skill("force");

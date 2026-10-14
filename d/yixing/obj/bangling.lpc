@@ -36,9 +36,7 @@ void init() {
 }
 
 int do_find(string arg) {
-  object *obj, room;
-  string file, region, fam, result;
-  int i;
+  string fam, result;
   mapping job;
 
   if (query("owner") != query("id", this_player())) {
@@ -102,7 +100,7 @@ int do_find(string arg) {
 
 int do_collect(string arg) {
   object me = this_player();
-  object victim, obj;
+  object victim;
   int ap, dp, myexp, yourexp, bonus, record;
   mapping job;
 
@@ -170,7 +168,7 @@ int do_collect(string arg) {
 }
 
 int do_sign(string arg) {
-  object obj, room;
+  object obj;
   object me = this_player();
   int bonus, record;
   mapping job;

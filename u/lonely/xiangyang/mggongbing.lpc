@@ -103,12 +103,11 @@ void die(object killer) {
   int exp;                // 需要瓜分的经验
   int pot;                // 需要瓜分的潜能
   int tihui;              // 需要瓜分的体会
-  int weiwang;            // 需要瓜分的威望
-  int score;              // 需要瓜分的阅历
+            // 需要瓜分的威望
+              // 需要瓜分的阅历
 
   object *t;              // 杀死我的人的队伍列表
   object tob;
-  int i;
 
   // 找到杀了我(NPC)或是打晕我的人
   if (!objectp(dob = killer))
@@ -202,7 +201,6 @@ void shot_arrow() {
 }
 
 void random_move() {
-  string dir;
   string route;
   object env;
 

@@ -11,13 +11,13 @@ inherit TEMPLATE_OB;
 // 将所需数据保存在变量中
 
 // dbase 格式
-mixed *dbase_format = ({ "long", "value" });
+mixed *my_dbase_format = ({ "long", "value" });
 
 // 函数格式
-mixed *function_format = ({ "set_weight", "init_damage" });
+mixed *my_function_format = ({ "set_weight", "init_damage" });
 
 // 模板数据
-mapping template_data = ([
+mapping my_template_data = ([
   // 英文名(索引)  : ({ 描述(long), ({ 重量(set_weight) - 伤害(init_damage) }), 额外基准文件 })
   "scimitar": ({ ({ "这是一柄身作弧形的弯刀。\n", 100 }), ({ 7000, 20, }), }),
   "sabre": ({ ({ "这是一柄狭长略弯的马刀。\n", 200 }), ({ 9000, 25, }), }),
@@ -36,13 +36,13 @@ void setup() {
   set_base_file("weapon/blade");
 
   // 设置 dbase 格式
-  set_dbase_format(dbase_format);
+  set_dbase_format(my_dbase_format);
 
   // 设置函数格式
-  set_function_format(function_format);
+  set_function_format(my_function_format);
 
   // 设置模板数据
-  set_template_data(template_data);
+  set_template_data(my_template_data);
 
   ::setup();
 }

@@ -47,7 +47,7 @@ void greeting(object ob) {
 }
 
 void die() {
-  object ob, corpse;
+  object ob;
 
 
   /*

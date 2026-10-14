@@ -5,7 +5,6 @@ inherit F_CLEAN_UP;
 string name() { return HIY "金刚护体" NOR; }
 
 int perform(object me, string skill, string arg) {
-  int add_dam;
 
   if (me->query_temp("special/jingang"))
     return notify_fail("金刚护体技能已经在施展中了。\n");

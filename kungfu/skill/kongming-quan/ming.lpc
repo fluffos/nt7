@@ -5,9 +5,8 @@ inherit F_SSERVER;
 string name() { return "灵台空明"; }
 
 int perform(object me, object target) {
-  object weapon;
-  int damage, skill, wap, wdp;
-  string *limb, result, str, msg;
+  int skill;
+  string msg;
   mapping buff, data;
 
   if (!target) target = offensive_target(me);

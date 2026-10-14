@@ -95,8 +95,6 @@ void create() {
 }
 
 string ask_me() {
-  mapping fam;
-  object ob;
 
   if (query("wucan_count") < 1)
     return "水笙姑娘？她在雪域等着我？";
@@ -108,7 +106,6 @@ string ask_me() {
 
 int accept_object(object who, object ob) {
   object obj;
-  int i;
 
   if ((string)query("id", ob) == "wan zhenshan") {
     write(HIC "\n狄云说道：这位" + RANK_D->query_respect(who) + "，如此大恩大德，在下实不知何以为报。\n");
@@ -142,7 +139,7 @@ void destroying(object me, object obj) {
 }
 
 void do_kill(object ob) {
-  object me, room1;
+  object me;
   me = this_object();
 
   if (interactive(ob)) {
@@ -176,9 +173,8 @@ string ask_book() {
 }
 
 string ask_book2() {
-  object ob, me;
+  object me;
   int i;
-  object fang;
   me = this_player();
 
   if (!query(QUESTDIR + "active", me))

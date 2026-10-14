@@ -20,7 +20,6 @@ void create() {
 int do_effect(object me) {
   string mapsk;
   int effect;
-  int neili;
 
   log_file("static/using", sprintf("%s(%s) eat 脑白金 at %s.\n",
     me->name(1), query("id", me), ctime(time())));

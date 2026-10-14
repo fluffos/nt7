@@ -291,7 +291,6 @@ int do_invite(string arg) {
 int do_kickout(string arg) {
   object me;
   object ob;
-  int i;
 
   me = this_player();
   if (!is_owner(me))
@@ -329,7 +328,6 @@ int do_kickout(string arg) {
 
 int do_closechat() {
   object me;
-  object ob;
   object *obs;
   int i;
 
@@ -428,7 +426,6 @@ int do_secret(string arg) {
 
 int do_topic(string arg) {
   object me;
-  object ob;
 
   me = this_player();
   if (!is_owner(me))

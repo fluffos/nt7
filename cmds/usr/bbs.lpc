@@ -71,8 +71,6 @@ int start_help(string msg, object ob) {
 }
 
 int main(object me, string arg) {
-  int i;
-  string file, *search;
 
   seteuid(getuid());
   set_temp("help", 1, me);
@@ -204,7 +202,7 @@ int message() {
 int wizlist() {
   string *wizlist;
   string *list;
-  string wiz_name, wiz_level, str, str1, str2, str3, str4, str5;
+  string wiz_name, wiz_level, str1, str2, str3, str4, str5;
   int i, s1, s2, s3, s4, s5;
   str1 = str2 = str3 = str4 = str5 = "";
   s1 = s2 = s3 = s4 = s5 = 0;
@@ -360,7 +358,7 @@ string view_msg(int flag, object ob) {
 protected void confirm_p_choice(string arg, object ob) {
   object me = this_player();
   int k = atoi(arg);
-  int p, num;
+  int num;
   string memer = query_temp("memer", me);
   mapping *notes;
   if (k > 0) {
@@ -505,7 +503,7 @@ int do_post(string arg, object ob) {
   return 1;
 }
 void do_discard(object ob) {
-  mapping note, *notes;
+  mapping *notes;
   int num;
   string memer = query_temp("memer", this_player());
   num = query(memer, this_player()) + 1;
@@ -945,7 +943,7 @@ void view9(string arg, string str, int i, int j) {
   return;
 }
 void view3() {
-  string file, *text, str = find_file(), *w, msg, *t;
+  string file, *text, str = find_file(), *w, *t;
   int i, j;
   file = read_file(str);
   if (!file) {
@@ -975,7 +973,7 @@ void view3() {
 }
 void view4() {
   string file, *w, *text, str = find_file();
-  int i, j, k, v;
+  int i, j;
   file = read_file(str);
   if (!file) {
     write("资料采集中......\n");
@@ -996,7 +994,7 @@ void view4() {
   return;
 }
 void view5(string arg) {
-  int k = atoi(arg), i, j;
+  int k = atoi(arg), j;
   string *w, *text;
   string file, t = query_temp("select", this_player());
   file = find_file();
@@ -1109,7 +1107,6 @@ protected void confirm_choice(string arg) {
   string t = query_temp("select", me);
   string *text;
   int k = atoi(arg);
-  int p;
   if (k > 0) {
     view5(arg);
     return;
@@ -1181,7 +1178,7 @@ protected void confirm_choice(string arg) {
   return;
 }
 void view6() {
-  int i, j, k, wizlvl;
+  int i, j, wizlvl;
   string *file;
   string name, str = "", msg;
   object ob;

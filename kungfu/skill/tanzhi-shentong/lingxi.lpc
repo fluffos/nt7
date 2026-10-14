@@ -6,9 +6,9 @@ string name() { return HIR "灵犀一指" NOR; }
 inherit F_SSERVER;
 
 int perform(object me, object target) {
-  mapping buff, data;
+  mapping buff;
   string msg;
-  int ap, dp, damage, p;
+  int ap, dp, damage;
   int fmsk = me->query_skill("qimen-xuanshu", 1);
   int delta, delta2;
   int time;

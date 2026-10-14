@@ -220,7 +220,6 @@ void damage_all() {
 }
 
 void heart_beat() {
-  object ob;
 
   keep_heart_beat();
 
@@ -360,7 +359,6 @@ void new_life() {
 }
 
 int receive_damage(string type, int damage, object who) {
-  object ob;
   int tzlv;
 
   object me = this_object();
@@ -404,7 +402,6 @@ void remove_no_perform() {
 
 // 检查生命
 void check_life() {
-  object env;
 
   // 如果life<=1则死亡
   if (1) {
@@ -427,28 +424,12 @@ void die(object killer) {
   object tob;
   object ob;
   int mar;                //  需要瓜分的体会
-  int i;
 
   // 定义奖励物品列表
   // 几率  X / 百分之
-  mixed oblist = ([
-    "/clone/fam/super/dugu/bldan": 1,
-    "/clone/fam/super/dugu/bhxdan": 1,
-    "/clone/fam/super/dugu/bjxcao": 1,
-    "/clone/fam/super/dugu/hlzhi": 1,
-    "/clone/fam/super/dugu/jzdan": 1,
-    "/clone/fam/super/dugu/qhcao": 1,
-    "/clone/fam/super/dugu/qhdan": 1,
-    "/clone/fam/super/dugu/sxguo": 1,
-    "/clone/fam/super/dugu/tldan": 1,
-    "/clone/fam/super/dugu/xhcao": 1,
-    "/clone/fam/super/dugu/xmgu": 1,
-    "/clone/fam/super/dugu/qlndan": 1,
-  ]);
 
   object gift_ob, gift_ob2, gift_ob3, gift_ob4;
-  string s_gift, *key_s_gift;
-  int gift_point, ran;
+  int ran;
 
   if (objectp(ob = previous_object(0)) && sscanf(base_name(ob), "/kungfu/skill/%*s")) {
     full_self();

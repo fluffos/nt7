@@ -11,7 +11,7 @@ int get_current_day_phase();
 nosave mapping *day_phase = NATURE_D->query_day_phase();
 
 int perform(object me, object target) {
-  object weapon, ob;
+  object weapon;
   string msg;
   int phase = get_current_day_phase();
   int extra, count = 0;

@@ -58,11 +58,7 @@ int accept_hit(object who) {
 }
 
 void die(object killer) {
-  string prop, name;
-  mapping data;
-  object *obs, ob, where;
-  object *enemies, *enemies2, enemy, enemy2;
-  int num;
+  object ob;
 
   if (objectp(ob = previous_object(0)) && sscanf(base_name(ob), "/kungfu/skill/%*s")) {
     return;

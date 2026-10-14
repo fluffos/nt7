@@ -22,10 +22,8 @@ void init() {
 int do_du(string arg) {
   object me = this_player();
   object where = environment(me);
-  object ob;
 
-  string skill, book, msg;
-  int lv;
+  string skill, book;
 
   if (!arg) {
     write("研读葵花剑谱指令格式：read <技能> from <葵花剑谱>\n");

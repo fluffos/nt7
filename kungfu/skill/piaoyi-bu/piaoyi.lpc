@@ -10,7 +10,6 @@ inherit F_SSERVER;
 void remove_effect(object me, int aamount, int damount);
 
 int perform(object me, object target) {
-  object weapon;
   string msg;
   int d_count, count, qi, maxqi, skill;
 

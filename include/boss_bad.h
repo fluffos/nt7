@@ -1,5 +1,7 @@
 #define MAX_BUNCH_EXP        5000000000
+#ifndef WAIT_TIME
 #define WAIT_TIME 120
+#endif
 
 string *fail_xc_msg1=({
         "place你查看了没有？",

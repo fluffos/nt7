@@ -9,7 +9,6 @@ inherit F_SSERVER;
 string name() { return HIR "魂魄飞扬" NOR; }
 
 int perform(object me, object target) {
-  object weapon;
   int damage;
   string msg;
   int ap, dp;

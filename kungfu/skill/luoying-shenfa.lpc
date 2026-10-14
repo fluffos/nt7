@@ -80,7 +80,7 @@ int practice_skill(object me) {
 
 mixed valid_damage(object me, object victim, int damage, object weapon) {
   mapping prepare, action;
-  string msg, result, attack_skill;
+  string result, attack_skill;
   object w, w2;
   int ap, dp;
   w = query_temp("weapon", victim);

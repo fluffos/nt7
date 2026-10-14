@@ -42,8 +42,7 @@ void create() {
 
 
 void init() {
-  object ob, env;
-  object killer = this_object();
+  object ob;
 
   ob = this_player();
 

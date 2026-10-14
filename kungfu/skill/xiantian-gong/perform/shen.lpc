@@ -11,7 +11,6 @@ string name() { return HIW "纯阳神通功" NOR; }
 inherit F_SSERVER;
 
 int perform(object me, object target) {
-  object weapon;
   int ap, dp, damage;
   string msg;
   int delta;

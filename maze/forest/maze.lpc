@@ -5,7 +5,7 @@ inherit VRM_SERVER;
 #define ENTER_ROOM_Y  10000
 #define ENTER_ROOM_Z  10000
 
-string *unique_rooms = ({
+string *forest_unique_rooms = ({
   "/maze/forest/unique_room/snakehole",
   "/maze/forest/unique_room/bearlair",
   "/maze/forest/unique_room/wolfcave",
@@ -18,7 +18,7 @@ void create() {
   set_inherit_room(ROOM);
 
   //唯一房间
-  set_unique_room(unique_rooms);
+  set_unique_room(forest_unique_rooms);
 
   //迷宫房间里的怪物。 
   set_maze_npcs(([

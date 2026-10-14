@@ -13,7 +13,6 @@ int main(object me, string arg) {
   string target, item;
   object obj, who, *inv, obj2;
   string no_accept;
-  mixed info;
   int i, amount;
 
   if (!arg) return notify_fail("你要给谁什么东西？\n");

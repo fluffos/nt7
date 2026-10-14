@@ -9,7 +9,6 @@ int help(object me);
 
 int main(object me, string arg) {
   object riding, env;
-  string where;
   string file;
 
   if (!arg) {

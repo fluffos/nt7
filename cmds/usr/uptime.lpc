@@ -12,8 +12,8 @@ inherit F_CLEAN_UP;
 // This command is also called by LOGIN_D, so we don't want it use 
 // arguments.
 int main() {
-  int t, d, h, m, s, r;
-  string time, rtime;
+  int t, d, h, m, s;
+  string time;
 
   t = uptime();
   s = t % 60; t /= 60;

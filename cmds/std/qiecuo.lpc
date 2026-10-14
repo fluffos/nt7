@@ -7,7 +7,6 @@ inherit F_CLEAN_UP;
 
 int main(object me, string arg) {
   object ob;
-  int i;
   if (!query("bunch/bunch_name", me))
     return notify_fail("你没有参加任何帮会，无法通过切蹉武功征招NPC。\n");
 

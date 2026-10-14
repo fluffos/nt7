@@ -6,7 +6,6 @@ string name() { return HIR "龙影掌" NOR; }
 inherit F_SSERVER;
 
 int perform(object me, object target) {
-  object weapon;
   string msg;
   int ap, dp;
   int level;

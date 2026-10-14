@@ -11,9 +11,8 @@ string *xue_name = ({
   "紫宫穴", "冷渊穴", "天井穴", "极泉穴", "清灵穴", "至阳穴", });
 
 int perform(object me, object target) {
-  int damage, lvl;
-  string msg, wp;
-  object weapon;
+  int damage;
+  string msg;
   int ap, dp;
 
   if (!target) target = offensive_target(me);

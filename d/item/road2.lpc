@@ -3,7 +3,6 @@
 inherit ROOM;
 
 void create() {
-  object ob;
 
   set("short", "小径");
   set("long", @LONG

@@ -33,8 +33,6 @@ LONG NOR);
 }
 
 int valid_leave(object me, string dir) {
-  int i;
-  object ob;
   me = this_player();
   if (dir == "north") {
     if (!wizardp(me) && !query("hell_quest/锁阳丹", me) &&

@@ -37,7 +37,7 @@ inherit F_SSERVER;
 
 #define RIDE_CMD              "/cmds/std/ride"
 
-void remove(string euid)
+varargs void remove(string euid)
 {
         object env;
 
@@ -509,7 +509,7 @@ int do_shape(string arg)
 
                 actions = "自由";
         else
-                actions == "follow" ? "仅跟随" : "保护";
+                actions = (actions == "follow" ? "仅跟随" : "保护");
 
 	str = HIY + ob->name() + HIY "状态属性如下(" + HIR + actions + HIY + ")：\n" NOR;
         str += line;
@@ -591,7 +591,6 @@ varargs mixed set(string idx, mixed para, object ob)
 
 mixed add(string prop, mixed data)
 {
-        string para;
         mixed old;
         int level;
 
@@ -614,7 +613,6 @@ mixed add(string prop, mixed data)
 varargs int receive_whistle(object me, int flag)
 {
         object env, follower;
-        int    period;
 
         if( (env = environment()) && env == me )
         {

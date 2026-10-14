@@ -41,7 +41,6 @@ int climbbusy(object me) {
 }
 
 int do_climb(string arg) {
-  object room;
   object me;
   if (!arg || arg == "") {
     write("你要爬什么？\n");

@@ -14,7 +14,7 @@ int perform(object me, object target) {
   string type;
   mapping prepare;
   int n;
-  int skill, ap, dp, damage, ss;
+  int skill, ap, dp, ss;
 
   if (userp(me) && query("can_perform/dugu/po", me) < 100)
     return notify_fail("你还没有受过高人指点，无法施展" PO "。\n");

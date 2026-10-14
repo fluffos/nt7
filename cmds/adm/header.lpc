@@ -100,7 +100,7 @@ int help(object me) {
 
 int main(object me, string arg) {
   int line;
-  string header, *parse, *efile;
+  string *parse, *efile;
   string file, filename, option, arg2;
 
   if (!SECURITY_D->valid_grant(me, "(admin)"))

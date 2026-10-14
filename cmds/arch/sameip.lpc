@@ -10,9 +10,9 @@ string fname(object ob);
 nosave object run_user = 0;
 
 int main(object me, string arg) {
-  object who, ob;
-  int i, j, count;
-  string *dir, *ppls;
+  object who;
+  int i, count;
+  string *dir;
   string name, address;
   string *result;
 
@@ -67,7 +67,7 @@ void search_dir(int count, string *dir, int i, string address, object me, string
   object ob;
   int j;
   string *ppls;
-  string name, str, adr, s1, s2, s3, s4;
+  string str, adr;
   string info;
 
   if (!objectp(me)) {

@@ -148,9 +148,8 @@ public varargs int show_goods(object me, string arg) {
 public int exchange_goods(object ob, string arg) {
   string which;
   object item;
-  mixed specials;
-  int value, level;
-  int i, k, n, vip, money;
+  int value;
+  int i, n, vip, money;
 
   n = sizeof(all_goods);
   if (!n) {

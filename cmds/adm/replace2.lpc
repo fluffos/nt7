@@ -4,8 +4,7 @@
 inherit F_CLEAN_UP;
 
 int main(object me, string arg) {
-  string file, str, pattern, replace, *pats;
-  object ob;
+  string file, str, pattern, replace;
 
   if (!SECURITY_D->valid_grant(me, "(arch)"))
     return 0;

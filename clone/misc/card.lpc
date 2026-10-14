@@ -24,8 +24,6 @@ void init() {
 }
 int do_dakai(string arg) {
   object me = this_player();
-  string message;
-  int col;
   if (arg == "card") {
     tell_object(me,
       HIW "\n" +
@@ -71,9 +69,8 @@ int do_dakai(string arg) {
 }
 
 int do_chaikai(string arg) {
-  object newcard, box, obj0, obj1, obj2, obj3, obj4, obj5, obj6;
+  object newcard, box, obj0, obj1, obj2, obj3, obj5, obj6;
   object me = this_player();
-  int col;
   if (arg == "card") {
     message_vision("$N充满憧憬地拆开了圣诞卡，突然如魔术般，出现
 一个礼品盒！\n", me);

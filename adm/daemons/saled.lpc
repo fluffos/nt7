@@ -206,7 +206,6 @@ public string do_list(object me, string arg) {
   string k, msg, *ks;
   mapping data, m, om;
   int i, j, w;
-  string id;
 
   data = query("data");
   if (!mapp(data) || sizeof(data) < 1)
@@ -243,7 +242,6 @@ public string do_buy(object me, string arg) {
   mapping data;
   int value, money, fees;
   int i, flag = 0;
-  int m;
 
   if (me->is_busy())
     return "什么事都得等你忙完再说吧！\n";

@@ -5,7 +5,6 @@
 #include <ansi.h>
 
 inherit NPC;
-inherit F_CLEAN_UP;
 inherit F_UNIQUE;
 int ask_me(object who);
 string *msg_dunno = ({

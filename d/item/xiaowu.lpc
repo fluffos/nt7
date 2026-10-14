@@ -6,7 +6,6 @@ inherit ROOM;
 #define MOYE            "/adm/npc/moye"
 
 void create() {
-  object ob;
 
   set("short", "铸剑室");
   set("long", @LONG

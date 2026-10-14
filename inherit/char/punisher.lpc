@@ -20,7 +20,6 @@ void init() {
 }
 
 int do_halt() {
-  object me;
 
   if (this_player() == query_temp("punish_ob")) {
     write(name() + "喝道：“逆徒！休走！”\n");

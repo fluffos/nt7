@@ -6,7 +6,6 @@ inherit F_SSERVER;
 
 int exert(object me, object target) {
   mapping buff, data;
-  object weapon;
   string msg;
   int skill;
   int delta;

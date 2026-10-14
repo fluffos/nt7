@@ -4,7 +4,6 @@ inherit ROOM;
 #include <room.h>
 
 void create() {
-  object con, item;
   set("short", "精舍前");
   set("long", @LONG
 此处一片空旷，浅草如茵，整齐如剪。一片新绿之上，罗列着十

@@ -22,7 +22,6 @@ void create() {
 
 // Someone has answered our ping of them.
 void incoming_request(mapping info) {
-  mapping mud;
 
   if (!ACCESS_CHECK(previous_object())) return;
 

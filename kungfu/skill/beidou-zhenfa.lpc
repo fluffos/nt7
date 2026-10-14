@@ -54,7 +54,7 @@ int practice_skill(object me) {
 
 int form_array(object me, string arg) {
   object enemy, *member;
-  int beidou_time, i, mypos = 0, power, bd_power, level;
+  int i, power, bd_power, level;
   object here;
   string msg;
   float exp_diff;
@@ -186,7 +186,6 @@ void start_beidouzhen(object ob, int mypos, int beidou_time, int bd_power) {
 }
 
 void check_leaving(object me) {
-  string name = query("id", me);
 
   if (!userp(me)) {
     object enemy = offensive_target(me);
@@ -201,9 +200,9 @@ void check_leaving(object me) {
 }
 
 int beidouzhen(object me) {
-  object *member, ob, where;
+  object *member, where;
   int beidou_time, i, power, ok, mypos;
-  object room, obj, enemy, weapon;
+  object enemy;
 
   enemy = offensive_target(me);
   beidou_time = query_temp("beidou_time", me);
@@ -296,7 +295,6 @@ void restart(object me) {
 }
 
 int halt_beidou(object me) {
-  object weapon;
   int beidou_time = query_temp("beidou_time", me);
   if (beidou_time > 0) {
     if (!living(me)) return 1;

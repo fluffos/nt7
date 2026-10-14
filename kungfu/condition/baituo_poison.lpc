@@ -23,6 +23,6 @@ string die_msg_others() {
     "半点动静了。\n" NOR;
 }
 
-string die_reason() {
+varargs string die_reason() {
   return "被白驼蛇毒攻心而死";
 }

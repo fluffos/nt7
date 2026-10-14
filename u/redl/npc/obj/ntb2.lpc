@@ -22,7 +22,7 @@ void create() {
 }
 
 int do_exchange() {
-  object ob, me = this_player();
+  object me = this_player();
   string target = query("id", me);
   int d = query("base_value");
 

@@ -59,7 +59,6 @@ private void greeting(object me) {
 
 private void add_all_inquiry() {
   int i;
-  string type;
   mapping *all_skill, all_inquiry;
 
   all_inquiry = ([]);

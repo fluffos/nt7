@@ -292,7 +292,7 @@ int difficult_level() {
   return 3000;
 }
 
-mixed hit_ob(object me, object victim, int damage_bonus) {
+varargs mixed hit_ob(object me, object victim, int damage_bonus) {
   string name1, name2 /*, weapon*/;
   name1 = xue_name[random(sizeof(xue_name))];
   name2 = attack_name[random(sizeof(attack_name))];

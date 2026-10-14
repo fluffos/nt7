@@ -112,7 +112,6 @@ int start() {
 }
 
 string convert_ling(string arg, int level, object target) {
-  string *palist;
   object ob;
   string obfile;
   mapping dt;

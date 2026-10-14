@@ -216,7 +216,6 @@ private int send_mail() {
 
 private void read_callback(int fd, mixed message) {
   mixed *mail;
-  string sender;
 
   mail = mail_queue[queue_pointer];
 

@@ -9,7 +9,6 @@
 void show_weather(string where, int weather);
 
 void main(object ob, string weather) {
-  int i;
   string where;
   object env;
   string *weathers = ({ "晴天", "下雨", "起雾", "下雪", "大风", "暴雨", "冰雹" });

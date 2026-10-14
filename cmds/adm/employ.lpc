@@ -9,8 +9,7 @@ inherit F_CLEAN_UP;
 
 int main(object me, string arg) {
   object ob;
-  string old_status, new_status;
-  int my_level, ob_level, level;
+  string new_status;
   string *tlist;
 
   mapping job = ([

@@ -40,7 +40,6 @@ void init() {
 int do_fillwater(string arg) {
   object *list, ob;
   int i, can_fillwater;
-  string dir;
   function f;
   if (!arg || arg == "") return 0;
   if (arg == "skin" || arg == "wineskin") {

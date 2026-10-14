@@ -71,10 +71,8 @@ int do_summon(string arg) {
 }
 
 int do_show(string arg) {
-  object money;
   object ob, imbue_ob;
   object me;
-  int n;
 
   if (!arg)
     return notify_fail("你要亮出什么东西？\n");

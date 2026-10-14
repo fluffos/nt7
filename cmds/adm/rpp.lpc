@@ -61,7 +61,7 @@ string restore_space(string arg) {
 }
 
 int main(object me, string arg) {
-  string str, dir, filename;
+  string filename;
   string *result;
   int i, n = 0;
 

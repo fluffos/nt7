@@ -116,7 +116,6 @@ mixed found(object me, object env) {
   mapping cs, ns;
   mapping os;
   object ob, task_ob;
-  mixed sob;
   int sum;
   int i;
 

@@ -211,7 +211,7 @@ public string *trouble(string *str_point) {
 
 public string *Get_Point(string src) {
   string str = src;
-  string point_buf, point_buff;
+  string point_buf;
   string *the_point = ({});
   string SHZK1616;
   int *mark = ({

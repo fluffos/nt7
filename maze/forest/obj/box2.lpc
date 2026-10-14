@@ -19,7 +19,6 @@ string *ob_list = ({
   "/clone/fam/skpaper/whip1",
 });
 void create() {
-  object good;
   set_name(HIC "宝箱" NOR, ({ "box" }));
   set_weight(300);
   set("no_get", 1);

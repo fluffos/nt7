@@ -558,10 +558,8 @@ void check_me(object me) {
 }
 
 int do_order(string arg) {
-  object me = this_player(), ob, ling, obb;
+  object me = this_player(), ob;
   string who, what, dir;
-  int i, n, flag;
-  mapping jiang;
 
   if (!arg || sscanf(arg, "%s to %s", who, what) != 2)
     return notify_fail("请用 order sb to do sth. 来发布号令！\n");

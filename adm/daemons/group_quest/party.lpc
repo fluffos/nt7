@@ -18,7 +18,7 @@ string prompt() { return HIR "【帮派】" NOR; }
 int select_quest() {
   int i;
   object *all_user;
-  object ob, the_user;
+  object the_user;
   string p, *kp;
   mapping party_map = ([]);
 

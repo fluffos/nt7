@@ -5,8 +5,7 @@
 inherit F_SSERVER;
 
 int perform(object me, object target) {
-  int lvl, i;
-  object env, *inv;
+  int lvl;
   string *can_perform;
 
   can_perform = query("can_perform/martial-cognize", me);

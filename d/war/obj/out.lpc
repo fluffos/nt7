@@ -33,9 +33,7 @@ void init() {
 
 int do_touch(string arg) {
   object me, obj, *inv;
-  int i;
-  mapping trans, coor, *walls, *new_wall;
-  string *ks, msg;
+  mapping coor, *walls, *new_wall;
 
   me = this_player();
   walls = query("walls", environment());

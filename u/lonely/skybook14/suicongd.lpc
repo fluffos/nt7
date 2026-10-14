@@ -193,7 +193,7 @@ int need_exp(string sName, int nLevel) {
 // 查看指定随从的详细属性
 int show_suicong_target(object me, string sName) {
   string sBook, sSkill, sMsg;
-  int nDiff, nExp, nNeedExp;
+  int nDiff;
   string *keys_suicong_list2;
   mapping mSuicongInfo, mySuicongInfo;
 
@@ -311,7 +311,7 @@ public int AddExp(object me, string sName, int nExp) {
 // 查看随从列表
 int show_suicong(object me) {
   int i, j, k, z;
-  string *sBook, sSuicong, *sList;
+  string *sBook, *sList;
   string sMsg;
   mapping mSuicongInfo;
 

@@ -246,8 +246,6 @@ void move_it(object ob) {
 }
 
 void attempt_apprentice(object ob) {
-  string master;
-  string *app = ({ "陆乘风", "曲灵风" });
   object obj;
 
   if (!permit_recruit(ob))

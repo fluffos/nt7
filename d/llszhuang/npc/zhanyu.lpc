@@ -1,7 +1,6 @@
 #include <ansi.h>
 inherit NPC;
 void create() {
-  object sword;
 
   set_name("展飞", ({ "zhan fei" }));
   set("long", @LONG

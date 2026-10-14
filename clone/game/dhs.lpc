@@ -170,7 +170,6 @@ string build_se(object who) {
   mixed *s;
   string r, t;
   int i, y, num;
-  object ob;
 
   if (!who)
     return "";

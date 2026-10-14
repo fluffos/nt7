@@ -350,7 +350,7 @@ int receive_damage(string type, int n, object who) {
 }
 
 int receive_wound(string type, int n) {
-  return;
+  return 0;
 }
 
 varargs void die(object killer) {

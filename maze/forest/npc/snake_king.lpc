@@ -41,7 +41,6 @@ void create() {
 void do_chan() {
   object *enemies, enemy;
   string msg;
-  int be_damaged;
   enemies = query_enemy();
   if (!enemies || sizeof(enemies) == 0)
     return;
@@ -57,7 +56,6 @@ void do_chan() {
 void do_dot() {
   object *enemies, enemy;
   string msg;
-  int be_damaged;
   enemies = query_enemy();
   if (!enemies || sizeof(enemies) == 0)
     return;

@@ -62,7 +62,7 @@ int do_wizhg()
 void checking()
 {
     object ob,me,*all_mine,debuger;
-    int temp,hp,i;
+    int hp,i;
 
     time=query("lost_time", this_object());
     deng=query("last_deng", this_object());

@@ -784,7 +784,7 @@ int do_ability_cost(object me, string arg, int flag) {
 }
 
 int improve_ability(object me, string arg, int flag) {
-  int lv, n;
+  int n;
   string myclass;
 
   myclass = query("family/family_name", me);
@@ -810,7 +810,7 @@ int improve_ability(object me, string arg, int flag) {
 }
 
 string get_ability_info(object ob, string arg, int flag) {
-  int lv, cost, n;
+  int cost, n;
   string desc, msg, myclass;
 
   //lv = check_ability(ob, arg, flag);

@@ -7,7 +7,6 @@ inherit F_SSERVER;
 string name() { return "封魔"; }
 
 int perform(object me) {
-  object weapon;
   int skill;
   string msg;
   mapping buff, data;

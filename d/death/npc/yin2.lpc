@@ -6,7 +6,6 @@ inherit F_DEALER;
 #define BADAO "/clone/lonely/book/badao"
 
 void create() {
-  object ob;
 
 
   set_name("阴长生", ({ "yin changsheng", "yin", "changsheng" }));

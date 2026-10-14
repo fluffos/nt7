@@ -23,7 +23,7 @@ void create() {
   setup();
 }
 
-mixed hit_ob(object me, object victim, int damage_bonus, int factor) {
+varargs mixed hit_ob(object me, object victim, int damage_bonus, int factor) {
   victim->apply_condition("snake_poison", 50 +
     victim->query_condition("snake_poison"));
 }

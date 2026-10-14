@@ -7,7 +7,6 @@ inherit F_SSERVER;
 string name() { return "白骨森然"; }
 
 int perform(object me, object target) {
-  object weapon;
   string msg;
   int damage;
   int ap, dp;

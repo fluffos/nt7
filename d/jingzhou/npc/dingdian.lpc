@@ -97,7 +97,6 @@ int recognize_apprentice(object ob) {
 }
 
 int ask_skill1() {
-  object ob = this_object();
   object who = this_player();
 
   if (!query_temp("mark/丁", who)) return 0;
@@ -115,7 +114,6 @@ int ask_skill1() {
   return 1;
 }
 int ask_skill2() {
-  object ob = this_object();
   object who = this_player();
 
   if (!query_temp("mark/丁", who)) return 0;

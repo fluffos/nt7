@@ -220,7 +220,6 @@ int stop_making(object me) {
 
 int making(object me) {
   int step;
-  int level;
   mapping req;
   string msg_me, msg_out;
   string med, obname;

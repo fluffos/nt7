@@ -10,7 +10,7 @@ inherit F_SSERVER;
 #define YU "「" HIG "满天花雨" NOR "」"
 
 int perform(object me, object target) {
-  int skill, i;
+  int skill;
   int n, p;
   int my_exp, ob_exp;
   string pmsg;

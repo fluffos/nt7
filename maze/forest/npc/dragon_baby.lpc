@@ -45,7 +45,6 @@ void create() {
 void do_attack() {
   object *enemies, enemy;
   string msg;
-  int be_damaged;
   enemies = query_enemy();
   if (!enemies || sizeof(enemies) == 0)
     return;

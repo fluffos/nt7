@@ -56,9 +56,7 @@ int do_knock(string arg) {
 }
 
 int do_push(string arg) {
-  int n;
-  object weapon, me = this_player();
-  mapping fam;
+  object me = this_player();
 
   if (!query_temp("marks", me))
     return notify_fail("门关得牢牢的，急切打不开！\n");

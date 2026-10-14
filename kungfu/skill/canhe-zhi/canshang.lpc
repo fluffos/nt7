@@ -6,7 +6,6 @@ string name() { return HIW "参商剑气" NOR; }
 
 int perform(object me, object target) {
   int lvl, str, dex, skill;
-  string weapon;
   mapping buff, data;
   string msg;
 

@@ -2,7 +2,7 @@
 inherit ITEM;
 
 void create() {
-  object good, dropper;
+  object good;
   set_name(HIR "宝箱" NOR, ({ "box" }));
   set_weight(300);
   set("no_get", 1);

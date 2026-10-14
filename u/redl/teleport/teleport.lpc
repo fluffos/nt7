@@ -99,14 +99,12 @@ void create_exit() {
 int do_put(string arg) {
   object me;
   object ob;
-  object nob;
   object *inv;
-  string my_id, units;
+  string units;
   int amount;
   int value;
   int max_count;
   int i;
-  mixed ns;
 
   if (!arg) {
     write(NOR "你要把什么投进去？\n" NOR);
@@ -269,7 +267,7 @@ int is_area(mapping my) {
 int check_teleroom() {
   mapping usrs;
   string *ks;
-  int i, count;
+  int count;
 
   remove_call_out("check_teleroom");
   usrs = query("tele_users");
@@ -298,7 +296,7 @@ int do_stop()  //先清场，再改编
 {
   mapping usrs;
   string *ks;
-  int i, count;
+  int count;
   object ob;
   object me = this_player();
 

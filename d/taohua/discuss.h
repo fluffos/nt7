@@ -66,8 +66,6 @@ void say_question(object me, object ob)
 
 void say_answer(object me, object ob)
 {
-        object env, *inv;
-        int i;
 
         if( !ob || !userp(ob) || !me || !userp(me) )
         {
@@ -89,7 +87,6 @@ int do_answer(string arg)
 {
         object ob = this_player();
         object partner;
-        string s;
         int ans;
 
         if( !query_temp("partner", ob) || !query_temp("partner_id", ob) || !(partner=present(query_temp("partner_id", ob),environment(ob))) )

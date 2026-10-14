@@ -6,7 +6,7 @@
 #define LINES_PER_PAGE          30
 
 void more(string cmd, string *text, int line) {
-  int i, j;
+  int i;
   string show;
 
   show = ESC + "[256D" + ESC + "[K";

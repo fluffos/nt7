@@ -62,8 +62,6 @@ int test(string st, int year, int month, int day, int hour, mixed para) {
 // 登记在某时刻启动事件
 int at_when(int year, int month, int day, int hour, mixed para) {
   object pob;
-  int t;
-  mixed *lt;
 
   if (!objectp(pob = previous_object()))
     return 0;

@@ -90,8 +90,6 @@ string query_save_file() { return DATA_DIR "pharmacyd"; }
 
 // 注册药材id及对应中文名称
 int register_herb(int id, string name) {
-  object ob;
-  string file;
 
   /*
         ob = previous_object();

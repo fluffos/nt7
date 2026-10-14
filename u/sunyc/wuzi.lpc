@@ -219,7 +219,6 @@ int do_new(string arg) {
 
 int do_refresh(string arg) {
   object me = this_player();
-  object rm = environment(me);
   object player;
 
   if (status != WQ_NOT_PLAYING) tell_object(me, show_game());

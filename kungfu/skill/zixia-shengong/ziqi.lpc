@@ -9,7 +9,7 @@ int exert(object me, object target) {
   object weapon;
   string msg;
   mapping buff, data;
-  int d_count, count, qi, maxqi, skill;
+  int qi, maxqi, skill;
 
   if (BUFF_D->check_buff(me, "damageup")
     || BUFF_D->check_buff(me, "ziqi_donglai"))

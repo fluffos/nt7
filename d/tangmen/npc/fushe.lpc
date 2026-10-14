@@ -43,7 +43,6 @@ int hit_ob(object me, object ob, int damage) {
 }
 
 void die() {
-  object ob;
   message_vision("$N倒在地上，死了！\n", this_object());
   //        ob = new("/d/shenlong/obj/shedan");
   //        ob->move(environment(this_object()));

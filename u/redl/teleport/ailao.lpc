@@ -38,7 +38,7 @@ void create() {
 
 void countheads() {
   object room, *npcs, *usrs, *allusrs = ({});
-  int lv, count = 0;
+  int lv;
   set("level_max", 80, this_object());
   set("level_min", 20, this_object());
   for (int i = 0; i < 50; i++) {
@@ -186,8 +186,8 @@ int c_niuren(object me) {
 
 int deploy() {
   string msg;
-  object book, box, door, ds, room, usr, npc, *allusrs;
-  int booki, yca, addnneili, cint, uc, tsi, si, blv = query("blv", this_object());
+  object book, box, door, ds, room, usr, *allusrs;
+  int booki, yca, addnneili, cint, uc, si, blv = query("blv", this_object());
   if (!blv) {  //开新船
     if (query("cusr_name")) {
       CHANNEL_D->channel_broadcast("rumor", "听说" + query("cusr_name") + "借金蛛给郑颠仙，独自登上了元江的广成金船。\n");

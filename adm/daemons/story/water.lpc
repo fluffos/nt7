@@ -30,7 +30,6 @@ mixed query_story_message(int step) {
 }
 
 mixed random_gift() {
-  object *obs;
   object ob, pob;
   string msg;
   mapping my, ips;

@@ -5,7 +5,7 @@ void clean_path(object *rooms, string id);
 
 mixed search_for_path(object ob, string name) {
   object env, *temp, *temp1, *bak_room, *temp2, *new_temp;
-  object room, _temp, _ob;
+  object room, _temp;
   string key, id;
   mapping exits;
   mixed n;

@@ -14,8 +14,6 @@ int perform(object me) {
   object weapon, target;
   int ap, dp, count;
   int i, damage;
-  mapping buff;
-  int time;
   int delta, delta2;
 
   /*

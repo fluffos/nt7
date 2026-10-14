@@ -652,7 +652,7 @@ dellv ID        --> 清除某玩家在这里的 level 记录(并不清除其实�
 
 
 int do_maipiao() {
-  object me = this_player(), piao, gold;
+  object me = this_player(), piao;
 
   if (query("balance", me) < MP_GOLD * 10000)
     return notify_fail("你的钱庄存款不足以购买一张门票。门票价格是 " + MP_GOLD + " 两黄金。\n");

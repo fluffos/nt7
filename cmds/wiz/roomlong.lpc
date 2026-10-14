@@ -75,13 +75,13 @@ int main(object me, string arg) {
       tempstr1 = replace_string(filetext[i + 1], " ", "");
       tempstr1 = replace_string(tempstr1, "\t", "");
     }
-    if (tempstr == "set\(\"long\",@LONG") {
+    if (tempstr == "set(\"long\",@LONG") {
       begin1 = i;
     }
-    if (tempstr == "LONG\);") {
+    if (tempstr == "LONG);") {
       begin2 = i;
       break;
-    } else if (tempstr == "LONG" && tempstr1 = "\);") {
+    } else if (tempstr == "LONG" && tempstr1 == ");") {
       begin2 = i + 1;
       break;
     }
@@ -93,8 +93,8 @@ int main(object me, string arg) {
   if (!begin2)
     return notify_fail("没有定位成功描述行尾！\n");
 
-  str1 = "        set\(\"long\", @LONG\n";
-  str2 = "LONG \);\n";
+  str1 = "        set(\"long\", @LONG\n";
+  str2 = "LONG );\n";
   rm(file);
 
   for (i = 0; i < begin1; i++)

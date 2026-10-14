@@ -19,7 +19,6 @@ void init() {
 }
 
 int do_yell(string arg) {
-  string dir;
 
   if (!arg || arg == "") return 0;
 

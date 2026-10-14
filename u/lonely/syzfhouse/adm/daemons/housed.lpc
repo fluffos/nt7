@@ -235,7 +235,7 @@ public int choice_base(string arg, object me) {
 //在选定的地块上建造出所选类型的屋宅
 public int build_house(object me) {
   int i, j;
-  string name, type, file, code, path, entry, zhuan, pass;
+  string name, type, file, code, path, entry, pass;
   mapping house, build, base, npc_data;
   object obj;
   string *room, *key;
@@ -391,7 +391,6 @@ private int add_entry(object me, string arg) {
 
 //旧有屋宅拆除后，需在原处地块删除相应入口
 private int del_entry(object me, string arg) {
-  int i;
   object room;
   mapping type;
 
@@ -1035,7 +1034,6 @@ public int break_house_door(string arg, object me, object ob) {
 public int modify_huyuan(string arg, object me, object ob) {
   string item, msg, gender;
   mapping dbase;
-  int i = strlen(msg);
 
   if (!arg || sscanf(arg, "%s %s", item, msg) != 2)
     return notify_fail(HIW "\n指令格式: modify <款项> <内容>\n"

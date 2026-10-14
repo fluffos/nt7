@@ -152,7 +152,6 @@ public void remove_maze(string mazename) {
 
 public object create_maze(object npc) {
   int i, j;
-  string entry_name = "";
   string mazename; /* 迷宫名字         */ mapping tempmaze; /* 迷宫实体         */ mixed mazeroom; /* 迷宫房间点阵     */ int *entry; /* 迷宫入口 */ int *target; /* 迷宫出口 */ object temp_room;
 
   if (!objectp(npc) || !npc->is_character() || !stringp(npc->name()))
@@ -1091,7 +1090,6 @@ public void remove_xianjing(string mazename, object room) {
   mapping maze;
   mixed line;
   int w, l;
-  object next_room;
 
   if (!stringp(mazename) || !objectp(room))
     return 0;

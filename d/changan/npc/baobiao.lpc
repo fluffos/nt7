@@ -48,7 +48,6 @@ int heal_up() {
 }
 
 void leave() {
-  object stone;
   addn("time", 1, this_object());
   if (query("time", this_object()) >= 3) {
     message("vision", name() + "嘿嘿一笑:“老子要回去"

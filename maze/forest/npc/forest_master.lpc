@@ -103,7 +103,6 @@ void give_reward_forest(object ob, int ref_exp) {
   //ref_exp是参考经验，exp不影响gold，高级玩家可以到forest挣钱
   int user_exp;
   int exp, pot, mar, score, gold;
-  string reward_msg;
   int gold_times;
   gold = ref_exp / 100;
   user_exp = query("combat_exp", ob);

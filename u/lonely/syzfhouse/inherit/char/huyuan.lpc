@@ -251,7 +251,6 @@ int exert_function(string func) {
 }
 
 int perform_action(string action) {
-  object weapon;
   string martial_skill, act;
 
   if (sscanf(action, "%s.%s", martial_skill, act) != 2)
@@ -263,7 +262,7 @@ int perform_action(string action) {
 }
 
 void do_action() {
-  int i, j, qi, eff_qi, flag = 0;
+  int i, j, flag = 0;
   object me, weapon;
   mapping prepare;
   string type, skill, *all_skill_file;

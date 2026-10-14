@@ -24,7 +24,6 @@ mixed *query_localtime(int t) {
   t = GAME_TIME(t);
   if (t < 1) t = 1;
   lt = localtime((t % 525600) * 365);
-  lt[LT_MON];
   lt[LT_YEAR] = t / 525600;
   return lt;
 }

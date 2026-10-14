@@ -163,8 +163,7 @@ mixed hit_ob(object me, object victim, int damage_bonus) {
 }
 
 void skill_improved(object me) {
-  object *ob;
-  int i, skill;
+  int skill;
   skill = me->query_skill("qishang-quan", 1);
 
   if (query("max_neili", me) < skill * 15 && skill < 200) {

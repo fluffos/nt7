@@ -9,8 +9,8 @@ inherit F_SSERVER;
 string name() { return "倚天剑诀"; }
 
 int perform(object me, object target) {
-  object weapon, ob;
-  int extra, i, time;
+  object weapon;
+  int i, time;
   string msg;
 
   i = me->query_skill("yitian-jian", 1) * 5 / 4 + me->query_skill("linji-zhuang", 1);

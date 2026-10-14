@@ -30,7 +30,6 @@ LONG);
   setup();
 }
 int valid_leave(object me, string dir) {
-  mapping conditions;
   if (dir != "south") return 1;
   //        if (wizardp(me)) return 1;
 

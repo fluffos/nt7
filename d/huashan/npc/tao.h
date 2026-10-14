@@ -7,7 +7,6 @@ int accept_fight(object ob)
         object me = this_object();
         object ob1, ob2, ob3, ob4, ob5, ob6;
         string msg1, msg2, msg3, msg4, msg5, msg6;
-        int my_max_qi=query("max_qi", me);
 
         /*
         if (query_competitor() == ob)

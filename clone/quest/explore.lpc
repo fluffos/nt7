@@ -164,9 +164,8 @@ void npc_destructed() {
 object search_qob(object me) {
   mapping my = query_entire_dbase();
   mapping dq;
-  int i, exp2, pot2, exc2;      // 强迫freequest所获得的额外奖励
-  object ob, gift;
-  string msg;
+  // 强迫freequest所获得的额外奖励
+  object ob;
 
   if (query("score", me) < 2000)
     // 必须有2000的江湖阅历才能够找到

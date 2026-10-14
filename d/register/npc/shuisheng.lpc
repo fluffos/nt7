@@ -108,7 +108,6 @@ int do_register(string arg) {
 
 int do_decide(string arg) {
   object me;
-  object link_ob;
 
   if (!objectp(me = this_player()))
     return 0;

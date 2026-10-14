@@ -7,7 +7,7 @@ string name() { return HIR "七子刚镖" NOR; }
 inherit F_SSERVER;
 
 int perform(object me, object target) {
-  int skill, i, p, n;
+  int skill, p, n;
   int ap, dp, damage;
   string pmsg;
   string msg;

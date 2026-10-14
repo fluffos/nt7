@@ -32,13 +32,12 @@ void create() {
 }
 
 void init() {
-  object ob;
   ::init();
   add_action("do_show", "show");
 }
 
 int do_show(string arg) {
-  object mygold, room, me, obj;
+  object mygold, room, me;
   me = this_player();
   mygold = present("gold_money", this_player());
   if (!mygold) return notify_fail("柳若松干咳两声道：这年头，只有真金白银才靠得住呀。\n");

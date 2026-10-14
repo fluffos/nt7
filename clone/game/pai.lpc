@@ -117,7 +117,6 @@ void reset_pai() {
 }
 
 int reset_all() {
-  int i;
 
   has_start = 0;
   if (sizeof(player) != 0)
@@ -224,8 +223,6 @@ int do_reset(string arg) {
 }
 
 int do_restart(string arg) {
-  int i;
-  string *key;
 
   if (!is_playing(this_player()))
     return notify_fail("你都不玩，开始什么啊！\n");

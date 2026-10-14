@@ -15,7 +15,6 @@ protected mixed check_title(string arg);
 void create() { seteuid(getuid()); }
 
 int main(object me, string arg) {
-  object ob;
   string sw;
 
   if (!arg) {

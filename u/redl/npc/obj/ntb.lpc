@@ -17,7 +17,7 @@ void create() {
 }
 
 int do_exchange() {
-  object ob, me = this_player();
+  object me = this_player();
   string target = query("id", me);
 
   if (me->is_busy()) return notify_fail("你正忙着，没空兑换泥潭币。\n");

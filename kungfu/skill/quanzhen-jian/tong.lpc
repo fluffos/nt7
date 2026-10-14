@@ -5,8 +5,6 @@ inherit F_SSERVER;
 string name() { return "同归剑法"; }
 
 int perform(object me, object target) {
-  string weapon;
-  int skill;
   int ap, dp, damage;
   string msg;
 

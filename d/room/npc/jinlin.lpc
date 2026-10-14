@@ -20,7 +20,7 @@ int accept_object(object who, object ob) {
   return 0;
 }
 
-int accept_ask() {
+varargs int accept_ask() {
   message_vision("$N半答不理的说：有啥事问我师傅去，别烦我。\n",
     this_object());
   return 1;

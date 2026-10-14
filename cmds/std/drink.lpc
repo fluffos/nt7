@@ -10,7 +10,6 @@ int main(object me, string arg) {
   object ob;
   object *guard;
   int search_flag;
-  string prefix;
   int need_busy;
 
   if (!arg)

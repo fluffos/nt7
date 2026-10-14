@@ -9,7 +9,6 @@
 void show_wind(string where, int wind);
 
 void main(object ob, string wind) {
-  int i;
   string where;
   object env;
   string *winds = ({ "无风", "北风", "东北风", "东风", "东南风", "南风", "西南风", "西风", "西北风", });

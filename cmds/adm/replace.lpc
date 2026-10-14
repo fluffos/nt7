@@ -67,7 +67,7 @@ string *deep_file_list(string dir) {
 }
 
 int replace(string file, string oldstr, string newstr) {
-  string *text, *strings;
+  string *text;
   string line;
   int i, j;
 

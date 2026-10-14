@@ -62,8 +62,7 @@ int do_liandan() {
   return 1;
 }
 
-void fire(object me) {
-  int fire;
+varargs void fire(object me) {
 
   if (query("neili", me) < 40000) {
     message_vision(HIY "过了一会，炉中的温度似乎有些下降，$N见状连忙添了几根柴禾。\n" NOR, me);

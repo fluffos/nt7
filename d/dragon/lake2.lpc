@@ -16,8 +16,7 @@ void create() {
 }
 
 void kite_notify(object obj, int i) {
-  object me, room;
-  int j;
+  object me;
 
   me = this_player();
   message_vision("突然一阵微风拂过" + obj->name() + "缓缓的升了起来，越来越高。\n\n", me);

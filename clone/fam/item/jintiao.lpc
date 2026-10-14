@@ -30,9 +30,6 @@ void init() {
 
 int do_changing(string arg) {
   object me;
-  object ob;
-  string enid, obid;
-  int point, cur_firm;
 
   me = this_player();
 

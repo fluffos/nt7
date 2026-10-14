@@ -187,7 +187,7 @@ int receive_damage(string type, int damage, object who) {
   object *ppl;
 
   if (!who) who = this_object()->query_last_damage_from();
-  if (!who) return;
+  if (!who) return 0;
   ppl = query_temp("damage_from");
   if (!arrayp(ppl) || !sizeof(ppl)) ppl = ({});
   if (userp(who) && member_array(who, ppl) == -1) {
@@ -204,8 +204,6 @@ int receive_damage(string type, int damage, object who) {
 }
 
 void die(object killer) {
-  string prop, name;
-  mapping data;
   object ob, where;
   /*        string *apply = ({ "reduce_busy", "avoid_busy", "def_damage", "avoid_weak",
                 "add_locked", "reduce_damage", "add_busy", "add_weak", "avoid_locked",

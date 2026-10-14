@@ -7,13 +7,9 @@ void destruct_it(object ob);
 
 int main(object me, string arg) {
   mapping goods;
-  int amount;
-  int value, val_factor;
-  string ob_file;
-  object *obs;
+  int value;
   object ob, env, obj;
   string my_id;
-  int i;
 
   if (me->is_busy())
     return notify_fail("什么事都得等你忙完再说吧！\n");

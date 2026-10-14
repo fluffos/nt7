@@ -13,7 +13,6 @@ string ask_book();
 mixed ask_pfm();
 
 void create() {
-  object ob;
   set_name("东方不败", ({ "dongfang bubai", "dongfang", "bubai" }));
   set("nickname", HIY "天下无敌" NOR);
   set("title", HIM "日月神教教主" NOR);
@@ -125,7 +124,6 @@ void attempt_apprentice(object ob) {
 }
 
 string ask_book() {
-  mapping fam;
   object me, ob;
   int cost;
 

@@ -4,7 +4,6 @@
 
 int conjure(object me, object target) {
   object ob;
-  int i;
 
   return notify_fail("奇门遁甲暂时不开放。\n");
   if (!query("yuanshen", me)) return notify_fail("你还没有悟道，无法掌握奇门遁甲。\n");
@@ -37,7 +36,6 @@ int conjure(object me, object target) {
 void select_target(object me, string name) {
   object ob, env;
   mapping exits;
-  int i;
 
   if (!name || name == "") {
     write("中止施法。\n");

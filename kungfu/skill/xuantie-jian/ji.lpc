@@ -6,10 +6,7 @@ string name() { return "千钧一击"; }
 
 int perform(object me, object target) {
   object weapon;
-  int skill, skill1, fmsk;
-  int myskill;
-  int damageone;
-  int damagesub;
+  int fmsk;
   int damage;
   string msg;
   mixed ap, dp;

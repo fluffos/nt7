@@ -154,7 +154,6 @@ string ask_jinlan() {
   object ob_lanzhipg, ob_foguangbz, ob_shenzhizs, ob_shenzhifc, ob_shenzhisj, ob_shenzhimn;
   object ob;
 
-  int i;
 
   if (query("reborn/times", me) < 3)
     return "你好象还没有悟道吧，看来这锦镧袈裟并不适合你。\n";
@@ -438,7 +437,6 @@ int do_show(string arg) {
   string mat;
   int power_point;
   int value;
-  int n;
 
   me = this_player();
   if (!arg)
@@ -688,7 +686,6 @@ int do_answer(string arg) {
   object ob2;
   object me;
   object ganjiang;
-  object shi;
 
   me = this_player();
   if (query_temp("item/status", me) != "answer_type")

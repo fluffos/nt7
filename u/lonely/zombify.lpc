@@ -3,7 +3,6 @@
 inherit F_SSERVER;
 
 int perform(object me, object target) {
-  int i;
   mapping buff;
   if (!target) target = offensive_target(me);
 

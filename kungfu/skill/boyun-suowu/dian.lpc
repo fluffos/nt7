@@ -5,7 +5,7 @@ inherit F_SSERVER;
 string name() { return "云雾暗点"; }
 
 int perform(object me, object target) {
-  int ap, dp, damage;
+  int ap, dp;
   string msg;
 
   if (!target) {

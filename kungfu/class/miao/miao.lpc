@@ -16,7 +16,6 @@ mixed ask_skill4();
 mixed ask_skill5();
 
 void create() {
-  object ob;
   set_name("苗人凤", ({ "miao renfeng", "miao", "renfeng" }));
   set("gender", "男性");
   set("nickname", YEL "金面佛" NOR);

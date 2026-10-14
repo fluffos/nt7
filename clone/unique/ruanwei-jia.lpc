@@ -27,7 +27,7 @@ void create() {
   setup();
 }
 
-mixed valid_damage(object me, object victim, int damage, object weapon) {
+varargs mixed valid_damage(object me, object victim, int damage, object weapon) {
   string result;
   if (weapon)
     return damage * 2 / 3;

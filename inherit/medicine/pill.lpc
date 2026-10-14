@@ -9,8 +9,6 @@ void init() {
 
 int do_eat(string arg) {
   object me = this_player();
-  string what = query("cure");
-  int howmuch = query("amount");
 
   if (!id(arg))
     return notify_fail("你想吃什么？\n");

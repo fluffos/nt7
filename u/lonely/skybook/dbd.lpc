@@ -39,7 +39,6 @@ public string query_save_file() { return DATA_DIR "dbd"; }
 // 给定一个mapping ，值为数值，
 // 为该mapping 根据数值进行从高到低的排序，返回该mapping 的新序列
 public string *tongji_mapping(mapping mp, int flag) {
-  string key_mp;
   string *result_mp, *temp_s1, *temp_s2, *temp_s3;
   string *str_temp;
   int i;

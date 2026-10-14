@@ -7,7 +7,6 @@ inherit F_CLEAN_UP;
 
 int main(object me, string arg) {
   object ob;
-  string *sum_list;
   string path;
   string *dirs;
   string file_name;

@@ -8,7 +8,6 @@ string name() { return "无形鬼影"; }
 
 int perform(object me, object target) {
   mapping buff;
-  object weapon;
   int skill;
   string msg;
 

@@ -2,7 +2,7 @@
 
 #include "name.h"
 
-mapping ma_sname = ([
+mapping in_sname = ([
   "萨": "sa",
   "拉": "la",
   "阿": "a",
@@ -27,7 +27,7 @@ mapping ma_sname = ([
   "曼克雅": "mankeya",
 ]);
 
-mapping ma_pname = ([
+mapping in_pname = ([
   "牟禄": "molu",
   "摩克": "moke",
   "曼都": "mandu",
@@ -58,12 +58,12 @@ void generate_in_name(object ob) {
   string name, sname, pname, id1, id2;
   string *ks, *kp;
 
-  ks = keys(ma_sname);
-  kp = keys(ma_pname);
+  ks = keys(in_sname);
+  kp = keys(in_pname);
   sname = ks[random(sizeof(ks))];
   pname = kp[random(sizeof(kp))];
-  id1 = ma_sname[sname];
-  id2 = ma_pname[pname];
+  id1 = in_sname[sname];
+  id2 = in_pname[pname];
   name = sname + pname;
 
   if (ob) ob->set_name(name, ({ id1 + " " + id2, id1, id2 }));

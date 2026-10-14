@@ -38,7 +38,6 @@ mixed random_gift() {
   object *obs;
   object ob;
   string msg;
-  int max_neili;
 
   obs = filter_array(all_interactive(), (: !wizardp($1) &&
     environment($1) &&

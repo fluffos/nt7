@@ -8,7 +8,7 @@ inherit F_SSERVER;
 string name() { return "六脉惊神"; }
 
 int perform(object me, object target) {
-  object weapon, ob;
+  object weapon;
   string msg;
   int skill, skill2;
   int damage, n;

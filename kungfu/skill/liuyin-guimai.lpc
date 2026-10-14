@@ -543,8 +543,7 @@ int practice_skill(object me) {
   return notify_fail("六阴鬼脉只能通过研究来提高熟练度。\n");
 }
 
-mixed hit_ob(object me, object victim, int damage_bonus, int i, int attack_time) {
-  string name;
+varargs mixed hit_ob(object me, object victim, int damage_bonus, int i, int attack_time) {
 
   if (userp(me))
     attack_time = (int)(me->query_skill("liuyin-guimai", 1) / 50);

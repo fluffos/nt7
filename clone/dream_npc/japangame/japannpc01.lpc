@@ -85,7 +85,6 @@ void die(object killer) {
   int exp;                // 需要瓜分的经验
   int pot;                // 需要瓜分的潜能
   object *t;              // 杀死我的人的队伍列表
-  object tob;
   int i;
   object *inv;
 

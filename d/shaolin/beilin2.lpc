@@ -31,7 +31,6 @@ void init() {
 }
 
 int do_move(string arg) {
-  int n;
   object me = this_player();
 
   if (arg != "stone" || arg == "")

@@ -153,7 +153,7 @@ void create() {
 }
 
 int do_accept() {
-  object where, own, me, ob, env;
+  object me, ob;
   int lv, diff, cost, count, tmp;
 
   me = this_player();
@@ -243,8 +243,7 @@ int do_accept() {
 }
 
 int do_use(string arg) {
-  object where, own, me, ob, env;
-  string msg;
+  object me;
   int lv, diff, cost, tmp;
 
   me = this_player();
@@ -273,10 +272,10 @@ int do_use(string arg) {
   return 1;
 }
 
-int init() {
+void init() {
   object me = this_player();
-  if (!interactive(me) || !playerp(me)) return 1;
+  if (!interactive(me) || !playerp(me)) return;
   add_action("do_use", "use");
   add_action("do_accept", "y");
-  return ::init();
+  ::init();
 }

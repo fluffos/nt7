@@ -106,7 +106,7 @@ string look_desk() {
 }
 
 string look_keng() {
-  object here, book;
+  object here;
 
   // book = find_object(ZHUJIAN);
 

@@ -129,7 +129,6 @@ void attempt_apprentice(object ob) {
 
 int ask_shi() {
   object me;
-  object ob;
 
   me = this_player();
 

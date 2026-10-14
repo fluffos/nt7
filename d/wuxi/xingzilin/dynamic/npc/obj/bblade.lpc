@@ -26,7 +26,6 @@ void create() {
 }
 
 mixed hit_ob(object me, object victim, int damage_bonus) {
-  int n;
   if (!playerp(me)) return to_int(damage_bonus * 1.5);
   return damage_bonus;
 }

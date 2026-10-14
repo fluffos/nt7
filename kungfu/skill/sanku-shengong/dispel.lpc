@@ -3,7 +3,6 @@
 #include <ansi.h>
 
 int exert(object me, object target) {
-  int i;
   string force_name;
   mapping conditions;
 

@@ -105,7 +105,6 @@ int do_open(string arg) {
   int temp_lvl;
   mapping temp_quest;
   int exp, pot, score;
-  int quest_times = 0;
   int rate;
 
   if (!arg ||

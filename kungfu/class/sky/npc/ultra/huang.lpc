@@ -3,7 +3,6 @@
 inherit NPC;
 
 void create() {
-  object ob;
   set_name("黄裳", ({ "huang shang", "huang", "shang" }));
   set("title", "大宗师");
   set("gender", "男性");

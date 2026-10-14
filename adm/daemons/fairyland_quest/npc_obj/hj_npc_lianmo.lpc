@@ -51,7 +51,7 @@ void init() {
 // 该函数复制 zhujian shi 的，一些函数名懒得改了
 // 而且又懒得做成 #include ，就这样吧。
 int do_lianmo(string arg) {
-  object me = this_player(), bs1, bs2, bs3, *all_mine, sword;
+  object me = this_player(), bs1, bs2, *all_mine, sword;
   string sword_id, type, *list, t;
   int i, set, score_need;
 

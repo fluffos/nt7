@@ -109,7 +109,6 @@ void init() {
 }
 
 void attempt_apprentice(object ob) {
-  string master;
   if (!permit_recruit(ob))
     return;
   /*
@@ -144,7 +143,7 @@ void attempt_apprentice(object ob) {
 }
 
 int do_recite(string arg) {
-  string name, new_name, ttt;
+  string ttt;
 
   if (!query_temp("pending/recite", this_player()))
     return 0;

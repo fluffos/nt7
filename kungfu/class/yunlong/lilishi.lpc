@@ -196,7 +196,7 @@ int ask_me() {
   }
   return 1;
 }
-int accept_object(object who, object ob, object me) {
+varargs int accept_object(object who, object ob, object me) {
   /*
         if( !query("tdh_pass", who))return 0;
         if( query("id", ob) != "head")return 0;

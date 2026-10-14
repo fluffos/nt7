@@ -13,7 +13,7 @@ void create() {
     set("unit", "本");
     set("long",
       "一本关于七宝天岚舞的入门舞姿的书籍。\n"
-      "\t\t\t\------狂风注\n");
+      "\t\t\t------狂风注\n");
     set("value", 1000);
     set("material", "paper");
   }

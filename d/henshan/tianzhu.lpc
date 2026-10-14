@@ -31,7 +31,7 @@ void init() {
 }
 
 int do_think(string arg) {
-  object here, me = this_player();
+  object me = this_player();
   int add;
 
   if (query("special_skill/clever", me))

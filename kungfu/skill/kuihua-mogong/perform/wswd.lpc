@@ -8,11 +8,10 @@
 inherit F_SSERVER;
 
 int perform(object me, object target) {
-  int skill = (int)me->query_skill("kuihua-mogong", 1), i;
+  int skill = (int)me->query_skill("kuihua-mogong", 1);
   int ap, dp;
   int damage;
-  int x, a;
-  string msg, nextmsg;
+  string msg;
   object weapon = query_temp("weapon", me);
 
   if (!target || target == me) target = offensive_target(me);

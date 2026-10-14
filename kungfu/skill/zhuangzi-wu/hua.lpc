@@ -6,7 +6,6 @@ inherit F_SSERVER;
 
 int perform(object me, object target) {
   mapping buff, data;
-  object weapon;
   string msg;
   int count, cnt, skill;
 

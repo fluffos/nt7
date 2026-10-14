@@ -31,9 +31,8 @@ void init() {
 }
 
 varargs void die(object killer) {
-  object *obs, env;
-  object me, ob, owner;
-  int exp, pot, mar;
+  object env;
+  object me, ob;
 
   me = this_object();
 

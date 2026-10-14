@@ -2113,7 +2113,6 @@ int attack_power(object me, string skill) {
   int i, value, ap, scale, tmp;
   string map_skill;
   string rank;
-  object ob;
   int delta;
 
   if (!objectp(me)) return 0;
@@ -2245,7 +2244,6 @@ int defense_power(object me, string skill) {
   int i, value, dp, scale, tmp;
   string map_skill;
   string rank;
-  object ob;
   int delta;
 
   if (!objectp(me)) return 0;
@@ -2360,7 +2358,6 @@ int damage_power(object me, string skill) {
   int i, value, damage, scale, tmp;
   string map_skill;
   string rank;
-  object ob;
   int delta;
 
   if (!objectp(me)) return 0;
@@ -2525,9 +2522,6 @@ mapping trans_data(string mark) {
 }
 
 void disable_skillmix(object me) {
-  mapping stats, applied_prop;
-  string *apply;
-  int i, flag;
 
   if (!query("skillmix", me))
     return;
@@ -2559,9 +2553,8 @@ void disable_skillmix(object me) {
 }
 
 varargs void enable_skillmix(object me, mapping stats, mapping need) {
-  mapping applied_prop;
   string *apply;
-  int i, flag;
+  int i;
 
   if (!mapp(stats) || !sizeof(stats))
     return;
@@ -2633,7 +2626,6 @@ void broadcast_news() {
   object *obs, ob;
   string *key;
   string skill;
-  mixed value;
 
   if (!rdc_skills) rdc_skills = ([]);
   if (!add_skills) add_skills = ([]);

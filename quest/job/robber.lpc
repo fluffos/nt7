@@ -62,7 +62,7 @@ void invocation(object who) {
   object ob;
   mapping hp_status, skill_status, map_status;
   string *sname, *mname;
-  int i, hp, hp2, temp;
+  int i, hp, hp2;
   ob = this_object();
 
   if (mapp(skill_status = who->query_skills())) {

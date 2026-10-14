@@ -35,8 +35,7 @@ string *songs2 = ({
   "把它从迷境之中寻回。",
 });
 
-string me_guodu, ask_arg, baowu_name, baowu_dir, baowu_other1, baowu_other2,
-  me_guodu = "" HIC "雷之国度" NOR "", baowu_name = "神力之剑", baowu_other1 = "点缀之石",
+string me_guodu = "" HIC "雷之国度" NOR "", baowu_name = "神力之剑", baowu_other1 = "点缀之石",
   baowu_other2 = "容忍之鞘", ask_arg = baowu_name, baowu_dir = __DIR__ "lei_obj";
 
 string *me_mark = ({ "lei", "dz shi", "rr shao" });

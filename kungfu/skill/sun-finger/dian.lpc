@@ -8,7 +8,6 @@ inherit F_SSERVER;
 string name() { return HIR "神指点穴" NOR; }
 
 int perform(object me, object target) {
-  object weapon;
   string msg;
   int ap, dp;
 

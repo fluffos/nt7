@@ -173,8 +173,7 @@ int reborn_player(object me, string msg) {
   mapping all_skills, off_skills;
   mapping my, spc_data, tmp_data, mem_data;
   string *sname, *oname, *files;
-  string skill, dst;
-  object ob;
+  string skill;
   int i, n, vip, skill_lvl;
   int money, endtime, day;
 

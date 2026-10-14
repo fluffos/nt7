@@ -7,7 +7,7 @@ inherit F_SSERVER;
 
 int exert(object me, object target) {
   string msg;
-  int i, extra, time;
+  int extra, time;
   mapping buff, data;
 
   if (me->query_skill_mapped("force") != "bibo-shengong")

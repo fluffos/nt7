@@ -29,7 +29,7 @@ string long() {
 int do_open(string arg) {
   int lh;
   object *inv;
-  object ob, me = this_player();
+  object me = this_player();
 
   if (environment() != me) return 0;
   if (me->is_busy() ||

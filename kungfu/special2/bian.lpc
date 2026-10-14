@@ -10,7 +10,6 @@ int is_scborn() { return 1; }
 string name() { return HIC "诡辩奇学" NOR; }
 
 int perform(object me, string skill, string arg) {
-  int i;
 
   object ob;
 

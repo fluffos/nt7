@@ -76,7 +76,7 @@ void init() {
 int do_move(string arg) {
   object me, ob, env;
   mapping exit;
-  int busy, kar, i;
+  int busy, kar;
   me = this_player();
   ob = this_object();
   env = environment(me);

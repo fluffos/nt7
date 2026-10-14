@@ -36,7 +36,7 @@ string *place = ({ "寺", "庙", "店", "楼", "铺", "阁", "祠", "屋",
 int main(object me, string arg) {
   object roomfrom, roomto, roomtrap, *inv, tool;
   mapping exits;
-  string dir, from, to, *dirs;
+  string dir, *dirs;
   int i, depth;
 
   if (query("shen", me) >= 0 && !wizardp(me))

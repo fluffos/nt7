@@ -431,7 +431,6 @@ void auto_login1() {
 }
 
 void relay_channel(object ob, string channel, string msg) {
-  string who, phrase;
 
   if (!userp(ob) || (channel != "qq")) return;
   if (strsrch(msg, WHT + NOR) == -1)  //chat, not emote

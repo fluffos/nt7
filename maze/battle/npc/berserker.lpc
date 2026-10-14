@@ -80,7 +80,6 @@ mixed hit_ob(object me, object ob, int damage_bouns) {
 
 varargs void die(object killer) {
   object me;
-  int i;
 
   me = this_object();
 

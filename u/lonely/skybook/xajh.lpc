@@ -42,7 +42,6 @@ mapping query_book_list(string n) {
 void startbook(object me, string sBook) {
   string sQuest;  // 当前任务编号
   string sZhangjie;  // 当前章节
-  object ob, ob2;
 
   sZhangjie = me->query("skybook14/" + sBook + "/当前章节");
   sQuest = me->query("skybook14/" + sBook + "/任务编号");  // 表示还没有完成的任务编号

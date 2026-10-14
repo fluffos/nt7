@@ -54,7 +54,7 @@ int do_fang(string arg)
 */
 int do_lian(string arg) {
   object ob1, ob2, ob3, ob4, ob5;
-  object me, ob, obj;
+  object me, ob;
   me = this_player();
   ob = this_object();
 

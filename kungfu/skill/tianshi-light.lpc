@@ -18,11 +18,9 @@ int valid_enable(string usage) {
   return usage == "sword" || usage == "dodge" || usage == "unarmed" || usage == "parry" || usage == "blade" || usage == "whip" || usage == "force";
 }
 string query_skill_name(int level) {
-  int i;
   return action[0]["skill_name"];
 }
 mapping query_action(object me, object weapon) {
-  int i, level;
   return action[0];
 }
 string query_dodge_msg(string limb) {

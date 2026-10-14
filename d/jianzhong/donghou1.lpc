@@ -22,7 +22,7 @@ LONG
   setup();
 }
 void init() {
-  object ob1, ob2;
+  object ob1;
   object me = this_player();
   if ((random(10) < 2) && (query(
     "snake_count",

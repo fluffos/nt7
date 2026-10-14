@@ -145,7 +145,6 @@ public int delete_push_msg(string title) {
 void reback_lonely_book() {
   mixed *file;
   int iCount;
-  string *t;
   object book;
 
   remove_call_out("reback_lonely_book");

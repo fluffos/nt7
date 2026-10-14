@@ -35,9 +35,7 @@ void init() {
 }
 
 int valid_leave(object me, string dir) {
-  mapping myfam;
-  object ob, wp, *inv;
-  int i, j = 0;
+  object ob, wp;
 
   if (dir == "up") {
     if (objectp(ob = present("guarder", this_object()))) {

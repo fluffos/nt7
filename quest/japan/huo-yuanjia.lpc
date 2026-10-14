@@ -81,7 +81,7 @@ int filldata(object obj) {
 
 string ask_job(string arg) {
   int count, i, maxexp, maxpot, minexp, k_qi, k_neili, k_jing, k_jiali, total;
-  object me = this_player(), ob = this_object(), obj, target;
+  object me = this_player(), ob = this_object(), target;
   object *ob_list, *team;
 
   ob_list = users();

@@ -280,7 +280,7 @@ void random_dispersion_to_hj(string *dis_list, int times) {
 
 // 此函数清除幻境世界。
 void clean_hj() {
-  int i, j, c1, c2;
+  int i, c1, c2;
   string f, *files;
   object ob;
 

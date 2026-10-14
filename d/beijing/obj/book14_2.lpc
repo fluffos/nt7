@@ -45,7 +45,7 @@ int do_tear(string arg) {
       else {
         message_vision("$N将封皮撕开，几块羊皮掉了下来。\n", me);
         message_vision("$N先将羊皮上的地图记了下来，然后把它们烧掉了。\n", me);
-        set("huanggong\haspi2", 1, me);
+        set("huanggonghaspi2", 1, me);
         set("hasgot", 1, this_object());
       }
     } else {

@@ -7,7 +7,7 @@ int do_replace(string filename);
 string *deep_file_list(string dir);
 
 int main(object me, string arg) {
-  string str, dir, filename;
+  string filename;
   string *result;
   int i, n = 0;
 

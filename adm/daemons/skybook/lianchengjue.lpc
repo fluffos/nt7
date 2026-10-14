@@ -252,7 +252,7 @@ int startbook(object me, string sBook) {
   int nQuest;             // 当前任务编号
   string sZhangjie;       // 当前章节
   string mQuest;          // 当前任务
-  object ob, ob2;
+  object ob;
 
   ob = this_object();
   sZhangjie = query("skybook14/" + sBook + "/当前章节", me);

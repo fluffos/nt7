@@ -6,7 +6,6 @@
 string head = "\t---- " + "用户账号管理器" + " ----";
 
 nomask int main(object me, string arg) {
-  string wiz_status;
 
   if (me != this_player(1))
     return 0;

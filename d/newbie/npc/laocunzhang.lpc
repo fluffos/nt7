@@ -1007,7 +1007,7 @@ mixed accept_ask(object me, string topic) {
       "roar           内劲伤敌          shot        弹射毒药\n"
       "powerup        提升战力          shield      护体真气\n\n" NOR +
       "    如你要使用疗伤功能则可使用指令 yun heal。当然，前提是你已经学会一种内功，并\n"
-      "且内功修为和内力修为达到一定等级。\n\n" HIY;
+      "且内功修为和内力修为达到一定等级。\n\n" HIY
     "    更多相关帮助请参阅帮助文件 help force\n\n" NOR;
   } else if (topic == "102")  // 外功介绍
   {

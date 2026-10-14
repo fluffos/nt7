@@ -7,8 +7,7 @@ string name() { return "七伤"; }
 
 int perform(object me, object target) {
   string msg, str;
-  object weapon;
-  int i, j, damage;
+  int i, damage;
   int ap, dp;
 
   if (!target) target = me->select_opponent();

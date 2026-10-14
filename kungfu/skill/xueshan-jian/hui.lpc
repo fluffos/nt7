@@ -9,8 +9,6 @@ int perform(object me, object target) {
   object weapon;
   string msg;
   int ap, dp;
-  int count;
-  int i, attack_time;
 
   if (!target) {
     me->clean_up_enemy();

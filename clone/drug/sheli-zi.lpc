@@ -25,7 +25,7 @@ void create() {
 }
 
 int cure_ob(object me) {
-  int add_skill, improve, add;
+  int add;
 
   add = 10 + random(20);
 

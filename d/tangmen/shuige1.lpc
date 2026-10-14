@@ -91,7 +91,6 @@ int valid_leave(object me, string dir) {
 }
 
 void away(object obj) {
-  string name;
   object room;
 
   if (!objectp(obj)) return;

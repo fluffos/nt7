@@ -49,7 +49,7 @@ int main(object me, string arg) {
 }
 
 protected void delete_room_tag(string str, object who, object env, string tag) {
-  string fname, content, f_sect, e_sect, result;
+  string fname, content;
 
   if (!who || !env)
     return;

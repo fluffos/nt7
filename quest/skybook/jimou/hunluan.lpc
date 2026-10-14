@@ -63,7 +63,7 @@ void main(object ob, string who) {
 void show_result(object ob, string who, int p_skill, int p_id, int e_id) {
   int kill, kill1, mora, mora1;
   int e_skill;
-  int rate, damage, p_num, e_num, x, y, z;
+  int damage, x, y, z;
   x = 1.8;
   y = 1;
   z = 1.5;

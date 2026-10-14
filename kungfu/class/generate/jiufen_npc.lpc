@@ -118,7 +118,6 @@ int accept_ansuan(object who) {
 }
 
 void heart_beat() {
-  mapping msg;
   string msg1, msg2;
 
   if (time() - query_temp("born_time") > 900) {

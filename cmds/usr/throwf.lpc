@@ -10,7 +10,6 @@ void create() {
 
 int main(object me, string arg) {
   object obj;
-  string no_tell, can_tell;
 
   if (me->is_busy())
     return notify_fail("你现在正忙着呢。\n");

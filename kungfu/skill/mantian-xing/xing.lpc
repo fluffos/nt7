@@ -9,7 +9,7 @@ inherit F_SSERVER;
 
 int perform(object me, object target) {
   mapping buff, data;
-  int skill, i, p, n;
+  int skill, p, n;
   mixed my_exp, ob_exp;
   string pmsg;
   string msg;

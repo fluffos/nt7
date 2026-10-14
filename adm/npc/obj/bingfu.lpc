@@ -137,7 +137,7 @@ void attack_over(object me) {
 
 int do_attack(string arg) {
   object me, ob;
-  object env, room;
+  object env;
   string who, dir;
   string zhen, craft;
 
@@ -271,10 +271,8 @@ int do_train(string arg) {
 
 
 int do_order(string arg) {
-  object me, env, ob, ling, obb;
+  object me, env, ob;
   string who, what, dir;
-  int i, n, flag;
-  mapping jiang;
 
   me = this_player();
   env = environment(me);

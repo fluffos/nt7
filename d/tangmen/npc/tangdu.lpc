@@ -84,7 +84,7 @@ void create() {
 
 int give_job() {
   object me, du;
-  string msg, targ;
+  string targ;
   int coun;
 
   string *tar = ({

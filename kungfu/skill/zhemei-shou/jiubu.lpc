@@ -9,7 +9,6 @@ inherit F_SSERVER;
 string name() { return "九部式"; }
 
 int perform(object me, object target) {
-  object weapon;
   int damage;
   string msg;
   int ap, dp;

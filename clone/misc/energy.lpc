@@ -18,7 +18,6 @@ void create() {
 }
 
 int do_effect(object me) {
-  mapping my;
 
   if (!me->is_magic_beast()) {
     write("你疯了啊，能量石也能吃吗？\n");

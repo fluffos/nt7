@@ -184,7 +184,6 @@ string query_dodge_msg(string limb) {
 
 int valid_learn(object me) {
   int level;
-  int i;
 
   if (query("combat_exp", me) < 3000000)
     return notify_fail("你觉得不败神功深奥之极，"

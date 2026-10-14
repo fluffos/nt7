@@ -17,9 +17,7 @@ inherit F_SSERVER;
 void chkpfm(object me, object target, int amount);
 
 int perform(object me, object target) {
-  int skill, damage, time, jiali, jiajin;
-  string weapon;
-  string *limb, type, result, str;
+  int skill, jiali, jiajin;
 
   if (!target) target = offensive_target(me);
 
@@ -91,7 +89,7 @@ void chkpfm(object me, object target, int amount) {
     "瘀伤",
     "内伤"
   });
-  int ap, dp, pp, damage, level, sp, sp2, ap2, jiali, jiajin;
+  int ap, dp, pp, damage, sp, ap2, jiali, jiajin;
   if (!me->is_fighting(target) || !living(target))
     return;
   jiali = query("jiali", me);

@@ -54,7 +54,7 @@ int do_take(string arg) {
     write("那里面没有这样东西！\n");
   return 1;
 }
-int valid_leave() {
+varargs int valid_leave() {
   if ((present("wine", this_player())))
     return notify_fail("请不要带走这里的东西。\n");
   if ((present("sugar", this_player())))

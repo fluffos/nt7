@@ -8,8 +8,7 @@ inherit F_CLEAN_UP;
 
 int main(object me, string arg) {
   string msg, file1, file2, str;
-  string who;
-  object body, ob, user;
+  object ob;
 
   if (!SECURITY_D->valid_grant(me, "(immortal)"))
     return 0;

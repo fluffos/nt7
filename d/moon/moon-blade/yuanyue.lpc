@@ -3,7 +3,7 @@
 inherit F_SSERVER;
 int perform(object me, object target) {
   object weapon;
-  int extra, agi, str, cor, kar, exp, tarexp, n, k, dance;
+  int extra, exp, tarexp, k, dance;
   int rkee, damage, low_limit;
   if (me->query("class") != "bandit")
     return notify_fail("非神教弟子不能领悟明月几十有。\n");
@@ -151,7 +151,6 @@ $N有如敦煌壁画上的天女一般，提足如神山飞渡，侧脸如桃花
 
 
 void kill_him2(object me, object target) {
-  string msg;
   if (!target) {
     me->delete_temp("kill_other");
     return;

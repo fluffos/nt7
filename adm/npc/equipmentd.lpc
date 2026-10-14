@@ -964,7 +964,6 @@ public varargs object create_dynamic(string obj_type, int ilvl, int mf, int flag
   mapping insert;
   string *all_id, *types;
   string id;
-  string *file;
   string color, filename;
   string base_type;
   object ob;

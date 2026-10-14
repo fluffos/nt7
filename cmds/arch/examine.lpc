@@ -20,7 +20,6 @@ void create() { seteuid(getuid()); }
 public void search_dir(object me, int type);
 
 int main(object me, string arg) {
-  int i;
   int copy_user;
 
   if (!SECURITY_D->valid_grant(me, "(arch)"))
@@ -141,7 +140,6 @@ protected string examine_player(string name, int copy_user, int type, int last_t
   object user_ob;
   string result;
   int day;
-  int age;
   int online;
   mixed *st;
   int remove_flag;

@@ -30,7 +30,6 @@ int do_quit(string arg) {
 }
 int do_search(string arg) {
   object who = this_player();
-  object where = this_object();
   object book;
 
   if (query("book_count") < 1) {

@@ -29,9 +29,8 @@ void create() {
 }
 
 int do_du(string arg) {
-  object ob, me = this_player();
-  mapping skill;
-  int level, neili_lost;
+  object me = this_player();
+  int level;
 
   if (me->is_busy()) {
     write("你现在正忙着呢。\n");

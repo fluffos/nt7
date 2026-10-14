@@ -474,12 +474,10 @@ int do_no() {
 int do_bet(string arg) {
   object me;
   object ob;
-  object nob;
   object *inv;
-  string my_id, units;
+  string units;
   int amount;
   int value;
-  int res;
   int max_count;
   int i;
   mixed ns;

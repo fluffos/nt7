@@ -136,7 +136,6 @@ mixed ask_maze() {
   object me;
   object ob;
   mapping quest;
-  mapping maze;
 
   me = this_player();
   ob = this_object();
@@ -236,7 +235,6 @@ int accept_hit(object me) {
 }
 
 int accept_fight(object me) {
-  object weapon;
 
   if (query("opinion/" MY_OPINION, me) == ULTRA_OPINION) {
     message_vision("$N对$n道：“很好，你也算是宗师高手了，"
@@ -356,12 +354,12 @@ void die() {
 }
 
 int give_quest() {
-  mapping quest, qgood, skills, robot_quest;
-  object me, target, thing, npc, the_ob;
-  int i, giveup, tag, want, lev, lev1, time;
+  mapping quest, qgood;
+  object me, thing, npc;
+  int i, giveup, tag, want;
   int exp;
   int lvl, all_lvl;
-  string msg, *sname, place, the_race;
+  string msg;
   object maze_target;
   object maze_object;
 
@@ -585,11 +583,11 @@ int give_quest() {
 }
 
 int accept_object(object me, object ob) {
-  int rank, exp, pot, score, times, i, tag, all_quest_sn, bonus;
+  int exp, pot, score, times, i, tag, all_quest_sn, bonus;
   mapping quest;
   object gold, who, obj;
   string msg;
-  int mar, weiwang, shen, quest_count;
+  int mar, weiwang, quest_count;
   int total_count;
   mixed special = 0;
   mixed money = 0;
@@ -866,8 +864,8 @@ int accept_object(object me, object ob) {
 }
 
 int give_up() {
-  object me, ob, obj;
-  int giveup, rank;
+  object me, ob;
+  int giveup;
   mapping quest;
 
   me = this_player();

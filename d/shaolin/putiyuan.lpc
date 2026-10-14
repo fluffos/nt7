@@ -68,7 +68,6 @@ string look_jing() {
 }
 
 string look_hole() {
-  string msg;
 
   if (query("status") != 4)
     return "哪里有什么洞？抓老鼠么？\n";

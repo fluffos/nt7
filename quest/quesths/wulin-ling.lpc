@@ -19,7 +19,7 @@ void init() {
 }
 
 int do_chushi(string arg) {
-  object thing, obj, me, who;
+  object thing, me, who;
   mapping quest;
   me = this_player();
   if (!quest = query("quest_hs", me))

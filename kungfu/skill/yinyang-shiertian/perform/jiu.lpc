@@ -7,7 +7,6 @@ string name() { return HIW "九转乾坤" NOR; }
 
 int perform(object me, object target) {
   string msg;
-  int count;
   int lvl, damage;
   int i, ap, dp;
 

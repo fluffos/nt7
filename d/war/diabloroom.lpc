@@ -56,9 +56,7 @@ object *dusers() {
 }
 
 mapping *generate_wall(int x, int y, int z, mapping coor) {
-  string *ks;
-  int i, next_flag;
-  mapping connect, *walls, *new_wall;
+  mapping *walls, *new_wall;
 
   walls = query("walls");
   //coor=ZONE_RANGE[query("zone")];
@@ -107,7 +105,6 @@ mapping *generate_wall(int x, int y, int z, mapping coor) {
 
 mapping query_zonexyz(int x, int y, int z) {
   int i;
-  string desc;
   string *ks;
   mapping coor;
 
@@ -125,7 +122,6 @@ mapping query_zonexyz(int x, int y, int z) {
 
 mapping query_zone(object ob) {
   int x, y, z, i;
-  string desc;
   string *ks;
   mapping coor;
 
@@ -168,7 +164,6 @@ string short_desc() {
 
 void create() {
   int i, j;
-  object mine, door;
   mapping *walls;
 
   walls = DATABASE_D->db_walls();
@@ -232,7 +227,7 @@ void create() {
 
 varargs void generate_bandit(string zone, mapping coor, int z) {
   object bandit, door, tomb;
-  int i, j, length_x, length_y, length_z, step, x, y;
+  int i, j, length_x, length_y, step, x, y;
 
   string *ks;
 
@@ -615,8 +610,7 @@ int do_nothing(string arg) {
 
 int do_driving(string arg) {
   object me;
-  string dest;
-  int distance, distance_x, distance_y, distance_z, max_speed, max_driving;
+  int max_speed, max_driving;
   object obj;
 
   me = this_player();
@@ -657,8 +651,7 @@ int do_driving(string arg) {
 
 int do_moving(string arg) {
   object me = this_player();
-  string dest;
-  int distance, distance_x, distance_y, distance_z, max_speed;
+  int distance, max_speed;
   object obj;
   string *directions = ({ "east", "south", "west", "north", "se", "sw", "ne", "nw", "up", "down" });
 
@@ -731,10 +724,8 @@ int do_stopping(string arg) {
 
 int alternative_die(object me) {
   object ob, weapon;
-  object *tomb, *inv;
-  int i;
-  string act, msg;
-  mapping mail;
+  object *tomb;
+  string act;
 
 
   weapon = query_temp("weapon", me);
@@ -796,10 +787,8 @@ int alternative_die(object me) {
 
 int do_around(string arg) {
   object me = this_player();
-  string dest, target;
-  int distance, distance_x, distance_y, distance_z, max_speed, number;
+  int distance, max_speed, number;
   object obj;
-  string *directions = ({ "east", "south", "west", "north", "se", "sw", "ne", "nw", "up", "down" });
 
   max_speed = query_temp("apply/max_speed", me);
   if (me->over_encumbranced())
@@ -997,8 +986,8 @@ int do_get(object me, object obj, object env) {
 
 string display_map(string arg) {
   object *inv, obj, me;
-  int m, n, length, ks, temp;
-  int max_x, max_y, min_x, min_y, length_x, length_y, i, j, k, h, type, x, y, x1, y1, x2, y2, z1, z2;
+  int n, length, ks;
+  int max_x, max_y, min_x, min_y, length_x, length_y, i, j, k, h, type, x1, y1, x2, y2, z1, z2;
   mapping *wall;
   mixed *xy;
   string name;

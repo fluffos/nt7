@@ -34,13 +34,12 @@ void init()
 
 int do_insert(string arg)
 {
-        string file, filename, content;
         object me, ob;
         object tessera;
         mapping apply_prop, data;
         mapping *ins;
         string *apply;
-        int i, n;
+        int i;
         
         me = this_player();
         ob = this_object();

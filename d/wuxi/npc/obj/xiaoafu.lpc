@@ -38,7 +38,7 @@ int do_use() {
   set("age", age, ob);
 
   message_vision(
-    append_color(NOR + "$N拿起一尊" + name() + "往$n的头上一拍...\$n吓得一个激灵，身形似乎变小了一点。\n" + NOR, YEL),
+    append_color(NOR + "$N拿起一尊" + name() + "往$n的头上一拍...$n吓得一个激灵，身形似乎变小了一点。\n" + NOR, YEL),
     me,
     ob
   );

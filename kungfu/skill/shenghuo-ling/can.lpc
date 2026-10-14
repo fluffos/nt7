@@ -11,7 +11,7 @@ int perform(object me, object target) {
   object weapon;
   string msg;
   int count;
-  int damage, skill, ap, dp;
+  int skill, ap, dp;
   int l;
   int i;
   int delta;

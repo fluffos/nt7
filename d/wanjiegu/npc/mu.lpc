@@ -60,8 +60,6 @@ int accept_object(object who, object ob) {
 }
 
 void do_give(object me) {
-  object room = find_object(__DIR__ "backyard");
-  object who;
   object obj;
 
   message_vision("木婉清将绝情花吃了下去，她中的「阴阳合和散」的药性解除了！\n", me);

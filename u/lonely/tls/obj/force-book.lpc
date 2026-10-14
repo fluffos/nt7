@@ -20,9 +20,6 @@ void init() {
 int do_du(string arg) {
   object me = this_player();
   object where = environment(me);
-  object ob;
-  mapping skill;
-  int jylevel;
   int neili_lost;
   if (!(arg == "jing" || arg == "book"))
     return 0;

@@ -658,7 +658,7 @@ string hjck_player_info(object target) {
 
 int do_ck(string arg) {
   object target, me = this_player(), *env, rooms;
-  string msg, hi;
+  string msg;
   int i, j, a;
 
   if (!arg) return notify_fail("本指令可查看某玩家的幻境内的各类详细状态。\n指令：<hjck ID> 查看该ID状态，查看自己时可以\"me\"代替\n指令：<hjck all> 可查阅所有境内玩家的详细状态。\n");

@@ -6,7 +6,6 @@ int update_condition(object me, int duration) {
   object room;
   object obb;
   int step;
-  string site;
 
   if (duration < 1) return 0;
 

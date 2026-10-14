@@ -69,7 +69,6 @@ void init() {
 
 int do_enter(string arg) {
   object ob;
-  string dir;
   object *inv;
   object horse, person;
   int i;

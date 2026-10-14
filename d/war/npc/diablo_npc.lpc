@@ -27,7 +27,6 @@ void unconcious() {
 }
 
 void init() {
-  object *obs;
   int just, n;
   object env = environment();
 

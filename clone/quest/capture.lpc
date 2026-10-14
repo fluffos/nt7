@@ -119,7 +119,6 @@ void init_quest(string qob_name) {
 // 任务终止
 void cancel_quest() {
   mapping my = query_entire_dbase();
-  object env;
 
   if (!mapp(my))
     return;

@@ -20,6 +20,7 @@ void start_guard(object me, object who);
 void check_guard(object me, object who, object killer);
 void check_going(object me, object who);
 
+#undef QUEST
 #define QUEST           "/adm/etc/questlist/"
 #define QUESTER "南贤"
 #define LURCHER "北丑"
@@ -72,7 +73,6 @@ private void special_bonus(object me, object who) {
 
 // 任务的起始程序，给予出最初任务和提供新线索
 public mixed accept_ask(object me, object who, string topic) {
-  object item;
   string msg;
   string type;
   mapping q;
@@ -547,7 +547,7 @@ public void give_accede(object me, object who) {
 
 // 系统预设任务的发布
 public void give_quest(object me, object who) {
-  string quest, next_id, msg, id;
+  string next_id, msg, id;
   string type, next_name, quest_msg, name, place;
   object item, ob;
   /*
@@ -1049,7 +1049,7 @@ void check_going(object me, object who) {
 // 针对任务人物提出的技术性任务给予答复
 int need_accede(object me, object who) {
   string skill, ma, wa;
-  string suc_msg, fai_msg, msg;
+  string suc_msg, fai_msg;
   int lvl;
 
   // 准备比较的技能属性
@@ -1576,7 +1576,7 @@ public void give_gift(object me, object who) {
 // 人物所提供的线索信息
 public void generate_information(object me, object who) {
   object ob;
-  string where, id, name, place;
+  string id, name, place;
   string msg, ma, next_name;
   int finish;
 

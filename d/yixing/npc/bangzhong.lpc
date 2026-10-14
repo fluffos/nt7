@@ -108,7 +108,7 @@ int accept_kill(object me) {
 }
 
 void die() {
-  object ob, corpse, killer, obj;
+  object  corpse, killer, obj;
   int bonus, record;
 
   if (!living(this_object())) revive(1);

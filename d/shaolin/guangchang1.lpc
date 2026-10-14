@@ -2,9 +2,9 @@
 inherit ROOM;
 
 void init();
-int close_gate();
+void close_gate();
 int do_open();
-int valid_leave();
+varargs int valid_leave();
 string look_gate();
 
 void create() {
@@ -58,7 +58,7 @@ void init() {
   add_action("do_knock", "knock");
 }
 
-int close_gate() {
+void close_gate() {
   object room;
 
   if (!(room = find_object(__DIR__ "smdian")))
@@ -77,7 +77,7 @@ int close_gate() {
   } else
     message("vision", "ERROR: gate not found(close).\n", room);
 
-  return 1;
+  return;
 }
 
 int do_knock(string arg) {

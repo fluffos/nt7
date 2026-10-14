@@ -35,7 +35,7 @@ string get_msg( object *list, int type )
 
 int do_gi()
 {
-    object *inv, me = this_player(), *temp, *hjinv, *list;
+    object *inv, me = this_player(), *hjinv, *list;
     int n;
     string msg, cl;
 

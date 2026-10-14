@@ -166,7 +166,7 @@ int accept_ask(object me, string topic) {
   }
 }
 
-void init(object ob) {
+varargs void init(object ob) {
   string startroom;
 
   if (interactive(ob = this_player())

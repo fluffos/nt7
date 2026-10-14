@@ -87,7 +87,6 @@ int greeting(object ob) {
 
 
 int ask_join() {
-  mapping party;
   object me;
   me = this_player();
 

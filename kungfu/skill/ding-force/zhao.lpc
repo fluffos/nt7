@@ -7,7 +7,6 @@
 int exert(object me, object target) {
   int lv, dur, drop;
   string str;
-  object ob;
 
   if (!me->is_fighting())
     return notify_fail("等跟人打架时再用吧！\n");

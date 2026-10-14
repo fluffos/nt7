@@ -1178,7 +1178,7 @@ int busy_pass(object ob) {
   return 1;
 }
 
-int accept_object(object who, object ob, object me) {
+varargs int accept_object(object who, object ob, object me) {
 
   if (ob->query("id") == "yu pei" && ob->query("quest") && ob->query("owner") == who->query("id")) {
     if (who->query(QUESTDIR4 + "lengquanshengong") && !who->query(QUESTDIR4 + "lengquanshengong_teach")) {

@@ -44,7 +44,7 @@ void init() {
 }
 
 int do_open(string arg) {
-  object room, me;
+  object room;
 
   if (!arg || arg == "")
     return 0;
@@ -72,8 +72,7 @@ int do_open(string arg) {
 }
 
 void close_passage() {
-  object man, room, *ob;
-  int i;
+  object room;
 
   if (!query("exits/down"))
     return;

@@ -179,8 +179,7 @@ mapping	ZONE_RANGE=
 	]);	
 string *commonskill=
 ({"force","unarmed","literate","magic","dodge","parry",});
-string *elements=
-({"earth","fire","water","light"});
+// elements 由 /d/war/diablo.lpc 提供（变量和同名函数），这里不再重复声明
 
 
 

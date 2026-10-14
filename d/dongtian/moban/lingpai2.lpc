@@ -3,7 +3,6 @@
 #include <ansi.h>
 
 inherit ITEM;
-inherit F_CLEAN_UP;
 
 string load_name();
 void create() {

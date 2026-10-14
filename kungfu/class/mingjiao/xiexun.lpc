@@ -12,7 +12,6 @@ string ask_dao();
 string ask_boat();
 
 void create() {
-  object ob;
   set_name("谢逊", ({ "xie xun", "xie", "xun" }));
   set("title", HIG "明教" HIY "金毛狮王" NOR);
 

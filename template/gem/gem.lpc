@@ -4,10 +4,10 @@
 
 inherit TEMPLATE_OB;
 
-mixed *dbase_format = ({ "long", "value", "enchase", });
+mixed *my_dbase_format = ({ "long", "value", "enchase", });
 
 // 模板数据
-mapping template_data = ([
+mapping my_template_data = ([
   "red gem1": ({ ({ RED "一片宝石碎片。\n" NOR, 80000,
     ([ "SN": random(9) + 1, "level": 1, "consistence": 70 + random(31), ]),
   }), ([]), BASIC_OB_DIR + "gem/redgem1.lpc"
@@ -161,10 +161,10 @@ void setup() {
   set_base_file("gem/gem");
 
   // 设置 dbase 格式
-  set_dbase_format(dbase_format);
+  set_dbase_format(my_dbase_format);
 
   // 设置模板数据
-  set_template_data(template_data);
+  set_template_data(my_template_data);
 
   ::setup();
 }

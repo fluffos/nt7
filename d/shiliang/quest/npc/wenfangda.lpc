@@ -56,7 +56,6 @@ void create() {
 }
 void init() {
   object me, ob;
-  int i;
 
   ::init();
 

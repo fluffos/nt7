@@ -15,7 +15,6 @@ int valid_learn(object me) {
 }
 
 int practice_skill(object me) {
-  object ob;
 
   if (query("jing", me) < 80)
     return notify_fail("你的精神不够好，没法练习了。\n");

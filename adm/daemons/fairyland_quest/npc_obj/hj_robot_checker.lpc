@@ -202,7 +202,6 @@ string ask_quest_again() {
 void start_check() {
   mapping question_info;
   object me;
-  string shows_all, shows_color, shows_flag;
 
   if (!environment(this_object())) return;
 
@@ -316,11 +315,7 @@ write("这次的颜色是："+shows_color+"，图案是："+shows_flag+"。\n");
 }
 
 string get_flag(string this_times) {
-  string *flags = ({ "☆", "★", "○", "●", "◎", "◇", "◆", "□", "■", "△", "▲", "¤", }),
-    temp_flag,
-    * cls = ({ HIR, HIC, HIG, HIY, HIW, HIM, }),
-    temp_cls,
-    temp_wahaha;
+  string *flags = ({ "☆", "★", "○", "●", "◎", "◇", "◆", "□", "■", "△", "▲", "¤", }), * cls = ({ HIR, HIC, HIG, HIY, HIW, HIM, }), temp_wahaha;
 
   temp_wahaha = cls[random(sizeof(cls))] + flags[random(sizeof(flags))] + NOR;
 

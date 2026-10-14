@@ -39,9 +39,9 @@ int do_xidi() {
   fish->move(me);
   return 1;
 }
-int reset() {
+void reset() {
   if (query("fish_count") < 2)
     addn("fish_count", 1);
   ::reset();
-  return 1;
+  return;
 }

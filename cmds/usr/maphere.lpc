@@ -21,7 +21,7 @@ void set_x_y(int, int, int);
 
 int main(object me, string arg) {
   object where;
-  int i, j, k, l, n, p, x, y;
+  int i, j, k, l, n, p;
   int lineu, lined, linef;
   string *text;
   string tmp;

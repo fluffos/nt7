@@ -46,7 +46,7 @@ void init() {
   }
 }
 
-void die() {
+varargs void die() {
   if (query("qi") > 100000) {
     revive();
     return;

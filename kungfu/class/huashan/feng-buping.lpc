@@ -286,7 +286,6 @@ mixed ask_me()
 
 
 mixed ask_sword_martial() {
-  object ob;
   object me;
 
   me = this_player();

@@ -83,7 +83,7 @@ void init() {
 }
 
 int do_she(string arg) {
-  object me = this_player(), bow, ob, room;
+  object me = this_player(), bow, room;
   int i, n, m;
   string what;
   mapping exits;

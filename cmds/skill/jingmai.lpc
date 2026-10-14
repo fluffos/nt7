@@ -8,9 +8,7 @@ inherit F_CLEAN_UP;
 
 int help(object me);
 int main(object me, string arg) {
-  string *xs;
   string msg;
-  int i;
 
   if (me->is_busy() || me->is_fighting())
     return notify_fail(BUSY_MESSAGE);
