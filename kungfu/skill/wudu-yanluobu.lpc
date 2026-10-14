@@ -31,7 +31,7 @@ string query_dodge_msg(string limb) {
 int learn_bonus() { return 30; }
 int practice_bonus() { return 30; }
 int success() { return 20; }
-int power_point(object me) { return 1.1; }
+float power_point(object me) { return 1.1; }
 
 string perform_action_file(string action) {
   return __DIR__ "wudu-yanluobu/" + action;

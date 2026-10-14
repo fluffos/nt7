@@ -143,7 +143,7 @@ int making(object me) {
     msg += "$n" + NOR + CYN + (random(2) ? "神情" : "魂魄") + (random(2) ? "恍惚" : "呆滞") + "。\n" + NOR;
     message_vision(NOR + msg + NOR, me, target);
     addn_temp("jsfan/making", 1, me);
-    damage = pow((oblv + 25), 2) * pow(3, query_temp("jsfan/making", me) - 8);
+    damage = to_int(pow((oblv + 25), 2) * pow(3, query_temp("jsfan/making", me) - 8));
     damage = damage * 9 / 10 + random(damage / 10);
     target->receive_damage("jing", damage, me);
     msg = NOR + HIW + "( $N" + NOR + HIW + "的" + query(

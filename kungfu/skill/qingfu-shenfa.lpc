@@ -103,7 +103,7 @@ mixed valid_damage(object ob, object me, int damage, object weapon) {
 int learn_bonus() { return 10; }
 int practice_bonus() { return 10; }
 int success() { return 10; }
-int power_point(object me) { return 1.4; }
+float power_point(object me) { return 1.4; }
 
 int help(object me) {
   write(HIC "\n青蝠身法：" NOR "\n");

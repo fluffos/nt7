@@ -197,7 +197,7 @@ int query_effect_parry(object attacker, object me) {
 int learn_bonus() { return 0; }
 int practice_bonus() { return 0; }
 int success() { return 5; }
-int power_point(object me) {
+float power_point(object me) {
   object weapon;
   if (!objectp(weapon = query_temp("weapon", me)) ||
     query("id", weapon) != "ironsword")

@@ -110,7 +110,7 @@ int exercising(object me) {
   int cost;
   object where = environment(me);
   int exercise_cost = query_temp("exercise_cost", me);
-  int neili_gain = 1 + (int)me->query_skill("force") / 2.5;
+  int neili_gain = to_int(1 + (int)me->query_skill("force") / 2.5);
   if (exercise_cost < 1)
     return 0;
   addn("neili", neili_gain, me);

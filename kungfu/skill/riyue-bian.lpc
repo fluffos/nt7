@@ -149,7 +149,7 @@ string perform_action_file(string action) {
 int learn_bonus() { return 5; }
 int practice_bonus() { return 5; }
 int success() { return 5; }
-int power_point(object me) {
+float power_point(object me) {
   object weapon;
   if (objectp(weapon = query_temp("weapon", me))
     && query("id", weapon) == "heisuo")

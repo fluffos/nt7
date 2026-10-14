@@ -69,7 +69,7 @@ void setup_weishi(object me, object obj) {
 
   set("combat_exp", exp, me);
 
-  level = pow(exp * 10., 0.33333);
+  level = to_int(pow(exp * 10., 0.33333));
   if (level < 100) level = 100;
 
   if (query("combat_exp", obj) < 3000000) {

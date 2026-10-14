@@ -645,7 +645,7 @@ void process_function(string *fp) {
       x = 150;
     }
 
-    y = sqrt(efun::to_float(random_access));
+    y = to_int(sqrt(efun::to_float(random_access)));
     return x * random(y) * random(y);
   }
 

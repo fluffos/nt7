@@ -167,7 +167,7 @@ void set_owner(object owner) {
   set("max_neili", query("max_neili", owner));
   set("neili", query("max_neili", owner));
 
-  max = pow(query("combat_exp") * 10.0, 0.33333);
+  max = to_int(pow(query("combat_exp") * 10.0, 0.33333));
   max1 = (int)max;
   set_skill("dodge", max1);
   set_skill("parry", max1);

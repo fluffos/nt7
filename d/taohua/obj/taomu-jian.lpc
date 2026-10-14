@@ -67,7 +67,7 @@ mixed hit_ob(object me, object victim, int damage_bonus) {
   else gain3 = age2 / age1;
   if (gain3 > 1.2) gain3 = 0.2;
 
-  gain = (gain1 + gain2) * gain3;
+  gain = to_int((gain1 + gain2) * gain3);
   if (gain > 3) gain = 3;
   gain = gain * (int2 + int1) / 40 + random(2);
   bonus = (int)(gain + damage_bonus / 100 * gain);
