@@ -31,6 +31,6 @@ string query_dodge_msg(string limb) {
 int practice_skill(object me) {
   if ((int)me->query("jingli") < 30)
     return notify_fail("你的体力太差了，不能练习天龙翔。\n");
-  me->receive_damage("jingli", 25);
+  me->add("jingli", -25);
   return 1;
 }

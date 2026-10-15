@@ -435,7 +435,7 @@ int practice_skill(object me) {
   if ((int)me->query("neili") < 40)
     return notify_fail("你的内力不够练燎原枪法。\n");
 
-  me->receive_damage("jingli", 30);
+  me->add("jingli", -30);
   if ((int)me->query_skill("liaoyuan-spear", 1) > 200)
     me->add("neili", -10);
 

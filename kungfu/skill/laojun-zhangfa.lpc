@@ -92,6 +92,6 @@ int practice_skill(object me) {
     return notify_fail("你手上的武器不能用来练疯魔杖法。\n");
   if (query("jingli", me) < 60)
     return notify_fail("你先歇口气再练吧。\n");
-  me->receive_damage("jingli", 25);
+  me->add("jingli", -25);
   return 1;
 }

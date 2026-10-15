@@ -96,9 +96,9 @@ int practice_skill(object me) {
     return notify_fail("你的毒技修为不够，无法提高星宿毒掌。\n");
 
   if (me->query_skill("xingxiu-duzhang", 1) < 50)
-    me->receive_damage("jingli", 20);
+    me->add("jingli", -20);
   else
-    me->receive_damage("jingli", 30);
+    me->add("jingli", -30);
   addn("neili", -5, me);
   return 1;
 }
