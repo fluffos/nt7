@@ -114,8 +114,8 @@ int practice_skill(object me) {
     return notify_fail("你的体力太低了。\n");
   if ((int)me->query("neili") < 30)
     return notify_fail("你的内力不够练铁掌掌法。\n");
-  me->receive_damage("jingli", 40);
-  me->receive_damage("neili", 10 + random(10));
+  me->add("jingli", -40);
+  me->add("neili", -(10 + random(10)));
   return 1;
 }
 

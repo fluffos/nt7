@@ -516,7 +516,7 @@ string fenglu() {
 
 void attempt_apprentice(object ob) {
   object me = this_object();
-  mapping fam = ob->query("family");
+  mapping fam = ob->query("family"); if (!mapp(fam)) fam = ([ ]);
   if ((string)ob->query("gender") == "女性") {
     command("say 我天龙寺武功需要纯阳之体，小姑娘我可不收啊!");
     return;

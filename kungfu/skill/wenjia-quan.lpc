@@ -70,7 +70,7 @@ int practice_skill(object me) {
     return notify_fail("你的体力太低了。\n");
   if ((int)me->query("neili") < 20)
     return notify_fail("你的内力不够练温家拳。\n");
-  me->receive_damage("jingli", 30);
+  me->add("jingli", -30);
   me->add("neili", -10);
   return 1;
 }

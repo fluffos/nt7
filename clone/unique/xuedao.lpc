@@ -51,19 +51,19 @@ int do_lian(string arg) {
     && ((int)me->query_skill("xuedao-daofa", 1) >= 50
       && (int)me->query_skill("xuedao-daofa", 1) <= 200
       && query("family/master_id", me) == "xuedaolaozu")) {
-    me->receive_damage("jingli", 10);
+    me->add("jingli", -10);
     me->receive_damage("qi", 5);
     me->improve_skill("xuedao-daofa", query("int", me) + 10);
     if (me->query_skill("xuedao-daofa", 1) > 150)
-      me->receive_damage("jingli", 5);
+      me->add("jingli", -5);
     me->receive_damage("qi", 5);
 
     if (me->query_skill("xuedao-daofa", 1) > 180)
-      me->receive_damage("jingli", 10);
+      me->add("jingli", -10);
     me->receive_damage("qi", 5);
 
     if (me->query_skill("xuedao-daofa", 1) > 200)
-      me->receive_damage("jingli", 15);
+      me->add("jingli", -15);
     me->receive_damage("qi", 5);
     tell_object(me, "你的血刀刀法进步了！\n", me);
     return 1;

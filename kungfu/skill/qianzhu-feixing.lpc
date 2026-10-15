@@ -37,7 +37,7 @@ int practice_skill(object me) {
     return notify_fail("你使用的武器不对。\n");
   if (query("jingli", me) < 50)
     return notify_fail("你的体力不够练夺命金花。\n");
-  me->receive_damage("jingli", 30);
+  me->add("jingli", -30);
   return 1;
 }
 

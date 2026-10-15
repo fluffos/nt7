@@ -52,10 +52,10 @@ int perform(object me, object target) {
     "$n不由看的呆了......\n" NOR, me, target);
   set_temp("gunzhen", 1, me);
   set_temp("bunzhen", 1, target);
-  me->receive_damage("jingli", 100);
-  target->receive_damage("jingli", 100);
-  me->receive_damage("neili", 300);
-  target->receive_damage("neili", 300);
+  me->add("jingli", -100);
+  target->add("jingli", -100);
+  me->add("neili", -300);
+  target->add("neili", -300);
   me->start_busy(1);
   target->start_busy(1);
   i = (int)me->query_skill("luohan-gun", 1);

@@ -1,0 +1,46 @@
+// /adm/daemons/scbornd.lpc
+// 转世重生系统（help scborn）的核心守护进程不在原始存档中，只剩下帮助文件。
+// 这里只是一个替身：对所有人都回答“未曾转世”，让依赖它的代码按未转世的
+// 正常规则运行 —— 绝招（valid_perform）、内功修习（force.h 的 valid_learn）、
+// 天界十二重天的入口（check_data）、通天老仙（check_data2 / start_scborn）。
+// 转世本身因此无法进行，与存档原样一致；但上述调用不再因找不到对象而报错。
+
+#include <ansi.h>
+
+mapping special_names = ([
+  "zhuha": "朱蛤奇缘",
+  "yuan": "破元大法",
+  "jin": "神魔金身",
+  "tong": "通慧神眼",
+  "bian": "诡辩奇学",
+  "guimai": "六阴鬼脉",
+  "xunying": "遁影擒踪",
+  "wushuang": "国士无双",
+  "zhushang": "诸伤之术",
+  "jinghua": "仙音净化",
+  "dian": "点石成金",
+]);
+
+// 转世后保留的绝招：没有人转过世，所以没有
+int valid_perform(object me, string skill, string pfm) { return 0; }
+
+// 转世后可同时修习的内功：同上
+int valid_learn(object me, string skill) { return 0; }
+
+// 闯天界十二重天的条件
+int check_data(object me) {
+  if (wizardp(me)) return 1;
+  return 0;
+}
+
+// 向通天老仙求转世的条件
+int check_data2(object me) {
+  tell_object(me, "你还不具备转世的条件。\n");
+  return 0;
+}
+
+int start_scborn(object me) { return 0; }
+
+string get_special_name(string arg) {
+  return special_names[arg] || arg;
+}

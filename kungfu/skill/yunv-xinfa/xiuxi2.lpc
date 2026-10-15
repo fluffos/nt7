@@ -314,7 +314,7 @@ int xiuxi(object me) {
     me->improve_skill("yunu-xinjing", xj_gain, 0);
     write(phases_me[random(6)]);
     me->receive_damage("qi", qi_cost, "练内功走火入魔死了");
-    me->receive_damage("jingli", jingli_cost, "练内功走火入魔死了");
+    me->add("jingli", -jingli_cost);
 
     wiz_report = "每次得" + chinese_number(neili_gain) + "点内力，"
       +chinese_number(xj_gain) + "点玉女心经";

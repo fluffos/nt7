@@ -239,7 +239,7 @@ int practice_skill(object me) {
 
   if ((int)me->query("jingli") < 60)
     return notify_fail("你的精力不够练血海魔刀。\n");
-  me->receive_damage("jingli", 50);
+  me->add("jingli", -50);
   return 1;
 }
 

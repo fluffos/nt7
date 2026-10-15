@@ -95,7 +95,7 @@ int valid_learn(object me) {
   aa = (int)me->query_skill("hunyuan-yiqi", 1);
   bb = (int)me->query_skill("qufannao-zhi", 1);
 
-  if (query_temp("weapon", me) || query_temp("secondary_weapon", me))
+  if (me->query_temp("weapon") || me->query_temp("secondary_weapon"))
     return notify_fail("练去烦恼指必须空手。\n");
 
   if (bb >= 60 && aa < 140 && 5 * aa <= 4 * bb)
@@ -108,10 +108,10 @@ int valid_learn(object me) {
 
 
 int practice_skill(object me) {
-  if (query("neili", me) < 50)
+  if (me->query("neili") < 50)
     return notify_fail("你的内力不够练去烦恼指。\n");
 
-  if (query("qi", me) < 50)
+  if (me->query("qi") < 50)
     return notify_fail("你的体力不够练去烦恼指。\n");
 
   addn("neili", -20, me);
@@ -146,7 +146,7 @@ mixed hit_ob(object me, object victim, int damage_bonus, int factor) {
       random(me->query_skill("qufannao-zhi", 1) / 3) + victim->query_condition("hh_damage"));
   }
 
-  if (query_temp("jinzhongzhao", victim)) {
+  if (victim->query_temp("jinzhongzhao")) {
     victim->apply_condition("hh_damage", victim->query_condition("hh_damage") / 3);
   }
 }
