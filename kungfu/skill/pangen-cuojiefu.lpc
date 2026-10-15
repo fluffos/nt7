@@ -132,7 +132,7 @@ int practice_skill(object me) {
     return notify_fail("你的内力不够练盘根错节斧。\n");
 
   me->receive_damage("qi", 80);
-  me->receive_damage("neili", -52);
+  me->add("neili", -52);
   return 1;
 }
 
