@@ -509,7 +509,7 @@ string html_remove(string str) {
 string *query_news(int n) {
   string *res = allocate(0);
   int j;
-  foreach (string type, array data in news) {
+  foreach (string type, mixed *data in news) {
     j = n;
     if (j > sizeof(data[0])) j = sizeof(data[0]);
     for (int i = 0; i < j; i++) {

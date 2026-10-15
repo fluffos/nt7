@@ -24,7 +24,7 @@ private string DN2IP(string host) {
 }
 
 private int is_url(string fmt) {
-  array each_field = explode(fmt, ".");
+  mixed *each_field = explode(fmt, ".");
 
   if (sizeof(each_field) < 4)
     return 0;
@@ -40,7 +40,7 @@ private int is_url(string fmt) {
 }
 
 private int is_ip(string fmt) {
-  array each_field = explode(fmt, ".");
+  mixed *each_field = explode(fmt, ".");
 
   if (sizeof(each_field) < 4)
     return 0;
