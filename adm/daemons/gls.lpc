@@ -55,7 +55,7 @@ void out(mixed matrix) {
 
 private mixed drawing(mapping a) {
   mixed *matrix;
-  array kid;
+  mixed *kid;
   string result;
   kid = keys(a);
   result = "";

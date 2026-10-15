@@ -115,7 +115,7 @@ mapping common_list = ([
 ]);
 
 // 物品出现的几率
-array common_rate_table = ({ "weapon", "potion", "armor", "helmet", "shield",
+mixed *common_rate_table = ({ "weapon", "potion", "armor", "helmet", "shield",
 　　　　　　　　　　　　　　　 "key", "gloves", "boots", "belt", "ring", "amulet",
 　　　　　　　　　　　　　　　 "charm", "jewel", });
 

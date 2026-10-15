@@ -1,3 +1,4 @@
+#include <ansi.h>
 // This program is a part of NT MudLIB
 // Written by Lonely@nitan.org
 // dealer.c 商人
@@ -296,7 +297,6 @@ varargs int do_list(string arg) {
 int do_buy(string arg) {
   mapping room_obmap;
   string bunch;
-  object *obs;
   object ob;
   object room;
   object me;

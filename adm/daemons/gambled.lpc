@@ -164,7 +164,7 @@ public void start_manage(object me) {
 
 // 选择管理的类别
 private void get_type(string arg, object me) {
-  array users, items;
+  mixed *users, *items;
   string msg = "";
   int i, j;
 
@@ -291,7 +291,7 @@ private void get_type(string arg, object me) {
 
 // 选择管理的项目名称
 private void get_name(string arg, object me) {
-  array teams;
+  mixed *teams;
   string msg = "", team;
   int i, num;
   mapping item;
@@ -736,7 +736,7 @@ private void get_chip_number(string arg, object me, string name) {
 // 删除一个项目
 private void get_name_todel(string arg, object me) {
   int number;
-  array names;
+  mixed *names;
 
   if (arg == "") {
     end_manage();
@@ -773,7 +773,7 @@ private void get_name_todel(string arg, object me) {
 
 // 玩家投注界面
 public void do_chip(object me) {
-  array items = keys(item_data);
+  mixed *items = keys(item_data);
   string msg = "目前允许投注的项目有：\n\n";
   int i;
 
@@ -892,7 +892,7 @@ private void select_name_tochip(string arg, object me) {
 
 // 选择投注的队伍
 protected void select_team_tochip(string arg, object me, string name) {
-  array teams, all_teams;
+  mixed *teams, *all_teams;
   int i, n;
 
   if (arg == "") {

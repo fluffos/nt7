@@ -37,8 +37,8 @@ mapping dir_list = ([
   "中州": "/d/zhongzhou/",
 ]);
 
-array place = values(dir_list);
-array c_place = keys(dir_list);
+mixed *place = values(dir_list);
+mixed *c_place = keys(dir_list);
 
 void create() {
   seteuid(ROOT_UID);
@@ -57,12 +57,12 @@ void create() {
 
 void jingyan_open() {
   object n_place;
-  string s_place, dir;
+  string s_place;
   int i;
   int num = random(sizeof(place));
   string city = place[num];
 
-  array plist = get_dir(city);
+  mixed *plist = get_dir(city);
 
   do {
     s_place = plist[random(sizeof(plist))];
@@ -110,12 +110,12 @@ void jingyan_close(object n_place) {
 }
 void wudie_open() {
   object n_place;
-  string s_place, dir;
+  string s_place;
   int i;
   int num = random(sizeof(place));
   string city = place[num];
 
-  array plist = get_dir(city);
+  mixed *plist = get_dir(city);
 
   do {
     s_place = plist[random(sizeof(plist))];

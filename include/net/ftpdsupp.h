@@ -142,7 +142,7 @@ int check_password(string name, string plaintext)
  * dotted quad) with an ip number pattern (ie containing wildcard(s))
  * - returns 1 if a match, 0 otherwise
  */
-protected int dot_match(array site, array pattern, int flag) {
+protected int dot_match(mixed *site, mixed *pattern, int flag) {
     int i, j;
 
     j = sizeof(pattern);
@@ -181,10 +181,10 @@ int check_site(string who, int fd) {
     int wildcard_flag;
     string site, site_num;
     string arg;
-    array sites;
+    mixed *sites;
     object ob;
     int i, s, l1, l2;
-    array site_dots, match_dots;
+    mixed *site_dots, *match_dots;
 
     site = USITE;
 

@@ -280,7 +280,7 @@ public int start_work(object me)
 
   object ob;
 
-  array place;
+  mixed *place;
 
 
 

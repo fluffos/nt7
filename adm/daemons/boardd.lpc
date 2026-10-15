@@ -668,7 +668,7 @@ int query_post_id(int forum_id, int post_time) {
 
 // 把 "127.0.0.1" 转换为 7F000001 这样的 16 进制地址
 string convert_to_ip(string ip) {
-  array ips;
+  mixed *ips;
   string hex_ip;
 
   ips = explode(ip, ".");
