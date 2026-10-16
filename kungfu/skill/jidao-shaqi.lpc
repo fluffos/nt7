@@ -30,7 +30,7 @@ int valid_learn(object me) {
     || me->query_skill("wolong-xingfa", 1)    // 巡捕：卧龙心法
     || me->query_skill("wuwang-shenzhou", 1)    // 凌霄城：无妄神咒
     || me->query_skill("xiantian-gong", 1)    // 全真：先天功
-    || me->query_skill("xiawuxiang", 1)    // 雪山：小无相功
+    || me->query_skill("xiaowuxiang", 1)    // 雪山：小无相功
     || me->query_skill("xuanmen-neigong", 1)    // 全真：玄门内功
     || me->query_skill("yunlong-shengong", 1)  // 云龙：云龙神功
     || me->query_skill("zixia-shengong", 1))    // 华山：紫霞神功

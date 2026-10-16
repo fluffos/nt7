@@ -76,7 +76,7 @@ void attempt_apprentice(object ob)
                  }
 
         // Yinli and Qianzhu-wandu: by yasuko
-        if ((int)ob->query_skill("qianzhu-wandu", 1) >=1 ) {
+        if ((int)ob->query_skill("qianzhu-wandushou", 1) >=1 ) {
                 command("sneer"+query("id", ob));
                 command("say 这位" + RANK_D->query_respect(this_player())
                 + "与殷姑娘渊源非浅，在下可不敢误人子弟。");

@@ -45,7 +45,7 @@ int do_rpour(string arg) {
   //        if( me->query_temp("being_toudu") )
   //                return notify_fail("你已经在找机会下手了！\n");
   if (query("max_liquid", ob)) {
-    int myskill = (me->query_skill("five_poison", 1)) * 10 + query("neili", me);
+    int myskill = (me->query_skill("five-poison", 1)) * 10 + query("neili", me);
     int skill = query("neili", victim);
     if (query("liquid/remaining", ob) < 1)
       return notify_fail("那个容器是空的，不能用来溶解毒粉！\n");

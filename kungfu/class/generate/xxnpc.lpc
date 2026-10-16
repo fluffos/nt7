@@ -73,7 +73,7 @@ varargs int accept_fight() {
 
   mapping myfam;
 
-  myfam = query("family", me);
+  myfam = query("family", me); if (!mapp(myfam)) myfam = ([ ]);
 
   if (myfam["family_name"] == "星宿派") {
     command("say 不用比试了，你拿命来吧！");
