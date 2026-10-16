@@ -8,7 +8,8 @@ int perform(object me, object target) {
   string msg;
   int ap, dp;
   object env = environment(me);
-  mapping *obb = query("exits", env);
+  mapping exits = query("exits", env);
+  string *obb;
 
   if (!target) target = offensive_target(me);
 
@@ -37,7 +38,10 @@ int perform(object me, object target) {
       target->start_busy(4 + random(4));
     me->receive_damage("qi", 200);
     me->receive_damage("jing", 80);
-    if (sizeof(obb) > 0) me->move(obb[0]);
+    if (sizeof(exits) > 0) {
+      obb = values(exits);
+      me->move(obb[random(sizeof(obb))]);
+    }
     msg += RED "只见$n只看的目瞪口呆,一时手忙脚乱起来，不知如何是好。\n" NOR;
   } else {
     msg += HIC "可是$p却暴身南而起，大喝一声：“那里走！”，拦在你的前面，$P这招没有得逞。\n" NOR;
