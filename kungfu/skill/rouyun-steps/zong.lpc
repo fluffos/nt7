@@ -31,7 +31,7 @@ int perform(object me, object target) {
       me->move("/d/city/kedian");
       break;
     case 2:
-      me->move("/u/deaner/test1");
+      me->move("/d/city/guangchang");
       break;
   }
   return 1;

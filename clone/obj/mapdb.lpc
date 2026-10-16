@@ -28,6 +28,18 @@ void create() {
   }
 }
 
+// genmap saves map.o at its first load, before any map is built: restore() then succeeds from a file with
+// no "map" in it and leaves map 0, and every lookup below indexed zero.
+int restore() {
+  int ret = ::restore();
+
+  if (!mapp(map)) {
+    map_ready = 0;
+    map = ([]);
+  }
+  return ret;
+}
+
 void debug(string msg) {
   printf("DEBUG: %s\n", msg);
 }
@@ -42,6 +54,7 @@ mapping query_room_info(string room) {
 }
 
 string query_random_room_path() {
+  if (!sizeof(map)) return 0;   // no map built yet
   return keys(map)[random(sizeof(map))];
 }
 

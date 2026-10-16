@@ -10,9 +10,8 @@ inherit F_SSERVER;
 string final(object me, object target, int damage);
 
 int perform(object me, object target) {
-  object weapon;
   int ap, dp, damage;
-  string wn, msg;
+  string msg;
 
   if (!target) target = offensive_target(me);
 
@@ -42,8 +41,6 @@ int perform(object me, object target) {
 
   if (!living(target))
     return notify_fail("对方都已经这样了，用不着这么费力吧？\n");
-
-  wn = weapon->name();
 
   msg = HIC "$N" HIC "施出「" HIR QIN HIC "」绝技，" + HIC "微作龙吟，双手曲成爪抓向$n" HIC "。\n" NOR;
 

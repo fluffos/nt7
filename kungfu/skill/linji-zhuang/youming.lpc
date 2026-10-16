@@ -47,9 +47,9 @@ void hitself(object me, object *bad_guys, int degree) {
     killer = bad_guys[i];
     if (killer == 0) continue;
     a0 = query("combat/PKS", killer);
-    a1 = killer->querry("combat/dietimes");
+    a1 = killer->query("combat/dietimes");
     b0 = query("combat/PKS", me);
-    b1 = me->querry("combat/dietimes");
+    b1 = me->query("combat/dietimes");
     if (a1 == 0) a1 = 1;
     if (b0 == 0) b0 = 1;
     if (b1 == 0) b1 = 1;
@@ -194,12 +194,12 @@ int visit_room(string room_path, mapping t_info, mapping r_info, mapping data) {
   dist = t_info["dist"];
   if (dist >= 15) return -1;  // don't affect more than 15 steps
 
+  me = data["user"];
+  range = data["range"];
   room = find_object(room_path);
   if (!objectp(room)) return (dist >= range) ? 1 : 0;
   if (query("no_fight", room)) return (dist >= range) ? 1 : 0;
 
-  me = data["user"];
-  range = data["range"];
   bad_guys = find_bad_guys(me, room);
   stop_fighting(me, room);
   if (dist < range) {
