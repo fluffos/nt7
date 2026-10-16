@@ -2,6 +2,7 @@
 // by augx@sj  6/11/2002
 
 #include <ansi.h>
+#define MIN(x, y) ((x) > (y) ? (y) : (x))   // sj has it in globals.h; this lib does not
 
 int exert(object me) {
   int i;

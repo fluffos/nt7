@@ -103,7 +103,7 @@ void create() {
 void greeting(object ob) {
   mapping myfam;
 
-  myfam = (mapping)query("family", ob);
+  myfam = (mapping)query("family", ob); if (!mapp(myfam)) myfam = ([ ]);
   if (myfam["master_name"] == "yideng dashi")
     say("朱子柳冲着你点了点头，说：你回来了。\n");
   set_temp("du_allow", 1, ob);

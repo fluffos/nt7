@@ -37,7 +37,7 @@ int do_xpour(string arg) {
   if (!victim || victim == me) return notify_fail("没有你想下毒的人哦。\n");
   if (query("family/family_name", me) != "五毒教")
     return notify_fail("下毒！！你怎么能干这么卑鄙的事哦？\n");
-  if ((int)me->query_skill("five_poison", 1) < 50)
+  if ((int)me->query_skill("five-poison", 1) < 50)
     return notify_fail("才这么点本事就想害人？别弱了我五毒教的威名啊！\n");
   ob = present(what, victim);
   if (!ob)

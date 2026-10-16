@@ -272,7 +272,7 @@ mapping query_action(object me, object weapon) {
     ]);
   }
 
-  lvl = (int)me->query_skill("canhe-finger", 1);
+  lvl = (int)me->query_skill("canhe-zhi", 1);
   for (i = ttl; i > 0; i--)
     if (lvl > action[i - 1]["lvl"]) {
       seq = i; /* 获得招数序号上限 */ break;

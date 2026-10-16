@@ -42,7 +42,7 @@ int valid_learn(object me) {
   if (query("max_neili", me) < 1000)
     return notify_fail("你的内力修为太弱，无法练抽髓掌。\n");
 
-  if ((int)me->query_skill("strike", 1) < (int)me->query_skill("choushui-zhang", 1))
+  if ((int)me->query_skill("strike", 1) < (int)me->query_skill("chousui-zhang", 1))
     return notify_fail("你的基本掌法水平有限，无法领会更高深的抽髓掌法。\n");
 
   return 1;

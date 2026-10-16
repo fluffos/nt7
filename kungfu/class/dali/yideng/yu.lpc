@@ -84,7 +84,7 @@ void init() {
 void greeting(object ob) {
   mapping myfam;
 
-  myfam = (mapping)query("family", ob);
+  myfam = (mapping)query("family", ob); if (!mapp(myfam)) myfam = ([ ]);
   if (myfam["master_id"] == "yideng dashi") {
     message_vision(HIY "点苍渔隐对$N说：你回来了。自己上去见师父吧。\n" NOR, ob);
     set_temp("yu_allow", 1, ob);

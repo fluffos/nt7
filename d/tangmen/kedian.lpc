@@ -36,7 +36,7 @@ int valid_leave(object me, string dir) {
     return notify_fail("唐小二一下挡在楼梯前，白眼一翻：怎麽着，想白住啊！这里可是" + HIC "蜀中唐门" NOR + "啊\n");
 
   if (query_temp("rent_paid", me) && dir == "west") {
-    myfam = query("family", me);
+    myfam = query("family", me); if (!mapp(myfam)) myfam = ([ ]);
     if (!myfam["family_name"] || myfam["family_name"] != "唐门世家")
       return notify_fail("唐小二跑到门边拦住：客官已经付了银子，怎麽不住店就走了呢！旁人还以为小店伺候不周呢！\n");
     delete_temp("rent_paid", me);

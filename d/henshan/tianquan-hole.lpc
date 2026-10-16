@@ -94,7 +94,7 @@ TEXT
 
     furong = me->query_skill("furong-jianfa", 1);
     zigai = me->query_skill("zigai-jianfa", 1);
-    hengshan = me->query_skill("hengshan-jianfa", 1);
+    hengshan = me->query_skill("hengshan-jian", 1);
     cost_qi = 25;
     cost_neili = 25;
     cost_jing = 10;

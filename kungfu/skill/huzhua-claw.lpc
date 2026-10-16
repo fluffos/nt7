@@ -140,7 +140,7 @@ int practice_skill(object me) {
   if (query("neili", me) < 80)
     return notify_fail("你的内力不够练虎爪功。\n");
 
-  if ((int)me->query_skill("jiemie-zhua", 1) < (int)me->query_skill("huzhua-claw", 1))
+  if ((int)me->query_skill("jimie-zhua", 1) < (int)me->query_skill("huzhua-claw", 1))
     return notify_fail("你的寂灭爪火候水平有限，无法领会更高深的虎爪功。\n");
 
   me->receive_damage("qi", 60);

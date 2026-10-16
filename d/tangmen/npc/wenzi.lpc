@@ -56,7 +56,7 @@ int do_zha(string arg) {
   mapping myfam;
 
   ob = this_player();
-  myfam = query("family", ob);
+  myfam = query("family", ob); if (!mapp(myfam)) myfam = ([ ]);
   jing_drop = random(40);
 
   if (myfam["family_name"] != "唐门世家") {
