@@ -18,7 +18,7 @@ string update_msg_self() {
     "达摩折元剑的干扰。\n" NOR;
 }
 
-string die_reason() {
+varargs string die_reason() {
   return "真元崩溃而亡了";
 }
 

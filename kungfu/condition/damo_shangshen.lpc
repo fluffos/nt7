@@ -23,7 +23,7 @@ string die_msg_others() {
     "也没有半点动静。\n" NOR;
 }
 
-string die_reason() {
+varargs string die_reason() {
   return "精神衰竭身亡了";
 }
 
