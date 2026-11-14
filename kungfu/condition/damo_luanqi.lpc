@@ -23,7 +23,7 @@ string die_msg_others() {
     "渐没有了声音。\n" NOR;
 }
 
-string die_reason() {
+varargs string die_reason() {
   return "气尽身亡了";
 }
 
